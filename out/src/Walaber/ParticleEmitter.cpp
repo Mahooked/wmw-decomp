@@ -148,7 +148,7 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
   int *piStack_50;
   undefined8 *puStack_48;
   
-  Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x150,param_3);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(param_1 + 0x150))->operator=(param_3);
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_00710028;
@@ -2122,7 +2122,7 @@ void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0)
 {
   undefined1 auStack_50 [24];
   
-  std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::vector(auStack_50,&p0[2].field_0x10);
+  new ((void *)(auStack_50)) std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>(&p0[2].field_0x10);
                     /* try { // try from 003934cc to 003934df has its CatchHandler @ 00393510 */
   Walaber::ParticleSet::drawParticles(&p0[6].f_0x20);
   ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> *)auStack_50)->~__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>();
@@ -2142,7 +2142,7 @@ void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0,Walaber__Color p1)
 {
   undefined1 auStack_50 [24];
   
-  std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::vector(auStack_50,&p0[2].field_0x10);
+  new ((void *)(auStack_50)) std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>(&p0[2].field_0x10);
                     /* try { // try from 003935f4 to 0039360b has its CatchHandler @ 0039363c */
   Walaber::ParticleSet::drawParticles(&p0[6].f_0x20,p1,auStack_50);
   ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> *)auStack_50)->~__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>();

@@ -292,7 +292,7 @@ LAB_005c69d4:
         }
       }
                     /* try { // try from 005c6a0c to 005c6a17 has its CatchHandler @ 005c6bf0 */
-      std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::basic_string(&uStack_218,puVar21);
+      new ((void *)(&uStack_218)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(puVar21);
                     /* try { // try from 005c6a28 to 005c6a4f has its CatchHandler @ 005c6c28 */
       func_0x005e07a0(p0 + 0x7c,&uStack_218,0,*(undefined1 *)(in_x1 + 0x52),
                       *(undefined1 *)(in_x1 + 0x53),*(undefined1 *)(in_x1 + 0x56));
@@ -486,7 +486,7 @@ undefined4 std::__ndk1::moneypunct_byname<wchar_t,false>::do_thousands_sep(long 
 void std::__ndk1::moneypunct_byname<wchar_t,false>::do_grouping(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2 + 0x18);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x18);
   return;
 }
 
@@ -501,7 +501,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,false>::do_grouping(undefined8 param
 void std::__ndk1::moneypunct_byname<wchar_t,false>::do_curr_symbol(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::basic_string(param_1,param_2 + 0x30);
+  new ((void *)(param_1)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(param_2 + 0x30);
   return;
 }
 
@@ -517,7 +517,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,false>::do_positive_sign
                (undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::basic_string(param_1,param_2 + 0x48);
+  new ((void *)(param_1)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(param_2 + 0x48);
   return;
 }
 
@@ -533,7 +533,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,false>::do_negative_sign
                (undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::basic_string(param_1,param_2 + 0x60);
+  new ((void *)(param_1)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(param_2 + 0x60);
   return;
 }
 

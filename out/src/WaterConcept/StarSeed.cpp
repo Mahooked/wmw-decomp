@@ -221,7 +221,7 @@ void WaterConcept::StarSeed::addTeleport
   puStack_e0 = (undefined8 *)0x21;
                     /* try { // try from 0048f87c to 0048f897 has its CatchHandler @ 0048fc28 */
   Walaber::TextureManager::getTexture(&puStack_c0,uVar4,&puStack_e0,&uStack_110,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x490,&puStack_c0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x490))->operator=(&puStack_c0);
   ((Walaber::SharedPtr<Walaber::Texture> *)&puStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_110)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_120)->~SharedPtr<Walaber::Callback>();
@@ -244,7 +244,7 @@ void WaterConcept::StarSeed::addTeleport
   uStack_128 = 0;
                     /* try { // try from 0048f918 to 0048f933 has its CatchHandler @ 0048fc14 */
   Walaber::TextureManager::getTexture(&puStack_c0,uVar4,&puStack_e0,&uStack_130,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x4a0,&puStack_c0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x4a0))->operator=(&puStack_c0);
   ((Walaber::SharedPtr<Walaber::Texture> *)&puStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_130)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_120)->~SharedPtr<Walaber::Callback>();
@@ -267,7 +267,7 @@ void WaterConcept::StarSeed::addTeleport
   puStack_e0 = (undefined8 *)0x21;
                     /* try { // try from 0048f9b4 to 0048f9cf has its CatchHandler @ 0048fc00 */
   Walaber::TextureManager::getTexture(&puStack_c0,uVar4,&puStack_e0,&uStack_140,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x4b0,&puStack_c0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x4b0))->operator=(&puStack_c0);
   ((Walaber::SharedPtr<Walaber::Texture> *)&puStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_140)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_120)->~SharedPtr<Walaber::Callback>();
@@ -290,7 +290,7 @@ void WaterConcept::StarSeed::addTeleport
   uStack_148 = 0;
                     /* try { // try from 0048fa4c to 0048fa67 has its CatchHandler @ 0048fbec */
   Walaber::TextureManager::getTexture(&puStack_c0,uVar4,&puStack_e0,&uStack_150,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x4c0,&puStack_c0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x4c0))->operator=(&puStack_c0);
   ((Walaber::SharedPtr<Walaber::Texture> *)&puStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_150)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_120)->~SharedPtr<Walaber::Callback>();
@@ -312,7 +312,7 @@ void WaterConcept::StarSeed::addTeleport
   piStack_d8 = puStack_118;
   piStack_b8 = puStack_118;
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e0)->~SharedPtr<Walaber::Callback>();
-  Walaber::SharedPtr<Walaber::Callback>::operator=(&puStack_b0,&puStack_120);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(&puStack_b0))->operator=(&puStack_120);
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_120)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0048fb04 to 0048fb07 has its CatchHandler @ 0048fbdc */
   uVar4 = Walaber::SoundManager::getInstancePtr();
@@ -372,7 +372,7 @@ void WaterConcept::StarSeed::_gotSE(void *p0, int * in_x1)
 {
   
   if (*in_x1 == 0x11c) {
-    Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x610,in_x1 + 2);
+    ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)((long)p0 + 0x610))->operator=(in_x1 + 2);
   }
   return;
 }
@@ -602,7 +602,7 @@ void WaterConcept::StarSeed::_initFinished(long param_1)
     lVar14 = *(long *)(*(long *)(param_1 + 400) + 0x50);
     *piVar12 = *piVar12 + 1;
     puStack_a0 = puVar11;
-    Walaber::SharedPtr<Walaber::Callback>::operator=(lVar14 + 0xd0,&puStack_a0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)(lVar14 + 0xd0))->operator=(&puStack_a0);
     ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_60)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::StarSeed>> *)&puStack_80)->~SharedPtr<Walaber::MemberCallback<WaterConcept::StarSeed>>();
@@ -656,7 +656,7 @@ void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0, long in_x1)
     }
   }
   else if (*(int *)(in_x1 + 0x18) == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_50,*(undefined8 *)(in_x1 + 8));
+    new ((void *)(&bStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(undefined8 *)(in_x1 + 8));
     uVar1 = (ulong)(bStack_50 >> 1);
     if ((bStack_50 & 1) != 0) {
       uVar1 = CONCAT44(uStack_44,CONCAT13(uStack_45,CONCAT21(uStack_47,uStack_48)));
@@ -1126,7 +1126,7 @@ void WaterConcept::StarSeed::setProperties(Walaber__PropertyList *p0)
     uStack_90 = 0;
                     /* try { // try from 00490938 to 00490953 has its CatchHandler @ 00490fe4 */
     Walaber::TextureManager::getTexture(auStack_88,uVar7,&bStack_60,&uStack_98,0,0);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p0[0x30].f_0x10,auStack_88);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p0[0x30].f_0x10))->operator=(auStack_88);
     ((Walaber::SharedPtr<Walaber::Texture> *)auStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_98)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a8)->~SharedPtr<Walaber::Callback>();
@@ -2672,7 +2672,7 @@ LAB_0049215c:
           *piStack_118 = *piStack_118 + 1;
         }
                     /* try { // try from 00492484 to 0049248b has its CatchHandler @ 00492ff0 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_110);
+        new ((void *)(&uStack_110)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
         uVar23 = uStack_110 >> 1 & 0x7f;
         if ((uStack_110 & 1) != 0) {
           uVar23 = uStack_108;

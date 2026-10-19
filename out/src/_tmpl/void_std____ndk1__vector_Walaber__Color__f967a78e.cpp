@@ -39,7 +39,7 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Color, std::__ndk1::allocator<Walaber::Color>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::Color, std::__ndk1::allocator<Walaber::Color>&>(uVar2,lVar3,p0 + 2);
   *puStack_50 = *in_x1;
   puStack_50[1] = in_x1[1];
   puStack_50[2] = in_x1[2];
@@ -94,7 +94,7 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Color, std::__ndk1::allocator<Walaber::Color>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 4);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::Color, std::__ndk1::allocator<Walaber::Color>&>(uVar2,lVar3,p0 + 4);
   *puStack_50 = *in_x1;
   puStack_50[1] = in_x1[1];
   puStack_50[2] = in_x1[2];

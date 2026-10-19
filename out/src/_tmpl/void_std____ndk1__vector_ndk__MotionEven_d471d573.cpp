@@ -39,7 +39,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   else {
     uVar2 = 0x1ffffffffffffff;
   }
-  std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>::__split_buffer(auStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>(uVar2,lVar3,p0 + 2);
   uVar6 = *in_x1;
   puStack_50[2] = 0;
   puStack_50[3] = 0;

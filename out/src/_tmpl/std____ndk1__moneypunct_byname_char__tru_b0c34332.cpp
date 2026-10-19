@@ -69,7 +69,7 @@ void std::__ndk1::moneypunct_byname<char,true>::init(char *p0, undefined8 in_x1)
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(p0 + 0x60,*(undefined8 *)(lVar6 + 0x48));
     }
                     /* try { // try from 005c5f74 to 005c5f7f has its CatchHandler @ 005c60f8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_60,pcVar1);
+    new ((void *)(&uStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pcVar1);
                     /* try { // try from 005c5f90 to 005c5fb7 has its CatchHandler @ 005c6114 */
     func_0x005e0250(p0 + 0x7c,&uStack_60,1,*(undefined1 *)(lVar6 + 0x58),
                     *(undefined1 *)(lVar6 + 0x59),*(undefined1 *)(lVar6 + 0x5c));
@@ -169,7 +169,7 @@ undefined1 std::__ndk1::moneypunct_byname<char,true>::do_thousands_sep(long para
 void std::__ndk1::moneypunct_byname<char,true>::do_grouping(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2 + 0x18);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x18);
   return;
 }
 
@@ -184,7 +184,7 @@ void std::__ndk1::moneypunct_byname<char,true>::do_grouping(undefined8 param_1,l
 void std::__ndk1::moneypunct_byname<char,true>::do_curr_symbol(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2 + 0x30);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x30);
   return;
 }
 
@@ -199,7 +199,7 @@ void std::__ndk1::moneypunct_byname<char,true>::do_curr_symbol(undefined8 param_
 void std::__ndk1::moneypunct_byname<char,true>::do_positive_sign(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2 + 0x48);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x48);
   return;
 }
 
@@ -214,7 +214,7 @@ void std::__ndk1::moneypunct_byname<char,true>::do_positive_sign(undefined8 para
 void std::__ndk1::moneypunct_byname<char,true>::do_negative_sign(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2 + 0x60);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x60);
   return;
 }
 

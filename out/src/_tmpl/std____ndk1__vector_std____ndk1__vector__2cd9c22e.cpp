@@ -100,7 +100,7 @@ void std::__ndk1::
       lVar2 = param_1[1];
       do {
                     /* try { // try from 004d0078 to 004d007f has its CatchHandler @ 004d00ac */
-        std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::vector(lVar2,lVar3);
+        new ((void *)(lVar2)) std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>(lVar3);
         lVar3 = lVar3 + 0x18;
         lVar2 = param_1[1] + 0x18;
         param_1[1] = lVar2;

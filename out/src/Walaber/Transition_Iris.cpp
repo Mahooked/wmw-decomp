@@ -181,7 +181,7 @@ void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
     uStack_78 = 0;
                     /* try { // try from 003f551c to 003f5537 has its CatchHandler @ 003f5620 */
     Walaber::TextureManager::getTexture(auStack_58,uVar4,abStack_70,&uStack_80,0,0);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p1[10].f_0x8,auStack_58);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p1[10].f_0x8))->operator=(auStack_58);
     ((Walaber::SharedPtr<Walaber::Texture> *)auStack_58)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();

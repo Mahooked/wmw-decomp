@@ -87,7 +87,7 @@ void std::__ndk1::
       if (lVar1 == 0) {
         uVar4 = 1;
       }
-      std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::__split_buffer(&pWStack_80,uVar4,uVar4 >> 2,p0[4]);
+      new ((void *)(&pWStack_80)) std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>(uVar4,uVar4 >> 2,p0[4]);
       pWVar8 = p0[1];
       pWVar7 = p0[2];
       if (pWVar8 != pWVar7) {

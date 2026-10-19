@@ -45,7 +45,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>&>(uVar2,lVar3,p0 + 2);
   pWVar7 = (WaterConceptConstants__FluidType *)((long)pWStack_50 + 4);
   *(undefined4 *)pWStack_50 = *in_x1;
   pWStack_60 = *p0;

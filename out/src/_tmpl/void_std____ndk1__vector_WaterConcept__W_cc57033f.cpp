@@ -38,7 +38,7 @@ void std::__ndk1::
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>&>::__split_buffer(&pvStack_60,uVar5,lVar3,p0 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>&>(uVar5,lVar3,p0 + 2);
   *puStack_50 = *in_x1;
   puStack_50[1] = in_x1[1];
   puStack_50[2] = in_x1[2];

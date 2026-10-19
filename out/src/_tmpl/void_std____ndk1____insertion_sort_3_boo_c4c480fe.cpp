@@ -68,7 +68,7 @@ void std::__ndk1::
           *piStack_80 = *piStack_80 + 1;
         }
         do {
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_1 + lVar9 + 0x30,param_1 + lVar9 + 0x20);
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_1 + lVar9 + 0x30))->operator=(param_1 + lVar9 + 0x20);
           lVar4 = param_1;
           if (lVar9 == -0x20) goto LAB_0034b9c4;
           pcVar6 = (code *)*param_3;
@@ -89,7 +89,7 @@ void std::__ndk1::
         } while ((uVar3 & 1) != 0);
         lVar4 = param_1 + lVar9 + 0x30;
 LAB_0034b9c4:
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(lVar4,&lStack_88);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(lVar4))->operator=(&lStack_88);
         ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_88)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       }
       lVar8 = lVar8 + 0x10;

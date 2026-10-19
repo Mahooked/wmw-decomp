@@ -42,10 +42,10 @@ void std::__ndk1::
      (uVar6 = lVar9 * 0x1c71c71c71c71c72, uVar7 = uVar1, uVar1 <= uVar6)) {
     uVar7 = uVar6;
   }
-  std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>::__split_buffer(auStack_70,uVar7,lVar5,p0 + 0x10);
+  new ((void *)(auStack_70)) std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>(uVar7,lVar5,p0 + 0x10);
   lVar5 = lStack_60;
                     /* try { // try from 00356bb8 to 00356bc3 has its CatchHandler @ 00356c80 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lStack_60);
+  new ((void *)(lStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   lVar9 = *(long *)(in_x1 + 0x18);
   *(long *)(lVar5 + 0x18) = lVar9;
   piVar8 = *(int **)(in_x1 + 0x20);
@@ -59,7 +59,7 @@ void std::__ndk1::
   *(undefined2 *)(lVar5 + 0x2c) = uVar3;
   *(undefined4 *)(lVar5 + 0x28) = uVar2;
                     /* try { // try from 00356c08 to 00356c0b has its CatchHandler @ 00356c60 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar5 + 0x30,in_x1 + 0x30);
+  new ((void *)(lVar5 + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x30);
   lStack_60 = lStack_60 + 0x48;
                     /* try { // try from 00356c18 to 00356c23 has its CatchHandler @ 00356c80 */
   std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__swap_out_circular_buffer(p0,auStack_70);

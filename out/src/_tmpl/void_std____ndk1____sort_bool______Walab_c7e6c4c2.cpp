@@ -110,8 +110,8 @@ LAB_0034a644:
       if (lStack_80 != 0) {
         *piStack_78 = *piStack_78 + 1;
       }
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_1,plVar13);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,&lStack_80);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_1))->operator=(plVar13);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar13))->operator=(&lStack_80);
       ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
     }
     goto switchD_0034acd8_caseD_0;
@@ -208,8 +208,8 @@ LAB_0034a644:
       if (lStack_80 != 0) {
         *piStack_78 = *piStack_78 + 1;
       }
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_1,plVar11);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar11,&lStack_80);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_1))->operator=(plVar11);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar11))->operator=(&lStack_80);
       ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       iVar4 = iVar4 + 1;
     }
@@ -259,8 +259,8 @@ LAB_0034a644:
           if (lStack_80 != 0) {
             *piStack_78 = *piStack_78 + 1;
           }
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar14,plVar11);
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar11,&lStack_80);
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar14))->operator=(plVar11);
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar11))->operator=(&lStack_80);
           ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
           iVar4 = iVar4 + 1;
           plVar12 = plVar11;
@@ -294,8 +294,8 @@ LAB_0034a644:
         if (lStack_80 != 0) {
           *piStack_78 = *piStack_78 + 1;
         }
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar14,plVar13);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,&lStack_80);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar14))->operator=(plVar13);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar13))->operator=(&lStack_80);
         ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
         iVar4 = iVar4 + 1;
       }
@@ -359,8 +359,8 @@ code_r0x0034ab18:
   if (lStack_80 != 0) {
     *piStack_78 = *piStack_78 + 1;
   }
-  Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,plVar10);
-  Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar10,&lStack_80);
+  ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar13))->operator=(plVar10);
+  ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar10))->operator=(&lStack_80);
   ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
   plVar13 = plVar13 + 2;
 LAB_0034ab5c:
@@ -408,8 +408,8 @@ LAB_0034ab5c:
         if (lStack_80 != 0) {
           *piStack_78 = *piStack_78 + 1;
         }
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,plVar10);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar10,&lStack_80);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar13))->operator=(plVar10);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(plVar10))->operator=(&lStack_80);
         ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       }
       plVar13 = plVar13 + 2;

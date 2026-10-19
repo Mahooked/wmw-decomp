@@ -292,7 +292,7 @@ void Walaber::AnimationManager::createAnimation(undefined8 param_1,undefined8 pa
   
   uVar2 = operator new(0x108);
                     /* try { // try from 00337c58 to 00337c63 has its CatchHandler @ 00337ce8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_2);
+  new ((void *)(abStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
                     /* try { // try from 00337c64 to 00337c73 has its CatchHandler @ 00337cd0 */
   new ((void *)(uVar2)) Walaber::Animation(abStack_60,param_1);
   if ((abStack_60[0] & 1) != 0) {
@@ -712,7 +712,7 @@ void Walaber::AnimationManager::registerEventCallback
   puStack_30 = (undefined1 *)&uStack_40;
   uStack_40 = param_2;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_unique_key_args<void*, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<void* const&>, std::__ndk1::tuple<>>(param_1 + 0x28,&uStack_40,&DAT_00628882,&puStack_30,auStack_38);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(lVar2 + 0x28,param_3);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(lVar2 + 0x28))->operator=(param_3);
   return;
 }
 

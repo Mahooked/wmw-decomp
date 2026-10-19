@@ -34,7 +34,7 @@ void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Ac
      (uVar4 = lVar6 * -0x1e1e1e1e1e1e1e1e, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>&>::__split_buffer(auStack_60,uVar5,lVar3,p0 + 0x10);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>&>(uVar5,lVar3,p0 + 0x10);
                     /* try { // try from 00330f68 to 00330f87 has its CatchHandler @ 00330fc0 */
   new ((void *)(lStack_50)) Walaber::Achievement();
   lStack_50 = lStack_50 + 0x88;

@@ -61,7 +61,7 @@ void std::__ndk1::
       pWVar3 = in_x2;
     }
     for (; p1 = pWVar3, p1 != pWVar1; pWVar1 = pWVar1 + 1) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(pbVar8,pWVar1);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(pbVar8))->operator=(pWVar1);
       uVar10 = pWVar1->f_0x18[1];
       uVar9 = pWVar1->f_0x18[0];
       *(ulong *)(pbVar8 + 0x28) = pWVar1->f_0x28;

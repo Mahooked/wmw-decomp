@@ -46,7 +46,7 @@ void std::__ndk1::
       uVar6 = *(undefined8 *)pWVar1;
       *(undefined4 *)(puVar9 + 1) = *(undefined4 *)(pWVar1 + 8);
       *puVar9 = uVar6;
-      Walaber::PropertyList::operator=(puVar9 + 2,pWVar1 + 0x10);
+      ((Walaber::PropertyList *)(puVar9 + 2))->operator=(pWVar1 + 0x10);
       puVar9 = puVar9 + 5;
       pWVar2 = p1;
     }

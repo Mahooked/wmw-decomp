@@ -98,7 +98,7 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
        (uVar6 = lVar7 * -0x6666666666666666, uVar3 = uVar4, uVar4 <= uVar6)) {
       uVar3 = uVar6;
     }
-    std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::__split_buffer(auStack_80,uVar3,lVar8 * -0x3333333333333333,param_1 + 2);
+    new ((void *)(auStack_80)) std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>(uVar3,lVar8 * -0x3333333333333333,param_1 + 2);
                     /* try { // try from 00334de0 to 00334dfb has its CatchHandler @ 00334ed8 */
     std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::push_back(auStack_80,param_3);
     param_2 = (undefined8 *)std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__swap_out_circular_buffer(param_1,auStack_80,param_2);
@@ -360,7 +360,7 @@ void std::__ndk1::
       do {
         *puVar4 = *puVar3;
                     /* try { // try from 0033a658 to 0033a65f has its CatchHandler @ 0033a694 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puVar4 + 1,puVar3 + 1);
+        new ((void *)(puVar4 + 1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar3 + 1);
         puVar1 = puVar3 + 4;
         puVar3 = puVar3 + 5;
         *(undefined2 *)(puVar4 + 4) = *(undefined2 *)puVar1;

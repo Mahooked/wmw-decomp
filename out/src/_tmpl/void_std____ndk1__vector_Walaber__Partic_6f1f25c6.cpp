@@ -40,7 +40,7 @@ void std::__ndk1::
      (uVar4 = lVar6 * -0x2492492492492492, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<Walaber::ParticleEmitter::EmitterZone, std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>&>::__split_buffer(&pvStack_60,uVar5,lVar3,&p0->f_0x10);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::ParticleEmitter::EmitterZone, std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>&>(uVar5,lVar3,&p0->f_0x10);
   *puStack_50 = *in_x1;
   puStack_50[1] = in_x1[1];
   *(undefined4 *)(puStack_50 + 2) = *(undefined4 *)(in_x1 + 2);

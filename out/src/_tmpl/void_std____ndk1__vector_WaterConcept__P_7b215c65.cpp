@@ -43,7 +43,7 @@ void std::__ndk1::
      (uVar4 = lVar7 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>::__split_buffer(&pvStack_60,uVar5,lVar3,&p0[1].f_0x4);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>(uVar5,lVar3,&p0[1].f_0x4);
   uVar8 = *in_x1;
   *(undefined4 *)(puStack_50 + 1) = *(undefined4 *)(in_x1 + 1);
   *puStack_50 = uVar8;
@@ -122,7 +122,7 @@ void std::__ndk1::
      (uVar4 = lVar7 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>::__split_buffer(&pWStack_60,uVar5,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>(uVar5,lVar3,p0 + 2);
   uVar8 = *in_x1;
   *(undefined4 *)((long)pWStack_50 + 8) = *(undefined4 *)(in_x1 + 1);
   pWStack_50->f_0x0 = (int)uVar8;

@@ -38,11 +38,11 @@ Walaber::Widget_MovingTextBox::operator=(Walaber__Widget_MovingTextBox *p0)
   *(undefined8 *)&p0->field_0xbc = *(undefined8 *)&in_x1->field_0xbc;
   *(undefined4 *)&p0->field_0xc4 = *(undefined4 *)&in_x1->field_0xc4;
   *(undefined8 *)&p0->field_0xc8 = *(undefined8 *)&in_x1->field_0xc8;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->field_0xd0,&in_x1->field_0xd0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->field_0xd0))->operator=(&in_x1->field_0xd0);
   p0->f_0xe8 = in_x1->f_0xe8;
   *(undefined8 *)&p0->field_0xf0 = *(undefined8 *)&in_x1->field_0xf0;
   *(undefined4 *)&p0->field_0xf8 = *(undefined4 *)&in_x1->field_0xf8;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->field_0x100,&in_x1->field_0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->field_0x100))->operator=(&in_x1->field_0x100);
   p0->f_0x110 = in_x1->f_0x110;
   p0->f_0x111 = in_x1->f_0x111;
   p0->f_0x112 = in_x1->f_0x112;
@@ -160,7 +160,7 @@ void Walaber::Widget_MovingTextBox::init(void)
   *(undefined4 *)(param_6 + 0x2f) = param_12;
   *(undefined4 *)((long)param_6 + 0x17c) = param_5;
                     /* try { // try from 00380d3c to 00380d5b has its CatchHandler @ 00380d94 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_6 + 0x1a,param_11);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_6 + 0x1a))->operator=(param_11);
   (**(code **)(*param_6 + 0x78))(param_6);
   Walaber::Widget_MovingTextBox::_updateBorders(param_6);
   return;
@@ -251,7 +251,7 @@ void Walaber::Widget_MovingTextBox::setBGTexture(long param_1,long *param_2)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x100))->operator=();
   lVar1 = *param_2;
   if ((lVar1 != 0) && (*(int *)param_2[1] != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -312,11 +312,11 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
   undefined4 uStack_4c;
   
   lVar6 = *(long *)(param_1 + 0x150);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
+  new ((void *)(abStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 0038102c to 00381043 has its CatchHandler @ 003810fc */
   Walaber::BitmapFont::measureString(&uStack_88,*(undefined4 *)(param_1 + 0x174),*(undefined8 *)(param_1 + 0xe8),
                   param_2);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&lStack_68,abStack_80);
+  new ((void *)(&lStack_68)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_80);
   uStack_50 = uStack_88;
   uStack_4c = uStack_84;
                     /* try { // try from 0038104c to 00381053 has its CatchHandler @ 003810e4 */
@@ -604,7 +604,7 @@ void Walaber::Widget_MovingTextBox::draw(Walaber__SpriteBatch *p0)
     lVar3 = uStack_70;
     uStack_70._4_4_ = SUB84(lVar3,4);
     uStack_70._0_4_ = CONCAT13(uVar6,CONCAT12(uVar5,CONCAT11(uVar4,(undefined1)uStack_70)));
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,*(long *)&p0[6].field_0x8 + 0x10);
+    new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)&p0[6].field_0x8 + 0x10);
                     /* try { // try from 00381674 to 003816bf has its CatchHandler @ 00381720 */
     Walaber::Node::getWorldPosition(&uStack_68,p0);
     uVar12 = p0[5].f_0x1c;

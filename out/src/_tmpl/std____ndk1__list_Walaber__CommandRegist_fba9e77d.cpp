@@ -22,11 +22,11 @@ void std::__ndk1::list<Walaber::CommandRegister,std::__ndk1::allocator<Walaber::
   plVar2 = (long *)operator new(0x68);
   *plVar2 = 0;
                     /* try { // try from 003e9f20 to 003e9f2b has its CatchHandler @ 003e9fc0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar2 + 2);
+  new ((void *)(plVar2 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 003e9f34 to 003e9f3b has its CatchHandler @ 003e9fa8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar2 + 5,in_x1 + 0x18);
+  new ((void *)(plVar2 + 5)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x18);
                     /* try { // try from 003e9f44 to 003e9f47 has its CatchHandler @ 003e9f90 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar2 + 8,in_x1 + 0x30);
+  new ((void *)(plVar2 + 8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x30);
   lVar3 = *(long *)(in_x1 + 0x48);
   piVar1 = *(int **)(in_x1 + 0x50);
   plVar2[0xb] = lVar3;

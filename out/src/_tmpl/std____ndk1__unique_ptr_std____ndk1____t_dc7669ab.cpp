@@ -40,7 +40,7 @@ void std::__ndk1::
   param_1[1] = param_2 + 8;
   *(undefined1 *)(param_1 + 2) = 0;
                     /* try { // try from 004004d0 to 004004d7 has its CatchHandler @ 00400510 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x20,*param_4);
+  new ((void *)(lVar1 + 0x20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_4);
                     /* try { // try from 004004dc to 004004df has its CatchHandler @ 004004f8 */
   new ((void *)(lVar1 + 0x38)) Walaber::Property();
   *(undefined1 *)(param_1 + 2) = 1;

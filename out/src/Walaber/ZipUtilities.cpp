@@ -25,7 +25,7 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   undefined8 *puStack_48;
   int *piStack_40;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&mUserStoreBasePath);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&mUserStoreBasePath))->operator=();
   puStack_48 = (undefined8 *)operator new(0x10);
   *puStack_48 = &PTR__Callback_0070e2c0;
   puStack_48[1] = _xmlFileRead;
@@ -382,7 +382,7 @@ LAB_003d80e0:
       uVar5 = Walaber::XML::getNode(uStack_90,&bStack_198);
       new ((void *)(&bStack_1b8)) Walaber::XMLDocument::Iterator(uVar5);
                     /* try { // try from 003d83c0 to 003d83cb has its CatchHandler @ 003d88c4 */
-      Walaber::XMLDocument::Iterator::operator=(alStack_a8,&bStack_1b8);
+      ((Walaber::XMLDocument::Iterator *)(alStack_a8))->operator=(&bStack_1b8);
       uVar6 = extraout_x1_01;
       if ((bStack_198 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_184,

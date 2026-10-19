@@ -7,9 +7,9 @@
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
   *(byte *)(this + 0x18) = param_3 & 1;
                     /* try { // try from 003d27c0 to 003d27cb has its CatchHandler @ 003d2808 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x20,param_4);
+  new ((void *)(this + 0x20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_4);
                     /* try { // try from 003d27d0 to 003d27d7 has its CatchHandler @ 003d27f0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x38,param_5);
+  new ((void *)(this + 0x38)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
   *(undefined8 *)(this + 0x50) = param_6;
   return;
 }

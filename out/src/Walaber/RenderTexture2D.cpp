@@ -486,7 +486,7 @@ void Walaber::RenderTexture2D::_applySettings(long param_1)
   uStack_a8 = param_4[2];
   uStack_98 = param_4[4];
                     /* try { // try from 0039691c to 0039691f has its CatchHandler @ 003969f8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,param_4 + 5);
+  new ((void *)(abStack_90)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_4 + 5);
   uStack_68 = param_4[10];
   uStack_70 = param_4[9];
   uStack_78 = param_4[8];

@@ -17,9 +17,9 @@ WaterConceptConstants::FluidDescription::operator=(WaterConceptConstants__FluidD
   uint *in_x1;
   
   p0->f_0x0 = *in_x1;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->field_0x8,in_x1 + 2);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->field_0x18,in_x1 + 6);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->field_0x28,in_x1 + 10);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->field_0x8))->operator=(in_x1 + 2);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->field_0x18))->operator=(in_x1 + 6);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->field_0x28))->operator=(in_x1 + 10);
   p0->f_0x38 = (uchar)in_x1[0xe];
   p0->f_0x39 = *(uchar *)((long)in_x1 + 0x39);
   p0->f_0x3a = *(uchar *)((long)in_x1 + 0x3a);

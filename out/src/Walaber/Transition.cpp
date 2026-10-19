@@ -244,7 +244,7 @@ void Walaber::Transition::_drawFont(long param_1)
   
   lVar2 = *(long *)(param_1 + 0x90);
   if (lVar2 != 0) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1 + 0x98);
+    new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1 + 0x98);
                     /* try { // try from 003f4564 to 003f4577 has its CatchHandler @ 003f45b0 */
     Walaber::SpriteBatch::drawString(0,*(undefined4 *)(param_1 + 0xb8),param_1 + 8,lVar2,abStack_50,param_1 + 0xb0,
                     param_1 + 0xc0,*(undefined4 *)(param_1 + 0xbc));

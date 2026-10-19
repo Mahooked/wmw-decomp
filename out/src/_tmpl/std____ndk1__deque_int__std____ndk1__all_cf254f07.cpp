@@ -94,7 +94,7 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::__add_back_capacity(ul
       if (lVar7 == 0) {
         lVar3 = 1;
       }
-      std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>::__split_buffer(&pvStack_70,lVar3,uVar5,param_1 + 3);
+      new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>(lVar3,uVar5,param_1 + 3);
                     /* try { // try from 004802d8 to 004802df has its CatchHandler @ 004804b0 */
       uStack_78 = operator new(0x1000);
                     /* try { // try from 004802e8 to 004802f3 has its CatchHandler @ 004804a0 */
@@ -145,7 +145,7 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::__add_back_capacity(ul
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;
@@ -183,7 +183,7 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::__add_back_capacity(ul
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;

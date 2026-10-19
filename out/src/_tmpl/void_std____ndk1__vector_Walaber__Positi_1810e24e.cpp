@@ -45,7 +45,7 @@ void std::__ndk1::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 0x10);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>&>(uVar2,lVar3,p0 + 0x10);
   uVar7 = *in_x1;
   puStack_50[1] = in_x1[1];
   *puStack_50 = uVar7;

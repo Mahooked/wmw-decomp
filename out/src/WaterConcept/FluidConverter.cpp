@@ -49,7 +49,7 @@
   do {
     auStack_80[0] = 0;
     auStack_80[1] = 0;
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar1 + lVar3,auStack_80);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar1 + lVar3))->operator=(auStack_80);
     ((Walaber::SharedPtr<Walaber::Texture> *)auStack_80)->~SharedPtr<Walaber::Texture>();
     lVar3 = lVar3 + 0x10;
   } while (lVar3 != 0x50);
@@ -69,7 +69,7 @@
   auStack_80[0] = 0x31;
                     /* try { // try from 0047cda0 to 0047cdbb has its CatchHandler @ 0047d184 */
   Walaber::TextureManager::getTexture(auStack_68,uVar4,auStack_80,&uStack_90,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(lVar1,auStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(lVar1))->operator=(auStack_68);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_68)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
@@ -92,7 +92,7 @@
   uStack_a8 = 0;
                     /* try { // try from 0047ce38 to 0047ce53 has its CatchHandler @ 0047d170 */
   Walaber::TextureManager::getTexture(auStack_68,uVar4,auStack_80,&uStack_b0,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x3e0,auStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x3e0))->operator=(auStack_68);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_68)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_b0)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
@@ -115,7 +115,7 @@
   auStack_80[0] = 0x31;
                     /* try { // try from 0047ced8 to 0047cef3 has its CatchHandler @ 0047d15c */
   Walaber::TextureManager::getTexture(auStack_68,uVar4,auStack_80,&uStack_c0,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x3f0,auStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x3f0))->operator=(auStack_68);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_68)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_c0)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
@@ -138,7 +138,7 @@
   uStack_c8 = 0;
                     /* try { // try from 0047cf70 to 0047cf8b has its CatchHandler @ 0047d148 */
   Walaber::TextureManager::getTexture(auStack_68,uVar4,auStack_80,&uStack_d0,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x400,auStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x400))->operator=(auStack_68);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_68)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
@@ -161,7 +161,7 @@
   uStack_d8 = 0;
                     /* try { // try from 0047d008 to 0047d023 has its CatchHandler @ 0047d134 */
   Walaber::TextureManager::getTexture(auStack_68,uVar4,auStack_80,&uStack_e0,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x410,auStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x410))->operator=(auStack_68);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_68)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_e0)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
@@ -184,7 +184,7 @@
   uStack_e8 = 0;
                     /* try { // try from 0047d0a4 to 0047d0bf has its CatchHandler @ 0047d120 */
   Walaber::TextureManager::getTexture(auStack_68,uVar4,auStack_80,&uStack_f0,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x420,auStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x420))->operator=(auStack_68);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_68)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_f0)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
@@ -1100,7 +1100,7 @@ void WaterConcept::FluidConverter::_animationEvent(void *p0, long in_x1)
   void *pvStack_40;
   
   if (*(int *)(in_x1 + 0x18) == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,*(undefined8 *)(in_x1 + 8));
+    new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(undefined8 *)(in_x1 + 8));
     uVar1 = (ulong)(abStack_50[0] >> 1);
     if ((abStack_50[0] & 1) != 0) {
       uVar1 = uStack_48;
@@ -1135,7 +1135,7 @@ void WaterConcept::FluidConverter::_animationEvent(void *p0, long in_x1)
       }
     }
     else {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,*(undefined8 *)(in_x1 + 8));
+      new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(undefined8 *)(in_x1 + 8));
       uVar1 = (ulong)(abStack_50[0] >> 1);
       if ((abStack_50[0] & 1) != 0) {
         uVar1 = uStack_48;

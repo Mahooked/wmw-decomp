@@ -50,7 +50,7 @@ void std::__ndk1::
   param_1[1] = param_2 + 8;
   *(undefined1 *)(param_1 + 2) = 0;
                     /* try { // try from 003a05b0 to 003a05b3 has its CatchHandler @ 003a05d4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x20,*param_4);
+  new ((void *)(lVar1 + 0x20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_4);
   *(undefined8 *)(lVar1 + 0x40) = 0;
   *(undefined8 *)(lVar1 + 0x48) = 0;
   *(undefined8 *)(lVar1 + 0x38) = 0;

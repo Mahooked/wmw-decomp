@@ -72,7 +72,7 @@ joined_r0x00338b5c:
           goto LAB_00338c6c;
         }
                     /* try { // try from 00338b80 to 00338b87 has its CatchHandler @ 00338cc4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar7 + 0x20,param_2 + 4);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar7 + 0x20))->operator=(param_2 + 4);
         *(long *)(lVar7 + 0x38) = param_2[7];
         lVar5 = std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::__detach(lVar7);
                     /* try { // try from 00338b9c to 00338bab has its CatchHandler @ 00338cc0 */

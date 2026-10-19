@@ -19,7 +19,7 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
   void *pvStack_30;
   
   auStack_48[0] = param_3;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40);
+  new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 002c1c80 to 002c1c87 has its CatchHandler @ 002c1cbc */
   std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(param_1 + 8,auStack_48);
   if ((abStack_40[0] & 1) != 0) {
@@ -63,7 +63,7 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
   undefined8 uStack_68;
   undefined1 *puStack_60;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_70);
+  new ((void *)(&uStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   plVar7 = (long *)this[1];
   do {
                     /* try { // try from 003d2f34 to 003d2f3b has its CatchHandler @ 003d30bc */
@@ -191,7 +191,7 @@ void Walaber::FileManager::FH_StandardFileSystem::readFile
   undefined8 uStack_88;
   undefined4 uStack_80;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_1f0);
+  new ((void *)(auStack_1f0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   plVar8 = (long *)this[1];
   do {
     ppuStack_1d0 = &PTR__basic_istream_00710858;
@@ -210,7 +210,7 @@ void Walaber::FileManager::FH_StandardFileSystem::readFile
     ppuStack_1c0 = &PTR__basic_fstream_00710748;
     uStack_88 = 0;
                     /* try { // try from 003d31b4 to 003d31bb has its CatchHandler @ 003d3504 */
-    std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::basic_filebuf(auStack_1b8);
+    new ((void *)(auStack_1b8)) std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>();
     if (lStack_140 == 0) {
       lStack_140 = fopen(puVar1,&DAT_0061ee22);
       if (lStack_140 == 0) goto LAB_003d31c4;

@@ -64,7 +64,7 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
       if (lVar1 == 0) {
         uVar4 = 1;
       }
-      std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>::__split_buffer(&ppp_Stack_70,uVar4,uVar4 >> 2,p0 + 3);
+      new ((void *)(&ppp_Stack_70)) std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>(uVar4,uVar4 >> 2,p0 + 3);
       ppp_Var7 = p0[1];
       ppp_Var8 = p0[2];
       ppp_Var5 = ppp_Stack_60;
@@ -173,7 +173,7 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
       if (lVar5 == 0) {
         lVar2 = 1;
       }
-      std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>::__split_buffer(&ppp_Stack_70,lVar2,lVar2 + 3U >> 2,p0 + 3);
+      new ((void *)(&ppp_Stack_70)) std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>(lVar2,lVar2 + 3U >> 2,p0 + 3);
       ppp_Var4 = p0[1];
       ppp_Var3 = p0[2];
       if (ppp_Var4 != ppp_Var3) {

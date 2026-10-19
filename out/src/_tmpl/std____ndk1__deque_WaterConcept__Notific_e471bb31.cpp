@@ -85,10 +85,10 @@ void std::__ndk1::
   else {
     lVar4 = *(long *)(lVar4 + (uVar3 >> 3 & 0x1ffffffffffffff8)) + (uVar3 & 0x3f) * 0x40;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4);
+  new ((void *)(lVar4)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   *(undefined8 *)(lVar4 + 0x18) = *(undefined8 *)(in_x1 + 0x18);
                     /* try { // try from 004a091c to 004a091f has its CatchHandler @ 004a0944 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4 + 0x20,in_x1 + 0x20);
+  new ((void *)(lVar4 + 0x20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x20);
   *(undefined8 *)(lVar4 + 0x38) = *(undefined8 *)(in_x1 + 0x38);
   *(long *)(p0 + 0x28) = *(long *)(p0 + 0x28) + 1;
   return;
@@ -132,7 +132,7 @@ void std::__ndk1::
       if (lVar7 == 0) {
         lVar3 = 1;
       }
-      std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::__split_buffer(&pvStack_70,lVar3,uVar5,param_1 + 3);
+      new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>(lVar3,uVar5,param_1 + 3);
                     /* try { // try from 004a0ac8 to 004a0acf has its CatchHandler @ 004a0ca0 */
       uStack_78 = operator new(0x1000);
                     /* try { // try from 004a0ad8 to 004a0ae3 has its CatchHandler @ 004a0c90 */
@@ -183,7 +183,7 @@ void std::__ndk1::
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;
@@ -221,7 +221,7 @@ void std::__ndk1::
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;

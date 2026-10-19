@@ -39,7 +39,7 @@ void std::__ndk1::
   param_1[1] = param_2 + 8;
   *(undefined1 *)(param_1 + 2) = 0;
                     /* try { // try from 0035645c to 00356463 has its CatchHandler @ 0035647c */
-  std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property>::pair(lVar1 + 0x20,param_3);
+  new ((void *)(lVar1 + 0x20)) std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property>(param_3);
   *(undefined1 *)(param_1 + 2) = 1;
   return;
 }

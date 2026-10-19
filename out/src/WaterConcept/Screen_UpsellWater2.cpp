@@ -988,7 +988,7 @@ void WaterConcept::Screen_UpsellWater2::_finishedLoadingWidgets(void *p0, int * 
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_1f0)->~SharedPtr<Walaber::Texture>();
   if (puVar18 != (undefined8 *)0x0) {
                     /* try { // try from 005695d8 to 005695df has its CatchHandler @ 00569e4c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_c8,puVar18 + 1);
+    new ((void *)(&uStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar18 + 1);
                     /* try { // try from 005695e0 to 005695e7 has its CatchHandler @ 00569e44 */
     Walaber::TextManager::getISOCodeForCurrentLanguage(&uStack_e0);
                     /* try { // try from 005695e8 to 005695f3 has its CatchHandler @ 00569e3c */
@@ -1060,7 +1060,7 @@ joined_r0x00569694:
     }
     else {
                     /* try { // try from 005696c0 to 005696cb has its CatchHandler @ 00569d74 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&puStack_110,&uStack_e0);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&puStack_110))->operator=(&uStack_e0);
     }
                     /* try { // try from 00569724 to 0056972f has its CatchHandler @ 00569e30 */
     Walaber::StringHelper::getExtension(abStack_128,&uStack_c8);
@@ -1235,7 +1235,7 @@ joined_r0x00569694:
               uStack_1d1._0_1_ = (undefined1)((uint)uVar7 >> 0x18);
             }
                     /* try { // try from 00569adc to 00569ae3 has its CatchHandler @ 00569ed0 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_c8,uVar3 + 0x168);
+            new ((void *)(&uStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(uVar3 + 0x168);
             piVar4 = (int *)((ulong)uStack_c8 >> 1 & 0x7f);
             if (((ulong)uStack_c8 & 1) != 0) {
               piVar4 = piStack_c0;

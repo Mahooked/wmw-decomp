@@ -422,7 +422,7 @@ void Walaber::Widget_ProgressBar::setBGTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x100))->operator=();
   lVar1 = *(long *)(param_1 + 0x100);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x108) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -450,7 +450,7 @@ void Walaber::Widget_ProgressBar::setFillTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x110))->operator=();
   lVar1 = *(long *)(param_1 + 0x110);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x118) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);

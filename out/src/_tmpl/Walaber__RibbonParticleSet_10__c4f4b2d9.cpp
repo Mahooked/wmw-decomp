@@ -62,7 +62,7 @@ void Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0, uint in_w1)
   undefined4 *puVar7;
   
   uVar1 = (ulong)p0;
-  std::__ndk1::vector<Walaber::RibbonParticle<10>, std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::vector(uVar1,in_w1);
+  new ((void *)(uVar1)) std::__ndk1::vector<Walaber::RibbonParticle<10>, std::__ndk1::allocator<Walaber::RibbonParticle<10>>>(in_w1);
   plVar9 = (long *)(uVar1 + 0x28);
   *plVar9 = 0;
   plVar8 = (long *)(uVar1 + 0x18);

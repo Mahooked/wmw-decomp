@@ -43,7 +43,7 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__push_back_slow_path
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<int, std::__ndk1::allocator<int>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 4);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<int, std::__ndk1::allocator<int>&>(uVar2,lVar3,p0 + 4);
   puVar7 = puStack_50 + 1;
   *puStack_50 = *in_x1;
   pvStack_60 = *(void **)p0;
@@ -111,7 +111,7 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__push_back_slow_path
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<int, std::__ndk1::allocator<int>&>::__split_buffer(&piStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&piStack_60)) std::__ndk1::__split_buffer<int, std::__ndk1::allocator<int>&>(uVar2,lVar3,p0 + 2);
   piVar7 = piStack_50 + 1;
   *piStack_50 = *in_x1;
   piStack_60 = *p0;

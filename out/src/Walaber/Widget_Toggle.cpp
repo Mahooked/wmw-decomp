@@ -33,22 +33,22 @@ Walaber__Widget_Toggle * Walaber::Widget_Toggle::operator=(Walaber__Widget_Toggl
   *(undefined8 *)&p0->field_0xbc = *(undefined8 *)(in_x1 + 0xbc);
   *(undefined4 *)&p0->field_0xc4 = *(undefined4 *)(in_x1 + 0xc4);
   *(undefined8 *)&p0->field_0xc8 = *(undefined8 *)(in_x1 + 200);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->field_0xd0,in_x1 + 0xd0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->field_0xd0))->operator=(in_x1 + 0xd0);
   p0->f_0xe8 = *(ulong *)(in_x1 + 0xe8);
   p0->f_0xf0 = *(ulong *)(in_x1 + 0xf0);
   *(undefined4 *)&p0->field_0xf8 = *(undefined4 *)(in_x1 + 0xf8);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x100,in_x1 + 0x100);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x110,in_x1 + 0x110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x100))->operator=(in_x1 + 0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x110))->operator=(in_x1 + 0x110);
   p0->f_0x120 = *(ulong *)(in_x1 + 0x120);
   p0->f_0x128 = *(ulong *)(in_x1 + 0x128);
   p0->f_0x130 = *(ulong *)(in_x1 + 0x130);
   p0->f_0x138 = *(ulong *)(in_x1 + 0x138);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x140,in_x1 + 0x140);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x140))->operator=(in_x1 + 0x140);
   *(undefined8 *)&p0->f_0x150 = *(undefined8 *)(in_x1 + 0x150);
   p0->f_0x158 = *(ulong *)(in_x1 + 0x158);
   p0->f_0x160 = *(ulong *)(in_x1 + 0x160);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->f_0x168,in_x1 + 0x168);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->f_0x180,in_x1 + 0x180);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->f_0x168))->operator=(in_x1 + 0x168);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->f_0x180))->operator=(in_x1 + 0x180);
   p0->f_0x198 = *(float *)(in_x1 + 0x198);
   p0->f_0x19c = *(uchar *)(in_x1 + 0x19c);
   p0->field_0x19d = *(undefined1 *)(in_x1 + 0x19d);
@@ -153,9 +153,9 @@ void Walaber::Widget_Toggle::init(long param_1)
   this[0x2c] = 0;
   this[0x2b] = 0;
                     /* try { // try from 0038c148 to 0038c153 has its CatchHandler @ 0038c234 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x2d,param_7);
+  new ((void *)(this + 0x2d)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_7);
                     /* try { // try from 0038c158 to 0038c163 has its CatchHandler @ 0038c21c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x30,param_8);
+  new ((void *)(this + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_8);
   *(undefined4 *)((long)this + 0x19c) = 0xff000000;
                     /* try { // try from 0038c178 to 0038c17f has its CatchHandler @ 0038c204 */
   (**(code **)(*this + 0x70))(this,param_9);
@@ -222,7 +222,7 @@ void Walaber::Widget_Toggle::setTextureOn(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x100))->operator=();
   lVar1 = *(long *)(param_1 + 0x100);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x108) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -250,7 +250,7 @@ void Walaber::Widget_Toggle::setTextureOff(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x110))->operator=();
   lVar1 = *(long *)(param_1 + 0x110);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x118) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -278,7 +278,7 @@ void Walaber::Widget_Toggle::setIcon(long param_1,long *param_2,undefined8 *para
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x140);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x140))->operator=();
   *(undefined8 *)(param_1 + 0x150) = *param_3;
   lVar1 = *param_2;
   if ((lVar1 != 0) && (*(int *)param_2[1] != 0)) {

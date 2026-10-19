@@ -46,7 +46,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::SeaweedStrand*, std::__ndk1::allocator<WaterConcept::SeaweedStrand*>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<WaterConcept::SeaweedStrand*, std::__ndk1::allocator<WaterConcept::SeaweedStrand*>&>(uVar2,lVar3,p0 + 2);
   uVar7 = *in_x1;
   pWStack_50->f_0x0 = (float)(int)uVar7;
   pWStack_50->f_0x4 = (int)((ulong)uVar7 >> 0x20);

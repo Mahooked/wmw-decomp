@@ -80,7 +80,7 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
     else {
       uVar8 = 0x1fffffffffffffff;
     }
-    std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>::__split_buffer(&puStack_a8,uVar8,(long)param_2 - lVar12 >> 3,param_1 + 2);
+    new ((void *)(&puStack_a8)) std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>(uVar8,(long)param_2 - lVar12 >> 3,param_1 + 2);
     if (puStack_98 == puStack_90) {
       if (puStack_a0 < puStack_a8 || (long)puStack_a0 - (long)puStack_a8 == 0) {
         uVar8 = (long)puStack_90 - (long)puStack_a8 >> 2;
@@ -88,7 +88,7 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
           uVar8 = 1;
         }
                     /* try { // try from 004c751c to 004c75e7 has its CatchHandler @ 004c7658 */
-        std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>::__split_buffer(&puStack_80,uVar8,uVar8 >> 2,uStack_88);
+        new ((void *)(&puStack_80)) std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>(uVar8,uVar8 >> 2,uStack_88);
         puVar4 = puStack_78;
         puVar3 = puStack_90;
         puVar2 = puStack_a0;

@@ -35,7 +35,7 @@ Walaber__Widget_Label * Walaber::Widget_Label::operator=(Walaber__Widget_Label *
   *(undefined8 *)&p0->field_0xbc = *(undefined8 *)(in_x1 + 0xbc);
   *(undefined4 *)&p0->field_0xc4 = *(undefined4 *)(in_x1 + 0xc4);
   *(undefined8 *)&p0->field_0xc8 = *(undefined8 *)(in_x1 + 200);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->field_0xd0,in_x1 + 0xd0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->field_0xd0))->operator=(in_x1 + 0xd0);
   p0->f_0xe8 = *(ulong *)(in_x1 + 0xe8);
   p0->f_0xf0 = *(ulong *)(in_x1 + 0xf0);
   uVar2 = *(undefined8 *)(in_x1 + 0xf8);
@@ -43,7 +43,7 @@ Walaber__Widget_Label * Walaber::Widget_Label::operator=(Walaber__Widget_Label *
   p0->f_0xfc = (float)(int)((ulong)uVar2 >> 0x20);
   *(undefined8 *)&p0->f_0x100 = *(undefined8 *)(in_x1 + 0x100);
   p0->f_0x108 = *(uint *)(in_x1 + 0x108);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x110,in_x1 + 0x110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x110))->operator=(in_x1 + 0x110);
   p0->tileOffset = *(double *)(in_x1 + 0x120);
   p0->f_0x128 = *(double *)(in_x1 + 0x128);
   p0->f_0x130 = *(ulong *)(in_x1 + 0x130);
@@ -66,7 +66,7 @@ Walaber__Widget_Label * Walaber::Widget_Label::operator=(Walaber__Widget_Label *
   p0->f_0x154 = (float)(int)((ulong)uVar4 >> 0x20);
   p0->f_0x148 = (float)(int)uVar3;
   p0->f_0x14c = (float)(int)((ulong)uVar3 >> 0x20);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->f_0x168,in_x1 + 0x168);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->f_0x168))->operator=(in_x1 + 0x168);
   p0->f_0x180 = *(ulong *)(in_x1 + 0x180);
   return p0;
 }
@@ -331,7 +331,7 @@ void Walaber::Widget_Label::init(long param_1)
     uVar1 = *(ulong *)(param_7 + 8);
   }
   if ((uVar1 != 0) && (param_2[0x1d] != 0)) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_2 + 0x2d,param_7);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_2 + 0x2d))->operator=(param_7);
                     /* try { // try from 0037f684 to 0037f693 has its CatchHandler @ 0037f704 */
     Walaber::BitmapFont::measureString(&fStack_60,0x3f800000,param_2[0x1d],param_7);
     *(undefined8 *)((long)param_2 + 0x104) = CONCAT44(fStack_5c,fStack_60);
@@ -508,7 +508,7 @@ LAB_0037f9d0:
     uVar1 = *(ulong *)(param_10 + 8);
   }
   if ((uVar1 != 0) && (param_5[0x1d] != 0)) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_5 + 0x2d,param_10);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_5 + 0x2d))->operator=(param_10);
                     /* try { // try from 0037fbc4 to 0037fbd3 has its CatchHandler @ 0037fc48 */
     Walaber::BitmapFont::measureString(&fStack_80,0x3f800000,param_5[0x1d],param_10);
     *(undefined8 *)((long)param_5 + 0x104) = CONCAT44(fStack_7c,fStack_80);
@@ -740,7 +740,7 @@ void Walaber::Widget_Label::setText(long param_1)
   undefined8 uStack_40;
   
   lVar1 = param_1 + 0x168;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar1);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar1))->operator=();
   lVar5 = *(long *)(param_1 + 0xe8);
   if (lVar5 != 0) {
     uVar2 = (ulong)(*(byte *)(param_1 + 0x168) >> 1);
@@ -809,7 +809,7 @@ void Walaber::Widget_Label::setBGTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x110))->operator=();
   lVar1 = *(long *)(param_1 + 0x110);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x118) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -1124,7 +1124,7 @@ void Walaber::Widget_Label::setBaseSize(Walaber__Vector2 p0, undefined8 * in_x1)
   *(undefined4 *)&p0->field_0xc4 = *(undefined4 *)(in_x1 + 0xc4);
   *(undefined8 *)&p0->field_0xc8 = *(undefined8 *)(in_x1 + 200);
                     /* try { // try from 00428be0 to 00428be3 has its CatchHandler @ 00428cfc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&p0->field_0xd0,in_x1 + 0xd0);
+  new ((void *)(&p0->field_0xd0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0xd0);
   p0->f_0xe8 = *(ulong *)(in_x1 + 0xe8);
   p0->f_0xf0 = *(ulong *)(in_x1 + 0xf0);
   *(undefined ***)p0 = &PTR__Widget_Label_0070f1a8;
@@ -1163,7 +1163,7 @@ void Walaber::Widget_Label::setBaseSize(Walaber__Vector2 p0, undefined8 * in_x1)
   p0->f_0x148 = (float)(int)uVar5;
   p0->f_0x14c = (float)(int)((ulong)uVar5 >> 0x20);
                     /* try { // try from 00428cc8 to 00428ccb has its CatchHandler @ 00428ce4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&p0->f_0x168,in_x1 + 0x168);
+  new ((void *)(&p0->f_0x168)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x168);
   p0->f_0x180 = *(ulong *)(in_x1 + 0x180);
   return;
 }

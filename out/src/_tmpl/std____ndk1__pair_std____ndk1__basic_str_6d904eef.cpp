@@ -20,7 +20,7 @@ void std::__ndk1::
 {
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
                     /* try { // try from 004d11c8 to 004d11cb has its CatchHandler @ 004d11d8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x18,param_2 + 0x18);
+  new ((void *)(param_1 + 0x18)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x18);
   return;
 }
 

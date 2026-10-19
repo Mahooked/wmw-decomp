@@ -95,7 +95,7 @@ void WaterConcept::NotificationSingleton::setBusyTexture(long param_1,undefined8
   uStack_50 = 0;
                     /* try { // try from 0049db58 to 0049db6f has its CatchHandler @ 0049dbbc */
   Walaber::TextureManager::getTexture(auStack_48,uVar2,param_2,&uStack_58,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x100,auStack_48);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x100))->operator=(auStack_48);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_58)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_68)->~SharedPtr<Walaber::Callback>();
@@ -290,10 +290,10 @@ void WaterConcept::NotificationSingleton::notify
     auStack_70[0] = 0;
     auStack_70[1] = 0;
                     /* try { // try from 0049dee8 to 0049dfa7 has its CatchHandler @ 0049e01c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_90);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_90))->operator=();
     uStack_78 = param_1;
     iStack_74 = param_5;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_70,param_4);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_70))->operator=(param_4);
     std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::push_back(param_2 + 0x18,auStack_90);
     void std::__ndk1::__sift_up<WaterConcept::NotificationSingleton::NotificationData::NotificationCompare&, std::__ndk1::__deque_iterator<WaterConcept::NotificationSingleton::NotificationData, WaterConcept::NotificationSingleton::NotificationData*, WaterConcept::NotificationSingleton::NotificationData&, WaterConcept::NotificationSingleton::NotificationData**, long, 64l>>();
     pvVar1 = (void *)((ulong)auStack_90 | 1);
@@ -346,10 +346,10 @@ void WaterConcept::NotificationSingleton::notify
   auStack_80[0] = 0;
   auStack_80[1] = 0;
                     /* try { // try from 0049e0ac to 0049e187 has its CatchHandler @ 0049e1dc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_a0,param_3);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_a0))->operator=(param_3);
   uStack_88 = param_1;
   uStack_84 = param_5;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_80,param_4);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_80))->operator=(param_4);
   uStack_68 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) * (float)((ulong)*param_6 >> 0x20),
                        (float)_sScreenSize * (float)*param_6);
   std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::push_back(param_2 + 0x18,auStack_a0);
@@ -441,7 +441,7 @@ void WaterConcept::NotificationSingleton::update(void *p0, float * in_x1)
     uStack_a9 = (undefined1)((ulong)lVar11 >> 0x38);
     lVar8 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>((long)p0 + 0x50,lVar11,&DAT_00638e78,&uStack_b0,&uStack_88);
     *(undefined8 *)((long)p0 + 0x68) = *(undefined8 *)(lVar8 + 0x38);
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=((long)p0 + 0x70,lVar11);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)((long)p0 + 0x70))->operator=(lVar11);
     *(undefined4 *)((long)p0 + 0x88) = *(undefined4 *)(lVar1 + 0x1c);
     plVar9 = *(long **)((long)p0 + 0x68);
     *(undefined8 *)((long)p0 + 0x8c) = *(undefined8 *)(lVar1 + 0x38);
@@ -687,7 +687,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
   
   lVar7 = Walaber::DateTime::getCurrentUnixLocalTime();
   if (0x1517f < lVar7 - DAT_0075e028) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a8,&DAT_0075cc78);
+    new ((void *)(abStack_a8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0075cc78);
                     /* try { // try from 0049e83c to 0049e84f has its CatchHandler @ 0049f138 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_100,&DAT_0075cc60,"=\'");
     uVar9 = ram0x0075cd88;
@@ -788,7 +788,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
             operator delete(pvStack_80);
           }
                     /* try { // try from 0049ea2c to 0049ea3b has its CatchHandler @ 0049ef94 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_a8,&DAT_0075cc78);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(abStack_a8))->operator=(&DAT_0075cc78);
                     /* try { // try from 0049ea3c to 0049ea53 has its CatchHandler @ 0049ef78 */
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_100,&DAT_0075cc60,"=\'");
           uVar13 = DAT_0075cda0;

@@ -31,7 +31,7 @@ void Walaber::SkeletonActorCueAnimationTrack::apply(long * in_x0, float p0)
         if (iVar1 != 0) goto LAB_00334a48;
         lVar3 = *in_x0;
         lVar6 = lVar4 + lVar5 * 0x38;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,lVar6 + 8);
+        new ((void *)(abStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar6 + 8);
                     /* try { // try from 00334a0c to 00334a17 has its CatchHandler @ 00334a74 */
         Walaber::SkeletonActor::playAnimation(*(undefined4 *)(lVar6 + 0x2c),lVar3,abStack_60,*(undefined4 *)(lVar6 + 0x28)
                         ,*(undefined4 *)(lVar6 + 0x20),*(undefined4 *)(lVar6 + 0x24),
@@ -78,7 +78,7 @@ LAB_00334a48:
   ulong *in_x1;
   
   p0->f_0x0 = *in_x1;
-  std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::vector(&p0->f_0x8,in_x1 + 1);
+  new ((void *)(&p0->f_0x8)) std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>(in_x1 + 1);
   p0->f_0x20 = in_x1[4];
   return;
 }

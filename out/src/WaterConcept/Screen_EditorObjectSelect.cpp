@@ -484,7 +484,7 @@ void WaterConcept::Screen_EditorObjectSelect::handleEvent
         uVar5 = Walaber::AABB::contains(plVar9[7] + 0x15c,&fStack_40);
         if ((uVar5 & 1) != 0) {
           uVar6 = Walaber::ScreenManager::getScreenWithName(9);
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_58,plVar9 + 4);
+          new ((void *)(abStack_58)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar9 + 4);
                     /* try { // try from 004d1d94 to 004d1d9f has its CatchHandler @ 004d1de8 */
           WaterConcept::Screen_Editor::addObject(uVar6,abStack_58);
           if ((abStack_58[0] & 1) != 0) {
@@ -727,7 +727,7 @@ void WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber__Message *p0, lo
     pcStack_140 = (void *)0x0;
     uStack_150 = (ulong *)0x746e756f630a;
                     /* try { // try from 004d1ed4 to 004d1ee3 has its CatchHandler @ 004d3fb8 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,&uStack_150);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&uStack_150);
     uVar6 = Walaber::Property::asInt();
     if (((ulong)uStack_150 & 1) != 0) {
       operator delete(pcStack_140);
@@ -749,7 +749,7 @@ void WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber__Message *p0, lo
         builtin_strncpy(pcVar15,"/Objects/",9);
         uStack_148 = 0;
                     /* try { // try from 004d2000 to 004d2013 has its CatchHandler @ 004d4098 */
-        Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_d0);
+        ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](abStack_d0);
         Walaber::Property::asString(&uStack_120);
                     /* try { // try from 004d2014 to 004d201f has its CatchHandler @ 004d4060 */
         Walaber::StringHelper::removePath(abStack_108,&uStack_120);
@@ -797,7 +797,7 @@ void WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber__Message *p0, lo
           operator delete(pcStack_110);
         }
                     /* try { // try from 004d213c to 004d2147 has its CatchHandler @ 004d407c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_168,&uStack_f0);
+        new ((void *)(abStack_168)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_f0);
         uStack_148 = 0;
         uStack_150 = (ulong *)0x0;
         uStack_170 = 0;

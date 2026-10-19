@@ -81,7 +81,7 @@ undefined4 std::__ndk1::numpunct<wchar_t>::do_thousands_sep(long param_1)
 void std::__ndk1::numpunct<wchar_t>::do_grouping(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2 + 0x18);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x18);
   return;
 }
 

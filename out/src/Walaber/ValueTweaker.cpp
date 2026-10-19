@@ -40,9 +40,9 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     aiStack_a8[0] = param_3;
     puStack_a0 = &uStack_98;
                     /* try { // try from 0040099c to 004009a7 has its CatchHandler @ 00400aa8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c0,param_2);
+    new ((void *)(abStack_c0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
                     /* try { // try from 004009ac to 004009bf has its CatchHandler @ 00400a90 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_88,abStack_c0);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_88))->operator=(abStack_c0);
     Walaber::ValueTweaker::TweakableValue::_fireMappings(aiStack_a8);
     if ((abStack_c0[0] & 1) != 0) {
       operator delete(pvStack_b0);
@@ -54,16 +54,16 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     if ((int *)(lVar3 + 0x38) != aiStack_a8) {
       void std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long>>(lVar3 + 0x40,puStack_a0,&uStack_98);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x58,auStack_88);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x58))->operator=(auStack_88);
     if ((auStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }
     std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::destroy(&puStack_a0,uStack_98);
   }
   else if (*(int *)(puVar2 + 7) == param_3) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,param_2);
+    new ((void *)(abStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
                     /* try { // try from 0040095c to 0040096b has its CatchHandler @ 00400a78 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(puVar2 + 0xb,abStack_70);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(puVar2 + 0xb))->operator=(abStack_70);
     Walaber::ValueTweaker::TweakableValue::_fireMappings(puVar2 + 7);
     if ((abStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
@@ -112,7 +112,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     if ((undefined4 *)(lVar3 + 0x38) != auStack_90) {
       void std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long>>(lVar3 + 0x40,puStack_88,&uStack_80);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x58,auStack_70);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x58))->operator=(auStack_70);
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -164,7 +164,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
     if ((undefined4 *)(lVar3 + 0x38) != auStack_90) {
       void std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long>>(lVar3 + 0x40,puStack_88,&uStack_80);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x58,auStack_70);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x58))->operator=(auStack_70);
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -219,7 +219,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     if ((undefined4 *)(lVar3 + 0x38) != auStack_98) {
       void std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long>>(lVar3 + 0x40,puStack_90,&uStack_88);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x58,auStack_78);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x58))->operator=(auStack_78);
     if ((auStack_78[0] & 1) != 0) {
       operator delete(pvStack_68);
     }
@@ -278,7 +278,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     if ((undefined4 *)(lVar3 + 0x38) != auStack_a8) {
       void std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long>>(lVar3 + 0x40,puStack_a0,&uStack_98);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x58,auStack_88);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x58))->operator=(auStack_88);
     if ((auStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }
@@ -344,7 +344,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     if ((undefined4 *)(lVar3 + 0x38) != auStack_98) {
       void std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long>>(lVar3 + 0x40,puStack_90,&uStack_88);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x58,auStack_78);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x58))->operator=(auStack_78);
     if ((auStack_78[0] & 1) != 0) {
       operator delete(pvStack_68);
     }
@@ -667,7 +667,7 @@ void Walaber::ValueTweaker::getTweakableValueString(undefined8 *param_1,undefine
   
   puVar1 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_2);
   if (puVar1 != &DAT_00730910) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,puVar1 + 0xb);
+    new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar1 + 0xb);
     return;
   }
   *param_1 = 0;
@@ -857,7 +857,7 @@ void Walaber::ValueTweaker::loadFromFile(byte *param_1)
   ppuStack_1c0 = &PTR__basic_ifstream_00711270;
   appuStack_108[0] = &PTR__basic_ifstream_00711298;
                     /* try { // try from 00402a10 to 00402a17 has its CatchHandler @ 00402c50 */
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::basic_filebuf(auStack_1b0);
+  new ((void *)(auStack_1b0)) std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>();
   if (lStack_138 == 0) {
     lStack_138 = fopen(param_1,"r");
     if (lStack_138 == 0) goto LAB_00402a20;
@@ -908,11 +908,11 @@ LAB_00402a20:
           }
           printf("got elements! name[%s]  datatype[%s]  value[%s]\n",pbVar4,pbVar5,pbVar6);
                     /* try { // try from 00402b58 to 00402b5f has its CatchHandler @ 00402c5c */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_208,pbStack_1f0);
+          new ((void *)(abStack_208)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbStack_1f0);
                     /* try { // try from 00402b68 to 00402b6f has its CatchHandler @ 00402c6c */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_220,pbStack_1f0 + 0x30);
+          new ((void *)(abStack_220)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbStack_1f0 + 0x30);
                     /* try { // try from 00402b78 to 00402b7f has its CatchHandler @ 00402c64 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_238,pbStack_1f0 + 0x18);
+          new ((void *)(abStack_238)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbStack_1f0 + 0x18);
                     /* try { // try from 00402b80 to 00402b97 has its CatchHandler @ 00402c78 */
           uVar2 = Walaber::ValueTweaker::_StringToValueType(abStack_238);
           Walaber::ValueTweaker::setTweakableValue(abStack_208,abStack_220,uVar2);

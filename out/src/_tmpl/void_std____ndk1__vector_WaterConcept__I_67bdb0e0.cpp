@@ -46,12 +46,12 @@ void std::__ndk1::
      (uVar6 = lVar9 * -0x6666666666666666, uVar7 = uVar1, uVar1 <= uVar6)) {
     uVar7 = uVar6;
   }
-  std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>::__split_buffer(&puStack_60,uVar7,lVar5,p0 + 0x10);
+  new ((void *)(&puStack_60)) std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>(uVar7,lVar5,p0 + 0x10);
   uVar10 = *in_x1;
   *(undefined1 *)(puStack_50 + 1) = *(undefined1 *)(in_x1 + 1);
   *puStack_50 = uVar10;
                     /* try { // try from 0048a774 to 0048a777 has its CatchHandler @ 0048a834 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puStack_50 + 2,in_x1 + 2);
+  new ((void *)(puStack_50 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 2);
   puVar2 = puStack_50 + 5;
   puStack_60 = *(undefined8 **)p0;
   puStack_50 = *(undefined8 **)(p0 + 8);

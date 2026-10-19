@@ -75,7 +75,7 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
       if (lVar7 == 0) {
         lVar3 = 1;
       }
-      std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>&>::__split_buffer(&pvStack_70,lVar3,uVar5,param_1 + 3);
+      new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>&>(lVar3,uVar5,param_1 + 3);
                     /* try { // try from 0033f68c to 0033f693 has its CatchHandler @ 0033f864 */
       uStack_78 = operator new(0x1000);
                     /* try { // try from 0033f69c to 0033f6a7 has its CatchHandler @ 0033f854 */
@@ -126,7 +126,7 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;
@@ -164,7 +164,7 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;

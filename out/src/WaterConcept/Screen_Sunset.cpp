@@ -630,7 +630,7 @@ void WaterConcept::Screen_Sunset::_finishedLoadingWidgets(void *p0, int * in_x1)
   
   if (*in_x1 != 1) goto LAB_00566674;
   lVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),1);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,lVar5 + 0x168);
+  new ((void *)(abStack_90)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar5 + 0x168);
   puStack_b0 = (undefined8 *)0x0;
   piStack_a8 = (int *)0x0;
   puStack_a0 = (undefined1 *)0x0;
@@ -695,7 +695,7 @@ LAB_00566050:
     operator delete(puStack_d0);
   }
                     /* try { // try from 005660cc to 005660d7 has its CatchHandler @ 0056681c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_90,&puStack_b0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(abStack_90))->operator=(&puStack_b0);
                     /* try { // try from 005660d8 to 005660e3 has its CatchHandler @ 00566818 */
   Walaber::Node::getWorldScale(&uStack_100,lVar5);
   fVar17 = *(float *)(lVar5 + 0x90);
@@ -807,7 +807,7 @@ LAB_00566050:
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_100)->~SharedPtr<Walaber::Texture>();
     if (puVar10 != (undefined8 *)0x0) {
                     /* try { // try from 005662e0 to 005662e7 has its CatchHandler @ 00566780 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_168,puVar10 + 1);
+      new ((void *)(abStack_168)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar10 + 1);
                     /* try { // try from 005662e8 to 005662ef has its CatchHandler @ 00566778 */
       Walaber::TextManager::getISOCodeForCurrentLanguage(abStack_180);
                     /* try { // try from 005662f0 to 005662fb has its CatchHandler @ 00566770 */
@@ -1151,7 +1151,7 @@ void WaterConcept::Screen_Sunset::backKeyPressed(long param_1)
 void WaterConcept::Screen_Sunset::loadPropertyList(Walaber__PropertyList *p0)
 
 {
-  Walaber::PropertyList::operator=(&p0[6].f_0x10);
+  ((Walaber::PropertyList *)(&p0[6].f_0x10))->operator=();
   return;
 }
 

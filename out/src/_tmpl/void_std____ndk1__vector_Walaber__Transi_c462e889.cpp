@@ -40,7 +40,7 @@ void std::__ndk1::
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<Walaber::Transition_Iris::BladeInfo, std::__ndk1::allocator<Walaber::Transition_Iris::BladeInfo>&>::__split_buffer(&pvStack_60,uVar5,lVar3,p0 + 0x10);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::Transition_Iris::BladeInfo, std::__ndk1::allocator<Walaber::Transition_Iris::BladeInfo>&>(uVar5,lVar3,p0 + 0x10);
   *puStack_50 = *in_x1;
   *(undefined4 *)(puStack_50 + 1) = *(undefined4 *)(in_x1 + 1);
   puStack_50 = (undefined8 *)((long)puStack_50 + 0xc);

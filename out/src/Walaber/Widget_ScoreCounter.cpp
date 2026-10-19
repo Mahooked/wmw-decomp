@@ -43,11 +43,11 @@ Walaber::Widget_ScoreCounter::operator=(Walaber__Widget_ScoreCounter *p0)
   *(undefined8 *)&p0->field_0xbc = *(undefined8 *)&in_x1->field_0xbc;
   *(undefined4 *)&p0->field_0xc4 = *(undefined4 *)&in_x1->field_0xc4;
   *(undefined8 *)&p0->field_0xc8 = *(undefined8 *)&in_x1->field_0xc8;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->field_0xd0,&in_x1->field_0xd0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->field_0xd0))->operator=(&in_x1->field_0xd0);
   p0->f_0xe8 = in_x1->f_0xe8;
   *(undefined8 *)&p0->field_0xf0 = *(undefined8 *)&in_x1->field_0xf0;
   *(undefined4 *)&p0->field_0xf8 = *(undefined4 *)&in_x1->field_0xf8;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->field_0x100,&in_x1->field_0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->field_0x100))->operator=(&in_x1->field_0x100);
   p0->f_0x110 = in_x1->f_0x110;
   p0->f_0x111 = in_x1->f_0x111;
   p0->f_0x112 = in_x1->f_0x112;
@@ -188,11 +188,11 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
       operator delete(pvStack_58);
     }
                     /* try { // try from 00384a78 to 00384a83 has its CatchHandler @ 00384c10 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,&uStack_50);
+    new ((void *)(abStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_50);
                     /* try { // try from 00384a8c to 00384aa3 has its CatchHandler @ 00384c30 */
     Walaber::BitmapFont::measureString(&uStack_a8,*(undefined4 *)(param_1 + 400),*(undefined8 *)(param_1 + 0xe8),
                     &uStack_50);
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_88,abStack_a0);
+    new ((void *)(&uStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a0);
     uStack_70 = uStack_a8;
     puVar2 = *(ulong **)(param_1 + 0x148);
     if (puVar2 < *(ulong **)(param_1 + 0x150)) {
@@ -299,7 +299,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
   *(undefined4 *)((long)param_7 + 0x1a4) = 0;
   *(undefined4 *)((long)param_7 + 0x1ac) = 0x3f000000;
                     /* try { // try from 00384d90 to 00384db7 has its CatchHandler @ 00384df4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_7 + 0x1a,param_12);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_7 + 0x1a))->operator=(param_12);
   (**(code **)(*param_7 + 0x78))(param_7);
   Walaber::Widget_ScoreCounter::init(param_7);
   Walaber::Widget_ScoreCounter::_updateBorders(param_7);
@@ -410,7 +410,7 @@ void Walaber::Widget_ScoreCounter::setBGTexture(long param_1,long *param_2)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x100))->operator=();
   lVar1 = *param_2;
   if ((lVar1 != 0) && (*(int *)param_2[1] != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -802,7 +802,7 @@ void Walaber::Widget_ScoreCounter::draw(Walaber__SpriteBatch *p0)
         lVar4 = *(long *)&p0[5].f_0x28 + (long)*(int *)(lVar4 + uVar6 * 4) * 0x20;
         iVar5 = (int)uVar6;
         if (uVar6 == p0[6].f_0x20) {
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_f8,lVar4);
+          new ((void *)(abStack_f8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar4);
                     /* try { // try from 0038585c to 00385867 has its CatchHandler @ 00385a68 */
           Walaber::Node::getWorldPosition(&uStack_d8,p0);
           uVar3 = uStack_d8;
@@ -828,7 +828,7 @@ void Walaber::Widget_ScoreCounter::draw(Walaber__SpriteBatch *p0)
           bVar2 = abStack_f8[0];
         }
         else {
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_110,lVar4);
+          new ((void *)(abStack_110)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar4);
                     /* try { // try from 00385928 to 00385933 has its CatchHandler @ 00385a64 */
           Walaber::Node::getWorldPosition(&uStack_d8,p0);
           fVar11 = *(float *)&p0[6].f_0x30;

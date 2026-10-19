@@ -60,6 +60,19 @@ DEFSIG = re.compile(r'^([A-Za-z_]\w*(?:::\w+)*)::(~?)([A-Za-z_]\w*)\s*\(')
 # `vector<int>::vector(`) is rejected, matching the previous look-behind.
 SITE = re.compile(r'::(~?)([A-Za-z_]\w*)\s*\(')
 
+# Static-form member *operator* calls: `Cls<T>::operator=(a, b)`, `Cls::
+# operator[](o, i)`, `basic_ostream<char>::operator<<(os, x)`.  They cannot
+# take the static treatment the other members get -- C++ requires every
+# operator other than `new`/`delete` to be a non-static member -- so the call
+# is re-formed on the object instead, the object cast back to the operator's
+# own class because the decompilation has dropped its type (it is as often
+# `lVar + 0xd0` or `&byteField` as a typed pointer).  A free operator call
+# (`std::__ndk1::operator+<...>(a, b)`) has the operator itself as the last
+# component of the qualifier and is left alone.
+OPER = re.compile(
+    r'::(operator\s*(?:\[\s*\]|\(\)|->|<=|>=|==|!=|&&|\|\||<<|>>|'
+    r'[-+*/%^&|!<>~=]))\s*')
+
 # Ghidra's spelling of a bound (or inferred) parameter.  Anything else in a
 # first-parameter position is a type name or an unnamed parameter -- we do
 # not drop those.
@@ -231,12 +244,78 @@ def load_index(path):
     return index
 
 
+def comment_spans(line):
+    """Ranges of `/* ... */` and `// ...` text, so call rewrites skip them."""
+    spans, i = [], 0
+    while True:
+        b = line.find('/*', i)
+        if b < 0:
+            break
+        e = line.find('*/', b + 2)
+        if e < 0:
+            spans.append((b, len(line)))
+            break
+        spans.append((b, e + 2))
+        i = e + 2
+    b = line.find('//')
+    if b >= 0:
+        spans.append((b, len(line)))
+    return spans
+
+
 def rewrite_calls(line):
-    """Rewrite dtor then ctor call sites on one (indented) line, right to left."""
+    """Rewrite operator, dtor then ctor call sites on one line, right to left."""
     changed = 0
     stripped = line.lstrip()
     if not stripped or stripped[:2] in ('//', '/*'):
         return line, 0
+    spans = comment_spans(line)
+
+    def in_comment(pos):
+        return any(a <= pos < b for a, b in spans)
+
+    # --- member operator calls: Ghidra writes these statically too -------
+    # `Cls::operator=(a, b)` -> `(a)->operator=(b)`.  A non-static member
+    # operator cannot take the `static` treatment the other members get --
+    # C++ requires every operator other than `new`/`delete` to be a member --
+    # so the call is re-formed on its object argument instead.  A *free*
+    # operator (`std::__ndk1::operator+<char, ...>(a, b)`) has a namespace as
+    # its qualifier or carries template arguments after the operator name,
+    # and is left alone.
+    boundary = len(line)
+    for m in reversed(list(OPER.finditer(line))):
+        if in_comment(m.start()):
+            continue
+        if line[m.end():m.end() + 1] != '(':
+            continue                      # a signature or type, not a call
+        eq = extract_qual(line, m.start())
+        if eq is None:
+            continue
+        start, qual, targs, base = eq
+        if base in ('std', '__ndk1', ''):
+            continue                      # the operator is a free overload
+        open_idx = m.end()
+        close = match_paren(line, open_idx)
+        if close < 0 or close >= boundary:
+            continue
+        args_raw = line[open_idx + 1:close]
+        if not args_raw.strip():
+            continue          # the object argument was not recovered
+        cut = top_comma_pos(args_raw)
+        if cut < 0:
+            obj, rest = args_raw.strip(), ''
+        else:
+            obj, rest = args_raw[:cut].strip(), args_raw[cut + 1:].strip()
+        op = line[m.start(1):m.end(1)].replace(' ', '')
+        # The object argument has lost its type in the decompilation: it is
+        # as often `lVar + 0xd0`, `&byteField` or `char **` as a correctly
+        # typed pointer, and every form except the last needs the operator's
+        # own class cast back on to call through it.  A pointer of the right
+        # type passes through the cast unchanged, so spell it uniformly.
+        repl = '((%s *)(%s))->%s(%s)' % (qual, obj, op, rest)
+        line = line[:start] + repl + line[close + 1:]
+        boundary = start
+        changed += 1
 
     # --- destructor calls: exactly one argument (the object) -------------
     # Right to left; a rewrite inside a further-left call's parentheses makes
@@ -245,6 +324,8 @@ def rewrite_calls(line):
     for m in reversed(list(SITE.finditer(line))):
         tilde, name = m.group(1), m.group(2)
         if tilde != '~':
+            continue
+        if in_comment(m.start()):
             continue
         eq = extract_qual(line, m.start())
         if eq is None:
@@ -259,31 +340,35 @@ def rewrite_calls(line):
         args = split_top(line[open_idx + 1:close])
         if len(args) != 1 or not args[0]:
             continue
+        # The object is parenthesised: `lVar + 0xd0` must be cast as a sum,
+        # not added to the cast pointer.
         if targs:
             # Template-qualified (`Walaber::SharedPtr<X>::~SharedPtr(p)`):
             # the bare name after `~` only names a template, so spell the
             # arguments in the explicit destructor call as well.
-            repl = '((%s *)%s)->~%s<%s>()' % (qual, args[0], name, targs)
+            repl = '((%s *)(%s))->~%s<%s>()' % (qual, args[0], name, targs)
         else:
-            repl = '((%s *)%s)->~%s()' % (qual, args[0], name)
+            repl = '((%s *)(%s))->~%s()' % (qual, args[0], name)
         line = line[:start] + repl + line[close + 1:]
         boundary = start
         changed += 1
 
     # --- constructor calls: first argument is the constructed object -----
-    # Template-qualified constructor calls (`vector<T>::vector(...)`) stay
-    # untouched, as before: their qualifiers cross a `>` the old regex could
-    # not, and placement-new on an undefined template adds nothing.
+    # A template-qualified call (`vector<T>::vector(obj, ...)`) is rewritten
+    # the same way: the planted type is spelled with its arguments, which is
+    # what placement new needs.
     boundary = len(line)
     for m in reversed(list(SITE.finditer(line))):
         tilde, name = m.group(1), m.group(2)
         if tilde == '~':
             continue
+        if in_comment(m.start()):
+            continue
         eq = extract_qual(line, m.start())
         if eq is None:
             continue
         start, qual, targs, base = eq
-        if targs or base != name:
+        if base != name:
             continue
         open_idx = m.end() - 1
         close = match_paren(line, open_idx)

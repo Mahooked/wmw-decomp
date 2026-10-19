@@ -378,7 +378,7 @@ LAB_005d54e4:
 void std::__ndk1::locale::name(undefined8 param_1,long *param_2)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,*param_2 + 0x120);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_2 + 0x120);
   return;
 }
 
@@ -440,7 +440,7 @@ void std::__ndk1::locale::global(std____ndk1__locale *p0)
   uVar6 = p0->f_0x0;
   *puVar5 = uVar6;
                     /* try { // try from 005d577c to 005d5783 has its CatchHandler @ 005d5878 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,uVar6 + 0x120);
+  new ((void *)(abStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(uVar6 + 0x120);
   uVar6 = (ulong)(abStack_60[0] >> 1);
   if ((abStack_60[0] & 1) != 0) {
     uVar6 = uStack_58;
@@ -458,7 +458,7 @@ void std::__ndk1::locale::global(std____ndk1__locale *p0)
   }
   if (bVar3) {
                     /* try { // try from 005d57f4 to 005d57ff has its CatchHandler @ 005d5870 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,*puVar5 + 0x120);
+    new ((void *)(abStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*puVar5 + 0x120);
     pvVar1 = (void *)((ulong)abStack_60 | 1);
     if ((abStack_60[0] & 1) != 0) {
       pvVar1 = pvStack_50;

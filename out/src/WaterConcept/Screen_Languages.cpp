@@ -43,7 +43,7 @@
   auStack_70[0] = 0x21;
                     /* try { // try from 004ecdd8 to 004ecdf3 has its CatchHandler @ 004ece54 */
   Walaber::TextureManager::getTexture(auStack_58,uVar2,auStack_70,&uStack_80,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x14,auStack_58);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(this + 0x14))->operator=(auStack_58);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_58)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();
@@ -580,7 +580,7 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0, int in_w1)
     if (lStack_78 != 0) {
       *piStack_70 = *piStack_70 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x100,&lStack_68);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x100))->operator=(&lStack_68);
                     /* try { // try from 004ed7c8 to 004ed7cf has its CatchHandler @ 004edb24 */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_68)->~SharedPtr<Walaber::Texture>();
@@ -624,7 +624,7 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0, int in_w1)
     if (lStack_78 != 0) {
       *piStack_70 = *piStack_70 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x110,&lStack_c0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x110))->operator=(&lStack_c0);
                     /* try { // try from 004ed884 to 004ed88b has its CatchHandler @ 004edb00 */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
@@ -668,7 +668,7 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0, int in_w1)
       if (lStack_78 != 0) {
         *piStack_70 = *piStack_70 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x100,&lStack_e0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x100))->operator=(&lStack_e0);
                     /* try { // try from 004ed94c to 004ed953 has its CatchHandler @ 004edadc */
       Walaber::Widget_PushButton::_applyTile(lVar4);
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_e0)->~SharedPtr<Walaber::Texture>();
@@ -712,7 +712,7 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0, int in_w1)
       if (lStack_78 != 0) {
         *piStack_70 = *piStack_70 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x110,&lStack_100);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x110))->operator=(&lStack_100);
                     /* try { // try from 004eda08 to 004eda0f has its CatchHandler @ 004edab8 */
       Walaber::Widget_PushButton::_applyTile(lVar4);
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_100)->~SharedPtr<Walaber::Texture>();
@@ -874,7 +874,7 @@ LAB_004edd6c:
       if (uStack_d8 != 0) {
         *piStack_d0 = *piStack_d0 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(plVar5 + 0x20,&uStack_108);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(plVar5 + 0x20))->operator=(&uStack_108);
                     /* try { // try from 004eded8 to 004ededf has its CatchHandler @ 004ee050 */
       Walaber::Widget_PushButton::_applyTile(plVar5);
       ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_108)->~SharedPtr<Walaber::Texture>();
@@ -899,7 +899,7 @@ LAB_004edd6c:
       if (uStack_d8 != 0) {
         *piStack_d0 = *piStack_d0 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(plVar5 + 0x22,&uStack_128);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(plVar5 + 0x22))->operator=(&uStack_128);
                     /* try { // try from 004edf90 to 004edf97 has its CatchHandler @ 004ee034 */
       Walaber::Widget_PushButton::_applyTile(plVar5);
       ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_128)->~SharedPtr<Walaber::Texture>();

@@ -28,7 +28,7 @@ void std::__ndk1::
   if (p1 != (Walaber__TextureManager__SubTexInfo *)p2) {
     lVar2 = *(long *)&p0->field_0x8;
     do {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar2,p1);
+      new ((void *)(lVar2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(p1);
       uVar4 = p1->f_0x18[1];
       uVar3 = p1->f_0x18[0];
       *(ulong *)(lVar2 + 0x28) = p1->f_0x28;

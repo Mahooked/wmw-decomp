@@ -116,7 +116,7 @@ void WaterConcept::Bomb::_initFinished(long param_1)
   lVar9 = **(long **)(param_1 + 400);
   *piVar8 = *piVar8 + 1;
   puStack_90 = puVar7;
-  Walaber::SharedPtr<Walaber::Callback>::operator=(lVar9 + 0xd0,&puStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(lVar9 + 0xd0))->operator=(&puStack_90);
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_60)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Bomb>> *)&puStack_70)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Bomb>>();
@@ -161,7 +161,7 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0, long in_x1)
   undefined4 uStack_40;
   
   if (*(int *)(in_x1 + 0x18) == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_58,*(undefined8 *)(in_x1 + 8));
+    new ((void *)(&bStack_58)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(undefined8 *)(in_x1 + 8));
     uVar1 = (ulong)(bStack_58 >> 1);
     if ((bStack_58 & 1) != 0) {
       uVar1 = CONCAT26(uStack_4a,CONCAT15(uStack_4b,CONCAT14(uStack_4c,uStack_50)));
@@ -242,7 +242,7 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0, long in_x1)
       ((Walaber::PropertyList *)&bStack_58)->~PropertyList();
     }
     else {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_58,*(undefined8 *)(in_x1 + 8));
+      new ((void *)(&bStack_58)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(undefined8 *)(in_x1 + 8));
       uVar1 = (ulong)(bStack_58 >> 1);
       if ((bStack_58 & 1) != 0) {
         uVar1 = CONCAT26(uStack_4a,CONCAT15(uStack_4b,CONCAT14(uStack_4c,uStack_50)));

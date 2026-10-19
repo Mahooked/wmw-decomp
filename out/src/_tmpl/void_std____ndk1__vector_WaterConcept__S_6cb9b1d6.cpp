@@ -41,7 +41,7 @@ void std::__ndk1::
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>&>::__split_buffer(&pvStack_60,uVar5,lVar3,p0 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>&>(uVar5,lVar3,p0 + 2);
   *puStack_50 = *in_x1;
   uVar7 = in_x1[1];
   *(undefined8 *)((long)puStack_50 + 0xe) = *(undefined8 *)((long)in_x1 + 0xe);

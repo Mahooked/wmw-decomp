@@ -69,7 +69,7 @@
                     /* try { // try from 0035b8f8 to 0035b8ff has its CatchHandler @ 0035ba28 */
   uVar2 = operator new(200);
                     /* try { // try from 0035b904 to 0035b90f has its CatchHandler @ 0035ba20 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b8,param_7);
+  new ((void *)(abStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_7);
   lStack_c8 = *param_4;
   piStack_c0 = (int *)param_4[1];
   if (lStack_c8 != 0) {
@@ -120,19 +120,19 @@ void Walaber::Sprite::addAnimation(long *param_1,long param_2,long *param_3)
   undefined1 auStack_58 [8];
   byte *pbStack_50;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,*param_3);
+  new ((void *)(abStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_3);
                     /* try { // try from 0035badc to 0035bae7 has its CatchHandler @ 0035bbd8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,*param_3);
+  new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_3);
                     /* try { // try from 0035baf0 to 0035bb07 has its CatchHandler @ 0035bbc0 */
   pbStack_50 = abStack_88;
   lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&&>, std::__ndk1::tuple<>>(param_2 + 0x88,abStack_88,&DAT_0062b342,&pbStack_50,auStack_58);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=(lVar3 + 0x38,param_3);
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)(lVar3 + 0x38))->operator=(param_3);
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
   if (*(long *)(param_2 + 0x98) == 1) {
                     /* try { // try from 0035bb34 to 0035bb3b has its CatchHandler @ 0035bbbc */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,*param_3);
+    new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_3);
                     /* try { // try from 0035bb3c to 0035bb4b has its CatchHandler @ 0035bbb8 */
     Walaber::Sprite::setAnimation(auStack_98,param_2,abStack_88);
     ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_98)->~SharedPtr<Walaber::SpriteAnimation>();
@@ -176,7 +176,7 @@ void Walaber::Sprite::setAnimation(long *param_1,long param_2)
   }
   ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_58)->~SharedPtr<Walaber::SpriteAnimation>();
   if ((lStack_58 != 0) && (*piStack_50 != 0)) {
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=(param_2 + 0xa0,param_1);
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)(param_2 + 0xa0))->operator=(param_1);
   }
   return;
 }
@@ -220,7 +220,7 @@ void Walaber::Sprite::setAnimation(long *param_1,long param_2)
                     /* try { // try from 0035bd54 to 0035bd5b has its CatchHandler @ 0035be84 */
   uVar2 = operator new(200);
                     /* try { // try from 0035bd60 to 0035bd6b has its CatchHandler @ 0035be7c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b8,param_9);
+  new ((void *)(abStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_9);
   lStack_c8 = *param_4;
   piStack_c0 = (int *)param_4[1];
   if (lStack_c8 != 0) {
@@ -267,7 +267,7 @@ void Walaber::Sprite::loadFromXML(long param_1,undefined8 param_2,undefined8 par
   undefined4 auStack_48 [2];
   long lStack_40;
   
-  Walaber::SharedPtr<Walaber::Callback>::operator=((long *)(param_1 + 0xb8),param_3);
+  ((Walaber::SharedPtr<Walaber::Callback> *)((long *)(param_1 + 0xb8)))->operator=(param_3);
   *(undefined4 *)(param_1 + 0xb0) = 1;
   Walaber::Sprite::loadAnimationsFromXML(param_1,param_2);
   iVar1 = *(int *)(param_1 + 0xb0) + -1;
@@ -379,7 +379,7 @@ void Walaber::Sprite::getAnimation(undefined8 *param_1,long param_2)
                     /* try { // try from 0035c160 to 0035c163 has its CatchHandler @ 0035c188 */
   lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_2 + 0x88);
   if (param_2 + 0x90 != lVar1) {
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=(param_1,lVar1 + 0x38);
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)(param_1))->operator=(lVar1 + 0x38);
   }
   return;
 }

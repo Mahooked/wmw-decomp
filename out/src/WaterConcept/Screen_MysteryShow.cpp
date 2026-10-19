@@ -137,7 +137,7 @@
   if (puStack_88 != (undefined8 *)0x0) {
     *piStack_80 = *piStack_80 + 1;
   }
-  Walaber::SharedPtr<Walaber::Callback>::operator=(lVar5 + 0xd0,&puStack_e0);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(lVar5 + 0xd0))->operator=(&puStack_e0);
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00538b04 to 00538b0b has its CatchHandler @ 00538e04 */
   uVar3 = operator new(0xe0);
@@ -196,7 +196,7 @@
   if (puStack_88 != (undefined8 *)0x0) {
     *piStack_80 = *piStack_80 + 1;
   }
-  Walaber::SharedPtr<Walaber::Callback>::operator=(lVar5 + 0xd0,&puStack_110);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(lVar5 + 0xd0))->operator=(&puStack_110);
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_110)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00538c24 to 00538c2b has its CatchHandler @ 00538e04 */
   uVar3 = operator new(0xe0);
@@ -255,7 +255,7 @@
   if (puStack_88 != (undefined8 *)0x0) {
     *piStack_80 = *piStack_80 + 1;
   }
-  Walaber::SharedPtr<Walaber::Callback>::operator=(lVar5 + 0xd0,&puStack_140);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(lVar5 + 0xd0))->operator=(&puStack_140);
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_140)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_MysteryShow>> *)&puStack_78)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_MysteryShow>>();
@@ -331,7 +331,7 @@ LAB_00538ebc:
       *piStack_88 = *piStack_88 + 1;
     }
                     /* try { // try from 00538fe4 to 00538feb has its CatchHandler @ 00539404 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80);
+    new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
     uVar4 = uStack_80 >> 1 & 0x7f;
     if ((uStack_80 & 1) != 0) {
       uVar4 = uStack_78;
@@ -370,7 +370,7 @@ LAB_00538ebc:
         *piStack_88 = *piStack_88 + 1;
       }
                     /* try { // try from 005390ec to 005390f3 has its CatchHandler @ 005393f0 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80);
+      new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
       uVar4 = uStack_80 >> 1 & 0x7f;
       if ((uStack_80 & 1) != 0) {
         uVar4 = uStack_78;
@@ -409,7 +409,7 @@ LAB_00538ebc:
           *piStack_88 = *piStack_88 + 1;
         }
                     /* try { // try from 00539278 to 0053927f has its CatchHandler @ 005393c8 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80);
+        new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
         uVar4 = uStack_80 >> 1 & 0x7f;
         if ((uStack_80 & 1) != 0) {
           uVar4 = uStack_78;
@@ -457,7 +457,7 @@ LAB_00538f24:
       *piStack_88 = *piStack_88 + 1;
     }
                     /* try { // try from 00538f70 to 00538f77 has its CatchHandler @ 00539400 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80);
+    new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
     uVar4 = uStack_80 >> 1 & 0x7f;
     if ((uStack_80 & 1) != 0) {
       uVar4 = uStack_78;
@@ -1922,7 +1922,7 @@ void WaterConcept::Screen_MysteryShow::_gotSE(void *p0, long in_x1)
 
 {
   
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0xc0,in_x1 + 8);
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)((long)p0 + 0xc0))->operator=(in_x1 + 8);
   return;
 }
 

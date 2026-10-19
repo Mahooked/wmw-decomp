@@ -40,7 +40,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   else {
     uVar2 = 0x7ffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>::__split_buffer(auStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>(uVar2,lVar3,p0 + 2);
   uVar7 = in_x1[1];
   uVar6 = *in_x1;
   puStack_50[2] = in_x1[2];

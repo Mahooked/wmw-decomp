@@ -279,7 +279,7 @@ void Walaber::ProgrammaticTexture2D::reload(long *param_1,long *param_2)
     ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&lStack_68)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   }
   if (*param_2 != 0) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_58,param_1 + 1);
+    new ((void *)(abStack_58)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1 + 1);
     uStack_40 = 1;
                     /* try { // try from 0039537c to 00395383 has its CatchHandler @ 003953cc */
     (**(code **)(*(long *)*param_2 + 0x10))((long *)*param_2,abStack_58);

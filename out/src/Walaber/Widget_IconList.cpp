@@ -34,7 +34,7 @@ Walaber__Widget_IconList * Walaber::Widget_IconList::operator=(Walaber__Widget_I
   *(undefined8 *)&p0->field_0xbc = *(undefined8 *)&in_x1->field_0xbc;
   *(undefined4 *)&p0->field_0xc4 = *(undefined4 *)&in_x1->field_0xc4;
   *(undefined8 *)&p0->field_0xc8 = *(undefined8 *)&in_x1->field_0xc8;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->field_0xd0,&in_x1->field_0xd0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->field_0xd0))->operator=(&in_x1->field_0xd0);
   *(undefined8 *)&p0->field_0xe8 = *(undefined8 *)&in_x1->field_0xe8;
   *(undefined8 *)&p0->field_0xf0 = *(undefined8 *)&in_x1->field_0xf0;
   *(undefined4 *)&p0->field_0xf8 = *(undefined4 *)&in_x1->field_0xf8;
@@ -58,9 +58,9 @@ Walaber__Widget_IconList * Walaber::Widget_IconList::operator=(Walaber__Widget_I
   p0->f_0x134 = fVar3;
   *(undefined4 *)&p0->field_0x138 = uVar1;
   *(undefined8 *)&p0->field_0x12c = uVar5;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x150,&in_x1->f_0x150);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x160,&in_x1->f_0x160);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x170,&in_x1->f_0x170);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x150))->operator=(&in_x1->f_0x150);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x160))->operator=(&in_x1->f_0x160);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x170))->operator=(&in_x1->f_0x170);
   p0->f_0x180 = in_x1->f_0x180;
   p0->f_0x188 = in_x1->f_0x188;
   p0->f_0x190 = in_x1->f_0x190;
@@ -345,7 +345,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   uStack_58 = 0;
   piStack_60 = (int *)0x0;
   uStack_68 = 0;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&uStack_68,&lStack_78);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&uStack_68))->operator=(&lStack_78);
   plVar1 = *(long **)(param_1 + 0x108);
   if (plVar1 < *(long **)(param_1 + 0x110)) {
     *plVar1 = uStack_68;
@@ -417,7 +417,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
   void *pvStack_48;
   undefined4 uStack_40;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
+  new ((void *)(abStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 0037d9a4 to 0037d9b3 has its CatchHandler @ 0037db18 */
   new ((void *)(&uStack_68)) Walaber::Widget_IconList::Icon(abStack_80,param_3);
   plVar1 = *(long **)(param_1 + 0x108);
@@ -504,7 +504,7 @@ void Walaber::Widget_IconList::setBGTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x150);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x150))->operator=();
   lVar1 = *(long *)(param_1 + 0x150);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x158) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -532,7 +532,7 @@ void Walaber::Widget_IconList::setScrollBarTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x160);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x160))->operator=();
   lVar1 = *(long *)(param_1 + 0x160);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x168) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -560,7 +560,7 @@ void Walaber::Widget_IconList::setIconHilightTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x170);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x170))->operator=();
   lVar1 = *(long *)(param_1 + 0x170);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x178) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -890,7 +890,7 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
                     /* try { // try from 0037e390 to 0037e3a3 has its CatchHandler @ 0037e95c */
           Walaber::TextureManager::getTexture(&uStack_150,uVar25,*(long *)&p0[4].f_0x20 + lVar12 + 0x10,&uStack_120,0,0)
           ;
-          Walaber::SharedPtr<Walaber::Texture>::operator=(*(long *)&p0[4].f_0x20 + lVar12,&uStack_150);
+          ((Walaber::SharedPtr<Walaber::Texture> *)(*(long *)&p0[4].f_0x20 + lVar12))->operator=(&uStack_150);
           ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_150)->~SharedPtr<Walaber::Texture>();
           ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_120)->~SharedPtr<Walaber::Callback>();
           ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_130)->~SharedPtr<Walaber::Callback>();

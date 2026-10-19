@@ -44,7 +44,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>, std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>&>::__split_buffer(&pvStack_60,uVar2,lVar3,param_1 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>, std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>&>(uVar2,lVar3,param_1 + 2);
   *puStack_50 = *param_2;
   puStack_50 = puStack_50 + 1;
   pvStack_60 = (void *)*param_1;

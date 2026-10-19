@@ -77,7 +77,7 @@ void std::__ndk1::
       lVar2 = param_1[1];
       do {
                     /* try { // try from 002c320c to 002c3213 has its CatchHandler @ 002c3240 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar2,lVar3);
+        new ((void *)(lVar2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar3);
         lVar3 = lVar3 + 0x18;
         lVar2 = param_1[1] + 0x18;
         param_1[1] = lVar2;

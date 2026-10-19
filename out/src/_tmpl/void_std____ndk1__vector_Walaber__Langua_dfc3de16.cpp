@@ -43,7 +43,7 @@ void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Langu
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Language, std::__ndk1::allocator<Walaber::Language>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 4);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::Language, std::__ndk1::allocator<Walaber::Language>&>(uVar2,lVar3,p0 + 4);
   puVar7 = puStack_50 + 1;
   *puStack_50 = *in_x1;
   pvStack_60 = *(void **)p0;

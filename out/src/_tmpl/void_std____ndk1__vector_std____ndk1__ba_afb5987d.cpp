@@ -45,9 +45,9 @@ void std::__ndk1::
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::__split_buffer(&lStack_60,uVar5,lVar3,param_1 + 2);
+  new ((void *)(&lStack_60)) std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>(uVar5,lVar3,param_1 + 2);
                     /* try { // try from 002c2d58 to 002c2d5f has its CatchHandler @ 002c2e10 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lStack_50,param_2);
+  new ((void *)(lStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   lVar3 = lStack_50 + 0x18;
   lStack_60 = *param_1;
   lStack_50 = param_1[1];
@@ -122,7 +122,7 @@ void std::__ndk1::
      (uVar5 = lVar7 * 0x5555555555555556, uVar6 = uVar1, uVar1 <= uVar5)) {
     uVar6 = uVar5;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::__split_buffer(&lStack_60,uVar6,lVar4,param_1 + 2);
+  new ((void *)(&lStack_60)) std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>(uVar6,lVar4,param_1 + 2);
   uVar9 = param_2[1];
   uVar8 = *param_2;
   puStack_50[2] = param_2[2];

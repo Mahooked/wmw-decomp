@@ -50,11 +50,11 @@ ulong std::__ndk1::
       if ((param_2 <= param_3) && (uVar3 = param_3 + 0x88, (ulong)param_1[1] <= param_3)) {
         uVar3 = param_3;
       }
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_2,uVar3);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_2))->operator=(uVar3);
       lVar8 = lVar9 + lVar7 * 8;
       *(undefined8 *)(lVar8 + 0x18) = *(undefined8 *)(uVar3 + 0x18);
-      Walaber::PropertyList::operator=(lVar8 + 0x20,uVar3 + 0x20);
-      Walaber::PropertyList::operator=(lVar8 + 0x38,uVar3 + 0x38);
+      ((Walaber::PropertyList *)(lVar8 + 0x20))->operator=(uVar3 + 0x20);
+      ((Walaber::PropertyList *)(lVar8 + 0x38))->operator=(uVar3 + 0x38);
       *(undefined1 *)(lVar8 + 0x50) = *(undefined1 *)(uVar3 + 0x50);
       if (param_2 != uVar3) {
         lVar9 = lVar9 + lVar7 * 8;
@@ -75,7 +75,7 @@ ulong std::__ndk1::
        (uVar6 = lVar9 * -0x1e1e1e1e1e1e1e1e, uVar4 = uVar3, uVar3 <= uVar6)) {
       uVar4 = uVar6;
     }
-    std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::__split_buffer(&puStack_b8,uVar4,lVar7 * -0xf0f0f0f0f0f0f0f,param_1 + 2);
+    new ((void *)(&puStack_b8)) std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>(uVar4,lVar7 * -0xf0f0f0f0f0f0f0f,param_1 + 2);
     if (puStack_a8 == puStack_a0) {
       if (puStack_b0 < puStack_b8 || (long)puStack_b0 - (long)puStack_b8 == 0) {
         uVar3 = ((long)puStack_a0 - (long)puStack_b8 >> 3) * -0x1e1e1e1e1e1e1e1e;
@@ -83,7 +83,7 @@ ulong std::__ndk1::
           uVar3 = 1;
         }
                     /* try { // try from 004c7254 to 004c725b has its CatchHandler @ 004c7368 */
-        std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::__split_buffer(&puStack_90,uVar3,uVar3 >> 2,uStack_98);
+        new ((void *)(&puStack_90)) std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>(uVar3,uVar3 >> 2,uStack_98);
         puVar5 = puStack_b0;
         puStack_b0 = puStack_88;
         for (; puVar5 != puStack_a8; puVar5 = puVar5 + 0x11) {
@@ -139,8 +139,8 @@ ulong std::__ndk1::
             *puVar5 = 0;
             puVar5[lVar9 * -0x11 + 3] = puVar5[3];
                     /* try { // try from 004c71b4 to 004c71c3 has its CatchHandler @ 004c737c */
-            Walaber::PropertyList::operator=(puVar5 + lVar9 * -0x11 + 4,puVar5 + 4);
-            Walaber::PropertyList::operator=(puVar5 + lVar9 * -0x11 + 7,puVar5 + 7);
+            ((Walaber::PropertyList *)(puVar5 + lVar9 * -0x11 + 4))->operator=(puVar5 + 4);
+            ((Walaber::PropertyList *)(puVar5 + lVar9 * -0x11 + 7))->operator=(puVar5 + 7);
             *(undefined1 *)(puVar5 + lVar9 * -0x11 + 10) = *(undefined1 *)(puVar5 + 10);
             std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__vdeallocate(puVar5 + lVar9 * -0x11 + 0xb);
             uVar10 = puVar5[0xb];
@@ -283,8 +283,8 @@ void std::__ndk1::
       *(undefined8 *)(&pWVar2[-1].field_0x0 + lVar6) = 0;
       *(undefined8 *)((long)pWVar2 + lVar6 + -0x88) = 0;
       *(undefined8 *)(lVar4 + -0x70) = uVar5;
-      Walaber::PropertyList::operator=(lVar4 + -0x68,(long)pWVar2 + lVar6 + -0x68);
-      Walaber::PropertyList::operator=(lVar4 + -0x50,(long)pWVar2 + lVar6 + -0x50);
+      ((Walaber::PropertyList *)(lVar4 + -0x68))->operator=((long)pWVar2 + lVar6 + -0x68);
+      ((Walaber::PropertyList *)(lVar4 + -0x50))->operator=((long)pWVar2 + lVar6 + -0x50);
       *(undefined1 *)(lVar4 + -0x38) = *(undefined1 *)((long)pWVar2 + lVar6 + -0x38);
       std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__vdeallocate(lVar4 + -0x30);
       uVar5 = *(undefined8 *)((long)pWVar2 + lVar6 + -0x30);

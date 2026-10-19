@@ -62,7 +62,7 @@ void Walaber::AnimationCueAnimationTrack::apply(undefined8 * in_x0, float p0)
   uVar1 = *in_x1;
   p0->f_0x8 = in_x1[1];
   p0->f_0x0 = uVar1;
-  std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::vector(&p0->f_0x10,in_x1 + 2);
+  new ((void *)(&p0->f_0x10)) std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>(in_x1 + 2);
   p0->f_0x28 = in_x1[5];
   return;
 }
@@ -164,7 +164,7 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
     }
   }
   *puVar3 = param_1;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(puVar3 + 2,param_3);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(puVar3 + 2))->operator=(param_3);
   puVar3[8] = param_4;
   puVar3[9] = param_5;
   *(int *)(param_2 + 0x2c) = *(int *)(param_2 + 0x2c) + 1;

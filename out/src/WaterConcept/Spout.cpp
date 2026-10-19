@@ -1634,7 +1634,7 @@ WaterConcept::Spout::_addParticleToRandomSpout
   uVar12 = param_4[1] - *param_4 >> 4;
   uVar11 = uVar12 & 0xffffffff;
   lStack_d0 = CONCAT71(lStack_d0._1_7_,1);
-  std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::vector(apvStack_e8,uVar11,&lStack_d0);
+  new ((void *)(apvStack_e8)) std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>(uVar11,&lStack_d0);
 LAB_0048d6bc:
   fVar22 = 0.0;
   iVar4 = (int)uVar12;

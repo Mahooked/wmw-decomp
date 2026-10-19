@@ -147,9 +147,9 @@ void WaterConcept::GameState::reset(long param_1)
   *(long *)(this + 0x78) = param_2;
   *(undefined8 *)(this + 0x80) = *(undefined8 *)(param_2 + 0x440);
                     /* try { // try from 00429bec to 00429bf7 has its CatchHandler @ 00429d20 */
-  std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::vector(&pvStack_80,param_4);
+  new ((void *)(&pvStack_80)) std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>(param_4);
                     /* try { // try from 00429bf8 to 00429c03 has its CatchHandler @ 00429d08 */
-  std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(&pvStack_98,param_5);
+  new ((void *)(&pvStack_98)) std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>(param_5);
                     /* try { // try from 00429c04 to 00429c17 has its CatchHandler @ 00429cec */
   WaterConcept::GameState::init(this,param_3,&pvStack_80,&pvStack_98);
   if (pvStack_98 != (void *)0x0) {
@@ -1040,9 +1040,9 @@ LAB_0042b3ac:
   }
   uVar5 = 1;
 LAB_0042b434:
-  std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::vector(&pvStack_60,param_3);
+  new ((void *)(&pvStack_60)) std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>(param_3);
                     /* try { // try from 0042b440 to 0042b44b has its CatchHandler @ 0042b4d4 */
-  std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(&pvStack_78,param_4);
+  new ((void *)(&pvStack_78)) std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>(param_4);
                     /* try { // try from 0042b44c to 0042b45f has its CatchHandler @ 0042b4b8 */
   WaterConcept::GameState::init(param_1,uVar5,&pvStack_60,&pvStack_78);
   if (pvStack_78 != (void *)0x0) {
@@ -1089,7 +1089,7 @@ LAB_0042b558:
 LAB_0042b54c:
     lVar3 = (long)p0 + 0xa8;
   }
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=(lVar3,in_x1 + 2);
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)(lVar3))->operator=(in_x1 + 2);
 LAB_0042b570:
   auStack_50[1] = 0;
   pvStack_40 = (void *)0x0;

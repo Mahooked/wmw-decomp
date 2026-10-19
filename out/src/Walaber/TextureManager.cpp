@@ -94,7 +94,7 @@ void Walaber::TextureManager::_createErrorTexture(long param_1)
                     /* try { // try from 00399b5c to 00399b73 has its CatchHandler @ 00399cc8 */
   Walaber::createProgrammaticTexture2D(&uStack_58,&bStack_70,8,8,0);
   puVar1 = (undefined8 *)(param_1 + 0xa0);
-  Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>::operator=(puVar1,&uStack_58);
+  ((Walaber::SharedPtr<Walaber::ProgrammaticTexture2D> *)(puVar1))->operator=(&uStack_58);
   ((Walaber::SharedPtr<Walaber::ProgrammaticTexture2D> *)&uStack_58)->~SharedPtr<Walaber::ProgrammaticTexture2D>();
   if ((bStack_70 & 1) != 0) {
     operator delete(pvStack_60);
@@ -260,7 +260,7 @@ void Walaber::TextureManager::loadTextureAtlas(long param_1,undefined8 param_2,l
   lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x58);
   if (param_1 + 0x60 == lVar2) {
     lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x88,param_2);
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_d8,param_2);
+    new ((void *)(auStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
     pvStack_c0 = (void *)*param_3;
     piStack_b8 = (int *)param_3[1];
     if (pvStack_c0 != (void *)0x0) {
@@ -325,7 +325,7 @@ void Walaber::TextureManager::loadTextureAtlas(long param_1,undefined8 param_2,l
     }
     auStack_d8[0] = 1;
                     /* try { // try from 00399f28 to 00399f2f has its CatchHandler @ 0039a180 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d0,param_2);
+    new ((void *)(abStack_d0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
     piStack_b8 = piStack_e8;
     piStack_b0 = piStack_e0;
     if (piStack_e8 != (int *)0x0) {
@@ -606,7 +606,7 @@ void Walaber::TextureManager::_loadedTextureAtlas(void *p0, int * in_x1)
         uStack_98 = 0;
         uStack_90 = 0;
                     /* try { // try from 0039a5b0 to 0039a5d3 has its CatchHandler @ 0039a6bc */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_b0,in_x1 + 2);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_b0))->operator=(in_x1 + 2);
         auStack_b8[0] = uVar8;
         (**(code **)(*(long *)plVar9[7] + 0x10))((long *)plVar9[7],auStack_b8);
         ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_98)->~SharedPtr<Walaber::Texture>();
@@ -808,7 +808,7 @@ void Walaber::TextureManager::getTexture
                     /* try { // try from 0039a788 to 0039a793 has its CatchHandler @ 0039b918 */
   Walaber::StringHelper::getExtension(abStack_108,param_3);
                     /* try { // try from 0039a794 to 0039a79f has its CatchHandler @ 0039b910 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_120,param_3);
+  new ((void *)(&bStack_120)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   puVar16 = param_2 + 4;
                     /* try { // try from 0039a7a4 to 0039a7af has its CatchHandler @ 0039b908 */
   puVar11 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar16,abStack_f0);
@@ -816,7 +816,7 @@ void Walaber::TextureManager::getTexture
   puVar1 = param_2 + 5;
   if ((puVar1 != puVar11) && ((uVar12 & 1) == 0)) {
                     /* try { // try from 0039a7d4 to 0039a7db has its CatchHandler @ 0039b900 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&plStack_b8,puVar11 + 0xc);
+    new ((void *)(&plStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar11 + 0xc);
     uVar12 = (ulong)plStack_b8 >> 1 & 0x7f;
     if (((ulong)plStack_b8 & 1) != 0) {
       uVar12 = CONCAT17(uStack_a9,uStack_b0);
@@ -964,7 +964,7 @@ void Walaber::TextureManager::getTexture
       puVar11 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar16,abStack_f0);
                     /* try { // try from 0039b28c to 0039b297 has its CatchHandler @ 0039b7b8 */
       Walaber::createTexture2D(&plStack_b8,&bStack_120);
-      Walaber::SharedPtr<Walaber::Texture2D>::operator=(&plStack_140,&plStack_b8);
+      ((Walaber::SharedPtr<Walaber::Texture2D> *)(&plStack_140))->operator=(&plStack_b8);
       ((Walaber::SharedPtr<Walaber::Texture2D> *)&plStack_b8)->~SharedPtr<Walaber::Texture2D>();
     }
     else {
@@ -979,13 +979,13 @@ void Walaber::TextureManager::getTexture
       uStack_180 = puVar11[10];
       uStack_188 = puVar11[9];
                     /* try { // try from 0039aa28 to 0039aa2b has its CatchHandler @ 0039b824 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_170,puVar11 + 0xc);
+      new ((void *)(abStack_170)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar11 + 0xc);
       uStack_148 = puVar11[0x11];
       uStack_150 = puVar11[0x10];
       uStack_158 = puVar11[0xf];
                     /* try { // try from 0039aa44 to 0039aa53 has its CatchHandler @ 0039b80c */
       Walaber::createTexture2D(&plStack_b8,&bStack_120,&uStack_198);
-      Walaber::SharedPtr<Walaber::Texture2D>::operator=(&plStack_140,&plStack_b8);
+      ((Walaber::SharedPtr<Walaber::Texture2D> *)(&plStack_140))->operator=(&plStack_b8);
       ((Walaber::SharedPtr<Walaber::Texture2D> *)&plStack_b8)->~SharedPtr<Walaber::Texture2D>();
       if ((abStack_170[0] & 1) != 0) {
         operator delete(pvStack_160);
@@ -1013,7 +1013,7 @@ void Walaber::TextureManager::getTexture
     uStack_81 = uStack_a9;
     ((Walaber::SharedPtr<Walaber::Texture> *)&plStack_b8)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 0039b2e0 to 0039b2ef has its CatchHandler @ 0039b8dc */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&plStack_b8,&bStack_120);
+    new ((void *)(&plStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_120);
     lStack_a0 = CONCAT17(uStack_89,
                          CONCAT43(uStack_8d,CONCAT12(uStack_8e,CONCAT11(uStack_8f,bStack_90))));
     piStack_98 = (int *)CONCAT17(uStack_81,uStack_88);
@@ -1040,7 +1040,7 @@ void Walaber::TextureManager::getTexture
       *(undefined1 *)(puVar11 + 7) = 1;
       if (*param_4 != 0) {
                     /* try { // try from 0039b34c to 0039b357 has its CatchHandler @ 0039b7b4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&plStack_b8,&bStack_120);
+        new ((void *)(&plStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_120);
         lStack_a0 = CONCAT44(lStack_a0._4_4_,1);
                     /* try { // try from 0039b370 to 0039b377 has its CatchHandler @ 0039b7a4 */
         (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,&plStack_b8);
@@ -1126,7 +1126,7 @@ LAB_0039b438:
                                                 CONCAT12(uStack_8e,CONCAT11(uStack_8f,bStack_90))))
                               + 0xd0);
                     /* try { // try from 0039b02c to 0039b033 has its CatchHandler @ 0039b93c */
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&plStack_140,CONCAT17(uStack_c1,uStack_c8) + 0xd0);
+              new ((void *)(&plStack_140)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(CONCAT17(uStack_c1,uStack_c8) + 0xd0);
               plVar24 = plStack_140;
               bVar6 = (byte)plStack_b8;
               piVar20 = (int *)(ulong)((byte)plStack_b8 >> 1);
@@ -1218,7 +1218,7 @@ joined_r0x0039b0b8:
       }
       else {
                     /* try { // try from 0039ac38 to 0039ac3f has its CatchHandler @ 0039b764 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&plStack_b8,plVar24 + 0x1a);
+        new ((void *)(&plStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar24 + 0x1a);
                     /* try { // try from 0039ac40 to 0039ac4b has its CatchHandler @ 0039b758 */
         Walaber::StringHelper::removeExtension(&plStack_140,&plStack_b8);
         if (puVar1 == puVar11) {
@@ -1257,7 +1257,7 @@ joined_r0x0039b0b8:
               uStack_2c0 = puVar11[10];
               uStack_2c8 = puVar11[9];
                     /* try { // try from 0039b5d4 to 0039b5d7 has its CatchHandler @ 0039b6b0 */
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_2b0,puVar11 + 0xc);
+              new ((void *)(abStack_2b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar11 + 0xc);
               uStack_288 = puVar11[0x11];
               uStack_290 = puVar11[0x10];
               uStack_298 = puVar11[0xf];
@@ -1319,7 +1319,7 @@ joined_r0x0039b0b8:
             uStack_228 = puVar11[10];
             uStack_230 = puVar11[9];
                     /* try { // try from 0039ad0c to 0039ad0f has its CatchHandler @ 0039b70c */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_218,puVar11 + 0xc);
+            new ((void *)(abStack_218)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar11 + 0xc);
             uStack_1f0 = puVar11[0x11];
             uStack_1f8 = puVar11[0x10];
             uStack_200 = puVar11[0xf];
@@ -1371,7 +1371,7 @@ joined_r0x0039b0b8:
                   }
                   ((Walaber::SharedPtr<Walaber::Subtexture> *)&bStack_90)->~SharedPtr<Walaber::Subtexture>();
                     /* try { // try from 0039ae00 to 0039ae07 has its CatchHandler @ 0039b840 */
-                  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_90,plStack_1e8 + 0x1a);
+                  new ((void *)(&bStack_90)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plStack_1e8 + 0x1a);
                   pcVar23 = pcStack_80;
                   uVar12 = (ulong)(bStack_90 >> 1);
                   if ((bStack_90 & 1) != 0) {
@@ -1491,7 +1491,7 @@ LAB_0039aeec:
           uStack_310 = puVar16[0xb];
           uStack_318 = puVar16[10];
           uStack_320 = puVar16[9];
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_308,puVar16 + 0xc);
+          new ((void *)(abStack_308)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar16 + 0xc);
           uStack_2e0 = puVar16[0x11];
           uStack_2e8 = puVar16[0x10];
           uStack_2f0 = puVar16[0xf];
@@ -1536,7 +1536,7 @@ LAB_0039aeec:
           uStack_380 = puVar16[10];
           uStack_388 = puVar16[9];
                     /* try { // try from 0039b1d0 to 0039b1d3 has its CatchHandler @ 0039b8f4 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_370,puVar16 + 0xc);
+          new ((void *)(abStack_370)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar16 + 0xc);
           uStack_348 = puVar16[0x11];
           uStack_350 = puVar16[0x10];
           uStack_358 = puVar16[0xf];
@@ -1566,7 +1566,7 @@ LAB_0039aeec:
     }
     if (*param_4 != 0) {
                     /* try { // try from 0039b484 to 0039b48f has its CatchHandler @ 0039b808 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&plStack_b8,&bStack_120);
+      new ((void *)(&plStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_120);
       lStack_a0 = CONCAT44(lStack_a0._4_4_,1);
                     /* try { // try from 0039b4a8 to 0039b4af has its CatchHandler @ 0039b7ec */
       (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,&plStack_b8);
@@ -1731,7 +1731,7 @@ LAB_0039bb44:
   uVar7 = Walaber::TextureManager::_isTextureSupported(lVar8,abStack_140);
   if (((uVar7 & 1) == 0) && (param_1 + 0x28 != lVar8)) {
                     /* try { // try from 0039bba8 to 0039bbaf has its CatchHandler @ 0039c2a8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_d8,lVar8 + 0x60);
+    new ((void *)(&uStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar8 + 0x60);
     piVar14 = (int *)((ulong)uStack_d8 >> 1 & 0x7f);
     if (((ulong)uStack_d8 & 1) != 0) {
       piVar14 = piStack_d0;
@@ -1835,7 +1835,7 @@ LAB_0039bb44:
   }
   uStack_d8 = &bStack_f8;
   lVar8 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 0x70,&bStack_f8,&DAT_0062dde1,&uStack_d8,&uStack_160);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar8 + 0x38,param_4);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar8 + 0x38))->operator=(param_4);
   uStack_158 = 0;
   pvStack_150 = (void *)0x0;
   uStack_160 = 0;
@@ -1949,7 +1949,7 @@ LAB_0039bea0:
         }
         else {
                     /* try { // try from 0039c044 to 0039c08b has its CatchHandler @ 0039c334 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(uStack_158,&uStack_d8);
+          new ((void *)(uStack_158)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_d8);
           *(undefined8 *)(uVar7 + 0x28) = uStack_b0;
           *(undefined8 *)(uVar7 + 0x20) = uStack_b8;
           *(undefined8 *)(uVar7 + 0x18) = uStack_c0;
@@ -2145,7 +2145,7 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0, ulong * in_x1)
                     /* try { // try from 0039c604 to 0039c627 has its CatchHandler @ 0039c9ac */
   puStack_130 = in_x1;
   lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>((long)p0 + 0x70,in_x1,&DAT_0062dde1,&puStack_130,&puStack_b0);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_98,lVar3 + 0x38);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_98))->operator=(lVar3 + 0x38);
   auStack_a0[0] = 1;
                     /* try { // try from 0039c634 to 0039c63f has its CatchHandler @ 0039c9a8 */
   lVar3 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x40);
@@ -2171,7 +2171,7 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0, ulong * in_x1)
     if (lVar10 != *(long *)(lVar3 + 0x40)) {
       do {
                     /* try { // try from 0039c6c0 to 0039c6cb has its CatchHandler @ 0039ca08 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_e8,lVar10);
+        new ((void *)(abStack_e8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar10);
         puStack_f8 = puStack_b0;
         piStack_f0 = piStack_a8;
         if (puStack_b0 != (ulong *)0x0) {
@@ -2195,7 +2195,7 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0, ulong * in_x1)
         piStack_100 = piStack_c8;
         ((Walaber::SharedPtr<Walaber::Texture> *)&puStack_130)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 0039c748 to 0039c753 has its CatchHandler @ 0039c9d0 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_130,lVar10);
+        new ((void *)(&puStack_130)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar10);
         puStack_118 = puStack_108;
         piStack_110 = piStack_100;
         if (puStack_108 != (ulong *)0x0) {
@@ -2219,11 +2219,11 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0, ulong * in_x1)
         lVar10 = lVar10 + 0x40;
       } while (lVar10 != *(long *)(lVar3 + 0x40));
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&uStack_80,&puStack_b0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&uStack_80))->operator=(&puStack_b0);
                     /* try { // try from 0039c7e0 to 0039c7eb has its CatchHandler @ 0039c988 */
     unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x40);
                     /* try { // try from 0039c7f4 to 0039c7fb has its CatchHandler @ 0039c984 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_130,puStack_b0 + 1);
+    new ((void *)(&puStack_130)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puStack_b0 + 1);
                     /* try { // try from 0039c804 to 0039c81b has its CatchHandler @ 0039c970 */
     puStack_d0 = auStack_98;
     lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>((long)p0 + 0x58,auStack_98,&DAT_0062dde1,&puStack_d0,&puStack_108);
@@ -4431,7 +4431,7 @@ LAB_0039dab0:
           uStack_ec._4_4_ = uVar12;
           uVar5 = uStack_e4;
           uStack_e4._4_4_ = uVar13;
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_d8,&uStack_120);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_d8))->operator=(&uStack_120);
           uVar5 = uStack_e4;
           uVar4 = uStack_ec;
           if ((uStack_120 & 1) != 0) {
@@ -4481,7 +4481,7 @@ LAB_0039dab0:
         uVar5 = uStack_e4;
         uStack_e4._4_4_ = uVar13;
                     /* try { // try from 0039db30 to 0039db37 has its CatchHandler @ 0039dd24 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_168,auStack_d8);
+        new ((void *)(abStack_168)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_d8);
         uVar5 = uStack_e4;
         uVar4 = uStack_ec;
         uStack_150 = CONCAT71(uStack_bf,uStack_c0);
@@ -4659,7 +4659,7 @@ void Walaber::TextureManager::setTextureSettings(long param_1,undefined8 param_2
         uStack_e8 = *(undefined8 *)(param_3 + 0x18);
         uStack_f0 = *(undefined8 *)(param_3 + 0x10);
                     /* try { // try from 0039de4c to 0039de53 has its CatchHandler @ 0039e09c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d8,param_3 + 0x28);
+        new ((void *)(abStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3 + 0x28);
         uStack_b0 = *(undefined8 *)(param_3 + 0x50);
         uStack_b8 = *(undefined8 *)(param_3 + 0x48);
         uStack_c0 = *(undefined8 *)(param_3 + 0x40);
@@ -4701,7 +4701,7 @@ void Walaber::TextureManager::setTextureSettings(long param_1,undefined8 param_2
       uStack_160 = *(undefined8 *)(param_3 + 0x18);
       uStack_168 = *(undefined8 *)(param_3 + 0x10);
                     /* try { // try from 0039df44 to 0039df4b has its CatchHandler @ 0039e09c */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_150,param_3 + 0x28);
+      new ((void *)(abStack_150)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3 + 0x28);
       uStack_128 = *(undefined8 *)(param_3 + 0x50);
       uStack_130 = *(undefined8 *)(param_3 + 0x48);
       uStack_138 = *(undefined8 *)(param_3 + 0x40);
@@ -4736,7 +4736,7 @@ void Walaber::TextureManager::setTextureSettings(long param_1,undefined8 param_2
   *(undefined8 *)(lVar3 + 0x58) = *(undefined8 *)(param_3 + 0x20);
   *(undefined8 *)(lVar3 + 0x50) = uVar8;
   *(undefined8 *)(lVar3 + 0x48) = uVar5;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x60,param_3 + 0x28);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x60))->operator=(param_3 + 0x28);
   uVar8 = *(undefined8 *)(param_3 + 0x48);
   uVar5 = *(undefined8 *)(param_3 + 0x40);
   *(undefined8 *)(lVar3 + 0x88) = *(undefined8 *)(param_3 + 0x50);
@@ -4801,7 +4801,7 @@ void Walaber::TextureManager::reloadTextureFromDisk(long param_1,undefined8 para
   
   Walaber::StringHelper::getExtension(abStack_80,param_2);
                     /* try { // try from 0039e27c to 0039e287 has its CatchHandler @ 0039e6a4 */
-  uVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_98,param_2);
+  uVar7 = new ((void *)(&bStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   uVar8 = Walaber::TextureManager::_isTextureSupported(uVar7,abStack_80);
   if ((uVar8 & 1) != 0) goto LAB_0039e42c;
                     /* try { // try from 0039e294 to 0039e29f has its CatchHandler @ 0039e688 */
@@ -4810,7 +4810,7 @@ void Walaber::TextureManager::reloadTextureFromDisk(long param_1,undefined8 para
   lVar9 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x20,&pbStack_b0);
   if (param_1 + 0x28 != lVar9) {
                     /* try { // try from 0039e2bc to 0039e2c3 has its CatchHandler @ 0039e61c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&pbStack_c8,lVar9 + 0x60);
+    new ((void *)(&pbStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar9 + 0x60);
     piVar1 = (int *)((ulong)pbStack_c8 >> 1 & 0x7f);
     if (((ulong)pbStack_c8 & 1) != 0) {
       piVar1 = piStack_c0;
@@ -4952,7 +4952,7 @@ LAB_0039e42c:
     pbStack_b0 = &bStack_98;
                     /* try { // try from 0039e51c to 0039e537 has its CatchHandler @ 0039e630 */
     lVar9 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1,&bStack_98,&DAT_0062dde1,&pbStack_b0,&uStack_68);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar9 + 0x38,&pbStack_f8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar9 + 0x38))->operator=(&pbStack_f8);
     lStack_118 = *param_3;
     piStack_110 = (int *)param_3[1];
     if (lStack_118 != 0) {
@@ -5265,7 +5265,7 @@ undefined8 Walaber::TextureManager::reloadNextInvalidTexture(long *param_1)
         plVar10 = (long *)plVar10[7];
         uVar9 = 0;
         if (plVar10 != (long *)0x0) {
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_50,plVar10 + 1);
+          new ((void *)(auStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar10 + 1);
           pvVar1 = (void *)((ulong)auStack_50 | 1);
           if ((auStack_50[0] & 1) != 0) {
             pvVar1 = pvStack_40;
@@ -5490,7 +5490,7 @@ void Walaber::TextureManager::getTextureSettings
   param_1[3] = uVar5;
   param_1[2] = uVar4;
                     /* try { // try from 0039ef94 to 0039ef97 has its CatchHandler @ 0039eff0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 5,lVar3 + 0x60);
+  new ((void *)(param_1 + 5)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar3 + 0x60);
   uVar5 = *(undefined8 *)(lVar3 + 0x78);
   uVar4 = *(undefined8 *)(lVar3 + 0x88);
   param_1[9] = *(undefined8 *)(lVar3 + 0x80);
@@ -5550,7 +5550,7 @@ void Walaber::TextureManager::clearTexture(long param_1,ulong param_2)
   
   Walaber::StringHelper::getExtension(abStack_80,param_2);
                     /* try { // try from 0039f048 to 0039f053 has its CatchHandler @ 0039f34c */
-  uVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_98,param_2);
+  uVar7 = new ((void *)(&bStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   uVar8 = Walaber::TextureManager::_isTextureSupported(uVar7,abStack_80);
   if ((uVar8 & 1) == 0) {
                     /* try { // try from 0039f060 to 0039f06b has its CatchHandler @ 0039f31c */
@@ -5559,7 +5559,7 @@ void Walaber::TextureManager::clearTexture(long param_1,ulong param_2)
     lVar9 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextureSettings>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x20,&uStack_b0);
     if (param_1 + 0x28 != lVar9) {
                     /* try { // try from 0039f088 to 0039f08f has its CatchHandler @ 0039f300 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_d0,lVar9 + 0x60);
+      new ((void *)(&uStack_d0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar9 + 0x60);
       piVar1 = (int *)(uStack_d0 >> 1 & 0x7f);
       if ((uStack_d0 & 1) != 0) {
         piVar1 = piStack_c8;
@@ -5758,7 +5758,7 @@ void Walaber::TextureManager::_clearSubtextureParents(long *param_1)
   
   plVar5 = (long *)*param_1;
   while (plVar5 != param_1 + 1) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,plVar5 + 4);
+    new ((void *)(abStack_78)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar5 + 4);
     lVar3 = plVar5[7];
     if (((lVar3 == 0) || (*(int *)plVar5[8] == 1)) && (*(int *)(lVar3 + 0xb8) == 1)) {
       piStack_80 = (int *)plVar5[8];
@@ -5831,7 +5831,7 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0, ulong in_x1)
   plVar7 = (long *)*puVar4;
   if (puVar4 + 1 != plVar7) {
     do {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,plVar7 + 4);
+      new ((void *)(abStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar7 + 4);
       lVar5 = plVar7[7];
       if (((lVar5 == 0) || (*(int *)plVar7[8] == 1)) && (*(int *)(lVar5 + 0xb8) != 1)) {
         if (((in_x1 & 1) == 0) && (*(char *)(lVar5 + 0x22) != '\0')) {
@@ -5860,7 +5860,7 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0, ulong in_x1)
           *piStack_78 = *piStack_78 + 1;
                     /* try { // try from 0039f69c to 0039f6a3 has its CatchHandler @ 0039f774 */
           lStack_80 = lVar5;
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_98,lVar5 + 8);
+          new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar5 + 8);
           pvVar1 = (void *)((ulong)abStack_98 | 1);
           if ((abStack_98[0] & 1) != 0) {
             pvVar1 = pvStack_88;
@@ -5947,7 +5947,7 @@ void Walaber::TextureManager::dumpTextures(undefined8 *param_1)
     plVar7 = (long *)*param_1;
     do {
       uVar2 = *(undefined4 *)(plVar7[7] + 0x78);
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,plVar7[7] + 8);
+      new ((void *)(abStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar7[7] + 8);
       pvVar1 = (void *)((ulong)abStack_70 | 1);
       if ((abStack_70[0] & 1) != 0) {
         pvVar1 = pvStack_60;

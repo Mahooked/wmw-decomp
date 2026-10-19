@@ -1294,7 +1294,7 @@ undefined8 WaterConcept::Screen_SettingsReset::messageRx(Walaber__Message *p0, l
     apvStack_70[0] = (void *)0x0;
     ppuStack_80 = (undefined **)0x444904;
                     /* try { // try from 00564ad8 to 00564ae3 has its CatchHandler @ 00564fc0 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,&ppuStack_80);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&ppuStack_80);
     iVar5 = Walaber::Property::asInt();
     if (((ulong)ppuStack_80 & 1) != 0) {
       operator delete(apvStack_70[0]);
@@ -1458,7 +1458,7 @@ undefined8 WaterConcept::Screen_SettingsReset::messageRx(Walaber__Message *p0, l
     apvStack_70[0] = (void *)0x0;
     ppuStack_80 = (undefined **)0x444904;
                     /* try { // try from 005649d4 to 005649df has its CatchHandler @ 00564fc4 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,&ppuStack_80);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&ppuStack_80);
     iVar5 = Walaber::Property::asInt();
     if (((ulong)ppuStack_80 & 1) != 0) {
       operator delete(apvStack_70[0]);
@@ -1608,7 +1608,7 @@ void WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets(void *p0, int *
                     /* try { // try from 00565190 to 00565197 has its CatchHandler @ 00565420 */
     uVar2 = Walaber::FontManager::getFont(uVar2,abStack_d0);
                     /* try { // try from 005651a0 to 005651a7 has its CatchHandler @ 0056541c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&ppuStack_e8,lVar3 + 0x168);
+    new ((void *)(&ppuStack_e8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar3 + 0x168);
     fVar10 = fVar10 * fVar8;
     fVar9 = (21.0 / fVar11) * fVar9;
                     /* try { // try from 005651c0 to 005651d7 has its CatchHandler @ 00565404 */
@@ -1647,7 +1647,7 @@ void WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets(void *p0, int *
                     /* try { // try from 0056524c to 00565253 has its CatchHandler @ 005653e8 */
     uVar2 = Walaber::FontManager::getFont(uVar2,abStack_100);
                     /* try { // try from 0056525c to 00565263 has its CatchHandler @ 005653e4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_118,lVar3 + 0x168);
+    new ((void *)(abStack_118)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar3 + 0x168);
                     /* try { // try from 00565264 to 0056527b has its CatchHandler @ 005653cc */
     Walaber::BitmapFont::wrapString(&ppuStack_e8,fVar9,fVar10,uVar2,abStack_118);
     if (((ulong)ppuStack_a0 & 1) != 0) {

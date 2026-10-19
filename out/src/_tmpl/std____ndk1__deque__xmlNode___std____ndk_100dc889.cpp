@@ -73,7 +73,7 @@ void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::__add_back
       if (lVar7 == 0) {
         lVar3 = 1;
       }
-      std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>::__split_buffer(&pvStack_70,lVar3,uVar5,param_1 + 3);
+      new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>(lVar3,uVar5,param_1 + 3);
                     /* try { // try from 00347500 to 00347507 has its CatchHandler @ 003476d8 */
       uStack_78 = operator new(0x1000);
                     /* try { // try from 00347510 to 0034751b has its CatchHandler @ 003476c8 */
@@ -124,7 +124,7 @@ void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::__add_back
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;
@@ -162,7 +162,7 @@ void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::__add_back
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;

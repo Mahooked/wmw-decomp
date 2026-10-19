@@ -110,7 +110,7 @@ void WaterConcept::SeaweedStrand::init
 void WaterConcept::SeaweedStrand::setTexture(long param_1)
 
 {
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x88);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x88))->operator=();
   return;
 }
 

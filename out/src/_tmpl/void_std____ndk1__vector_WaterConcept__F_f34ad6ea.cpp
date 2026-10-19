@@ -45,7 +45,7 @@ void std::__ndk1::
      (uVar4 = lVar7 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Floater::InternalSpring, std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>&>::__split_buffer(&pvStack_60,uVar5,lVar3,in_x0 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConcept::Floater::InternalSpring, std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>&>(uVar5,lVar3,in_x0 + 2);
   uVar9 = in_x1[1];
   uVar8 = *in_x1;
   puStack_50[2] = in_x1[2];

@@ -274,7 +274,7 @@ void Walaber::Transition_Slide::setup(float p0,Walaber__PropertyList *p1)
     uStack_78 = 0;
                     /* try { // try from 003f62a0 to 003f62bb has its CatchHandler @ 003f6444 */
     Walaber::TextureManager::getTexture(auStack_58,uVar5,&bStack_70,&uStack_80,0,0);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(p1 + 0xb,auStack_58);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(p1 + 0xb))->operator=(auStack_58);
     ((Walaber::SharedPtr<Walaber::Texture> *)auStack_58)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();

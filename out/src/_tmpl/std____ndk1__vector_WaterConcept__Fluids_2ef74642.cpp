@@ -21,7 +21,7 @@ void std::__ndk1::
   long lStack_40;
   
   if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 5) < in_x1) {
-    std::__ndk1::__split_buffer<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>&>::__split_buffer(&pvStack_50,in_x1,*(long *)(p0 + 8) - *(long *)p0 >> 5,p0 + 0x10);
+    new ((void *)(&pvStack_50)) std::__ndk1::__split_buffer<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>&>(in_x1,*(long *)(p0 + 8) - *(long *)p0 >> 5,p0 + 0x10);
                     /* try { // try from 00404cc0 to 00404ccb has its CatchHandler @ 00404d20 */
     std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::__swap_out_circular_buffer(p0,&pvStack_50);
     if (lStack_40 != lStack_48) {

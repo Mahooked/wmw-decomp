@@ -224,7 +224,7 @@ void Walaber::createRenderTexture2D
   uStack_98 = param_4[3];
   uStack_a0 = param_4[2];
                     /* try { // try from 003967a8 to 003967ab has its CatchHandler @ 00396834 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,param_4 + 5);
+  new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_4 + 5);
   uStack_60 = param_4[10];
   uStack_68 = param_4[9];
   uStack_70 = param_4[8];
@@ -290,7 +290,7 @@ void Walaber::createSubtexture
   
   uVar2 = operator new(0xe8);
                     /* try { // try from 00396f80 to 00396f8b has its CatchHandler @ 0039701c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_2);
+  new ((void *)(abStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   lStack_70 = *param_3;
   piStack_68 = (int *)param_3[1];
   if (lStack_70 != 0) {
@@ -793,7 +793,7 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 
   uStack_88 = param_3[3];
   uStack_90 = param_3[2];
                     /* try { // try from 00399574 to 00399577 has its CatchHandler @ 003995f4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,param_3 + 5);
+  new ((void *)(abStack_78)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3 + 5);
   uStack_50 = param_3[10];
   uStack_58 = param_3[9];
   uStack_60 = param_3[8];

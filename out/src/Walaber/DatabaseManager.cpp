@@ -1019,7 +1019,7 @@ void Walaber::DatabaseManager::runSQL
     if (*param_3 == *(long *)(puVar3 + 0x38)) goto LAB_0032c31c;
     bVar2 = false;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_80,param_2);
+  new ((void *)(&puStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   lStack_68 = *param_3;
   piStack_60 = (int *)param_3[1];
   if (lStack_68 != 0) {
@@ -1031,7 +1031,7 @@ void Walaber::DatabaseManager::runSQL
   if (((ulong)puStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_80,param_2);
+  new ((void *)(&puStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   lStack_68 = *param_4;
   piStack_60 = (int *)param_4[1];
   if (lStack_68 != 0) {
@@ -1210,8 +1210,8 @@ void Walaber::DatabaseManager::_readSQL(void *p0)
   uStack_e8 = 0;
   iStack_b4 = 0;
                     /* try { // try from 0032c514 to 0032c537 has its CatchHandler @ 0032caf0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_e8,lVar15);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_d0,(long)p0 + 0x30);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_e8))->operator=(lVar15);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_d0))->operator=((long)p0 + 0x30);
   uVar6 = *(ulong *)((long)p0 + 0x28);
   uVar16 = *(undefined8 *)((long)p0 + 0x20);
   uStack_100 = 0;
@@ -1326,8 +1326,8 @@ LAB_0032c760:
           bStack_a8 = 0;
           uStack_b0 = uVar5;
                     /* try { // try from 0032c7ac to 0032c7eb has its CatchHandler @ 0032cb28 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&bStack_a8,pbVar17);
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&bStack_90,&uStack_138);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_a8))->operator=(pbVar17);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_90))->operator=(&uStack_138);
           uStack_78 = 0;
           puVar1 = auStack_8f;
           if ((bStack_90 & 1) != 0) {

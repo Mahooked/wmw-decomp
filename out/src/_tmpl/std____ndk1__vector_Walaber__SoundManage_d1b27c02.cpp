@@ -80,7 +80,7 @@ void std::__ndk1::
     lVar8 = param_1[1];
     do {
       lVar5 = lVar8 + -0x48;
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7 + -0x48,lVar5);
+      new ((void *)(lVar7 + -0x48)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar5);
       lVar4 = *(long *)(lVar8 + -0x30);
       *(long *)(lVar7 + -0x30) = lVar4;
       piVar3 = *(int **)(lVar8 + -0x28);
@@ -94,7 +94,7 @@ void std::__ndk1::
       *(undefined2 *)(lVar7 + -0x1c) = uVar2;
       *(undefined4 *)(lVar7 + -0x20) = uVar1;
                     /* try { // try from 00356de4 to 00356de7 has its CatchHandler @ 00356e54 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7 + -0x18,lVar8 + -0x18);
+      new ((void *)(lVar7 + -0x18)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar8 + -0x18);
       lVar7 = param_2[1] + -0x48;
       param_2[1] = lVar7;
       lVar8 = lVar5;

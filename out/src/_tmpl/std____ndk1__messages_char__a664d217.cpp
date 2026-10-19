@@ -31,7 +31,7 @@ void std::__ndk1::messages<char>::do_get(undefined8 param_1)
 {
   undefined8 in_x4;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,in_x4);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x4);
   return;
 }
 

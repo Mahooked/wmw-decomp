@@ -8,13 +8,13 @@
   
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
                     /* try { // try from 00330ffc to 00331003 has its CatchHandler @ 0033109c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(p0 + 0x18,in_x1 + 0x18);
+  new ((void *)(p0 + 0x18)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x18);
                     /* try { // try from 0033100c to 00331013 has its CatchHandler @ 00331084 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(p0 + 0x30,in_x1 + 0x30);
+  new ((void *)(p0 + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x30);
                     /* try { // try from 0033101c to 00331023 has its CatchHandler @ 0033106c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(p0 + 0x48,in_x1 + 0x48);
+  new ((void *)(p0 + 0x48)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x48);
                     /* try { // try from 0033102c to 0033102f has its CatchHandler @ 00331054 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(p0 + 0x60,in_x1 + 0x60);
+  new ((void *)(p0 + 0x60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x60);
   *(undefined8 *)(p0 + 0x78) = *(undefined8 *)(in_x1 + 0x78);
   p0[0x80] = *(Walaber__Achievement *)(in_x1 + 0x80);
   return;

@@ -43,7 +43,7 @@ void std::__ndk1::
   *(undefined1 *)(param_1 + 2) = 0;
   *(undefined4 *)(lVar1 + 0x20) = *param_3;
                     /* try { // try from 003640c8 to 003640cf has its CatchHandler @ 003640e8 */
-  std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::vector(lVar1 + 0x28,param_3 + 2);
+  new ((void *)(lVar1 + 0x28)) std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>(param_3 + 2);
   *(undefined1 *)(param_1 + 2) = 1;
   return;
 }

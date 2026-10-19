@@ -104,7 +104,7 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   piStack_70 = piVar5;
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00369e40 to 00369e4b has its CatchHandler @ 00369ee8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_3);
+  new ((void *)(abStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   puStack_b0 = puStack_78;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;

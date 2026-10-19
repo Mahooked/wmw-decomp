@@ -435,7 +435,7 @@ void Walaber::Widget::reset(void)
 void Walaber::Widget::setFont(long *param_1)
 
 {
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x1a);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_1 + 0x1a))->operator=();
                     /* WARNING: Could not recover jumptable at 0x0036d5a4. Too many branches */
                     /* WARNING: Treating indirect jump as call */
   (**(code **)(*param_1 + 0x78))(param_1);
@@ -458,7 +458,7 @@ void Walaber::Widget::reloadFont(long param_1)
   void *pvStack_40;
   
   uVar2 = Walaber::FontManager::getInstancePtr();
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1 + 0xd0);
+  new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1 + 0xd0);
                     /* try { // try from 0036d5e0 to 0036d5eb has its CatchHandler @ 0036d628 */
   uVar2 = Walaber::FontManager::getFont(uVar2,abStack_50);
   *(undefined8 *)(param_1 + 0xe8) = uVar2;

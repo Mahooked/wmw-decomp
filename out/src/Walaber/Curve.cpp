@@ -465,7 +465,7 @@ undefined8 Walaber::Curve::loadFromXml(std::__ndk1::basic_string<char, std::__nd
   byte abStack_50 [16];
   void *pvStack_40;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1);
+  new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1);
   pvVar1 = (void *)((ulong)abStack_50 | 1);
   if ((abStack_50[0] & 1) != 0) {
     pvVar1 = pvStack_40;

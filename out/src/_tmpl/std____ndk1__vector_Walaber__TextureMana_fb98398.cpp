@@ -33,7 +33,7 @@ void std::__ndk1::
     lVar4 = param_1[1];
     do {
       lVar1 = lVar4 + -0x40;
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar3 + -0x40,lVar1);
+      new ((void *)(lVar3 + -0x40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar1);
       uVar6 = *(undefined8 *)(lVar4 + -0x20);
       uVar5 = *(undefined8 *)(lVar4 + -0x28);
       *(undefined8 *)(lVar3 + -0x18) = *(undefined8 *)(lVar4 + -0x18);

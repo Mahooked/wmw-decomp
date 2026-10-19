@@ -273,7 +273,7 @@ void Walaber::XMLDocument::_buildXMLObject
   byte abStack_50 [16];
   void *pvStack_40;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_4);
+  new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_4);
                     /* try { // try from 003d712c to 003d713f has its CatchHandler @ 003d717c */
   uVar2 = Walaber::XML::loadDocMemory(param_2,param_3,abStack_50,param_1);
   *(undefined8 *)(param_1 + 8) = uVar2;

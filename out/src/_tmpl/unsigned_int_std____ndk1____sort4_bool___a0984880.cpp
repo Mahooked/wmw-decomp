@@ -64,8 +64,8 @@ ulong std::__ndk1::
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_3,param_4);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_4,&lStack_68);
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_3))->operator=(param_4);
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_4))->operator=(&lStack_68);
     ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_68)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
     lStack_98 = *param_3;
     piStack_90 = (int *)param_3[1];
@@ -91,8 +91,8 @@ ulong std::__ndk1::
       if (lStack_68 != 0) {
         *piStack_60 = *piStack_60 + 1;
       }
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_2,param_3);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_3,&lStack_68);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_2))->operator=(param_3);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_3))->operator=(&lStack_68);
       ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_68)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       lStack_b8 = *param_2;
       piStack_b0 = (int *)param_2[1];
@@ -118,8 +118,8 @@ ulong std::__ndk1::
         if (lStack_68 != 0) {
           *piStack_60 = *piStack_60 + 1;
         }
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_1,param_2);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_2,&lStack_68);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_1))->operator=(param_2);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)(param_2))->operator=(&lStack_68);
         ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_68)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
         uVar5 = (ulong)(uVar2 + 3);
       }

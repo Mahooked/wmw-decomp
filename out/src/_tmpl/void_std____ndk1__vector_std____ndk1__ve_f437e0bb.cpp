@@ -42,9 +42,9 @@ void std::__ndk1::
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>&>::__split_buffer(auStack_60,uVar5,lVar3,param_1 + 2);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>&>(uVar5,lVar3,param_1 + 2);
                     /* try { // try from 0048a4ac to 0048a4cb has its CatchHandler @ 0048a504 */
-  std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::vector(lStack_50,param_2);
+  new ((void *)(lStack_50)) std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>(param_2);
   lStack_50 = lStack_50 + 0x18;
   std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__swap_out_circular_buffer(param_1,auStack_60);
   ((std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>&> *)auStack_60)->~__split_buffer<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>&>();

@@ -484,7 +484,7 @@ ulong WaterConcept::Screen_Processing::messageRx(Walaber__Message *p0, long in_x
     abStack_50[7] = 0x65;
     abStack_50[8] = 99;
                     /* try { // try from 0055b9d8 to 0055b9e3 has its CatchHandler @ 0055ba50 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_50);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](abStack_50);
     uVar2 = Walaber::Property::asInt();
     uVar3 = (ulong)uVar2;
     if ((abStack_50[0] & 1) != 0) {

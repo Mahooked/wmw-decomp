@@ -45,7 +45,7 @@ void std::__ndk1::
      (uVar4 = lVar7 * -0x6666666666666666, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>::__split_buffer(&pWStack_60,uVar5,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>(uVar5,lVar3,p0 + 2);
   uVar10 = in_x1[1];
   uVar9 = *in_x1;
   *(undefined4 *)((long)pWStack_50 + 0x10) = *(undefined4 *)(in_x1 + 2);
@@ -122,7 +122,7 @@ void std::__ndk1::
      (uVar4 = lVar7 * -0x6666666666666666, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>::__split_buffer(&pvStack_60,uVar5,lVar3,&p0->f_0x10);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>(uVar5,lVar3,&p0->f_0x10);
   uVar9 = in_x1[1];
   uVar8 = *in_x1;
   *(undefined4 *)(puStack_50 + 2) = *(undefined4 *)(in_x1 + 2);

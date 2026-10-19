@@ -45,7 +45,7 @@ void std::__ndk1::
      (uVar5 = lVar9 * -0x6666666666666666, uVar6 = uVar1, uVar1 <= uVar5)) {
     uVar6 = uVar5;
   }
-  std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::__split_buffer(auStack_70,uVar6,lVar4,p0 + 0x10);
+  new ((void *)(auStack_70)) std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>(uVar6,lVar4,p0 + 0x10);
   uVar10 = *in_x1;
   *(undefined4 *)(puStack_60 + 1) = *(undefined4 *)(in_x1 + 1);
   *puStack_60 = uVar10;

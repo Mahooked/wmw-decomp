@@ -38,7 +38,7 @@
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
   memset(&p0->f_0x18,0,0x78);
                     /* try { // try from 00331978 to 00331983 has its CatchHandler @ 00331c68 */
-  std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::vector(&p0->f_0x90,in_x1 + 0x90);
+  new ((void *)(&p0->f_0x90)) std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>(in_x1 + 0x90);
   uVar5 = *(ulong *)(in_x1 + 0xa8);
   p0->f_0xa8 = uVar5;
   piVar4 = *(int **)(in_x1 + 0xb0);
@@ -282,7 +282,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
     } while (uVar7 < (uVar6 >> 3 & 0xffffffff));
   }
   p0->f_0xc8 = in_x1->f_0xc8;
-  Walaber::SharedPtr<Walaber::Callback>::operator=(&p0->f_0xa8,&in_x1->f_0xa8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(&p0->f_0xa8))->operator=(&in_x1->f_0xa8);
   p0->f_0xb8 = in_x1->f_0xb8;
   uVar2 = in_x1->f_0xc4;
   p0->f_0xc0 = in_x1->f_0xc0;
@@ -507,9 +507,9 @@ void Walaber::Animation::copyProperties(Walaber__Animation *p0, Walaber__Animati
 LAB_0033247c:
     bVar4 = false;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(p0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(p0))->operator=();
   p0->f_0xc8 = in_x1->f_0xc8;
-  Walaber::SharedPtr<Walaber::Callback>::operator=(&p0->f_0xa8,&in_x1->f_0xa8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(&p0->f_0xa8))->operator=(&in_x1->f_0xa8);
   p0->f_0xb8 = in_x1->f_0xb8;
   p0->f_0xc0 = in_x1->f_0xc0;
   p0->f_0xc4 = in_x1->f_0xc4;
@@ -573,7 +573,7 @@ void Walaber::Animation::createAnimationFromXml(std::__ndk1::basic_string<char, 
   void *pvStack_48;
   undefined1 auStack_40 [8];
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_58,param_1);
+  new ((void *)(abStack_58)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1);
   uStack_64 = 0;
   pvStack_60 = (void *)0x0;
   bStack_70 = 0x14;
@@ -672,9 +672,9 @@ LAB_00332814:
                     /* try { // try from 0033282c to 00332833 has its CatchHandler @ 00332f50 */
   lVar6 = operator new(0x108);
                     /* try { // try from 00332838 to 00332843 has its CatchHandler @ 00332ed4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_98,&uStack_80);
+  new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_80);
                     /* try { // try from 00332844 to 0033284f has its CatchHandler @ 00332ebc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar6,abStack_98);
+  new ((void *)(lVar6)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98);
   memset(lVar6 + 0x18,0,0xbc);
   *(undefined4 *)(lVar6 + 0xe4) = 0xffffffff;
   *(undefined4 *)(lVar6 + 0xdc) = 0;
@@ -1049,9 +1049,9 @@ LAB_003330ec:
                     /* try { // try from 00333104 to 0033310b has its CatchHandler @ 00333c24 */
   lVar8 = operator new(0x108);
                     /* try { // try from 00333110 to 0033311b has its CatchHandler @ 00333b78 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,&uStack_98);
+  new ((void *)(abStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_98);
                     /* try { // try from 0033311c to 00333127 has its CatchHandler @ 00333b60 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar8,abStack_b0);
+  new ((void *)(lVar8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_b0);
   memset(lVar8 + 0x18,0,0xbc);
   *(undefined4 *)(lVar8 + 0xe4) = 0xffffffff;
   *(undefined4 *)(lVar8 + 0xdc) = 0;

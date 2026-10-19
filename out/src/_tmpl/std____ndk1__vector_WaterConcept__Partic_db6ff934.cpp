@@ -97,7 +97,7 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
           uVar10 = 1;
         }
                     /* try { // try from 00407228 to 00407317 has its CatchHandler @ 00407398 */
-        std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>::__split_buffer(&puStack_80,uVar10,uVar10 >> 2,uStack_88);
+        new ((void *)(&puStack_80)) std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>(uVar10,uVar10 >> 2,uStack_88);
         puVar4 = puStack_78;
         puVar3 = puStack_90;
         puVar2 = puStack_a0;

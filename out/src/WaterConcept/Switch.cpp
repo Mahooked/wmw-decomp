@@ -871,7 +871,7 @@ void WaterConcept::Switch::_initFinished(long param_1)
     lVar6 = **(long **)(param_1 + 400);
     *piVar5 = *piVar5 + 1;
     puStack_a0 = puVar4;
-    Walaber::SharedPtr<Walaber::Callback>::operator=(lVar6 + 0xd0,&puStack_a0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)(lVar6 + 0xd0))->operator=(&puStack_a0);
     ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_70)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Switch>> *)&puStack_80)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Switch>>();
@@ -908,7 +908,7 @@ void WaterConcept::Switch::_animationEvent(void *p0, long in_x1)
   void *pvStack_70;
   
   if (*(int *)(in_x1 + 0x18) == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,*(undefined8 *)(in_x1 + 8));
+    new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(undefined8 *)(in_x1 + 8));
     uVar7 = uStack_80 >> 1 & 0x7f;
     if ((uStack_80 & 1) != 0) {
       uVar7 = uStack_78;
@@ -920,7 +920,7 @@ void WaterConcept::Switch::_animationEvent(void *p0, long in_x1)
     }
     else {
                     /* try { // try from 00495ae4 to 00495aeb has its CatchHandler @ 00495c78 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_98,*(undefined8 *)(in_x1 + 8));
+      new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(undefined8 *)(in_x1 + 8));
       uVar7 = (ulong)(abStack_98[0] >> 1);
       if ((abStack_98[0] & 1) != 0) {
         uVar7 = uStack_90;

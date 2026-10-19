@@ -985,7 +985,7 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
                     /* try { // try from 00562670 to 0056267b has its CatchHandler @ 005628bc */
       Walaber::TextManager::getString(abStack_f8,abStack_110);
                     /* try { // try from 00562680 to 0056268f has its CatchHandler @ 00562908 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar2 + 0x178,abStack_f8);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar2 + 0x178))->operator=(abStack_f8);
       Walaber::Widget_PushButton::_resizeFont(lVar2);
       if ((abStack_f8[0] & 1) != 0) {
         operator delete(pvStack_e8);
@@ -1026,7 +1026,7 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
       if (lStack_88 != 0) {
         *piStack_80 = *piStack_80 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x100,&lStack_120);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x100))->operator=(&lStack_120);
                     /* try { // try from 00562734 to 0056273b has its CatchHandler @ 00562898 */
       Walaber::Widget_PushButton::_applyTile(lVar2);
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_120)->~SharedPtr<Walaber::Texture>();
@@ -1070,7 +1070,7 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
       if (lStack_88 != 0) {
         *piStack_80 = *piStack_80 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x110,&lStack_140);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x110))->operator=(&lStack_140);
                     /* try { // try from 005627f0 to 005627f7 has its CatchHandler @ 00562850 */
       Walaber::Widget_PushButton::_applyTile(lVar2);
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_140)->~SharedPtr<Walaber::Texture>();
@@ -1098,7 +1098,7 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
                     /* try { // try from 005624b4 to 005624bf has its CatchHandler @ 00562900 */
       Walaber::TextManager::getString(abStack_50,abStack_68);
                     /* try { // try from 005624c4 to 005624d3 has its CatchHandler @ 0056292c */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar2 + 0x178,abStack_50);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar2 + 0x178))->operator=(abStack_50);
       Walaber::Widget_PushButton::_resizeFont(lVar2);
       if ((abStack_50[0] & 1) != 0) {
         operator delete(pvStack_40);
@@ -1138,7 +1138,7 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
       if (lStack_88 != 0) {
         *piStack_80 = *piStack_80 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x100,&lStack_78);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x100))->operator=(&lStack_78);
                     /* try { // try from 0056256c to 00562573 has its CatchHandler @ 005628c4 */
       Walaber::Widget_PushButton::_applyTile(lVar2);
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_78)->~SharedPtr<Walaber::Texture>();
@@ -1183,7 +1183,7 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
       if (lStack_88 != 0) {
         *piStack_80 = *piStack_80 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x110,&lStack_d0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x110))->operator=(&lStack_d0);
                     /* try { // try from 00562628 to 0056262f has its CatchHandler @ 00562874 */
       Walaber::Widget_PushButton::_applyTile(lVar2);
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d0)->~SharedPtr<Walaber::Texture>();
@@ -1319,7 +1319,7 @@ ulong WaterConcept::Screen_SettingsProfile::messageRx(Walaber__Message *p0, long
     uStack_60 = 0x6e;
     uStack_5f = 0;
                     /* try { // try from 005629d4 to 005629df has its CatchHandler @ 00562c20 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_68);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&bStack_68);
     iVar4 = Walaber::Property::asInt();
     if ((bStack_68 & 1) != 0) {
       operator delete(pvStack_58);

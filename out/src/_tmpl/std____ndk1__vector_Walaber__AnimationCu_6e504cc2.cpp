@@ -35,7 +35,7 @@ void std::__ndk1::
       do {
         *puVar4 = *puVar3;
                     /* try { // try from 003373ec to 003373f3 has its CatchHandler @ 00337428 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puVar4 + 2,puVar3 + 2);
+        new ((void *)(puVar4 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar3 + 2);
         puVar1 = (undefined8 *)(puVar3 + 8);
         puVar3 = puVar3 + 10;
         *(undefined8 *)(puVar4 + 8) = *puVar1;
@@ -216,7 +216,7 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
        (uVar7 = lVar8 * -0x6666666666666666, uVar3 = uVar4, uVar4 <= uVar7)) {
       uVar3 = uVar7;
     }
-    std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::__split_buffer(auStack_80,uVar3,lVar9 * -0x3333333333333333,param_1 + 2);
+    new ((void *)(auStack_80)) std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>(uVar3,lVar9 * -0x3333333333333333,param_1 + 2);
                     /* try { // try from 00433ec8 to 00433ee3 has its CatchHandler @ 00433fc0 */
     std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::push_back(auStack_80,param_3);
     param_2 = (undefined4 *)std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__swap_out_circular_buffer(param_1,auStack_80,param_2);

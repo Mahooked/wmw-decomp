@@ -43,7 +43,7 @@ ulong std::__ndk1::
   lVar9 = (long)(param_2 - lVar7) >> 5;
   if (uVar5 < (ulong)param_1[2]) {
     if (param_2 == uVar5) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_2,param_3);
+      new ((void *)(param_2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
       *(undefined8 *)(lVar7 + lVar9 * 0x20 + 0x18) = *(undefined8 *)(param_3 + 0x18);
       param_1[1] = param_1[1] + 0x20;
     }
@@ -53,7 +53,7 @@ ulong std::__ndk1::
       if ((param_2 <= param_3) && (uVar5 = param_3 + 0x20, (ulong)param_1[1] <= param_3)) {
         uVar5 = param_3;
       }
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_2,uVar5);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_2))->operator=(uVar5);
       *(undefined8 *)(lVar7 + lVar9 * 0x20 + 0x18) = *(undefined8 *)(uVar5 + 0x18);
     }
   }
@@ -73,7 +73,7 @@ ulong std::__ndk1::
     else {
       uVar5 = 0x7ffffffffffffff;
     }
-    std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>::__split_buffer(&puStack_b8,uVar5,lVar9,param_1 + 2);
+    new ((void *)(&puStack_b8)) std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>(uVar5,lVar9,param_1 + 2);
     if (puStack_a8 == puStack_a0) {
       if (puStack_b0 < puStack_b8 || (long)puStack_b0 - (long)puStack_b8 == 0) {
         uVar5 = (long)puStack_a0 - (long)puStack_b8 >> 4;
@@ -81,7 +81,7 @@ ulong std::__ndk1::
           uVar5 = 1;
         }
                     /* try { // try from 004caef4 to 004cafcf has its CatchHandler @ 004cb01c */
-        std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>::__split_buffer(&puStack_90,uVar5,uVar5 >> 2,uStack_98);
+        new ((void *)(&puStack_90)) std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>(uVar5,uVar5 >> 2,uStack_98);
         puVar4 = puStack_78;
         puVar3 = puStack_88;
         puVar6 = puStack_90;
@@ -158,7 +158,7 @@ ulong std::__ndk1::
       }
     }
     puVar10 = puStack_a8;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puStack_a8,param_3);
+    new ((void *)(puStack_a8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
     puStack_a8[3] = *(undefined8 *)(param_3 + 0x18);
     puStack_a8 = puStack_a8 + 4;
     param_2 = std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__swap_out_circular_buffer(param_1,&puStack_b8,param_2);
@@ -200,7 +200,7 @@ void std::__ndk1::
       lVar4 = param_1[1];
       do {
                     /* try { // try from 004cb734 to 004cb73f has its CatchHandler @ 004cb774 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4,lVar3);
+        new ((void *)(lVar4)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar3);
         puVar1 = (undefined8 *)(lVar3 + 0x18);
         lVar3 = lVar3 + 0x20;
         *(undefined8 *)(lVar4 + 0x18) = *puVar1;

@@ -483,7 +483,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7c = 0x65;
     uStack_7b = 0;
                     /* try { // try from 003eee6c to 003eee7f has its CatchHandler @ 003ef9fc */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     Walaber::Property::asVector2(&uStack_a0);
     puVar8 = *(undefined8 **)(param_1 + 0x30);
     if (puVar8 < *(undefined8 **)(param_1 + 0x38)) {
@@ -549,7 +549,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x6552;
     uStack_78 = 99;
                     /* try { // try from 003eef58 to 003eef6b has its CatchHandler @ 003ef9f8 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     Walaber::Property::asRect(&uStack_a0);
     puVar8 = *(undefined8 **)(param_1 + 0xb0);
     if (puVar8 < *(undefined8 **)(param_1 + 0xb8)) {
@@ -616,7 +616,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x7463;
     uStack_78 = 0;
                     /* try { // try from 003ef05c to 003ef06f has its CatchHandler @ 003ef9f4 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     Walaber::Property::asRect(&uStack_a0);
     puVar8 = *(undefined8 **)(param_1 + 200);
     if (puVar8 < *(undefined8 **)(param_1 + 0xd0)) {
@@ -674,7 +674,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x65;
     uStack_77 = 0;
                     /* try { // try from 003ef158 to 003ef167 has its CatchHandler @ 003ef9f0 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0xe0);
     if (puVar2 < *(uint **)(param_1 + 0xe8)) {
@@ -731,7 +731,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x7561;
     uStack_78 = 0x73;
                     /* try { // try from 003ef238 to 003ef247 has its CatchHandler @ 003ef9ec */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0x110);
     if (puVar2 < *(uint **)(param_1 + 0x118)) {
@@ -788,7 +788,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x6e;
     uStack_77 = 0;
                     /* try { // try from 003ef314 to 003ef323 has its CatchHandler @ 003ef9e8 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0xf8);
     if (puVar2 < *(uint **)(param_1 + 0x100)) {
@@ -845,7 +845,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x69;
     uStack_75 = 0;
                     /* try { // try from 003ef400 to 003ef40f has its CatchHandler @ 003ef9e4 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     uStack_a0 = Walaber::Property::asInt();
     puVar2 = *(uint **)(param_1 + 0x128);
     if (puVar2 < *(uint **)(param_1 + 0x130)) {
@@ -902,7 +902,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x69;
     uStack_6f = 0;
                     /* try { // try from 003ef4e4 to 003ef4f3 has its CatchHandler @ 003ef9e0 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0x140);
     if (puVar2 < *(uint **)(param_1 + 0x148)) {
@@ -1092,7 +1092,7 @@ LAB_003ef7a0:
     uStack_7a = 0x5361;
     uStack_78 = 0x68;
                     /* try { // try from 003ef814 to 003ef823 has its CatchHandler @ 003ef9dc */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     uStack_a0 = Walaber::Property::asInt();
     puVar2 = *(uint **)(param_1 + 0x158);
     if (puVar2 < *(uint **)(param_1 + 0x160)) {
@@ -1149,7 +1149,7 @@ LAB_003ef7a0:
     uStack_78 = 0x68;
     uStack_6f = 0;
                     /* try { // try from 003ef8f4 to 003ef903 has its CatchHandler @ 003ef9d8 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    ((Walaber::PropertyList *)(param_3))->operator[](&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0x170);
     if (puVar2 < *(uint **)(param_1 + 0x178)) {

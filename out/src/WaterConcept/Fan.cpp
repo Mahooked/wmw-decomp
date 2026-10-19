@@ -626,7 +626,7 @@ void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0, long in
     abStack_b0[8] = 0x74;
     abStack_b0[0x11] = 0;
                     /* try { // try from 0047a384 to 0047a397 has its CatchHandler @ 0047a480 */
-    Walaber::PropertyList::operator[](&puStack_98,abStack_b0);
+    ((Walaber::PropertyList *)(&puStack_98))->operator[](abStack_b0);
     Walaber::Property::asVector2(&uStack_b8);
     uStack_6c = uStack_b8;
     uStack_68 = uStack_b4;

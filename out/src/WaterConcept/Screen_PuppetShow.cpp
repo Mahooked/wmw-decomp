@@ -210,7 +210,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     }
   }
                     /* try { // try from 0055c274 to 0055c27b has its CatchHandler @ 0055c6f4 */
-  Walaber::PropertyList::operator=(&p0[0x21].f_0x8);
+  ((Walaber::PropertyList *)(&p0[0x21].f_0x8))->operator=();
   uStack_6a = 0;
   uStack_69 = 0;
   uStack_68 = 0;
@@ -470,13 +470,13 @@ void WaterConcept::Screen_PuppetShow::_gotSoundtrack(void *p0, long in_x1)
   long lStack_48;
   int *piStack_40;
   
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x340,in_x1 + 8);
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)((long)p0 + 0x340))->operator=(in_x1 + 8);
   lStack_48 = *(long *)(in_x1 + 8);
   piStack_40 = *(int **)(in_x1 + 0x10);
   if (lStack_48 != 0) {
     *piStack_40 = *piStack_40 + 1;
   }
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x2f8,&lStack_48);
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)((long)p0 + 0x2f8))->operator=(&lStack_48);
   ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)&lStack_48)->~SharedPtr<Walaber::SoundEffectInstance>();
   return;
 }

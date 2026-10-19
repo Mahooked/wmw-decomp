@@ -42,7 +42,7 @@ void std::__ndk1::vector<WaterConcept::IcyHot*,std::__ndk1::allocator<WaterConce
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::IcyHot*, std::__ndk1::allocator<WaterConcept::IcyHot*>&>::__split_buffer(&ppWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&ppWStack_60)) std::__ndk1::__split_buffer<WaterConcept::IcyHot*, std::__ndk1::allocator<WaterConcept::IcyHot*>&>(uVar2,lVar3,p0 + 2);
   *ppWStack_50 = (WaterConcept__IcyHot *)*in_x1;
   ppWStack_50 = ppWStack_50 + 1;
   ppWStack_60 = *p0;

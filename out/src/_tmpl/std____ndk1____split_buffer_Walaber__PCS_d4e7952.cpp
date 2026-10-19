@@ -81,7 +81,7 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
       if (lVar1 == 0) {
         uVar4 = 1;
       }
-      std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>&>::__split_buffer(&pppWStack_70,uVar4,uVar4 >> 2,p0[4]);
+      new ((void *)(&pppWStack_70)) std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>&>(uVar4,uVar4 >> 2,p0[4]);
       pppWVar7 = p0[1];
       pppWVar8 = p0[2];
       pppWVar5 = pppWStack_60;
@@ -190,7 +190,7 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
       if (lVar5 == 0) {
         lVar2 = 1;
       }
-      std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>&>::__split_buffer(&ppWStack_70,lVar2,lVar2 + 3U >> 2,p0[4]);
+      new ((void *)(&ppWStack_70)) std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>&>(lVar2,lVar2 + 3U >> 2,p0[4]);
       ppWVar4 = p0[1];
       ppWVar3 = p0[2];
       if (ppWVar4 != ppWVar3) {

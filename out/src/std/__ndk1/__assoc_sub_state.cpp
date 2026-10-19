@@ -161,7 +161,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
     lVar4 = *(long *)(p0.f_0x0 + 0x10);
     ((std::exception_ptr *)auStack_78)->~exception_ptr();
     if (lVar4 == 0) {
-      std::exception_ptr::operator=(p0.f_0x0 + 0x10);
+      ((std::exception_ptr *)(p0.f_0x0 + 0x10))->operator=();
       *(uint *)(p0.f_0x0 + 0x70) = *(uint *)(p0.f_0x0 + 0x70) | 4;
       std::__ndk1::condition_variable::notify_all(p0.f_0x0 + 0x40);
       std::__ndk1::mutex::unlock(p0.f_0x0 + 0x18);
@@ -219,7 +219,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception
     lVar6 = *(long *)(p0.f_0x0 + 0x10);
     ((std::exception_ptr *)auStack_78)->~exception_ptr();
     if (lVar6 == 0) {
-      std::exception_ptr::operator=(p0.f_0x0 + 0x10);
+      ((std::exception_ptr *)(p0.f_0x0 + 0x10))->operator=();
                     /* try { // try from 005f0d34 to 005f0d47 has its CatchHandler @ 005f0e80 */
       puVar3 = (undefined4 *)std::__ndk1::__thread_local_data();
       uVar4 = pthread_getspecific(*puVar3);

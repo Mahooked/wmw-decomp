@@ -77,7 +77,7 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>&>::push_back(
       if (lVar1 == 0) {
         uVar4 = 1;
       }
-      std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>::__split_buffer(&ppiStack_70,uVar4,uVar4 >> 2,p0[4]);
+      new ((void *)(&ppiStack_70)) std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>(uVar4,uVar4 >> 2,p0[4]);
       ppiVar7 = p0[1];
       ppiVar8 = p0[2];
       ppiVar5 = ppiStack_60;
@@ -182,7 +182,7 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>&>::push_front
       if (lVar5 == 0) {
         lVar2 = 1;
       }
-      std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>::__split_buffer(&piStack_70,lVar2,lVar2 + 3U >> 2,p0[4]);
+      new ((void *)(&piStack_70)) std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>(lVar2,lVar2 + 3U >> 2,p0[4]);
       piVar4 = p0[1];
       piVar3 = p0[2];
       if (piVar4 != piVar3) {

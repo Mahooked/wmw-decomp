@@ -68,7 +68,7 @@ void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_
   undefined8 *puStack_48;
   int *piStack_40;
   
-  Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0xa8,param_3);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(param_1 + 0xa8))->operator=(param_3);
   new ((void *)(auStack_60)) Walaber::PropertyList();
                     /* try { // try from 00364710 to 0036474f has its CatchHandler @ 00364828 */
   puVar2 = (undefined8 *)operator new(0x28);
@@ -1280,7 +1280,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
       *param_5 = *param_5 + 1;
     }
                     /* try { // try from 0036674c to 00366757 has its CatchHandler @ 003667a8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_6);
+    new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
   }
   else {
     auStack_d0[1] = 0;
@@ -1346,7 +1346,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
             uVar1 = uVar8 + 1;
             lVar9 = lStack_100 + uVar14 * 0x18;
                     /* try { // try from 00366478 to 00366483 has its CatchHandler @ 003667fc */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(afStack_118,lVar9,uVar12,uVar1 - uVar12,lVar9);
+            new ((void *)(afStack_118)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar9,uVar12,uVar1 - uVar12,lVar9);
                     /* try { // try from 00366484 to 00366497 has its CatchHandler @ 00366804 */
             Walaber::BitmapFont::measureString(afStack_130,param_2,param_4,afStack_118);
             if (fVar16 < afStack_130[0]) {
@@ -1395,7 +1395,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
               uVar8 = *(ulong *)(lStack_100 + uVar14 * 0x18 + 8);
             }
                     /* try { // try from 00366640 to 0036664f has its CatchHandler @ 003667e0 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(afStack_118,pbVar10,uVar1,uVar8 + ~uVar13,pbVar10);
+            new ((void *)(afStack_118)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar10,uVar1,uVar8 + ~uVar13,pbVar10);
                     /* try { // try from 00366650 to 00366663 has its CatchHandler @ 003667dc */
             Walaber::BitmapFont::measureString(afStack_130,param_2,param_4,afStack_118);
             fVar16 = afStack_130[0];
@@ -1525,7 +1525,7 @@ void Walaber::BitmapFont::_wrapStringAtChar
           fVar10 = param_3;
         }
                     /* try { // try from 00366954 to 00366963 has its CatchHandler @ 00366aa4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(afStack_d8,param_6,iVar9,(1 - iVar9) + iVar5,param_6);
+        new ((void *)(afStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6,iVar9,(1 - iVar9) + iVar5,param_6);
         uVar1 = (ulong)(afStack_d8[0]._0_1_ >> 1);
         pvVar3 = (void *)((ulong)afStack_d8 | 1);
         if (((uint)afStack_d8[0] & 1) != 0) {
@@ -1543,7 +1543,7 @@ void Walaber::BitmapFont::_wrapStringAtChar
     } while( true );
   }
                     /* try { // try from 00366a28 to 00366a33 has its CatchHandler @ 00366a80 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_6);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
 LAB_00366a34:
   if ((uStack_a0 & 1) != 0) {
     operator delete(pvStack_90);
@@ -1656,11 +1656,11 @@ void Walaber::BitmapFont::wrapStringInSize
   byte abStack_a8 [16];
   void *pvStack_98;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a8,param_6);
+  new ((void *)(abStack_a8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
   fVar19 = (float)param_2;
   *param_5 = fVar19;
                     /* try { // try from 00366ccc to 00366cd7 has its CatchHandler @ 003673ac */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_6);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
                     /* try { // try from 00366cd8 to 00366ce7 has its CatchHandler @ 003673a4 */
   Walaber::StringHelper::split(&lStack_c0,param_6,10);
                     /* try { // try from 00366ce8 to 00366cff has its CatchHandler @ 003673a0 */
@@ -1773,14 +1773,14 @@ void Walaber::BitmapFont::wrapStringInSize
       } while (uVar18 < (uVar10 & 0xffffffff));
     }
                     /* try { // try from 00367058 to 00367063 has its CatchHandler @ 003673b4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_a8,&uStack_e0);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(abStack_a8))->operator=(&uStack_e0);
     ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_100)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
     if ((uStack_e0 & 1) != 0) {
       operator delete(puStack_d0);
     }
   }
                     /* try { // try from 0036707c to 00367087 has its CatchHandler @ 003673b8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1,abStack_a8);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_1))->operator=(abStack_a8);
   lStack_d8 = 0;
   puStack_d0 = (void *)0x0;
   uStack_e0 = 0x2d02;
@@ -1834,7 +1834,7 @@ void Walaber::BitmapFont::wrapStringInSize
                   }
                   if (*pcVar13 == ' ') {
                     /* try { // try from 00367208 to 00367217 has its CatchHandler @ 00367408 */
-                    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_148,pbVar1,1,0xffffffffffffffff,lVar14 + lVar16);
+                    new ((void *)(abStack_148)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar1,1,0xffffffffffffffff,lVar14 + lVar16);
                     /* try { // try from 00367218 to 0036722b has its CatchHandler @ 0036743c */
                     puVar6 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::insert(abStack_148,0,&DAT_00616c51,1);
                     pvStack_120 = (void *)puVar6[2];
@@ -2574,14 +2574,14 @@ void Walaber::BitmapFont::_wrapTextScale
   float fStack_60;
   float fStack_5c;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_5);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
   *param_4 = (float)param_2;
                     /* try { // try from 0036840c to 0036841f has its CatchHandler @ 00368598 */
   Walaber::BitmapFont::measureString(&fStack_60,param_2,param_3,param_5);
   if ((*param_6 < fStack_60) || (param_6[1] < fStack_5c)) {
     iStack_64 = 1;
                     /* try { // try from 00368448 to 00368453 has its CatchHandler @ 00368594 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_98,param_5);
+    new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 00368458 to 0036846f has its CatchHandler @ 0036857c */
     Walaber::BitmapFont::_wrapText(&uStack_80,param_2,*param_6,param_3,&iStack_64,abStack_98);
     if ((abStack_98[0] & 1) != 0) {
@@ -2608,7 +2608,7 @@ void Walaber::BitmapFont::_wrapTextScale
       uStack_80 = uStack_b0;
     }
                     /* try { // try from 00368518 to 00368523 has its CatchHandler @ 00368568 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1,&uStack_80);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_1))->operator=(&uStack_80);
     if ((uStack_80 & 1) != 0) {
       operator delete(puStack_70);
     }

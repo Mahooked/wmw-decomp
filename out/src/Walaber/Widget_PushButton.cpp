@@ -40,14 +40,14 @@ Walaber__Widget_PushButton * Walaber::Widget_PushButton::operator=(Walaber__Widg
   p0->f_0xbc = in_x1->f_0xbc;
   p0->f_0xc4 = in_x1->f_0xc4;
   p0->f_0xc8 = in_x1->f_0xc8;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->field_0xd0,&in_x1->field_0xd0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->field_0xd0))->operator=(&in_x1->field_0xd0);
   p0->f_0xe8 = in_x1->f_0xe8;
   p0->f_0xf0 = in_x1->f_0xf0;
   uVar1 = in_x1->f_0xfc;
   p0->f_0xf8 = in_x1->f_0xf8;
   p0->f_0xfc = uVar1;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x100,&in_x1->f_0x100);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x110,&in_x1->f_0x110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x100))->operator=(&in_x1->f_0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x110))->operator=(&in_x1->f_0x110);
   p0->f_0x120 = in_x1->f_0x120;
   p0->f_0x128 = in_x1->f_0x128;
   p0->f_0x130 = in_x1->f_0x130;
@@ -71,7 +71,7 @@ Walaber__Widget_PushButton * Walaber::Widget_PushButton::operator=(Walaber__Widg
   *(undefined8 *)&p0->field_0x164 = *(undefined8 *)&in_x1->field_0x164;
   *(undefined8 *)&p0->field_0x16c = *(undefined8 *)&in_x1->field_0x16c;
   p0->f_0x174 = in_x1->f_0x174;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->f_0x178,&in_x1->f_0x178);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->f_0x178))->operator=(&in_x1->f_0x178);
   p0->f_0x190 = in_x1->f_0x190;
   p0->f_0x191 = in_x1->f_0x191;
   p0->f_0x192 = in_x1->f_0x192;
@@ -326,7 +326,7 @@ void Walaber::Widget_PushButton::init(long param_1)
   *(undefined8 *)((long)this + 0x164) = 0;
   *(undefined8 *)((long)this + 0x15c) = 0;
                     /* try { // try from 003837c8 to 003837d3 has its CatchHandler @ 0038386c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x2f,param_7);
+  new ((void *)(this + 0x2f)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_7);
   *(undefined4 *)(this + 0x34) = 0xff000000;
   this[0x33] = -0xffffff01000000;
   this[0x32] = -0xffffff01000000;
@@ -433,7 +433,7 @@ void Walaber::Widget_PushButton::_resizeFont(long param_1)
   *(undefined8 *)((long)this + 0x164) = 0;
   *(undefined8 *)((long)this + 0x15c) = 0;
                     /* try { // try from 00383ae8 to 00383af3 has its CatchHandler @ 00383bb0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x2f,param_8);
+  new ((void *)(this + 0x2f)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_8);
   *(undefined4 *)(this + 0x34) = 0xff000000;
   this[0x33] = -0xffffff01000000;
   this[0x32] = -0xffffff01000000;
@@ -1218,7 +1218,7 @@ void Walaber::Widget_PushButton::reloadFont()
   p0->f_0xc4 = *(uint *)(in_x1 + 0xc4);
   p0->f_0xc8 = *(ulong *)(in_x1 + 200);
                     /* try { // try from 00429204 to 00429207 has its CatchHandler @ 00429410 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&p0->field_0xd0,in_x1 + 0xd0);
+  new ((void *)(&p0->field_0xd0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0xd0);
   p0->f_0xe8 = *(ulong *)(in_x1 + 0xe8);
   p0->f_0x0 = (ulong)&PTR__Widget_PushButton_0070f658;
   uVar3 = *(undefined8 *)(in_x1 + 0xf8);
@@ -1261,7 +1261,7 @@ void Walaber::Widget_PushButton::reloadFont()
   *(undefined8 *)&p0->field_0x16c = *(undefined8 *)(in_x1 + 0x16c);
   p0->f_0x174 = *(uint *)(in_x1 + 0x174);
                     /* try { // try from 00429308 to 0042930f has its CatchHandler @ 004293ec */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&p0->f_0x178,in_x1 + 0x178);
+  new ((void *)(&p0->f_0x178)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x178);
   p0->f_0x190 = *(uchar *)(in_x1 + 400);
   p0->f_0x191 = *(uchar *)(in_x1 + 0x191);
   p0->f_0x192 = *(uchar *)(in_x1 + 0x192);
@@ -1283,7 +1283,7 @@ void Walaber::Widget_PushButton::reloadFont()
   p0->f_0x1a2 = *(uchar *)(in_x1 + 0x1a2);
   p0->f_0x1a3 = *(uchar *)(in_x1 + 0x1a3);
                     /* try { // try from 004293b8 to 004293bb has its CatchHandler @ 004293d4 */
-  std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::vector(&p0->f_0x1a8,in_x1 + 0x1a8);
+  new ((void *)(&p0->f_0x1a8)) std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>(in_x1 + 0x1a8);
   p0->f_0x1c0 = *(ulong *)(in_x1 + 0x1c0);
   return;
 }

@@ -138,7 +138,7 @@ void Walaber::Widget_TimedButton::setActiveTexture(long param_1,long *param_2)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x100))->operator=();
   lVar1 = *param_2;
   if ((lVar1 != 0) && (*(int *)param_2[1] != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -166,7 +166,7 @@ void Walaber::Widget_TimedButton::setInactiveTexture(long param_1,long *param_2)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x110))->operator=();
   lVar1 = *param_2;
   if ((lVar1 != 0) && (*(int *)param_2[1] != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);

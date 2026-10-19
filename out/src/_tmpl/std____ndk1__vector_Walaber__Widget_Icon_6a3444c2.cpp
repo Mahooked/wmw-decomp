@@ -111,7 +111,7 @@ void std::__ndk1::
         *piVar1 = *piVar1 + 1;
       }
                     /* try { // try from 0037f024 to 0037f027 has its CatchHandler @ 0037f09c */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4 + -0x20,plVar5 + -4);
+      new ((void *)(lVar4 + -0x20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar5 + -4);
       *(int *)(lVar4 + -8) = (int)plVar5[-1];
       lVar4 = param_2[1] + -0x30;
       param_2[1] = lVar4;

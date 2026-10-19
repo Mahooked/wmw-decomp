@@ -39,7 +39,7 @@ void Walaber::XMLDocument::NamedIterator::operator++(long *param_1)
 /* ok  address 0x3d6388  size 20 */Walaber::XMLDocument::NamedIterator::NamedIterator(undefined8 param_2,undefined8 param_3){
   *this = param_2;
   this[1] = param_2;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_3);
+  new ((void *)(this + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   return;
 }
 
@@ -52,7 +52,7 @@ void Walaber::XMLDocument::NamedIterator::operator++(long *param_1)
   uVar1 = *in_x1;
   p0[1].f_0x0 = in_x1[1];
   p0->f_0x0 = uVar1;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(p0 + 2,in_x1 + 2);
+  new ((void *)(p0 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 2);
   return;
 }
 
@@ -75,7 +75,7 @@ Walaber::XMLDocument::NamedIterator::operator=(Walaber__XMLDocument__NamedIterat
   uVar1 = *in_x1;
   p0[1].f_0x0 = in_x1[1];
   p0->f_0x0 = uVar1;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(p0 + 2,in_x1 + 2);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(p0 + 2))->operator=(in_x1 + 2);
   return p0;
 }
 
@@ -112,7 +112,7 @@ void Walaber::XMLDocument::NamedIterator::getChildNamedIterator
   }
   *param_1 = lVar3;
   param_1[1] = lVar3;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
+  new ((void *)(param_1 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   return;
 }
 
@@ -134,7 +134,7 @@ void Walaber::XMLDocument::NamedIterator::getNamedIteratorToDescendant
   uVar1 = Walaber::XML::getNode(*param_2);
   *param_1 = uVar1;
   param_1[1] = uVar1;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
+  new ((void *)(param_1 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   return;
 }
 

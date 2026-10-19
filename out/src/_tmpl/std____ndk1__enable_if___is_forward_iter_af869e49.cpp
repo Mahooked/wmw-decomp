@@ -44,7 +44,7 @@ void std::__ndk1::
     }
     for (; pWVar1 != p1; p1 = p1 + 0x28) {
       *puVar6 = *(undefined8 *)p1;
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(puVar6 + 1,p1 + 8);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(puVar6 + 1))->operator=(p1 + 8);
       *(undefined2 *)(puVar6 + 4) = *(undefined2 *)(p1 + 0x20);
       puVar6 = puVar6 + 5;
     }
@@ -62,7 +62,7 @@ void std::__ndk1::
       puVar6 = *(undefined8 **)(p0 + 8);
       do {
         *puVar6 = *(undefined8 *)pWVar8;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puVar6 + 1,pWVar8 + 8);
+        new ((void *)(puVar6 + 1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pWVar8 + 8);
         pWVar1 = pWVar8 + 0x20;
         pWVar8 = pWVar8 + 0x28;
         *(undefined2 *)(puVar6 + 4) = *(undefined2 *)pWVar1;
@@ -88,7 +88,7 @@ void std::__ndk1::
       puVar6 = *(undefined8 **)(p0 + 8);
       do {
         *puVar6 = *(undefined8 *)p1;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puVar6 + 1,p1 + 8);
+        new ((void *)(puVar6 + 1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(p1 + 8);
         pWVar8 = p1 + 0x20;
         p1 = p1 + 0x28;
         *(undefined2 *)(puVar6 + 4) = *(undefined2 *)pWVar8;

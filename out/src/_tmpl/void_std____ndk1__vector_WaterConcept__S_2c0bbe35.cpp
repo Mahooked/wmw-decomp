@@ -38,7 +38,7 @@ void std::__ndk1::
      (uVar4 = lVar6 * -0x1e1e1e1e1e1e1e1e, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::__split_buffer(auStack_60,uVar5,lVar3,&p0->field_0x10);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>(uVar5,lVar3,&p0->field_0x10);
                     /* try { // try from 004cc110 to 004cc12f has its CatchHandler @ 004cc168 */
   new ((void *)(lStack_50)) WaterConcept::Screen_Editor::ObjectData();
   lStack_50 = lStack_50 + 0x88;

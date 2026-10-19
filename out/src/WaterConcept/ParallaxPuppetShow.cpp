@@ -1336,7 +1336,7 @@ LAB_00431884:
                   uVar8 = SUB84(uStack_e0,0);
                 }
                     /* try { // try from 00431a60 to 00431a6b has its CatchHandler @ 004332fc */
-                std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_e0,&uStack_110);
+                new ((void *)(&uStack_e0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110);
                 auStack_c0[0] = (uint)puStack_a0;
                 uStack_c4 = (undefined4)((ulong)uStack_a8 >> 0x20);
                 uStack_c8 = SUB84(uStack_a8,0);
@@ -2211,9 +2211,9 @@ LAB_00432ea0:
                         }
                         uStack_e0 = (undefined4 **)CONCAT44(uStack_e0._4_4_,uVar38);
                     /* try { // try from 00432f14 to 00432f1f has its CatchHandler @ 004331d0 */
-                        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_d8,&uStack_110);
+                        new ((void *)(&uStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110);
                     /* try { // try from 00432f20 to 00432f2b has its CatchHandler @ 004331bc */
-                        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_c0,&uStack_f8);
+                        new ((void *)(auStack_c0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_f8);
                     /* try { // try from 00432f2c to 00432f37 has its CatchHandler @ 0043319c */
                         std::__ndk1::__tree_iterator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>>>::__emplace_multi<std::__ndk1::pair<float, WaterConcept::ParallaxPuppetShow::AnimationCue>>((long)p0 + 0x228,&uStack_e0);
                         if ((auStack_c0[0] & 1) != 0) {
@@ -2295,7 +2295,7 @@ LAB_00431134:
                           uStack_e0 = (undefined4 **)CONCAT44(uStack_e0._4_4_,uVar38);
                           uStack_f8 = CONCAT44(uStack_f8._4_4_,uVar8);
                     /* try { // try from 004311c4 to 004311cf has its CatchHandler @ 00433150 */
-                          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_d8,&uStack_110);
+                          new ((void *)(&uStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110);
                           auStack_c0[0] = (uint)uStack_f8;
                     /* try { // try from 004311d8 to 004311e3 has its CatchHandler @ 0043313c */
                           std::__ndk1::__tree_iterator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>>>::__emplace_multi<std::__ndk1::pair<float, WaterConcept::ParallaxPuppetShow::ColorCue>>((long)p0 + 0x240,&uStack_e0);

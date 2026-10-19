@@ -48,7 +48,7 @@ void std::__ndk1::
       lVar2 = param_3;
     }
     for (; lVar2 != param_2; param_2 = param_2 + 0x18) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(pbVar7,param_2);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(pbVar7))->operator=(param_2);
       pbVar7 = pbVar7 + 0x18;
     }
     if (uVar9 < (ulong)(lVar5 * -0x5555555555555555) || uVar9 + lVar5 * 0x5555555555555555 == 0) {
@@ -64,7 +64,7 @@ void std::__ndk1::
     else if (lVar2 != param_3) {
       lVar2 = param_1[1];
       do {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar2,lVar4);
+        new ((void *)(lVar2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar4);
         lVar4 = lVar4 + 0x18;
         lVar2 = param_1[1] + 0x18;
         param_1[1] = lVar2;
@@ -87,7 +87,7 @@ void std::__ndk1::
     if (param_2 != param_3) {
       lVar4 = param_1[1];
       do {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4,param_2);
+        new ((void *)(lVar4)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
         param_2 = param_2 + 0x18;
         lVar4 = param_1[1] + 0x18;
         param_1[1] = lVar4;

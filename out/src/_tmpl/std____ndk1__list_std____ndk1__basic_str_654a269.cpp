@@ -56,7 +56,7 @@ void std::__ndk1::
   plVar1 = (long *)operator new(0x28);
   *plVar1 = 0;
                     /* try { // try from 003ea314 to 003ea31b has its CatchHandler @ 003ea348 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar1 + 2,param_2);
+  new ((void *)(plVar1 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   lVar2 = *param_1;
   *plVar1 = lVar2;
   plVar1[1] = (long)param_1;

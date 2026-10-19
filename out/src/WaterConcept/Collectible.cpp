@@ -305,7 +305,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,&DAT_007421a8);
+    new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_007421a8);
     auStack_f8[1] = 0;
     pvStack_e8 = (void *)0x0;
     auStack_f8[0] = 0x3d02;
@@ -381,7 +381,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
     pvStack_b0 = (void *)0x0;
     if ((char)p0[0x29].f_0x8 != '\0') {
                     /* try { // try from 00478a10 to 00478a1f has its CatchHandler @ 00478eb8 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_88,&DAT_00742628);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(abStack_88))->operator=(&DAT_00742628);
       auStack_f8[1] = 0;
       pvStack_e8 = (void *)0x0;
       auStack_f8[0] = 0x3d02;
@@ -471,7 +471,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_c0,"FoodInfo",8);
     }
     if (*(char *)((long)&p0[0x29].f_0x8 + 1) != '\0') {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_88,&DAT_007426b8);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(abStack_88))->operator=(&DAT_007426b8);
       auStack_f8[1] = 0;
       pvStack_e8 = (void *)0x0;
       auStack_f8[0] = 0x3d02;

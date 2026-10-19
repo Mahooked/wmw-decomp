@@ -46,7 +46,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>(uVar2,lVar3,p0 + 2);
   pWStack_50->f_0x0 = *in_x1;
   pWStack_50 = (WaterConcept__InteractiveObject *)((long)pWStack_50 + 8);
   pWStack_60 = *p0;
@@ -120,7 +120,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>::__split_buffer(&ppWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&ppWStack_60)) std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>(uVar2,lVar3,p0 + 2);
   *ppWStack_50 = (WaterConcept__InteractiveObject *)*in_x1;
   ppWStack_50 = ppWStack_50 + 1;
   ppWStack_60 = *p0;

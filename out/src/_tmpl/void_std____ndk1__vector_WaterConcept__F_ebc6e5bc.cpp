@@ -45,7 +45,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x7ffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>&>::__split_buffer(&pvStack_60,uVar2,lVar3,&p0->f_0x10);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>&>(uVar2,lVar3,&p0->f_0x10);
   uVar7 = in_x1[1];
   uVar6 = *in_x1;
   puStack_50[2] = in_x1[2];

@@ -96,7 +96,7 @@
   }
   p0->f_0x50 = *(uchar *)(in_x1 + 0x50);
                     /* try { // try from 004c26d0 to 004c26d7 has its CatchHandler @ 004c277c */
-  std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::vector(&p0->f_0x58,in_x1 + 0x58);
+  new ((void *)(&p0->f_0x58)) std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>(in_x1 + 0x58);
   pWVar7 = p0 + 1;
   *(undefined8 *)pWVar7 = 0;
   *(undefined8 *)&p0[1].field_0x8 = 0;

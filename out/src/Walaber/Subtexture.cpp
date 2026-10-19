@@ -25,7 +25,7 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
   }
                     /* try { // try from 00396ec8 to 00396edb has its CatchHandler @ 00396f2c */
   Walaber::TextureManager::getTexture(auStack_48,uVar2,param_1 + 0xd0,&lStack_58,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0xc0,auStack_48);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0xc0))->operator=(auStack_48);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_58)->~SharedPtr<Walaber::Callback>();
   *(undefined4 *)(param_1 + 0x78) = *(undefined4 *)(*(long *)(param_1 + 0xc0) + 0x78);
@@ -49,7 +49,7 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
     *piVar1 = *piVar1 + 1;
   }
                     /* try { // try from 003970c0 to 003970c3 has its CatchHandler @ 0039711c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x1a,*param_3 + 8);
+  new ((void *)(this + 0x1a)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_3 + 8);
   uVar3 = *param_4;
   *(ulong *)((long)this + 0x84) = param_4[1];
   *(ulong *)((long)this + 0x7c) = uVar3;

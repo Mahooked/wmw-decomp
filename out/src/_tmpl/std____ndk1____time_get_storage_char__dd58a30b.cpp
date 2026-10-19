@@ -22,7 +22,7 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
   std::__ndk1::__time_get::__time_get();
   memset(p0 + 8,0,0x420);
                     /* try { // try from 005c1f80 to 005c1f8f has its CatchHandler @ 005c2084 */
-  std::__ndk1::ctype_byname<char>::ctype_byname(appuStack_60);
+  new ((void *)(appuStack_60)) std::__ndk1::ctype_byname<char>();
   appuStack_60[0] = &PTR__ctype_byname_00718fb8;
                     /* try { // try from 005c1f9c to 005c1fa7 has its CatchHandler @ 005c2028 */
   std::__ndk1::__time_get_storage<char>::init(p0,appuStack_60);
@@ -80,7 +80,7 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byt
   else {
     memset(param_1 + 1,0,0x420);
                     /* try { // try from 005c2354 to 005c2363 has its CatchHandler @ 005c2490 */
-    std::__ndk1::ctype_byname<char>::ctype_byname(appuStack_60,param_2,1);
+    new ((void *)(appuStack_60)) std::__ndk1::ctype_byname<char>(param_2,1);
     appuStack_60[0] = &PTR__ctype_byname_00718fb8;
                     /* try { // try from 005c2370 to 005c237b has its CatchHandler @ 005c2434 */
     std::__ndk1::__time_get_storage<char>::init(param_1,appuStack_60);

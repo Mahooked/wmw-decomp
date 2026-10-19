@@ -25,9 +25,9 @@ void std::__ndk1::
   if (p1 != (WaterConcept__Screen_InAppPurchase__product *)p2) {
     lVar1 = *(long *)(p0 + 8);
     do {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1,p1);
+      new ((void *)(lVar1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(p1);
                     /* try { // try from 004ec9bc to 004ec9c3 has its CatchHandler @ 004ec9ec */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x18,p1 + 0x18);
+      new ((void *)(lVar1 + 0x18)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(p1 + 0x18);
       p1 = p1 + 0x30;
       lVar1 = *(long *)(p0 + 8) + 0x30;
       *(long *)(p0 + 8) = lVar1;

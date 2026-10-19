@@ -479,7 +479,7 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
   undefined8 *puStack_68;
   undefined8 *puStack_58;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x1c8);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_1 + 0x1c8))->operator=();
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_00712778;

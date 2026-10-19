@@ -26,10 +26,10 @@
   this[1] = 0;
   *this = 0;
                     /* try { // try from 0037d6e0 to 0037d6e7 has its CatchHandler @ 0037d72c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(this + 2);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(this + 2))->operator=();
   uStack_48 = 0;
   uStack_40 = 0;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(this,&uStack_48);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(this))->operator=(&uStack_48);
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_48)->~SharedPtr<Walaber::Texture>();
   *(undefined4 *)(this + 5) = param_3;
   return;

@@ -47,7 +47,7 @@ void std::__ndk1::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>&>(uVar2,lVar3,p0 + 2);
   uVar8 = *in_x1;
   *(undefined8 *)((long)pWStack_50 + 8) = in_x1[1];
   *(undefined8 *)pWStack_50 = uVar8;

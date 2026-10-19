@@ -42,7 +42,7 @@ void std::__ndk1::vector<Walaber::Achievement*,std::__ndk1::allocator<Walaber::A
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Achievement*, std::__ndk1::allocator<Walaber::Achievement*>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<Walaber::Achievement*, std::__ndk1::allocator<Walaber::Achievement*>&>(uVar2,lVar3,p0 + 2);
   *(undefined8 *)pWStack_50 = *in_x1;
   pWStack_50 = (Walaber__Achievement *)((long)pWStack_50 + 8);
   pWStack_60 = *p0;

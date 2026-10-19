@@ -80,7 +80,7 @@ ulong Walaber::ZipArchiveCreator::addFileToZip(long *param_1,byte *param_2,byte 
   uStack_70 = 0xffffffff;
   ppuStack_1b0 = &PTR__basic_fstream_00710748;
                     /* try { // try from 003d7778 to 003d777f has its CatchHandler @ 003d797c */
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::basic_filebuf(auStack_1a8);
+  new ((void *)(auStack_1a8)) std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>();
   if (lStack_130 == 0) {
     lStack_130 = fopen(pbVar5,&DAT_0061ee22);
     if (lStack_130 == 0) goto LAB_003d7788;

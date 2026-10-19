@@ -42,7 +42,7 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>&>(uVar2,lVar3,p0 + 2);
   *(undefined8 *)pWStack_50 = *in_x1;
   pWStack_50 = (Walaber__Widget_Label *)((long)pWStack_50 + 8);
   pWStack_60 = *p0;
@@ -112,7 +112,7 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>&>::__split_buffer(&ppWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&ppWStack_60)) std::__ndk1::__split_buffer<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>&>(uVar2,lVar3,p0 + 2);
   *ppWStack_50 = (Walaber__Widget_Label *)*in_x1;
   ppWStack_50 = ppWStack_50 + 1;
   ppWStack_60 = *p0;

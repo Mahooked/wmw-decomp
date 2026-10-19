@@ -36,7 +36,7 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
      (uVar4 = lVar7 * -0x2222222222222222, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>::__split_buffer(auStack_60,uVar5,lVar3,p0 + 0x10);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>(uVar5,lVar3,p0 + 0x10);
   lVar3 = lStack_50;
                     /* try { // try from 0040abd8 to 0040ac0b has its CatchHandler @ 0040ac44 */
   new ((void *)(lStack_50)) WaterConceptConstants::FluidDescription();

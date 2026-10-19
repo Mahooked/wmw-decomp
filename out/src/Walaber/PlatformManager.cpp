@@ -111,7 +111,7 @@ void Walaber::PlatformManager::stripPlatformSpecificFilename
       uVar16 = uVar16 - 1;
     } while (pbVar4[lVar14] != 0x2e);
     if (uVar16 != 0xffffffffffffffff) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80,param_3,uVar16,0xffffffffffffffff,param_3);
+      new ((void *)(abStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3,uVar16,0xffffffffffffffff,param_3);
       uVar17 = 0;
       uVar16 = uVar16 - ((long)*(int *)(param_2 + 0x34) + 1);
       uVar2 = (ulong)(*param_3 >> 1);
@@ -139,7 +139,7 @@ LAB_003581a0:
 LAB_00358230:
                 if (uVar13 != 0xffffffffffffffff) {
                     /* try { // try from 0035829c to 003582b3 has its CatchHandler @ 00358308 */
-                  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_3,0,uVar13,param_3);
+                  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3,0,uVar13,param_3);
                   uVar16 = (ulong)(abStack_80[0] >> 1);
                   pvVar9 = (void *)((ulong)abStack_80 | 1);
                   if ((abStack_80[0] & 1) != 0) {
@@ -188,7 +188,7 @@ LAB_0035824c:
     }
   }
 LAB_00358260:
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_3);
+  new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
 LAB_0035826c:
   return;
 }
@@ -376,7 +376,7 @@ void Walaber::PlatformManager::getPrioritizedPlatformTags(undefined8 *param_1,lo
                     /* try { // try from 0035864c to 0035871f has its CatchHandler @ 00358730 */
       void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,&DAT_0072d860);
       if (param_1[1] != param_1[2]) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1[1],&DAT_0072d848);
+        new ((void *)(param_1[1])) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0072d848);
         param_1[1] = param_1[1] + 0x18;
         goto LAB_00358698;
       }
@@ -389,7 +389,7 @@ LAB_00358698:
       void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,&DAT_0072d830);
     }
     else {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1[1],&DAT_0072d830);
+      new ((void *)(param_1[1])) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0072d830);
       param_1[1] = param_1[1] + 0x18;
     }
   }
@@ -397,7 +397,7 @@ LAB_00358698:
     void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,&PlatformStrings);
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1[1],&PlatformStrings);
+    new ((void *)(param_1[1])) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&PlatformStrings);
     param_1[1] = param_1[1] + 0x18;
   }
   return;

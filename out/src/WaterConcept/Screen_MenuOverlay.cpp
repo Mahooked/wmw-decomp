@@ -1136,7 +1136,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x100,&lStack_a8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x100))->operator=(&lStack_a8);
                     /* try { // try from 00532020 to 00532027 has its CatchHandler @ 005324f4 */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a8)->~SharedPtr<Walaber::Texture>();
@@ -1157,7 +1157,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x110,&lStack_e8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x110))->operator=(&lStack_e8);
                     /* try { // try from 005320a0 to 005320a7 has its CatchHandler @ 005324cc */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_e8)->~SharedPtr<Walaber::Texture>();
@@ -1178,7 +1178,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x100,&lStack_108);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x100))->operator=(&lStack_108);
                     /* try { // try from 00531f2c to 00531f33 has its CatchHandler @ 0053259c */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_108)->~SharedPtr<Walaber::Texture>();
@@ -1199,7 +1199,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x110,&lStack_128);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x110))->operator=(&lStack_128);
                     /* try { // try from 00531fac to 00531fb3 has its CatchHandler @ 00532574 */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_128)->~SharedPtr<Walaber::Texture>();
@@ -1223,7 +1223,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x100,&lStack_148);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x100))->operator=(&lStack_148);
                     /* try { // try from 00532224 to 0053222b has its CatchHandler @ 005324a4 */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_148)->~SharedPtr<Walaber::Texture>();
@@ -1244,7 +1244,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x110,&lStack_168);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x110))->operator=(&lStack_168);
                     /* try { // try from 005322a4 to 005322ab has its CatchHandler @ 0053247c */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_168)->~SharedPtr<Walaber::Texture>();
@@ -1266,7 +1266,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x100,&lStack_188);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x100))->operator=(&lStack_188);
                     /* try { // try from 00532130 to 00532137 has its CatchHandler @ 0053254c */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_188)->~SharedPtr<Walaber::Texture>();
@@ -1287,7 +1287,7 @@ LAB_00531ec4:
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar4 + 0x110,&lStack_1a8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar4 + 0x110))->operator=(&lStack_1a8);
                     /* try { // try from 005321b0 to 005321b7 has its CatchHandler @ 00532524 */
     Walaber::Widget_PushButton::_applyTile(lVar4);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_1a8)->~SharedPtr<Walaber::Texture>();
@@ -1346,7 +1346,7 @@ void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void *p0, int * i
   
   if (*in_x1 != 1) goto LAB_005329c0;
   WaterConcept::Screen_MenuOverlay::_updateAudioButtons(p0);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,&GameSettings::currentLevelName);
+  new ((void *)(abStack_78)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&GameSettings::currentLevelName);
                     /* try { // try from 00532678 to 00532683 has its CatchHandler @ 00532a3c */
   Walaber::TextManager::getString(&uStack_60,abStack_78);
   if ((abStack_78[0] & 1) != 0) {
@@ -1504,7 +1504,7 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
       Walaber::ScreenManager::commitScreenChanges();
     }
     else {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,&DAT_00784d00);
+      new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00784d00);
                     /* try { // try from 00532b44 to 00532b57 has its CatchHandler @ 00532db4 */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98,&DAT_00784ce8,"=\'");
       uVar6 = DAT_00735dd8;
@@ -1570,7 +1570,7 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
         Walaber::DatabaseIterator::getStringAtIndex(auStack_98,auStack_a0,0);
         uVar3 = GameSettings::currentLevelChallengeID;
                     /* try { // try from 00532c80 to 00532c8b has its CatchHandler @ 00532d3c */
-        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::vector(&pvStack_b8,&bStack_80);
+        new ((void *)(&pvStack_b8)) std::__ndk1::vector<int, std::__ndk1::allocator<int>>(&bStack_80);
                     /* try { // try from 00532c8c to 00532c9f has its CatchHandler @ 00532d20 */
         WaterConcept::GameSettings::goPlayLevel(auStack_98,uVar3,&pvStack_b8,0);
         if (pvStack_b8 != (void *)0x0) {

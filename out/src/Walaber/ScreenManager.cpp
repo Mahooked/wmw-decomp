@@ -185,7 +185,7 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
     uStack_80 = 0x100000000;
     uStack_78 = p0;
                     /* try { // try from 003f0768 to 003f0773 has its CatchHandler @ 003f0880 */
-    Walaber::PropertyList::operator=(&plStack_70,p1);
+    ((Walaber::PropertyList *)(&plStack_70))->operator=(p1);
     puVar2 = DAT_007304b8;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f0838 to 003f0847 has its CatchHandler @ 003f0880 */
@@ -327,7 +327,7 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
     uStack_80 = 0x100000001;
     uStack_78 = p0;
                     /* try { // try from 003f0a8c to 003f0a97 has its CatchHandler @ 003f0ba4 */
-    Walaber::PropertyList::operator=(&plStack_70,p1);
+    ((Walaber::PropertyList *)(&plStack_70))->operator=(p1);
     puVar2 = DAT_007304b8;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f0b5c to 003f0b6b has its CatchHandler @ 003f0ba4 */
@@ -627,7 +627,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
                     /* try { // try from 003f14d0 to 003f14e7 has its CatchHandler @ 003f1558 */
   uStack_2c = p0;
   void std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int const&>(&pvStack_48,&uStack_2c);
-  std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::vector(&pvStack_60,&pvStack_48);
+  new ((void *)(&pvStack_60)) std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>(&pvStack_48);
                     /* try { // try from 003f14e8 to 003f14f3 has its CatchHandler @ 003f153c */
   Walaber::ScreenManager::commitScreenChanges(CONCAT44(in_register_00005004,p1),&pvStack_60);
   if (pvStack_60 != (void *)0x0) {
@@ -701,7 +701,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
                     /* try { // try from 003f1708 to 003f171f has its CatchHandler @ 003f1794 */
   uStack_3c = p0;
   void std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int const&>(&pvStack_58,&uStack_3c);
-  std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::vector(&pvStack_70,&pvStack_58);
+  new ((void *)(&pvStack_70)) std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>(&pvStack_58);
                     /* try { // try from 003f1720 to 003f172f has its CatchHandler @ 003f1778 */
   Walaber::ScreenManager::commitScreenChanges(CONCAT44(in_register_00005004,p1),&pvStack_70,p2);
   if (pvStack_70 != (void *)0x0) {

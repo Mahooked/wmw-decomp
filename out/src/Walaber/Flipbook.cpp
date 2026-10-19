@@ -47,7 +47,7 @@
   *param_1 = 0;
   uStack_88 = 0;
                     /* try { // try from 003590e4 to 003590eb has its CatchHandler @ 00359510 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0);
+  new ((void *)(abStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   abStack_b8[10] = 0;
   abStack_b8[0xb] = 0;
   abStack_b8[0xc] = 0;
@@ -136,7 +136,7 @@ LAB_00359270:
   uStack_f0 = 0;
                     /* try { // try from 00359298 to 003592b3 has its CatchHandler @ 003594ac */
   Walaber::TextureManager::getTexture(auStack_d0,uVar10,&uStack_e8,&uStack_f8,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1,auStack_d0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1))->operator=(auStack_d0);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_d0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_f8)->~SharedPtr<Walaber::Callback>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_108)->~SharedPtr<Walaber::Callback>();

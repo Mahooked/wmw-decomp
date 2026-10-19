@@ -19,7 +19,7 @@
   param_2[4] = param_4;
   *(undefined4 *)((long)param_2 + 0x2c) = this;
                     /* try { // try from 0034c8f4 to 0034c8fb has its CatchHandler @ 0034c90c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_2 + 6,param_5);
+  new ((void *)(param_2 + 6)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
   *(undefined1 *)(param_2 + 9) = 0;
   return;
 }

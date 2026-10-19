@@ -32,7 +32,7 @@ long * std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
     plVar2 = (long *)operator new(0x30);
     *plVar2 = 0;
                     /* try { // try from 00378b98 to 00378b9b has its CatchHandler @ 00378c3c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar2 + 2,param_3 + 0x10);
+    new ((void *)(plVar2 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3 + 0x10);
     lVar4 = 1;
     plVar2[5] = *(long *)(param_3 + 0x28);
     plVar1 = plVar2;
@@ -40,7 +40,7 @@ long * std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
                     /* try { // try from 00378bb8 to 00378bbf has its CatchHandler @ 00378c50 */
       plVar3 = (long *)operator new(0x30);
                     /* try { // try from 00378bcc to 00378bcf has its CatchHandler @ 00378c58 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar3 + 2,lVar5 + 0x10);
+      new ((void *)(plVar3 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar5 + 0x10);
       lVar4 = lVar4 + 1;
       plVar3[5] = *(long *)(lVar5 + 0x28);
       plVar1[1] = (long)plVar3;

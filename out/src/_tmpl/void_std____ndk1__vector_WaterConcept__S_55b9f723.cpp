@@ -44,7 +44,7 @@ void std::__ndk1::
   else {
     uVar3 = 0x7ffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>&>::__split_buffer(&pvStack_60,uVar3,lVar4,p0 + 0x10);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>&>(uVar3,lVar4,p0 + 0x10);
   *puStack_50 = *in_x1;
   puStack_50[1] = in_x1[1];
   puStack_50[2] = in_x1[2];

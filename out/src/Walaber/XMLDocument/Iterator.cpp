@@ -146,7 +146,7 @@ void Walaber::XMLDocument::Iterator::getChildNamedIterator
   }
   *param_1 = lVar3;
   param_1[1] = lVar3;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
+  new ((void *)(param_1 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   return;
 }
 

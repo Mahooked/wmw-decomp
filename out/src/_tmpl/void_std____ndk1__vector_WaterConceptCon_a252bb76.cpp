@@ -46,7 +46,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>&>(uVar2,lVar3,p0 + 2);
   pWVar7 = pWStack_50 + 1;
   *pWStack_50 = (WaterConceptConstants__MaterialType)*in_x1;
   pWStack_60 = *p0;
@@ -123,7 +123,7 @@ void std::__ndk1::
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 4);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>&>(uVar2,lVar3,p0 + 4);
   puVar7 = puStack_50 + 1;
   *puStack_50 = *in_x1;
   pvStack_60 = *(void **)p0;

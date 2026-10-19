@@ -31,7 +31,7 @@ void std::__ndk1::messages<wchar_t>::do_get(undefined8 param_1)
 {
   undefined8 in_x4;
   
-  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::basic_string(param_1,in_x4);
+  new ((void *)(param_1)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(in_x4);
   return;
 }
 

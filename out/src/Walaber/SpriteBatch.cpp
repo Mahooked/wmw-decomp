@@ -2547,7 +2547,7 @@ void Walaber::SpriteBatch::drawString
     iVar1 = *(int *)(param_3 + 0x1c);
     *(int *)(param_3 + 0x1c) = iVar1 + 1;
     *(int *)(param_3 + 0x20) = iVar1;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,param_5);
+    new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 003614cc to 003614ef has its CatchHandler @ 003615ac */
     Walaber::SpriteBatch::_drawString(param_1,param_2,param_3,param_4,abStack_88,param_6,param_7,param_8,
                     *(undefined4 *)(param_4 + 0xa0));
@@ -2555,7 +2555,7 @@ void Walaber::SpriteBatch::drawString
     abStack_70[0] = abStack_88[0];
   }
   else if (iVar1 == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_5);
+    new ((void *)(abStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 00361510 to 00361533 has its CatchHandler @ 00361584 */
     Walaber::SpriteBatch::_drawString(param_1,param_2,param_3,param_4,abStack_a0,param_6,param_7,param_8,
                     *(undefined4 *)(param_4 + 0xa0));
@@ -2567,7 +2567,7 @@ void Walaber::SpriteBatch::drawString
       puts("ERROR: draw has been called before a call to start");
       goto LAB_00361554;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,param_5);
+    new ((void *)(abStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 0036147c to 0036149f has its CatchHandler @ 00361598 */
     Walaber::SpriteBatch::_drawString(param_1,param_2,param_3,param_4,abStack_70,param_6,param_7,param_8,
                     *(undefined4 *)(param_4 + 0xa0));
@@ -2636,7 +2636,7 @@ void Walaber::SpriteBatch::drawString
     if (*(int *)(param_3 + 0x1c) <= param_4) {
       *(int *)(param_3 + 0x1c) = param_4 + 1;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,param_6);
+    new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
                     /* try { // try from 003616bc to 003616df has its CatchHandler @ 0036179c */
     Walaber::SpriteBatch::_drawString(param_1,param_2,param_3,param_5,abStack_88,param_7,param_8,param_9,
                     *(undefined4 *)(param_5 + 0xa0));
@@ -2644,7 +2644,7 @@ void Walaber::SpriteBatch::drawString
     abStack_70[0] = abStack_88[0];
   }
   else if (iVar1 == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_6);
+    new ((void *)(abStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
                     /* try { // try from 00361700 to 00361723 has its CatchHandler @ 00361774 */
     Walaber::SpriteBatch::_drawString(param_1,param_2,param_3,param_5,abStack_a0,param_7,param_8,param_9,
                     *(undefined4 *)(param_5 + 0xa0));
@@ -2656,7 +2656,7 @@ void Walaber::SpriteBatch::drawString
       puts("ERROR: draw has been called before a call to start");
       goto LAB_00361744;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,param_6);
+    new ((void *)(abStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
                     /* try { // try from 00361660 to 00361683 has its CatchHandler @ 00361788 */
     Walaber::SpriteBatch::_drawString(param_1,param_2,param_3,param_5,abStack_70,param_7,param_8,param_9,
                     *(undefined4 *)(param_5 + 0xa0));
@@ -2697,7 +2697,7 @@ void Walaber::SpriteBatch::drawStringClipped
     iVar1 = *(int *)(param_3 + 0x1c);
     *(int *)(param_3 + 0x1c) = iVar1 + 1;
     *(int *)(param_3 + 0x20) = iVar1;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_98,param_5);
+    new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 00361888 to 003618af has its CatchHandler @ 00361974 */
     Walaber::SpriteBatch::_drawStringClip(param_1,param_2,param_3,param_4,abStack_98,param_6,param_7,param_8,param_9,
                     *(undefined4 *)(param_4 + 0xa0));
@@ -2705,7 +2705,7 @@ void Walaber::SpriteBatch::drawStringClipped
     abStack_80[0] = abStack_98[0];
   }
   else if (iVar1 == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,param_5);
+    new ((void *)(abStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 003618d0 to 003618f7 has its CatchHandler @ 0036194c */
     Walaber::SpriteBatch::_drawStringClip(param_1,param_2,param_3,param_4,abStack_b0,param_6,param_7,param_8,param_9,
                     *(undefined4 *)(param_4 + 0xa0));
@@ -2717,7 +2717,7 @@ void Walaber::SpriteBatch::drawStringClipped
       puts("ERROR: draw has been called before a call to start");
       goto LAB_00361918;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80,param_5);
+    new ((void *)(abStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 00361834 to 0036185b has its CatchHandler @ 00361960 */
     Walaber::SpriteBatch::_drawStringClip(param_1,param_2,param_3,param_4,abStack_80,param_6,param_7,param_8,param_9,
                     *(undefined4 *)(param_4 + 0xa0));
@@ -2788,7 +2788,7 @@ void Walaber::SpriteBatch::drawStringClipped
     if (*(int *)(param_3 + 0x1c) <= param_4) {
       *(int *)(param_3 + 0x1c) = param_4 + 1;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_98,param_6);
+    new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
                     /* try { // try from 00361a90 to 00361ab7 has its CatchHandler @ 00361b7c */
     Walaber::SpriteBatch::_drawStringClip(param_1,param_2,param_3,param_5,abStack_98,param_7,param_8,param_9,param_10,
                     *(undefined4 *)(param_5 + 0xa0));
@@ -2796,7 +2796,7 @@ void Walaber::SpriteBatch::drawStringClipped
     abStack_80[0] = abStack_98[0];
   }
   else if (iVar1 == 4) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,param_6);
+    new ((void *)(abStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
                     /* try { // try from 00361ad8 to 00361aff has its CatchHandler @ 00361b54 */
     Walaber::SpriteBatch::_drawStringClip(param_1,param_2,param_3,param_5,abStack_b0,param_7,param_8,param_9,param_10,
                     *(undefined4 *)(param_5 + 0xa0));
@@ -2808,7 +2808,7 @@ void Walaber::SpriteBatch::drawStringClipped
       puts("ERROR: draw has been called before a call to start");
       goto LAB_00361b20;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80,param_6);
+    new ((void *)(abStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_6);
                     /* try { // try from 00361a30 to 00361a57 has its CatchHandler @ 00361b68 */
     Walaber::SpriteBatch::_drawStringClip(param_1,param_2,param_3,param_5,abStack_80,param_7,param_8,param_9,param_10,
                     *(undefined4 *)(param_5 + 0xa0));
@@ -3089,7 +3089,7 @@ void Walaber::SpriteBatch::_drawStringCenterClip
   void *pvStack_78;
   float afStack_70 [2];
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_88,param_5);
+  new ((void *)(&fStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 00362230 to 00362243 has its CatchHandler @ 003622d0 */
   Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,&fStack_88);
   if ((fStack_88._0_1_ & 1) != 0) {
@@ -3122,7 +3122,7 @@ void Walaber::SpriteBatch::_drawStringRightClip
   void *pvStack_78;
   float afStack_70 [2];
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_88,param_5);
+  new ((void *)(&fStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_5);
                     /* try { // try from 00362348 to 0036235b has its CatchHandler @ 003623e0 */
   Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,&fStack_88);
   if ((fStack_88._0_1_ & 1) != 0) {

@@ -263,7 +263,7 @@ void WaterConcept::IAPNotification::_loadSprites(long param_1)
   if (puStack_68 != (undefined8 *)0x0) {
     *piStack_60 = *piStack_60 + 1;
   }
-  Walaber::SharedPtr<Walaber::Callback>::operator=(plVar5 + 0x1a,&puStack_c0);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(plVar5 + 0x1a))->operator=(&puStack_c0);
   ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0049ad10 to 0049ad1b has its CatchHandler @ 0049aea0 */
   Walaber::Sprite::getCurrentSize(&bStack_90,plVar5);
@@ -561,9 +561,9 @@ void WaterConcept::IAPNotification::_updateUI(long param_1)
   }
   else if (*(long *)(param_1 + 0x218) == 0) goto LAB_0049b398;
   lVar3 = *(long *)(param_1 + 0x200);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1 + 0x210);
+  new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1 + 0x210);
                     /* try { // try from 0049b378 to 0049b387 has its CatchHandler @ 0049b3c0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x178,abStack_50);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x178))->operator=(abStack_50);
   Walaber::Widget_PushButton::_resizeFont(lVar3);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
@@ -1151,7 +1151,7 @@ void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0, 
     fVar4 = 1.0;
   }
   fStack_44 = fVar4 * fVar3;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,in_x1 + 0x168);
+  new ((void *)(abStack_78)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x168);
                     /* try { // try from 0049bf00 to 0049bf1b has its CatchHandler @ 0049bf84 */
   Walaber::BitmapFont::wrapStringInSize(&bStack_60,fVar4 * fVar3,lVar2,&fStack_44,abStack_78,&uStack_40);
   if ((abStack_78[0] & 1) != 0) {
@@ -1259,7 +1259,7 @@ void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton
                     /* try { // try from 0049c0d0 to 0049c0d7 has its CatchHandler @ 0049c1d0 */
   uVar2 = Walaber::FontManager::getFont(uVar2,abStack_a0);
                     /* try { // try from 0049c0e0 to 0049c0eb has its CatchHandler @ 0049c1cc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b8,in_x1 + 0x178);
+  new ((void *)(abStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x178);
                     /* try { // try from 0049c100 to 0049c117 has its CatchHandler @ 0049c1b4 */
   Walaber::BitmapFont::wrapStringInSize(&bStack_88,(21.0 / fVar6) * fVar5,uVar2,&uStack_6c,abStack_b8,&uStack_50);
   if ((abStack_b8[0] & 1) != 0) {
@@ -1269,9 +1269,9 @@ void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton
     operator delete(pvStack_90);
   }
                     /* try { // try from 0049c138 to 0049c143 has its CatchHandler @ 0049c1ac */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d0,&bStack_88);
+  new ((void *)(abStack_d0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88);
                     /* try { // try from 0049c144 to 0049c157 has its CatchHandler @ 0049c1f8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(in_x1 + 0x178,abStack_d0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(in_x1 + 0x178))->operator=(abStack_d0);
   Walaber::Widget_PushButton::_resizeFont();
   if ((abStack_d0[0] & 1) != 0) {
     operator delete(pvStack_c0);

@@ -990,12 +990,12 @@ void WaterConcept::Screen_PerformanceTest::update(float p0,bool p1)
       }
                     /* try { // try from 005423f0 to 005423fb has its CatchHandler @ 00542a00 */
       WaterConcept::Notification::NotificationTransitionBehavior::calcTransitionLength(&bStack_160);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar15 + 0xa8,&bStack_160);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar15 + 0xb8,&uStack_150);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar15 + 200,auStack_140);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar15 + 0xd8,auStack_130);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar15 + 0xe8,auStack_120);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar15 + 0xf8,auStack_110);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar15 + 0xa8))->operator=(&bStack_160);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar15 + 0xb8))->operator=(&uStack_150);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar15 + 200))->operator=(auStack_140);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar15 + 0xd8))->operator=(auStack_130);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar15 + 0xe8))->operator=(auStack_120);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar15 + 0xf8))->operator=(auStack_110);
       *(undefined8 *)(lVar15 + 0x110) = uStack_f8;
       *(ulong *)(lVar15 + 0x108) = CONCAT44(fStack_fc,fStack_100);
       *(ulong *)(lVar15 + 0x118) = CONCAT17(uStack_e9,CONCAT43(uStack_ed,uStack_f0));
@@ -1047,12 +1047,12 @@ void WaterConcept::Screen_PerformanceTest::update(float p0,bool p1)
       }
                     /* try { // try from 00542514 to 0054251b has its CatchHandler @ 00542a00 */
       WaterConcept::Notification::NotificationTransitionBehavior::calcTransitionLength(&bStack_160);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar17 + 0xa8,&bStack_160);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar17 + 0xb8,&uStack_150);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar17 + 200,auStack_140);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar17 + 0xd8,auStack_130);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar17 + 0xe8,auStack_120);
-      Walaber::SharedPtr<Walaber::Curve>::operator=(lVar17 + 0xf8,auStack_110);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar17 + 0xa8))->operator=(&bStack_160);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar17 + 0xb8))->operator=(&uStack_150);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar17 + 200))->operator=(auStack_140);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar17 + 0xd8))->operator=(auStack_130);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar17 + 0xe8))->operator=(auStack_120);
+      ((Walaber::SharedPtr<Walaber::Curve> *)(lVar17 + 0xf8))->operator=(auStack_110);
       *(undefined8 *)(lVar17 + 0x110) = uStack_f8;
       *(ulong *)(lVar17 + 0x108) = CONCAT44(fStack_fc,fStack_100);
       *(ulong *)(lVar17 + 0x118) = CONCAT17(uStack_e9,CONCAT43(uStack_ed,uStack_f0));

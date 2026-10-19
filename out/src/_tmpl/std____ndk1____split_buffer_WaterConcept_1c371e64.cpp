@@ -67,7 +67,7 @@ void std::__ndk1::
       if (lVar1 == 0) {
         uVar4 = 1;
       }
-      std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>::__split_buffer(&ppWStack_70,uVar4,uVar4 >> 2,p0 + 3);
+      new ((void *)(&ppWStack_70)) std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>(uVar4,uVar4 >> 2,p0 + 3);
       ppWVar7 = p0[1];
       ppWVar8 = p0[2];
       ppWVar5 = ppWStack_60;
@@ -179,7 +179,7 @@ void std::__ndk1::
       if (lVar5 == 0) {
         lVar2 = 1;
       }
-      std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>::__split_buffer(&ppWStack_70,lVar2,lVar2 + 3U >> 2,p0 + 3);
+      new ((void *)(&ppWStack_70)) std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>(lVar2,lVar2 + 3U >> 2,p0 + 3);
       ppWVar4 = p0[1];
       ppWVar3 = p0[2];
       if (ppWVar4 != ppWVar3) {

@@ -42,7 +42,7 @@ void std::__ndk1::vector<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>:
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>&>::__split_buffer(&ppWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&ppWStack_60)) std::__ndk1::__split_buffer<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>&>(uVar2,lVar3,p0 + 2);
   *ppWStack_50 = (Walaber__Node *)*in_x1;
   ppWStack_50 = ppWStack_50 + 1;
   ppWStack_60 = *p0;

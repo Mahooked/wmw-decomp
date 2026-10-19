@@ -23,7 +23,7 @@ void std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::Tex
   
   for (lVar1 = *(long *)(param_1 + 8); (param_2 != param_3 && (param_1 != lVar1));
       lVar1 = *(long *)(lVar1 + 8)) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar1 + 0x10,param_2 + 0x10);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar1 + 0x10))->operator=(param_2 + 0x10);
     *(undefined8 *)(lVar1 + 0x28) = *(undefined8 *)(param_2 + 0x28);
     param_2 = *(long *)(param_2 + 8);
   }

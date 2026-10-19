@@ -22,7 +22,7 @@ void Walaber::Texture::create_empty_buffer(undefined8 *param_1,long param_2)
   fVar4 = (float)NEON_ucvtf(*(undefined4 *)(param_2 + 0x80));
   uVar2 = operator new(0x18);
                     /* try { // try from 00395950 to 00395953 has its CatchHandler @ 003959a4 */
-  std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::vector(uVar2,(long)(fVar3 * fVar4));
+  new ((void *)(uVar2)) std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>((long)(fVar3 * fVar4));
   uStack_58 = uVar2;
   puStack_50 = (undefined4 *)operator new(4);
   *param_1 = uVar2;
@@ -87,7 +87,7 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
 /* ok  address 0x395b40  size 168 */Walaber::Texture::Texture(undefined8 param_2,undefined4 param_3){
   *this = &PTR__Texture_00710128;
                     /* try { // try from 00395b6c to 00395b73 has its CatchHandler @ 00395bdc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 1);
+  new ((void *)(this + 1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 00395b78 to 00395b7f has its CatchHandler @ 00395bc4 */
   new ((void *)(this + 4)) Walaber::TextureSettings(6);
   *(undefined8 *)((long)this + 0x8c) = 0;
@@ -223,7 +223,7 @@ void Walaber::Texture::_applySettings(void)
   
   *this = &PTR__Texture_00710128;
                     /* try { // try from 00396db4 to 00396dbb has its CatchHandler @ 00396e74 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 1);
+  new ((void *)(this + 1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   uVar1 = *param_3;
   *(undefined4 *)(this + 5) = *(undefined4 *)(param_3 + 1);
   this[4] = uVar1;
@@ -237,7 +237,7 @@ void Walaber::Texture::_applySettings(void)
   this[7] = uVar2;
   this[6] = uVar1;
                     /* try { // try from 00396e04 to 00396e07 has its CatchHandler @ 00396e5c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 9,param_3 + 5);
+  new ((void *)(this + 9)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3 + 5);
   uVar1 = param_3[10];
   uVar3 = param_3[9];
   uVar2 = param_3[8];
@@ -283,7 +283,7 @@ void Walaber::Texture::setSettings(long *param_1,long *param_2)
   param_1[8] = param_2[4];
   param_1[7] = lVar2;
   param_1[6] = lVar1;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 9,param_2 + 5);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_1 + 9))->operator=(param_2 + 5);
   lVar2 = param_2[9];
   lVar1 = param_2[8];
   param_1[0xe] = param_2[10];

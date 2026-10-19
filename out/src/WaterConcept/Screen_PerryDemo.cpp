@@ -1203,9 +1203,9 @@ LAB_00544150:
 LAB_00544178:
                     /* try { // try from 0054417c to 00544193 has its CatchHandler @ 005444c4 */
       lVar11 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),4);
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_158,(byte *)((long)p0 + 0xf0));
+      new ((void *)(abStack_158)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>((byte *)((long)p0 + 0xf0));
                     /* try { // try from 00544198 to 005441a7 has its CatchHandler @ 005444b0 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar11 + 0x178,abStack_158);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar11 + 0x178))->operator=(abStack_158);
       Walaber::Widget_PushButton::_resizeFont(lVar11);
       if ((abStack_158[0] & 1) != 0) {
         operator delete(pvStack_148);
@@ -1280,7 +1280,7 @@ LAB_00544178:
                     /* try { // try from 005442b0 to 005442b7 has its CatchHandler @ 00544478 */
   uVar10 = Walaber::FontManager::getFont(uVar10,abStack_188);
                     /* try { // try from 005442c0 to 005442c7 has its CatchHandler @ 00544474 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,lVar7 + 0x168);
+  new ((void *)(abStack_90)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar7 + 0x168);
                     /* try { // try from 005442dc to 005442f3 has its CatchHandler @ 0054445c */
   Walaber::BitmapFont::wrapStringInSize(&uStack_110,(21.0 / fVar17) * fVar16,uVar10,&uStack_c0,abStack_90,&fStack_a8);
   if ((abStack_90[0] & 1) != 0) {
@@ -1407,7 +1407,7 @@ void WaterConcept::Screen_PerryDemo::_loadSounds(void *p0)
   uStack_2f = 0x6c;
                     /* try { // try from 00544700 to 00544723 has its CatchHandler @ 0054476c */
   lVar2 = Walaber::SoundManager::getInstancePtr();
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar2 + 0xd8,&GameSettings::ContentBasePath);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar2 + 0xd8))->operator=(&GameSettings::ContentBasePath);
   uVar3 = Walaber::SoundManager::getInstancePtr();
   Walaber::SoundManager::init(uVar3,abStack_40,16000);
   *(undefined1 *)((long)p0 + 4) = 1;

@@ -103,7 +103,7 @@ void std::__ndk1::
       if (lVar7 == 0) {
         lVar3 = 1;
       }
-      std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>::__split_buffer(&pvStack_70,lVar3,uVar5,param_1 + 3);
+      new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>(lVar3,uVar5,param_1 + 3);
                     /* try { // try from 0048e4d4 to 0048e4db has its CatchHandler @ 0048e6ac */
       uStack_78 = operator new(0x1000);
                     /* try { // try from 0048e4e4 to 0048e4ef has its CatchHandler @ 0048e69c */
@@ -154,7 +154,7 @@ void std::__ndk1::
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;
@@ -192,7 +192,7 @@ void std::__ndk1::
         if (lVar7 == 0) {
           uVar5 = 1;
         }
-        std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>::__split_buffer(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        new ((void *)(&pvStack_70)) std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>(uVar5,uVar5 >> 2,param_1 + 3);
         puVar4 = (undefined8 *)param_1[1];
         puVar6 = (undefined8 *)param_1[2];
         puVar8 = puVar4;

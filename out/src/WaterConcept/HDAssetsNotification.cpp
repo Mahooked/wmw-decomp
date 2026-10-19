@@ -465,7 +465,7 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
         abStack_70[7] = 0x65;
         abStack_70[8] = 99;
                     /* try { // try from 0049a120 to 0049a12b has its CatchHandler @ 0049a58c */
-        Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_70);
+        ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](abStack_70);
         iVar4 = Walaber::Property::asInt();
         if ((abStack_70[0] & 1) != 0) {
           operator delete((void *)CONCAT62(uStack_5e,CONCAT11(uStack_5f,uStack_63._3_1_)));

@@ -253,7 +253,7 @@ void WaterConcept::Screen_InAppPurchase::loadPropertyList(Walaber__PropertyList 
     if ((bStack_120 & 1) != 0) {
       operator delete(apvStack_110[0]);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_f8,&DAT_0077acb0 + (ulong)GameSettings::currentSKU * 0x18);
+    new ((void *)(&bStack_f8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077acb0 + (ulong)GameSettings::currentSKU * 0x18);
     abStack_b8[6] = 0;
     abStack_b8[7] = 0;
     abStack_b8[8] = 0;
@@ -477,7 +477,7 @@ void WaterConcept::Screen_InAppPurchase::loadPropertyList(Walaber__PropertyList 
     if ((bStack_120 & 1) != 0) {
       operator delete(apvStack_110[0]);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_f8,&DAT_0077acb0 + (ulong)GameSettings::currentSKU * 0x18);
+    new ((void *)(&bStack_f8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077acb0 + (ulong)GameSettings::currentSKU * 0x18);
     abStack_b8[6] = 0;
     abStack_b8[7] = 0;
     abStack_b8[8] = 0;
@@ -701,7 +701,7 @@ void WaterConcept::Screen_InAppPurchase::loadPropertyList(Walaber__PropertyList 
     if ((bStack_120 & 1) != 0) {
       operator delete(apvStack_110[0]);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_f8,&DAT_0077acb0 + (ulong)GameSettings::currentSKU * 0x18);
+    new ((void *)(&bStack_f8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077acb0 + (ulong)GameSettings::currentSKU * 0x18);
     abStack_b8[6] = 0;
     abStack_b8[7] = 0;
     abStack_b8[8] = 0;
@@ -2465,7 +2465,7 @@ LAB_004e7010:
                     /* try { // try from 004e713c to 004e7143 has its CatchHandler @ 004e72d4 */
   uVar8 = Walaber::FontManager::getFont(uVar8,abStack_140);
                     /* try { // try from 004e714c to 004e7153 has its CatchHandler @ 004e72d0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_158,lVar6 + 0x168);
+  new ((void *)(abStack_158)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar6 + 0x168);
                     /* try { // try from 004e7168 to 004e717f has its CatchHandler @ 004e72b8 */
   Walaber::BitmapFont::wrapStringInSize(&uStack_a0,(21.0 / fVar13) * fVar14,uVar8,&uStack_124,abStack_158,&fStack_108);
   if ((abStack_158[0] & 1) != 0) {
@@ -2821,7 +2821,7 @@ LAB_004e8a4c:
     uStack_129 = 0x62;
     uStack_128 = 0x6c;
                     /* try { // try from 004e7444 to 004e744f has its CatchHandler @ 004e9808 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,&fStack_130);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&fStack_130);
     iVar9 = Walaber::Property::asInt();
     if (((uint)fStack_130 & 1) != 0) {
       operator delete(pcStack_120);
@@ -2870,7 +2870,7 @@ LAB_004e8a4c:
       uStack_c9 = 0x44;
       uStack_c8 = 0;
                     /* try { // try from 004e77ec to 004e77ff has its CatchHandler @ 004e97b0 */
-      Walaber::PropertyList::operator[](lVar21,&bStack_d0);
+      ((Walaber::PropertyList *)(lVar21))->operator[](&bStack_d0);
       Walaber::Property::asString(&fStack_130);
       if (((ulong)pfStack_b0 & 1) != 0) {
         *pcStack_a0 = '\0';
@@ -2936,7 +2936,7 @@ LAB_004e8a4c:
       uStack_cc = 99;
       uStack_cb = 0x65;
                     /* try { // try from 004e7b30 to 004e7b43 has its CatchHandler @ 004e97a8 */
-      Walaber::PropertyList::operator[](lVar21,&bStack_d0);
+      ((Walaber::PropertyList *)(lVar21))->operator[](&bStack_d0);
       Walaber::Property::asString(&fStack_130);
       if (((ulong)pfStack_100 & 1) != 0) {
         *pcStack_f0 = '\0';
@@ -2984,9 +2984,9 @@ LAB_004e8a4c:
       }
       if (uVar14 != 0) {
                     /* try { // try from 004e7bcc to 004e7bd7 has its CatchHandler @ 004e96c8 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_148,&pfStack_b0);
+        new ((void *)(abStack_148)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&pfStack_b0);
                     /* try { // try from 004e7bd8 to 004e7be3 has its CatchHandler @ 004e96b4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_160,&pfStack_100);
+        new ((void *)(abStack_160)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&pfStack_100);
                     /* try { // try from 004e7be4 to 004e7bf3 has its CatchHandler @ 004e969c */
         new ((void *)(&fStack_130)) WaterConcept::Screen_InAppPurchase::product(abStack_148,abStack_160);
         if ((abStack_160[0] & 1) != 0) {
@@ -3002,9 +3002,9 @@ LAB_004e8a4c:
         }
         else {
                     /* try { // try from 004e7c24 to 004e7c33 has its CatchHandler @ 004e9674 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar17,&fStack_130);
+          new ((void *)(lVar17)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_130);
                     /* try { // try from 004e7c3c to 004e7c43 has its CatchHandler @ 004e949c */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar17 + 0x18,abStack_118);
+          new ((void *)(lVar17 + 0x18)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_118);
           *(long *)&p0[0x24].field_0x8 = *(long *)&p0[0x24].field_0x8 + 0x30;
         }
         if ((abStack_118[0] & 1) != 0) {
@@ -3351,7 +3351,7 @@ LAB_004e7f70:
       uStack_1e6 = 0;
       uStack_238 = 0x65636972700a;
                     /* try { // try from 004e83bc to 004e83d3 has its CatchHandler @ 004e9750 */
-      Walaber::PropertyList::operator[](lVar21,&uStack_238);
+      ((Walaber::PropertyList *)(lVar21))->operator[](&uStack_238);
       Walaber::Property::asString(auStack_218);
       uStack_1f8 = 0;
       pvStack_1f0 = (void *)0x0;
@@ -3584,7 +3584,7 @@ joined_r0x004e8d80:
             lVar21 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find(puVar23,0x30,0);
             if (lVar21 != 0) {
                     /* try { // try from 004e86d0 to 004e86e3 has its CatchHandler @ 004e93c4 */
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_130,puVar23,0,lVar21,puVar23);
+              new ((void *)(&fStack_130)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar23,0,lVar21,puVar23);
                     /* try { // try from 004e86e4 to 004e86f3 has its CatchHandler @ 004e93b4 */
               std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_298,&fStack_130,pcVar24);
                     /* try { // try from 004e86f4 to 004e8703 has its CatchHandler @ 004e939c */
@@ -3989,7 +3989,7 @@ LAB_004e8810:
                     /* try { // try from 004e892c to 004e8933 has its CatchHandler @ 004e952c */
       uVar13 = Walaber::FontManager::getFont(uVar13,&bStack_2f8);
                     /* try { // try from 004e893c to 004e8943 has its CatchHandler @ 004e9528 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_1e8,lVar21 + 0x168);
+      new ((void *)(&bStack_1e8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar21 + 0x168);
                     /* try { // try from 004e8958 to 004e896f has its CatchHandler @ 004e9510 */
       Walaber::BitmapFont::wrapStringInSize(&fStack_130,(21.0 / fVar29) * fVar34,uVar13,auStack_218,&bStack_1e8,
                       &uStack_200);
@@ -4021,7 +4021,7 @@ LAB_004e8810:
     }
     else {
                     /* try { // try from 004e8068 to 004e806f has its CatchHandler @ 004e97f8 */
-      std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::vector(auStack_198,p0 + 0x24);
+      new ((void *)(auStack_198)) std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>(p0 + 0x24);
                     /* try { // try from 004e8070 to 004e807b has its CatchHandler @ 004e971c */
       WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(p0,auStack_198);
       ((std::__ndk1::__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>> *)auStack_198)->~__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>();
@@ -4081,7 +4081,7 @@ LAB_004e8a24:
         uStack_c9 = 0x44;
         uStack_c8 = 0;
                     /* try { // try from 004e7674 to 004e7687 has its CatchHandler @ 004e972c */
-        Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_d0);
+        ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&bStack_d0);
         Walaber::Property::asString(&fStack_130);
         uStack_a8 = CONCAT17(uStack_121,
                              CONCAT16(uStack_122,
@@ -4158,7 +4158,7 @@ LAB_004e7ca4:
           goto LAB_004e7e30;
           if (p0[0x1c].field_0x7 != '\0') {
                     /* try { // try from 004e7e0c to 004e7e13 has its CatchHandler @ 004e96f8 */
-            std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::vector(auStack_310,p0 + 0x24);
+            new ((void *)(auStack_310)) std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>(p0 + 0x24);
                     /* try { // try from 004e7e14 to 004e7e1f has its CatchHandler @ 004e9420 */
             WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(p0,auStack_310);
             ((std::__ndk1::__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>> *)auStack_310)->~__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>();
@@ -4300,7 +4300,7 @@ LAB_004e8e94:
       pcStack_a0 = (char *)0x0;
       pfStack_b0 = &fde_table_entry_00646904;
                     /* try { // try from 004e7724 to 004e7737 has its CatchHandler @ 004e97c0 */
-      Walaber::PropertyList::operator[](in_x1 + 0x10,&pfStack_b0);
+      ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&pfStack_b0);
       Walaber::Property::asString(&bStack_d0);
       uVar8 = uStack_c7;
       uStack_128 = uStack_c8;
@@ -4440,7 +4440,7 @@ LAB_004e7c80:
     uStack_129 = 0x65;
     uStack_128 = 99;
                     /* try { // try from 004e74d0 to 004e74db has its CatchHandler @ 004e9800 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,&fStack_130);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&fStack_130);
     iVar9 = Walaber::Property::asInt();
     if (((uint)fStack_130 & 1) != 0) {
       operator delete(pcStack_120);
@@ -4494,7 +4494,7 @@ LAB_004e7c80:
       goto LAB_004e8ea0;
     }
     if (p0[0x1c].field_0x8 != '\0') {
-      std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::vector(auStack_e8,p0 + 0x24);
+      new ((void *)(auStack_e8)) std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>(p0 + 0x24);
                     /* try { // try from 004e7960 to 004e796b has its CatchHandler @ 004e94b4 */
       WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(p0,auStack_e8);
       ((std::__ndk1::__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>> *)auStack_e8)->~__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>();
@@ -4625,7 +4625,7 @@ void WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(long param_1,l
   puStack_f0 = (void *)0x0;
   uStack_100 = 0x4402;
                     /* try { // try from 004e9928 to 004e992f has its CatchHandler @ 004ea7dc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_150,param_1 + 0x210);
+  new ((void *)(abStack_150)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1 + 0x210);
                     /* try { // try from 004e9930 to 004e993b has its CatchHandler @ 004ea7c8 */
   Walaber::TextManager::getString(abStack_138,abStack_150);
                     /* try { // try from 004e993c to 004e9947 has its CatchHandler @ 004ea7b0 */
@@ -4646,7 +4646,7 @@ void WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(long param_1,l
   puStack_f0 = (undefined1 *)0x0;
   uStack_100 = 0x5002;
                     /* try { // try from 004e99a8 to 004e99af has its CatchHandler @ 004ea79c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_168,param_1 + 0x228);
+  new ((void *)(abStack_168)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1 + 0x228);
                     /* try { // try from 004e99b0 to 004e99bb has its CatchHandler @ 004ea788 */
   Walaber::TextManager::getString(abStack_138,abStack_168);
                     /* try { // try from 004e99bc to 004e99c7 has its CatchHandler @ 004ea770 */
@@ -4779,7 +4779,7 @@ void WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(long param_1,l
                     /* try { // try from 004e9bf4 to 004e9bfb has its CatchHandler @ 004ea70c */
   uVar8 = Walaber::FontManager::getFont(uVar8,abStack_1c0);
                     /* try { // try from 004e9c04 to 004e9c0b has its CatchHandler @ 004ea708 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_120,lVar9 + 0x168);
+  new ((void *)(&fStack_120)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar9 + 0x168);
                     /* try { // try from 004e9c20 to 004e9c37 has its CatchHandler @ 004ea6f0 */
   Walaber::BitmapFont::wrapStringInSize(abStack_138,(21.0 / fVar23) * fVar22,uVar8,&uStack_1a4,&fStack_120,&fStack_188);
   if (((uint)fStack_120 & 1) != 0) {
@@ -4924,13 +4924,13 @@ LAB_004e9ffc:
         }
         *(undefined1 *)((long)pvVar14 + uVar13) = 0;
                     /* try { // try from 004ea010 to 004ea023 has its CatchHandler @ 004ea880 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(plVar11 + 0x2f,&uStack_220);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(plVar11 + 0x2f))->operator=(&uStack_220);
         Walaber::Widget_PushButton::_resizeFont(plVar11);
         if ((uStack_220 & 1) != 0) {
           operator delete(pvStack_210);
         }
                     /* try { // try from 004ea034 to 004ea03f has its CatchHandler @ 004ea878 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_b0,param_1 + 0xc0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_b0))->operator=(param_1 + 0xc0);
         ((Walaber::PropertyList *)auStack_1d8)->~PropertyList();
         bVar5 = false;
       }
@@ -5044,13 +5044,13 @@ LAB_004ea184:
           }
           *(undefined1 *)((long)pvVar14 + uVar13) = 0;
                     /* try { // try from 004ea198 to 004ea1ab has its CatchHandler @ 004ea864 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(plVar12 + 0x2f,&uStack_238);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(plVar12 + 0x2f))->operator=(&uStack_238);
           Walaber::Widget_PushButton::_resizeFont(plVar12);
           if ((uStack_238 & 1) != 0) {
             operator delete(pvStack_228);
           }
                     /* try { // try from 004ea1bc to 004ea1c7 has its CatchHandler @ 004ea858 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_c8,param_1 + 0x108);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_c8))->operator=(param_1 + 0x108);
           ((Walaber::PropertyList *)auStack_1d8)->~PropertyList();
           bVar6 = false;
         }
@@ -5421,7 +5421,7 @@ void WaterConcept::Screen_InAppPurchase::handleEvent
         goto LAB_004eabe8;
       }
       if (iVar6 == 0x2a) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c0,uVar4 + 0xa8);
+        new ((void *)(abStack_c0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(uVar4 + 0xa8);
         uVar7 = CONCAT17(uStack_b1,
                          CONCAT16(uStack_b2,
                                   CONCAT42(uStack_b6,CONCAT11(abStack_c0[9],abStack_c0[8]))));
@@ -5432,7 +5432,7 @@ void WaterConcept::Screen_InAppPurchase::handleEvent
         }
         if (uVar1 == 0) {
                     /* try { // try from 004eb24c to 004eb253 has its CatchHandler @ 004eb5bc */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_c0,uVar4 + 0xf0);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(abStack_c0))->operator=(uVar4 + 0xf0);
           uVar7 = CONCAT17(uStack_b1,
                            CONCAT16(uStack_b2,
                                     CONCAT42(uStack_b6,CONCAT11(abStack_c0[9],abStack_c0[8]))));
@@ -6440,7 +6440,7 @@ LAB_004ec12c:
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_d0)->~SharedPtr<Walaber::Texture>();
   if (puVar15 != (undefined8 *)0x0) {
                     /* try { // try from 004ec1a8 to 004ec1af has its CatchHandler @ 004ec648 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_100,puVar15 + 1);
+    new ((void *)(&fStack_100)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar15 + 1);
                     /* try { // try from 004ec1b0 to 004ec1b7 has its CatchHandler @ 004ec640 */
     Walaber::TextManager::getISOCodeForCurrentLanguage(&bStack_118);
                     /* try { // try from 004ec1b8 to 004ec1c3 has its CatchHandler @ 004ec638 */

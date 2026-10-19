@@ -272,7 +272,7 @@ LAB_004a4840:
     break;
   case 3:
     lVar7 = plVar3[0x16];
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,plVar3[0x18] + 0x20);
+    new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar3[0x18] + 0x20);
                     /* try { // try from 004a47a0 to 004a47b7 has its CatchHandler @ 004a4874 */
     Walaber::AchievementManager::reportAchievement(0x42c80000,lVar7,abStack_50,1);
     if ((abStack_50[0] & 1) != 0) {
@@ -317,7 +317,7 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   float afStack_50 [2];
   
   uVar2 = *(undefined8 *)(param_1 + 0x90);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80,*(long *)(param_1 + 0xc0) + 0x20);
+  new ((void *)(abStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)(param_1 + 0xc0) + 0x20);
                     /* try { // try from 004a48d0 to 004a48db has its CatchHandler @ 004a4b94 */
   Walaber::TextManager::getString(&bStack_68,abStack_80);
                     /* try { // try from 004a48dc to 004a48e7 has its CatchHandler @ 004a4b7c */
@@ -349,7 +349,7 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   ((Walaber::SharedPtr<Walaber::Callback> *)auStack_b8)->~SharedPtr<Walaber::Callback>();
   lVar4 = *(long *)(param_1 + 0xa0);
   uVar2 = *(undefined8 *)(lVar4 + 0xe8);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d0,*(long *)(*(long *)(param_1 + 0xc0) + 0x38) + 0x18);
+  new ((void *)(abStack_d0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)(*(long *)(param_1 + 0xc0) + 0x38) + 0x18);
                     /* try { // try from 004a4998 to 004a49a3 has its CatchHandler @ 004a4b44 */
   Walaber::TextManager::getString(auStack_b8,abStack_d0);
   lVar5 = *(long *)(param_1 + 0xa0);
@@ -371,7 +371,7 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   Walaber::Widget_Label::_setTextTopLeft();
   uVar2 = *(undefined8 *)(param_1 + 0xa8);
   uVar3 = *(undefined8 *)(*(long *)(param_1 + 0xa0) + 0xe8);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_e8,*(long *)(*(long *)(param_1 + 0xc0) + 0x38) + 0x30);
+  new ((void *)(abStack_e8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)(*(long *)(param_1 + 0xc0) + 0x38) + 0x30);
                     /* try { // try from 004a4a4c to 004a4a57 has its CatchHandler @ 004a4b24 */
   Walaber::TextManager::getString(auStack_b8,abStack_e8);
   lVar4 = *(long *)(param_1 + 0xa8);

@@ -90,7 +90,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
       switch(p4) {
       case 0:
                     /* try { // try from 0036f80c to 0036f883 has its CatchHandler @ 0037010c */
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -109,7 +109,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
@@ -118,10 +118,10 @@ void Walaber::WidgetHelper::_copyFromPrototype
         p1->f_0x100 = uVar11;
         break;
       case 1:
-        Walaber::Widget_PushButton::operator=(p1,p2);
+        ((Walaber::Widget_PushButton *)(p1))->operator=(p2);
         break;
       case 2:
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -140,12 +140,12 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
-        Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x100,&p2->f_0x100);
-        Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x110,&p2->field_0x110);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->f_0x100))->operator=(&p2->f_0x100);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->field_0x110))->operator=(&p2->field_0x110);
         *(undefined8 *)&p1->field_0x120 = *(undefined8 *)&p2->field_0x120;
         *(undefined8 *)&p1->field_0x128 = *(undefined8 *)&p2->field_0x128;
         *(undefined8 *)&p1->field_0x130 = *(undefined8 *)&p2->field_0x130;
@@ -166,7 +166,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined4 *)&p1->field_0x154 = uVar8;
         break;
       case 3:
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -185,7 +185,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
@@ -193,7 +193,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         p1->field_0xfd = p2->field_0xfd;
         p1->field_0xfe = p2->field_0xfe;
         p1->field_0xff = p2->field_0xff;
-        Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x100,&p2->f_0x100);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->f_0x100))->operator=(&p2->f_0x100);
         *(undefined8 *)&p1->field_0x110 = *(undefined8 *)&p2->field_0x110;
         *(undefined8 *)&p1->field_0x118 = *(undefined8 *)&p2->field_0x118;
         uVar13 = *(undefined8 *)&p2->field_0x128;
@@ -204,13 +204,13 @@ void Walaber::WidgetHelper::_copyFromPrototype
         break;
       case 4:
                     /* try { // try from 0036f8d8 to 00370027 has its CatchHandler @ 0037010c */
-        Walaber::Widget_ColorPicker::operator=(p1,p2);
+        ((Walaber::Widget_ColorPicker *)(p1))->operator=(p2);
         break;
       case 5:
-        Walaber::Widget_IconList::operator=(p1,p2);
+        ((Walaber::Widget_IconList *)(p1))->operator=(p2);
         break;
       case 6:
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -229,7 +229,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
@@ -246,7 +246,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0x11c = uVar10;
         break;
       case 7:
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -265,11 +265,11 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
-        Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x100,&p2->f_0x100);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->f_0x100))->operator=(&p2->f_0x100);
         *(undefined8 *)&p1->field_0x110 = *(undefined8 *)&p2->field_0x110;
         *(undefined8 *)&p1->field_0x118 = *(undefined8 *)&p2->field_0x118;
         uVar8 = *(undefined4 *)&p2->field_0x120;
@@ -282,16 +282,16 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined2 *)&p1->field_0x138 = uVar2;
         break;
       case 8:
-        Walaber::Widget_Toggle::operator=(p1,p2);
+        ((Walaber::Widget_Toggle *)(p1))->operator=(p2);
         break;
       case 9:
-        Walaber::Widget_Slider::operator=(p1,p2);
+        ((Walaber::Widget_Slider *)(p1))->operator=(p2);
         break;
       case 10:
-        Walaber::Widget_Label::operator=(p1,p2);
+        ((Walaber::Widget_Label *)(p1))->operator=(p2);
         break;
       case 0xb:
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -310,12 +310,12 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
-        Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x100,&p2->f_0x100);
-        Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x110,&p2->field_0x110);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->f_0x100))->operator=(&p2->f_0x100);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->field_0x110))->operator=(&p2->field_0x110);
         *(undefined8 *)&p1->field_0x120 = *(undefined8 *)&p2->field_0x120;
         *(undefined8 *)&p1->field_0x128 = *(undefined8 *)&p2->field_0x128;
         *(undefined8 *)&p1->field_0x130 = *(undefined8 *)&p2->field_0x130;
@@ -338,10 +338,10 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(char *)&p1[1].f_0x18 = (char)p2[1].f_0x18;
         break;
       case 0xc:
-        Walaber::Widget_MovingTextBox::operator=(p1,p2);
+        ((Walaber::Widget_MovingTextBox *)(p1))->operator=(p2);
         break;
       case 0xd:
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -360,7 +360,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
@@ -368,7 +368,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         p1->field_0xfd = p2->field_0xfd;
         p1->field_0xfe = p2->field_0xfe;
         p1->field_0xff = p2->field_0xff;
-        Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x100,&p2->f_0x100);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->f_0x100))->operator=(&p2->f_0x100);
         uVar13 = *(undefined8 *)&p2->field_0x118;
         uVar10 = *(undefined8 *)&p2->field_0x110;
         *(undefined8 *)&p1->field_0x120 = *(undefined8 *)&p2->field_0x120;
@@ -380,13 +380,13 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0x140 = *(undefined8 *)&p2->field_0x140;
         break;
       case 0xe:
-        Walaber::Widget_ScrollableSet::operator=(p1,p2);
+        ((Walaber::Widget_ScrollableSet *)(p1))->operator=(p2);
         break;
       case 0xf:
-        Walaber::Widget_ScrollableGroup::operator=(p1,p2);
+        ((Walaber::Widget_ScrollableGroup *)(p1))->operator=(p2);
         break;
       case 0x10:
-        Walaber::DrawableNode::operator=(p1,p2);
+        ((Walaber::DrawableNode *)(p1))->operator=(p2);
         uVar1 = p2->f_0x84;
         uVar4 = p2->angle;
         p1->f_0x8c = p2->f_0x8c;
@@ -405,7 +405,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         *(undefined8 *)&p1->field_0xbc = *(undefined8 *)&p2->field_0xbc;
         p1->f_0xc4 = p2->f_0xc4;
         p1->widgetMgr = p2->widgetMgr;
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->field_0xd0,&p2->field_0xd0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->field_0xd0))->operator=(&p2->field_0xd0);
         p1->f_0xe8 = p2->f_0xe8;
         p1->f_0xf0 = p2->f_0xf0;
         p1->f_0xf8 = p2->f_0xf8;
@@ -415,13 +415,13 @@ void Walaber::WidgetHelper::_copyFromPrototype
         }
         break;
       case 0x11:
-        Walaber::Widget_FingerCatcher::operator=(p1,p2);
+        ((Walaber::Widget_FingerCatcher *)(p1))->operator=(p2);
         break;
       case 0x12:
-        Walaber::Widget_ScoreCounter::operator=(p1,p2);
+        ((Walaber::Widget_ScoreCounter *)(p1))->operator=(p2);
         break;
       case 0x13:
-        Walaber::Widget_ScrollableCamera::operator=(p1,p2);
+        ((Walaber::Widget_ScrollableCamera *)(p1))->operator=(p2);
       }
       Walaber::PCSNode::setName(p1,abStack_70);
                     /* try { // try from 00370028 to 00370037 has its CatchHandler @ 00370108 */
@@ -840,10 +840,10 @@ long Walaber::WidgetHelper::_openXMLFile(std::__ndk1::basic_string<char, std::__
   
   lVar2 = tpidr_el0;
   lStack_28 = *(long *)(lVar2 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_1);
+  new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1);
   currentDoc = 0;
                     /* try { // try from 00371b44 to 00371b4f has its CatchHandler @ 00371c5c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_58,abStack_40);
+  new ((void *)(abStack_58)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_40);
   abStack_70[9] = 0;
   abStack_70[10] = 0;
   abStack_70[0xb] = 0;
@@ -873,7 +873,7 @@ long Walaber::WidgetHelper::_openXMLFile(std::__ndk1::basic_string<char, std::__
                     /* try { // try from 00371bb0 to 00371bc3 has its CatchHandler @ 00371c30 */
     Walaber::WidgetHelper::_parseString(abStack_88,lVar1,"texturePath");
                     /* try { // try from 00371bc4 to 00371bd3 has its CatchHandler @ 00371c1c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&texturePath,abStack_88);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&texturePath))->operator=(abStack_88);
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }
@@ -994,7 +994,7 @@ void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::
   uStack_58 = 0;
   uStack_50 = 0;
   uStack_60 = param_2;
-  Walaber::SharedPtr<Walaber::Callback>::operator=(&uStack_58,param_3);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(&uStack_58))->operator=(param_3);
                     /* try { // try from 00371de8 to 00371dfb has its CatchHandler @ 00371f48 */
   puVar2 = (undefined *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mCallbackMap,param_1);
   if (puVar2 == &DAT_0072dda8) {
@@ -1002,7 +1002,7 @@ void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::
     apbStack_78[0] = param_1;
     lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(&mCallbackMap,param_1,&DAT_0062c524,apbStack_78,&puStack_98);
     *(undefined8 *)(lVar3 + 0x38) = uStack_60;
-    Walaber::SharedPtr<Walaber::Callback>::operator=(lVar3 + 0x40,&uStack_58);
+    ((Walaber::SharedPtr<Walaber::Callback> *)(lVar3 + 0x40))->operator=(&uStack_58);
                     /* try { // try from 00371e60 to 00371e67 has its CatchHandler @ 00371f30 */
     new ((void *)(apbStack_78)) Walaber::PropertyList();
                     /* try { // try from 00371e68 to 00371e6b has its CatchHandler @ 00371f2c */
@@ -1076,10 +1076,10 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
     void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&mFilesToRead,lVar4);
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(DAT_0072ddc0,lVar4);
+    new ((void *)(DAT_0072ddc0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar4);
     DAT_0072ddc0 = DAT_0072ddc0 + 0x18;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,lVar4);
+  new ((void *)(abStack_60)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar4);
   uStack_78 = 0;
   puStack_70 = (undefined1 *)0x0;
   uStack_80 = 0;
@@ -1148,7 +1148,7 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
                     /* try { // try from 003721d4 to 003721db has its CatchHandler @ 003722b0 */
     new ((void *)(&uStack_b0)) Walaber::PropertyList();
                     /* try { // try from 003721e4 to 003721eb has its CatchHandler @ 003722ac */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_d8,DAT_0072ddc0 + -0x18);
+    new ((void *)(&puStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(DAT_0072ddc0 + -0x18);
     pbVar9 = DAT_0072ddc0 + -0x18;
     if ((*pbVar9 & 1) != 0) {
       operator delete(*(void **)(DAT_0072ddc0 + -8));
@@ -1352,7 +1352,7 @@ LAB_003725a8:
                     /* try { // try from 003725c8 to 003725cf has its CatchHandler @ 0037274c */
         (*(code *)xmlFree)(uVar5);
                     /* try { // try from 003725d0 to 003725db has its CatchHandler @ 00372784 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d0,&uStack_b0);
+        new ((void *)(abStack_d0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0);
                     /* try { // try from 003725dc to 003725e7 has its CatchHandler @ 00372760 */
         Walaber::Widget::getWidgetTypeFromString(abStack_d0,&uStack_b4);
         if ((abStack_d0[0] & 1) != 0) {
@@ -1893,7 +1893,7 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
     if (uStack_c0 != 0) {
       *piStack_b8 = *piStack_b8 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x100,&uStack_90);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->f_0x100))->operator=(&uStack_90);
                     /* try { // try from 00373318 to 0037331f has its CatchHandler @ 00373c60 */
     Walaber::Widget_PushButton::_applyTile(p1);
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_90)->~SharedPtr<Walaber::Texture>();
@@ -1919,7 +1919,7 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
     if (uStack_c0 != 0) {
       *piStack_b8 = *piStack_b8 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x110,&uStack_a0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->f_0x110))->operator=(&uStack_a0);
                     /* try { // try from 003733c4 to 003733cb has its CatchHandler @ 00373c50 */
     Walaber::Widget_PushButton::_applyTile(p1);
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_a0)->~SharedPtr<Walaber::Texture>();
@@ -1945,7 +1945,7 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
   }
   if (piVar2 != (int *)0x0) {
                     /* try { // try from 00373458 to 00373463 has its CatchHandler @ 00373c48 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_f0,&uStack_c0);
+    new ((void *)(abStack_f0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_c0);
                     /* try { // try from 00373464 to 0037346f has its CatchHandler @ 00373c34 */
     Walaber::TextManager::getString(&uStack_d8,abStack_f0);
     if ((uStack_c0 & 1) != 0) {
@@ -1965,9 +1965,9 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
       operator delete(pvStack_e0);
     }
                     /* try { // try from 003734c8 to 003734d3 has its CatchHandler @ 00373ca8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_108,&uStack_c0);
+    new ((void *)(abStack_108)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_c0);
                     /* try { // try from 003734d8 to 003734e7 has its CatchHandler @ 00373cac */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->f_0x178,abStack_108);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->f_0x178))->operator=(abStack_108);
     Walaber::Widget_PushButton::_resizeFont(p1);
     if ((abStack_108[0] & 1) != 0) {
       operator delete(pvStack_f8);
@@ -1991,9 +1991,9 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
   }
   if (piVar2 != (int *)0x0) {
                     /* try { // try from 00373564 to 0037356f has its CatchHandler @ 00373ca8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_120,&uStack_c0);
+    new ((void *)(abStack_120)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_c0);
                     /* try { // try from 00373574 to 00373583 has its CatchHandler @ 00373c94 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->f_0x178,abStack_120);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->f_0x178))->operator=(abStack_120);
     Walaber::Widget_PushButton::_resizeFont(p1);
     if ((abStack_120[0] & 1) != 0) {
       operator delete(pvStack_110);
@@ -2620,7 +2620,7 @@ void Walaber::WidgetHelper::_updateWidgetIconList
     uStack_1a0 = uStack_1b8;
                     /* try { // try from 00374684 to 0037468f has its CatchHandler @ 003747e8 */
     Walaber::WidgetHelper::_getTexture(&uStack_1b8,&uStack_1a0);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&lStack_180,&uStack_1b8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&lStack_180))->operator=(&uStack_1b8);
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_1b8)->~SharedPtr<Walaber::Texture>();
     if (lStack_180 == 0) break;
     if (*piStack_178 != 0) {
@@ -2749,9 +2749,9 @@ void Walaber::WidgetHelper::_updateWidgetToggle
   if (lVar9 != 0) {
     Walaber::WidgetHelper::_parseString(&bStack_80,p0,"textOn");
                     /* try { // try from 00374a2c to 00374a37 has its CatchHandler @ 00374e9c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_98,&bStack_80);
+    new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_80);
                     /* try { // try from 00374a3c to 00374a43 has its CatchHandler @ 00374e84 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->f_0x168,abStack_98);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->f_0x168))->operator=(abStack_98);
     if ((abStack_98[0] & 1) != 0) {
       operator delete(pvStack_88);
     }
@@ -2764,9 +2764,9 @@ void Walaber::WidgetHelper::_updateWidgetToggle
   if (lVar9 != 0) {
     Walaber::WidgetHelper::_parseString(&bStack_80,p0,"textOff");
                     /* try { // try from 00374a98 to 00374aa3 has its CatchHandler @ 00374e80 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,&bStack_80);
+    new ((void *)(abStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_80);
                     /* try { // try from 00374aa8 to 00374aaf has its CatchHandler @ 00374e6c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p1->f_0x180,abStack_b0);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p1->f_0x180))->operator=(abStack_b0);
     if ((abStack_b0[0] & 1) != 0) {
       operator delete(pvStack_a0);
     }
@@ -2953,7 +2953,7 @@ void Walaber::WidgetHelper::_updateWidgetSlider
     if (uStack_80 != 0) {
       *piStack_78 = *piStack_78 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x108,&lStack_a0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->field_0x108))->operator=(&lStack_a0);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a0)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
     if (((uint)fStack_70 & 1) != 0) {
@@ -2977,7 +2977,7 @@ void Walaber::WidgetHelper::_updateWidgetSlider
     if (uStack_80 != 0) {
       *piStack_78 = *piStack_78 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x118,&lStack_b0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->field_0x118))->operator=(&lStack_b0);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
     if (((uint)fStack_70 & 1) != 0) {
@@ -3001,7 +3001,7 @@ void Walaber::WidgetHelper::_updateWidgetSlider
     if (uStack_80 != 0) {
       *piStack_78 = *piStack_78 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x128,&lStack_c0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->field_0x128))->operator=(&lStack_c0);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
     p1->field_0x18c = 1;
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
@@ -3025,7 +3025,7 @@ void Walaber::WidgetHelper::_updateWidgetSlider
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
       *piStack_88 = *piStack_88 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x138,auStack_d0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->field_0x138))->operator=(auStack_d0);
     ((Walaber::SharedPtr<Walaber::Texture> *)auStack_d0)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
     if (((uint)fStack_70 & 1) != 0) {
@@ -3182,7 +3182,7 @@ void Walaber::WidgetHelper::_updateWidgetLabel
   }
   if (uVar16 != 0) {
                     /* try { // try from 00375560 to 0037556b has its CatchHandler @ 00375fa4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_e8,&uStack_b0);
+    new ((void *)(abStack_e8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0);
                     /* try { // try from 0037556c to 00375577 has its CatchHandler @ 00375f90 */
     Walaber::TextManager::getString(&uStack_d0,abStack_e8);
     if (((byte)uStack_b0 & 1) != 0) {
@@ -3578,7 +3578,7 @@ void Walaber::WidgetHelper::_updateWidgetSlideWheel
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_a0)->~SharedPtr<Walaber::Texture>();
     *piStack_98 = *piStack_98 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x100,auStack_b0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p1->field_0x100))->operator=(auStack_b0);
   ((Walaber::SharedPtr<Walaber::Texture> *)auStack_b0)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 003760c0 to 003761eb has its CatchHandler @ 003763d8 */
   lVar4 = xmlGetProp(p0,"uv_scale");
@@ -3719,7 +3719,7 @@ void Walaber::WidgetHelper::_updateWidgetProgressBar
   else {
                     /* try { // try from 00376464 to 0037646b has its CatchHandler @ 003768ec */
     Walaber::WidgetHelper::_getTexture(auStack_e0);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(&lStack_98,auStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(&lStack_98))->operator=(auStack_e0);
     ((Walaber::SharedPtr<Walaber::Texture> *)auStack_e0)->~SharedPtr<Walaber::Texture>();
     if (lStack_98 != 0) {
       lStack_a8 = lStack_98;
@@ -3734,7 +3734,7 @@ void Walaber::WidgetHelper::_updateWidgetProgressBar
     if (1 < uVar6) {
                     /* try { // try from 003764c4 to 003764cb has its CatchHandler @ 003768d4 */
       Walaber::WidgetHelper::_getTexture(auStack_e0,lStack_88 + 0x18);
-      Walaber::SharedPtr<Walaber::Texture>::operator=(&lStack_b8,auStack_e0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(&lStack_b8))->operator=(auStack_e0);
       ((Walaber::SharedPtr<Walaber::Texture> *)auStack_e0)->~SharedPtr<Walaber::Texture>();
       if (lStack_b8 != 0) {
         lStack_c8 = lStack_b8;
@@ -4453,7 +4453,7 @@ void Walaber::WidgetHelper::_getTexture(undefined8 *param_1,byte *param_2)
     uStack_68 = 0;
                     /* try { // try from 003774e8 to 00377503 has its CatchHandler @ 00377560 */
     Walaber::TextureManager::getTexture(auStack_48,uVar3,abStack_60,&uStack_70,0,0);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(param_1,auStack_48);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(param_1))->operator=(auStack_48);
     ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_70)->~SharedPtr<Walaber::Callback>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
@@ -4691,7 +4691,7 @@ void Walaber::WidgetHelper::_getTextureNames(_xmlNode *param_1,std::__ndk1::vect
     }
     else {
                     /* try { // try from 00377e6c to 00377e8f has its CatchHandler @ 00377f48 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(*(long *)(param_2 + 8),&uStack_a0);
+      new ((void *)(*(long *)(param_2 + 8))) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_a0);
       *(long *)(param_2 + 8) = *(long *)(param_2 + 8) + 0x18;
     }
     iVar3 = iVar3 + 1;
@@ -4849,7 +4849,7 @@ void Walaber::WidgetHelper::_fileReadCallback(void *p0)
                     /* try { // try from 0037810c to 0037811f has its CatchHandler @ 00378498 */
         Walaber::WidgetHelper::_parseString(&uStack_a8,lVar6,"texturePath");
                     /* try { // try from 00378120 to 0037812f has its CatchHandler @ 00378494 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&texturePath,&uStack_a8);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&texturePath))->operator=(&uStack_a8);
         if ((uStack_a8 & 1) != 0) {
           operator delete(puStack_98);
         }
@@ -4895,7 +4895,7 @@ LAB_00378250:
                     /* try { // try from 00378270 to 00378277 has its CatchHandler @ 0037850c */
               (*(code *)xmlFree)(uVar7);
                     /* try { // try from 00378278 to 00378283 has its CatchHandler @ 00378534 */
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d8,&uStack_a8);
+              new ((void *)(abStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_a8);
                     /* try { // try from 00378284 to 0037828f has its CatchHandler @ 0037851c */
               Walaber::Widget::getWidgetTypeFromString(abStack_d8,&puStack_110);
               if ((abStack_d8[0] & 1) != 0) {
@@ -4945,7 +4945,7 @@ LAB_00378250:
                     /* try { // try from 00378354 to 0037835b has its CatchHandler @ 003784dc */
     new ((void *)(&uStack_a8)) Walaber::PropertyList();
                     /* try { // try from 00378364 to 0037836b has its CatchHandler @ 003784d4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_f0,DAT_0072ddc0 + -0x18);
+    new ((void *)(auStack_f0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(DAT_0072ddc0 + -0x18);
     pbVar12 = DAT_0072ddc0 + -0x18;
     if ((*pbVar12 & 1) != 0) {
       operator delete(*(void **)(DAT_0072ddc0 + -8));

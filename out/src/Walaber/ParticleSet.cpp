@@ -12,7 +12,7 @@
   uint uVar5;
   
   uVar2 = (ulong)p0;
-  std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>>::vector(uVar2,in_w1);
+  new ((void *)(uVar2)) std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>>(in_w1);
   lVar1 = uVar2 + 0x18;
   *(long *)(uVar2 + 0x20) = lVar1;
   *(undefined8 *)(uVar2 + 0x28) = 0;

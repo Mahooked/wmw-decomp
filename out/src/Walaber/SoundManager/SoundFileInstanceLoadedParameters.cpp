@@ -12,7 +12,7 @@
   long *plVar6;
   
   *this = 1;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2);
+  new ((void *)(this + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   lVar3 = *param_3;
   *(long *)(this + 8) = lVar3;
   piVar1 = (int *)param_3[1];

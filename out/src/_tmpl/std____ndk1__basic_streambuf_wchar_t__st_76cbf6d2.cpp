@@ -16,7 +16,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
 {
   (**(code **)(p0->f_0x0 + 0x10))();
   std::__ndk1::locale::locale();
-  std::__ndk1::locale::operator=(p0 + 1);
+  ((std::__ndk1::locale *)(p0 + 1))->operator=();
   return;
 }
 
@@ -438,7 +438,7 @@ long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 {
   undefined8 uVar1;
   
-  std::__ndk1::locale::operator=(param_1 + 8,param_2 + 8);
+  ((std::__ndk1::locale *)(param_1 + 8))->operator=(param_2 + 8);
   uVar1 = *(undefined8 *)(param_2 + 0x10);
   *(undefined8 *)(param_1 + 0x18) = *(undefined8 *)(param_2 + 0x18);
   *(undefined8 *)(param_1 + 0x10) = uVar1;
@@ -468,8 +468,8 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sw
   undefined1 auStack_50 [8];
   
   new ((void *)(auStack_50)) std::__ndk1::locale(param_1 + 8);
-  std::__ndk1::locale::operator=(param_1 + 8,param_2 + 8);
-  std::__ndk1::locale::operator=(param_2 + 8,auStack_50);
+  ((std::__ndk1::locale *)(param_1 + 8))->operator=(param_2 + 8);
+  ((std::__ndk1::locale *)(param_2 + 8))->operator=(auStack_50);
   ((std::__ndk1::locale *)auStack_50)->~locale();
   uVar2 = *(undefined8 *)(param_1 + 0x10);
   *(undefined8 *)(param_1 + 0x10) = *(undefined8 *)(param_2 + 0x10);

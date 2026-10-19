@@ -37,7 +37,7 @@ void std::__ndk1::
       do {
         *puVar4 = *puVar3;
                     /* try { // try from 0033a12c to 0033a133 has its CatchHandler @ 0033a170 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puVar4 + 1,puVar3 + 1);
+        new ((void *)(puVar4 + 1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar3 + 1);
         puVar1 = puVar3 + 6;
         uVar6 = puVar3[5];
         uVar5 = puVar3[4];

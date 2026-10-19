@@ -38,7 +38,7 @@ void std::__ndk1::
      (uVar4 = lVar7 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>::__split_buffer(auStack_60,uVar5,lVar3,p0 + 2);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>(uVar5,lVar3,p0 + 2);
   lVar3 = *in_x1;
   *plStack_50 = lVar3;
   piVar6 = (int *)in_x1[1];

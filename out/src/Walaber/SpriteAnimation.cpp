@@ -102,7 +102,7 @@
   piStack_60 = (int *)0x0;
   uStack_78 = *param_6;
   uStack_70 = 0;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&lStack_68,param_3);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&lStack_68))->operator=(param_3);
   puVar3 = *(undefined8 **)(this + 0x30);
   if (puVar3 == *(undefined8 **)(this + 0x38)) {
                     /* try { // try from 00359b94 to 00359b9f has its CatchHandler @ 00359bd8 */
@@ -180,7 +180,7 @@ void Walaber::SpriteAnimation::loadFromXML(ulong *param_1,long param_2,undefined
   ulong uStack_a0;
   void *pvStack_98;
   
-  Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x17,param_3);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(param_1 + 0x17))->operator=(param_3);
   uVar5 = xmlGetProp(param_2,"name");
   piStack_108 = (int *)0x0;
   pvStack_100 = (void *)0x0;
@@ -468,7 +468,7 @@ LAB_00359fd8:
             uVar1 = param_1[0x14];
             lVar10 = ((long)(param_1[0x15] - uVar1) >> 4) * -0x5555555555555555 + -1;
                     /* try { // try from 0035a45c to 0035a463 has its CatchHandler @ 0035a770 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(uVar1 + lVar10 * 0x30,&puStack_e0);
+            ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(uVar1 + lVar10 * 0x30))->operator=(&puStack_e0);
             lVar10 = uVar1 + lVar10 * 0x30;
             *(ulong *)(lVar10 + 0x18) = uVar7;
             *(ulong *)(lVar10 + 0x20) = uVar15;
@@ -670,7 +670,7 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0, int * in_x1)
   undefined8 uStack_80;
   
   if (*in_x1 == 1) {
-    Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x60,in_x1 + 8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)((long)p0 + 0x60))->operator=(in_x1 + 8);
     uVar4 = Walaber::TextureManager::getManager();
     pbVar8 = *(byte **)((long)p0 + 0xa0);
     pbVar9 = pbVar8;
@@ -714,7 +714,7 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0, int * in_x1)
         lVar7 = (lVar11 - lVar6 >> 3) * -0x3333333333333333 + -1;
         lVar11 = lVar6 + lVar7 * 0x28;
         puVar10 = (undefined8 *)(lVar6 + lVar7 * 0x28);
-        Walaber::SharedPtr<Walaber::Texture>::operator=(lVar11 + 0x18,&uStack_a0);
+        ((Walaber::SharedPtr<Walaber::Texture> *)(lVar11 + 0x18))->operator=(&uStack_a0);
         ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_a0)->~SharedPtr<Walaber::Texture>();
         ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_b0)->~SharedPtr<Walaber::Callback>();
         ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_c0)->~SharedPtr<Walaber::Callback>();

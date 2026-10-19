@@ -18,7 +18,7 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
   std::__ndk1::__time_get::__time_get();
   memset(p0 + 8,0,0x420);
                     /* try { // try from 005c2fb0 to 005c2fbf has its CatchHandler @ 005c306c */
-  std::__ndk1::ctype_byname<wchar_t>::ctype_byname(appuStack_50);
+  new ((void *)(appuStack_50)) std::__ndk1::ctype_byname<wchar_t>();
   appuStack_50[0] = &PTR__ctype_byname_00719038;
                     /* try { // try from 005c2fcc to 005c2fd7 has its CatchHandler @ 005c3034 */
   std::__ndk1::__time_get_storage<wchar_t>::init(p0,appuStack_50);
@@ -64,7 +64,7 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long *param_1,
   else {
     memset(param_1 + 1,0,0x420);
                     /* try { // try from 005c333c to 005c334b has its CatchHandler @ 005c3430 */
-    std::__ndk1::ctype_byname<wchar_t>::ctype_byname(appuStack_50,param_2,1);
+    new ((void *)(appuStack_50)) std::__ndk1::ctype_byname<wchar_t>(param_2,1);
     appuStack_50[0] = &PTR__ctype_byname_00719038;
                     /* try { // try from 005c3358 to 005c3363 has its CatchHandler @ 005c33f8 */
     std::__ndk1::__time_get_storage<wchar_t>::init(param_1,appuStack_50);

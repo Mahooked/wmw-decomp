@@ -44,10 +44,10 @@ void std::__ndk1::
   else {
     uVar2 = 0x3ffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&>::__split_buffer(auStack_60,uVar2,lVar3,&p0->field_0x10);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&>(uVar2,lVar3,&p0->field_0x10);
   lVar3 = lStack_50;
                     /* try { // try from 003a0134 to 003a0177 has its CatchHandler @ 003a01b0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lStack_50);
+  new ((void *)(lStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
   uVar7 = *(undefined8 *)(in_x1 + 0x20);
   uVar6 = *(undefined8 *)(in_x1 + 0x18);
   *(undefined8 *)(lVar3 + 0x28) = *(undefined8 *)(in_x1 + 0x28);

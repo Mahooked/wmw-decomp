@@ -42,10 +42,10 @@ void std::__ndk1::
   else {
     uVar2 = 0x7ffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>::__split_buffer(auStack_60,uVar2,lVar3,p0 + 0x10);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>(uVar2,lVar3,p0 + 0x10);
   *puStack_50 = *in_x1;
                     /* try { // try from 0058a6d0 to 0058a6ef has its CatchHandler @ 0058a728 */
-  std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::vector(puStack_50 + 8,in_x1 + 8);
+  new ((void *)(puStack_50 + 8)) std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>(in_x1 + 8);
   puStack_50 = puStack_50 + 0x20;
   std::__ndk1::vector<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::__swap_out_circular_buffer(p0,auStack_60);
   ((std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&> *)auStack_60)->~__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>();

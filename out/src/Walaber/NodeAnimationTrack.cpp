@@ -90,11 +90,11 @@ Walaber::NodeAnimationTrack::operator=(Walaber__NodeAnimationTrack *p0)
   uVar1 = *in_x1;
   p0->f_0x0 = (int)uVar1;
   p0->f_0x4 = (float)(int)((ulong)uVar1 >> 0x20);
-  Walaber::SharedPtr<Walaber::Curve>::operator=(&p0->f_0x8,in_x1 + 1);
-  Walaber::SharedPtr<Walaber::Curve>::operator=(&p0->f_0x18,in_x1 + 3);
-  Walaber::SharedPtr<Walaber::Curve>::operator=(&p0->f_0x28,in_x1 + 5);
-  Walaber::SharedPtr<Walaber::Curve>::operator=(&p0->f_0x38,in_x1 + 7);
-  Walaber::SharedPtr<Walaber::Curve>::operator=(&p0->f_0x48,in_x1 + 9);
+  ((Walaber::SharedPtr<Walaber::Curve> *)(&p0->f_0x8))->operator=(in_x1 + 1);
+  ((Walaber::SharedPtr<Walaber::Curve> *)(&p0->f_0x18))->operator=(in_x1 + 3);
+  ((Walaber::SharedPtr<Walaber::Curve> *)(&p0->f_0x28))->operator=(in_x1 + 5);
+  ((Walaber::SharedPtr<Walaber::Curve> *)(&p0->f_0x38))->operator=(in_x1 + 7);
+  ((Walaber::SharedPtr<Walaber::Curve> *)(&p0->f_0x48))->operator=(in_x1 + 9);
   uVar2 = in_x1[0xb];
   p0->f_0x60 = in_x1[0xc];
   p0->animation = uVar2;
@@ -451,8 +451,8 @@ void Walaber::NodeAnimationTrack::setCurve
   float fVar4;
   
   *param_1 = *param_1 | 1;
-  Walaber::SharedPtr<Walaber::Curve>::operator=(param_1 + 2,param_3);
-  Walaber::SharedPtr<Walaber::Curve>::operator=(param_1 + 6,param_4);
+  ((Walaber::SharedPtr<Walaber::Curve> *)(param_1 + 2))->operator=(param_3);
+  ((Walaber::SharedPtr<Walaber::Curve> *)(param_1 + 6))->operator=(param_4);
   lVar1 = *(long *)(param_1 + 2);
   fVar3 = 0.0;
   fVar4 = 0.0;

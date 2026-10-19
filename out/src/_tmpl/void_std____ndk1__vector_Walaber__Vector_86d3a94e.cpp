@@ -39,7 +39,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>(uVar2,lVar3,p0 + 2);
   *puStack_50 = *in_x1;
   puStack_50 = puStack_50 + 1;
                     /* try { // try from 003ecfdc to 003ecfe7 has its CatchHandler @ 003ed048 */
@@ -93,7 +93,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>(uVar2,lVar3,p0 + 2);
   *puStack_50 = *in_x1;
   puStack_50 = puStack_50 + 1;
                     /* try { // try from 003efbb8 to 003efbc3 has its CatchHandler @ 003efc24 */

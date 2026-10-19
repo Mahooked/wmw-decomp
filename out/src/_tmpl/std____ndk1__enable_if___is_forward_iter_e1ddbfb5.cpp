@@ -47,7 +47,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
     if (p1 != in_x2) {
       lVar6 = *(long *)(p0 + 8);
       do {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar6,p1);
+        new ((void *)(lVar6)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(p1);
         pWVar7 = p1 + 0x18;
         p1 = p1 + 0x20;
         *(undefined8 *)(lVar6 + 0x18) = *(undefined8 *)pWVar7;
@@ -64,7 +64,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
       pWVar1 = in_x2;
     }
     for (; pWVar1 != p1; p1 = p1 + 0x20) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(pbVar5,p1);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(pbVar5))->operator=(p1);
       *(undefined8 *)(pbVar5 + 0x18) = *(undefined8 *)(p1 + 0x18);
       pbVar5 = pbVar5 + 0x20;
     }
@@ -72,7 +72,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
       if (pWVar1 != in_x2) {
         lVar6 = *(long *)(p0 + 8);
         do {
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar6,pWVar7);
+          new ((void *)(lVar6)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pWVar7);
           pWVar1 = pWVar7 + 0x18;
           pWVar7 = pWVar7 + 0x20;
           *(undefined8 *)(lVar6 + 0x18) = *(undefined8 *)pWVar1;

@@ -33,7 +33,7 @@ void std::__ndk1::
     lVar5 = 0;
     do {
       lVar1 = lVar2 + lVar5;
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4 + -0x30,lVar1 + -0x30);
+      new ((void *)(lVar4 + -0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar1 + -0x30);
       lVar5 = lVar5 + -0x30;
       *(undefined8 *)(lVar4 + -0x18) = *(undefined8 *)(lVar1 + -0x18);
       *(undefined8 *)(lVar4 + -0x10) = *(undefined8 *)(lVar1 + -0x10);

@@ -156,7 +156,7 @@ void std::__ndk1::ios_base::copyfmt(std____ndk1__ios_base *p0, long in_x1)
   uVar1 = *(undefined8 *)(in_x1 + 0x10);
   *(undefined8 *)&p0->field_0x18 = *(undefined8 *)(in_x1 + 0x18);
   *(undefined8 *)&p0->f_0x10 = uVar1;
-  std::__ndk1::locale::operator=(&p0->field_0x30,in_x1 + 0x30);
+  ((std::__ndk1::locale *)(&p0->field_0x30))->operator=(in_x1 + 0x30);
   if (p0->f_0x50 < *(ulong *)(in_x1 + 0x48)) {
     free((void *)p0->f_0x38);
     p0->f_0x38 = (ulong)p0_00;
@@ -256,7 +256,7 @@ void std::__ndk1::ios_base::imbue(std____ndk1__locale *p0)
   long lVar1;
   
   std::__ndk1::locale::locale();
-  std::__ndk1::locale::operator=(p0 + 6);
+  ((std::__ndk1::locale *)(p0 + 6))->operator=();
   if (p0[9].f_0x0 != 0) {
     lVar1 = p0[9].f_0x0 - 1;
     do {
@@ -385,8 +385,8 @@ void std::__ndk1::ios_base::swap(std____ndk1__ios_base *p0, long in_x1)
   p0->f_0x24 = *(uint *)(in_x1 + 0x24);
   *(uint *)(in_x1 + 0x24) = uVar1;
   new ((void *)(auStack_50)) std::__ndk1::locale(&p0->field_0x30);
-  std::__ndk1::locale::operator=(&p0->field_0x30,in_x1 + 0x30);
-  std::__ndk1::locale::operator=(in_x1 + 0x30,auStack_50);
+  ((std::__ndk1::locale *)(&p0->field_0x30))->operator=(in_x1 + 0x30);
+  ((std::__ndk1::locale *)(in_x1 + 0x30))->operator=(auStack_50);
   ((std::__ndk1::locale *)auStack_50)->~locale();
   uVar4 = p0->f_0x38;
   p0->f_0x38 = *(ulong *)(in_x1 + 0x38);

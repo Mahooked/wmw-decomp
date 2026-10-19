@@ -1359,7 +1359,7 @@ LAB_0055ed88:
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar13 + 0x100,&uStack_d0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar13 + 0x100))->operator=(&uStack_d0);
                     /* try { // try from 0055f09c to 0055f0a3 has its CatchHandler @ 0055f5b4 */
       Walaber::Widget_PushButton::_applyTile(lVar13);
       ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_d0)->~SharedPtr<Walaber::Texture>();
@@ -1400,7 +1400,7 @@ LAB_0055ed88:
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar13 + 0x110,&uStack_f0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar13 + 0x110))->operator=(&uStack_f0);
                     /* try { // try from 0055f168 to 0055f16f has its CatchHandler @ 0055f590 */
       Walaber::Widget_PushButton::_applyTile(lVar13);
       ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f0)->~SharedPtr<Walaber::Texture>();
@@ -1422,7 +1422,7 @@ LAB_0055ed88:
       uStack_110 = 0x6e;
       uStack_10a = 0;
                     /* try { // try from 0055f1e0 to 0055f1ef has its CatchHandler @ 0055f690 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar13 + 0x178,&bStack_118);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar13 + 0x178))->operator=(&bStack_118);
       Walaber::Widget_PushButton::_resizeFont(lVar13);
       p0_00 = pvStack_108;
       bVar7 = bStack_118;
@@ -1454,7 +1454,7 @@ LAB_0055ed88:
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar13 + 0x100,&uStack_128);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar13 + 0x100))->operator=(&uStack_128);
                     /* try { // try from 0055ee30 to 0055ee37 has its CatchHandler @ 0055f640 */
       Walaber::Widget_PushButton::_applyTile(lVar13);
       ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_128)->~SharedPtr<Walaber::Texture>();
@@ -1495,7 +1495,7 @@ LAB_0055ed88:
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(lVar13 + 0x110,&uStack_148);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(lVar13 + 0x110))->operator=(&uStack_148);
                     /* try { // try from 0055eefc to 0055ef03 has its CatchHandler @ 0055f61c */
       Walaber::Widget_PushButton::_applyTile(lVar13);
       ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_148)->~SharedPtr<Walaber::Texture>();
@@ -1517,7 +1517,7 @@ LAB_0055ed88:
       uStack_168 = 0x6e;
       uStack_162 = 0;
                     /* try { // try from 0055ef74 to 0055ef83 has its CatchHandler @ 0055f750 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar13 + 0x178,&bStack_170);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar13 + 0x178))->operator=(&bStack_170);
       Walaber::Widget_PushButton::_resizeFont(lVar13);
       p0_00 = pvStack_160;
       bVar7 = bStack_170;
@@ -1536,7 +1536,7 @@ joined_r0x0055f4e4:
       uStack_187 = 0x206c616d726f4e;
       uStack_180 = 0x6d;
                     /* try { // try from 0055f4d0 to 0055f4df has its CatchHandler @ 0055f5f4 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar13 + 0x178,&bStack_188);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar13 + 0x178))->operator=(&bStack_188);
       Walaber::Widget_PushButton::_resizeFont(lVar13);
       p0_00 = pvStack_178;
       bVar7 = bStack_188;
@@ -1554,7 +1554,7 @@ joined_r0x0055f4e4:
       uStack_1b0 = 0x6d;
       uStack_1a5 = 0;
                     /* try { // try from 0055f538 to 0055f547 has its CatchHandler @ 0055f5e0 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar13 + 0x178,&bStack_1b8);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar13 + 0x178))->operator=(&bStack_1b8);
       Walaber::Widget_PushButton::_resizeFont(lVar13);
       if ((bStack_1b8 & 1) == 0) goto switchD_0055e700_caseD_b;
       p0_00 = (void *)CONCAT44(uStack_1a4,CONCAT13(uStack_1a5,CONCAT21(uStack_1a7,uStack_1a8)));
@@ -1571,7 +1571,7 @@ joined_r0x0055f4e4:
       uStack_19f = 0x72616c75676552;
       uStack_198 = 0x20;
                     /* try { // try from 0055eff8 to 0055f007 has its CatchHandler @ 0055f608 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar13 + 0x178,&bStack_1a0);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar13 + 0x178))->operator=(&bStack_1a0);
       Walaber::Widget_PushButton::_resizeFont(lVar13);
       if ((bStack_1a0 & 1) == 0) goto switchD_0055e700_caseD_b;
       p0_00 = (void *)CONCAT53(uStack_18d,CONCAT21(uStack_18f,uStack_190));
@@ -1710,7 +1710,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x100,&lStack_58);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x100))->operator=(&lStack_58);
                     /* try { // try from 0055f8a0 to 0055f8a7 has its CatchHandler @ 0055ff4c */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_58)->~SharedPtr<Walaber::Texture>();
@@ -1736,7 +1736,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x110,&lStack_b0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x110))->operator=(&lStack_b0);
                     /* try { // try from 0055f96c to 0055f973 has its CatchHandler @ 0055ff28 */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
@@ -1759,7 +1759,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x100,&lStack_d0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x100))->operator=(&lStack_d0);
                     /* try { // try from 0055fa10 to 0055fa17 has its CatchHandler @ 0055febc */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d0)->~SharedPtr<Walaber::Texture>();
@@ -1785,7 +1785,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x110,&lStack_f0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x110))->operator=(&lStack_f0);
                     /* try { // try from 0055fad0 to 0055fad7 has its CatchHandler @ 0055fe98 */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_f0)->~SharedPtr<Walaber::Texture>();
@@ -1816,7 +1816,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x100,&lStack_110);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x100))->operator=(&lStack_110);
                     /* try { // try from 0055fbb8 to 0055fbbf has its CatchHandler @ 0055ff04 */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_110)->~SharedPtr<Walaber::Texture>();
@@ -1842,7 +1842,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x110,&lStack_130);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x110))->operator=(&lStack_130);
                     /* try { // try from 0055fc84 to 0055fc8b has its CatchHandler @ 0055fee0 */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_130)->~SharedPtr<Walaber::Texture>();
@@ -1865,7 +1865,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x100,&lStack_150);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x100))->operator=(&lStack_150);
                     /* try { // try from 0055fd28 to 0055fd2f has its CatchHandler @ 0055fe74 */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_150)->~SharedPtr<Walaber::Texture>();
@@ -1891,7 +1891,7 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(lVar2 + 0x110,&lStack_170);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(lVar2 + 0x110))->operator=(&lStack_170);
                     /* try { // try from 0055fde8 to 0055fdef has its CatchHandler @ 0055fe50 */
     Walaber::Widget_PushButton::_applyTile(lVar2);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_170)->~SharedPtr<Walaber::Texture>();
@@ -1959,7 +1959,7 @@ void WaterConcept::Screen_Settings::_updateGraphicsButtonText(long param_1)
                     /* try { // try from 005601b0 to 005601bb has its CatchHandler @ 00560218 */
       Walaber::TextManager::getString(abStack_50,&uStack_68);
                     /* try { // try from 005601c0 to 005601cf has its CatchHandler @ 00560240 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar4 + 0x178,abStack_50);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar4 + 0x178))->operator=(abStack_50);
       Walaber::Widget_PushButton::_resizeFont(lVar4);
       p0 = pvStack_58;
       uVar3 = uStack_68;
@@ -1977,7 +1977,7 @@ void WaterConcept::Screen_Settings::_updateGraphicsButtonText(long param_1)
                     /* try { // try from 00560084 to 0056008f has its CatchHandler @ 00560230 */
       Walaber::TextManager::getString(abStack_80,&uStack_98);
                     /* try { // try from 00560094 to 005600a3 has its CatchHandler @ 005602ac */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar4 + 0x178,abStack_80);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar4 + 0x178))->operator=(abStack_80);
       Walaber::Widget_PushButton::_resizeFont(lVar4);
       p0 = pvStack_88;
       uVar3 = uStack_98;
@@ -1995,7 +1995,7 @@ void WaterConcept::Screen_Settings::_updateGraphicsButtonText(long param_1)
                     /* try { // try from 005600e8 to 005600f3 has its CatchHandler @ 00560228 */
     Walaber::TextManager::getString(abStack_b0,&uStack_c8);
                     /* try { // try from 005600f8 to 00560107 has its CatchHandler @ 00560288 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar4 + 0x178,abStack_b0);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar4 + 0x178))->operator=(abStack_b0);
     Walaber::Widget_PushButton::_resizeFont(lVar4);
     p0 = pvStack_b8;
     uVar3 = uStack_c8;
@@ -2012,7 +2012,7 @@ void WaterConcept::Screen_Settings::_updateGraphicsButtonText(long param_1)
                     /* try { // try from 0056014c to 00560157 has its CatchHandler @ 00560220 */
     Walaber::TextManager::getString(abStack_e0,&uStack_f8);
                     /* try { // try from 0056015c to 0056016b has its CatchHandler @ 00560264 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar4 + 0x178,abStack_e0);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar4 + 0x178))->operator=(abStack_e0);
     Walaber::Widget_PushButton::_resizeFont(lVar4);
     p0 = pvStack_e8;
     uVar3 = uStack_f8;
@@ -2030,7 +2030,7 @@ void WaterConcept::Screen_Settings::_updateGraphicsButtonText(long param_1)
                     /* try { // try from 0056000c to 00560017 has its CatchHandler @ 00560238 */
     Walaber::TextManager::getString(abStack_110,&uStack_128);
                     /* try { // try from 0056001c to 0056002b has its CatchHandler @ 005602d0 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar4 + 0x178,abStack_110);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar4 + 0x178))->operator=(abStack_110);
     Walaber::Widget_PushButton::_resizeFont(lVar4);
     p0 = pvStack_118;
     uVar3 = uStack_128;
@@ -2104,7 +2104,7 @@ undefined8 WaterConcept::Screen_Settings::messageRx(Walaber__Message *p0, long i
     abStack_80[7] = 0x65;
     abStack_80[8] = 0;
                     /* try { // try from 00560438 to 00560447 has its CatchHandler @ 00560ad4 */
-    Walaber::PropertyList::operator[](lVar1,abStack_80);
+    ((Walaber::PropertyList *)(lVar1))->operator[](abStack_80);
     iVar6 = Walaber::Property::asInt();
     if ((abStack_80[0] & 1) != 0) {
       operator delete(apvStack_70[0]);
@@ -2153,7 +2153,7 @@ undefined8 WaterConcept::Screen_Settings::messageRx(Walaber__Message *p0, long i
       abStack_80[0xb] = 0;
       abStack_80[0xc] = 0;
                     /* try { // try from 005604c0 to 005604cf has its CatchHandler @ 00560acc */
-      Walaber::PropertyList::operator[](lVar1,abStack_80);
+      ((Walaber::PropertyList *)(lVar1))->operator[](abStack_80);
       iVar7 = Walaber::Property::asInt();
       bVar5 = iVar7 == 1;
       if ((abStack_80[0] & 1) != 0) {
@@ -2322,7 +2322,7 @@ undefined8 WaterConcept::Screen_Settings::messageRx(Walaber__Message *p0, long i
     abStack_80[7] = 0x65;
     abStack_80[8] = 99;
                     /* try { // try from 00560378 to 00560383 has its CatchHandler @ 00560ad8 */
-    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_80);
+    ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](abStack_80);
     iVar6 = Walaber::Property::asInt();
     if ((abStack_80[0] & 1) != 0) {
       operator delete(apvStack_70[0]);
@@ -2597,7 +2597,7 @@ void WaterConcept::Screen_Settings::_finishedLoadingWidgets(void *p0, int * in_x
     puVar4[2] = 0;
     *puVar4 = 0;
                     /* try { // try from 00560c88 to 00560c97 has its CatchHandler @ 00560f58 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x178,&uStack_a0);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar3 + 0x178))->operator=(&uStack_a0);
     Walaber::Widget_PushButton::_resizeFont(lVar3);
     if ((uStack_a0 & 1) != 0) {
       operator delete(pvStack_90);

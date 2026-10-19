@@ -330,7 +330,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
   ulong uVar6;
   
   pbVar1 = (byte *)(param_1 + 0x40);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(pbVar1);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(pbVar1))->operator=();
   *(undefined8 *)(param_1 + 0x58) = 0;
   if ((*(uint *)(param_1 + 0x60) >> 3 & 1) != 0) {
     if ((*pbVar1 & 1) == 0) {

@@ -174,9 +174,9 @@
   *(undefined1 *)((long)this + 0x132) = 0xff;
   *(undefined1 *)((long)this + 0x133) = 0xff;
                     /* try { // try from 004ee6a0 to 004ee6b3 has its CatchHandler @ 004eea90 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_b0,&GameSettings::currentLevelPackName);
+  new ((void *)(auStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&GameSettings::currentLevelPackName);
                     /* try { // try from 004ee6b4 to 004ee6c3 has its CatchHandler @ 004eea84 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c8,&DAT_0077ddd0);
+  new ((void *)(abStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077ddd0);
                     /* try { // try from 004ee6c4 to 004ee6db has its CatchHandler @ 004eea78 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_f8,&DAT_0077dbd8,"=\'");
   uVar7 = DAT_00735df0;
@@ -282,7 +282,7 @@
     uVar4 = Walaber::TextureManager::getManager();
     uStack_19c = CONCAT13(uStack_141,CONCAT12(uStack_142,uStack_144));
     uStack_1a8 = CONCAT26(uStack_14a,CONCAT51(uStack_14f,bStack_150));
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_180,abStack_128);
+    new ((void *)(abStack_180)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_128);
     uStack_158 = CONCAT44(uStack_fc,uStack_100);
     uStack_160 = CONCAT44(uStack_104,uStack_108);
     uStack_168 = CONCAT44(uStack_10c,uStack_110);
@@ -669,7 +669,7 @@ void WaterConcept::Screen_LevelSelect::loadPropertyList(Walaber__PropertyList *p
     if ((bStack_90 & 1) != 0) {
       operator delete(pvStack_80);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_70,&DAT_0077dbc0);
+    new ((void *)(&bStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077dbc0);
     auStack_e8[1] = 0;
     pvStack_d8 = (void *)0x0;
     auStack_e8[0] = 0x273d04;
@@ -967,7 +967,7 @@ void WaterConcept::Screen_LevelSelect::enter(long param_1)
   ((Walaber::PropertyList *)apvStack_90)->~PropertyList();
   if (GameSettings::currentLevelIsMyst != '\0') {
     GameSettings::currentStoryline = 0;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&ppuStack_a0,&GameSettings::currentLevelPackName);
+    new ((void *)(&ppuStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&GameSettings::currentLevelPackName);
     pvVar1 = (void *)((ulong)&ppuStack_a0 | 1);
     uVar18 = (ulong)((byte)ppuStack_a0 >> 1);
     if (((ulong)ppuStack_a0 & 1) != 0) {
@@ -1007,7 +1007,7 @@ LAB_004ef850:
   }
 LAB_004ef870:
                     /* try { // try from 004ef870 to 004ef887 has its CatchHandler @ 004f089c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_e0,&ppuStack_a0,0,uVar18,&ppuStack_a0);
+  new ((void *)(&uStack_e0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_a0,0,uVar18,&ppuStack_a0);
   if ((_currentLevelPackName & 1) != 0) {
     *DAT_00735df8 = 0;
     DAT_00735df0 = 0;
@@ -1024,7 +1024,7 @@ LAB_004ef8d0:
     operator delete(apvStack_90[0]);
   }
 LAB_004ef8dc:
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&ppuStack_a0,&DAT_0077dbc0);
+  new ((void *)(&ppuStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077dbc0);
                     /* try { // try from 004ef8f0 to 004ef903 has its CatchHandler @ 004f0b24 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_138,&DAT_0077dbf0," = 0 AND ");
   uVar18 = ram0x0077dbe0;
@@ -2303,7 +2303,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
   void *pvStack_c0;
   
   if (*in_x1 != 1) goto LAB_004f2ed0;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_100,&DAT_0077dd40);
+  new ((void *)(abStack_100)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077dd40);
                     /* try { // try from 004f0ef0 to 004f0f03 has its CatchHandler @ 004f3470 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_140,&DAT_0077dbd8,"=\'");
   uVar19 = DAT_00735df0;
@@ -2402,7 +2402,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
   lVar20 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),10);
   Walaber::StringHelper::intToStr(abStack_160,1);
                     /* try { // try from 004f10b0 to 004f10bf has its CatchHandler @ 004f34c4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar20 + 0x178,abStack_160);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar20 + 0x178))->operator=(abStack_160);
   Walaber::Widget_PushButton::_resizeFont(lVar20);
   if ((abStack_160[0] & 1) != 0) {
     operator delete(pvStack_150);
@@ -2415,7 +2415,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
   uStack_178 = 0;
   pvStack_168 = (void *)0x0;
                     /* try { // try from 004f1104 to 004f1113 has its CatchHandler @ 004f34b0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar20 + 0x178,&uStack_178);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar20 + 0x178))->operator=(&uStack_178);
   Walaber::Widget_PushButton::_resizeFont(lVar20);
   if ((uStack_178 & 1) != 0) {
     operator delete(pvStack_168);
@@ -2450,7 +2450,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
     else {
       *piStack_188 = *piStack_188 + 2;
     }
-    Walaber::SharedPtr<Walaber::Texture>::operator=(plVar21 + 0x20,&lStack_190);
+    ((Walaber::SharedPtr<Walaber::Texture> *)(plVar21 + 0x20))->operator=(&lStack_190);
                     /* try { // try from 004f11d0 to 004f11d7 has its CatchHandler @ 004f3600 */
     Walaber::Widget_PushButton::_applyTile(plVar21);
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_190)->~SharedPtr<Walaber::Texture>();
@@ -2587,7 +2587,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
     if (lStack_1c0 != 0) {
       *piStack_1b8 = *piStack_1b8 + 1;
     }
-    Walaber::SharedPtr<Walaber::Callback>::operator=(lVar20 + 0xd0,&lStack_1c0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)(lVar20 + 0xd0))->operator=(&lStack_1c0);
     ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_1c0)->~SharedPtr<Walaber::Callback>();
     uStack_2ca = 0;
     uStack_2c8 = 0;
@@ -2893,7 +2893,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
     uVar13 = Walaber::DatabaseIterator::next(auStack_268);
     if (GameSettings::currentStoryline != 2 && ((uVar13 ^ 0xffffffff) & 1) == 0) {
                     /* try { // try from 004f1880 to 004f188f has its CatchHandler @ 004f3004 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_2d0,&GameSettings::currentLevelPackName);
+      new ((void *)(&bStack_2d0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&GameSettings::currentLevelPackName);
                     /* try { // try from 004f1890 to 004f189f has its CatchHandler @ 004f2ffc */
       Walaber::DatabaseIterator::getStringAtIndex(&puStack_220,auStack_268,0);
                     /* try { // try from 004f18a4 to 004f18ab has its CatchHandler @ 004f3010 */
@@ -3036,7 +3036,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
       }
     }
                     /* try { // try from 004f1b30 to 004f1b3f has its CatchHandler @ 004f348c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&bStack_140,&DAT_0077da58);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_140))->operator=(&DAT_0077da58);
     uStack_23a = 0;
     uStack_238 = 0;
     uStack_237 = 0;
@@ -3489,7 +3489,7 @@ LAB_004f1f20:
       operator delete(puStack_130);
     }
                     /* try { // try from 004f2210 to 004f2223 has its CatchHandler @ 004f32b4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_140,&DAT_0077da40);
+    new ((void *)(&bStack_140)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077da40);
     uStack_ca = 0;
     uStack_c9 = 0;
     uStack_c8 = 0;
@@ -3744,9 +3744,9 @@ LAB_004f1f20:
     Walaber::Widget_Label::_setTextTopLeft();
   }
                     /* try { // try from 004f25bc to 004f25cf has its CatchHandler @ 004f33cc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_140,&GameSettings::currentLevelPackName);
+  new ((void *)(&bStack_140)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&GameSettings::currentLevelPackName);
                     /* try { // try from 004f25d0 to 004f25df has its CatchHandler @ 004f33c4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_200,&DAT_0077dda0);
+  new ((void *)(&bStack_200)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077dda0);
   uStack_cc = 0;
   uStack_cb = 0;
   uStack_ca = 0;
@@ -3885,7 +3885,7 @@ LAB_004f1f20:
                     /* try { // try from 004f281c to 004f2823 has its CatchHandler @ 004f34ec */
   uVar23 = Walaber::WidgetManager::getWidget(*puVar17,0x6e);
                     /* try { // try from 004f2828 to 004f2833 has its CatchHandler @ 004f3354 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_308,&bStack_140);
+  new ((void *)(abStack_308)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_140);
                     /* try { // try from 004f2834 to 004f283f has its CatchHandler @ 004f3340 */
   Walaber::TextManager::getString(&bStack_240,abStack_308);
                     /* try { // try from 004f2840 to 004f284b has its CatchHandler @ 004f3328 */
@@ -3929,7 +3929,7 @@ LAB_004f1f20:
     pvStack_310 = (void *)0x0;
     uStack_320 = 0x5458455408;
                     /* try { // try from 004f2908 to 004f2917 has its CatchHandler @ 004f3478 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar20 + 0x178,&uStack_320);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar20 + 0x178))->operator=(&uStack_320);
     Walaber::Widget_PushButton::_resizeFont(lVar20);
     if ((uStack_320 & 1) != 0) {
       operator delete(pvStack_310);
@@ -5219,14 +5219,14 @@ void WaterConcept::Screen_LevelSelect::_loadLevelList(long param_1)
       }
       else {
                     /* try { // try from 004f454c to 004f45bf has its CatchHandler @ 004f8260 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(*(long *)(param_1 + 0xd0),&bStack_710);
+        new ((void *)(*(long *)(param_1 + 0xd0))) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_710);
         *(long *)(param_1 + 0xd0) = *(long *)(param_1 + 0xd0) + 0x18;
       }
       if (*(long *)(param_1 + 0xe8) == *(long *)(param_1 + 0xf0)) {
         void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1 + 0xe0,&uStack_130);
       }
       else {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(*(long *)(param_1 + 0xe8),&uStack_130);
+        new ((void *)(*(long *)(param_1 + 0xe8))) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_130);
         *(long *)(param_1 + 0xe8) = *(long *)(param_1 + 0xe8) + 0x18;
       }
       if ((uVar30 & 1) != 0) {
@@ -5249,7 +5249,7 @@ void WaterConcept::Screen_LevelSelect::_loadLevelList(long param_1)
         *(undefined8 *)(param_1 + 0x280) = *(undefined8 *)(lVar26 + 0x54);
         if ((char)uStack_270 == '\0') {
                     /* try { // try from 004f4658 to 004f4667 has its CatchHandler @ 004f7f2c */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_150,&DAT_0077da58);
+          new ((void *)(&uStack_150)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077da58);
           uStack_208 = 0;
           pvStack_200 = (void *)0x0;
           uStack_210 = 0x273d04;
@@ -5827,7 +5827,7 @@ LAB_004f5758:
           if (uStack_190 != (word *)0x0) {
             *piStack_188 = *piStack_188 + 1;
           }
-          Walaber::SharedPtr<Walaber::Callback>::operator=(plStack_1d0 + 0x1a,&pwStack_440);
+          ((Walaber::SharedPtr<Walaber::Callback> *)(plStack_1d0 + 0x1a))->operator=(&pwStack_440);
           ((Walaber::SharedPtr<Walaber::Callback> *)&pwStack_440)->~SharedPtr<Walaber::Callback>();
           if (*(undefined8 **)(param_1 + 0x1f0) == *(undefined8 **)(param_1 + 0x1f8)) {
                     /* try { // try from 004f5760 to 004f576b has its CatchHandler @ 004f80ac */
@@ -5985,7 +5985,7 @@ LAB_004f5758:
           if (uStack_150 != (word *)0x0) {
             *piStack_148 = *piStack_148 + 1;
           }
-          Walaber::SharedPtr<Walaber::Texture>::operator=(plVar31 + 0x20,&pwStack_680);
+          ((Walaber::SharedPtr<Walaber::Texture> *)(plVar31 + 0x20))->operator=(&pwStack_680);
                     /* try { // try from 004f59b4 to 004f59bb has its CatchHandler @ 004f7e6c */
           Walaber::Widget_PushButton::_applyTile(plVar31);
           ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_680)->~SharedPtr<Walaber::Texture>();
@@ -6013,7 +6013,7 @@ LAB_004f5758:
         lVar21 = Walaber::WidgetManager::getWidget(*puVar46,iVar19);
         Walaber::StringHelper::intToStr(abStack_458,uVar47 + 1);
                     /* try { // try from 004f59f4 to 004f5a03 has its CatchHandler @ 004f81f8 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar21 + 0x178,abStack_458);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar21 + 0x178))->operator=(abStack_458);
         Walaber::Widget_PushButton::_resizeFont(lVar21);
         if ((abStack_458[0] & 1) != 0) {
           operator delete(pvStack_448);
@@ -6042,7 +6042,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_488);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_488);
                     /* try { // try from 004f600c to 004f6013 has its CatchHandler @ 004f7c08 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_488)->~SharedPtr<Walaber::Texture>();
@@ -6071,7 +6071,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_468);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_468);
                     /* try { // try from 004f5af8 to 004f5aff has its CatchHandler @ 004f7be0 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_468)->~SharedPtr<Walaber::Texture>();
@@ -6100,7 +6100,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_4a8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_4a8);
                     /* try { // try from 004f619c to 004f61a3 has its CatchHandler @ 004f77a4 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_4a8)->~SharedPtr<Walaber::Texture>();
@@ -6129,7 +6129,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_4c8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_4c8);
                     /* try { // try from 004f64a8 to 004f64af has its CatchHandler @ 004f7754 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_4c8)->~SharedPtr<Walaber::Texture>();
@@ -6160,7 +6160,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_508);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_508);
                     /* try { // try from 004f60d0 to 004f60d7 has its CatchHandler @ 004f7bb4 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_508)->~SharedPtr<Walaber::Texture>();
@@ -6189,7 +6189,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_4e8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_4e8);
                     /* try { // try from 004f5db0 to 004f5db7 has its CatchHandler @ 004f7c28 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_4e8)->~SharedPtr<Walaber::Texture>();
@@ -6218,7 +6218,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_528);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_528);
                     /* try { // try from 004f6268 to 004f626f has its CatchHandler @ 004f777c */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_528)->~SharedPtr<Walaber::Texture>();
@@ -6247,7 +6247,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_548);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_548);
                     /* try { // try from 004f6568 to 004f656f has its CatchHandler @ 004f7738 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_548)->~SharedPtr<Walaber::Texture>();
@@ -6278,7 +6278,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_568);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_568);
                     /* try { // try from 004f5bf8 to 004f5bff has its CatchHandler @ 004f7c74 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_568)->~SharedPtr<Walaber::Texture>();
@@ -6307,7 +6307,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_588);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_588);
                     /* try { // try from 004f5e7c to 004f5e83 has its CatchHandler @ 004f781c */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_588)->~SharedPtr<Walaber::Texture>();
@@ -6336,7 +6336,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_5a8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_5a8);
                     /* try { // try from 004f6328 to 004f632f has its CatchHandler @ 004f7844 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_5a8)->~SharedPtr<Walaber::Texture>();
@@ -6367,7 +6367,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_5c8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_5c8);
                     /* try { // try from 004f5cd0 to 004f5cd7 has its CatchHandler @ 004f7c4c */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_5c8)->~SharedPtr<Walaber::Texture>();
@@ -6396,7 +6396,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_5e8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_5e8);
                     /* try { // try from 004f5f48 to 004f5f4f has its CatchHandler @ 004f7800 */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_5e8)->~SharedPtr<Walaber::Texture>();
@@ -6425,7 +6425,7 @@ LAB_004f5758:
             if (uStack_170 != (word *)0x0) {
               *piStack_168 = *piStack_168 + 1;
             }
-            Walaber::SharedPtr<Walaber::Texture>::operator=(lVar21 + 0x100,&pwStack_608);
+            ((Walaber::SharedPtr<Walaber::Texture> *)(lVar21 + 0x100))->operator=(&pwStack_608);
                     /* try { // try from 004f63e8 to 004f63ef has its CatchHandler @ 004f77cc */
             Walaber::Widget_PushButton::_applyTile(lVar21);
             ((Walaber::SharedPtr<Walaber::Texture> *)&pwStack_608)->~SharedPtr<Walaber::Texture>();
@@ -6468,7 +6468,7 @@ switchD_004f5a34_default:
           uStack_230 = CONCAT44((float)((ulong)*(undefined8 *)(lVar21 + 0x90) >> 0x20) *
                                 (float)((ulong)uStack_150 >> 0x20),
                                 (float)*(undefined8 *)(lVar21 + 0x90) * SUB84(uStack_150,0));
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_730,&DAT_0077de48);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_730))->operator=(&DAT_0077de48);
           piStack_1a8 = (int *)0x0;
           pvStack_1a0 = (void *)0x0;
           pwStack_1b0 = (word *)0x27203d2008;
@@ -6535,7 +6535,7 @@ switchD_004f5a34_default:
           puStack_160 = (undefined1 *)0x0;
           if (iVar16 == 6) {
                     /* try { // try from 004f691c to 004f692b has its CatchHandler @ 004f80a0 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_730,&DAT_0077e2f8);
+            ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_730))->operator=(&DAT_0077e2f8);
             uStack_1c8 = 0;
             pvStack_1c0 = (void *)0x0;
             plStack_1d0 = (long *)0x27203d2008;
@@ -6624,7 +6624,7 @@ LAB_004f6a84:
           }
           else if (iVar16 == 1) {
                     /* try { // try from 004f67b0 to 004f67bf has its CatchHandler @ 004f80a0 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_730,&DAT_0077e268);
+            ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_730))->operator=(&DAT_0077e268);
             uStack_1c8 = 0;
             pvStack_1c0 = (void *)0x0;
             plStack_1d0 = (long *)0x27203d2008;
@@ -7182,7 +7182,7 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
                     /* try { // try from 004f8454 to 004f845f has its CatchHandler @ 004f90a8 */
     void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&fStack_118);
                     /* try { // try from 004f8460 to 004f846b has its CatchHandler @ 004f90a4 */
-    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::vector(&pvStack_f8,&uStack_e0);
+    new ((void *)(&pvStack_f8)) std::__ndk1::vector<int, std::__ndk1::allocator<int>>(&uStack_e0);
                     /* try { // try from 004f846c to 004f847f has its CatchHandler @ 004f9080 */
     WaterConcept::GameSettings::goPlayLevel(auStack_c8,0xffffffff,&pvStack_f8,0);
     if (pvStack_f8 != (void *)0x0) {
@@ -7738,7 +7738,7 @@ void WaterConcept::Screen_LevelSelect::draw(int p0, int in_w1)
       if (GameSettings::currentStoryline != 6) {
         uStack_3c = 0xffffffff;
       }
-      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::vector(auStack_58,uVar4 + 0x1c8);
+      new ((void *)(auStack_58)) std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>(uVar4 + 0x1c8);
                     /* try { // try from 004f9608 to 004f961b has its CatchHandler @ 004f96c4 */
       Walaber::ParticleSet::drawParticles(lVar6,lVar2,auStack_58,&uStack_3c,*(undefined4 *)(uVar4 + 0x290));
       ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> *)auStack_58)->~__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>();
@@ -7935,7 +7935,7 @@ void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0, long in_x
       uStack_1df = 0x6e756f63;
       uStack_1db = 0x74;
                     /* try { // try from 004f988c to 004f989f has its CatchHandler @ 004fafac */
-      Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_1e0);
+      ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&bStack_1e0);
       uVar10 = Walaber::Property::asInt();
       if ((bStack_1e0 & 1) != 0) {
         operator delete(apvStack_1d0[0]);
@@ -7947,7 +7947,7 @@ void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0, long in_x
         do {
           Walaber::StringHelper::uIntToStr(&bStack_1e0,uVar30);
                     /* try { // try from 004f9910 to 004f9923 has its CatchHandler @ 004fb100 */
-          Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_1e0);
+          ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&bStack_1e0);
           Walaber::Property::asString(&bStack_b0);
                     /* try { // try from 004f9924 to 004f992f has its CatchHandler @ 004fb0a8 */
           Walaber::StringHelper::removePath(&pvStack_2b0,&bStack_b0);
@@ -8081,7 +8081,7 @@ joined_r0x004f9a04:
               }
               else {
                     /* try { // try from 004f9a88 to 004f9a8f has its CatchHandler @ 004fafb4 */
-                std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(*(long *)&p0[0x19].field_0x8,&pvStack_2b0);
+                new ((void *)(*(long *)&p0[0x19].field_0x8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&pvStack_2b0);
                 *(long *)&p0[0x19].field_0x8 = *(long *)&p0[0x19].field_0x8 + 0x18;
               }
             }
@@ -8135,7 +8135,7 @@ joined_r0x004f9a04:
               void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&GameSettings::mLevelList,&bStack_b0);
             }
             else {
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(DAT_00735e90,&bStack_b0);
+              new ((void *)(DAT_00735e90)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_b0);
               DAT_00735e90 = DAT_00735e90 + 0x18;
             }
             pbVar22 = pbVar31;
@@ -8241,9 +8241,9 @@ LAB_004f9cbc:
           if ((bStack_1e0 & 1) != 0) {
             operator delete(apvStack_1d0[0]);
           }
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_120,*(long *)(p0 + 0x19) + lVar18);
+          new ((void *)(abStack_120)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)(p0 + 0x19) + lVar18);
                     /* try { // try from 004fa38c to 004fa39b has its CatchHandler @ 004fb0b8 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(plVar14 + 0x2f,abStack_120);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(plVar14 + 0x2f))->operator=(abStack_120);
           Walaber::Widget_PushButton::_resizeFont(plVar14);
           if ((abStack_120[0] & 1) != 0) {
             operator delete(pvStack_110);
@@ -8261,7 +8261,7 @@ LAB_004f9cbc:
         lVar18 = 0;
         uVar32 = 0;
         do {
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_138,GameSettings::mLevelList + lVar18);
+          new ((void *)(abStack_138)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(GameSettings::mLevelList + lVar18);
                     /* try { // try from 004fa458 to 004fa467 has its CatchHandler @ 004fb084 */
           Walaber::Widget_IconList::addIcon(uVar11,abStack_138,uVar32 & 0xffffffff);
           if ((abStack_138[0] & 1) != 0) {
@@ -8315,7 +8315,7 @@ LAB_004f9cbc:
           if ((bStack_1e0 & 1) != 0) {
             operator delete(apvStack_1d0[0]);
           }
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_1e0,GameSettings::mLevelList + lVar18);
+          new ((void *)(&bStack_1e0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(GameSettings::mLevelList + lVar18);
           piStack_2a8 = (int *)0x0;
           pbStack_2a0 = (byte *)0x0;
           pvStack_2b0 = (void *)CONCAT71(pvStack_2b0._1_7_,0xc);
@@ -8335,7 +8335,7 @@ LAB_004f9cbc:
                     /* try { // try from 004fa618 to 004fa623 has its CatchHandler @ 004fb014 */
           Walaber::StringHelper::removePath(abStack_180,&pvStack_2b0);
                     /* try { // try from 004fa628 to 004fa637 has its CatchHandler @ 004fb0cc */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(plVar14 + 0x2f,abStack_180);
+          ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(plVar14 + 0x2f))->operator=(abStack_180);
           Walaber::Widget_PushButton::_resizeFont(plVar14);
           if ((abStack_180[0] & 1) != 0) {
             operator delete(pvStack_170);
@@ -8399,7 +8399,7 @@ LAB_004f9cbc:
       pvStack_1a8 = (void *)0x0;
       auStack_1b8[0] = 0x534e4f43490a;
                     /* try { // try from 004fa84c to 004fa85b has its CatchHandler @ 004faf90 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar18 + 0x178,auStack_1b8);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar18 + 0x178))->operator=(auStack_1b8);
       Walaber::Widget_PushButton::_resizeFont(lVar18);
       if ((auStack_1b8[0] & 1) != 0) {
         operator delete(pvStack_1a8);
@@ -8709,7 +8709,7 @@ LAB_004faaf0:
         operator delete((void *)CONCAT35(uStack_213,CONCAT41(uStack_217,uStack_218)));
       }
                     /* try { // try from 004fa014 to 004fa023 has its CatchHandler @ 004faf00 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_240,&GameSettings::currentLevelPackName);
+      new ((void *)(abStack_240)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&GameSettings::currentLevelPackName);
                     /* try { // try from 004fa024 to 004fa02f has its CatchHandler @ 004faeec */
       Walaber::TextManager::getString(&bStack_c8,abStack_240);
       if ((abStack_240[0] & 1) != 0) {
@@ -10252,7 +10252,7 @@ LAB_004fdb1c:
               if (lStack_410 != 0) {
                 *piStack_408 = *piStack_408 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_410);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_410);
                     /* try { // try from 004fd478 to 004fd47f has its CatchHandler @ 004fde6c */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_410)->~SharedPtr<Walaber::Texture>();
@@ -10295,7 +10295,7 @@ LAB_004fdb1c:
               if (lStack_3f0 != 0) {
                 *piStack_3e8 = *piStack_3e8 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_3f0);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_3f0);
                     /* try { // try from 004fd3b0 to 004fd3b7 has its CatchHandler @ 004fde98 */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_3f0)->~SharedPtr<Walaber::Texture>();
@@ -10338,7 +10338,7 @@ LAB_004fdb1c:
               if (lStack_430 != 0) {
                 *piStack_428 = *piStack_428 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_430);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_430);
                     /* try { // try from 004fd53c to 004fd543 has its CatchHandler @ 004fdd7c */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_430)->~SharedPtr<Walaber::Texture>();
@@ -10381,7 +10381,7 @@ LAB_004fdb1c:
               if (lStack_450 != 0) {
                 *piStack_448 = *piStack_448 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_450);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_450);
                     /* try { // try from 004fd5f8 to 004fd5ff has its CatchHandler @ 004fdd50 */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_450)->~SharedPtr<Walaber::Texture>();
@@ -10396,7 +10396,7 @@ LAB_004fdb1c:
                     /* try { // try from 004fd634 to 004fd63b has its CatchHandler @ 004fe2e4 */
             Walaber::StringHelper::intToStr(abStack_478,iVar15 + 1);
                     /* try { // try from 004fd640 to 004fd64f has its CatchHandler @ 004fe2c8 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(plVar23 + 0x2f,abStack_478);
+            ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(plVar23 + 0x2f))->operator=(abStack_478);
             Walaber::Widget_PushButton::_resizeFont(plVar23);
             if ((abStack_478[0] & 1) != 0) {
               operator delete(pvStack_468);
@@ -10525,7 +10525,7 @@ LAB_004fdb1c:
             if (puStack_310 != (undefined8 *)0x0) {
               *piStack_308 = *piStack_308 + 1;
             }
-            Walaber::SharedPtr<Walaber::Callback>::operator=(plStack_370 + 0x1a,&puStack_4b0);
+            ((Walaber::SharedPtr<Walaber::Callback> *)(plStack_370 + 0x1a))->operator=(&puStack_4b0);
             ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_4b0)->~SharedPtr<Walaber::Callback>();
             if ((undefined8 *)plVar18[0x3e] == (undefined8 *)plVar18[0x3f]) {
                     /* try { // try from 004fd940 to 004fd94b has its CatchHandler @ 004fe184 */
@@ -10936,7 +10936,7 @@ LAB_004fdb1c:
               if (lStack_4e0 != 0) {
                 *piStack_4d8 = *piStack_4d8 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_4e0);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_4e0);
                     /* try { // try from 004fc18c to 004fc193 has its CatchHandler @ 004fdf88 */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_4e0)->~SharedPtr<Walaber::Texture>();
@@ -10979,7 +10979,7 @@ LAB_004fdb1c:
               if (lStack_4c0 != 0) {
                 *piStack_4b8 = *piStack_4b8 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_4c0);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_4c0);
                     /* try { // try from 004fc0d0 to 004fc0d7 has its CatchHandler @ 004fdf5c */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_4c0)->~SharedPtr<Walaber::Texture>();
@@ -11022,7 +11022,7 @@ LAB_004fdb1c:
               if (lStack_500 != 0) {
                 *piStack_4f8 = *piStack_4f8 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_500);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_500);
                     /* try { // try from 004fc248 to 004fc24f has its CatchHandler @ 004fde40 */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_500)->~SharedPtr<Walaber::Texture>();
@@ -11065,7 +11065,7 @@ LAB_004fdb1c:
               if (lStack_520 != 0) {
                 *piStack_518 = *piStack_518 + 1;
               }
-              Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_520);
+              ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_520);
                     /* try { // try from 004fc2fc to 004fc303 has its CatchHandler @ 004fde14 */
               Walaber::Widget_PushButton::_applyTile(plVar23);
               ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_520)->~SharedPtr<Walaber::Texture>();
@@ -11080,7 +11080,7 @@ LAB_004fdb1c:
                     /* try { // try from 004fc338 to 004fc343 has its CatchHandler @ 004fe358 */
             Walaber::StringHelper::intToStr(abStack_548,uVar17 + 1);
                     /* try { // try from 004fc348 to 004fc357 has its CatchHandler @ 004fe338 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(plVar23 + 0x2f,abStack_548);
+            ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(plVar23 + 0x2f))->operator=(abStack_548);
             Walaber::Widget_PushButton::_resizeFont(plVar23);
             if ((abStack_548[0] & 1) != 0) {
               operator delete(pvStack_538);
@@ -11207,7 +11207,7 @@ LAB_004fdb1c:
             if (puStack_310 != (undefined8 *)0x0) {
               *piStack_308 = *piStack_308 + 1;
             }
-            Walaber::SharedPtr<Walaber::Callback>::operator=(plStack_370 + 0x1a,&puStack_580);
+            ((Walaber::SharedPtr<Walaber::Callback> *)(plStack_370 + 0x1a))->operator=(&puStack_580);
             ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_580)->~SharedPtr<Walaber::Callback>();
             if ((undefined8 *)plVar18[0x3e] == (undefined8 *)plVar18[0x3f]) {
                     /* try { // try from 004fc644 to 004fc64f has its CatchHandler @ 004fe2f0 */

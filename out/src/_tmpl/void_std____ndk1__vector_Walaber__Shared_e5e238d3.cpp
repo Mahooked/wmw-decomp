@@ -43,7 +43,7 @@ void std::__ndk1::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>::__split_buffer(auStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>(uVar2,lVar3,p0 + 2);
   lVar3 = *in_x1;
   *plStack_50 = lVar3;
   piVar6 = (int *)in_x1[1];
@@ -100,7 +100,7 @@ void std::__ndk1::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>::__split_buffer(auStack_60,uVar2,lVar3,p0 + 1);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>(uVar2,lVar3,p0 + 1);
   lVar3 = *in_x1;
   *plStack_50 = lVar3;
   piVar6 = (int *)in_x1[1];

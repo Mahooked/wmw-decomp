@@ -35,7 +35,7 @@ void std::__ndk1::
         *piVar2 = *piVar2 + 1;
       }
                     /* try { // try from 003789a4 to 003789ab has its CatchHandler @ 003789dc */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puVar4 + 2,&p1->field_0x10);
+      new ((void *)(puVar4 + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&p1->field_0x10);
       puVar1 = &p1->f_0x28;
       p1 = p1 + 1;
       *(uint *)(puVar4 + 5) = *puVar1;

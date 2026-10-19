@@ -39,7 +39,7 @@ void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  std::__ndk1::__split_buffer<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>&>(uVar2,lVar3,p0 + 2);
   *puStack_50 = *in_x1;
   puStack_50[1] = in_x1[1];
   puStack_50 = puStack_50 + 2;

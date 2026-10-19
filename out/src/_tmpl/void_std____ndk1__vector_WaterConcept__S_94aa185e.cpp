@@ -47,7 +47,7 @@ void std::__ndk1::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>&>::__split_buffer(&pWStack_60,uVar2,lVar3,p0 + 2);
+  new ((void *)(&pWStack_60)) std::__ndk1::__split_buffer<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>&>(uVar2,lVar3,p0 + 2);
   uVar8 = *in_x1;
   *(undefined8 *)((long)pWStack_50 + 8) = in_x1[1];
   *(undefined8 *)pWStack_50 = uVar8;
@@ -122,7 +122,7 @@ void std::__ndk1::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>&>::__split_buffer(&pvStack_60,uVar2,lVar3,p0 + 0x10);
+  new ((void *)(&pvStack_60)) std::__ndk1::__split_buffer<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>&>(uVar2,lVar3,p0 + 0x10);
   uVar7 = *in_x1;
   puStack_50[1] = in_x1[1];
   *puStack_50 = uVar7;

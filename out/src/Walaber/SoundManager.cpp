@@ -44,7 +44,7 @@ void Walaber::SoundManager::subtitlePlayed(undefined4 param_1,long param_2)
     auStack_58[1] = 0;
     pvStack_48 = (void *)0x0;
                     /* try { // try from 0034cd74 to 0034cd93 has its CatchHandler @ 0034cdcc */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_58);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_58))->operator=();
     uStack_40 = param_1;
     (**(code **)(**(long **)(param_2 + 0x128) + 0x10))(*(long **)(param_2 + 0x128),auStack_58);
     if ((auStack_58[0] & 1) != 0) {
@@ -583,7 +583,7 @@ LAB_0034e5f8:
                 (*(code *)xmlFree)(uVar8);
                 uVar9 = (ulong)puStack_d0 & 0xffffffff;
               }
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b8,&puStack_120);
+              new ((void *)(abStack_b8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&puStack_120);
                     /* try { // try from 0034e6a8 to 0034e6bf has its CatchHandler @ 0034e7cc */
               Walaber::SoundManager::addSound(uVar9,p0,uVar4,abStack_b8,bVar6,lVar22 != 0,lVar14 != 0,lVar15 != 0);
               if ((abStack_b8[0] & 1) != 0) {
@@ -778,7 +778,7 @@ LAB_0034e090:
                     puStack_d0 = auStack_e8;
                     /* try { // try from 0034e0b8 to 0034e0df has its CatchHandler @ 0034e7a0 */
                     lVar12 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Language, std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Language>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<Walaber::Language, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<Walaber::Language const&>, std::__ndk1::tuple<>>(p0,auStack_e8,&DAT_0062b170,&puStack_d0,&puStack_100);
-                    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar12 + 0x28,&puStack_120);
+                    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar12 + 0x28))->operator=(&puStack_120);
                     /* try { // try from 0034e0e4 to 0034e0eb has its CatchHandler @ 0034e798 */
                     Walaber::TextManager::languageToString(&puStack_d0,auStack_e8[0]);
                     pvVar11 = pvVar17;
@@ -1222,11 +1222,11 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
     pvStack_88 = (void *)0x0;
     auStack_98[1] = 0;
     auStack_98[0] = 0;
-    Walaber::SharedPtr<Walaber::SoundResource>::operator=(&lStack_b0,&puStack_e0);
+    ((Walaber::SharedPtr<Walaber::SoundResource> *)(&lStack_b0))->operator=(&puStack_e0);
     ((Walaber::SharedPtr<Walaber::SoundResource> *)&puStack_e0)->~SharedPtr<Walaber::SoundResource>();
                     /* try { // try from 0034f0e4 to 0034f0ef has its CatchHandler @ 0034f3b4 */
     uStack_a0 = uVar9;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&bStack_c8);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_c8))->operator=();
     uStack_9a = iVar6 == 1;
     uStack_9c = CONCAT11(iVar5 == 1,iVar3 == 1);
     if (*(char *)(in_x1 + 0x18) == '\0') {
@@ -1239,7 +1239,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
         void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(lVar8 + 0x40,&bStack_c8);
       }
       else {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7,&bStack_c8);
+        new ((void *)(lVar7)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c8);
         *(long *)(lVar7 + 0x18) = lStack_b0;
         *(int **)(lVar7 + 0x20) = piStack_a8;
         if (lStack_b0 != 0) {
@@ -1249,7 +1249,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
         *(undefined2 *)(lVar7 + 0x2c) = uStack_9c;
         *(undefined4 *)(lVar7 + 0x28) = uStack_a0;
                     /* try { // try from 0034f250 to 0034f257 has its CatchHandler @ 0034f350 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7 + 0x30,auStack_98);
+        new ((void *)(lVar7 + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98);
         *(long *)(lVar8 + 0x48) = *(long *)(lVar8 + 0x48) + 0x48;
       }
     }
@@ -1263,7 +1263,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
         void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(lVar8 + 0x28,&bStack_c8);
       }
       else {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7,&bStack_c8);
+        new ((void *)(lVar7)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c8);
         *(long *)(lVar7 + 0x18) = lStack_b0;
         *(int **)(lVar7 + 0x20) = piStack_a8;
         if (lStack_b0 != 0) {
@@ -1273,7 +1273,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
         *(undefined2 *)(lVar7 + 0x2c) = uStack_9c;
         *(undefined4 *)(lVar7 + 0x28) = uStack_a0;
                     /* try { // try from 0034f194 to 0034f19b has its CatchHandler @ 0034f390 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7 + 0x30,auStack_98);
+        new ((void *)(lVar7 + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98);
         *(long *)(lVar8 + 0x30) = *(long *)(lVar8 + 0x30) + 0x48;
       }
       if (iVar4 == 1) {
@@ -1310,7 +1310,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
     lVar7 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int const&>, std::__ndk1::tuple<>>((long)p0 + 0x60,&uStack_7c,&DAT_0062b170,&bStack_c8,&puStack_e0);
     if (cVar1 == '\0') {
       if (*(long *)(lVar7 + 0x48) != *(long *)(lVar7 + 0x50)) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(*(long *)(lVar7 + 0x48),in_x1 + 0x20);
+        new ((void *)(*(long *)(lVar7 + 0x48))) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x20);
         *(long *)(lVar7 + 0x48) = *(long *)(lVar7 + 0x48) + 0x18;
         goto LAB_0034f318;
       }
@@ -1318,7 +1318,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
     }
     else {
       if (*(long *)(lVar7 + 0x30) != *(long *)(lVar7 + 0x38)) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(*(long *)(lVar7 + 0x30),in_x1 + 0x20);
+        new ((void *)(*(long *)(lVar7 + 0x30))) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x20);
         *(long *)(lVar7 + 0x30) = *(long *)(lVar7 + 0x30) + 0x18;
         goto LAB_0034f318;
       }
@@ -1352,7 +1352,7 @@ void Walaber::SoundManager::setLocalizedFolderMapping
   puStack_30 = &uStack_3c;
   uStack_3c = param_2;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Language, std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Language>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<Walaber::Language, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<Walaber::Language const&>, std::__ndk1::tuple<>>(param_1,&uStack_3c,&DAT_0062b170,&puStack_30,auStack_38);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar2 + 0x28,param_3);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar2 + 0x28))->operator=(param_3);
   return;
 }
 
@@ -1504,7 +1504,7 @@ LAB_0034f864:
             void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(plVar21 + 5,pbVar20);
           }
           else {
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(pbVar12,pbVar20);
+            new ((void *)(pbVar12)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar20);
             lVar16 = *(long *)(pbVar20 + 0x18);
             *(long *)(pbVar12 + 0x18) = lVar16;
             piVar11 = *(int **)(pbVar20 + 0x20);
@@ -1518,7 +1518,7 @@ LAB_0034f864:
             *(undefined2 *)(pbVar12 + 0x2c) = uVar4;
             *(undefined4 *)(pbVar12 + 0x28) = uVar2;
                     /* try { // try from 0034f8c0 to 0034f8c3 has its CatchHandler @ 0034fce4 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(pbVar12 + 0x30,pbVar20 + 0x30);
+            new ((void *)(pbVar12 + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar20 + 0x30);
             plVar21[6] = plVar21[6] + 0x48;
           }
           pbVar12 = (byte *)plVar21[9];
@@ -1581,7 +1581,7 @@ LAB_0034f864:
             *(undefined8 *)(pbVar20 + 0x10) = uVar13;
             *(undefined8 *)(pbVar20 + 8) = uVar23;
             *(undefined8 *)pbVar20 = uVar22;
-            Walaber::SharedPtr<Walaber::SoundResource>::operator=(pbVar20 + 0x18,pbVar20 + 0x60);
+            ((Walaber::SharedPtr<Walaber::SoundResource> *)(pbVar20 + 0x18))->operator=(pbVar20 + 0x60);
             pbVar20[0x2e] = pbVar20[0x76];
             *(undefined2 *)(pbVar20 + 0x2c) = *(undefined2 *)(pbVar20 + 0x74);
             *(undefined4 *)(pbVar20 + 0x28) = *(undefined4 *)(pbVar20 + 0x70);
@@ -1777,7 +1777,7 @@ LAB_0034f904:
                     void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(plVar21 + 5,pbVar19);
                   }
                   else {
-                    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(pbVar20,pbVar19);
+                    new ((void *)(pbVar20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar19);
                     lVar16 = *(long *)(pbVar19 + 0x18);
                     *(long *)(pbVar20 + 0x18) = lVar16;
                     piVar11 = *(int **)(pbVar19 + 0x20);
@@ -1791,7 +1791,7 @@ LAB_0034f904:
                     *(undefined2 *)(pbVar20 + 0x2c) = uVar4;
                     *(undefined4 *)(pbVar20 + 0x28) = uVar2;
                     /* try { // try from 0034f960 to 0034f963 has its CatchHandler @ 0034fcbc */
-                    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(pbVar20 + 0x30,pbVar19 + 0x30);
+                    new ((void *)(pbVar20 + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar19 + 0x30);
                     plVar21[6] = plVar21[6] + 0x48;
                   }
                   pbVar12 = (byte *)plVar21[9];
@@ -1854,7 +1854,7 @@ LAB_0034f904:
                     *(undefined8 *)(pbVar19 + 0x10) = uVar13;
                     *(undefined8 *)(pbVar19 + 8) = uVar23;
                     *(undefined8 *)pbVar19 = uVar22;
-                    Walaber::SharedPtr<Walaber::SoundResource>::operator=(pbVar19 + 0x18,pbVar19 + 0x60);
+                    ((Walaber::SharedPtr<Walaber::SoundResource> *)(pbVar19 + 0x18))->operator=(pbVar19 + 0x60);
                     pbVar19[0x2e] = pbVar19[0x76];
                     *(undefined2 *)(pbVar19 + 0x2c) = *(undefined2 *)(pbVar19 + 0x74);
                     *(undefined4 *)(pbVar19 + 0x28) = *(undefined4 *)(pbVar19 + 0x70);
@@ -2055,9 +2055,9 @@ void Walaber::SoundManager::_loadSound
           new ((void *)(&plStack_a0)) Walaber::PropertyList();
           lStack_88 = 0;
           piStack_80 = (int *)0x0;
-          Walaber::SharedPtr<Walaber::Callback>::operator=(&lStack_88,param_4);
+          ((Walaber::SharedPtr<Walaber::Callback> *)(&lStack_88))->operator=(param_4);
                     /* try { // try from 0034fe60 to 0034fe6b has its CatchHandler @ 00350458 */
-          Walaber::PropertyList::operator=(&plStack_a0,param_5);
+          ((Walaber::PropertyList *)(&plStack_a0))->operator=(param_5);
           puStack_d0 = (undefined8 *)CONCAT44(iStack_74,uStack_78);
           puStack_c0 = (undefined1 *)0x0;
           uStack_b8 = 0;
@@ -2182,7 +2182,7 @@ void Walaber::SoundManager::_loadSound
               operator delete(puStack_f0);
             }
                     /* try { // try from 003500d4 to 003500db has its CatchHandler @ 003503ec */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_100,plVar11[5] + lVar2 * 0x48);
+            new ((void *)(&bStack_100)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar11[5] + lVar2 * 0x48);
             plVar7 = (long *)(param_1 + 8);
             plVar8 = (long *)*plVar7;
             plVar11 = plVar7;
@@ -2365,7 +2365,7 @@ LAB_003504f8:
   uStack_78 = 0;
   puStack_70 = (undefined1 *)0x0;
                     /* try { // try from 00350508 to 0035051b has its CatchHandler @ 00350d2c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_98,param_2,(int)uVar9 + 1,0xffffffffffffffff,param_2);
+  new ((void *)(&uStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2,(int)uVar9 + 1,0xffffffffffffffff,param_2);
   puStack_70 = puStack_88;
   uStack_80 = uStack_98;
   uVar9 = uStack_80;
@@ -2493,7 +2493,7 @@ LAB_003508b8:
     }
     else {
                     /* try { // try from 00350958 to 0035095f has its CatchHandler @ 00350d08 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar18[6],param_2);
+      new ((void *)(plVar18[6])) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
       plVar18[6] = plVar18[6] + 0x18;
     }
     pbVar15 = (byte *)plVar18[9];
@@ -2627,7 +2627,7 @@ LAB_00350b88:
   }
   else {
                     /* try { // try from 00350c30 to 00350c5b has its CatchHandler @ 00350d04 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(pbVar13,param_2);
+    new ((void *)(pbVar13)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
     pbVar13 = (byte *)(plVar18[6] + 0x18);
     plVar18[6] = (long)pbVar13;
   }
@@ -2748,7 +2748,7 @@ LAB_0035068c:
   }
   else {
                     /* try { // try from 0035072c to 00350733 has its CatchHandler @ 00350d10 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar18[6],param_2);
+    new ((void *)(plVar18[6])) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
     plVar18[6] = plVar18[6] + 0x18;
   }
   pbVar15 = (byte *)plVar18[9];
@@ -2948,7 +2948,7 @@ LAB_00350a20:
   }
   else {
                     /* try { // try from 00350a4c to 00350a73 has its CatchHandler @ 00350d0c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(pbVar17,param_2);
+    new ((void *)(pbVar17)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
     plVar18[6] = plVar18[6] + 0x18;
     uVar9 = uStack_80;
   }
@@ -3157,11 +3157,11 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0, long in_x1)
               uStack_148 = 0;
               uStack_147 = 0;
               uStack_143 = 0;
-              Walaber::SharedPtr<Walaber::SoundResource>::operator=(&uStack_98,&bStack_150);
+              ((Walaber::SharedPtr<Walaber::SoundResource> *)(&uStack_98))->operator=(&bStack_150);
               ((Walaber::SharedPtr<Walaber::SoundResource> *)&bStack_150)->~SharedPtr<Walaber::SoundResource>();
             }
             lVar7 = (long)iVar4;
-            Walaber::SharedPtr<Walaber::SoundResource>::operator=(plVar18[5] + lVar7 * 0x48 + 0x18,&uStack_98);
+            ((Walaber::SharedPtr<Walaber::SoundResource> *)(plVar18[5] + lVar7 * 0x48 + 0x18))->operator=(&uStack_98);
             uVar9 = uVar5 & 0xffffffff;
             bStack_150 = (byte)uVar9;
             uStack_14f = (undefined2)(uVar9 >> 8);
@@ -3197,7 +3197,7 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0, long in_x1)
                     uVar22 = *(undefined8 *)((long)p0 + lVar15);
                     uVar23 = *(undefined4 *)(lVar12 + 0x28);
                     /* try { // try from 003511ac to 003511b3 has its CatchHandler @ 003515cc */
-                    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_1c0,lVar12 + 0x30);
+                    new ((void *)(abStack_1c0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar12 + 0x30);
                     /* try { // try from 003511bc to 003511e3 has its CatchHandler @ 00351624 */
                     new ((void *)(uVar23)) Walaber::SoundEffectInstance(uVar6,&lStack_1a8,uVar22,abStack_1c0);
                     uStack_b0 = uVar6;
@@ -3230,7 +3230,7 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0, long in_x1)
                     uVar22 = *(undefined8 *)((long)p0 + 0xb8);
                     uVar23 = *(undefined4 *)(lVar12 + 0x28);
                     /* try { // try from 003510a4 to 003510ab has its CatchHandler @ 00351610 */
-                    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_188,lVar12 + 0x30);
+                    new ((void *)(abStack_188)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar12 + 0x30);
                     /* try { // try from 003510b0 to 003510d7 has its CatchHandler @ 00351650 */
                     new ((void *)(uVar23)) Walaber::SoundEffectInstance(uVar6,&lStack_170,uVar22,abStack_188);
                     uStack_b0 = uVar6;
@@ -3519,7 +3519,7 @@ void Walaber::SoundManager::modifyMusicFilePath(long param_1,byte *param_2,undef
           }
           if (((uVar2 == 0) || (iVar5 = memcmp(pbVar7,pbVar1), iVar5 == 0)) &&
              (uVar10 == uVar4)) {
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(pbVar9,param_3);
+            ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(pbVar9))->operator=(param_3);
             goto LAB_00351b0c;
           }
           uVar8 = uVar8 + 1;
@@ -3700,7 +3700,7 @@ void Walaber::SoundManager::_oneShotCallback(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x6c6f7606;
                     /* try { // try from 00351f18 to 00351f27 has its CatchHandler @ 00352040 */
-    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    ((Walaber::PropertyList *)(lVar1))->operator[](auStack_70);
     uVar5 = Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
@@ -3720,7 +3720,7 @@ void Walaber::SoundManager::_oneShotCallback(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x68637469700a;
                     /* try { // try from 00351fb8 to 00351fc7 has its CatchHandler @ 00352038 */
-    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    ((Walaber::PropertyList *)(lVar1))->operator[](auStack_70);
     fVar4 = (float)Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
@@ -3977,7 +3977,7 @@ void Walaber::SoundManager::newSoundSpecific
             uVar9 = *(undefined8 *)(param_1 + lVar8);
             uVar12 = *(undefined4 *)(lVar5 + 0x28);
                     /* try { // try from 00352600 to 00352607 has its CatchHandler @ 00352704 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_130,lVar5 + 0x30);
+            new ((void *)(abStack_130)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar5 + 0x30);
                     /* try { // try from 0035260c to 00352633 has its CatchHandler @ 00352754 */
             new ((void *)(uVar12)) Walaber::SoundEffectInstance(uStack_108,&lStack_118,uVar9,abStack_130);
             uStack_d0 = uStack_108;
@@ -4008,7 +4008,7 @@ void Walaber::SoundManager::newSoundSpecific
             uVar9 = *(undefined8 *)(param_1 + 0xb8);
             uVar12 = *(undefined4 *)(lVar5 + 0x28);
                     /* try { // try from 003524c8 to 003524cf has its CatchHandler @ 00352744 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_f8,lVar5 + 0x30);
+            new ((void *)(abStack_f8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar5 + 0x30);
                     /* try { // try from 003524d4 to 003524fb has its CatchHandler @ 00352778 */
             new ((void *)(uVar12)) Walaber::SoundEffectInstance(uStack_c0,&lStack_e0,uVar9,abStack_f8);
             uStack_d0 = uStack_c0;
@@ -4273,7 +4273,7 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x6c6f7606;
                     /* try { // try from 00352df8 to 00352e07 has its CatchHandler @ 00352f20 */
-    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    ((Walaber::PropertyList *)(lVar1))->operator[](auStack_70);
     uVar5 = Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
@@ -4293,7 +4293,7 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x68637469700a;
                     /* try { // try from 00352e98 to 00352ea7 has its CatchHandler @ 00352f18 */
-    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    ((Walaber::PropertyList *)(lVar1))->operator[](auStack_70);
     fVar4 = (float)Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
@@ -4357,7 +4357,7 @@ void Walaber::SoundManager::getSoundFile
   int *piStack_88;
   undefined1 *puStack_80;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_90);
+  new ((void *)(&puStack_90)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 00352f88 to 00352f8f has its CatchHandler @ 003534bc */
   new ((void *)(auStack_a8)) Walaber::PropertyList();
   uStack_f9 = 0;
@@ -4458,10 +4458,10 @@ void Walaber::SoundManager::getSoundFile
   lStack_e8 = 0;
   piStack_e0 = (int *)0x0;
                     /* try { // try from 003531c4 to 003531cf has its CatchHandler @ 00353478 */
-  Walaber::PropertyList::operator=(&bStack_100,param_4);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(&lStack_e8,param_3);
+  ((Walaber::PropertyList *)(&bStack_100))->operator=(param_4);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(&lStack_e8))->operator=(param_3);
                     /* try { // try from 003531dc to 003531eb has its CatchHandler @ 00353474 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_140,param_2);
+  new ((void *)(&puStack_140)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
   plVar9 = (long *)CONCAT17(uStack_f9,CONCAT25(uStack_fb,CONCAT41(uStack_ff,bStack_100)));
   uStack_120 = 0;
   uStack_118 = 0;
@@ -4640,7 +4640,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
   uStack_df = 0x765f7369;
   uStack_db = 0x6f;
                     /* try { // try from 00353578 to 00353583 has its CatchHandler @ 00353da4 */
-  Walaber::PropertyList::operator[](*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
+  ((Walaber::PropertyList *)(*(undefined8 *)(in_x1 + 0x18)))->operator[](&bStack_e0);
   iVar6 = Walaber::Property::asInt();
   if ((bStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
@@ -4655,7 +4655,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
   uStack_d8 = 0x65;
   uStack_d7 = 0;
                     /* try { // try from 003535cc to 003535db has its CatchHandler @ 00353da0 */
-  Walaber::PropertyList::operator[](*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
+  ((Walaber::PropertyList *)(*(undefined8 *)(in_x1 + 0x18)))->operator[](&bStack_e0);
   Walaber::Property::asString(abStack_98);
   if ((bStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
@@ -4698,7 +4698,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
   uStack_a8 = 0;
   uStack_b0 = 0;
                     /* try { // try from 00353680 to 0035368b has its CatchHandler @ 00353d8c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&bStack_e0,piVar1);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_e0))->operator=(piVar1);
   uStack_b8 = 0x3f800000;
   uStack_b4 = 0;
   uVar14 = 3;
@@ -4817,7 +4817,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
     if (auStack_110[0] != 0) {
       uStack_244 = uVar14;
     }
-    Walaber::SharedPtr<Walaber::SoundResource>::operator=(&lStack_c8,auStack_110);
+    ((Walaber::SharedPtr<Walaber::SoundResource> *)(&lStack_c8))->operator=(auStack_110);
     if (cStack_b2 == '\0') {
                     /* try { // try from 003539a8 to 003539d3 has its CatchHandler @ 00353cf8 */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&uStack_b0,&DAT_0063306f,0);
@@ -4831,7 +4831,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
         operator delete(pvStack_e8);
       }
                     /* try { // try from 00353950 to 0035395b has its CatchHandler @ 00353cdc */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_198,&uStack_1e0);
+      new ((void *)(abStack_198)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1e0);
                     /* try { // try from 0035395c to 00353963 has its CatchHandler @ 00353cac */
       uVar10 = Walaber::TextManager::subtitleExists(abStack_198);
       if ((abStack_198[0] & 1) != 0) {
@@ -4839,7 +4839,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
       }
       if ((uVar10 & 1) != 0) {
                     /* try { // try from 0035397c to 00353987 has its CatchHandler @ 00353cdc */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_b0,&uStack_1e0);
+        ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_b0))->operator=(&uStack_1e0);
       }
       if ((uStack_1e0 & 1) != 0) {
         operator delete(pvStack_1d0);
@@ -4851,7 +4851,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
       void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>((long)p0 + 0x48,&bStack_e0);
     }
     else {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar8,&bStack_e0);
+      new ((void *)(lVar8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_e0);
       *(long *)(lVar8 + 0x18) = lStack_c8;
       *(int **)(lVar8 + 0x20) = piStack_c0;
       if (lStack_c8 != 0) {
@@ -4861,7 +4861,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
       *(undefined2 *)(lVar8 + 0x2c) = uStack_b4;
       *(undefined4 *)(lVar8 + 0x28) = uStack_b8;
                     /* try { // try from 00353a18 to 00353a1f has its CatchHandler @ 00353c90 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar8 + 0x30,&uStack_b0);
+      new ((void *)(lVar8 + 0x30)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0);
       *(long *)((long)p0 + 0x50) = *(long *)((long)p0 + 0x50) + 0x48;
     }
     ((Walaber::SharedPtr<Walaber::SoundResource> *)auStack_110)->~SharedPtr<Walaber::SoundResource>();
@@ -4882,7 +4882,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
     do {
       if (plVar19[10] != 0) {
                     /* try { // try from 00353a90 to 00353a9b has its CatchHandler @ 00353e14 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_1f8,abStack_98);
+        new ((void *)(abStack_1f8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98);
                     /* try { // try from 00353a9c to 00353aa3 has its CatchHandler @ 00353de0 */
         uVar10 = operator new(0x50);
         uVar3 = uStack_b8;
@@ -4893,7 +4893,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
         }
         uVar9 = *(undefined8 *)((long)p0 + lVar8);
                     /* try { // try from 00353acc to 00353ad7 has its CatchHandler @ 00353de8 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_230,&uStack_b0);
+        new ((void *)(abStack_230)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0);
                     /* try { // try from 00353adc to 00353b03 has its CatchHandler @ 00353e5c */
         new ((void *)(uVar3)) Walaber::SoundEffectInstance(uVar10,&lStack_218,uVar9,abStack_230);
         uStack_f8 = uVar10;
@@ -6248,7 +6248,7 @@ void Walaber::SoundManager::initDefaultSubtitleText(long param_1)
               operator delete(pvStack_88);
             }
                     /* try { // try from 0035576c to 00355777 has its CatchHandler @ 00355918 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,abStack_80);
+            new ((void *)(abStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_80);
                     /* try { // try from 00355778 to 0035577f has its CatchHandler @ 003558e8 */
             uVar5 = Walaber::TextManager::subtitleExists(abStack_b0);
             if ((abStack_b0[0] & 1) != 0) {
@@ -6256,14 +6256,14 @@ void Walaber::SoundManager::initDefaultSubtitleText(long param_1)
             }
             if ((uVar5 & 1) != 0) {
                     /* try { // try from 00355798 to 003557a3 has its CatchHandler @ 00355918 */
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar9,abStack_80);
+              ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar9))->operator=(abStack_80);
             }
             pvVar2 = (void *)((ulong)abStack_80 | 1);
             if ((abStack_80[0] & 1) != 0) {
               pvVar2 = pvStack_70;
             }
                     /* try { // try from 003557b4 to 003557bf has its CatchHandler @ 003558fc */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c8,abStack_80);
+            new ((void *)(abStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_80);
                     /* try { // try from 003557c0 to 003557cb has its CatchHandler @ 00355900 */
             Walaber::TextManager::getString(abStack_98,abStack_c8);
             pvVar3 = (void *)((ulong)abStack_98 | 1);

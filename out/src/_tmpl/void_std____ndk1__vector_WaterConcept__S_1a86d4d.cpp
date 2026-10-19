@@ -39,12 +39,12 @@ void std::__ndk1::
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>::__split_buffer(auStack_60,uVar5,lVar3,p0 + 0x10);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>(uVar5,lVar3,p0 + 0x10);
   lVar3 = lStack_50;
                     /* try { // try from 004ecaa0 to 004ecaab has its CatchHandler @ 004ecb20 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lStack_50);
+  new ((void *)(lStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 004ecab4 to 004ecab7 has its CatchHandler @ 004ecb08 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar3 + 0x18,in_x1 + 0x18);
+  new ((void *)(lVar3 + 0x18)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(in_x1 + 0x18);
   lStack_50 = lStack_50 + 0x30;
                     /* try { // try from 004ecac4 to 004ecacf has its CatchHandler @ 004ecb20 */
   std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__swap_out_circular_buffer(p0,auStack_60);

@@ -20,7 +20,7 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::reserve(ulong p0,
   undefined8 uStack_38;
   
   if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 2) < in_x1) {
-    std::__ndk1::__split_buffer<float, std::__ndk1::allocator<float>&>::__split_buffer(&pvStack_50,in_x1,*(long *)(p0 + 8) - *(long *)p0 >> 2,p0 + 0x10);
+    new ((void *)(&pvStack_50)) std::__ndk1::__split_buffer<float, std::__ndk1::allocator<float>&>(in_x1,*(long *)(p0 + 8) - *(long *)p0 >> 2,p0 + 0x10);
     pvStack_50 = *(void **)p0;
     pvVar2 = *(void **)(p0 + 8);
     pvStack_48 = (void *)((long)pvStack_48 - ((long)pvVar2 - (long)pvStack_50));

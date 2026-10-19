@@ -21,7 +21,7 @@ void std::__ndk1::
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
   *(undefined4 *)(param_1 + 0x18) = *(undefined4 *)(param_2 + 0x18);
                     /* try { // try from 0035663c to 0035663f has its CatchHandler @ 0035664c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x20,param_2 + 0x20);
+  new ((void *)(param_1 + 0x20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x20);
   return;
 }
 

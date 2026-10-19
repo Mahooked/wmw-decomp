@@ -113,7 +113,7 @@ void std::__ndk1::
       lVar2 = param_1[1];
       do {
                     /* try { // try from 004d1110 to 004d1117 has its CatchHandler @ 004d1144 */
-        std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>::pair(lVar2,lVar3);
+        new ((void *)(lVar2)) std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar3);
         lVar3 = lVar3 + 0x30;
         lVar2 = param_1[1] + 0x30;
         param_1[1] = lVar2;

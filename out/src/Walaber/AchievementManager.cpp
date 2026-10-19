@@ -64,7 +64,7 @@ void Walaber::AchievementManager::loadAchievements(undefined8 param_1,undefined8
   void *pvStack_40;
   
   uVar2 = Walaber::DatabaseManager::firstEntryInMap();
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_2);
+  new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2);
                     /* try { // try from 0032f230 to 0032f23f has its CatchHandler @ 0032f278 */
   Walaber::AchievementManager::loadAchievements(param_1,uVar2,abStack_50);
   if ((abStack_50[0] & 1) != 0) {
@@ -181,7 +181,7 @@ void Walaber::AchievementManager::loadAchievements
   void *pvStack_80;
   
   *(undefined4 *)(param_1 + 0x48) = param_2;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x50,param_3);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(param_1 + 0x50))->operator=(param_3);
   auStack_2b8[1] = 0;
   pvStack_2a8 = (void *)0x0;
   auStack_2b8[0] = 0x202c04;
@@ -428,7 +428,7 @@ void Walaber::AchievementManager::loadAchievements
     operator delete(pvStack_2a8);
   }
                     /* try { // try from 0032f7d8 to 0032f7e3 has its CatchHandler @ 0032fcac */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_160,param_3);
+  new ((void *)(&uStack_160)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   uStack_118 = 0;
   pvStack_110 = (void *)0x0;
   uStack_120 = 0x4353412008;
@@ -466,7 +466,7 @@ void Walaber::AchievementManager::loadAchievements
                     /* try { // try from 0032f8d0 to 0032f8df has its CatchHandler @ 0032fe8c */
     Walaber::DatabaseIterator::getStringAtIndex(&uStack_1c0,&uStack_200,0);
                     /* try { // try from 0032f8e0 to 0032f8f7 has its CatchHandler @ 0032fe9c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_120,&uStack_1c0);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_120))->operator=(&uStack_1c0);
     bStack_a0 = Walaber::DatabaseIterator::getBoolAtIndex(&uStack_200,1);
     bStack_a0 = bStack_a0 & 1;
                     /* try { // try from 0032f900 to 0032f90f has its CatchHandler @ 0032fe88 */
@@ -581,7 +581,7 @@ void Walaber::AchievementManager::loadAchievements
       void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&uStack_1a0,&uStack_1c0);
     }
     else {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(uStack_198,&uStack_1c0);
+      new ((void *)(uStack_198)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1c0);
       uStack_198 = uStack_198 + 0x18;
     }
     if ((uStack_1c0 & 1) != 0) {
@@ -693,13 +693,13 @@ void Walaber::AchievementManager::reportAchievement
     plVar11 = (long *)(lVar6 + 0x38);
     if (*(float *)(*plVar11 + 0x78) != (float)param_1) {
       *(float *)(*plVar11 + 0x78) = (float)param_1;
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,param_3);
+      new ((void *)(abStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
                     /* try { // try from 0032ffb8 to 0032ffc7 has its CatchHandler @ 0033034c */
       Walaber::AchievementManager::_setDBPercentComplete(param_1,param_2,abStack_b0);
       if ((abStack_b0[0] & 1) != 0) {
         operator delete(pvStack_a0);
       }
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_f0,param_3);
+      new ((void *)(abStack_f0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
                     /* try { // try from 0032ffe4 to 0032fff7 has its CatchHandler @ 00330338 */
       new ((void *)(param_1)) Walaber::Message_AchievementUnlocked(appuStack_d8,abStack_f0,1);
       if ((abStack_f0[0] & 1) != 0) {
@@ -738,7 +738,7 @@ void Walaber::AchievementManager::reportAchievement
         puVar8[2] = 0;
         *puVar8 = 0;
                     /* try { // try from 003300c0 to 003300c7 has its CatchHandler @ 003302c8 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_188,*plVar11);
+        new ((void *)(abStack_188)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*plVar11);
                     /* try { // try from 003300c8 to 003300d7 has its CatchHandler @ 003302b0 */
         Walaber::TextManager::getString(abStack_170,abStack_188);
         uVar1 = (ulong)(abStack_170[0] >> 1);
@@ -1022,7 +1022,7 @@ void Walaber::AchievementManager::resetAchievementProgress(long *param_1)
   plVar5 = (long *)*param_1;
   while (plVar5 != param_1 + 1) {
     *(undefined4 *)(plVar5[7] + 0x78) = 0;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,plVar5 + 4);
+    new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar5 + 4);
                     /* try { // try from 00330880 to 0033088f has its CatchHandler @ 0033091c */
     Walaber::AchievementManager::_setDBPercentComplete(0,param_1,abStack_50);
     if ((abStack_50[0] & 1) != 0) {
@@ -1076,7 +1076,7 @@ void Walaber::AchievementManager::sendAchievementsToPlatform(undefined8 *param_1
     plVar6 = (long *)*param_1;
     do {
       if (0.0 < *(float *)(plVar6[7] + 0x78)) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,plVar6 + 4);
+        new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(plVar6 + 4);
                     /* try { // try from 003309a4 to 003309b3 has its CatchHandler @ 00330a5c */
         new ((void *)(*(undefined4 *)(plVar6[7] + 0x78))) Walaber::Message_AchievementUnlocked(appuStack_70,abStack_88,0);
         if ((abStack_88[0] & 1) != 0) {

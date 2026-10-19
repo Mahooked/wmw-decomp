@@ -5,9 +5,9 @@
 
 /* ok  address 0x4e32b0  size 104 */WaterConcept::Screen_Hub::ButtonInfo::ButtonInfo(undefined4 param_2,undefined8 param_3,undefined8 param_4){
   *this = param_2;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_3);
+  new ((void *)(this + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
                     /* try { // try from 004e32e0 to 004e32eb has its CatchHandler @ 004e32fc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 8,param_4);
+  new ((void *)(this + 8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_4);
   return;
 }
 

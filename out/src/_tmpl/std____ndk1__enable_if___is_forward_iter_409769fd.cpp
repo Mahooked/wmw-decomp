@@ -41,8 +41,8 @@ void std::__ndk1::
       pWVar2 = in_x2;
     }
     for (; p1 = pWVar2, p1 != pWVar1; pWVar1 = pWVar1 + 1) {
-      Walaber::SharedPtr<Walaber::Texture>::operator=(uVar7,pWVar1);
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(uVar7 + 0x10,&pWVar1->field_0x10);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(uVar7))->operator=(pWVar1);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(uVar7 + 0x10))->operator=(&pWVar1->field_0x10);
       *(uint *)(uVar7 + 0x28) = pWVar1->f_0x28;
       uVar7 = uVar7 + 0x30;
       pWVar2 = p1;

@@ -45,7 +45,7 @@ void std::__ndk1::
   param_1[1] = param_2 + 8;
   *(undefined1 *)(param_1 + 2) = 0;
                     /* try { // try from 0043d140 to 0043d143 has its CatchHandler @ 0043d160 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x20,*param_4);
+  new ((void *)(lVar1 + 0x20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*param_4);
   *(undefined1 *)(lVar1 + 0x38) = 0;
   *(undefined1 *)(param_1 + 2) = 1;
   return;

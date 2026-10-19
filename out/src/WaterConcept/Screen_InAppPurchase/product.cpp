@@ -12,7 +12,7 @@
   *this = 0;
                     /* try { // try from 004ea9b4 to 004ea9c3 has its CatchHandler @ 004ea9d4 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=();
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(this + 3,param_3);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(this + 3))->operator=(param_3);
   return;
 }
 

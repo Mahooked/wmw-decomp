@@ -256,7 +256,7 @@ void WaterConcept::Screen_FoodPyramid::enter(long param_1)
     iVar5 = Walaber::SoundManager::getLiveTracksInGroup(lVar7,1);
     Walaber::SoundManager::playMusicFromGroup(lVar7,iVar5 != 0,0);
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&ppuStack_70,&DAT_00772400);
+  new ((void *)(&ppuStack_70)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00772400);
   piStack_e0 = (int *)0x0;
   pvStack_d8 = (void *)0x0;
   puStack_e8 = (undefined8 *)0x27203d2008;
@@ -1231,7 +1231,7 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0, int * i
       if (lStack_218 != 0) {
         *piStack_210 = *piStack_210 + 1;
       }
-      Walaber::SharedPtr<Walaber::Texture>::operator=(plVar23 + 0x20,&lStack_218);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(plVar23 + 0x20))->operator=(&lStack_218);
                     /* try { // try from 004d5afc to 004d5b03 has its CatchHandler @ 004d7300 */
       Walaber::Widget_PushButton::_applyTile(plVar23);
       ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_218)->~SharedPtr<Walaber::Texture>();
@@ -1581,7 +1581,7 @@ LAB_004d5d74:
     iStack_3a4 = iStack_3a4 + 3;
   }
                     /* try { // try from 004d6108 to 004d6117 has its CatchHandler @ 004d6ffc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_130,&DAT_007721c0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_130))->operator=(&DAT_007721c0);
   uStack_c7 = 0;
   uStack_c6 = 0;
   uStack_c1 = 0;
@@ -1710,7 +1710,7 @@ LAB_004d5d74:
   uVar26 = Walaber::DatabaseIterator::next(auStack_270);
   if ((uVar26 & 1) == 0) {
                     /* try { // try from 004d6318 to 004d6327 has its CatchHandler @ 004d6f74 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_170,&DAT_00772340);
+    new ((void *)(&uStack_170)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00772340);
     uStack_28c = 0;
     uStack_28f = 0x2745;
     uStack_297 = 0x52;
@@ -2840,7 +2840,7 @@ LAB_004d7988:
       }
       goto LAB_004d7988;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_170,&DAT_00772850);
+    new ((void *)(&bStack_170)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00772850);
     uStack_146 = 0;
     uStack_141 = 0;
     uStack_140 = 0;

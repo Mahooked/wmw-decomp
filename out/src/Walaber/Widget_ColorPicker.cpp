@@ -35,7 +35,7 @@ Walaber::Widget_ColorPicker::operator=(Walaber__Widget_ColorPicker *p0)
   *(undefined8 *)&p0->field_0xbc = *(undefined8 *)(in_x1 + 0xbc);
   *(undefined4 *)&p0->field_0xc4 = *(undefined4 *)(in_x1 + 0xc4);
   *(undefined8 *)&p0->field_0xc8 = *(undefined8 *)(in_x1 + 200);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&p0->field_0xd0,in_x1 + 0xd0);
+  ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&p0->field_0xd0))->operator=(in_x1 + 0xd0);
   *(undefined8 *)&p0->field_0xe8 = *(undefined8 *)(in_x1 + 0xe8);
   p0->f_0xf0 = *(double *)(in_x1 + 0xf0);
   *(undefined4 *)&p0->field_0xf8 = *(undefined4 *)(in_x1 + 0xf8);
@@ -55,16 +55,16 @@ Walaber::Widget_ColorPicker::operator=(Walaber__Widget_ColorPicker *p0)
   p0->f_0x120 = (char)uVar2;
   *(int3 *)&p0->field_0x121 = (int3)((ulong)uVar2 >> 8);
   p0->f_0x124 = (int)((ulong)uVar2 >> 0x20);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x130,in_x1 + 0x130);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x140,in_x1 + 0x140);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x150,in_x1 + 0x150);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x130))->operator=(in_x1 + 0x130);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x140))->operator=(in_x1 + 0x140);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x150))->operator=(in_x1 + 0x150);
   p0->f_0x160 = *(double *)(in_x1 + 0x160);
   p0->f_0x168 = *(double *)(in_x1 + 0x168);
   p0->f_0x170 = *(ulong *)(in_x1 + 0x170);
   p0->f_0x178 = *(ulong *)(in_x1 + 0x178);
   p0->f_0x180 = *(ulong *)(in_x1 + 0x180);
   p0->f_0x188 = *(ulong *)(in_x1 + 0x188);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(&p0->f_0x190,in_x1 + 400);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(&p0->f_0x190))->operator=(in_x1 + 400);
   p0->f_0x1a0 = *(float *)(in_x1 + 0x1a0);
   *(undefined8 *)&p0->_tail = *(undefined8 *)(in_x1 + 0x1a4);
   *(undefined8 *)&p0[1].field_0x4 = *(undefined8 *)(in_x1 + 0x1ac);
@@ -414,7 +414,7 @@ void Walaber::Widget_ColorPicker::setBGTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x130);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x130))->operator=();
   lVar1 = *(long *)(param_1 + 0x130);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x138) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -442,7 +442,7 @@ void Walaber::Widget_ColorPicker::setSwatchTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x140);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x140))->operator=();
   lVar1 = *(long *)(param_1 + 0x140);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x148) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -470,7 +470,7 @@ void Walaber::Widget_ColorPicker::setSwatchHilightTexture(long param_1)
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x150);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 0x150))->operator=();
   lVar1 = *(long *)(param_1 + 0x150);
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x158) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
@@ -498,7 +498,7 @@ void Walaber::Widget_ColorPicker::setIcon(long param_1,undefined8 param_2,undefi
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 400);
+  ((Walaber::SharedPtr<Walaber::Texture> *)(param_1 + 400))->operator=();
   lVar1 = *(long *)(param_1 + 400);
   *(undefined8 *)(param_1 + 0x1a0) = *param_3;
   if ((lVar1 != 0) && (**(int **)(param_1 + 0x198) != 0)) {

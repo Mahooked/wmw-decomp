@@ -14,7 +14,7 @@
   *this = &PTR__FH_ZipFileSystem_00710658;
   this[1] = 0;
                     /* try { // try from 003d38a4 to 003d38af has its CatchHandler @ 003d39cc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_3);
+  new ((void *)(this + 2)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_3);
   this[5] = 0;
   this[6] = 0;
   this[7] = 0;
@@ -124,10 +124,10 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExists
     pbVar9 = param_1 + 1;
   }
   if (*pbVar9 == 0x2f) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_1,1,0xffffffffffffffff,param_1);
+    new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1,1,0xffffffffffffffff,param_1);
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_1);
+    new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1);
   }
   pbVar9 = *(byte **)(this + 0x28);
   pbVar2 = *(byte **)(this + 0x30);
@@ -348,10 +348,10 @@ void Walaber::FileManager::FH_ZipFileSystem::readFile
     pbVar9 = param_1 + 1;
   }
   if (*pbVar9 == 0x2f) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_1,1,0xffffffffffffffff,param_1);
+    new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1,1,0xffffffffffffffff,param_1);
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_1);
+    new ((void *)(&uStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_1);
   }
   pbVar9 = *(byte **)(this + 0x28);
   pbVar2 = *(byte **)(this + 0x30);

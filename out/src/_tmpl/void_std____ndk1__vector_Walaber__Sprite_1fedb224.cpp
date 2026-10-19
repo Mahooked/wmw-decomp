@@ -41,7 +41,7 @@ void std::__ndk1::
      (uVar4 = lVar6 * -0x6666666666666666, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::__split_buffer(auStack_60,uVar5,lVar3,p0 + 2);
+  new ((void *)(auStack_60)) std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>(uVar5,lVar3,p0 + 2);
   *puStack_50 = *in_x1;
   uVar8 = in_x1[2];
   uVar7 = in_x1[1];

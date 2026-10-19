@@ -967,7 +967,7 @@ void WaterConcept::Screen_AgeGate::handleEvent
           new ((void *)(&uStack_100)) Walaber::PropertyList();
           plVar7 = plVar6 + 0x1a;
                     /* try { // try from 004a60b4 to 004a60bf has its CatchHandler @ 004a6234 */
-          Walaber::PropertyList::operator=(plVar7,&uStack_100);
+          ((Walaber::PropertyList *)(plVar7))->operator=(&uStack_100);
           ((Walaber::PropertyList *)&uStack_100)->~PropertyList();
           abStack_98[9] = 0;
           abStack_98[10] = 0;
@@ -1192,7 +1192,7 @@ void WaterConcept::Screen_AgeGate::_finishedLoadingWidgets(void *p0)
       lVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),iVar11);
       Walaber::StringHelper::intToStr(abStack_68,iVar11 + -300);
                     /* try { // try from 004a64e4 to 004a64f3 has its CatchHandler @ 004a68b0 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar5 + 0x178,abStack_68);
+      ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar5 + 0x178))->operator=(abStack_68);
       Walaber::Widget_PushButton::_resizeFont(lVar5);
       if ((abStack_68[0] & 1) != 0) {
         operator delete(pvStack_58);
@@ -1213,7 +1213,7 @@ void WaterConcept::Screen_AgeGate::_finishedLoadingWidgets(void *p0)
     lVar5 = Walaber::WidgetManager::getWidget(uVar6,400);
     *(undefined1 *)(lVar5 + 0x8c) = 0;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_50,&DAT_00761c18);
+  new ((void *)(auStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00761c18);
   auStack_d8[1] = 0;
   pvStack_c8 = (void *)0x0;
   auStack_d8[0] = 0x273d04;

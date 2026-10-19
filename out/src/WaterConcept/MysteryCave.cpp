@@ -261,7 +261,7 @@ void WaterConcept::MysteryCave::update(float p0)
       *puVar4 = 1;
       uStack_100 = SUB84(puVar4,0);
       uStack_fc = (undefined4)((ulong)puVar4 >> 0x20);
-      Walaber::SharedPtr<Walaber::RenderTexture2D>::operator=(&sRockTex,&uStack_108);
+      ((Walaber::SharedPtr<Walaber::RenderTexture2D> *)(&sRockTex))->operator=(&uStack_108);
       ((Walaber::SharedPtr<Walaber::RenderTexture2D> *)&uStack_108)->~SharedPtr<Walaber::RenderTexture2D>();
       Walaber::RenderTexture2D::bind(sRockTex);
       Walaber::GraphicsGL::setViewport(0,0,iVar10,iVar9);
@@ -499,7 +499,7 @@ void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,
   *this = &PTR__MysteryCave_00711e18;
   uStack_38 = 0;
   uStack_30 = 0;
-  Walaber::SharedPtr<Walaber::RenderTexture2D>::operator=(&sRockTex,&uStack_38);
+  ((Walaber::SharedPtr<Walaber::RenderTexture2D> *)(&sRockTex))->operator=(&uStack_38);
   ((Walaber::SharedPtr<Walaber::RenderTexture2D> *)&uStack_38)->~SharedPtr<Walaber::RenderTexture2D>();
   _DAT_0074f140 = 0;
   _sRockTexCoords = 0;

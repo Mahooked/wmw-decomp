@@ -108,7 +108,7 @@ void std::__ndk1::promise<void>::get_future(undefined8 param_1,long *param_2)
   undefined8 uVar2;
   
   if (*param_2 != 0) {
-    std::__ndk1::future<void>::future(param_1);
+    new ((void *)(param_1)) std::__ndk1::future<void>();
     return;
   }
   uVar2 = __cxa_allocate_exception(0x20);

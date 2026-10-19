@@ -47,7 +47,7 @@
   undefined1 uStack_80;
   
   plVar3 = (long *)(ulong)(uint)p0;
-  std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>::vector(plVar3,5);
+  new ((void *)(plVar3)) std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>(5);
   *(int *)(plVar3 + 4) = (int)p1;
   plVar3[3] = -0x4080000000000000;
   lVar10 = 0;
@@ -251,11 +251,11 @@
     if (uVar8 == 0) {
       *(undefined4 *)(lVar4 + 0x3c) = 0x3c23d70a;
     }
-    WaterConceptConstants::FluidDescription::operator=(auStack_168,puVar9);
+    ((WaterConceptConstants::FluidDescription *)(auStack_168))->operator=(puVar9);
     uStack_80 = 0;
     lVar1 = *plVar3 + lVar10;
     lStack_88 = lVar4;
-    WaterConceptConstants::FluidDescription::operator=(lVar1,auStack_168);
+    ((WaterConceptConstants::FluidDescription *)(lVar1))->operator=(auStack_168);
     *(undefined1 *)(lVar1 + 0xe8) = uStack_80;
     *(long *)(lVar1 + 0xe0) = lStack_88;
     ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_140)->~SharedPtr<Walaber::Texture>();
@@ -483,7 +483,7 @@ void WaterConcept::Fluids::_initFluidsWithBounds(Walaber__AABB *p0)
   *(int **)(p0 + 0x30ca) = piVar7;
   uVar8 = operator new(0x10);
                     /* try { // try from 00404bf8 to 00404c03 has its CatchHandler @ 00404c4c */
-  WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>>::IndexGrid(uVar8,iVar1,iVar2);
+  new ((void *)(uVar8)) WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>>(iVar1,iVar2);
   p0[0x30ca].f_0x8 = (float)(int)uVar8;
   p0[0x30ca].f_0xc = (float)(int)((ulong)uVar8 >> 0x20);
   WaterConcept::Fluids::_fillNeighborGrid(p0);
@@ -887,14 +887,14 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
       uStack_1f5 = 0xff;
       uStack_1f1 = 0xff;
                     /* try { // try from 004055fc to 00405607 has its CatchHandler @ 0040576c */
-      WaterConceptConstants::FluidDescription::operator=(auStack_250,piVar13);
+      ((WaterConceptConstants::FluidDescription *)(auStack_250))->operator=(piVar13);
                     /* try { // try from 00405608 to 0040560f has its CatchHandler @ 00405770 */
       lVar5 = operator new(0x50);
       lVar12 = *(long *)(piVar13 + 0x38);
                     /* try { // try from 00405618 to 0040561f has its CatchHandler @ 0040575c */
-      std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::vector(lVar5,lVar12);
+      new ((void *)(lVar5)) std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>(lVar12);
                     /* try { // try from 00405628 to 0040562f has its CatchHandler @ 00405744 */
-      std::__ndk1::list<int, std::__ndk1::allocator<int>>::list(lVar5 + 0x18,lVar12 + 0x18);
+      new ((void *)(lVar5 + 0x18)) std::__ndk1::list<int, std::__ndk1::allocator<int>>(lVar12 + 0x18);
       uVar9 = *(undefined8 *)(lVar12 + 0x30);
       *(undefined4 *)(lVar5 + 0x38) = *(undefined4 *)(lVar12 + 0x38);
       *(undefined8 *)(lVar5 + 0x30) = uVar9;
@@ -912,7 +912,7 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
       lVar10 = *(long *)p0;
                     /* try { // try from 00405688 to 0040568f has its CatchHandler @ 00405770 */
       lStack_170 = lVar5;
-      WaterConceptConstants::FluidDescription::operator=(lVar10 + (long)iVar3 * 0xf0,auStack_250);
+      ((WaterConceptConstants::FluidDescription *)(lVar10 + (long)iVar3 * 0xf0))->operator=(auStack_250);
       lVar10 = lVar10 + (long)iVar3 * 0xf0;
       *(undefined1 *)(lVar10 + 0xe8) = uStack_168;
       *(long *)(lVar10 + 0xe0) = lStack_170;

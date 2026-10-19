@@ -176,13 +176,13 @@ undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0, long i
   uStack_2bf = 0x6469;
   uStack_2bd = 0;
                     /* try { // try from 0043d6bc to 0043d6cf has its CatchHandler @ 0043e580 */
-  Walaber::PropertyList::operator[](lVar1,&bStack_2c0);
+  ((Walaber::PropertyList *)(lVar1))->operator[](&bStack_2c0);
   Walaber::Property::asString(&uStack_b0);
   if ((bStack_2c0 & 1) != 0) {
     operator delete(apuStack_2b0[0]);
   }
                     /* try { // try from 0043d6e0 to 0043d6ef has its CatchHandler @ 0043e550 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c8,&DAT_0073a068);
+  new ((void *)(abStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0073a068);
                     /* try { // try from 0043d6f0 to 0043d707 has its CatchHandler @ 0043e548 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_310,&DAT_0073a068,"=\'");
   puVar15 = (undefined1 *)((ulong)&uStack_b0 | 1);
@@ -395,14 +395,14 @@ LAB_0043d9fc:
                     /* try { // try from 0043de4c to 0043de5b has its CatchHandler @ 0043e5f0 */
         Walaber::DatabaseIterator::getStringAtIndex(&bStack_2c0,abStack_310,0);
                     /* try { // try from 0043de5c to 0043de67 has its CatchHandler @ 0043e650 */
-        uVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_f8,&bStack_2c0);
+        uVar11 = new ((void *)(abStack_f8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0);
                     /* try { // try from 0043de68 to 0043de6f has its CatchHandler @ 0043e5d8 */
         WaterConcept::PurchaseHandler::_processPurchase(uVar11,abStack_f8);
         if ((abStack_f8[0] & 1) != 0) {
           operator delete(pvStack_e8);
         }
                     /* try { // try from 0043de80 to 0043de8b has its CatchHandler @ 0043e650 */
-        uVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_110,&bStack_2c0);
+        uVar11 = new ((void *)(abStack_110)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0);
                     /* try { // try from 0043de8c to 0043de93 has its CatchHandler @ 0043e5c4 */
         WaterConcept::PurchaseHandler::_processPurchaseSpecific(uVar11,abStack_110);
         if ((abStack_110[0] & 1) != 0) {
@@ -456,14 +456,14 @@ LAB_0043da6c:
                     /* try { // try from 0043e02c to 0043e03b has its CatchHandler @ 0043e5bc */
           Walaber::DatabaseIterator::getStringAtIndex(&bStack_2c0,abStack_310,0);
                     /* try { // try from 0043e03c to 0043e047 has its CatchHandler @ 0043e64c */
-          uVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_128,&bStack_2c0);
+          uVar11 = new ((void *)(abStack_128)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0);
                     /* try { // try from 0043e048 to 0043e04f has its CatchHandler @ 0043e5a8 */
           WaterConcept::PurchaseHandler::_processPurchase(uVar11,abStack_128);
           if ((abStack_128[0] & 1) != 0) {
             operator delete(pvStack_118);
           }
                     /* try { // try from 0043e060 to 0043e06b has its CatchHandler @ 0043e64c */
-          uVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_140,&bStack_2c0);
+          uVar11 = new ((void *)(abStack_140)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0);
                     /* try { // try from 0043e06c to 0043e073 has its CatchHandler @ 0043e594 */
           WaterConcept::PurchaseHandler::_processPurchaseSpecific(uVar11,abStack_140);
           if ((abStack_140[0] & 1) != 0) {
@@ -788,14 +788,14 @@ LAB_0043daf0:
       }
       else {
                     /* try { // try from 0043db60 to 0043db6b has its CatchHandler @ 0043e558 */
-        uVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_278,&uStack_b0);
+        uVar11 = new ((void *)(abStack_278)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0);
                     /* try { // try from 0043db6c to 0043db73 has its CatchHandler @ 0043e4ac */
         WaterConcept::PurchaseHandler::_processPurchase(uVar11,abStack_278);
         if ((abStack_278[0] & 1) != 0) {
           operator delete(pvStack_268);
         }
                     /* try { // try from 0043db84 to 0043db8f has its CatchHandler @ 0043e558 */
-        uVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_290,&uStack_b0);
+        uVar11 = new ((void *)(abStack_290)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0);
                     /* try { // try from 0043db90 to 0043db97 has its CatchHandler @ 0043e498 */
         WaterConcept::PurchaseHandler::_processPurchaseSpecific(uVar11,abStack_290);
         if ((abStack_290[0] & 1) != 0) goto LAB_0043dfb4;
@@ -860,7 +860,7 @@ LAB_0043e0a8:
       abStack_310[8] = 0x65;
       abStack_310[9] = 0;
                     /* try { // try from 0043e198 to 0043e1ab has its CatchHandler @ 0043e478 */
-      Walaber::PropertyList::operator[](lVar1,abStack_310);
+      ((Walaber::PropertyList *)(lVar1))->operator[](abStack_310);
       Walaber::Property::asString(&bStack_2c0);
       pWVar12 = p0 + 1;
       if ((*(byte *)pWVar12 & 1) == 0) {
@@ -890,7 +890,7 @@ LAB_0043e0a8:
         operator delete(pvStack_300);
       }
                     /* try { // try from 0043e208 to 0043e213 has its CatchHandler @ 0043e558 */
-      uVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_2d8,pWVar12);
+      uVar11 = new ((void *)(abStack_2d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pWVar12);
                     /* try { // try from 0043e214 to 0043e21b has its CatchHandler @ 0043e400 */
       WaterConcept::PurchaseHandler::_processFakeLocksmithPurchase(uVar11,abStack_2d8);
       if ((abStack_2d8[0] & 1) != 0) {
@@ -1027,7 +1027,7 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   byte abStack_90 [16];
   void *pvStack_80;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,&DAT_00739a68);
+  new ((void *)(abStack_90)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00739a68);
   uStack_c8 = 0;
   pvStack_c0 = (void *)0x0;
   uStack_d0 = 0x27203d2008;
@@ -2953,7 +2953,7 @@ LAB_0043f408:
                     /* try { // try from 0043f498 to 0043f4b3 has its CatchHandler @ 00442638 */
       iVar10 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"locksmith_swampy",0x10);
       if (iVar10 == 0) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,&DAT_00739a68);
+        new ((void *)(&uStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00739a68);
         uStack_10d = 0;
         uStack_10c = 0;
         uStack_10b = 0;
@@ -3368,7 +3368,7 @@ LAB_0043f408:
                     /* try { // try from 0043f4d8 to 0043f4f3 has its CatchHandler @ 00442634 */
       iVar10 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"locksmith_cranky",0x10);
       if (iVar10 == 0) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,&DAT_00739a68);
+        new ((void *)(&uStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00739a68);
         uStack_10d = 0;
         uStack_10c = 0;
         uStack_10b = 0;
@@ -3783,7 +3783,7 @@ LAB_0043f408:
                     /* try { // try from 0043f518 to 0043f533 has its CatchHandler @ 0044255c */
       iVar10 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"locksmith_mystery",0x11);
       if (iVar10 == 0) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,&DAT_00739a68);
+        new ((void *)(&uStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00739a68);
         uStack_10d = 0;
         uStack_10c = 0;
         uStack_10b = 0;
@@ -4198,7 +4198,7 @@ LAB_0043f408:
                     /* try { // try from 0043f558 to 0043f573 has its CatchHandler @ 00442510 */
       iVar10 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"locksmith_allie",0xf);
       if (iVar10 == 0) {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,&DAT_00739a68);
+        new ((void *)(&uStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00739a68);
         uStack_10c = 0;
         uStack_10b = 0;
         uStack_10a = 0;
@@ -4617,7 +4617,7 @@ LAB_0043f408:
       uVar13 = DAT_00735e20;
     }
     if (uVar13 == 0) goto LAB_00441f8c;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,&DAT_00739a68);
+    new ((void *)(&uStack_b0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00739a68);
     uStack_10d = 0;
     uStack_10c = 0;
     uStack_10b = 0;
@@ -5037,7 +5037,7 @@ void WaterConcept::PurchaseHandler::_processFakeLocksmithPurchase(undefined8 par
   byte abStack_88 [16];
   void *pvStack_78;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,&DAT_00739a68);
+  new ((void *)(abStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00739a68);
   uStack_a1 = 0;
   pbStack_a0 = (byte *)0x0;
   bStack_d0 = 0;

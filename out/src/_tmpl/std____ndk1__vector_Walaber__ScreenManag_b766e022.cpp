@@ -92,7 +92,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
       uVar8 = *puVar6;
       *(undefined4 *)(param_2 + 1) = *(undefined4 *)(puVar6 + 1);
       *param_2 = uVar8;
-      Walaber::PropertyList::operator=(lVar14 + lVar13 * 8 + 0x10,puVar6 + 2);
+      ((Walaber::PropertyList *)(lVar14 + lVar13 * 8 + 0x10))->operator=(puVar6 + 2);
     }
   }
   else {
@@ -107,7 +107,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
        (uVar11 = lVar14 * -0x6666666666666666, uVar7 = uVar9, uVar9 <= uVar11)) {
       uVar7 = uVar11;
     }
-    std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::__split_buffer(&puStack_b0,uVar7,lVar13 * -0x3333333333333333,param_1 + 2);
+    new ((void *)(&puStack_b0)) std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>(uVar7,lVar13 * -0x3333333333333333,param_1 + 2);
     if (puStack_a0 == puStack_98) {
       if (puStack_a8 < puStack_b0 || (long)puStack_a8 - (long)puStack_b0 == 0) {
         uVar9 = ((long)puStack_98 - (long)puStack_b0 >> 3) * -0x6666666666666666;
@@ -115,7 +115,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
           uVar9 = 1;
         }
                     /* try { // try from 003f0fe0 to 003f0fe7 has its CatchHandler @ 003f1154 */
-        std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::__split_buffer(&puStack_80,uVar9,uVar9 >> 2,uStack_90);
+        new ((void *)(&puStack_80)) std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>(uVar9,uVar9 >> 2,uStack_90);
                     /* try { // try from 003f0fec to 003f0ff3 has its CatchHandler @ 003f1144 */
         std::__ndk1::enable_if<__is_forward_iterator<std::__ndk1::move_iterator<Walaber::ScreenManager::ScreenOperationDetails*>>::value, void>::type std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::__construct_at_end<std::__ndk1::move_iterator<Walaber::ScreenManager::ScreenOperationDetails*>>(&puStack_80,puStack_a8,puStack_a0);
         puVar5 = puStack_98;
@@ -151,7 +151,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
             *(undefined4 *)(puVar1 + 1) = *(undefined4 *)(puVar6 + 1);
             *puVar1 = uVar8;
                     /* try { // try from 003f0ef0 to 003f0ef3 has its CatchHandler @ 003f1158 */
-            Walaber::PropertyList::operator=(puVar1 + 2,puVar6 + 2);
+            ((Walaber::PropertyList *)(puVar1 + 2))->operator=(puVar6 + 2);
             puVar6 = puVar6 + 5;
           } while (puStack_a0 != puVar6);
           puVar6 = puVar6 + lVar14 * -5;
@@ -373,7 +373,7 @@ void std::__ndk1::
       uVar7 = *(undefined8 *)(p1 + lVar10 + -0x28);
       *(undefined4 *)(puVar9 + -4) = *(undefined4 *)(p1 + lVar10 + -0x20);
       puVar9[-5] = uVar7;
-      Walaber::PropertyList::operator=(puVar9 + -3,p1 + lVar10 + -0x18);
+      ((Walaber::PropertyList *)(puVar9 + -3))->operator=(p1 + lVar10 + -0x18);
       lVar10 = lVar10 + -0x28;
       puVar9 = puVar9 + -5;
     } while (lVar10 != 0);
