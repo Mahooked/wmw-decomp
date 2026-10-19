@@ -542,7 +542,35 @@ def generate(model, path):
     for t in sorted(model.templates - model.types):
         comps = t.split("::")
         out.append(_wrap(comps[:-1], "template <class...> struct %s;" % comps[-1]))
+
+    # Ghidra spells a type by flattening every "::" to "__"
+    # (``Walaber__Vector2``), and the bodies freely mix that spelling with the
+    # real scoped one (``Walaber::Vector2``).  The generator defines the class
+    # under its real scope, so the flat spelling is a *different*, opaque type:
+    # every member access or subscript through it reads "incomplete type", and
+    # a call spelled with the scoped name matches no parameter declared with
+    # the flat one.  Alias each flat spelling to the class it names.  A nested
+    # class is skipped -- its owner has to be defined before the alias could
+    # name it, which no earlier declaration can do.
+    flat_alias = {}
+    for cls in model.classes:
+        if "<" in cls or cls in _CLANG_IMPLICIT:
+            continue
+        # ``std::exception`` and ``std::__ndk1::exception`` are the same
+        # inline-namespace member, so the unqualified-in-std spelling is
+        # ambiguous; only the explicitly nested ``std::__ndk1::`` form is safe.
+        if cls.startswith("std::") and not cls.startswith("std::__ndk1::"):
+            continue
+        flat = cls.replace("::", "__")
+        if flat == cls or cls.rsplit("::", 1)[0] in model.classes:
+            continue
+        flat_alias[flat] = cls
+    for flat in sorted(flat_alias):
+        out.append("using %s = %s;" % (flat, flat_alias[flat]))
+
     for t in extra:
+        if t in flat_alias:
+            continue
         comps = t.split("::")
         out.append(_wrap(comps[:-1], "struct %s;" % comps[-1]))
     declared = model.defined | set(model.funcs)

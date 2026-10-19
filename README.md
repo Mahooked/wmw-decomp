@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **59,141** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **55,468** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 74,002 diagnostics into
+   files against synthesised declarations and sorts the 55,468 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). The first two systematic defects it
    named are fixed — illegal return types and parameters on 695 constructors
@@ -119,6 +119,19 @@ re-inferred.
   1,895** — appends where AAPCS64 leaves no choice, front inserts only
   where the call sites corroborate the extra argument. See "The syntax
   gate".
+- The baseline driven **74,002 → 59,141** by rewriting Ghidra's static-form
+  constructor and destructor call sites (`tools/shape_ctor_calls.py`): a call
+  `QUAL::Cls(obj, rest)` becomes placement new, `QUAL::~Cls(obj)` becomes an
+  explicit destructor call, and a template-qualified one `QUAL<T>::~Cls(x)`
+  becomes `((QUAL<T> *)x)->~Cls<T>()` — the only form clang accepts, because a
+  bare template name after `~` does not name a type. Moving *identifier after
+  `~` in destructor name does not name a type* **3,933 → 1**.
+- The baseline driven **59,141 → 55,468** by aliasing Ghidra's flattened type
+  spelling to the class it names (`Walaber__Vector2` → `Walaber::Vector2`).
+  Those were two distinct types, one of them forward-declared only, so every
+  member access or subscript through the flat spelling read *incomplete type*:
+  *subscript of pointer to incomplete type* **3,306 → 371** and *member access
+  into incomplete type* **2,932 → 40**. See "The syntax gate".
 
 ## What the game turned out to be
 
@@ -944,9 +957,14 @@ require:
 - a class's `f_0x<offset>` members come from the recovered layouts
   (`out/types/fields.tsv`), so the field reads the bodies already contain resolve;
 - a type name the definitions mention but nothing declares becomes an opaque
-  `struct` — Ghidra's flattened `Walaber__Vector2` is one of these — and a name
-  used with `<…>` becomes a variadic template, so its arity never has to be
-  guessed;
+  `struct`, and a name used with `<…>` becomes a variadic template, so its
+  arity never has to be guessed;
+- Ghidra's flattened spelling of a type it *does* declare (`Walaber__Vector2`
+  for the class `Walaber::Vector2`) becomes a `using` alias to the real class;
+  otherwise the two spellings are distinct types, one of them forward-declared
+  only, and every member access or subscript through the flat one reads
+  "incomplete type". A nested class stays opaque, because its owner must be
+  defined before the alias could name it;
 - the constructor/destructor return type Ghidra writes (`void A::A(...)`) is
   dropped in the declaration, because the declaration has to be legal C++ even
   where the body is not yet.
@@ -958,7 +976,9 @@ in the hand-written `out/check/prelude.h`. `_Datum`, a type that accepts any
 use, stands in for a data global the binary never named (`DAT_00634ed4`).
 
 Those declarations compile clean: **408 classes, 272 member declarations, 141
-opaque structs, 7,489 definitions parsed** (740 headers unparsed, 1,683
+unresolved type names** — 104 of them a flattened spelling the generator now
+aliases to the class it names, leaving 37 genuinely opaque structs — **7,489
+definitions parsed** (740 headers unparsed, 1,683
 template-qualified definitions skipped because a template member cannot be
 declared without the template's definition), **7,365 placeholder globals**, and
 **0 errors** in the generated `decls.h` itself. The bodies are then checked
@@ -970,19 +990,19 @@ The baseline over the whole tree:
 | | |
 |---|---|
 | Files checked | 1,467 |
-| Files with at least one error | 1,459 |
-| Diagnostics | 59,141 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → **59,141** (template-qualified dtor rewrites + prelude template definitions) |
+| Files with at least one error | 1,450 |
+| Diagnostics | 55,468 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → **55,468** (flattened type names aliased to their real classes) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
 largest buckets are **not** defects in the game:
 
-- **10,756** *implicit instantiation of undefined template* and **1,715** *too
+- **6,111** *implicit instantiation of undefined template* and **1,717** *too
   many template arguments*: the libc++ primary templates are declared, not
   defined, and their arity is guessed.
-- **6,973** *no matching function*, **1,895** *too many arguments to function
-  call* (down from 4,817) and **2,130** *too few*: the call/definition arity
+- **7,045** *no matching function*, **1,946** *too many arguments to function
+  call* (down from 4,817) and **2,149** *too few*: the call/definition arity
   divergence, now largely decided. Ghidra binds the callee's `w0` as its
   object parameter but leaves the argument the binary passes in the next
   register as an unbound input register (`in_w1`), so the definition declares
@@ -997,10 +1017,10 @@ largest buckets are **not** defects in the game:
   all. What remains is the residue: duplicate definitions of one member that
   decompile with divergent shapes, and call sites Ghidra printed without the
   argument.
-- **3,922** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
+- **3,774** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
   definition fails to parse, its own parameter names (`p0`, `p1`, `param_1`)
   are not in scope in the body, and every use of them is reported.
-- **2,334** *call to non-static member function without an object argument*,
+- **730** *call to non-static member function without an object argument*,
   down from **17,182**: a decision, not a defect, and now decided. Ghidra
   writes every method call in static form and the tree contains zero
   object-style (`->`/`.`) calls, so member declarations are synthesised
@@ -1009,18 +1029,26 @@ largest buckets are **not** defects in the game:
   constructor, destructor or operator, none of which can be static. The
   declarations still compile with 0 errors and no *invalid use of `this`*
   diagnostic appeared — the guard holds.
+- **4,762** *no member named* and **666** *cannot convert … without a conversion
+  operator*: newly visible, not new defects. Completing the classes turned
+  *member access into incomplete type* (2,932 → 40) and *subscript of pointer to
+  incomplete type* (3,306 → 371) into these — the member the body names simply
+  has no recovered declaration yet, and the conversion it performs has no
+  declared operator.
 
-The buckets that *are* real shape the next pass. Two defects the gate named
+The buckets that *are* real shape the next pass. Several defects the gate named
 are now decided: **0** constructor or destructor definitions carry a return
-type or a parameter (695 reshaped by `tools/shape_ctor_dtor.py`), and the
-arity divergence above is largely rebound (`tools/shape_inw.py`, 764
-definitions). What remains real: definitions of two distinct overloads that
-flatten to a single signature (`stold` of a `char` string and of a `wchar_t`
-string both become `stold(byte *, long *)`, so the second definition
-collides; **7** of them newly visible now that both overloads are declared),
-the libc++ template work, and the type mismatches the arity errors used to
-mask — a call whose argument count now agrees gets its argument types
-checked for the first time.
+type or a parameter (695 reshaped by `tools/shape_ctor_dtor.py`), the arity
+divergence above is largely rebound (`tools/shape_inw.py`, 764 definitions),
+the static-form call sites are rewritten (`tools/shape_ctor_calls.py`), and the
+flattened type names are aliased to their real classes. What remains real:
+definitions of two distinct overloads that flatten to a single signature
+(`stold` of a `char` string and of a `wchar_t` string both become
+`stold(byte *, long *)`, so the second definition collides; **7** of them newly
+visible now that both overloads are declared), the libc++ primary-template
+definitions, and the member/conversion gaps the incomplete-type errors used to
+mask — a member access now resolves its class and has its member looked up for
+the first time.
 
 Run it with:
 
