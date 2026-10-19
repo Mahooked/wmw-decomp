@@ -16,9 +16,7 @@
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,
    std::__ndk1::allocator<Walaber::Vector2> > >&>&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -79,9 +77,7 @@ void std::__ndk1::
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,
    std::__ndk1::allocator<Walaber::Vector2> > > > const&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -121,9 +117,7 @@ void std::__ndk1::
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,
    std::__ndk1::allocator<Walaber::Vector2> > > >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>::__vallocate(ulong p0)
 
 {
   long lVar1;

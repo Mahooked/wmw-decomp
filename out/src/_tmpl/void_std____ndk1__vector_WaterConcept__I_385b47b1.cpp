@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<WaterConcept::IcyHot*, std::__ndk1::allocator<WaterConcept::IcyHot*>
    >::__push_back_slow_path<WaterConcept::IcyHot*>(WaterConcept::IcyHot*&&) */
 
-void std::__ndk1::vector<WaterConcept::IcyHot*,std::__ndk1::allocator<WaterConcept::IcyHot*>>::
-     __push_back_slow_path<WaterConcept::IcyHot*>(WaterConcept__IcyHot ***p0)
+template<> void std::__ndk1::vector<WaterConcept::IcyHot*,std::__ndk1::allocator<WaterConcept::IcyHot*>>::__push_back_slow_path(WaterConcept__IcyHot ***p0)
 
 {
   undefined8 *in_x1;

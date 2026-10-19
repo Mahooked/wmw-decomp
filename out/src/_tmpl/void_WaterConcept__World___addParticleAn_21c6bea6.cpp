@@ -13,8 +13,7 @@
    std::__ndk1::allocator<unsigned int> >&, Walaber::FluidParticleSet*,
    WaterConcept::ConsiderPoolAny) */
 
-void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>
-               (undefined8 param_1,undefined8 param_2,int *param_3,long param_4,long *param_5)
+void WaterConcept::World::_addParticleAndNeighbors(undefined8 param_1,undefined8 param_2,int *param_3,long param_4,long *param_5)
 
 {
   long *plVar1;
@@ -32,7 +31,7 @@ void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny
   undefined4 uStack_80;
   
   iStack_88 = param_3[1];
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<unsigned int, std::__ndk1::__tree_node<unsigned int, void*>*, long>, bool> std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::__emplace_unique_key_args<unsigned int, unsigned int>(param_4,&iStack_88,&iStack_88);
+  std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::__emplace_unique_key_args<unsigned int, unsigned int>(param_4,&iStack_88,&iStack_88);
   uVar4 = (ulong)param_3[1];
   uVar7 = 0;
   uVar12 = *(undefined8 *)(*param_5 + uVar4 * 0x90);
@@ -58,7 +57,7 @@ void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny
       }
       uStack_80 = 0;
       iStack_88 = *param_3;
-      void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>(param_1,param_2,&iStack_88,param_4,param_5);
+      WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>(param_1,param_2,&iStack_88,param_4,param_5);
     }
 LAB_0046f680:
     uVar7 = uVar7 + 1;

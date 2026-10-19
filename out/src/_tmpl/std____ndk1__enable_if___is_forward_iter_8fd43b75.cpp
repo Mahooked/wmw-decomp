@@ -13,9 +13,7 @@
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> >::insert<wchar_t
    const*>(std::__ndk1::__wrap_iter<wchar_t const*>, wchar_t const*, wchar_t const*) */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     insert<wchar_t_const*>(ulong *param_1,long param_2,undefined4 *param_3,undefined4 *param_4)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert(ulong *param_1,long param_2,undefined4 *param_3,undefined4 *param_4)
 
 {
   byte bVar1;
@@ -59,7 +57,7 @@ long std::__ndk1::
       uStack_70 = 0;
       uStack_68 = 0;
       pvStack_60 = (void *)0x0;
-      std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(&uStack_70,param_3,param_4);
+      std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(&uStack_70,param_3,param_4);
       uVar9 = uStack_70 >> 1 & 0x7f;
       pvVar3 = (void *)((ulong)&uStack_70 | 4);
       if ((uStack_70 & 1) != 0) {

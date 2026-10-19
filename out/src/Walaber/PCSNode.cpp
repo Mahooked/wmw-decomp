@@ -422,7 +422,7 @@ void Walaber::PCSNode::_depthFirstGroupIDSearchMultipleResults
     std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::pop_back(&uStack_78);
     if (*(int *)(lStack_48 + 0x20) == param_2) {
       if (*(long **)(param_3 + 8) == *(long **)(param_3 + 0x10)) {
-        void std::__ndk1::vector<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::__push_back_slow_path<Walaber::PCSNode* const&>(param_3,&lStack_48);
+        std::__ndk1::vector<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::__push_back_slow_path<Walaber::PCSNode* const&>(param_3,&lStack_48);
       }
       else {
         **(long **)(param_3 + 8) = lStack_48;

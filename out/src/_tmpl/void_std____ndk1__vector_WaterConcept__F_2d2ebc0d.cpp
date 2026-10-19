@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>
    >::__push_back_slow_path<WaterConcept::Fluid const&>(WaterConcept::Fluid const&) */
 
-void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __push_back_slow_path<WaterConcept::Fluid_const&>(WaterConcept__Fluid *p0)
+template<> void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::__push_back_slow_path(WaterConcept__Fluid *p0)
 
 {
   ulong uVar1;

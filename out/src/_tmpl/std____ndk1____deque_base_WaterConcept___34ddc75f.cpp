@@ -11,20 +11,18 @@
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData> >::~__deque_base()
     */
 
-void std::__ndk1::
-     __deque_base<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>
-     ::~__deque_base(long param_1)
+template<> std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::~__deque_base()
 
 {
   undefined8 *puVar1;
   undefined8 *puVar2;
   
   std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::clear();
-  puVar1 = *(undefined8 **)(param_1 + 0x10);
-  for (puVar2 = *(undefined8 **)(param_1 + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
+  puVar1 = *(undefined8 **)((byte *)this + 0x10);
+  for (puVar2 = *(undefined8 **)((byte *)this + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
     operator delete((void *)*puVar2);
   }
-  ((std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>> *)param_1)->~__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>>();
+  ((std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>> *)(byte *)this)->~__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>>();
   return;
 }
 
@@ -37,9 +35,7 @@ void std::__ndk1::
 /* std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData,
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData> >::clear() */
 
-void std::__ndk1::
-     __deque_base<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>
-     ::clear(long param_1)
+template<> void std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::clear(long param_1)
 
 {
   ulong uVar1;

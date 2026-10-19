@@ -10,10 +10,10 @@
 /* non-virtual thunk to std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>
    >::~basic_iostream() */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(long param_1)
+template<> std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream()
 
 {
-  ((std::__ndk1::ios_base *)param_1 + 8)->~ios_base();
+  ((std::__ndk1::ios_base *)(byte *)this + 8)->~ios_base();
   return;
 }
 
@@ -26,11 +26,11 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 /* non-virtual thunk to std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>
    >::~basic_iostream() */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(long param_1)
+template<> std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream()
 
 {
-  ((std::__ndk1::ios_base *)param_1 + 8)->~ios_base();
-  operator delete((void *)(param_1 + -0x10));
+  ((std::__ndk1::ios_base *)(byte *)this + 8)->~ios_base();
+  operator delete((void *)((byte *)this + -0x10));
   return;
 }
 

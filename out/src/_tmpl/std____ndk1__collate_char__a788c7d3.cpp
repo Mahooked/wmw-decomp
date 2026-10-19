@@ -9,7 +9,7 @@
 
 /* std::__ndk1::collate<char>::~collate() */
 
-void std::__ndk1::collate<char>::~collate(void)
+template<> std::__ndk1::collate<char>::~collate()
 
 {
   __shared_count::~__shared_count();
@@ -24,11 +24,11 @@ void std::__ndk1::collate<char>::~collate(void)
 
 /* std::__ndk1::collate<char>::~collate() */
 
-void std::__ndk1::collate<char>::~collate(void *param_1)
+template<> std::__ndk1::collate<char>::~collate()
 
 {
   std::__ndk1::__shared_count::~__shared_count();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 
@@ -41,7 +41,7 @@ void std::__ndk1::collate<char>::~collate(void *param_1)
 /* std::__ndk1::collate<char>::do_compare(char const*, char const*, char const*, char const*) const
     */
 
-ulong std::__ndk1::collate<char>::do_compare(char *p0,char *p1,char *p2,char *p3, byte * in_x4)
+template<> ulong std::__ndk1::collate<char>::do_compare(char *p0,char *p1,char *p2,char *p3, byte * in_x4)
 
 {
   
@@ -70,7 +70,7 @@ ulong std::__ndk1::collate<char>::do_compare(char *p0,char *p1,char *p2,char *p3
 
 /* std::__ndk1::collate<char>::do_transform(char const*, char const*) const */
 
-char * std::__ndk1::collate<char>::do_transform(char *p0,char *p1)
+template<> char * std::__ndk1::collate<char>::do_transform(char *p0,char *p1)
 
 {
   char *pcVar1;
@@ -153,7 +153,7 @@ LAB_005b2010:
 
 /* std::__ndk1::collate<char>::do_hash(char const*, char const*) const */
 
-ulong std::__ndk1::collate<char>::do_hash(char *p0,char *p1, byte * in_x2)
+template<> ulong std::__ndk1::collate<char>::do_hash(char *p0,char *p1, byte * in_x2)
 
 {
   ulong uVar1;

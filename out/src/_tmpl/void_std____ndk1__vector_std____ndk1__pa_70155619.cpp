@@ -12,10 +12,7 @@
    >::__push_back_slow_path<std::__ndk1::pair<WaterConceptConstants::FluidType, float>
    >(std::__ndk1::pair<WaterConceptConstants::FluidType, float>&&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::pair<WaterConceptConstants::FluidType,float>,std::__ndk1::allocator<std::__ndk1::pair<WaterConceptConstants::FluidType,float>>>
-     ::__push_back_slow_path<std::__ndk1::pair<WaterConceptConstants::FluidType,float>>
-               (long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<std::__ndk1::pair<WaterConceptConstants::FluidType,float>,std::__ndk1::allocator<std::__ndk1::pair<WaterConceptConstants::FluidType,float>>>::__push_back_slow_path(long *param_1,undefined8 *param_2)
 
 {
   ulong uVar2;

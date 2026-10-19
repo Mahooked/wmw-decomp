@@ -13,8 +13,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >::insert<char
    const*>(std::__ndk1::__wrap_iter<char const*>, char const*, char const*) */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert<char_const*>(ulong *param_1,long param_2,undefined1 *param_3,undefined1 *param_4)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::insert(ulong *param_1,long param_2,undefined1 *param_3,undefined1 *param_4)
 
 {
   byte bVar1;

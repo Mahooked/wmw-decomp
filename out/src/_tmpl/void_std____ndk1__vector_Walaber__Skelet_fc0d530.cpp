@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupDataAux>(Walaber::SkeletonActor::AnimationGroupDataAux&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>
-     ::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupDataAux>
-               (Walaber__SkeletonActor__AnimationGroupDataAux **p0)
+template<> void std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>::__push_back_slow_path(Walaber__SkeletonActor__AnimationGroupDataAux **p0)
 
 {
   ulong uVar1;

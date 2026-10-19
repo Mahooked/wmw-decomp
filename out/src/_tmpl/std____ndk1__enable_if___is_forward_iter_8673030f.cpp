@@ -12,8 +12,7 @@
    std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>
    >::assign<Walaber::Widget_Label**>(Walaber::Widget_Label**, Walaber::Widget_Label**) */
 
-void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::
-     assign<Walaber::Widget_Label**>(Walaber__Widget_Label **p0,Walaber__Widget_Label **p1)
+template<> void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::assign(Walaber__Widget_Label **p0,Walaber__Widget_Label **p1)
 
 {
   ulong uVar1;

@@ -9,8 +9,7 @@
 
 /* std::__ndk1::basic_ifstream<char, std::__ndk1::char_traits<char> >::~basic_ifstream() */
 
-void std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_ifstream
-               ()
+template<> std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_ifstream()
 
 {
   *this = &PTR__basic_ifstream_00711270;
@@ -28,8 +27,7 @@ void std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_if
 
 /* std::__ndk1::basic_ifstream<char, std::__ndk1::char_traits<char> >::~basic_ifstream() */
 
-void std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_ifstream
-               ()
+template<> std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_ifstream()
 
 {
   *this = &PTR__basic_ifstream_00711270;

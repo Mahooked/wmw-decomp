@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<Walaber::XMLDocument>::~MemberCallback() */
 
-void Walaber::MemberCallback<Walaber::XMLDocument>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<Walaber::XMLDocument>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<Walaber::XMLDocument>::~MemberCallback(void *p0)
 
 /* Walaber::MemberCallback<Walaber::XMLDocument>::invoke(void*) */
 
-void Walaber::MemberCallback<Walaber::XMLDocument>::invoke(void *p0)
+template<> void Walaber::MemberCallback<Walaber::XMLDocument>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

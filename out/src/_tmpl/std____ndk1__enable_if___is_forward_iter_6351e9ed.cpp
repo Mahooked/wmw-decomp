@@ -14,11 +14,7 @@
    >::assign<WaterConcept::Fluids::FluidCollisionRecord*>(WaterConcept::Fluids::FluidCollisionRecord*,
    WaterConcept::Fluids::FluidCollisionRecord*) */
 
-void std::__ndk1::
-     vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
-     ::assign<WaterConcept::Fluids::FluidCollisionRecord*>
-               (WaterConcept__Fluids__FluidCollisionRecord *p0,
-               WaterConcept__Fluids__FluidCollisionRecord *p1)
+template<> void std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::assign(WaterConcept__Fluids__FluidCollisionRecord *p0, WaterConcept__Fluids__FluidCollisionRecord *p1)
 
 {
   ulong *puVar1;

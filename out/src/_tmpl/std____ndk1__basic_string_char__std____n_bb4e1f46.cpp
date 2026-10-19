@@ -11,8 +11,7 @@
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::__append_forward_unsafe<char*>(char*, char*) */
 
-char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-       __append_forward_unsafe<char*>(char *p0,char *p1)
+template<> char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::__append_forward_unsafe(char *p0,char *p1)
 
 {
   byte bVar1;

@@ -12,10 +12,7 @@
    std::__ndk1::allocator<WaterConcept::InteractiveObject*>
    >::__erase_unique<WaterConcept::InteractiveObject*>(WaterConcept::InteractiveObject* const&) */
 
-undefined8
-std::__ndk1::
-__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-::__erase_unique<WaterConcept::InteractiveObject*>(WaterConcept__InteractiveObject **p0)
+template<> undefined8 std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__erase_unique(WaterConcept__InteractiveObject **p0)
 
 {
   bool bVar1;

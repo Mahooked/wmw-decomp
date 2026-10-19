@@ -189,7 +189,7 @@ LAB_00359270:
         puVar1 = (uint *)param_1[3];
         uStack_e8 = uVar2;
         if (puVar1 == (uint *)param_1[4]) {
-          void std::__ndk1::vector<Walaber::Flipbook::FlipbookFrame, std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>>::__push_back_slow_path<Walaber::Flipbook::FlipbookFrame const&>(param_1 + 2,&uStack_e8);
+          std::__ndk1::vector<Walaber::Flipbook::FlipbookFrame, std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>>::__push_back_slow_path<Walaber::Flipbook::FlipbookFrame const&>(param_1 + 2,&uStack_e8);
         }
         else {
           *puVar1 = uVar2;

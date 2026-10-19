@@ -12,9 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Fan::PumpInfo const&>(WaterConcept::Fan::PumpInfo const&)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::Fan::PumpInfo,std::__ndk1::allocator<WaterConcept::Fan::PumpInfo>>::
-     __push_back_slow_path<WaterConcept::Fan::PumpInfo_const&>(WaterConcept__Fan__PumpInfo *p0)
+template<> void std::__ndk1::vector<WaterConcept::Fan::PumpInfo,std::__ndk1::allocator<WaterConcept::Fan::PumpInfo>>::__push_back_slow_path(WaterConcept__Fan__PumpInfo *p0)
 
 {
   ulong uVar1;

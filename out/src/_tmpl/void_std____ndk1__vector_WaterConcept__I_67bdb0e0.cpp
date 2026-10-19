@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::InteractiveObject::SpriteInfo
    const&>(WaterConcept::InteractiveObject::SpriteInfo const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::InteractiveObject::SpriteInfo,std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>
-     ::__push_back_slow_path<WaterConcept::InteractiveObject::SpriteInfo_const&>
-               (WaterConcept__InteractiveObject__SpriteInfo *p0)
+template<> void std::__ndk1::vector<WaterConcept::InteractiveObject::SpriteInfo,std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>::__push_back_slow_path(WaterConcept__InteractiveObject__SpriteInfo *p0)
 
 {
   ulong uVar1;

@@ -9,7 +9,7 @@
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::SafeQueue() */
 
-void ndk::SafeQueue<ndk::AccelerometerEvent>::SafeQueue(long param_1)
+template<> ndk::SafeQueue<ndk::AccelerometerEvent>::SafeQueue(long param_1)
 
 {
   *(long *)param_1 = param_1;
@@ -29,11 +29,11 @@ void ndk::SafeQueue<ndk::AccelerometerEvent>::SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::~SafeQueue() */
 
-void ndk::SafeQueue<ndk::AccelerometerEvent>::~SafeQueue(long param_1)
+template<> ndk::SafeQueue<ndk::AccelerometerEvent>::~SafeQueue()
 
 {
-  ((ndk::Mutex *)param_1 + 0x18)->~Mutex();
-  std::__ndk1::__list_imp<ndk::AccelerometerEvent, std::__ndk1::allocator<ndk::AccelerometerEvent>>::clear(param_1);
+  ((ndk::Mutex *)(byte *)this + 0x18)->~Mutex();
+  std::__ndk1::__list_imp<ndk::AccelerometerEvent, std::__ndk1::allocator<ndk::AccelerometerEvent>>::clear((byte *)this);
   return;
 }
 
@@ -45,7 +45,7 @@ void ndk::SafeQueue<ndk::AccelerometerEvent>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk::AccelerometerEvent&) */
 
-bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk__AccelerometerEvent *p0, long * in_x1)
+template<> bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk__AccelerometerEvent *p0, long * in_x1)
 
 {
   long lVar1;
@@ -77,7 +77,7 @@ bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk__AccelerometerEvent *p0, l
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk::AccelerometerEvent const&) */
 
-void ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk__AccelerometerEvent *p0, long * in_x1)
+template<> void ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk__AccelerometerEvent *p0, long * in_x1)
 
 {
   long *plVar1;

@@ -10,7 +10,7 @@
 /* std::exception_ptr std::make_exception_ptr<std::__ndk1::future_error>(std::__ndk1::future_error)
     */
 
-void std::make_exception_ptr<std::__ndk1::future_error>(long param_1)
+void std::make_exception_ptr(long param_1)
 
 {
   undefined8 *puVar1;

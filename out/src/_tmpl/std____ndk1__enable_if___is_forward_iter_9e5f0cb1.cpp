@@ -12,8 +12,7 @@
    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>
    >::assign<Walaber::Vector2*>(Walaber::Vector2*, Walaber::Vector2*) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     assign<Walaber::Vector2*>(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::assign(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
 
 {
   ulong uVar1;

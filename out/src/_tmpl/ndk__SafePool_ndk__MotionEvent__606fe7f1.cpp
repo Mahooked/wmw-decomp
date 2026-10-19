@@ -9,7 +9,7 @@
 
 /* ndk::SafePool<ndk::MotionEvent>::SafePool(unsigned long) */
 
-void ndk::SafePool<ndk::MotionEvent>::SafePool(ulong p0)
+template<> ndk::SafePool<ndk::MotionEvent>::SafePool(ulong p0)
 
 {
   *(undefined ***)p0 = &PTR__Mutex_0070ce88;
@@ -33,18 +33,18 @@ void ndk::SafePool<ndk::MotionEvent>::SafePool(ulong p0)
 
 /* ndk::SafePool<ndk::MotionEvent>::~SafePool() */
 
-void ndk::SafePool<ndk::MotionEvent>::~SafePool(long param_1)
+template<> ndk::SafePool<ndk::MotionEvent>::~SafePool()
 
 {
   void *p0;
   
-  p0 = *(void **)(param_1 + 0x48);
+  p0 = *(void **)((byte *)this + 0x48);
   if (p0 != (void *)0x0) {
-    *(void **)(param_1 + 0x50) = p0;
+    *(void **)((byte *)this + 0x50) = p0;
     operator delete(p0);
   }
-  ((std::__ndk1::__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>> *)param_1 + 0x30)->~__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>();
-  ((ndk::Mutex *)param_1)->~Mutex();
+  ((std::__ndk1::__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>> *)(byte *)this + 0x30)->~__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>();
+  ((ndk::Mutex *)(byte *)this)->~Mutex();
   return;
 }
 
@@ -56,7 +56,7 @@ void ndk::SafePool<ndk::MotionEvent>::~SafePool(long param_1)
 
 /* ndk::SafePool<ndk::MotionEvent>::getItem(int) */
 
-long ndk::SafePool<ndk::MotionEvent>::getItem(int p0, int in_w1)
+template<> long ndk::SafePool<ndk::MotionEvent>::getItem(int p0, int in_w1)
 
 {
   long lVar1;
@@ -78,7 +78,7 @@ long ndk::SafePool<ndk::MotionEvent>::getItem(int p0, int in_w1)
 
 /* ndk::SafePool<ndk::MotionEvent>::freeItem(int) */
 
-void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0, undefined4 in_w1)
+template<> void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0, undefined4 in_w1)
 
 {
   undefined4 *puVar1;
@@ -90,7 +90,7 @@ void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0, undefined4 in_w1)
   puVar1 = *(undefined4 **)(uVar3 + 0x50);
   if (puVar1 == *(undefined4 **)(uVar3 + 0x58)) {
                     /* try { // try from 002c3afc to 002c3b03 has its CatchHandler @ 002c3b34 */
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(uVar3 + 0x48,auStack_3c);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(uVar3 + 0x48,auStack_3c);
   }
   else {
     *puVar1 = in_w1;
@@ -109,7 +109,7 @@ void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0, undefined4 in_w1)
 
 /* ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex() */
 
-ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
+template<> ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
 
 {
   undefined8 *puVar1;
@@ -189,7 +189,7 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
     }
     else {
                     /* try { // try from 002c4bac to 002c4bb3 has its CatchHandler @ 002c4c48 */
-      void std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>::__push_back_slow_path<ndk::MotionEvent>(param_1 + 0x30,&uStack_b8);
+      std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>::__push_back_slow_path<ndk::MotionEvent>(param_1 + 0x30,&uStack_b8);
       if (pvStack_50 != (void *)0x0) {
         pvStack_48 = pvStack_50;
         operator delete(pvStack_50);
@@ -231,7 +231,7 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
 
 /* ndk::SafePool<ndk::MotionEvent>::reserve(unsigned long) */
 
-void ndk::SafePool<ndk::MotionEvent>::reserve(ulong p0)
+template<> void ndk::SafePool<ndk::MotionEvent>::reserve(ulong p0)
 
 {
   undefined4 *puVar1;
@@ -254,7 +254,7 @@ void ndk::SafePool<ndk::MotionEvent>::reserve(ulong p0)
         *(undefined4 **)(p0 + 0x50) = puVar1 + 1;
       }
       else {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(p0 + 0x48,&uStack_3c);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(p0 + 0x48,&uStack_3c);
         lVar3 = *(long *)(p0 + 0x30);
         lVar4 = *(long *)(p0 + 0x38);
       }

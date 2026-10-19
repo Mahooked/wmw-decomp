@@ -39,7 +39,7 @@ void WaterConcept::StarSeed::addTeleport
     *(long *)(param_3 + 0x5b8) = *(long *)(param_3 + 0x5b8) + 0x18;
   }
   else {
-    void std::__ndk1::vector<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>::__push_back_slow_path<WaterConcept::StarSeed::TeleportWaypoint>(param_3 + 0x5b0,&uStack_40);
+    std::__ndk1::vector<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>::__push_back_slow_path<WaterConcept::StarSeed::TeleportWaypoint>(param_3 + 0x5b0,&uStack_40);
   }
   return;
 }

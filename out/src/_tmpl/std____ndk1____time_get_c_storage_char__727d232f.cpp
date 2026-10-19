@@ -9,7 +9,7 @@
 
 /* std::__ndk1::__time_get_c_storage<char>::__weeks() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<char>::__weeks(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<char>::__weeks(void)
 
 {
   int iVar1;
@@ -49,7 +49,7 @@ undefined1 * std::__ndk1::__time_get_c_storage<char>::__weeks(void)
 
 /* std::__ndk1::__time_get_c_storage<char>::__months() const */
 
-undefined * std::__ndk1::__time_get_c_storage<char>::__months(void)
+template<> undefined * std::__ndk1::__time_get_c_storage<char>::__months(void)
 
 {
   int iVar1;
@@ -100,7 +100,7 @@ undefined * std::__ndk1::__time_get_c_storage<char>::__months(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* std::__ndk1::__time_get_c_storage<char>::__am_pm() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<char>::__am_pm(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<char>::__am_pm(void)
 
 {
   int iVar1;
@@ -133,7 +133,7 @@ undefined1 * std::__ndk1::__time_get_c_storage<char>::__am_pm(void)
 
 /* std::__ndk1::__time_get_c_storage<char>::__x() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<char>::__x(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<char>::__x(void)
 
 {
   int iVar1;
@@ -160,7 +160,7 @@ undefined1 * std::__ndk1::__time_get_c_storage<char>::__x(void)
 
 /* std::__ndk1::__time_get_c_storage<char>::__X() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<char>::__X(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<char>::__X(void)
 
 {
   int iVar1;
@@ -188,7 +188,7 @@ undefined1 * std::__ndk1::__time_get_c_storage<char>::__X(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* std::__ndk1::__time_get_c_storage<char>::__c() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<char>::__c(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<char>::__c(void)
 
 {
   int iVar1;
@@ -218,7 +218,7 @@ undefined1 * std::__ndk1::__time_get_c_storage<char>::__c(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* std::__ndk1::__time_get_c_storage<char>::__r() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<char>::__r(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<char>::__r(void)
 
 {
   int iVar1;

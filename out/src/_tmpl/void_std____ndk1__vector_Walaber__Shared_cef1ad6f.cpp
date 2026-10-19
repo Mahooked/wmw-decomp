@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>
    >(Walaber::SharedPtr<Walaber::Callback>&&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>
-               (Walaber__SharedPtr<Walaber::Callback> **p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::Callback> **p0)
 
 {
   long *in_x1;
@@ -69,10 +66,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>
    const&>(Walaber::SharedPtr<Walaber::Callback> const&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>const&>
-               (Walaber__SharedPtr<Walaber::Callback> *p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::Callback> *p0)
 
 {
   long *in_x1;

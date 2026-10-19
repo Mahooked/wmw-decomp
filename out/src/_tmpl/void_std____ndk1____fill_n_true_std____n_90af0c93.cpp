@@ -11,8 +11,7 @@
    >(std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >, false,
    0>, std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::size_type) */
 
-void std::__ndk1::__fill_n_true<std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>>
-               (long *param_1,ulong param_2)
+void std::__ndk1::__fill_n_true(long *param_1,ulong param_2)
 
 {
   uint uVar1;

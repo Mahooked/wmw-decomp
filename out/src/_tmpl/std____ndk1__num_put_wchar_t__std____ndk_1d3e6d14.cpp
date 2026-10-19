@@ -11,9 +11,7 @@
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, bool) const */
 
-long * std::__ndk1::
-       num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,bool param_4)
+template<> long * std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,bool param_4)
 
 {
   ulong uVar1;
@@ -120,9 +118,7 @@ long * std::__ndk1::
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, long) const */
 
-void std::__ndk1::
-     num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,long param_4)
+template<> void std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,long param_4)
 
 {
   uint uVar1;
@@ -208,9 +204,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, long long) const */
 
-void std::__ndk1::
-     num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,long long param_4)
+template<> void std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,long long param_4)
 
 {
   uint uVar1;
@@ -294,9 +288,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, unsigned long) const */
 
-void std::__ndk1::
-     num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,unsigned long param_4)
+template<> void std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,unsigned long param_4)
 
 {
   uint uVar1;
@@ -383,9 +375,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, unsigned long long) const
     */
 
-void std::__ndk1::
-     num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,unsigned long long param_4)
+template<> void std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,unsigned long long param_4)
 
 {
   uint uVar1;
@@ -469,10 +459,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, double) const */
 
-undefined8
-std::__ndk1::
-num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
+template<> undefined8 std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
 
 {
   char *pcVar1;
@@ -642,10 +629,7 @@ LAB_005bdadc:
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, long double) const */
 
-undefined8
-std::__ndk1::
-num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
+template<> undefined8 std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
 
 {
   char *pcVar1;
@@ -816,9 +800,7 @@ LAB_005be440:
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, void const*) const */
 
-void std::__ndk1::
-     num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,void const *param_4)
+template<> void std::__ndk1::num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,void const *param_4)
 
 {
   char *pcVar1;

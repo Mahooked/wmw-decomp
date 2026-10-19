@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord,
    std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord> >::reserve(unsigned long) */
 
-void std::__ndk1::
-     vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
-     ::reserve(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::reserve(ulong p0)
 
 {
   ulong in_x1;
@@ -45,9 +43,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Fluids::FluidCollisionRecord,
    std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -100,9 +96,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord> >::__vallocate(unsigned long)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::__vallocate(ulong p0)
 
 {
   long lVar1;

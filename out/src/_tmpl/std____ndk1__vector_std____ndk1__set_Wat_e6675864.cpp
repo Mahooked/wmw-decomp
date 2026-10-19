@@ -20,9 +20,7 @@
    std::__ndk1::less<WaterConcept::InteractiveObject*>,
    std::__ndk1::allocator<WaterConcept::InteractiveObject*> > >&>&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;

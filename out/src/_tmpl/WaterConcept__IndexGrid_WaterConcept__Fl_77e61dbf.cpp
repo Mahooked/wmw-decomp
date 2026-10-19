@@ -9,7 +9,7 @@
 
 /* WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int, int) */
 
-void WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int p0,int p1, int in_w2)
+template<> void WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int p0,int p1, int in_w2)
 
 {
   uint uVar1;

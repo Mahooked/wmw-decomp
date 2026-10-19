@@ -10,8 +10,7 @@
 /* Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color> >
    >::~SharedPtr() */
 
-void Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>>
-     ::~SharedPtr()
+template<> Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr()
 
 {
   int iVar1;
@@ -45,9 +44,7 @@ void Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,std::__ndk1::allocato
    >::TEMPNAMEPLACEHOLDERVALUE(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,
    std::__ndk1::allocator<Walaber::Color> > > const&) */
 
-long * Walaber::
-       SharedPtr<std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>>::
-       operator=(long *param_1,long *param_2)
+template<> long * Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>>::operator=(long *param_2)
 
 {
   int iVar1;
@@ -56,29 +53,29 @@ long * Walaber::
   long lVar3;
   undefined8 *p0_00;
   
-  p0_00 = (undefined8 *)*param_1;
+  p0_00 = (undefined8 *)*(byte *)this;
   if (p0_00 != (undefined8 *)*param_2) {
     if ((p0_00 != (undefined8 *)0x0) &&
-       (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
+       (iVar1 = *(int *)(byte *)this[1] + -1, *(int *)(byte *)this[1] = iVar1, iVar1 == 0)) {
       p0 = (void *)*p0_00;
       if (p0 != (void *)0x0) {
         p0_00[1] = p0;
         operator delete(p0);
       }
       operator delete(p0_00);
-      if ((void *)param_1[1] != (void *)0x0) {
-        operator delete((void *)param_1[1]);
+      if ((void *)(byte *)this[1] != (void *)0x0) {
+        operator delete((void *)(byte *)this[1]);
       }
     }
     lVar3 = *param_2;
-    *param_1 = lVar3;
+    *(byte *)this = lVar3;
     piVar2 = (int *)param_2[1];
-    param_1[1] = (long)piVar2;
+    (byte *)this[1] = (long)piVar2;
     if (lVar3 != 0) {
       *piVar2 = *piVar2 + 1;
     }
   }
-  return param_1;
+  return (byte *)this;
 }
 
 

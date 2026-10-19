@@ -10,9 +10,7 @@
 /* std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*,
    std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*> >::~__split_buffer() */
 
-void std::__ndk1::
-     __split_buffer<WaterConcept::Spout::QueuedParticle*,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>
-     ::~__split_buffer()
+template<> std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>::~__split_buffer()
 
 {
   long lVar1;
@@ -38,9 +36,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>
    >::push_back(WaterConcept::Spout::QueuedParticle*&&) */
 
-void std::__ndk1::
-     __split_buffer<WaterConcept::Spout::QueuedParticle*,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>
-     ::push_back(WaterConcept__Spout__QueuedParticle ***p0)
+template<> void std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>::push_back(WaterConcept__Spout__QueuedParticle ***p0)
 
 {
   long lVar1;
@@ -134,9 +130,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>
    >::push_front(WaterConcept::Spout::QueuedParticle*&&) */
 
-void std::__ndk1::
-     __split_buffer<WaterConcept::Spout::QueuedParticle*,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>
-     ::push_front(WaterConcept__Spout__QueuedParticle ***p0)
+template<> void std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>::push_front(WaterConcept__Spout__QueuedParticle ***p0)
 
 {
   undefined8 *in_x1;

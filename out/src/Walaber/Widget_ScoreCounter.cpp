@@ -58,8 +58,8 @@ Walaber::Widget_ScoreCounter::operator=(Walaber__Widget_ScoreCounter *p0)
   *(undefined8 *)&p0->field_0x12c = *(undefined8 *)&in_x1->field_0x12c;
   *(undefined8 *)&p0->field_0x134 = *(undefined8 *)&in_x1->field_0x134;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::TextLineInfo*>::value&&is_constructible<Walaber::TextLineInfo, std::__ndk1::iterator_traits<Walaber::TextLineInfo*>::reference>::value, void>::type std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::assign<Walaber::TextLineInfo*>(&p0->f_0x140,in_x1->f_0x140,in_x1->f_0x148);
-    std::__ndk1::enable_if<__is_forward_iterator<int*>::value&&is_constructible<int, std::__ndk1::iterator_traits<int*>::reference>::value, void>::type std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x158,in_x1->f_0x158,in_x1->f_0x160);
+    std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::assign<Walaber::TextLineInfo*>(&p0->f_0x140,in_x1->f_0x140,in_x1->f_0x148);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x158,in_x1->f_0x158,in_x1->f_0x160);
   }
   uVar2 = in_x1->f_0x170;
   uVar3 = in_x1->f_0x174;
@@ -207,7 +207,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
     }
     else {
                     /* try { // try from 00384ae8 to 00384af3 has its CatchHandler @ 00384bf8 */
-      void std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::__push_back_slow_path<Walaber::TextLineInfo>(param_1 + 0x140,&uStack_88);
+      std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::__push_back_slow_path<Walaber::TextLineInfo>(param_1 + 0x140,&uStack_88);
       if ((uStack_88 & 1) != 0) {
         operator delete(puStack_78);
       }
@@ -243,7 +243,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
     }
     else {
                     /* try { // try from 00384b9c to 00384ba7 has its CatchHandler @ 00384bf4 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x158,&uStack_88);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x158,&uStack_88);
     }
     iVar6 = iVar6 + 1;
   } while (iVar6 < *(int *)(param_1 + 0x178));

@@ -9,7 +9,7 @@
 
 /* std::__ndk1::__time_get_c_storage<wchar_t>::__weeks() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<wchar_t>::__weeks(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<wchar_t>::__weeks(void)
 
 {
   int iVar1;
@@ -49,7 +49,7 @@ undefined1 * std::__ndk1::__time_get_c_storage<wchar_t>::__weeks(void)
 
 /* std::__ndk1::__time_get_c_storage<wchar_t>::__months() const */
 
-undefined * std::__ndk1::__time_get_c_storage<wchar_t>::__months(void)
+template<> undefined * std::__ndk1::__time_get_c_storage<wchar_t>::__months(void)
 
 {
   int iVar1;
@@ -100,7 +100,7 @@ undefined * std::__ndk1::__time_get_c_storage<wchar_t>::__months(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* std::__ndk1::__time_get_c_storage<wchar_t>::__am_pm() const */
 
-undefined1 * std::__ndk1::__time_get_c_storage<wchar_t>::__am_pm(void)
+template<> undefined1 * std::__ndk1::__time_get_c_storage<wchar_t>::__am_pm(void)
 
 {
   int iVar1;
@@ -133,7 +133,7 @@ undefined1 * std::__ndk1::__time_get_c_storage<wchar_t>::__am_pm(void)
 
 /* std::__ndk1::__time_get_c_storage<wchar_t>::__x() const */
 
-undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__x(void)
+template<> undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__x(void)
 
 {
   int iVar1;
@@ -159,7 +159,7 @@ undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__x(void)
 
 /* std::__ndk1::__time_get_c_storage<wchar_t>::__X() const */
 
-undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__X(void)
+template<> undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__X(void)
 
 {
   int iVar1;
@@ -185,7 +185,7 @@ undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__X(void)
 
 /* std::__ndk1::__time_get_c_storage<wchar_t>::__c() const */
 
-undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__c(void)
+template<> undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__c(void)
 
 {
   int iVar1;
@@ -211,7 +211,7 @@ undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__c(void)
 
 /* std::__ndk1::__time_get_c_storage<wchar_t>::__r() const */
 
-undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__r(void)
+template<> undefined8 * std::__ndk1::__time_get_c_storage<wchar_t>::__r(void)
 
 {
   int iVar1;

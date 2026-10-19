@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<float, std::__ndk1::allocator<float> >::__push_back_slow_path<float
    const&>(float const&) */
 
-void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_path<float_const&>
-               (float *p0)
+template<> void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_path(float *p0)
 
 {
   long *in_x0;
@@ -81,8 +80,7 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
 /* void std::__ndk1::vector<float, std::__ndk1::allocator<float>
    >::__push_back_slow_path<float>(float&&) */
 
-void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_path<float>
-               (float **p0)
+template<> void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_path(float **p0)
 
 {
   long *in_x0;

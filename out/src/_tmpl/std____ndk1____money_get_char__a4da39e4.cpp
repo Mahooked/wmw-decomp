@@ -14,8 +14,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&, int&) */
 
-void std::__ndk1::__money_get<char>::__gather_info
-               (bool param_1,std::__ndk1::locale const& param_2,std::__ndk1::money_base::pattern& param_3,char& param_4,char& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_8,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_9,int& param_10)
+template<> void std::__ndk1::__money_get<char>::__gather_info(bool param_1,std::__ndk1::locale const& param_2,std::__ndk1::money_base::pattern& param_3,char& param_4,char& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_8,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_9,int& param_10)
 
 {
   byte bVar1;

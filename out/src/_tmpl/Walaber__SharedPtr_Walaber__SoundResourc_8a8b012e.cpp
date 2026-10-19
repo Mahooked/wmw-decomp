@@ -9,7 +9,7 @@
 
 /* Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr() */
 
-void Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr()
+template<> Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr()
 
 {
   int iVar1;
@@ -40,9 +40,7 @@ void Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr()
 /* Walaber::SharedPtr<Walaber::SoundResource>::TEMPNAMEPLACEHOLDERVALUE(Walaber::SharedPtr<Walaber::SoundResource>
    const&) */
 
-Walaber__SharedPtr<Walaber::SoundResource> *
-Walaber::SharedPtr<Walaber::SoundResource>::operator=
-          (Walaber__SharedPtr<Walaber::SoundResource> *p0)
+template<> Walaber__SharedPtr<Walaber::SoundResource> * Walaber::SharedPtr<Walaber::SoundResource>::operator=(Walaber__SharedPtr<Walaber::SoundResource> *p0)
 
 {
   int iVar1;

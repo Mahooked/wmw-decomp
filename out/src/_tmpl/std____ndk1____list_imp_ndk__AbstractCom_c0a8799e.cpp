@@ -10,8 +10,7 @@
 /* std::__ndk1::__list_imp<ndk::AbstractCommand*, std::__ndk1::allocator<ndk::AbstractCommand*>
    >::clear() */
 
-void std::__ndk1::__list_imp<ndk::AbstractCommand*,std::__ndk1::allocator<ndk::AbstractCommand*>>::
-     clear(long *param_1)
+template<> void std::__ndk1::__list_imp<ndk::AbstractCommand*,std::__ndk1::allocator<ndk::AbstractCommand*>>::clear(long *param_1)
 
 {
   long lVar1;

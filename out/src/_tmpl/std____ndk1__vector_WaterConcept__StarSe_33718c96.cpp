@@ -11,8 +11,7 @@
    >::vector(std::__ndk1::vector<WaterConcept::StarSeed*,
    std::__ndk1::allocator<WaterConcept::StarSeed*> > const&) */
 
-void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::
-     vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -41,8 +40,7 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
 /* std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::__vallocate(ulong p0)
 
 {
   long lVar1;

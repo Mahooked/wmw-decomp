@@ -10,9 +10,7 @@
 /* std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData,
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData> >::pop_back() */
 
-void std::__ndk1::
-     deque<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>
-     ::pop_back(long param_1)
+template<> void std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::pop_back(long param_1)
 
 {
   byte *pbVar1;
@@ -55,9 +53,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>
    >::push_back(WaterConcept::NotificationSingleton::NotificationData const&) */
 
-void std::__ndk1::
-     deque<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>
-     ::push_back(WaterConcept__NotificationSingleton__NotificationData *p0)
+template<> void std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::push_back(WaterConcept__NotificationSingleton__NotificationData *p0)
 
 {
   ulong uVar1;
@@ -104,9 +100,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>
    >::__add_back_capacity() */
 
-void std::__ndk1::
-     deque<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>
-     ::__add_back_capacity(ulong *param_1)
+template<> void std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::__add_back_capacity(ulong *param_1)
 
 {
   void *pvVar2;

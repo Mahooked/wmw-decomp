@@ -38,7 +38,7 @@ void Walaber::BroadcastManager::_addReceiver(Walaber__MessageReceiver *p0, undef
   
   Walaber::Logger::printf("Walaber",1,"BroadcastManager::_addReceiver( %p ) count %d\n");
   if ((undefined8 *)p0[1].f_0x0 == (undefined8 *)p0[2].f_0x0) {
-    void std::__ndk1::vector<Walaber::MessageReceiver*, std::__ndk1::allocator<Walaber::MessageReceiver*>>::__push_back_slow_path<Walaber::MessageReceiver* const&>(p0,auStack_40);
+    std::__ndk1::vector<Walaber::MessageReceiver*, std::__ndk1::allocator<Walaber::MessageReceiver*>>::__push_back_slow_path<Walaber::MessageReceiver* const&>(p0,auStack_40);
   }
   else {
     *(undefined8 *)p0[1].f_0x0 = in_x1;

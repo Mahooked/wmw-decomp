@@ -11,8 +11,7 @@
    >::erase(std::__ndk1::__list_const_iterator<Walaber::TextLineInfo, void*>,
    std::__ndk1::__list_const_iterator<Walaber::TextLineInfo, void*>) */
 
-long * std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::erase
-                 (long param_1,long *param_2,long *param_3)
+template<> long * std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::erase(long param_1,long *param_2,long *param_3)
 
 {
   long lVar1;

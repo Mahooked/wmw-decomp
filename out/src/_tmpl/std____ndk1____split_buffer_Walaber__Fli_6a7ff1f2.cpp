@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>&>::__split_buffer(unsigned long,
    unsigned long, std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>&) */
 
-void std::__ndk1::
-     __split_buffer<Walaber::Flipbook::FlipbookFrame,std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>&>
-     ::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<Walaber::Flipbook::FlipbookFrame,std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;

@@ -19,10 +19,7 @@
    WaterConcept::World::AlgaeDot> > >::find<WaterConcept::GridCell>(WaterConcept::GridCell const&)
     */
 
-WaterConcept__GridCell
-std::__ndk1::
-__tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>>>
-::find<WaterConcept::GridCell>(WaterConcept__GridCell *p0)
+template<> WaterConcept__GridCell std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>>>::find(WaterConcept__GridCell *p0)
 
 {
   int iVar1;

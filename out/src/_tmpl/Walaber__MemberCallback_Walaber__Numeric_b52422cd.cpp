@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<Walaber::NumericAnimationTrack>::~MemberCallback() */
 
-void Walaber::MemberCallback<Walaber::NumericAnimationTrack>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<Walaber::NumericAnimationTrack>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<Walaber::NumericAnimationTrack>::~MemberCallback(vo
 
 /* Walaber::MemberCallback<Walaber::NumericAnimationTrack>::invoke(void*) */
 
-void Walaber::MemberCallback<Walaber::NumericAnimationTrack>::invoke(void *p0)
+template<> void Walaber::MemberCallback<Walaber::NumericAnimationTrack>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

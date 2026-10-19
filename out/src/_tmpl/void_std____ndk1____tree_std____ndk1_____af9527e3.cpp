@@ -19,11 +19,7 @@
    Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Vector2>,
    void*>*, long>) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Vector2>>>
-     ::
-     __assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::__tree_node<std::__ndk1::__value_type<int,Walaber::Vector2>,void*>*,long>>
-               (long *param_1,long *param_2,long *param_3)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Vector2>>>::__assign_multi(long *param_1,long *param_2,long *param_3)
 
 {
   long lVar1;
@@ -102,7 +98,7 @@ LAB_00379190:
     }
   }
   while (param_2 != param_3) {
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Vector2>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__emplace_multi<std::__ndk1::pair<int const, Walaber::Vector2> const&>(param_1,(long)param_2 + 0x1c);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__emplace_multi<std::__ndk1::pair<int const, Walaber::Vector2> const&>(param_1,(long)param_2 + 0x1c);
     plVar7 = (long *)param_2[1];
     if ((long *)param_2[1] == (long *)0x0) {
       plVar7 = param_2 + 2;

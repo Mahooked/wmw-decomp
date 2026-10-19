@@ -18,10 +18,7 @@
    std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    std::__ndk1::__tree_node_base<void*>*&, Walaber::Widget* const&) */
 
-long * std::__ndk1::
-       __tree<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::__map_value_compare<Walaber::Widget*,std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::less<Walaber::Widget*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>>>
-       ::__find_equal<Walaber::Widget*>
-                 (undefined8 *param_1,long *param_2,long *param_3,long *param_4,ulong *param_5)
+template<> long * std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::__map_value_compare<Walaber::Widget*,std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::less<Walaber::Widget*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>>>::__find_equal(undefined8 *param_1,long *param_2,long *param_3,long *param_4,ulong *param_5)
 
 {
   long *plVar1;
@@ -117,9 +114,7 @@ LAB_0049d840:
    >::__find_equal<Walaber::Widget*>(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    Walaber::Widget* const&) */
 
-long * std::__ndk1::
-       __tree<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::__map_value_compare<Walaber::Widget*,std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::less<Walaber::Widget*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>>>
-       ::__find_equal<Walaber::Widget*>(long param_1,long *param_2,ulong *param_3)
+template<> long * std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::__map_value_compare<Walaber::Widget*,std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::less<Walaber::Widget*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>>>::__find_equal(long param_1,long *param_2,ulong *param_3)
 
 {
   long *plVar1;

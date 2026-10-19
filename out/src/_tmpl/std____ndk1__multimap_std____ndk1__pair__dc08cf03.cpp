@@ -12,12 +12,10 @@
    std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::pair<int, int> const,
    Walaber::SoundManager::GotSoundCallbackData> > >::~multimap() */
 
-void std::__ndk1::
-     multimap<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData,std::__ndk1::less<std::__ndk1::pair<int,int>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::pair<int,int>const,Walaber::SoundManager::GotSoundCallbackData>>>
-     ::~multimap(long param_1)
+template<> std::__ndk1::multimap<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData,std::__ndk1::less<std::__ndk1::pair<int,int>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::pair<int,int>const,Walaber::SoundManager::GotSoundCallbackData>>>::~multimap()
 
 {
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

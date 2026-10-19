@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Spout::SpoutConnection>(WaterConcept::Spout::SpoutConnection&&)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::Spout::SpoutConnection,std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>
-     ::__push_back_slow_path<WaterConcept::Spout::SpoutConnection>
-               (WaterConcept__Spout__SpoutConnection **p0)
+template<> void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection,std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path(WaterConcept__Spout__SpoutConnection **p0)
 
 {
   undefined8 *in_x1;
@@ -88,10 +85,7 @@ void std::__ndk1::
    >::__push_back_slow_path<WaterConcept::Spout::SpoutConnection
    const&>(WaterConcept::Spout::SpoutConnection const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Spout::SpoutConnection,std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>
-     ::__push_back_slow_path<WaterConcept::Spout::SpoutConnection_const&>
-               (WaterConcept__Spout__SpoutConnection *p0)
+template<> void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection,std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path(WaterConcept__Spout__SpoutConnection *p0)
 
 {
   undefined8 *in_x1;

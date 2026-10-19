@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<WaterConceptConstants::FluidType,
    std::__ndk1::allocator<WaterConceptConstants::FluidType> >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<WaterConceptConstants::FluidType,std::__ndk1::allocator<WaterConceptConstants::FluidType>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConceptConstants::FluidType,std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__vallocate(ulong p0)
 
 {
   long lVar1;

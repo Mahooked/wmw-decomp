@@ -13,12 +13,10 @@
    const, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > > > >::~map() */
 
-void std::__ndk1::
-     map<Walaber::Language,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::less<Walaber::Language>,std::__ndk1::allocator<std::__ndk1::pair<Walaber::Language_const,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>
-     ::~map(long param_1)
+template<> std::__ndk1::map<Walaber::Language,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::less<Walaber::Language>,std::__ndk1::allocator<std::__ndk1::pair<Walaber::Language_const,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>::~map()
 
 {
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Language, std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Language>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Language, std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Language>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

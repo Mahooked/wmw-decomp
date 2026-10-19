@@ -244,7 +244,7 @@ void WaterConcept::Screen_Dialogue::loadPropertyList(Walaber__PropertyList *p0)
       }
       else {
                     /* try { // try from 004b8adc to 004b8ae7 has its CatchHandler @ 004b9d64 */
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar11,&bStack_60);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar11,&bStack_60);
         if ((bStack_60 & 1) != 0) {
           operator delete(pvStack_50);
         }
@@ -393,7 +393,7 @@ void WaterConcept::Screen_Dialogue::loadPropertyList(Walaber__PropertyList *p0)
       }
       else {
                     /* try { // try from 004b8c40 to 004b8c4b has its CatchHandler @ 004b9d60 */
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar11,&bStack_60);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar11,&bStack_60);
         if ((bStack_60 & 1) != 0) {
           operator delete(pvStack_50);
         }

@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Screen_MainMenu_v2::DuckInfo
    const&>(WaterConcept::Screen_MainMenu_v2::DuckInfo const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>
-     ::__push_back_slow_path<WaterConcept::Screen_MainMenu_v2::DuckInfo_const&>
-               (WaterConcept__Screen_MainMenu_v2__DuckInfo *p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::__push_back_slow_path(WaterConcept__Screen_MainMenu_v2__DuckInfo *p0)
 
 {
   undefined4 uVar1;

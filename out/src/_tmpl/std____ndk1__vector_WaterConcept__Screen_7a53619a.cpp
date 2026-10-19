@@ -12,9 +12,7 @@
    >::insert(std::__ndk1::__wrap_iter<WaterConcept::Screen_Editor::ObjectData const*>,
    WaterConcept::Screen_Editor::ObjectData const&) */
 
-ulong std::__ndk1::
-      vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-      ::insert(long *param_1,ulong param_2,ulong param_3)
+template<> ulong std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::insert(long *param_1,ulong param_2,ulong param_3)
 
 {
   byte *pbVar1;
@@ -58,8 +56,8 @@ ulong std::__ndk1::
       *(undefined1 *)(lVar8 + 0x50) = *(undefined1 *)(uVar3 + 0x50);
       if (param_2 != uVar3) {
         lVar9 = lVar9 + lVar7 * 8;
-        std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::World::WorldSpoutConnection*>::value&&is_constructible<WaterConcept::World::WorldSpoutConnection, std::__ndk1::iterator_traits<WaterConcept::World::WorldSpoutConnection*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::assign<WaterConcept::World::WorldSpoutConnection*>(lVar9 + 0x58,*(undefined8 *)(uVar3 + 0x58),*(undefined8 *)(uVar3 + 0x60));
-        void std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>>(lVar9 + 0x70,*(undefined8 *)(uVar3 + 0x70),uVar3 + 0x78);
+        std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::assign<WaterConcept::World::WorldSpoutConnection*>(lVar9 + 0x58,*(undefined8 *)(uVar3 + 0x58),*(undefined8 *)(uVar3 + 0x60));
+        std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>>(lVar9 + 0x70,*(undefined8 *)(uVar3 + 0x70),uVar3 + 0x78);
       }
     }
   }
@@ -179,9 +177,7 @@ ulong std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData,
    std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -226,11 +222,7 @@ void std::__ndk1::
    >::__move_range(WaterConcept::Screen_Editor::ObjectData*,
    WaterConcept::Screen_Editor::ObjectData*, WaterConcept::Screen_Editor::ObjectData*) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::__move_range(WaterConcept__Screen_Editor__ObjectData *p0,
-                   WaterConcept__Screen_Editor__ObjectData *p1,
-                   WaterConcept__Screen_Editor__ObjectData *p2)
+template<> void std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__move_range(WaterConcept__Screen_Editor__ObjectData *p0, WaterConcept__Screen_Editor__ObjectData *p1, WaterConcept__Screen_Editor__ObjectData *p2)
 
 {
   WaterConcept__Screen_Editor__ObjectData *pWVar1;
@@ -313,9 +305,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>&,
    WaterConcept::Screen_Editor::ObjectData*) */
 
-long std::__ndk1::
-     vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+template<> long std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   long lVar1;

@@ -19,10 +19,7 @@
    WaterConcept::ParallaxPuppetShow::TransitionData> >(std::__ndk1::pair<float,
    WaterConcept::ParallaxPuppetShow::TransitionData>&&) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>>>
-     ::__construct_node<std::__ndk1::pair<float,WaterConcept::ParallaxPuppetShow::TransitionData>>
-               (long *param_1,long param_2,undefined4 *param_3)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>>>::__construct_node(long *param_1,long param_2,undefined4 *param_3)
 
 {
   undefined8 uVar1;
@@ -48,7 +45,7 @@ void std::__ndk1::
   if (plVar7 != (long *)(param_3 + 6)) {
     do {
                     /* try { // try from 00434b38 to 00434b47 has its CatchHandler @ 00434bb8 */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(lVar2 + 0x30,puVar6,plVar7 + 4,plVar7 + 4);
+      std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(lVar2 + 0x30,puVar6,plVar7 + 4,plVar7 + 4);
       plVar3 = (long *)plVar7[1];
       if ((long *)plVar7[1] == (long *)0x0) {
         plVar3 = plVar7 + 2;

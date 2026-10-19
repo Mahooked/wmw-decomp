@@ -12,10 +12,7 @@
    >::insert(std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription const*>,
    WaterConcept::ParticleDescription const&) */
 
-undefined8 *
-std::__ndk1::
-vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>
-::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> undefined8 * std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   undefined8 *puVar2;
@@ -177,9 +174,7 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
    std::__ndk1::allocator<WaterConcept::ParticleDescription>&>&, WaterConcept::ParticleDescription*)
     */
 
-long std::__ndk1::
-     vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+template<> long std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   long lVar1;

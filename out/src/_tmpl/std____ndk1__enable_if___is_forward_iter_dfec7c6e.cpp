@@ -16,9 +16,7 @@
    0ul>, std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >,
    false, 0ul>) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::
-     __construct_at_end<std::__ndk1::__bit_iterator<std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>,false,0ul>>
-               (undefined8 *param_1,long *param_2,long *param_3)
+template<> void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__construct_at_end(undefined8 *param_1,long *param_2,long *param_3)
 
 {
   ulong uVar1;
@@ -54,10 +52,10 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::
   lStack_58 = (long)param_1 + (uVar3 >> 3 & 0x1ffffffffffffff8);
   if (uStack_30 == uStack_50) {
     uStack_50 = uStack_30;
-    std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0> std::__ndk1::__copy_aligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false>(auStack_68,&lStack_38,&lStack_48,&lStack_58);
+    std::__ndk1::__copy_aligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false>(auStack_68,&lStack_38,&lStack_48,&lStack_58);
   }
   else {
-    std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0> std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false>(auStack_68,&lStack_38,&lStack_48,&lStack_58);
+    std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false>(auStack_68,&lStack_38,&lStack_48,&lStack_58);
   }
   return;
 }

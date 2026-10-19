@@ -43,11 +43,11 @@
   puVar1 = this + 0x44;
   *(undefined1 *)(this[2] + 0x71) = 1;
                     /* try { // try from 004bc924 to 004bc987 has its CatchHandler @ 004bca28 */
-  void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color const&>(puVar1,&Walaber::Color::Cyan);
+  std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color const&>(puVar1,&Walaber::Color::Cyan);
   puVar5 = (undefined4 *)this[0x45];
   puVar3 = (undefined4 *)this[0x46];
   if (puVar5 == puVar3) {
-    void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color const&>(puVar1,&Walaber::Color::Magenta);
+    std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color const&>(puVar1,&Walaber::Color::Magenta);
     puVar4 = (undefined4 *)this[0x45];
     puVar3 = (undefined4 *)this[0x46];
   }
@@ -67,7 +67,7 @@
   }
   else {
                     /* try { // try from 004bc9b0 to 004bc9bb has its CatchHandler @ 004bca24 */
-    void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(puVar1,auStack_60);
+    std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(puVar1,auStack_60);
     puVar5 = (undefined4 *)this[0x45];
     puVar3 = (undefined4 *)this[0x46];
   }
@@ -78,7 +78,7 @@
   }
   else {
                     /* try { // try from 004bc9e4 to 004bc9ef has its CatchHandler @ 004bca20 */
-    void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(puVar1,auStack_60);
+    std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(puVar1,auStack_60);
   }
   return;
 }
@@ -262,7 +262,7 @@ void WaterConcept::Screen_Editor::loadPropertyList(Walaber__PropertyList *p0)
         }
         else {
                     /* try { // try from 004bcd80 to 004bcd8b has its CatchHandler @ 004bd1cc */
-          void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&p0[0x14].f_0x8,&bStack_88);
+          std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&p0[0x14].f_0x8,&bStack_88);
           if ((bStack_88 & 1) != 0) {
             operator delete(puStack_78);
           }
@@ -420,7 +420,7 @@ void WaterConcept::Screen_Editor::loadPropertyList(Walaber__PropertyList *p0)
   }
   if ((uVar3 & 1) == 0) {
                     /* try { // try from 004bd074 to 004bd08b has its CatchHandler @ 004bd17c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88,&GameSettings::ContentBasePath,"/Levels/test.png");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88,&GameSettings::ContentBasePath,"/Levels/test.png");
     puVar5 = &p0[9].f_0x8;
     if ((*puVar5 & 1) == 0) {
       *(undefined2 *)puVar5 = 0;
@@ -2049,7 +2049,7 @@ void WaterConcept::Screen_Editor::_loadLevelPart2(void *p0)
       plVar14 = *(long **)(lVar13 + 0xc0);
       while (plVar14 != (long *)(lVar13 + 200)) {
                     /* try { // try from 004bf3e8 to 004bf3f7 has its CatchHandler @ 004bfff4 */
-        std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&bStack_1d0,&uStack_1c8,plVar14 + 4,plVar14 + 4);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&bStack_1d0,&uStack_1c8,plVar14 + 4,plVar14 + 4);
         plVar16 = (long *)plVar14[1];
         if ((long *)plVar14[1] == (long *)0x0) {
           plVar16 = plVar14 + 2;
@@ -2191,7 +2191,7 @@ void WaterConcept::Screen_Editor::_loadLevelPart2(void *p0)
           uStack_1b8 = uVar21;
           uStack_1b4 = uVar7;
           if (lStack_e0 == lStack_d8) {
-            void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection const&>(auStack_e8,&bStack_1d0);
+            std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection const&>(auStack_e8,&bStack_1d0);
           }
           else {
             new ((void *)(lStack_e0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1d0);
@@ -2280,7 +2280,7 @@ void WaterConcept::Screen_Editor::_loadLevelPart2(void *p0)
                     /* try { // try from 004bf86c to 004bf877 has its CatchHandler @ 004bff3c */
           Walaber::Property::asString(&bStack_1d0,lVar13);
                     /* try { // try from 004bf878 to 004bf893 has its CatchHandler @ 004c0010 */
-          std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(auStack_d0,&bStack_1d0,&bStack_1d0);
+          std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(auStack_d0,&bStack_1d0,&bStack_1d0);
           Walaber::PropertyList::removeValueForKey(auStack_120,&puStack_158);
           piStack_168 = (undefined4 *)0x0;
           puStack_170 = (undefined8 *)((long)&Elf64_Ehdr_00000000.e_entry + 6);
@@ -2352,7 +2352,7 @@ void WaterConcept::Screen_Editor::_loadLevelPart2(void *p0)
         Walaber::PropertyList::removeValueForKey(auStack_120,&puStack_158);
       }
       if (*(long *)((long)p0 + 400) == *(long *)((long)p0 + 0x198)) {
-        void std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData const&>((long)p0 + 0x188,&uStack_140);
+        std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData const&>((long)p0 + 0x188,&uStack_140);
       }
       else {
         new ((void *)(*(long *)((long)p0 + 400))) WaterConcept::Screen_Editor::ObjectData(&uStack_140);
@@ -2744,7 +2744,7 @@ void WaterConcept::Screen_Editor::_loadedEditorData(void *p0, long in_x1)
                   uStack_128 = uVar5;
                   if (uVar5 != 0) {
                     /* try { // try from 004c04fc to 004c050b has its CatchHandler @ 004c06a8 */
-                    std::__ndk1::pair<std::__ndk1::__tree_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long>, bool> std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(&plStack_e0,&uStack_128,&uStack_128);
+                    std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(&plStack_e0,&uStack_128,&uStack_128);
                   }
                 }
                 ((Walaber::Property *)&uStack_110)->~Property();
@@ -2755,7 +2755,7 @@ void WaterConcept::Screen_Editor::_loadedEditorData(void *p0, long in_x1)
             puVar8 = *(undefined8 **)((long)p0 + 0x210);
             if (puVar8 == *(undefined8 **)((long)p0 + 0x218)) {
                     /* try { // try from 004c05c4 to 004c05d7 has its CatchHandler @ 004c067c */
-              void std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__push_back_slow_path<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>> const&>((long)p0 + 0x208,&plStack_e0);
+              std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__push_back_slow_path<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>> const&>((long)p0 + 0x208,&plStack_e0);
             }
             else {
               puVar9 = puVar8 + 1;
@@ -2765,7 +2765,7 @@ void WaterConcept::Screen_Editor::_loadedEditorData(void *p0, long in_x1)
               plVar10 = plStack_e0;
               while (plVar10 != &lStack_d8) {
                     /* try { // try from 004c0550 to 004c055f has its CatchHandler @ 004c0694 */
-                std::__ndk1::__tree_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long> std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(puVar8,puVar9,plVar10 + 4,plVar10 + 4);
+                std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(puVar8,puVar9,plVar10 + 4,plVar10 + 4);
                 plVar6 = (long *)plVar10[1];
                 if ((long *)plVar10[1] == (long *)0x0) {
                   plVar6 = plVar10 + 2;
@@ -3509,7 +3509,7 @@ LAB_004c092c:
   }
   if (*(undefined8 **)(lVar18 + 0x4c0) == *(undefined8 **)(lVar18 + 0x4c8)) {
                     /* try { // try from 004c0a68 to 004c0ad7 has its CatchHandler @ 004c1ad8 */
-    void std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>(lVar18 + 0x4b8,&plStack_e8);
+    std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>(lVar18 + 0x4b8,&plStack_e8);
   }
   else {
     **(undefined8 **)(lVar18 + 0x4c0) = plStack_e8;
@@ -3517,7 +3517,7 @@ LAB_004c092c:
   }
   ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_100))->operator=();
   if (*(long *)((long)p0 + 400) == *(long *)((long)p0 + 0x198)) {
-    void std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData const&>((long)p0 + 0x188,&uStack_100);
+    std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData const&>((long)p0 + 0x188,&uStack_100);
   }
   else {
     new ((void *)(*(long *)((long)p0 + 400))) WaterConcept::Screen_Editor::ObjectData(&uStack_100);
@@ -4054,7 +4054,7 @@ void WaterConcept::Screen_Editor::_pressTrack(long param_1,long param_2)
   fVar15 = fStack_c8;
   fVar18 = (float)uStack_b0;
   fVar19 = uStack_b0._4_4_;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_c8,"/Objects/path_",param_1 + 0x168);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_c8,"/Objects/path_",param_1 + 0x168);
                     /* try { // try from 004c2174 to 004c2187 has its CatchHandler @ 004c252c */
   puVar4 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&fStack_c8,"_mid.hs",7);
   pvStack_a0 = (void *)puVar4[2];
@@ -4131,7 +4131,7 @@ void WaterConcept::Screen_Editor::_pressTrack(long param_1,long param_2)
       }
       else {
                     /* try { // try from 004c23a8 to 004c23b3 has its CatchHandler @ 004c255c */
-        void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>((long *)(param_1 + 0x100),&fStack_c8);
+        std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>((long *)(param_1 + 0x100),&fStack_c8);
       }
       if (lVar12 == 1) {
                     /* try { // try from 004c23c0 to 004c2467 has its CatchHandler @ 004c2564 */
@@ -4996,7 +4996,7 @@ LAB_004c37e4:
       puStack_1f0 = &uStack_1e8;
       while (plVar30 != puVar25 + 3) {
                     /* try { // try from 004c39e4 to 004c39f3 has its CatchHandler @ 004c3ec8 */
-        std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_1f0,&uStack_1e8,plVar30 + 4,plVar30 + 4);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_1f0,&uStack_1e8,plVar30 + 4,plVar30 + 4);
         plVar26 = (long *)plVar30[1];
         if ((long *)plVar30[1] == (long *)0x0) {
           plVar26 = plVar30 + 2;
@@ -5379,7 +5379,7 @@ void WaterConcept::Screen_Editor::handleEvent
     (**(code **)(*plVar10 + 0x70))(plVar10);
     break;
   case 2:
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0,&GameSettings::UserStoreBasePath,"/metaTemp.xml");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0,&GameSettings::UserStoreBasePath,"/metaTemp.xml");
     uStack_1c0 = uStack_1c0 & 0xffffffffffffff00;
                     /* try { // try from 004c44c8 to 004c44d3 has its CatchHandler @ 004c59f4 */
     new ((void *)(abStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0);
@@ -5803,7 +5803,7 @@ LAB_004c4f44:
       if (uVar14 == 8) {
         if (plVar10[0x32] == plVar10[0x33]) {
                     /* try { // try from 004c5010 to 004c504b has its CatchHandler @ 004c58a0 */
-          void std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData const&>(plVar22,&bStack_188);
+          std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData const&>(plVar22,&bStack_188);
         }
         else {
                     /* try { // try from 004c4fd4 to 004c4fdf has its CatchHandler @ 004c58a0 */
@@ -5811,7 +5811,7 @@ LAB_004c4f44:
           plVar10[0x32] = plVar10[0x32] + 0x88;
         }
         if (*(undefined8 **)(lVar24 + 0x4c0) == *(undefined8 **)(lVar24 + 0x4c8)) {
-          void std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>(puVar13,&bStack_1e0);
+          std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>(puVar13,&bStack_1e0);
         }
         else {
           **(undefined8 **)(lVar24 + 0x4c0) =
@@ -5916,7 +5916,7 @@ LAB_004c4f44:
         uVar11 = 0;
         do {
                     /* try { // try from 004c4c48 to 004c4c53 has its CatchHandler @ 004c590c */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_188,lVar23 + lVar24,"/");
+          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_188,lVar23 + lVar24,"/");
           uVar21 = (ulong)(bStack_188 >> 1);
           pvVar4 = (void *)((ulong)&bStack_188 | 1);
           if ((bStack_188 & 1) != 0) {
@@ -6270,7 +6270,7 @@ LAB_004c52d8:
           plVar16 = plVar20;
         } while (plVar10 + 0x35 != plVar20);
       }
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_188,"/Objects/path_",plVar22);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_188,"/Objects/path_",plVar22);
                     /* try { // try from 004c5390 to 004c53a3 has its CatchHandler @ 004c5798 */
       puVar12 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_188,"_mid.hs",7);
       pvStack_220 = (void *)puVar12[2];
@@ -7272,7 +7272,7 @@ LAB_004c6b10:
                 if (uVar5 == 0) {
 LAB_004c6c0c:
                     /* try { // try from 004c6c0c to 004c6c17 has its CatchHandler @ 004c6f2c */
-                  unsigned long std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(pbVar17 + 0x70,&uStack_98);
+                  std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(pbVar17 + 0x70,&uStack_98);
                   break;
                 }
                 pbVar16 = pbVar23 + 0x21;
@@ -7358,7 +7358,7 @@ LAB_004c6d38:
       } while (plVar14 != (long *)0x0);
       if ((plVar15 == plVar12) || (uStack_80 < (ulong)plVar15[4])) goto LAB_004c6d38;
                     /* try { // try from 004c6d20 to 004c6d2b has its CatchHandler @ 004c6f28 */
-      unsigned long std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__erase_unique<WaterConcept::InteractiveObject*>(lVar11,&uStack_80);
+      std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__erase_unique<WaterConcept::InteractiveObject*>(lVar11,&uStack_80);
       if (*(long *)(lVar11 + 0x10) != 0) {
         lVar8 = *(long *)&p0->field_0x210;
         goto LAB_004c6d38;
@@ -7901,7 +7901,7 @@ LAB_004c7ac4:
               lVar8 = *(long *)(lVar28 + 0x60);
               uStack_88 = 0x3f800000;
               if (lVar8 == *(long *)(lVar28 + 0x68)) {
-                void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection const&>(puVar11,&uStack_a0);
+                std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection const&>(puVar11,&uStack_a0);
               }
               else {
                     /* try { // try from 004c7afc to 004c7bb3 has its CatchHandler @ 004c807c */
@@ -8095,7 +8095,7 @@ LAB_004c7ea0:
             }
             pbVar25[uVar16] = 0;
                     /* try { // try from 004c7eb4 to 004c7ec3 has its CatchHandler @ 004c8080 */
-            std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar22,&uStack_a0,&uStack_a0);
+            std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar22,&uStack_a0,&uStack_a0);
           }
           else {
             lVar27 = plVar26[4];
@@ -8120,7 +8120,7 @@ LAB_004c7e58:
             }
             pbVar25[uVar16] = 0;
                     /* try { // try from 004c7e6c to 004c7e77 has its CatchHandler @ 004c8084 */
-            unsigned long std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar22,&uStack_a0);
+            std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar22,&uStack_a0);
           }
           if ((uStack_a0 & 1) != 0) {
             operator delete(pbStack_90);
@@ -8194,7 +8194,7 @@ void WaterConcept::Screen_Editor::_paste(long param_1)
         *(undefined8 **)(param_1 + 0x108) = puVar3 + 1;
       }
       else {
-        void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x100,&uStack_80);
+        std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x100,&uStack_80);
       }
       lVar8 = *plVar9;
       uStack_80 = CONCAT44(uStack_80._4_4_,*(undefined4 *)(lVar8 + 0x74));
@@ -8204,7 +8204,7 @@ void WaterConcept::Screen_Editor::_paste(long param_1)
         *(undefined4 **)(param_1 + 0x120) = puVar4 + 1;
       }
       else {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x118,&uStack_80);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x118,&uStack_80);
         lVar8 = *plVar9;
       }
       lVar7 = *(long *)(param_1 + 0x188);
@@ -8226,14 +8226,14 @@ void WaterConcept::Screen_Editor::_paste(long param_1)
       lVar7 = 0;
 LAB_004c81d8:
       if (*(long *)(param_1 + 0x138) == *(long *)(param_1 + 0x140)) {
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1 + 0x130,lVar7);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1 + 0x130,lVar7);
       }
       else {
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
         *(long *)(param_1 + 0x138) = *(long *)(param_1 + 0x138) + 0x18;
       }
       if (*(long **)(param_1 + 0x150) == *(long **)(param_1 + 0x158)) {
-        void std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>(param_1 + 0x148,plVar9);
+        std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>(param_1 + 0x148,plVar9);
       }
       else {
         **(long **)(param_1 + 0x150) = *plVar9;
@@ -8465,7 +8465,7 @@ LAB_004c862c:
             } while (puVar3 != (undefined8 *)0x0);
             if ((puVar12 != puVar9) && ((ulong)puVar12[4] <= uVar7)) {
               puts("removing object from group.");
-              unsigned long std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__erase_unique<WaterConcept::InteractiveObject*>(puVar10,plVar5 + 4);
+              std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__erase_unique<WaterConcept::InteractiveObject*>(puVar10,plVar5 + 4);
             }
           }
           plVar4 = (long *)plVar5[1];
@@ -8500,7 +8500,7 @@ LAB_004c862c:
   if (*(long **)(param_1 + 0x1a0) != plVar11) {
     do {
                     /* try { // try from 004c8744 to 004c874f has its CatchHandler @ 004c88b4 */
-      std::__ndk1::pair<std::__ndk1::__tree_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long>, bool> std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(&plStack_70,plVar5 + 4,plVar5 + 4);
+      std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(&plStack_70,plVar5 + 4,plVar5 + 4);
       plVar4 = (long *)plVar5[1];
       if ((long *)plVar5[1] == (long *)0x0) {
         plVar4 = plVar5 + 2;
@@ -8525,7 +8525,7 @@ LAB_004c862c:
   }
   if (puVar9 == *(undefined8 **)(param_1 + 0x218)) {
                     /* try { // try from 004c8848 to 004c884f has its CatchHandler @ 004c889c */
-    void std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__push_back_slow_path<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>> const&>(param_1 + 0x208,&plStack_70);
+    std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__push_back_slow_path<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>> const&>(param_1 + 0x208,&plStack_70);
   }
   else {
     puVar10 = puVar9 + 1;
@@ -8535,7 +8535,7 @@ LAB_004c862c:
     plVar11 = plStack_70;
     while (plVar11 != &lStack_68) {
                     /* try { // try from 004c87d0 to 004c87df has its CatchHandler @ 004c88a0 */
-      std::__ndk1::__tree_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long> std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(puVar9,puVar10,plVar11 + 4,plVar11 + 4);
+      std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(puVar9,puVar10,plVar11 + 4,plVar11 + 4);
       plVar5 = (long *)plVar11[1];
       if ((long *)plVar11[1] == (long *)0x0) {
         plVar5 = plVar11 + 2;
@@ -9596,7 +9596,7 @@ void WaterConcept::Screen_Editor::_deselectGroupMembers(WaterConcept__Interactiv
                 puVar5 = *(undefined1 **)(puVar5 + (ulong)(*(ulong *)(puVar5 + 0x20) < uVar4) * 8);
               } while (puVar5 != (undefined1 *)0x0);
               if ((puVar7 != puVar1) && (*(ulong *)(puVar7 + 0x20) <= uVar4)) {
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>, std::__ndk1::__map_value_compare<WaterConcept::InteractiveObject*, std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>, std::__ndk1::less<WaterConcept::InteractiveObject*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>>>::__erase_unique<WaterConcept::InteractiveObject*>(&p0->field_0x1a0);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>, std::__ndk1::__map_value_compare<WaterConcept::InteractiveObject*, std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>, std::__ndk1::less<WaterConcept::InteractiveObject*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>>>::__erase_unique<WaterConcept::InteractiveObject*>(&p0->field_0x1a0);
               }
             }
             plVar3 = (long *)plVar10[1];
@@ -10622,7 +10622,7 @@ LAB_004cac0c:
     *(byte **)(lVar18 + 0x60) = pbVar11;
     *(int *)&p1[1].field_0x244 = *(int *)&p1[1].field_0x244 + -1;
     if (pbVar11 == *(byte **)(lVar18 + 0x68)) {
-      void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection const&>(puVar17,&uStack_a0);
+      std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection const&>(puVar17,&uStack_a0);
     }
     else {
                     /* try { // try from 004cac44 to 004cac73 has its CatchHandler @ 004cacdc */

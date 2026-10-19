@@ -11,8 +11,7 @@
    >::vector(std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*> >
    const&) */
 
-void std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>::vector
-               (undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -41,8 +40,7 @@ void std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget
 /* std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>::__vallocate
-               (ulong p0)
+template<> void std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>::__vallocate(ulong p0)
 
 {
   long lVar1;

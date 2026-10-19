@@ -11,12 +11,11 @@
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t> >&
    (*)(std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t> >&)) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<
-                 (long *param_1,code *param_2)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(code *param_2)
 
 {
-  (*param_2)((long)param_1 + *(long *)(*param_1 + -0x18));
-  return param_1;
+  (*param_2)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
+  return (byte *)this;
 }
 
 

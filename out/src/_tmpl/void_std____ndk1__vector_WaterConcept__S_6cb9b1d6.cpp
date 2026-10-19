@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::StarSeed::TeleportWaypoint>(WaterConcept::StarSeed::TeleportWaypoint&&)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::StarSeed::TeleportWaypoint,std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>
-     ::__push_back_slow_path<WaterConcept::StarSeed::TeleportWaypoint>
-               (WaterConcept__StarSeed__TeleportWaypoint **p0)
+template<> void std::__ndk1::vector<WaterConcept::StarSeed::TeleportWaypoint,std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>::__push_back_slow_path(WaterConcept__StarSeed__TeleportWaypoint **p0)
 
 {
   ulong uVar1;

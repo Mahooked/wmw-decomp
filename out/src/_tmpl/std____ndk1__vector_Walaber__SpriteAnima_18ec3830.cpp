@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SpriteAnimation::FrameImport,
    std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;

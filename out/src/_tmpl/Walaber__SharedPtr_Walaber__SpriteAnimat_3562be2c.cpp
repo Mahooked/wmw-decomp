@@ -10,9 +10,7 @@
 /* Walaber::SharedPtr<Walaber::SpriteAnimation>::TEMPNAMEPLACEHOLDERVALUE(Walaber::SharedPtr<Walaber::SpriteAnimation>
    const&) */
 
-Walaber__SharedPtr<Walaber::SpriteAnimation> *
-Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=
-          (Walaber__SharedPtr<Walaber::SpriteAnimation> *p0)
+template<> Walaber__SharedPtr<Walaber::SpriteAnimation> * Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=(Walaber__SharedPtr<Walaber::SpriteAnimation> *p0)
 
 {
   int iVar1;
@@ -53,7 +51,7 @@ Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=
 
 /* Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr() */
 
-void Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr()
+template<> Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr()
 
 {
   int iVar1;

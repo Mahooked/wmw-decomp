@@ -86,7 +86,7 @@ LAB_005ddb10:
   lVar2 = newlocale(0x1fbf,pbVar3,0);
   *this = lVar2;
   if (lVar2 == 0) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"time_get_byname failed to construct for ",param_2);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"time_get_byname failed to construct for ",param_2);
                     /* try { // try from 005ddc18 to 005ddc1f has its CatchHandler @ 005ddc24 */
     FUN_005d5db0(auStack_50);
   }

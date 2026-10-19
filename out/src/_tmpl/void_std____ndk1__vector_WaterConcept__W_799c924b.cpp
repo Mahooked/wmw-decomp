@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>(WaterConcept::WaterBalloon::WaterBalloonStoredParticle&&)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle,std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>
-     ::__push_back_slow_path<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>
-               (WaterConcept__WaterBalloon__WaterBalloonStoredParticle **p0)
+template<> void std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle,std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::__push_back_slow_path(WaterConcept__WaterBalloon__WaterBalloonStoredParticle **p0)
 
 {
   undefined8 *in_x1;

@@ -15,9 +15,7 @@
    std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,
    std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo> > >&) */
 
-void std::__ndk1::
-     __split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>
-     ::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;
@@ -60,9 +58,7 @@ void std::__ndk1::
    std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,
    std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo> > >&>::~__split_buffer() */
 
-void std::__ndk1::
-     __split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>
-     ::~__split_buffer()
+template<> std::__ndk1::__split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>::~__split_buffer()
 
 {
   long lVar1;

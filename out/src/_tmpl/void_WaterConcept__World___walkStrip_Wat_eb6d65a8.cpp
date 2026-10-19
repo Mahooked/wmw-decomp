@@ -17,10 +17,7 @@
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,uint param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+void WaterConcept::World::_walkStrip(long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,uint param_5, undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10, undefined4 param_11,float param_12)
 
 {
   float *pfVar1;
@@ -1164,7 +1161,7 @@ LAB_00470fb4:
         puVar24 = *(undefined8 **)(param_9 + 8);
         if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
                     /* try { // try from 004711ec to 0047135f has its CatchHandler @ 00471424 */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar24 + 1) = uVar8;
@@ -1174,7 +1171,7 @@ LAB_00470fb4:
         if (bVar17) {
           puVar24 = *(undefined8 **)(param_9 + 8);
           if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
@@ -1185,7 +1182,7 @@ LAB_00470fb4:
         uStack_f0 = (int *)CONCAT44(fVar53 - fVar49 * fVar54,fVar52 - fVar55 * fVar54);
         puVar24 = *(undefined8 **)(param_9 + 8);
         if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
@@ -1197,7 +1194,7 @@ LAB_00470fb4:
           uStack_f0 = (int *)CONCAT44(fVar46 + fVar47 * fVar57,fVar50 + fVar52);
           puVar24 = *(undefined8 **)(param_9 + 8);
           if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar24 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -1208,7 +1205,7 @@ LAB_00470fb4:
           }
           uStack_f0 = (int *)CONCAT44(fVar46 - fVar47 * fVar57,fVar50 - fVar52);
           if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar24 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -1218,7 +1215,7 @@ LAB_00470fb4:
             *(undefined8 **)(param_9 + 8) = puVar24;
           }
           if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
@@ -1253,10 +1250,7 @@ LAB_00470fb4:
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,uint param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+void WaterConcept::World::_walkStrip(long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,uint param_5, undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10, undefined4 param_11,float param_12)
 
 {
   float *pfVar1;
@@ -2400,7 +2394,7 @@ LAB_004731dc:
         puVar29 = *(undefined8 **)(param_9 + 8);
         if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
                     /* try { // try from 00473410 to 00473587 has its CatchHandler @ 0047364c */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar29 + 1) = uVar7;
@@ -2410,7 +2404,7 @@ LAB_004731dc:
         if (bVar44) {
           puVar29 = *(undefined8 **)(param_9 + 8);
           if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
@@ -2421,7 +2415,7 @@ LAB_004731dc:
         uStack_f0 = (int *)CONCAT44(fVar53 - fVar49 * fVar54,fVar52 - fVar55 * fVar54);
         puVar29 = *(undefined8 **)(param_9 + 8);
         if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
@@ -2433,7 +2427,7 @@ LAB_004731dc:
           uStack_f0 = (int *)CONCAT44(fVar46 + fVar47 * fVar57,fVar50 + fVar52);
           puVar29 = *(undefined8 **)(param_9 + 8);
           if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar29 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -2444,7 +2438,7 @@ LAB_004731dc:
           }
           uStack_f0 = (int *)CONCAT44(fVar46 - fVar47 * fVar57,fVar50 - fVar52);
           if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar29 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -2454,7 +2448,7 @@ LAB_004731dc:
             *(undefined8 **)(param_9 + 8) = puVar29;
           }
           if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
@@ -2488,10 +2482,7 @@ LAB_004731dc:
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,int param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+void WaterConcept::World::_walkStrip(long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,int param_5, undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10, undefined4 param_11,float param_12)
 
 {
   float *pfVar1;
@@ -3640,7 +3631,7 @@ LAB_00474dd4:
         puVar28 = *(undefined8 **)(param_9 + 8);
         if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
                     /* try { // try from 0047500c to 0047517f has its CatchHandler @ 00475244 */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar28 + 1) = uVar8;
@@ -3650,7 +3641,7 @@ LAB_00474dd4:
         if (bVar41) {
           puVar28 = *(undefined8 **)(param_9 + 8);
           if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
@@ -3661,7 +3652,7 @@ LAB_00474dd4:
         uStack_f0 = (int *)CONCAT44(fVar54 - fVar50 * fVar55,fVar53 - fVar56 * fVar55);
         puVar28 = *(undefined8 **)(param_9 + 8);
         if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
@@ -3673,7 +3664,7 @@ LAB_00474dd4:
           uStack_f0 = (int *)CONCAT44(fVar47 + fVar48 * fVar58,fVar51 + fVar53);
           puVar28 = *(undefined8 **)(param_9 + 8);
           if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar28 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -3684,7 +3675,7 @@ LAB_00474dd4:
           }
           uStack_f0 = (int *)CONCAT44(fVar47 - fVar48 * fVar58,fVar51 - fVar53);
           if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar28 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -3694,7 +3685,7 @@ LAB_00474dd4:
             *(undefined8 **)(param_9 + 8) = puVar28;
           }
           if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
@@ -3728,10 +3719,7 @@ LAB_00474dd4:
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,int param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+void WaterConcept::World::_walkStrip(long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,int param_5, undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10, undefined4 param_11,float param_12)
 
 {
   float *pfVar1;
@@ -4875,7 +4863,7 @@ LAB_00476994:
         puVar25 = *(undefined8 **)(param_9 + 8);
         if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
                     /* try { // try from 00476bcc to 00476d3f has its CatchHandler @ 00476e04 */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar25 + 1) = uVar8;
@@ -4885,7 +4873,7 @@ LAB_00476994:
         if (bVar17) {
           puVar25 = *(undefined8 **)(param_9 + 8);
           if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;
@@ -4896,7 +4884,7 @@ LAB_00476994:
         uStack_f0 = (int *)CONCAT44(fVar53 - fVar49 * fVar54,fVar52 - fVar55 * fVar54);
         puVar25 = *(undefined8 **)(param_9 + 8);
         if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;
@@ -4908,7 +4896,7 @@ LAB_00476994:
           uStack_f0 = (int *)CONCAT44(fVar46 + fVar47 * fVar57,fVar50 + fVar52);
           puVar25 = *(undefined8 **)(param_9 + 8);
           if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar25 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -4919,7 +4907,7 @@ LAB_00476994:
           }
           uStack_f0 = (int *)CONCAT44(fVar46 - fVar47 * fVar57,fVar50 - fVar52);
           if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
             puVar25 = *(undefined8 **)(param_9 + 8);
           }
           else {
@@ -4929,7 +4917,7 @@ LAB_00476994:
             *(undefined8 **)(param_9 + 8) = puVar25;
           }
           if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+            std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;

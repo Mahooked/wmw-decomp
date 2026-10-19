@@ -24,10 +24,7 @@
    Walaber::SoundManager::GotSoundCallbackData> > >::__equal_range_multi<std::__ndk1::pair<int, int>
    >(std::__ndk1::pair<int, int> const&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>
-::__equal_range_multi<std::__ndk1::pair<int,int>>(long param_1,int *param_2)
+template<> undefined1 [16] std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>::__equal_range_multi(long param_1,int *param_2)
 
 {
   int iVar1;

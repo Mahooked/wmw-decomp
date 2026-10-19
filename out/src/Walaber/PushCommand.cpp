@@ -1027,7 +1027,7 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
     std::__ndk1::list<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::push_back(param_1 + 0x18,param_2);
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_78,&DAT_00616c8a,param_2);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_78,&DAT_00616c8a,param_2);
                     /* try { // try from 003e9c1c to 003e9c2b has its CatchHandler @ 003e9d94 */
     pbVar4 = (byte *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(abStack_78,&DAT_00616c8a,1);
     uVar1 = *(undefined8 *)(pbVar4 + 0x10);

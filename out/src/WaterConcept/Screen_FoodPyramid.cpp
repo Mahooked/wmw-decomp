@@ -736,7 +736,7 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0, int * i
   uVar6 = *(undefined1 *)(lVar20 + 0x199);
   uVar7 = *(undefined1 *)(lVar20 + 0x19a);
   uVar8 = *(undefined1 *)(lVar20 + 0x19b);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_190,&DAT_00772868,&DAT_00619cc6);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_190,&DAT_00772868,&DAT_00619cc6);
   uVar26 = (ulong)(DAT_00772898 >> 1);
   puVar21 = &DAT_00772899;
   if ((DAT_00772898 & 1) != 0) {
@@ -1147,7 +1147,7 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0, int * i
       }
       else {
                     /* try { // try from 004d5968 to 004d597b has its CatchHandler @ 004d7290 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,"/Textures/",&fStack_2a0);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,"/Textures/",&fStack_2a0);
                     /* try { // try from 004d597c to 004d598f has its CatchHandler @ 004d7294 */
         puVar27 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_170,".png",4);
         uVar32 = puVar27[1];
@@ -1206,7 +1206,7 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0, int * i
                     /* try { // try from 004d5a60 to 004d5a63 has its CatchHandler @ 004d735c */
       uVar32 = Walaber::TextureManager::getManager();
                     /* try { // try from 004d5a68 to 004d5a7b has its CatchHandler @ 004d7358 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,"/Textures/",&fStack_2a0);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,"/Textures/",&fStack_2a0);
                     /* try { // try from 004d5a7c to 004d5a8f has its CatchHandler @ 004d7340 */
       puVar22 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_d0,".png",4);
       pvStack_160 = (void *)puVar22[2];
@@ -1393,7 +1393,7 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0, int * i
           puVar2 = *(uint **)((long)p0 + 0xa8);
           if (puVar2 == *(uint **)((long)p0 + 0xb0)) {
                     /* try { // try from 004d577c to 004d57af has its CatchHandler @ 004d72e8 */
-            void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>((long)p0 + 0xa0,auStack_2b8);
+            std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>((long)p0 + 0xa0,auStack_2b8);
           }
           else {
             *puVar2 = auStack_2b8[0];

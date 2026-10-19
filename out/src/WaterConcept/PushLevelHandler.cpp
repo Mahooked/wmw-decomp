@@ -97,7 +97,7 @@ void WaterConcept::PushLevelHandler::OnLevelCommand(void *p0)
          (Walaber::ScreenManager::popScreen(0,0), iVar1 == 6)))) && (lVar3 = Walaber::ScreenManager::peekTop(), lVar3 != 0)) {
       Walaber::ScreenManager::popScreen(0,0);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,"/Levels/",(long)p0 + 0x18);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,"/Levels/",(long)p0 + 0x18);
     pvStack_68 = (void *)0x0;
     pvStack_60 = (void *)0x0;
     uStack_58 = 0;

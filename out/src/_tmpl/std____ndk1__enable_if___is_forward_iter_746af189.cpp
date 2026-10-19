@@ -14,11 +14,7 @@
    >::assign<Walaber::ScreenManager::ScreenOperationDetails*>(Walaber::ScreenManager::ScreenOperationDetails*,
    Walaber::ScreenManager::ScreenOperationDetails*) */
 
-void std::__ndk1::
-     vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>
-     ::assign<Walaber::ScreenManager::ScreenOperationDetails*>
-               (Walaber__ScreenManager__ScreenOperationDetails *p0,
-               Walaber__ScreenManager__ScreenOperationDetails *p1)
+template<> void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::assign(Walaber__ScreenManager__ScreenOperationDetails *p0, Walaber__ScreenManager__ScreenOperationDetails *p1)
 
 {
   Walaber__ScreenManager__ScreenOperationDetails *pWVar1;
@@ -72,7 +68,7 @@ void std::__ndk1::
     }
     std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__vallocate(p0,uVar8);
   }
-  std::__ndk1::enable_if<__is_forward_iterator<Walaber::ScreenManager::ScreenOperationDetails*>::value, void>::type std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__construct_at_end<Walaber::ScreenManager::ScreenOperationDetails*>(p0,p1);
+  std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__construct_at_end<Walaber::ScreenManager::ScreenOperationDetails*>(p0,p1);
   return;
 }
 

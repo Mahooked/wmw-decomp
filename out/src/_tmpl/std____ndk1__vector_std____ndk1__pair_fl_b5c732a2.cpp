@@ -12,9 +12,7 @@
    >::vector(std::__ndk1::vector<std::__ndk1::pair<float, int>,
    std::__ndk1::allocator<std::__ndk1::pair<float, int> > > const&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::
-     vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -43,9 +41,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<std::__ndk1::pair<float, int>,
    std::__ndk1::allocator<std::__ndk1::pair<float, int> > >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::__vallocate(ulong p0)
 
 {
   long lVar1;

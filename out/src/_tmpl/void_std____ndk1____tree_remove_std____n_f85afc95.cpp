@@ -11,7 +11,7 @@
    std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(std::__ndk1::__tree_node_base<void*>*,
    std::__ndk1::__tree_node_base<void*>*) */
 
-void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(long *param_1,long *param_2)
+void std::__ndk1::__tree_remove(long *param_1,long *param_2)
 
 {
   bool bVar1;

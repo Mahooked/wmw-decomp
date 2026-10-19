@@ -19,10 +19,7 @@
    WaterConcept::ParallaxPuppetShow::TransitionData> >(std::__ndk1::pair<float,
    WaterConcept::ParallaxPuppetShow::TransitionData>&&) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>>>
-     ::__emplace_multi<std::__ndk1::pair<float,WaterConcept::ParallaxPuppetShow::TransitionData>>
-               (long param_1)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::TransitionData>>>::__emplace_multi(long param_1)
 
 {
   long *plVar2;
@@ -30,7 +27,7 @@ void std::__ndk1::
   long *plVar4;
   long alStack_40 [3];
   
-  std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, void*>, std::__ndk1::__tree_node_destructor<std::__ndk1::allocator<std::__ndk1::__tree_node<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, void*>>>> std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::__construct_node<std::__ndk1::pair<float, WaterConcept::ParallaxPuppetShow::TransitionData>>(alStack_40);
+  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::__construct_node<std::__ndk1::pair<float, WaterConcept::ParallaxPuppetShow::TransitionData>>(alStack_40);
   plVar3 = (long *)(param_1 + 8);
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {

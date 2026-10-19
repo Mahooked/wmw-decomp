@@ -10,10 +10,7 @@
 /* unsigned long std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>,
    std::__ndk1::allocator<unsigned int> >::__erase_unique<unsigned int>(unsigned int const&) */
 
-undefined8
-std::__ndk1::
-__tree<unsigned_int,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<unsigned_int>>::
-__erase_unique<unsigned_int>(uint *p0)
+template<> undefined8 std::__ndk1::__tree<unsigned_int,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<unsigned_int>>::__erase_unique(uint *p0)
 
 {
   uint uVar1;

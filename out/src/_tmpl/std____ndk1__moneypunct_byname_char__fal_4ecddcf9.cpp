@@ -9,7 +9,7 @@
 
 /* std::__ndk1::moneypunct_byname<char, false>::init(char const*) */
 
-void std::__ndk1::moneypunct_byname<char,false>::init(char *p0, undefined8 in_x1)
+template<> void std::__ndk1::moneypunct_byname<char,false>::init(char *p0, undefined8 in_x1)
 
 {
   char *pcVar1;
@@ -138,7 +138,7 @@ LAB_005c5a68:
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_decimal_point() const */
 
-undefined1 std::__ndk1::moneypunct_byname<char,false>::do_decimal_point(long param_1)
+template<> undefined1 std::__ndk1::moneypunct_byname<char,false>::do_decimal_point(long param_1)
 
 {
   return *(undefined1 *)(param_1 + 0x10);
@@ -152,7 +152,7 @@ undefined1 std::__ndk1::moneypunct_byname<char,false>::do_decimal_point(long par
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_thousands_sep() const */
 
-undefined1 std::__ndk1::moneypunct_byname<char,false>::do_thousands_sep(long param_1)
+template<> undefined1 std::__ndk1::moneypunct_byname<char,false>::do_thousands_sep(long param_1)
 
 {
   return *(undefined1 *)(param_1 + 0x11);
@@ -166,7 +166,7 @@ undefined1 std::__ndk1::moneypunct_byname<char,false>::do_thousands_sep(long par
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_grouping() const */
 
-void std::__ndk1::moneypunct_byname<char,false>::do_grouping(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<char,false>::do_grouping(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x18);
@@ -181,7 +181,7 @@ void std::__ndk1::moneypunct_byname<char,false>::do_grouping(undefined8 param_1,
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_curr_symbol() const */
 
-void std::__ndk1::moneypunct_byname<char,false>::do_curr_symbol(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<char,false>::do_curr_symbol(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x30);
@@ -196,7 +196,7 @@ void std::__ndk1::moneypunct_byname<char,false>::do_curr_symbol(undefined8 param
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_positive_sign() const */
 
-void std::__ndk1::moneypunct_byname<char,false>::do_positive_sign(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<char,false>::do_positive_sign(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x48);
@@ -211,7 +211,7 @@ void std::__ndk1::moneypunct_byname<char,false>::do_positive_sign(undefined8 par
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_negative_sign() const */
 
-void std::__ndk1::moneypunct_byname<char,false>::do_negative_sign(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<char,false>::do_negative_sign(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x60);
@@ -226,7 +226,7 @@ void std::__ndk1::moneypunct_byname<char,false>::do_negative_sign(undefined8 par
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_frac_digits() const */
 
-undefined4 std::__ndk1::moneypunct_byname<char,false>::do_frac_digits(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<char,false>::do_frac_digits(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x78);
@@ -240,7 +240,7 @@ undefined4 std::__ndk1::moneypunct_byname<char,false>::do_frac_digits(long param
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_pos_format() const */
 
-undefined4 std::__ndk1::moneypunct_byname<char,false>::do_pos_format(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<char,false>::do_pos_format(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x7c);
@@ -254,7 +254,7 @@ undefined4 std::__ndk1::moneypunct_byname<char,false>::do_pos_format(long param_
 
 /* std::__ndk1::moneypunct_byname<char, false>::do_neg_format() const */
 
-undefined4 std::__ndk1::moneypunct_byname<char,false>::do_neg_format(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<char,false>::do_neg_format(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x80);

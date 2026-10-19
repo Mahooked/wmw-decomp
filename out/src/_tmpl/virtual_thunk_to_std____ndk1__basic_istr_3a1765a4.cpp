@@ -10,10 +10,10 @@
 /* virtual thunk to std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>
    >::~basic_istream() */
 
-void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::~basic_istream(long *param_1)
+template<> std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::~basic_istream()
 
 {
-  ((std::__ndk1::ios_base *)(long)param_1 + *(long *)(*param_1 + -0x18) + 0x10)->~ios_base();
+  ((std::__ndk1::ios_base *)(long)(byte *)this + *(long *)(*(byte *)this + -0x18) + 0x10)->~ios_base();
   return;
 }
 
@@ -26,12 +26,12 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::~basic_ist
 /* virtual thunk to std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>
    >::~basic_istream() */
 
-void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::~basic_istream(long *param_1)
+template<> std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::~basic_istream()
 
 {
   void *p0;
   
-  p0 = (void *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  p0 = (void *)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
   ((std::__ndk1::ios_base *)(long)p0 + 0x10)->~ios_base();
   operator delete(p0);
   return;

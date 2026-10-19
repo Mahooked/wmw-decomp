@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>
    >::vector(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::vector
-               (ulong p0)
+template<> std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::vector(ulong p0)
 
 {
   long in_x1;
@@ -36,8 +35,7 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
 /* std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__vallocate
-               (ulong p0)
+template<> void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -63,8 +61,7 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
 /* std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>
    >::__construct_at_end(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::
-     __construct_at_end(ulong p0)
+template<> void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__construct_at_end(ulong p0)
 
 {
   long in_x1;
@@ -106,9 +103,7 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
    >::insert(std::__ndk1::__wrap_iter<Walaber::Particle const*>, unsigned long, Walaber::Particle
    const&) */
 
-undefined8 *
-std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::insert
-          (long *param_1,undefined8 *param_2,ulong param_3,undefined8 *param_4)
+template<> undefined8 * std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::insert(long *param_1,undefined8 *param_2,ulong param_3,undefined8 *param_4)
 
 {
   undefined8 *puVar2;
@@ -232,8 +227,7 @@ LAB_00393de0:
 /* std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>
    >::__move_range(Walaber::Particle*, Walaber::Particle*, Walaber::Particle*) */
 
-void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__move_range
-               (Walaber__Particle *p0,Walaber__Particle *p1,Walaber__Particle *p2)
+template<> void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__move_range(Walaber__Particle *p0,Walaber__Particle *p1,Walaber__Particle *p2)
 
 {
   Walaber__Particle *pWVar1;
@@ -311,8 +305,7 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Particle,
    std::__ndk1::allocator<Walaber::Particle>&>&, Walaber::Particle*) */
 
-long std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+template<> long std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   undefined2 *puVar1;

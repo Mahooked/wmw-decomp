@@ -14,10 +14,7 @@
    std::__ndk1::allocator<std::__ndk1::pair<float, int> > >::assign<std::__ndk1::pair<float,
    int>*>(std::__ndk1::pair<float, int>*, std::__ndk1::pair<float, int>*) */
 
-void std::__ndk1::
-     vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::
-     assign<std::__ndk1::pair<float,int>*>
-               (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> void std::__ndk1::vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::assign(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   ulong uVar1;

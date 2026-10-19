@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::Transition_Iris::BladeInfo
    const&>(Walaber::Transition_Iris::BladeInfo const&) */
 
-void std::__ndk1::
-     vector<Walaber::Transition_Iris::BladeInfo,std::__ndk1::allocator<Walaber::Transition_Iris::BladeInfo>>
-     ::__push_back_slow_path<Walaber::Transition_Iris::BladeInfo_const&>
-               (Walaber__Transition_Iris__BladeInfo *p0)
+template<> void std::__ndk1::vector<Walaber::Transition_Iris::BladeInfo,std::__ndk1::allocator<Walaber::Transition_Iris::BladeInfo>>::__push_back_slow_path(Walaber__Transition_Iris__BladeInfo *p0)
 
 {
   ulong uVar1;

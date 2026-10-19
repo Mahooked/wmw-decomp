@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<WaterConcept::FluidConverter>::~MemberCallback() */
 
-void Walaber::MemberCallback<WaterConcept::FluidConverter>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<WaterConcept::FluidConverter>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<WaterConcept::FluidConverter>::~MemberCallback(void
 
 /* Walaber::MemberCallback<WaterConcept::FluidConverter>::invoke(void*) */
 
-void Walaber::MemberCallback<WaterConcept::FluidConverter>::invoke(void *p0)
+template<> void Walaber::MemberCallback<WaterConcept::FluidConverter>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

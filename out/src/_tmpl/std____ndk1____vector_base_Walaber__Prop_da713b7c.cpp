@@ -10,8 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::PropertyList, std::__ndk1::allocator<Walaber::PropertyList>
    >::~__vector_base() */
 
-void std::__ndk1::__vector_base<Walaber::PropertyList,std::__ndk1::allocator<Walaber::PropertyList>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::PropertyList,std::__ndk1::allocator<Walaber::PropertyList>>::~__vector_base()
 
 {
   void *p0;

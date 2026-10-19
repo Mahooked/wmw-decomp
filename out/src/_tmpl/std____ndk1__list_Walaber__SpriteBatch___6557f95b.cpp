@@ -13,9 +13,7 @@
    std::__ndk1::list<Walaber::SpriteBatch::DrawAction*,
    std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*> >&) */
 
-void std::__ndk1::
-     list<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>
-     ::splice(long param_1,long *param_2,long *param_3)
+template<> void std::__ndk1::list<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::splice(long param_1,long *param_2,long *param_3)
 
 {
   long lVar1;

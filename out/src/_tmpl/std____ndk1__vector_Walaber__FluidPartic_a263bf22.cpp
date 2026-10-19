@@ -11,9 +11,7 @@
    >::insert(std::__ndk1::__wrap_iter<Walaber::FluidParticle const*>, unsigned long,
    Walaber::FluidParticle const&) */
 
-undefined8 *
-std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::insert
-          (long *param_1,undefined8 *param_2,ulong param_3,undefined8 *param_4)
+template<> undefined8 * std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::insert(long *param_1,undefined8 *param_2,ulong param_3,undefined8 *param_4)
 
 {
   undefined8 *puVar2;
@@ -129,8 +127,7 @@ LAB_0038dc9c:
 /* std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>
    >::__move_range(Walaber::FluidParticle*, Walaber::FluidParticle*, Walaber::FluidParticle*) */
 
-void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __move_range(Walaber__FluidParticle *p0,Walaber__FluidParticle *p1,Walaber__FluidParticle *p2)
+template<> void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::__move_range(Walaber__FluidParticle *p0,Walaber__FluidParticle *p1,Walaber__FluidParticle *p2)
 
 {
   undefined8 *puVar1;
@@ -198,8 +195,7 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::FluidParticle,
    std::__ndk1::allocator<Walaber::FluidParticle>&>&, Walaber::FluidParticle*) */
 
-long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+template<> long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   undefined8 *puVar1;
@@ -276,8 +272,7 @@ long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
    >::vector(std::__ndk1::vector<Walaber::FluidParticle,
    std::__ndk1::allocator<Walaber::FluidParticle> > const&) */
 
-void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -289,7 +284,7 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
     lVar1 = (param_2[1] - *param_2 >> 4) * -0x71c71c71c71c71c7;
                     /* try { // try from 0040a340 to 0040a357 has its CatchHandler @ 0040a368 */
     std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__vallocate(param_1,lVar1);
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::FluidParticle*>::value, void>::type std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__construct_at_end<Walaber::FluidParticle*>(param_1,*param_2,param_2[1],lVar1);
+    std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__construct_at_end<Walaber::FluidParticle*>(param_1,*param_2,param_2[1],lVar1);
   }
   return;
 }
@@ -303,8 +298,7 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
 /* std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::__vallocate(ulong p0)
 
 {
   long lVar1;

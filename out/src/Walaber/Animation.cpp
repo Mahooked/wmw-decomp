@@ -82,7 +82,7 @@
       }
       else {
                     /* try { // try from 00331a68 to 00331a73 has its CatchHandler @ 00331ca0 */
-        void std::__ndk1::vector<Walaber::NumericAnimationTrack*, std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path<Walaber::NumericAnimationTrack*>(&p0->f_0x18,&uStack_70);
+        std::__ndk1::vector<Walaber::NumericAnimationTrack*, std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path<Walaber::NumericAnimationTrack*>(&p0->f_0x18,&uStack_70);
       }
       uVar6 = uVar6 + 1;
     } while (uVar6 < (uVar5 >> 3 & 0xffffffff));
@@ -102,7 +102,7 @@
       }
       else {
                     /* try { // try from 00331ad4 to 00331adf has its CatchHandler @ 00331c9c */
-        void std::__ndk1::vector<Walaber::NodeAnimationTrack*, std::__ndk1::allocator<Walaber::NodeAnimationTrack*>>::__push_back_slow_path<Walaber::NodeAnimationTrack*>(&p0->f_0x30,&uStack_70);
+        std::__ndk1::vector<Walaber::NodeAnimationTrack*, std::__ndk1::allocator<Walaber::NodeAnimationTrack*>>::__push_back_slow_path<Walaber::NodeAnimationTrack*>(&p0->f_0x30,&uStack_70);
       }
       uVar6 = uVar6 + 1;
     } while (uVar6 < (uVar5 >> 3 & 0xffffffff));
@@ -122,7 +122,7 @@
       }
       else {
                     /* try { // try from 00331b40 to 00331b4b has its CatchHandler @ 00331c98 */
-        void std::__ndk1::vector<Walaber::SpriteAnimationTrack*, std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path<Walaber::SpriteAnimationTrack*>(&p0->f_0x48,&uStack_70);
+        std::__ndk1::vector<Walaber::SpriteAnimationTrack*, std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path<Walaber::SpriteAnimationTrack*>(&p0->f_0x48,&uStack_70);
       }
       uVar6 = uVar6 + 1;
     } while (uVar6 < (uVar5 >> 3 & 0xffffffff));
@@ -142,7 +142,7 @@
       }
       else {
                     /* try { // try from 00331bac to 00331bb7 has its CatchHandler @ 00331c94 */
-        void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack*, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack*>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack*>(&p0->f_0x60,&uStack_70);
+        std::__ndk1::vector<Walaber::AnimationCueAnimationTrack*, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack*>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack*>(&p0->f_0x60,&uStack_70);
       }
       uVar6 = uVar6 + 1;
     } while (uVar6 < (uVar5 >> 3 & 0xffffffff));
@@ -162,7 +162,7 @@
       }
       else {
                     /* try { // try from 00331c18 to 00331c23 has its CatchHandler @ 00331c90 */
-        void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*>(&p0->f_0x78,&uStack_70);
+        std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*>(&p0->f_0x78,&uStack_70);
       }
       uVar6 = uVar6 + 1;
     } while (uVar6 < (uVar5 >> 3 & 0xffffffff));
@@ -204,7 +204,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
         p0->f_0x20 = p0->f_0x20 + 8;
       }
       else {
-        void std::__ndk1::vector<Walaber::NumericAnimationTrack*, std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path<Walaber::NumericAnimationTrack*>(&p0->f_0x18,&uStack_60);
+        std::__ndk1::vector<Walaber::NumericAnimationTrack*, std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path<Walaber::NumericAnimationTrack*>(&p0->f_0x18,&uStack_60);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < (uVar6 >> 3 & 0xffffffff));
@@ -222,7 +222,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
         p0->f_0x38 = p0->f_0x38 + 8;
       }
       else {
-        void std::__ndk1::vector<Walaber::NodeAnimationTrack*, std::__ndk1::allocator<Walaber::NodeAnimationTrack*>>::__push_back_slow_path<Walaber::NodeAnimationTrack*>(&p0->f_0x30,&uStack_60);
+        std::__ndk1::vector<Walaber::NodeAnimationTrack*, std::__ndk1::allocator<Walaber::NodeAnimationTrack*>>::__push_back_slow_path<Walaber::NodeAnimationTrack*>(&p0->f_0x30,&uStack_60);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < (uVar6 >> 3 & 0xffffffff));
@@ -240,7 +240,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
         p0->f_0x50 = p0->f_0x50 + 8;
       }
       else {
-        void std::__ndk1::vector<Walaber::SpriteAnimationTrack*, std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path<Walaber::SpriteAnimationTrack*>(&p0->f_0x48,&uStack_60);
+        std::__ndk1::vector<Walaber::SpriteAnimationTrack*, std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path<Walaber::SpriteAnimationTrack*>(&p0->f_0x48,&uStack_60);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < (uVar6 >> 3 & 0xffffffff));
@@ -258,7 +258,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
         p0->f_0x68 = p0->f_0x68 + 8;
       }
       else {
-        void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack*, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack*>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack*>(&p0->f_0x60,&uStack_60);
+        std::__ndk1::vector<Walaber::AnimationCueAnimationTrack*, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack*>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack*>(&p0->f_0x60,&uStack_60);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < (uVar6 >> 3 & 0xffffffff));
@@ -276,7 +276,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
         p0->f_0x80 = p0->f_0x80 + 8;
       }
       else {
-        void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*>(&p0->f_0x78,&uStack_60);
+        std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*>(&p0->f_0x78,&uStack_60);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < (uVar6 >> 3 & 0xffffffff));
@@ -295,7 +295,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
   p0->f_0xdc = in_x1->f_0xdc;
   p0->f_0xe0 = uVar2;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<std::__ndk1::pair<float, int>*>::value&&is_constructible<std::__ndk1::pair<float, int>, std::__ndk1::iterator_traits<std::__ndk1::pair<float, int>*>::reference>::value, void>::type std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::assign<std::__ndk1::pair<float, int>*>(&p0->f_0x90,in_x1->f_0x90,in_x1->f_0x98);
+    std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::assign<std::__ndk1::pair<float, int>*>(&p0->f_0x90,in_x1->f_0x90,in_x1->f_0x98);
   }
   p0->f_0xe4 = in_x1->f_0xe4;
   p0->f_0xd8 = in_x1->f_0xd8;
@@ -523,7 +523,7 @@ LAB_0033247c:
   p0->f_0xdc = in_x1->f_0xdc;
   p0->f_0xe0 = in_x1->f_0xe0;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<std::__ndk1::pair<float, int>*>::value&&is_constructible<std::__ndk1::pair<float, int>, std::__ndk1::iterator_traits<std::__ndk1::pair<float, int>*>::reference>::value, void>::type std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::assign<std::__ndk1::pair<float, int>*>(&p0->f_0x90,in_x1->f_0x90,in_x1->f_0x98);
+    std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::assign<std::__ndk1::pair<float, int>*>(&p0->f_0x90,in_x1->f_0x90,in_x1->f_0x98);
   }
   p0->f_0xe4 = in_x1->f_0xe4;
   p0->f_0x100 = in_x1->f_0x100;
@@ -964,7 +964,7 @@ void Walaber::Animation::addNodeTrack(Walaber__NodeAnimationTrack *p0, long in_x
   lStack_40 = in_x1;
   Walaber::NodeAnimationTrack::setAnimation();
   if ((long *)p0->f_0x38 == *(long **)&p0->field_0x40) {
-    void std::__ndk1::vector<Walaber::NodeAnimationTrack*, std::__ndk1::allocator<Walaber::NodeAnimationTrack*>>::__push_back_slow_path<Walaber::NodeAnimationTrack* const&>(&p0->field_0x30,&lStack_40);
+    std::__ndk1::vector<Walaber::NodeAnimationTrack*, std::__ndk1::allocator<Walaber::NodeAnimationTrack*>>::__push_back_slow_path<Walaber::NodeAnimationTrack* const&>(&p0->field_0x30,&lStack_40);
   }
   else {
     *(long *)p0->f_0x38 = in_x1;
@@ -1474,7 +1474,7 @@ void Walaber::Animation::addSpriteTrack(Walaber__SpriteAnimationTrack *p0, long 
   *(Walaber__SpriteAnimationTrack **)(in_x1 + 0x18) = p0;
   lStack_30 = in_x1;
   if ((long *)p0[1].f_0x8 == (long *)p0[1].f_0x10) {
-    void std::__ndk1::vector<Walaber::SpriteAnimationTrack*, std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path<Walaber::SpriteAnimationTrack* const&>(p0 + 1,&lStack_30);
+    std::__ndk1::vector<Walaber::SpriteAnimationTrack*, std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path<Walaber::SpriteAnimationTrack* const&>(p0 + 1,&lStack_30);
   }
   else {
     *(long *)p0[1].f_0x8 = in_x1;
@@ -1510,7 +1510,7 @@ void Walaber::Animation::addNumericTrack(Walaber__NumericAnimationTrack *p0, lon
   plStack_40 = in_x1;
   Walaber::NumericAnimationTrack::setAnimation();
   if ((undefined8 *)p0->animation == (undefined8 *)p0[1].f_0x0) {
-    void std::__ndk1::vector<Walaber::NumericAnimationTrack*, std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path<Walaber::NumericAnimationTrack* const&>(&p0->f_0x18,&plStack_40);
+    std::__ndk1::vector<Walaber::NumericAnimationTrack*, std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path<Walaber::NumericAnimationTrack* const&>(&p0->f_0x18,&plStack_40);
   }
   else {
     *(undefined8 *)p0->animation = in_x1;
@@ -1546,7 +1546,7 @@ void Walaber::Animation::addAnimationCueTrack(Walaber__AnimationCueAnimationTrac
   *(Walaber__AnimationCueAnimationTrack **)(in_x1 + 8) = p0;
   lStack_30 = in_x1;
   if ((long *)p0[2].f_0x8 == (long *)p0[2].f_0x10) {
-    void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack*, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack*>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack* const&>(p0 + 2,&lStack_30);
+    std::__ndk1::vector<Walaber::AnimationCueAnimationTrack*, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack*>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack* const&>(p0 + 2,&lStack_30);
   }
   else {
     *(long *)p0[2].f_0x8 = in_x1;
@@ -1580,7 +1580,7 @@ void Walaber::Animation::addSkeletonActorCueTrack(Walaber__SkeletonActorCueAnima
   
   lStack_30 = in_x1;
   if ((long *)p0[3].f_0x8 == (long *)p0[3].f_0x10) {
-    void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack* const&>(p0 + 3,&lStack_30);
+    std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack* const&>(p0 + 3,&lStack_30);
   }
   else {
     *(long *)p0[3].f_0x8 = in_x1;
@@ -1692,7 +1692,7 @@ LAB_003341c8:
       }
       puVar1 = *(undefined4 **)(param_1 + 0xf0);
       if (puVar1 == *(undefined4 **)(param_1 + 0xf8)) {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0xe8,&uStack_7c);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0xe8,&uStack_7c);
       }
       else {
         *puVar1 = uStack_7c;
@@ -1927,7 +1927,7 @@ void Walaber::Animation::addMarker(float p0,int p1)
     *(long *)(uVar2 + 0x98) = lVar3;
   }
   else {
-    void std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::__push_back_slow_path<std::__ndk1::pair<float, int>>((undefined8 *)(uVar2 + 0x90),&pcStack_40);
+    std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::__push_back_slow_path<std::__ndk1::pair<float, int>>((undefined8 *)(uVar2 + 0x90),&pcStack_40);
     lVar3 = *(long *)(uVar2 + 0x98);
   }
   pcStack_40 = _markerCompare;

@@ -11,12 +11,10 @@
    std::__ndk1::less<Walaber::Bone*>, std::__ndk1::allocator<std::__ndk1::pair<Walaber::Bone* const,
    Walaber::Skeleton::BoneLocalData> > >::~map() */
 
-void std::__ndk1::
-     map<Walaber::Bone*,Walaber::Skeleton::BoneLocalData,std::__ndk1::less<Walaber::Bone*>,std::__ndk1::allocator<std::__ndk1::pair<Walaber::Bone*const,Walaber::Skeleton::BoneLocalData>>>
-     ::~map(long param_1)
+template<> std::__ndk1::map<Walaber::Bone*,Walaber::Skeleton::BoneLocalData,std::__ndk1::less<Walaber::Bone*>,std::__ndk1::allocator<std::__ndk1::pair<Walaber::Bone*const,Walaber::Skeleton::BoneLocalData>>>::~map()
 
 {
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::__map_value_compare<Walaber::Bone*, std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::less<Walaber::Bone*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::__map_value_compare<Walaber::Bone*, std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::less<Walaber::Bone*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

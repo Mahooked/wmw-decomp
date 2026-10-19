@@ -1506,7 +1506,7 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
     else {
       new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00784d00);
                     /* try { // try from 00532b44 to 00532b57 has its CatchHandler @ 00532db4 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98,&DAT_00784ce8,"=\'");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98,&DAT_00784ce8,"=\'");
       uVar6 = DAT_00735dd8;
       puVar2 = DAT_00735de0;
       if ((GameSettings::currentLevelName & 1) == 0) {
@@ -1565,7 +1565,7 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
         pvStack_70 = (void *)0x0;
         auStack_98[0] = GameSettings::currentStoryline;
                     /* try { // try from 00532c58 to 00532c63 has its CatchHandler @ 00532d58 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&bStack_80,auStack_98);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&bStack_80,auStack_98);
                     /* try { // try from 00532c64 to 00532c73 has its CatchHandler @ 00532d54 */
         Walaber::DatabaseIterator::getStringAtIndex(auStack_98,auStack_a0,0);
         uVar3 = GameSettings::currentLevelChallengeID;

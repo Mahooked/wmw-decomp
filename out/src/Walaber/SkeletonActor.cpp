@@ -78,7 +78,7 @@
   *(undefined8 *)(this + 0x38) = 0;
                     /* try { // try from 00340104 to 0034010b has its CatchHandler @ 003403f8 */
   lStack_70 = this;
-  unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::__erase_unique<void*>(*(long *)(this + 8) + 0x110,&lStack_70);
+  std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::__erase_unique<void*>(*(long *)(this + 8) + 0x110,&lStack_70);
   plVar8 = *(long **)(this + 0x10);
   while (plVar8 != (long *)(this + 0x18)) {
     plVar4 = (long *)plVar8[7];
@@ -842,7 +842,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(void *p0, long in_x1)
                 lVar17 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>((long)p0 + 0x140,lVar17,&DAT_00628882,&uStack_d0,
                                          &uStack_180);
                 if ((qword **)(lVar17 + 0x28) != &pqStack_148) {
-                  std::__ndk1::enable_if<__is_forward_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>*>::value&&is_constructible<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::iterator_traits<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>*>::reference>::value, void>::type std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::assign<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>*>((qword **)(lVar17 + 0x28),pqStack_148,qStack_140);
+                  std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::assign<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>*>((qword **)(lVar17 + 0x28),pqStack_148,qStack_140);
                 }
                     /* try { // try from 00340f5c to 00340f67 has its CatchHandler @ 0034415c */
                 Walaber::XMLDocument::Iterator::getChildIterator(&bStack_200,&pbStack_1d8);
@@ -901,7 +901,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(void *p0, long in_x1)
                         }
                         else {
                     /* try { // try from 0034104c to 00341057 has its CatchHandler @ 00344180 */
-                          void std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupDataAux>(lVar17 + 0x28,&uStack_d0);
+                          std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupDataAux>(lVar17 + 0x28,&uStack_d0);
                           if ((uStack_d0 & 1) != 0) {
                             operator delete(pvStack_c0);
                           }
@@ -1117,7 +1117,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(void *p0, long in_x1)
                     }
                     else {
                     /* try { // try from 00341380 to 0034138b has its CatchHandler @ 003444f4 */
-                      void std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupData>(lVar16 + 0x28,&uStack_d0);
+                      std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupData>(lVar16 + 0x28,&uStack_d0);
                       lVar34 = *(long *)(lVar16 + 0x30);
                     }
                     *(undefined4 *)(lVar34 + -0x10) = *(undefined4 *)(lVar17 + 0x38);
@@ -1226,7 +1226,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(void *p0, long in_x1)
                     /* try { // try from 00341624 to 0034162f has its CatchHandler @ 003441bc */
             Walaber::Property::asString(&pbStack_2b0,&bStack_290);
             if (*(long *)((long)p0 + 0xb8) == *(long *)((long)p0 + 0xc0)) {
-              void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0xb0,&pbStack_2b0);
+              std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0xb0,&pbStack_2b0);
             }
             else {
                     /* try { // try from 00341640 to 00341667 has its CatchHandler @ 003441e0 */
@@ -1252,7 +1252,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(void *p0, long in_x1)
                                      &pbStack_1d8);
             ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(lVar16 + 0x28))->operator=(&uStack_130);
             if (*(long *)((long)p0 + 0xa0) == *(long *)((long)p0 + 0xa8)) {
-              void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0x98,&uStack_130);
+              std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0x98,&uStack_130);
             }
             else {
                     /* try { // try from 00341708 to 0034172f has its CatchHandler @ 00344368 */
@@ -1386,7 +1386,7 @@ LAB_0034184c:
                           lVar35 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>((long)p0 + 0x140,&pcStack_230,&DAT_00628882,
                                                    &bStack_200,alStack_1c0);
                           if (*(long *)(lVar35 + 0x30) == *(long *)(lVar35 + 0x38)) {
-                            void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(lVar35 + 0x28,&uStack_130);
+                            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(lVar35 + 0x28,&uStack_130);
                           }
                           else {
                             new ((void *)(*(long *)(lVar35 + 0x30))) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_130);
@@ -1634,7 +1634,7 @@ LAB_00342018:
                             }
                             else {
                     /* try { // try from 0034202c to 00342037 has its CatchHandler @ 003446ac */
-                              void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
+                              std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
                             }
 LAB_00342038:
                             ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&bStack_200)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
@@ -1936,7 +1936,7 @@ LAB_00342038:
                                 uStack_1f1 = (undefined1)((ulong)puVar19 >> 0x38);
                                 if (puStack_1d0 < puStack_1c8) goto LAB_00342018;
                     /* try { // try from 0034255c to 00342567 has its CatchHandler @ 003445cc */
-                                void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
+                                std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
                                 goto LAB_00342038;
                               }
                             }
@@ -2153,7 +2153,7 @@ LAB_00342038:
                                   uStack_1f1 = (undefined1)((ulong)puVar19 >> 0x38);
                                   if (puStack_1d0 < puStack_1c8) goto LAB_00342018;
                     /* try { // try from 003422dc to 003422e7 has its CatchHandler @ 00344530 */
-                                  void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
+                                  std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
                                   goto LAB_00342038;
                                 }
                               }
@@ -2277,7 +2277,7 @@ LAB_00342038:
                                     uStack_1f1 = (undefined1)((ulong)puVar19 >> 0x38);
                                     if (puStack_1d0 < puStack_1c8) goto LAB_00342018;
                     /* try { // try from 00341f58 to 00341f63 has its CatchHandler @ 003444f8 */
-                                    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
+                                    std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>(&pbStack_1d8,&bStack_200);
                                     goto LAB_00342038;
                                   }
                                 }
@@ -2351,7 +2351,7 @@ LAB_00342038:
                                   plVar20 = *(long **)(lVar35 + 0x30);
                                   if (plVar20 == *(long **)(lVar35 + 0x38)) {
                     /* try { // try from 003428ec to 003428f3 has its CatchHandler @ 0034470c */
-                                    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>((undefined8 *)(lVar35 + 0x28));
+                                    std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>((undefined8 *)(lVar35 + 0x28));
                                   }
                                   else {
                                     *plVar20 = lVar30;
@@ -2398,7 +2398,7 @@ LAB_00342600:
                                       plVar20 = *(long **)(lVar35 + 0x30);
                                       if (plVar20 == *(long **)(lVar35 + 0x38)) {
                     /* try { // try from 003429a8 to 003429af has its CatchHandler @ 00344708 */
-                                        void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
+                                        std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
                                       }
                                       else {
                                         lVar30 = *(long *)(pbStack_1d8 + lVar34);
@@ -2449,7 +2449,7 @@ LAB_00342600:
                                       plVar20 = *(long **)(lVar35 + 0x30);
                                       if (plVar20 == *(long **)(lVar35 + 0x38)) {
                     /* try { // try from 00342a50 to 00342a57 has its CatchHandler @ 00344700 */
-                                        void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
+                                        std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
                                       }
                                       else {
                                         lVar30 = *(long *)(pbStack_1d8 + lVar34);
@@ -2500,7 +2500,7 @@ LAB_00342600:
                                       plVar20 = *(long **)(lVar35 + 0x30);
                                       if (plVar20 == *(long **)(lVar35 + 0x38)) {
                     /* try { // try from 00342af8 to 00342aff has its CatchHandler @ 003446e0 */
-                                        void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
+                                        std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
                                       }
                                       else {
                                         lVar30 = *(long *)(pbStack_1d8 + lVar34);
@@ -2551,7 +2551,7 @@ LAB_00342600:
                                       plVar20 = *(long **)(lVar35 + 0x30);
                                       if (plVar20 == *(long **)(lVar35 + 0x38)) {
                     /* try { // try from 00342ba0 to 00342ba7 has its CatchHandler @ 003446d8 */
-                                        void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
+                                        std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
                                       }
                                       else {
                                         lVar30 = *(long *)(pbStack_1d8 + lVar34);
@@ -2599,7 +2599,7 @@ LAB_00342600:
                                     plVar20 = *(long **)(lVar35 + 0x30);
                                     if (plVar20 == *(long **)(lVar35 + 0x38)) {
                     /* try { // try from 003427bc to 003427c3 has its CatchHandler @ 003446d0 */
-                                      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
+                                      std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&>(lVar35 + 0x28);
                                     }
                                     else {
                                       lVar30 = *(long *)(pbStack_1d8 + lVar34);
@@ -3461,7 +3461,7 @@ LAB_00343470:
             }
             if (*(long **)((long)p0 + 0x48) == *(long **)((long)p0 + 0x50)) {
                     /* try { // try from 00343fdc to 00343fe7 has its CatchHandler @ 0034416c */
-              void std::__ndk1::vector<Walaber::ParticleEmitter*, std::__ndk1::allocator<Walaber::ParticleEmitter*>>::__push_back_slow_path<Walaber::ParticleEmitter* const&>((long)p0 + 0x40,&uStack_160);
+              std::__ndk1::vector<Walaber::ParticleEmitter*, std::__ndk1::allocator<Walaber::ParticleEmitter*>>::__push_back_slow_path<Walaber::ParticleEmitter* const&>((long)p0 + 0x40,&uStack_160);
             }
             else {
               **(long **)((long)p0 + 0x48) = (long)uStack_160;
@@ -3595,7 +3595,7 @@ LAB_00344928:
         new ((void *)(abStack_98)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>((long)WVar4 + 0x20);
         uStack_80 = *(undefined8 *)((long)WVar4 + 0x38);
                     /* try { // try from 00344950 to 0034495f has its CatchHandler @ 00344a8c */
-        std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>(p0 + 5,abStack_98,abStack_98);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>(p0 + 5,abStack_98,abStack_98);
         if ((abStack_98[0] & 1) != 0) {
           operator delete(pvStack_88);
         }
@@ -4878,7 +4878,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
         new ((void *)(&puStack_a8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar14);
         uStack_90 = *(undefined8 *)(lVar13 + 0x38);
                     /* try { // try from 003460e4 to 003460f3 has its CatchHandler @ 003465c0 */
-        std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>(param_1 + 0x28,&puStack_a8,&puStack_a8);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>(param_1 + 0x28,&puStack_a8,&puStack_a8);
         if (((byte)puStack_a8 & 1) != 0) {
           operator delete(pvStack_98);
         }
@@ -4981,7 +4981,7 @@ void Walaber::SkeletonActor::_soundLoaded(void *p0, long in_x1)
   if (*plVar7 != 0) {
     plVar2 = *(long **)((long)p0 + 0x180);
     if (plVar2 == *(long **)((long)p0 + 0x188)) {
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x178,plVar7);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x178,plVar7);
     }
     else {
       *plVar2 = *plVar7;
@@ -5174,7 +5174,7 @@ void Walaber::SkeletonActor::_gotSoundFile(void *p0, int * in_x1)
     if (*plVar8 != 0) {
       plVar1 = *(long **)((long)p0 + 0x180);
       if (plVar1 == *(long **)((long)p0 + 0x188)) {
-        void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x178,plVar8);
+        std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x178,plVar8);
       }
       else {
         *plVar1 = *plVar8;

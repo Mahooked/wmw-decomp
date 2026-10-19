@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConceptConstants::MaterialType>(WaterConceptConstants::MaterialType&&)
     */
 
-void std::__ndk1::
-     vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>
-     ::__push_back_slow_path<WaterConceptConstants::MaterialType>
-               (WaterConceptConstants__MaterialType **p0)
+template<> void std::__ndk1::vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path(WaterConceptConstants__MaterialType **p0)
 
 {
   undefined4 *in_x1;
@@ -88,10 +85,7 @@ void std::__ndk1::
    >::__push_back_slow_path<WaterConceptConstants::MaterialType
    const&>(WaterConceptConstants::MaterialType const&) */
 
-void std::__ndk1::
-     vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>
-     ::__push_back_slow_path<WaterConceptConstants::MaterialType_const&>
-               (WaterConceptConstants__MaterialType *p0)
+template<> void std::__ndk1::vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path(WaterConceptConstants__MaterialType *p0)
 
 {
   undefined4 *in_x1;

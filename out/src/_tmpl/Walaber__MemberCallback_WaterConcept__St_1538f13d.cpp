@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<WaterConcept::StarSeed>::~MemberCallback() */
 
-void Walaber::MemberCallback<WaterConcept::StarSeed>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<WaterConcept::StarSeed>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<WaterConcept::StarSeed>::~MemberCallback(void *p0)
 
 /* Walaber::MemberCallback<WaterConcept::StarSeed>::invoke(void*) */
 
-void Walaber::MemberCallback<WaterConcept::StarSeed>::invoke(void *p0)
+template<> void Walaber::MemberCallback<WaterConcept::StarSeed>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

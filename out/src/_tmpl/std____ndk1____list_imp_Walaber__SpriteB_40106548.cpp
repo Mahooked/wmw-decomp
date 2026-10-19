@@ -10,9 +10,7 @@
 /* std::__ndk1::__list_imp<Walaber::SpriteBatch::DrawAction*,
    std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*> >::clear() */
 
-void std::__ndk1::
-     __list_imp<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>
-     ::clear(long *param_1)
+template<> void std::__ndk1::__list_imp<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::clear(long *param_1)
 
 {
   long lVar1;

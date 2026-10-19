@@ -9,7 +9,7 @@
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::codecvt(char const*, unsigned long) */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1, long in_x2)
+template<> std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
@@ -89,7 +89,7 @@ LAB_005cd6cc:
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::codecvt(unsigned long) */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(ulong p0, long in_x1)
+template<> std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(ulong p0, long in_x1)
 
 {
   int iVar1;
@@ -116,11 +116,11 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(ulong p0, long in_x1)
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::~codecvt() */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt(void *param_1)
+template<> std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt()
 
 {
   std::__ndk1::codecvt<wchar_t, char, mbstate_t>::~codecvt();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 
@@ -133,8 +133,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt(void *param_1)
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::do_out(mbstate_t&, wchar_t const*, wchar_t
    const*, wchar_t const*&, char*, char*, char*&) const */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_out
-               (mbstate_t *p0,wchar_t *p1,wchar_t *p2,wchar_t **p3,char *p4,char *p5,char **p6)
+template<> void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_out(mbstate_t *p0,wchar_t *p1,wchar_t *p2,wchar_t **p3,char *p4,char *p5,char **p6)
 
 {
   wchar_t wVar1;
@@ -270,8 +269,7 @@ LAB_005d84f8:
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::do_in(mbstate_t&, char const*, char const*, char
    const*&, wchar_t*, wchar_t*, wchar_t*&) const */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_in
-               (mbstate_t *p0,char *p1,char *p2,char **p3,wchar_t *p4,wchar_t *p5,wchar_t **p6)
+template<> void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_in(mbstate_t *p0,char *p1,char *p2,char **p3,wchar_t *p4,wchar_t *p5,wchar_t **p6)
 
 {
   wchar_t **ppwVar1;
@@ -400,8 +398,7 @@ LAB_005d87dc:
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::do_unshift(mbstate_t&, char*, char*, char*&)
    const */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
-               (mbstate_t *p0,char *p1,char *p2,char **p3)
+template<> void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
   undefined1 uVar1;
@@ -460,7 +457,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::do_encoding() const */
 
-ulong std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_encoding(long param_1)
+template<> ulong std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_encoding(long param_1)
 
 {
   int iVar1;
@@ -506,7 +503,7 @@ ulong std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_encoding(long param_1)
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::do_always_noconv() const */
 
-undefined8 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_always_noconv(void)
+template<> undefined8 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_always_noconv(void)
 
 {
   return 0;
@@ -521,8 +518,7 @@ undefined8 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_always_noconv(void)
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::do_length(mbstate_t&, char const*, char const*,
    unsigned long) const */
 
-int std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_length
-              (mbstate_t *p0,char *p1,char *p2,ulong p3)
+template<> int std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
   bool bVar1;
@@ -576,7 +572,7 @@ int std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_length
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::do_max_length() const */
 
-undefined4 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_max_length(long param_1)
+template<> undefined4 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_max_length(long param_1)
 
 {
   undefined4 uVar1;
@@ -606,7 +602,7 @@ undefined4 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_max_length(long para
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::~codecvt() */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt()
+template<> std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt()
 
 {
   int iVar1;

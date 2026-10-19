@@ -15,10 +15,7 @@
    WaterConcept::World::SwitchAnimInfo> >
    >::__erase_unique<WaterConcept::Switch*>(WaterConcept::Switch* const&) */
 
-undefined8
-std::__ndk1::
-__tree<std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>,std::__ndk1::__map_value_compare<WaterConcept::Switch*,std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>,std::__ndk1::less<WaterConcept::Switch*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>>>
-::__erase_unique<WaterConcept::Switch*>(WaterConcept__Switch **p0)
+template<> undefined8 std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>,std::__ndk1::__map_value_compare<WaterConcept::Switch*,std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>,std::__ndk1::less<WaterConcept::Switch*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>>>::__erase_unique(WaterConcept__Switch **p0)
 
 {
   bool bVar1;

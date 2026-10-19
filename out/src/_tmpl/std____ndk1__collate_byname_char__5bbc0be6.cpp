@@ -9,7 +9,7 @@
 
 /* std::__ndk1::collate_byname<char>::collate_byname(char const*, unsigned long) */
 
-void std::__ndk1::collate_byname<char>::collate_byname(char *p0,ulong p1, long in_x2)
+template<> std::__ndk1::collate_byname<char>::collate_byname(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
@@ -108,8 +108,7 @@ void FUN_005d5db0(undefined8 param_1)
 /* std::__ndk1::collate_byname<char>::collate_byname(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
-void std::__ndk1::collate_byname<char>::collate_byname
-               (undefined8 *param_1,byte *param_2,long param_3)
+template<> std::__ndk1::collate_byname<char>::collate_byname(undefined8 *param_1,byte *param_2,long param_3)
 
 {
   long lVar1;
@@ -151,7 +150,7 @@ void std::__ndk1::collate_byname<char>::collate_byname
 
 /* std::__ndk1::collate_byname<char>::~collate_byname() */
 
-void std::__ndk1::collate_byname<char>::~collate_byname()
+template<> std::__ndk1::collate_byname<char>::~collate_byname()
 
 {
   *this = &PTR__collate_byname_007176f0;
@@ -169,7 +168,7 @@ void std::__ndk1::collate_byname<char>::~collate_byname()
 
 /* std::__ndk1::collate_byname<char>::~collate_byname() */
 
-void std::__ndk1::collate_byname<char>::~collate_byname()
+template<> std::__ndk1::collate_byname<char>::~collate_byname()
 
 {
   *this = &PTR__collate_byname_007176f0;
@@ -189,7 +188,7 @@ void std::__ndk1::collate_byname<char>::~collate_byname()
 /* std::__ndk1::collate_byname<char>::do_compare(char const*, char const*, char const*, char const*)
    const */
 
-ulong std::__ndk1::collate_byname<char>::do_compare(char *p0,char *p1,char *p2,char *p3, char * in_x4)
+template<> ulong std::__ndk1::collate_byname<char>::do_compare(char *p0,char *p1,char *p2,char *p3, char * in_x4)
 
 {
   char *pcVar2;
@@ -365,7 +364,7 @@ LAB_005d6128:
 
 /* std::__ndk1::collate_byname<char>::do_transform(char const*, char const*) const */
 
-void std::__ndk1::collate_byname<char>::do_transform(char *p0,char *p1)
+template<> void std::__ndk1::collate_byname<char>::do_transform(char *p0,char *p1)
 
 {
   char *pcVar2;

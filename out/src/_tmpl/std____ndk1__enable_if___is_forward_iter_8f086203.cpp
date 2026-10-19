@@ -14,11 +14,7 @@
    >::assign<WaterConcept::World::WorldSpoutConnection*>(WaterConcept::World::WorldSpoutConnection*,
    WaterConcept::World::WorldSpoutConnection*) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::assign<WaterConcept::World::WorldSpoutConnection*>
-               (WaterConcept__World__WorldSpoutConnection *p0,
-               WaterConcept__World__WorldSpoutConnection *p1)
+template<> void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::assign(WaterConcept__World__WorldSpoutConnection *p0, WaterConcept__World__WorldSpoutConnection *p1)
 
 {
   WaterConcept__World__WorldSpoutConnection *pWVar1;

@@ -11,9 +11,7 @@
    std::__ndk1::allocator<WaterConcept::World::TouchEvent>
    >::__push_back_slow_path<WaterConcept::World::TouchEvent>(WaterConcept::World::TouchEvent&&) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::TouchEvent,std::__ndk1::allocator<WaterConcept::World::TouchEvent>>
-     ::__push_back_slow_path<WaterConcept::World::TouchEvent>(WaterConcept__World__TouchEvent **p0)
+template<> void std::__ndk1::vector<WaterConcept::World::TouchEvent,std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__push_back_slow_path(WaterConcept__World__TouchEvent **p0)
 
 {
   ulong uVar1;

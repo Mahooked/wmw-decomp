@@ -88,7 +88,7 @@ void Walaber::FileManager::_initDefaultHandler(long param_1)
   puStack_30[1] = puStack_30 + 2;
   *(undefined8 **)(param_1 + 0x60) = puStack_30;
   auStack_38[0] = 0x32;
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::FileManager::FileHandler*>>(param_1,auStack_38);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::FileManager::FileHandler*>>(param_1,auStack_38);
   return;
 }
 
@@ -162,7 +162,7 @@ void Walaber::FileManager::addFileHandler(int p0,Walaber__FileManager__FileHandl
   undefined4 auStack_38 [4];
   
   auStack_38[0] = SUB84(p1,0);
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::FileManager::FileHandler*>>(p0,auStack_38);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::FileManager::FileHandler*>>(p0,auStack_38);
   return;
 }
 
@@ -526,7 +526,7 @@ void Walaber::FileManager::readFile
 void Walaber::FileManager::_existSuccess(long param_1)
 
 {
-  unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x18);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x18);
   return;
 }
 
@@ -549,7 +549,7 @@ void Walaber::FileManager::_readSuccess(long param_1,byte *param_2)
   undefined1 auStack_48 [8];
   byte *pbStack_40;
   
-  unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x30);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x30);
   pbVar4 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar4 = param_2 + 1;

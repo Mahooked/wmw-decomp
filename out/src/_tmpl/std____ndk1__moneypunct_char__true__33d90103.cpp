@@ -9,7 +9,7 @@
 
 /* std::__ndk1::moneypunct<char, true>::do_decimal_point() const */
 
-undefined8 std::__ndk1::moneypunct<char,true>::do_decimal_point(void)
+template<> undefined8 std::__ndk1::moneypunct<char,true>::do_decimal_point(void)
 
 {
   return 0xff;
@@ -23,7 +23,7 @@ undefined8 std::__ndk1::moneypunct<char,true>::do_decimal_point(void)
 
 /* std::__ndk1::moneypunct<char, true>::do_thousands_sep() const */
 
-undefined8 std::__ndk1::moneypunct<char,true>::do_thousands_sep(void)
+template<> undefined8 std::__ndk1::moneypunct<char,true>::do_thousands_sep(void)
 
 {
   return 0xff;
@@ -37,7 +37,7 @@ undefined8 std::__ndk1::moneypunct<char,true>::do_thousands_sep(void)
 
 /* std::__ndk1::moneypunct<char, true>::do_grouping() const */
 
-void std::__ndk1::moneypunct<char,true>::do_grouping()
+template<> void std::__ndk1::moneypunct<char,true>::do_grouping()
 
 {
   *this = 0;
@@ -54,7 +54,7 @@ void std::__ndk1::moneypunct<char,true>::do_grouping()
 
 /* std::__ndk1::moneypunct<char, true>::do_curr_symbol() const */
 
-void std::__ndk1::moneypunct<char,true>::do_curr_symbol()
+template<> void std::__ndk1::moneypunct<char,true>::do_curr_symbol()
 
 {
   *this = 0;
@@ -71,7 +71,7 @@ void std::__ndk1::moneypunct<char,true>::do_curr_symbol()
 
 /* std::__ndk1::moneypunct<char, true>::do_positive_sign() const */
 
-void std::__ndk1::moneypunct<char,true>::do_positive_sign()
+template<> void std::__ndk1::moneypunct<char,true>::do_positive_sign()
 
 {
   *this = 0;
@@ -88,7 +88,7 @@ void std::__ndk1::moneypunct<char,true>::do_positive_sign()
 
 /* std::__ndk1::moneypunct<char, true>::do_negative_sign() const */
 
-void std::__ndk1::moneypunct<char,true>::do_negative_sign()
+template<> void std::__ndk1::moneypunct<char,true>::do_negative_sign()
 
 {
   *this = 0;
@@ -107,7 +107,7 @@ void std::__ndk1::moneypunct<char,true>::do_negative_sign()
 
 /* std::__ndk1::moneypunct<char, true>::do_frac_digits() const */
 
-undefined8 std::__ndk1::moneypunct<char,true>::do_frac_digits(void)
+template<> undefined8 std::__ndk1::moneypunct<char,true>::do_frac_digits(void)
 
 {
   return 0;
@@ -121,7 +121,7 @@ undefined8 std::__ndk1::moneypunct<char,true>::do_frac_digits(void)
 
 /* std::__ndk1::moneypunct<char, true>::do_pos_format() const */
 
-undefined8 std::__ndk1::moneypunct<char,true>::do_pos_format(void)
+template<> undefined8 std::__ndk1::moneypunct<char,true>::do_pos_format(void)
 
 {
   return 0x4000302;
@@ -135,7 +135,7 @@ undefined8 std::__ndk1::moneypunct<char,true>::do_pos_format(void)
 
 /* std::__ndk1::moneypunct<char, true>::do_neg_format() const */
 
-undefined8 std::__ndk1::moneypunct<char,true>::do_neg_format(void)
+template<> undefined8 std::__ndk1::moneypunct<char,true>::do_neg_format(void)
 
 {
   return 0x4000302;

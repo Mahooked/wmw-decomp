@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>
    >::__push_back_slow_path<Walaber::Widget*>(Walaber::Widget*&&) */
 
-void std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>::
-     __push_back_slow_path<Walaber::Widget*>(Walaber__Widget ***p0)
+template<> void std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>::__push_back_slow_path(Walaber__Widget ***p0)
 
 {
   undefined8 *in_x1;

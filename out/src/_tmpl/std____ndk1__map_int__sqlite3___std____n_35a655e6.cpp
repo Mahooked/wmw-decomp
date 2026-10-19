@@ -10,12 +10,10 @@
 /* std::__ndk1::map<int, sqlite3*, std::__ndk1::less<int>,
    std::__ndk1::allocator<std::__ndk1::pair<int const, sqlite3*> > >::~map() */
 
-void std::__ndk1::
-     map<int,sqlite3*,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,sqlite3*>>>
-     ::~map(long param_1)
+template<> std::__ndk1::map<int,sqlite3*,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,sqlite3*>>>::~map()
 
 {
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, sqlite3*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, sqlite3*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, sqlite3*>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, sqlite3*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, sqlite3*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, sqlite3*>>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

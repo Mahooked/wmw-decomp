@@ -17,10 +17,7 @@
    WaterConcept::Screen_Editor::SelectedObjData> >
    >::__erase_unique<WaterConcept::InteractiveObject*>(WaterConcept::InteractiveObject* const&) */
 
-undefined8
-std::__ndk1::
-__tree<std::__ndk1::__value_type<WaterConcept::InteractiveObject*,WaterConcept::Screen_Editor::SelectedObjData>,std::__ndk1::__map_value_compare<WaterConcept::InteractiveObject*,std::__ndk1::__value_type<WaterConcept::InteractiveObject*,WaterConcept::Screen_Editor::SelectedObjData>,std::__ndk1::less<WaterConcept::InteractiveObject*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::InteractiveObject*,WaterConcept::Screen_Editor::SelectedObjData>>>
-::__erase_unique<WaterConcept::InteractiveObject*>(WaterConcept__InteractiveObject **p0)
+template<> undefined8 std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::InteractiveObject*,WaterConcept::Screen_Editor::SelectedObjData>,std::__ndk1::__map_value_compare<WaterConcept::InteractiveObject*,std::__ndk1::__value_type<WaterConcept::InteractiveObject*,WaterConcept::Screen_Editor::SelectedObjData>,std::__ndk1::less<WaterConcept::InteractiveObject*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::InteractiveObject*,WaterConcept::Screen_Editor::SelectedObjData>>>::__erase_unique(WaterConcept__InteractiveObject **p0)
 
 {
   bool bVar1;

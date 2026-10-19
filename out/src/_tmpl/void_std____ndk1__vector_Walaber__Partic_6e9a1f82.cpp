@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::ParticleEmitter*>
    >::__push_back_slow_path<Walaber::ParticleEmitter* const&>(Walaber::ParticleEmitter* const&) */
 
-void std::__ndk1::
-     vector<Walaber::ParticleEmitter*,std::__ndk1::allocator<Walaber::ParticleEmitter*>>::
-     __push_back_slow_path<Walaber::ParticleEmitter*const&>(Walaber__ParticleEmitter **p0)
+template<> void std::__ndk1::vector<Walaber::ParticleEmitter*,std::__ndk1::allocator<Walaber::ParticleEmitter*>>::__push_back_slow_path(Walaber__ParticleEmitter **p0)
 
 {
   undefined8 *in_x1;

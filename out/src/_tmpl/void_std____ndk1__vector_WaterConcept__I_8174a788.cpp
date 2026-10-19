@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::InteractiveObject::MoveEase>(WaterConcept::InteractiveObject::MoveEase&&)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::InteractiveObject::MoveEase,std::__ndk1::allocator<WaterConcept::InteractiveObject::MoveEase>>
-     ::__push_back_slow_path<WaterConcept::InteractiveObject::MoveEase>
-               (WaterConcept__InteractiveObject__MoveEase **p0)
+template<> void std::__ndk1::vector<WaterConcept::InteractiveObject::MoveEase,std::__ndk1::allocator<WaterConcept::InteractiveObject::MoveEase>>::__push_back_slow_path(WaterConcept__InteractiveObject__MoveEase **p0)
 
 {
   undefined4 *in_x1;

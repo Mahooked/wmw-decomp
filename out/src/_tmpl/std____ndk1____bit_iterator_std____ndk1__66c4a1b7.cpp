@@ -14,8 +14,7 @@
    0>, std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >, false,
    0>) */
 
-void std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>,true>
-               (long *param_1,ulong *param_2,ulong param_3,long param_4,ulong param_5,long *param_6)
+void std::__ndk1::__copy_unaligned(long *param_1,ulong *param_2,ulong param_3,long param_4,ulong param_5,long *param_6)
 
 {
   ulong *puVar1;
@@ -150,8 +149,7 @@ void std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool,std::__ndk1::allocat
    false, 0>, std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >,
    false, 0>) */
 
-void std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>,false>
-               (long *param_1,long *param_2,long *param_3,long *param_4)
+void std::__ndk1::__copy_unaligned(long *param_1,long *param_2,long *param_3,long *param_4)
 
 {
   ulong uVar1;

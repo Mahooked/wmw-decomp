@@ -12,8 +12,7 @@
    std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>
    >::assign<Walaber::Widget_Group**>(Walaber::Widget_Group**, Walaber::Widget_Group**) */
 
-void std::__ndk1::vector<Walaber::Widget_Group*,std::__ndk1::allocator<Walaber::Widget_Group*>>::
-     assign<Walaber::Widget_Group**>(Walaber__Widget_Group **p0,Walaber__Widget_Group **p1)
+template<> void std::__ndk1::vector<Walaber::Widget_Group*,std::__ndk1::allocator<Walaber::Widget_Group*>>::assign(Walaber__Widget_Group **p0,Walaber__Widget_Group **p1)
 
 {
   ulong uVar1;

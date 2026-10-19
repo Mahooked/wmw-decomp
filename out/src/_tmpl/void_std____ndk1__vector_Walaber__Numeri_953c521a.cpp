@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::NumericAnimationTrack*>
    >::__push_back_slow_path<Walaber::NumericAnimationTrack*>(Walaber::NumericAnimationTrack*&&) */
 
-void std::__ndk1::
-     vector<Walaber::NumericAnimationTrack*,std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>
-     ::__push_back_slow_path<Walaber::NumericAnimationTrack*>(Walaber__NumericAnimationTrack ***p0)
+template<> void std::__ndk1::vector<Walaber::NumericAnimationTrack*,std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path(Walaber__NumericAnimationTrack ***p0)
 
 {
   undefined8 *in_x1;
@@ -85,10 +83,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::NumericAnimationTrack* const&>(Walaber::NumericAnimationTrack*
    const&) */
 
-void std::__ndk1::
-     vector<Walaber::NumericAnimationTrack*,std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>
-     ::__push_back_slow_path<Walaber::NumericAnimationTrack*const&>
-               (Walaber__NumericAnimationTrack **p0)
+template<> void std::__ndk1::vector<Walaber::NumericAnimationTrack*,std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>::__push_back_slow_path(Walaber__NumericAnimationTrack **p0)
 
 {
   undefined8 *in_x1;

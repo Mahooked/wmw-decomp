@@ -14,9 +14,7 @@
    std::__ndk1::enable_if<__is_input_iterator<std::__ndk1::__list_const_iterator<int, void*>
    >::value, void>::type*) */
 
-long * std::__ndk1::list<int,std::__ndk1::allocator<int>>::
-       insert<std::__ndk1::__list_const_iterator<int,void*>>
-                 (long param_1,long *param_2,long param_3,long param_4)
+template<> long * std::__ndk1::list<int,std::__ndk1::allocator<int>>::insert(long param_1,long *param_2,long param_3,long param_4)
 
 {
   long *plVar1;

@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Screen_InAppPurchase::product
    const&>(WaterConcept::Screen_InAppPurchase::product const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
-     ::__push_back_slow_path<WaterConcept::Screen_InAppPurchase::product_const&>
-               (WaterConcept__Screen_InAppPurchase__product *p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__push_back_slow_path(WaterConcept__Screen_InAppPurchase__product *p0)
 
 {
   ulong uVar1;

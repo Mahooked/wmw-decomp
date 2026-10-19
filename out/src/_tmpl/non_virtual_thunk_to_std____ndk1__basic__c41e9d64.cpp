@@ -10,9 +10,7 @@
 /* non-virtual thunk to std::__ndk1::basic_stringstream<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >::~basic_stringstream() */
 
-void std::__ndk1::
-     basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_stringstream()
+template<> std::__ndk1::basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_stringstream()
 
 {
   this[-2] = &PTR__basic_stringstream_007110f0;
@@ -37,9 +35,7 @@ void std::__ndk1::
 /* non-virtual thunk to std::__ndk1::basic_stringstream<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >::~basic_stringstream() */
 
-void std::__ndk1::
-     basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_stringstream()
+template<> std::__ndk1::basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_stringstream()
 
 {
   this[-2] = &PTR__basic_stringstream_007110f0;

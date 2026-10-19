@@ -45,7 +45,7 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
     }
     else {
                     /* try { // try from 00333d58 to 00333d63 has its CatchHandler @ 00333dd4 */
-      void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__push_back_slow_path<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>(plVar1,&uStack_80);
+      std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__push_back_slow_path<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>(plVar1,&uStack_80);
       if ((uStack_78 & 1) != 0) {
         operator delete(pvStack_68);
       }
@@ -243,7 +243,7 @@ Walaber::SpriteAnimationTrack::operator=(Walaber__SpriteAnimationTrack *p0)
   ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)(&p0->f_0x8))->operator=(&in_x1->f_0x8);
   p0->f_0x18 = in_x1->f_0x18;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent*>::value&&is_constructible<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::iterator_traits<Walaber::SpriteAnimationTrack::SpriteAnimationEvent*>::reference>::value, void>::type std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::assign<Walaber::SpriteAnimationTrack::SpriteAnimationEvent*>(&p0->f_0x20,in_x1->f_0x20,in_x1->f_0x28);
+    std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::assign<Walaber::SpriteAnimationTrack::SpriteAnimationEvent*>(&p0->f_0x20,in_x1->f_0x20,in_x1->f_0x28);
   }
   uVar1 = in_x1->f_0x3c;
   p0->f_0x38 = in_x1->f_0x38;

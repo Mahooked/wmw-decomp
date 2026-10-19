@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>,
    std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback> > >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base()
 
 {
   void *p0;

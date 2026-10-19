@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Screen_WaterTest::StrokeInfo
    const&>(WaterConcept::Screen_WaterTest::StrokeInfo const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>
-     ::__push_back_slow_path<WaterConcept::Screen_WaterTest::StrokeInfo_const&>
-               (WaterConcept__Screen_WaterTest__StrokeInfo *p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::__push_back_slow_path(WaterConcept__Screen_WaterTest__StrokeInfo *p0)
 
 {
   undefined1 *in_x1;

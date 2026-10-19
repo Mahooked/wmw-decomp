@@ -240,6 +240,7 @@ template <class T> struct shared_ptr;
 template <class T> struct weak_ptr;
 template <class T> struct initializer_list;
 template <class T> struct iterator_traits;
+template <class T, T V> struct integral_constant;
 template <class T> struct reverse_iterator;
 template <class C, class T = char_traits<C>, class A = allocator<C>>
 struct basic_string;
@@ -266,8 +267,8 @@ template <class T, class N, class D> struct __tree_iterator;
 template <class T, class N, class D> struct __tree_const_iterator;
 template <class T> struct __tree_node_destructor;
 template <class T, class A> struct __split_buffer;
-template <class...> struct __deque_base { };
-template <class T, class A = allocator<T>> struct __vector_base { template <class... _A> __vector_base(_A...); };
+template <class...> struct __deque_base;
+template <class T, class A = allocator<T>> struct __vector_base;
 template <class T> struct __vector_base_common;
 template <class C, class T = char_traits<C>> struct basic_ostream;
 template <class C, class T = char_traits<C>> struct basic_istream;
@@ -275,7 +276,7 @@ template <class C, class T = char_traits<C>> struct basic_iostream;
 template <class C, class T = char_traits<C>> struct basic_streambuf;
 template <class C, class T = char_traits<C>, class A = allocator<C>>
 struct basic_stringbuf;
-template <class C, class T = char_traits<C>> struct basic_filebuf { template <class... _A> basic_filebuf(_A...); };
+template <class C, class T = char_traits<C>> struct basic_filebuf;
 template <class C, class T = char_traits<C>> struct istreambuf_iterator;
 template <class C, class T = char_traits<C>> struct ostreambuf_iterator;
 template <class C> struct __basic_string_common;
@@ -304,9 +305,9 @@ struct __thread_struct;
 }
 
 namespace Walaber {
-template <class T> struct SharedPtr { template <class... _A> SharedPtr(_A...); };
-template <class T> struct MemberCallback { template <class... _A> MemberCallback(_A...); };
-template <class T> struct WeakPtr { template <class... _A> WeakPtr(_A...); };
+template <class T> struct SharedPtr;
+template <class T> struct MemberCallback;
+template <class T> struct WeakPtr;
 }
 
 /* ---- placeholder for unresolved data symbols ----

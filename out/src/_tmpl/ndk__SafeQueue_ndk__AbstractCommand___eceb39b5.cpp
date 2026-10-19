@@ -9,7 +9,7 @@
 
 /* ndk::SafeQueue<ndk::AbstractCommand*>::SafeQueue() */
 
-void ndk::SafeQueue<ndk::AbstractCommand*>::SafeQueue(long param_1)
+template<> ndk::SafeQueue<ndk::AbstractCommand*>::SafeQueue(long param_1)
 
 {
   *(long *)param_1 = param_1;
@@ -29,11 +29,11 @@ void ndk::SafeQueue<ndk::AbstractCommand*>::SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AbstractCommand*>::~SafeQueue() */
 
-void ndk::SafeQueue<ndk::AbstractCommand*>::~SafeQueue(long param_1)
+template<> ndk::SafeQueue<ndk::AbstractCommand*>::~SafeQueue()
 
 {
-  ((ndk::Mutex *)param_1 + 0x18)->~Mutex();
-  std::__ndk1::__list_imp<ndk::AbstractCommand*, std::__ndk1::allocator<ndk::AbstractCommand*>>::clear(param_1);
+  ((ndk::Mutex *)(byte *)this + 0x18)->~Mutex();
+  std::__ndk1::__list_imp<ndk::AbstractCommand*, std::__ndk1::allocator<ndk::AbstractCommand*>>::clear((byte *)this);
   return;
 }
 
@@ -45,7 +45,7 @@ void ndk::SafeQueue<ndk::AbstractCommand*>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk::AbstractCommand*&) */
 
-bool ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk__AbstractCommand **p0, undefined8 * in_x1)
+template<> bool ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk__AbstractCommand **p0, undefined8 * in_x1)
 
 {
   long lVar1;

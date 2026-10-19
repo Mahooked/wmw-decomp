@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::ParticleDescription
    const&>(WaterConcept::ParticleDescription const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>
-     ::__push_back_slow_path<WaterConcept::ParticleDescription_const&>
-               (WaterConcept__ParticleDescription *p0)
+template<> void std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path(WaterConcept__ParticleDescription *p0)
 
 {
   ulong uVar1;
@@ -90,10 +87,7 @@ void std::__ndk1::
    >::__push_back_slow_path<WaterConcept::ParticleDescription>(WaterConcept::ParticleDescription&&)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>
-     ::__push_back_slow_path<WaterConcept::ParticleDescription>
-               (WaterConcept__ParticleDescription **p0)
+template<> void std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path(WaterConcept__ParticleDescription **p0)
 
 {
   ulong uVar1;

@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::TextureManager::SubTexInfo
    const&>(Walaber::TextureManager::SubTexInfo const&) */
 
-void std::__ndk1::
-     vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::__push_back_slow_path<Walaber::TextureManager::SubTexInfo_const&>
-               (Walaber__TextureManager__SubTexInfo *p0)
+template<> void std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__push_back_slow_path(Walaber__TextureManager__SubTexInfo *p0)
 
 {
   long in_x1;

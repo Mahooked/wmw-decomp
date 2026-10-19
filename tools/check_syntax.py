@@ -216,6 +216,17 @@ class Model(object):
         self.symbols = set()
         self.types = set()            # opaque structs the definitions mention
         self.templates = set()        # flattened template names they mention
+        self.tmpl_members = collections.defaultdict(dict)
+                                        # members harvested from template-
+                                        # qualified definitions, keyed by the
+                                        # primary template that owns them
+        self.tmpl_args = collections.defaultdict(set)
+                                        # (top-level arg count, all type-like)
+                                        # per primary, from instantiation args
+        self.tmpl_sigs = collections.defaultdict(dict)
+                                        # (name, params, const) -> slot, so the
+                                        # copies of one member recovered from
+                                        # several specializations collapse
         self.folds = set()            # sub-register fold helpers they call
         self.stats = collections.Counter()
 
@@ -343,7 +354,18 @@ def scan(model, src):
                 if span is None:
                     model.stats["no-params"] += 1
                     continue
-                got = split_name(strip_comments(decl[:span[0]]))
+                head = strip_comments(decl[:span[0]])
+                # A long recovered signature is wrapped after a "::" (or just
+                # before one), which would otherwise pull the qualifier into
+                # the return type: "void Walaber::\n Vector2::f" splits as
+                # return type "void Walaber::" and name "Vector2::f".
+                head = re.sub(r"\s*::\s+", "::", head)
+                # ... and sometimes just *before* one: "num_get<...>\n   ::f".
+                head = re.sub(r"\s+::", "::", head)
+                # Definitions shaped by tools/shape_tmpl_defs.py carry the
+                # explicit-specialization marker in front; it is not a type.
+                head = re.sub(r"^\s*template\s*<>\s*", "", head)
+                got = split_name(head)
                 if got is None:
                     model.stats["unparsed"] += 1
                     continue
@@ -369,9 +391,364 @@ def scan(model, src):
                 add_definition(model, ret, qname, params, post, uses_this)
 
 
+#: Template parameter lists for every primary template the prelude declares,
+#: mirroring its spellings minus the default arguments (a default may only be
+#: repeated, never introduced, on a later declaration).
+_TMPL_PARAMS = {
+    "std::__ndk1::allocator": "class T",
+    "std::__ndk1::char_traits": "class T",
+    "std::__ndk1::less": "class T",
+    "std::__ndk1::hash": "class T",
+    "std::__ndk1::pair": "class A, class B",
+    "std::__ndk1::tuple": "class... T",
+    "std::__ndk1::default_delete": "class T, class D",
+    "std::__ndk1::unique_ptr": "class T, class D",
+    "std::__ndk1::unique_lock": "class T",
+    "std::__ndk1::lock_guard": "class T",
+    "std::__ndk1::shared_ptr": "class T",
+    "std::__ndk1::weak_ptr": "class T",
+    "std::__ndk1::initializer_list": "class T",
+    "std::__ndk1::iterator_traits": "class T",
+    "std::__ndk1::reverse_iterator": "class T",
+    "std::__ndk1::basic_string": "class C, class T, class A",
+    "std::__ndk1::vector": "class T, class A",
+    "std::__ndk1::deque": "class T, class A",
+    "std::__ndk1::list": "class T, class A",
+    "std::__ndk1::multiset": "class K, class C, class A",
+    "std::__ndk1::map": "class K, class V, class C, class A",
+    "std::__ndk1::multimap": "class K, class V, class C, class A",
+    "std::__ndk1::set": "class K, class C, class A",
+    "std::__ndk1::__tree": "class T, class C, class A",
+    "std::__ndk1::__value_type": "class K, class V",
+    "std::__ndk1::__map_value_compare": "class K, class V, class C, bool",
+    "std::__ndk1::__tree_node": "class T, class P",
+    "std::__ndk1::__tree_node_base": "class T",
+    "std::__ndk1::__tree_end_node": "class T",
+    "std::__ndk1::__tree_iterator": "class T, class N, class D",
+    "std::__ndk1::__tree_const_iterator": "class T, class N, class D",
+    "std::__ndk1::__tree_node_destructor": "class T",
+    "std::__ndk1::__split_buffer": "class T, class A",
+    "std::__ndk1::__deque_base": "class...",
+    "std::__ndk1::__vector_base": "class T, class A",
+    "std::__ndk1::__vector_base_common": "class T",
+    "std::__ndk1::basic_ostream": "class C, class T",
+    "std::__ndk1::basic_istream": "class C, class T",
+    "std::__ndk1::basic_iostream": "class C, class T",
+    "std::__ndk1::basic_streambuf": "class C, class T",
+    "std::__ndk1::basic_stringbuf": "class C, class T, class A",
+    "std::__ndk1::basic_filebuf": "class C, class T",
+    "std::__ndk1::istreambuf_iterator": "class C, class T",
+    "std::__ndk1::ostreambuf_iterator": "class C, class T",
+    "std::__ndk1::__basic_string_common": "class C",
+    "std::__ndk1::ctype": "class C",
+    "std::__ndk1::codecvt": "class I, class E, class S",
+    "std::__ndk1::moneypunct": "class C, bool",
+    "std::__ndk1::moneypunct_byname": "class C, bool",
+    "std::__ndk1::numpunct": "class C",
+    "std::__ndk1::num_get": "class C, class I",
+    "std::__ndk1::num_put": "class C, class O",
+    "std::__ndk1::time_get": "class C, class I",
+    "std::__ndk1::time_put": "class C, class O",
+    "std::__ndk1::collate": "class C",
+    "std::__ndk1::messages": "class C",
+    "Walaber::SharedPtr": "class T",
+    "Walaber::MemberCallback": "class T",
+    "Walaber::WeakPtr": "class T",
+}
+
+#: Operator spellings a *member* may carry.  Ghidra also invents names like
+#: ``operator_cast_to_map``; those are not C++ operators at all and would be a
+#: parse error in every file that includes the preamble.
+_OPSPELL = re.compile(
+    r"^operator\s*(?:\[\]|\(\)|->\*|->|<<=|>>=|<=>|<<|>>|<=|>=|==|!=|&&|\|\||"
+    r"\+\+|--|\+=|-=|\*=|/=|%=|&=|\|=|\^=|,|\+|-|\*|/|%|\^|&|\||~|!|=|<|>)$")
+
+
+def _split_qname(qname):
+    """Split a qualified name at ``::`` that sits outside any ``<...>``.
+
+    ``basic_ostream<char, traits<char>>::sentry::sentry`` is not splittable by
+    a plain ``str.split`` -- the commas and the ``>>`` inside the arguments
+    carry no scope meaning, and ``operator<<``'s angle brackets are part of the
+    operator's spelling rather than template arguments.
+    """
+    comps, i, start, depth = [], 0, 0, 0
+    while i < len(qname):
+        if qname.startswith("operator", i) and depth == 0 and not (
+                qname[i - 1:i].isalnum() or qname[i - 1:i] == "_"):
+            j = i + len("operator")
+            while j < len(qname) and qname[j] in "[]()<>+-*/%^&|!~=":
+                j += 1
+            i = j
+            continue
+        if depth == 0 and qname.startswith("::", i):
+            comps.append(qname[start:i])
+            i += 2
+            start = i
+            continue
+        if qname[i] == "<":
+            depth += 1
+        elif qname[i] == ">":
+            depth = max(0, depth - 1)
+        i += 1
+    comps.append(qname[start:])
+    return comps
+
+
+def _strip_angles(text):
+    """``basic_string<char, traits<char>>`` -> ``basic_string``."""
+    return text.split("<", 1)[0]
+
+
+def _split_commas(text):
+    """Split an argument list at the commas that sit at depth zero."""
+    parts, depth, start = [], 0, 0
+    for i, c in enumerate(text):
+        if c in "<([{":
+            depth += 1
+        elif c in ">)]}":
+            depth -= 1
+        elif c == "," and depth == 0:
+            parts.append(text[start:i])
+            start = i + 1
+    parts.append(text[start:])
+    return parts
+
+
+def _looks_like_type(arg):
+    """True when an instantiation argument spells a type, not a value."""
+    a = arg.strip()
+    if not a or not re.match(r"^[A-Za-z_][\w:<>,\s*&]*$", a):
+        return False
+    return re.search(r"\b(?:false|true)\b|(?<![\w:])\d|0x[0-9a-fA-F]+",
+                     a) is None
+
+
+def _canon_params(text):
+    """Key by the parameter list C++ sees rather than by its spelling.
+
+    The prelude spells its fixed-width integers as typedefs (``ulong`` and
+    ``ulonglong`` are both ``unsigned long long``), and the decompiler picks
+    either spelling for the same signature; comparing the raw text would keep
+    both declarations and clang rejects the second.  Parameter names are
+    equally irrelevant -- ``f(int a)`` and ``f(int b)`` are one function.
+    """
+    text = " ".join(text.split())
+    text = re.sub(r"\bunsigned long long\b", "ulong", text)
+    text = re.sub(r"\blong long\b", "longlong", text)
+    text = re.sub(r"\bulonglong\b", "ulong", text)
+    # Ghidra's width-named integers are typedefs of the same fundamental
+    # types; one definition spells them either way.
+    text = re.sub(r"\b(?:undefined1|uint1|undefined|uchar)\b", "uchar", text)
+    text = re.sub(r"\b(?:undefined2|uint2|ushort)\b", "ushort", text)
+    text = re.sub(r"\b(?:undefined3|undefined4|uint4|uint)\b", "uint", text)
+    text = re.sub(r"\b(?:undefined5|undefined6|undefined7|undefined8|uint8)\b",
+                  "ulong", text)
+    text = re.sub(r"\bint1\b", "schar", text)
+    text = re.sub(r"\b(?:int3|int4)\b", "int", text)
+    text = re.sub(r"\b(?:int5|int6|int7|int8)\b", "longlong", text)
+    parts = []
+    for part in _split_commas(text):
+        part = part.strip()
+        m = re.match(r"^(.*?)([A-Za-z_]\w*)$", part, re.S)
+        if (m and m.group(2) not in _PARAM_KEYWORDS and m.group(1)
+                and re.search(r"[*&>\s]$", m.group(1))):
+            part = m.group(1).strip()
+        parts.append(part)
+    return re.sub(r"\s+", "", ",".join(parts))
+
+
+#: Words that end a parameter because they *are* its type, not its name.
+_PARAM_KEYWORDS = frozenset("""
+const volatile signed unsigned short long int char float double void bool
+wchar_t char16_t char32_t struct class union enum typename auto
+""".split())
+
+
+def _nested_incomplete(model, text):
+    """True when ``text`` names a member type of a class declared later.
+
+    The primary templates are emitted before the recovered classes (the
+    classes' fields need them complete), so a parameter spelling
+    ``SomeClass::Nested`` cannot be declared there: ``SomeClass`` is only
+    forward-declared and the nested name is unusable.  The definition then
+    fails to match, which costs one diagnostic instead of poisoning every file
+    through ``decls.h``.
+    """
+    for m in re.finditer(r"([A-Za-z_]\w*(?:::[A-Za-z_]\w*)+)::[A-Za-z_]",
+                         text):
+        if m.group(1) in model.classes:
+            return True
+    return False
+
+
+def _harvest_template(model, ret, qname, params, post, uses_this):
+    """Record one out-of-line definition of a member of a class template.
+
+    ``void basic_string<char, A>::assign(long)`` is an explicit specialization
+    of a member of the *primary* template; the member has to exist on the
+    primary for either the definition or any call site to compile.  Record the
+    member (and the shape of the template's arguments) so ``generate`` can put
+    them there.
+    """
+    comps = _split_qname(qname)
+    if len(comps) < 2:
+        model.stats["skipped-template-fn"] += 1   # a free function template
+        return
+    if not any("<" in c for c in comps[:-1]):
+        model.stats["skipped-template-fn"] += 1   # a namespace-only qualifier
+        return
+    name = comps[-1]
+    if not re.match(r"^[A-Za-z_~]\w*$", name) and not (
+            name.startswith("operator") and _OPSPELL.match(name)):
+        # A member template (``__push_back_slow_path<int>``).  Its call sites
+        # spell the template arguments, so the name still has to exist on the
+        # primary; the greedy overload below is enough for them to resolve.
+        base = _strip_angles(name)
+        if re.match(r"^[A-Za-z_~]\w*$", base):
+            model.tmpl_members[
+                "::".join(_strip_angles(c) for c in comps[:-1])].setdefault(
+                    base, [])
+        model.stats["skipped-template-member"] += 1
+        return
+    if name.startswith(("non_virtual_thunk_to_", "virtual_thunk_to_",
+                        "_thunk_to_")):
+        model.stats["skipped-thunk"] += 1
+        return
+    owner = comps[:-1]
+    cls = owner[-1]
+    # A parameter Ghidra printed as ``void (*param_9)(void*)`` carries the
+    # name inside the template argument; a declarator needs no name there.
+    params = re.sub(r"\(\s*(\*+)\s*\w+\s*\)", r"(\1)", params)
+    is_dtor = name.startswith("~")
+    is_ctor = (not is_dtor) and name == _strip_angles(cls)
+    is_op = name.startswith("operator") and bool(_OPSPELL.match(name))
+    if is_op:
+        if params.strip() in ("", "void"):
+            model.stats["skipped-operator"] += 1
+            return
+        if name != "operator()" and (
+                "," in params or (name in ("operator++", "operator--")
+                                  and not re.match(r"^\s*int(\s+\w+)?\s*$",
+                                                   params))):
+            # Ghidra prints a member operator in static form, with the object
+            # passed as the first argument; a member operator cannot declare
+            # that parameter, so drop it.  The definition is shaped the same
+            # way (tools/shape_tmpl_defs.py).
+            params = ",".join(p.strip() for p in _split_commas(params)[1:])
+    elif name.startswith("operator"):
+        # ``operator_cast_to_map`` lexes as one identifier, not an operator,
+        # so it is an ordinary member.
+        model.stats["named-member-operator"] += 1
+    for idx, c in enumerate(owner):
+        if "<" in c:
+            top = "::".join(_strip_angles(x) for x in owner[:idx + 1])
+            if c.endswith(">"):
+                args = [a for a in _split_commas(c[c.index("<") + 1:-1])
+                        if a.strip()]
+                model.tmpl_args[top].add(
+                    (len(args), all(_looks_like_type(a) for a in args)))
+            break
+    key = "::".join(_strip_angles(c) for c in owner)
+    if is_dtor:
+        ret, params = "", ""
+    elif is_ctor:
+        ret = ""
+    # The static-form call the decompiler prints passes the object as the
+    # first argument, so a body that never names ``this`` is a free function
+    # in disguise; the same rule keeps every operator non-static.
+    static = not (is_ctor or is_dtor or is_op
+                  or uses_this or "const" in post or "virtual" in post)
+    if _nested_incomplete(model, params):
+        model.stats["skipped-nested-type"] += 1
+        return
+    members = model.tmpl_members[key]
+    bucket = members.setdefault(name, [])
+    decl = _decl(ret, name, params, post, static)
+    # The same member is recovered once per specialization, and the two copies
+    # disagree on return type (``char *`` / ``wchar_t *``) and sometimes on
+    # static-ness.  Only one declaration may exist per signature; the extra
+    # copy would be an illegal overload.
+    sig = (name, _canon_params(params),
+           bool(re.search(r"\bconst\b", post)),
+           bool(re.search(r"\bvirtual\b", post)))
+    sigs = model.tmpl_sigs[key]
+    if sig in sigs:
+        if decl.startswith("static ") and not bucket[sigs[sig]].startswith(
+                "static "):
+            bucket[sigs[sig]] = decl
+        return
+    sigs[sig] = len(bucket)
+    bucket.append(decl)
+
+
+def _derive_params(model, key):
+    """Template parameters for a primary the table does not know.
+
+    Every recorded instantiation of the primary must agree on one arity and
+    spell only types, then the primary can be declared with placeholder
+    parameters of that arity.  A non-type argument (``moneypunct<char, false>``)
+    means the placeholders cannot be assumed to be types, and the primary has
+    to be added to the table instead.
+    """
+    seen = model.tmpl_args.get(key)
+    if not seen:
+        return None
+    counts = {c for c, _t in seen}
+    if len(counts) == 1 and all(t for _c, t in seen):
+        return ", ".join("class _T%d" % i for i in range(counts.pop()))
+    return None
+
+
+def _emit_primary(model, key, params, defined):
+    """A full definition of one primary template with recovered members.
+
+    Each member carries its exact harvested declaration *and* a greedy
+    variadic overload: a call site Ghidra printed with a different arity or an
+    integer-typed object argument cannot match the exact declaration, and the
+    member templates of libc++ are never visible anyway, so the overload is
+    what makes those call sites resolve.
+    """
+    name = key.split("::")[-1]
+    members = model.tmpl_members[key]
+    lines = ["template <%s> struct %s {" % (params, name)]
+    for short in sorted(members):
+        for decl in members[short]:
+            lines.append("  " + decl)
+    child = key + "::"
+    for sub in sorted(model.tmpl_members):
+        if not sub.startswith(child) or sub[len(child):].count("::"):
+            continue
+        lines.append("  struct %s {" % sub[len(child):])
+        for short in sorted(model.tmpl_members[sub]):
+            for decl in model.tmpl_members[sub][short]:
+                lines.append("    " + decl)
+        lines.append("  };")
+    lines.append("  template <class... _A> %s(_A...);" % name)
+    if ("~" + name) not in members:
+        lines.append("  ~%s();" % name)
+    for short in sorted(members):
+        if short.startswith("~") or short == name:
+            continue
+        if short.startswith("operator"):
+            lines.append("  template <class... _A> _Datum %s(_A...);"
+                         % short)
+        else:
+            # The trailing ellipsis matters: Ghidra writes a static-form call
+            # as ``Class<T>::name<Args>(object, arg)``, which spells explicit
+            # template arguments *and* passes the object on top.  A plain pack
+            # would fix the arity to the number of explicit arguments.
+            lines.append("  template <class... _A> static _Datum %s(_A..., ...);"
+                         % short)
+    lines.append("};")
+    return "\n".join(lines)
+
+
 def add_definition(model, ret, qname, params, post, uses_this=False):
     if "<" in qname or "<" in ret or "[" in ret:
         model.stats["skipped-template"] += 1
+        if "<" in qname and "<" not in ret and "[" not in ret:
+            _harvest_template(model, ret, qname, params, post, uses_this)
         return
     if qname.startswith(("non_virtual_thunk_to_", "virtual_thunk_to_",
                          "_thunk_to_")):
@@ -533,6 +910,29 @@ def generate(model, path):
 
     extra = sorted(t for t in model.types if _unknown(t))
 
+    # Primary templates whose members the template-qualified definitions
+    # proved exist.  A key whose owner is itself harvested is a nested class
+    # and is emitted inside its owner's body.
+    primaries = []
+    defined = set()
+    for key in sorted(model.tmpl_members):
+        if "::".join(key.split("::")[:-1]) in model.tmpl_members:
+            continue
+        parts = key.split("::")
+        if any("::".join(parts[:i]) in model.classes
+               for i in range(1, len(parts))):
+            # The template is a member of a class the generator declares (a
+            # recovered static utility class), where a namespace-scope
+            # definition would clash with that class.
+            model.stats["skipped-template-in-class"] += 1
+            continue
+        params = _TMPL_PARAMS.get(key) or _derive_params(model, key)
+        if params is None:
+            model.stats["skipped-template-params"] += 1
+            continue
+        primaries.append((key, params))
+        defined.add(key)
+
     for cls in sorted(model.classes):
         if cls in _CLANG_IMPLICIT:
             continue
@@ -540,6 +940,8 @@ def generate(model, path):
         if len(comps) == 1 or "::".join(comps[:-1]) not in model.classes:
             out.append(_wrap(comps[:-1], "struct %s;" % comps[-1]))
     for t in sorted(model.templates - model.types):
+        if t in defined:
+            continue          # declared with its real parameters below
         comps = t.split("::")
         out.append(_wrap(comps[:-1], "template <class...> struct %s;" % comps[-1]))
 
@@ -576,6 +978,21 @@ def generate(model, path):
     declared = model.defined | set(model.funcs)
     out.append("\n".join("extern _Datum %s;" % s
                          for s in sorted(model.symbols) if s not in declared))
+
+    # A definition of a member of a class template needs the primary template
+    # to exist with that member declared; the prelude already declares the
+    # libc++ primaries, so only the recovered game/ndk templates are declared
+    # here, with their real parameters (a variadic forward would not do: the
+    # members would land on a different template).
+    for key, params in primaries:
+        if key not in _TMPL_PARAMS:
+            comps = key.split("::")
+            out.append(_wrap(comps[:-1],
+                             "template <%s> struct %s;" % (params, comps[-1])))
+    for key, params in primaries:
+        comps = key.split("::")
+        out.append(_wrap(comps[:-1],
+                         _emit_primary(model, key, params, defined)))
 
     emitted = set()
     for cls in sorted(model.classes):

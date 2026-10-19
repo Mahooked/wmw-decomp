@@ -9,7 +9,7 @@
 
 /* std::__ndk1::future<void>::future(std::__ndk1::__assoc_sub_state*) */
 
-void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0, ulong in_x1)
+template<> std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0, ulong in_x1)
 
 {
   int iVar2;
@@ -59,10 +59,10 @@ void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0, ulong
 
 /* std::__ndk1::future<void>::~future() */
 
-void std::__ndk1::future<void>::~future(long *param_1)
+template<> std::__ndk1::future<void>::~future()
 
 {
-  if (*param_1 != 0) {
+  if (*(byte *)this != 0) {
     std::__ndk1::__shared_count::__release_shared();
     return;
   }
@@ -77,7 +77,7 @@ void std::__ndk1::future<void>::~future(long *param_1)
 
 /* std::__ndk1::future<void>::get() */
 
-void std::__ndk1::future<void>::get(long *param_1)
+template<> void std::__ndk1::future<void>::get(long *param_1)
 
 {
   long lVar1;

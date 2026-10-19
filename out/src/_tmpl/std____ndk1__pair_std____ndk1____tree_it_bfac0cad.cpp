@@ -15,12 +15,7 @@
    >::__emplace_unique_key_args<Walaber::Widget_Group::WidgetInfo, Walaber::Widget_Group::WidgetInfo
    const&>(Walaber::Widget_Group::WidgetInfo const&, Walaber::Widget_Group::WidgetInfo const&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>
-::
-__emplace_unique_key_args<Walaber::Widget_Group::WidgetInfo,Walaber::Widget_Group::WidgetInfo_const&>
-          (Walaber__Widget_Group__WidgetInfo *p0,Walaber__Widget_Group__WidgetInfo *p1)
+template<> undefined1 [16] std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__emplace_unique_key_args(Walaber__Widget_Group__WidgetInfo *p0,Walaber__Widget_Group__WidgetInfo *p1)
 
 {
   bool bVar1;

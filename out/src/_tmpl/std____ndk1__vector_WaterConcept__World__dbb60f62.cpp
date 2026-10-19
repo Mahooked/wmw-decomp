@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::World::TouchEvent,
    std::__ndk1::allocator<WaterConcept::World::TouchEvent>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::TouchEvent,std::__ndk1::allocator<WaterConcept::World::TouchEvent>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::World::TouchEvent,std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;

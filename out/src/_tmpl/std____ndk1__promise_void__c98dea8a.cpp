@@ -9,7 +9,7 @@
 
 /* std::__ndk1::promise<void>::promise() */
 
-void std::__ndk1::promise<void>::promise(undefined8 *param_1)
+template<> std::__ndk1::promise<void>::promise(undefined8 *param_1)
 
 {
   undefined8 *puVar1;
@@ -42,7 +42,7 @@ void std::__ndk1::promise<void>::promise(undefined8 *param_1)
 
 /* std::__ndk1::promise<void>::~promise() */
 
-void std::__ndk1::promise<void>::~promise(long *param_1)
+template<> std::__ndk1::promise<void>::~promise()
 
 {
   int iVar2;
@@ -56,13 +56,13 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
   undefined8 uStack_50;
   undefined8 *puStack_48;
   
-  lVar3 = *param_1;
+  lVar3 = *(byte *)this;
   if (lVar3 != 0) {
     if ((*(byte *)(lVar3 + 0x70) & 1) == 0) {
       auStack_68[0] = 0;
       lVar3 = *(long *)(lVar3 + 0x10);
       ((std::exception_ptr *)auStack_68)->~exception_ptr();
-      if ((lVar3 == 0) && (lVar3 = *param_1, 0 < *(long *)(lVar3 + 8))) {
+      if ((lVar3 == 0) && (lVar3 = *(byte *)this, 0 < *(long *)(lVar3 + 8))) {
         if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
           new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
           DAT_007a5f08 = &PTR__error_category_00719408;
@@ -81,14 +81,14 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
         puStack_78 = puStack_48;
         uStack_80 = uStack_50;
         appuStack_90[0] = &PTR__future_error_00719378;
-        std::exception_ptr std::make_exception_ptr<std::__ndk1::future_error>(auStack_70,appuStack_90);
+        std::make_exception_ptr<std::__ndk1::future_error>(auStack_70,appuStack_90);
                     /* try { // try from 005f1534 to 005f153f has its CatchHandler @ 005f15dc */
         std::__ndk1::__assoc_sub_state::set_exception(lVar3,auStack_70);
         ((std::exception_ptr *)auStack_70)->~exception_ptr();
         ((std::logic_error *)appuStack_90)->~logic_error();
       }
     }
-    std::__ndk1::__shared_count::__release_shared(*param_1);
+    std::__ndk1::__shared_count::__release_shared(*(byte *)this);
   }
   return;
 }
@@ -101,7 +101,7 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
 
 /* std::__ndk1::promise<void>::get_future() */
 
-void std::__ndk1::promise<void>::get_future(undefined8 param_1,long *param_2)
+template<> void std::__ndk1::promise<void>::get_future(undefined8 param_1,long *param_2)
 
 {
   int iVar1;
@@ -132,7 +132,7 @@ void std::__ndk1::promise<void>::get_future(undefined8 param_1,long *param_2)
 
 /* std::__ndk1::promise<void>::set_value() */
 
-void std::__ndk1::promise<void>::set_value(long *param_1)
+template<> void std::__ndk1::promise<void>::set_value(long *param_1)
 
 {
   int iVar1;
@@ -163,7 +163,7 @@ void std::__ndk1::promise<void>::set_value(long *param_1)
 
 /* std::__ndk1::promise<void>::set_exception(std::exception_ptr) */
 
-void std::__ndk1::promise<void>::set_exception(std__exception_ptr p0)
+template<> void std::__ndk1::promise<void>::set_exception(std__exception_ptr p0)
 
 {
   int iVar2;
@@ -200,7 +200,7 @@ void std::__ndk1::promise<void>::set_exception(std__exception_ptr p0)
 
 /* std::__ndk1::promise<void>::set_value_at_thread_exit() */
 
-void std::__ndk1::promise<void>::set_value_at_thread_exit(long *param_1)
+template<> void std::__ndk1::promise<void>::set_value_at_thread_exit(long *param_1)
 
 {
   int iVar1;
@@ -231,7 +231,7 @@ void std::__ndk1::promise<void>::set_value_at_thread_exit(long *param_1)
 
 /* std::__ndk1::promise<void>::set_exception_at_thread_exit(std::exception_ptr) */
 
-void std::__ndk1::promise<void>::set_exception_at_thread_exit(std__exception_ptr p0)
+template<> void std::__ndk1::promise<void>::set_exception_at_thread_exit(std__exception_ptr p0)
 
 {
   int iVar2;

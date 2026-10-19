@@ -10,19 +10,18 @@
 /* std::__ndk1::__deque_base<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>
    >::~__deque_base() */
 
-void std::__ndk1::__deque_base<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::~__deque_base
-               (long param_1)
+template<> std::__ndk1::__deque_base<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::~__deque_base()
 
 {
   undefined8 *puVar1;
   undefined8 *puVar2;
   
   std::__ndk1::__deque_base<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>::clear();
-  puVar1 = *(undefined8 **)(param_1 + 0x10);
-  for (puVar2 = *(undefined8 **)(param_1 + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
+  puVar1 = *(undefined8 **)((byte *)this + 0x10);
+  for (puVar2 = *(undefined8 **)((byte *)this + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
     operator delete((void *)*puVar2);
   }
-  ((std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>> *)param_1)->~__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>>();
+  ((std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>> *)(byte *)this)->~__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>>();
   return;
 }
 
@@ -34,8 +33,7 @@ void std::__ndk1::__deque_base<Walaber::Node*,std::__ndk1::allocator<Walaber::No
 
 /* std::__ndk1::__deque_base<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*> >::clear() */
 
-void std::__ndk1::__deque_base<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::clear
-               (long param_1)
+template<> void std::__ndk1::__deque_base<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::clear(long param_1)
 
 {
   ulong uVar1;

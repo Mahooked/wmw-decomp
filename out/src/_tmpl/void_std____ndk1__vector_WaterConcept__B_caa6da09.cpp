@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<WaterConcept::Bomb*, std::__ndk1::allocator<WaterConcept::Bomb*>
    >::__push_back_slow_path<WaterConcept::Bomb* const&>(WaterConcept::Bomb* const&) */
 
-void std::__ndk1::vector<WaterConcept::Bomb*,std::__ndk1::allocator<WaterConcept::Bomb*>>::
-     __push_back_slow_path<WaterConcept::Bomb*const&>(WaterConcept__Bomb **p0)
+template<> void std::__ndk1::vector<WaterConcept::Bomb*,std::__ndk1::allocator<WaterConcept::Bomb*>>::__push_back_slow_path(WaterConcept__Bomb **p0)
 
 {
   undefined8 *in_x1;

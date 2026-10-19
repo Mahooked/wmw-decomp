@@ -35,11 +35,7 @@
    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,
    std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*> > >, void*>*, long>) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>
-     ::
-     __assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::__tree_node<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,void*>*,long>>
-               (long *param_1,long *param_2,long *param_3)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__assign_multi(long *param_1,long *param_2,long *param_3)
 
 {
   long *plVar1;
@@ -78,7 +74,7 @@ joined_r0x00364218:
         *(int *)(plVar6 + 4) = (int)param_2[4];
         if (plVar6 != param_2) {
                     /* try { // try from 0036424c to 0036424f has its CatchHandler @ 003643a0 */
-          std::__ndk1::enable_if<__is_forward_iterator<Walaber::SpriteBatch::DrawAction**>::value&&is_constructible<Walaber::SpriteBatch::DrawAction*, std::__ndk1::iterator_traits<Walaber::SpriteBatch::DrawAction**>::reference>::value, void>::type std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::assign<Walaber::SpriteBatch::DrawAction**>(plVar6 + 5,param_2[5],param_2[6]);
+          std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::assign<Walaber::SpriteBatch::DrawAction**>(plVar6 + 5,param_2[5],param_2[6]);
         }
         plVar5 = (long *)std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__detach(plVar6);
         plVar3 = plVar8;
@@ -121,7 +117,7 @@ LAB_003642a4:
     }
   }
   while (param_2 != param_3) {
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__emplace_multi<std::__ndk1::pair<int const, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>> const&>(param_1,param_2 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__emplace_multi<std::__ndk1::pair<int const, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>> const&>(param_1,param_2 + 4);
     plVar5 = (long *)param_2[1];
     if ((long *)param_2[1] == (long *)0x0) {
       plVar5 = param_2 + 2;

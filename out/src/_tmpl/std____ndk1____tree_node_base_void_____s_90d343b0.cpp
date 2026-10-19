@@ -13,9 +13,7 @@
    >::__find_equal<WaterConcept::InteractiveObject*>(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    WaterConcept::InteractiveObject* const&) */
 
-long * std::__ndk1::
-       __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-       ::__find_equal<WaterConcept::InteractiveObject*>(long param_1,long *param_2,ulong *param_3)
+template<> long * std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__find_equal(long param_1,long *param_2,ulong *param_3)
 
 {
   long *plVar1;
@@ -60,10 +58,7 @@ long * std::__ndk1::
    std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    std::__ndk1::__tree_node_base<void*>*&, WaterConcept::InteractiveObject* const&) */
 
-long * std::__ndk1::
-       __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-       ::__find_equal<WaterConcept::InteractiveObject*>
-                 (undefined8 *param_1,long *param_2,long *param_3,long *param_4,ulong *param_5)
+template<> long * std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__find_equal(undefined8 *param_1,long *param_2,long *param_3,long *param_4,ulong *param_5)
 
 {
   long *plVar1;

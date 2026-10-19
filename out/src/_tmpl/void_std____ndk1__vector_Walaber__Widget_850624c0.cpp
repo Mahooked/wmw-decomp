@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::Widget_PushButton*>
    >::__push_back_slow_path<Walaber::Widget_PushButton*>(Walaber::Widget_PushButton*&&) */
 
-void std::__ndk1::
-     vector<Walaber::Widget_PushButton*,std::__ndk1::allocator<Walaber::Widget_PushButton*>>::
-     __push_back_slow_path<Walaber::Widget_PushButton*>(Walaber__Widget_PushButton ***p0)
+template<> void std::__ndk1::vector<Walaber::Widget_PushButton*,std::__ndk1::allocator<Walaber::Widget_PushButton*>>::__push_back_slow_path(Walaber__Widget_PushButton ***p0)
 
 {
   undefined8 *in_x1;

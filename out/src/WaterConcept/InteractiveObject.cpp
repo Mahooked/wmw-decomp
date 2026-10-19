@@ -732,7 +732,7 @@ void WaterConcept::InteractiveObject::_initFileLoaded(void *p0, long in_x1)
                     puStack_b8 = puStack_b8 + 1;
                   }
                   else {
-                    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&puStack_c0,&uStack_100);
+                    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&puStack_c0,&uStack_100);
                   }
                 }
               }
@@ -1010,14 +1010,14 @@ void WaterConcept::InteractiveObject::addShape(long *param_1,undefined8 param_2)
 
 {
   if (param_1[0x1d] == param_1[0x1e]) {
-    void std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>(param_1 + 0x1c,param_2);
+    std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>(param_1 + 0x1c,param_2);
   }
   else {
     new ((void *)(param_1[0x1d])) std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>(param_2);
     param_1[0x1d] = param_1[0x1d] + 0x18;
   }
   if (param_1[0x20] == param_1[0x21]) {
-    void std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>(param_1 + 0x1f,param_2);
+    std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>(param_1 + 0x1f,param_2);
   }
   else {
     new ((void *)(param_1[0x20])) std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>(param_2);
@@ -1066,7 +1066,7 @@ void WaterConcept::InteractiveObject::addSprite
   if ((param_6 & 1) == 0) {
     plVar1 = *(long **)(param_2 + 0x180);
     if (plVar1 == *(long **)(param_2 + 0x188)) {
-      void std::__ndk1::vector<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>::__push_back_slow_path<WaterConcept::InteractiveObject::SpriteInfo const&>(param_2 + 0x178,&plStack_88);
+      std::__ndk1::vector<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>::__push_back_slow_path<WaterConcept::InteractiveObject::SpriteInfo const&>(param_2 + 0x178,&plStack_88);
     }
     else {
       *(undefined1 *)(plVar1 + 1) = uStack_80;
@@ -1078,7 +1078,7 @@ void WaterConcept::InteractiveObject::addSprite
   else {
     plVar1 = *(long **)(param_2 + 0x198);
     if (plVar1 == *(long **)(param_2 + 0x1a0)) {
-      void std::__ndk1::vector<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>::__push_back_slow_path<WaterConcept::InteractiveObject::SpriteInfo const&>(param_2 + 400,&plStack_88);
+      std::__ndk1::vector<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>::__push_back_slow_path<WaterConcept::InteractiveObject::SpriteInfo const&>(param_2 + 400,&plStack_88);
     }
     else {
       *(undefined1 *)(plVar1 + 1) = uStack_80;
@@ -1240,7 +1240,7 @@ void WaterConcept::InteractiveObject::_buildVaccuum(long *param_1)
                     /* try { // try from 00482404 to 004824ab has its CatchHandler @ 00482770 */
     fStack_98 = fStack_a0;
     fStack_94 = fStack_9c;
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(&pfStack_90,&fStack_98);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(&pfStack_90,&fStack_98);
     fVar13 = (float)param_1[0x5a] - (float)param_1[0x59];
     fVar12 = (float)((ulong)param_1[0x5a] >> 0x20) - (float)((ulong)param_1[0x59] >> 0x20);
     fVar12 = fVar13 * fVar13 + fVar12 * fVar12;
@@ -1255,7 +1255,7 @@ void WaterConcept::InteractiveObject::_buildVaccuum(long *param_1)
       fStack_a0 = fVar12 * *(float *)(param_1 + 0x5a) - fVar13 * *(float *)((long)param_1 + 0x2d4);
       fStack_9c = fVar13 * *(float *)(param_1 + 0x5a) + fVar12 * *(float *)((long)param_1 + 0x2d4);
       if (pfStack_88 == pfStack_80) {
-        void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(&pfStack_90,&fStack_a0);
+        std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(&pfStack_90,&fStack_a0);
       }
       else {
         *pfStack_88 = fStack_a0;
@@ -1280,7 +1280,7 @@ void WaterConcept::InteractiveObject::_buildVaccuum(long *param_1)
                              fVar15 + (fVar13 * fVar12 - fVar14 * 0.0));
         if (pfStack_88 == pfStack_80) {
                     /* try { // try from 00482560 to 0048256b has its CatchHandler @ 00482774 */
-          void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(&pfStack_90,&uStack_a8);
+          std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(&pfStack_90,&uStack_a8);
         }
         else {
           *(undefined8 *)pfStack_88 = uStack_a8;
@@ -2401,7 +2401,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, u
         uStack_d1 = (undefined1)((ulong)puVar13 >> 0x38);
       }
       else {
-        void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_e0,&fStack_c0);
+        std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_e0,&fStack_c0);
       }
                     /* try { // try from 004833b0 to 004833bb has its CatchHandler @ 004857d8 */
       Walaber::StringHelper::intToStr(&fStack_100,iVar5);
@@ -2439,7 +2439,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, u
     *(undefined4 *)((long)&p0[0x11].f_0x10 + 4) = 1;
     if ((void **)&p0[0x19].f_0x10 != &pvStack_118) {
                     /* try { // try from 00483448 to 0048344b has its CatchHandler @ 004855ec */
-      std::__ndk1::enable_if<__is_forward_iterator<Walaber::Vector2*>::value&&is_constructible<Walaber::Vector2, std::__ndk1::iterator_traits<Walaber::Vector2*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::assign<Walaber::Vector2*>(&p0[0x19].f_0x10,pvStack_118,pvStack_110);
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::assign<Walaber::Vector2*>(&p0[0x19].f_0x10,pvStack_118,pvStack_110);
     }
     if (pvStack_118 != (void *)0x0) {
       pvStack_110 = pvStack_118;
@@ -2692,7 +2692,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, u
       p0[0x13].f_0x0 = (ulong)(puVar15 + 1);
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x12].f_0x10,&fStack_e0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x12].f_0x10,&fStack_e0);
     }
     fStack_e0 = 0.0;
     puVar15 = (undefined4 *)p0[0x14].f_0x0;
@@ -2701,7 +2701,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, u
       p0[0x14].f_0x0 = (ulong)(puVar15 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConcept::InteractiveObject::MoveEase, std::__ndk1::allocator<WaterConcept::InteractiveObject::MoveEase>>::__push_back_slow_path<WaterConcept::InteractiveObject::MoveEase>(&p0[0x13].f_0x10,&fStack_e0);
+      std::__ndk1::vector<WaterConcept::InteractiveObject::MoveEase, std::__ndk1::allocator<WaterConcept::InteractiveObject::MoveEase>>::__push_back_slow_path<WaterConcept::InteractiveObject::MoveEase>(&p0[0x13].f_0x10,&fStack_e0);
     }
     fStack_e0 = 0.0;
     puVar15 = (undefined4 *)p0[0x15].f_0x0;
@@ -2710,7 +2710,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, u
       p0[0x15].f_0x0 = (ulong)(puVar15 + 1);
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x14].f_0x10,&fStack_e0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x14].f_0x10,&fStack_e0);
     }
     fStack_e0 = 0.0;
     puVar15 = (undefined4 *)p0[0x16].f_0x0;
@@ -2719,7 +2719,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, u
       p0[0x16].f_0x0 = (ulong)(puVar15 + 1);
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x15].f_0x10,&fStack_e0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x15].f_0x10,&fStack_e0);
     }
     fStack_e0 = 0.0;
     puVar15 = (undefined4 *)p0[0x17].f_0x0;
@@ -2728,7 +2728,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, u
       p0[0x17].f_0x0 = (ulong)(puVar15 + 1);
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x16].f_0x10,&fStack_e0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(&p0[0x16].f_0x10,&fStack_e0);
     }
     if ((ulong)((long)(p0[0x1a].f_0x0 - p0[0x19].f_0x10) >> 3) < (ulong)uVar22) break;
     puVar15 = (undefined4 *)p0[0x13].f_0x0;
@@ -5056,7 +5056,7 @@ void WaterConcept::InteractiveObject::constrainToPath(long param_1,undefined8 *p
 {
   *(undefined4 *)(param_1 + 0x1ac) = 1;
   if ((undefined8 *)(param_1 + 0x268) != param_2) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Vector2*>::value&&is_constructible<Walaber::Vector2, std::__ndk1::iterator_traits<Walaber::Vector2*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::assign<Walaber::Vector2*>((undefined8 *)(param_1 + 0x268),*param_2,param_2[1]);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::assign<Walaber::Vector2*>((undefined8 *)(param_1 + 0x268),*param_2,param_2[1]);
     return;
   }
   return;
@@ -5232,7 +5232,7 @@ void WaterConcept::InteractiveObject::addTimeQueueEntry(bool p0,float p1)
   uVar2 = CONCAT31(uStack_30._1_3_,in_w1);
   uStack_30 = uVar2 & 0xffffff01;
   if (*(ulong **)(uVar3 + 0x328) == *(ulong **)(uVar3 + 0x330)) {
-    void std::__ndk1::vector<WaterConcept::InteractiveObject::TimerSetting, std::__ndk1::allocator<WaterConcept::InteractiveObject::TimerSetting>>::__push_back_slow_path<WaterConcept::InteractiveObject::TimerSetting const&>(uVar3 + 800,&uStack_30);
+    std::__ndk1::vector<WaterConcept::InteractiveObject::TimerSetting, std::__ndk1::allocator<WaterConcept::InteractiveObject::TimerSetting>>::__push_back_slow_path<WaterConcept::InteractiveObject::TimerSetting const&>(uVar3 + 800,&uStack_30);
   }
   else {
     **(ulong **)(uVar3 + 0x328) = CONCAT44(p1,uVar2) & 0xffffffffffffff01;
@@ -6031,7 +6031,7 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
       uStack_b0 = 0;
       puStack_110 = (undefined8 *)CONCAT44(puStack_110._4_4_,5);
                     /* try { // try from 00486d40 to 00486d4b has its CatchHandler @ 00487044 */
-      void std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&pvStack_c0,&puStack_110);
+      std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&pvStack_c0,&puStack_110);
                     /* try { // try from 00486d4c to 00486d8b has its CatchHandler @ 00487048 */
       puVar4 = (undefined8 *)operator new(0x28);
       puVar4[2] = param_1;
@@ -7297,7 +7297,7 @@ void WaterConcept::InteractiveObject::updateShapes(long *param_1)
       plVar4 = (long *)(lVar5 + uVar6 * 0x18);
       new ((void *)(&pvStack_70)) std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>(plVar4[1] - *plVar4 >> 3,&Walaber::Vector2::Zero);
       if (param_1[0x20] == param_1[0x21]) {
-        void std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>(param_1 + 0x1f,&pvStack_70);
+        std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>(param_1 + 0x1f,&pvStack_70);
       }
       else {
                     /* try { // try from 00488854 to 00488877 has its CatchHandler @ 004888f0 */

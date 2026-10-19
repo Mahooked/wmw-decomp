@@ -11,11 +11,7 @@
    std::__ndk1::char_traits<wchar_t> > >::do_put(std::__ndk1::ostreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, bool, std::__ndk1::ios_base&, wchar_t, long double) const */
 
-undefined8
-std::__ndk1::
-money_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long param_5,
-      undefined4 param_6)
+template<> undefined8 std::__ndk1::money_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long param_5, undefined4 param_6)
 
 {
   bool bVar2;
@@ -213,10 +209,7 @@ LAB_005cc480:
    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&) const */
 
-undefined8
-std::__ndk1::
-money_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,bool param_2,std::__ndk1::ios_base& param_3,wchar_t param_4,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_5)
+template<> undefined8 std::__ndk1::money_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,bool param_2,std::__ndk1::ios_base& param_3,wchar_t param_4,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_5)
 
 {
   ulong uVar1;

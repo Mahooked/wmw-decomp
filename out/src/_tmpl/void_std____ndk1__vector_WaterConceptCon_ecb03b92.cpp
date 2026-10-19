@@ -11,9 +11,7 @@
    std::__ndk1::allocator<WaterConceptConstants::PackType>
    >::__push_back_slow_path<WaterConceptConstants::PackType>(WaterConceptConstants::PackType&&) */
 
-void std::__ndk1::
-     vector<WaterConceptConstants::PackType,std::__ndk1::allocator<WaterConceptConstants::PackType>>
-     ::__push_back_slow_path<WaterConceptConstants::PackType>(WaterConceptConstants__PackType **p0)
+template<> void std::__ndk1::vector<WaterConceptConstants::PackType,std::__ndk1::allocator<WaterConceptConstants::PackType>>::__push_back_slow_path(WaterConceptConstants__PackType **p0)
 
 {
   undefined4 *in_x1;

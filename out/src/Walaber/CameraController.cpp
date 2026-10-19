@@ -167,7 +167,7 @@ void Walaber::CameraController::update(undefined8 * in_x0, float p0)
         uVar2 = uVar8 + 1 & 0x3f;
         lStack_58 = lVar10 + (ulong)(uVar8 >> 6) * 8;
         if (uStack_50 == uVar2) {
-          std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0> std::__ndk1::__copy_aligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, true>(auStack_68);
+          std::__ndk1::__copy_aligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, true>(auStack_68);
         }
         else {
           std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0> std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, true>(auStack_68,
@@ -232,7 +232,7 @@ void Walaber::CameraController::queueMovement
   fStack_40 = p3;
   fStack_3c = p2;
   if (puVar1 == *(undefined8 **)((long)p0 + 0x28)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>((long)p0 + 0x18);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>((long)p0 + 0x18);
   }
   else {
     *puVar1 = *(undefined8 *)p1;
@@ -240,7 +240,7 @@ void Walaber::CameraController::queueMovement
   }
   puVar1 = *(undefined8 **)((long)p0 + 0x38);
   if (puVar1 == *(undefined8 **)((long)p0 + 0x40)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>((long)p0 + 0x30,(undefined8 *)(ulong)p5);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>((long)p0 + 0x30,(undefined8 *)(ulong)p5);
   }
   else {
     *puVar1 = *(undefined8 *)(ulong)p5;
@@ -248,7 +248,7 @@ void Walaber::CameraController::queueMovement
   }
   pfVar2 = *(float **)((long)p0 + 0x50);
   if (pfVar2 == *(float **)((long)p0 + 0x58)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>((long)p0 + 0x48,&fStack_3c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>((long)p0 + 0x48,&fStack_3c);
   }
   else {
     *pfVar2 = fStack_3c;
@@ -256,7 +256,7 @@ void Walaber::CameraController::queueMovement
   }
   pfVar2 = *(float **)((long)p0 + 0x68);
   if (pfVar2 == *(float **)((long)p0 + 0x70)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>((long)p0 + 0x60,&fStack_40);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>((long)p0 + 0x60,&fStack_40);
   }
   else {
     *pfVar2 = fStack_40;
@@ -264,7 +264,7 @@ void Walaber::CameraController::queueMovement
   }
   pfVar2 = *(float **)((long)p0 + 0x80);
   if (pfVar2 == *(float **)((long)p0 + 0x88)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>((long)p0 + 0x78,&fStack_44);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>((long)p0 + 0x78,&fStack_44);
   }
   else {
     *pfVar2 = fStack_44;

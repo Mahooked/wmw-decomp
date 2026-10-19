@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::TextureManager::SubTexInfo,
    std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -68,9 +66,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,
    std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo> >::__vdeallocate() */
 
-void std::__ndk1::
-     vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::__vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__vdeallocate(undefined8 *param_1)
 
 {
   byte *pbVar1;
@@ -109,9 +105,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,
    std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo> >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__vallocate(ulong p0)
 
 {
   long lVar1;

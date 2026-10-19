@@ -541,7 +541,7 @@ void Walaber::SoundManager::_initConfigFileRead(void *p0, long in_x1)
           (*(code *)xmlFree)();
           if (lVar22 != 0) {
             puStack_120 = (undefined8 *)CONCAT44(puStack_120._4_4_,uVar4);
-            std::__ndk1::pair<std::__ndk1::__tree_iterator<unsigned int, std::__ndk1::__tree_node<unsigned int, void*>*, long>, bool> std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::__emplace_unique_key_args<unsigned int, unsigned int>((long)p0 + 0x30,&puStack_120,&puStack_120);
+            std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::__emplace_unique_key_args<unsigned int, unsigned int>((long)p0 + 0x30,&puStack_120,&puStack_120);
           }
           lVar14 = xmlGetProp(lVar20,"isMusic");
           (*(code *)xmlFree)();
@@ -1236,7 +1236,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
       lVar7 = *(long *)(lVar8 + 0x48);
       if (lVar7 == *(long *)(lVar8 + 0x50)) {
                     /* try { // try from 0034f2e8 to 0034f2ef has its CatchHandler @ 0034f3b0 */
-        void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(lVar8 + 0x40,&bStack_c8);
+        std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(lVar8 + 0x40,&bStack_c8);
       }
       else {
         new ((void *)(lVar7)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c8);
@@ -1260,7 +1260,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
       lVar7 = *(long *)(lVar8 + 0x30);
       if (lVar7 == *(long *)(lVar8 + 0x38)) {
                     /* try { // try from 0034f278 to 0034f27f has its CatchHandler @ 0034f3b8 */
-        void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(lVar8 + 0x28,&bStack_c8);
+        std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(lVar8 + 0x28,&bStack_c8);
       }
       else {
         new ((void *)(lVar7)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c8);
@@ -1324,7 +1324,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
       }
       lVar7 = lVar7 + 0x28;
     }
-    void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(lVar7);
+    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(lVar7);
   }
 LAB_0034f318:
   return;
@@ -1501,7 +1501,7 @@ LAB_0034f7d4:
           goto LAB_0034f7d0;
 LAB_0034f864:
           if (pbVar12 == (byte *)plVar21[7]) {
-            void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(plVar21 + 5,pbVar20);
+            std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(plVar21 + 5,pbVar20);
           }
           else {
             new ((void *)(pbVar12)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar20);
@@ -1774,7 +1774,7 @@ LAB_0034f8d4:
                 if (uVar1 == 0) {
 LAB_0034f904:
                   if (pbVar20 == (byte *)plVar21[7]) {
-                    void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(plVar21 + 5,pbVar19);
+                    std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>(plVar21 + 5,pbVar19);
                   }
                   else {
                     new ((void *)(pbVar20)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(pbVar19);
@@ -2066,7 +2066,7 @@ void Walaber::SoundManager::_loadSound
             plVar7 = plStack_a0;
             do {
                     /* try { // try from 0034fe9c to 0034feab has its CatchHandler @ 00350460 */
-              std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&ppuStack_c8,&puStack_c0,plVar7 + 4,plVar7 + 4);
+              std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&ppuStack_c8,&puStack_c0,plVar7 + 4,plVar7 + 4);
               plVar8 = (long *)plVar7[1];
               if ((long *)plVar7[1] == (long *)0x0) {
                 plVar8 = plVar7 + 2;
@@ -2094,7 +2094,7 @@ void Walaber::SoundManager::_loadSound
             *piStack_80 = *piStack_80 + 1;
           }
                     /* try { // try from 0034ff20 to 0034ff2f has its CatchHandler @ 00350444 */
-          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>(param_1 + 0xf8,&puStack_d0);
+          std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>(param_1 + 0xf8,&puStack_d0);
           ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_b0)->~SharedPtr<Walaber::Callback>();
           ((Walaber::PropertyList *)&ppuStack_c8)->~PropertyList();
           if (param_1 + 0x100 == lVar2) {
@@ -2489,7 +2489,7 @@ LAB_003508b8:
     }
     if (plVar18[6] == plVar18[7]) {
                     /* try { // try from 00350a7c to 00350a83 has its CatchHandler @ 00350d08 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
     }
     else {
                     /* try { // try from 00350958 to 0035095f has its CatchHandler @ 00350d08 */
@@ -2622,7 +2622,7 @@ LAB_00350b88:
     }
   }
   if (pbVar13 == (byte *)plVar18[7]) {
-    void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
+    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
     pbVar13 = (byte *)plVar18[6];
   }
   else {
@@ -2744,7 +2744,7 @@ LAB_0035068c:
   }
   if (plVar18[6] == plVar18[7]) {
                     /* try { // try from 00350974 to 0035097b has its CatchHandler @ 00350d10 */
-    void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
+    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
   }
   else {
                     /* try { // try from 0035072c to 00350733 has its CatchHandler @ 00350d10 */
@@ -2943,7 +2943,7 @@ LAB_00350a20:
   }
   plVar18[6] = (long)pbVar17;
   if (pbVar17 == (byte *)plVar18[7]) {
-    void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
+    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(plVar18 + 5,param_2);
     uVar9 = uStack_80;
   }
   else {
@@ -3307,7 +3307,7 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0, long in_x1)
     puStack_c8 = &uStack_c0;
     while (plVar18 != puVar20 + 1) {
                     /* try { // try from 0035134c to 0035135b has its CatchHandler @ 003516bc */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_c8,&uStack_c0,plVar18 + 4,plVar18 + 4);
+      std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_c8,&uStack_c0,plVar18 + 4,plVar18 + 4);
       plVar11 = (long *)plVar18[1];
       if ((long *)plVar18[1] == (long *)0x0) {
         plVar11 = plVar18 + 2;
@@ -4469,7 +4469,7 @@ void Walaber::SoundManager::getSoundFile
   if (plVar9 != (long *)&uStack_f8) {
     do {
                     /* try { // try from 00353214 to 00353223 has its CatchHandler @ 003534c4 */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_128,&uStack_120,plVar9 + 4,plVar9 + 4);
+      std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_128,&uStack_120,plVar9 + 4,plVar9 + 4);
       plVar6 = (long *)plVar9[1];
       if ((long *)plVar9[1] == (long *)0x0) {
         plVar6 = plVar9 + 2;
@@ -4496,7 +4496,7 @@ void Walaber::SoundManager::getSoundFile
     *piStack_e0 = *piStack_e0 + 1;
   }
                     /* try { // try from 00353298 to 003532a7 has its CatchHandler @ 0035345c */
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>(param_1 + 0x110,&puStack_140);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>(param_1 + 0x110,&puStack_140);
   ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_110)->~SharedPtr<Walaber::Callback>();
   ((Walaber::PropertyList *)&puStack_128)->~PropertyList();
   if (((ulong)puStack_140 & 1) != 0) {
@@ -4725,7 +4725,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
     puStack_128 = &uStack_120;
     while (plVar18 != puVar17 + 1) {
                     /* try { // try from 00353718 to 00353727 has its CatchHandler @ 00353e1c */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_128,&uStack_120,plVar18 + 4,plVar18 + 4);
+      std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_128,&uStack_120,plVar18 + 4,plVar18 + 4);
       plVar12 = (long *)plVar18[1];
       if ((long *)plVar18[1] == (long *)0x0) {
         plVar12 = plVar18 + 2;
@@ -4848,7 +4848,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
     lVar8 = *(long *)((long)p0 + 0x50);
     if (lVar8 == *(long *)((long)p0 + 0x58)) {
                     /* try { // try from 00353a34 to 00353a3b has its CatchHandler @ 00353cf8 */
-      void std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>((long)p0 + 0x48,&bStack_e0);
+      std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path<Walaber::SoundManager::SoundInfo const&>((long)p0 + 0x48,&bStack_e0);
     }
     else {
       new ((void *)(lVar8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_e0);
@@ -5187,7 +5187,7 @@ void Walaber::SoundManager::removeGroup(int p0, uint in_w1)
       std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>>>::erase(uVar5 + 0x18,plVar8);
     }
   }
-  unsigned long std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::__erase_unique<unsigned int>(uVar5 + 0x30,auStack_5c);
+  std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::__erase_unique<unsigned int>(uVar5 + 0x30,auStack_5c);
   return;
 }
 

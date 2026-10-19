@@ -30,11 +30,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
    Walaber::CurveManager::PtrCurvePtrCallback>&&) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::CurveManager::PtrCurvePtrCallback>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::CurveManager::PtrCurvePtrCallback>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::CurveManager::PtrCurvePtrCallback>>>
-     ::
-     __construct_node<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::CurveManager::PtrCurvePtrCallback>>
-               (long *param_1,long param_2,undefined8 *param_3)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::CurveManager::PtrCurvePtrCallback>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::CurveManager::PtrCurvePtrCallback>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::CurveManager::PtrCurvePtrCallback>>>::__construct_node(long *param_1,long param_2,undefined8 *param_3)
 
 {
   long lVar1;

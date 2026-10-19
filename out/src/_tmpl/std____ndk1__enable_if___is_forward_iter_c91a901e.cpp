@@ -13,11 +13,7 @@
    >::__construct_at_end<Walaber::TextureManager::SubTexInfo*>(Walaber::TextureManager::SubTexInfo*,
    Walaber::TextureManager::SubTexInfo*, unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::__construct_at_end<Walaber::TextureManager::SubTexInfo*>
-               (Walaber__TextureManager__SubTexInfo *p0,Walaber__TextureManager__SubTexInfo *p1,
-               ulong p2)
+template<> void std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__construct_at_end(Walaber__TextureManager__SubTexInfo *p0,Walaber__TextureManager__SubTexInfo *p1, ulong p2)
 
 {
   uint *puVar1;

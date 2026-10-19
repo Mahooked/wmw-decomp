@@ -12,10 +12,7 @@
    >::__push_back_slow_path<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>
    const&>(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**> const&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>,std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>>
-     ::__push_back_slow_path<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>const&>
-               (long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>,std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>>::__push_back_slow_path(long *param_1,undefined8 *param_2)
 
 {
   ulong uVar2;

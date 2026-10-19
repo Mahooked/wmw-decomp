@@ -10,11 +10,10 @@
 /* virtual thunk to std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::~basic_ostream() */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream
-               (long *param_1)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream()
 
 {
-  ((std::__ndk1::ios_base *)(long)param_1 + *(long *)(*param_1 + -0x18) + 8)->~ios_base();
+  ((std::__ndk1::ios_base *)(long)(byte *)this + *(long *)(*(byte *)this + -0x18) + 8)->~ios_base();
   return;
 }
 
@@ -27,13 +26,12 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 /* virtual thunk to std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::~basic_ostream() */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream
-               (long *param_1)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream()
 
 {
   void *p0;
   
-  p0 = (void *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  p0 = (void *)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
   ((std::__ndk1::ios_base *)(long)p0 + 8)->~ios_base();
   operator delete(p0);
   return;

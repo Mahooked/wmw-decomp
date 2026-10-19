@@ -12,9 +12,7 @@
    >::vector(std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product,
    std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product> > const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -26,7 +24,7 @@ void std::__ndk1::
     lVar1 = (param_2[1] - *param_2 >> 4) * -0x5555555555555555;
                     /* try { // try from 004ea928 to 004ea93f has its CatchHandler @ 004ea950 */
     std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__vallocate(param_1,lVar1);
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::Screen_InAppPurchase::product*>::value, void>::type std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__construct_at_end<WaterConcept::Screen_InAppPurchase::product*>(param_1,*param_2,param_2[1],lVar1);
+    std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__construct_at_end<WaterConcept::Screen_InAppPurchase::product*>(param_1,*param_2,param_2[1],lVar1);
   }
   return;
 }
@@ -41,9 +39,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product> >::__vallocate(unsigned long)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -71,9 +67,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product,
    std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;

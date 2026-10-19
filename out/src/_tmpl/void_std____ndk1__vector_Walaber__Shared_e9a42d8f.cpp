@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>
    const&>(Walaber::SharedPtr<Walaber::Texture> const&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::Texture>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>const&>
-               (Walaber__SharedPtr<Walaber::Texture> *p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::Texture> *p0)
 
 {
   long *in_x1;
@@ -69,10 +66,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>
    >(Walaber::SharedPtr<Walaber::Texture>&&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::Texture>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>
-               (Walaber__SharedPtr<Walaber::Texture> **p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::Texture> **p0)
 
 {
   long *in_x1;

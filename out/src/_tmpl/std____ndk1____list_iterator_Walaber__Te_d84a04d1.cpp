@@ -16,9 +16,7 @@
    std::__ndk1::enable_if<__is_input_iterator<std::__ndk1::__list_const_iterator<Walaber::TextLineInfo,
    void*> >::value, void>::type*) */
 
-long * std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-       insert<std::__ndk1::__list_const_iterator<Walaber::TextLineInfo,void*>>
-                 (long param_1,long *param_2,long param_3,long param_4)
+template<> long * std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::insert(long param_1,long *param_2,long param_3,long param_4)
 
 {
   long *plVar1;

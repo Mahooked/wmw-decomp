@@ -11,9 +11,7 @@
    std::__ndk1::allocator<wchar_t> >::basic_string(std::__ndk1::basic_string<wchar_t,
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     basic_string(undefined8 *param_1,byte *param_2)
+template<> std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::basic_string(undefined8 *param_1,byte *param_2)
 
 {
   undefined8 uVar1;
@@ -43,9 +41,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::__init(wchar_t const*, unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init
-               (wchar_t *p0,ulong p1)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init(wchar_t *p0,ulong p1)
 
 {
   wchar_t *pwVar1;
@@ -96,9 +92,7 @@ LAB_005e7174:
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&,
    std::__ndk1::allocator<wchar_t> const&) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     basic_string(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,std::__ndk1::allocator<wchar_t> const& param_2)
+template<> std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::basic_string(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,std::__ndk1::allocator<wchar_t> const& param_2)
 
 {
   undefined8 uVar1;
@@ -129,9 +123,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::__init(unsigned long, wchar_t) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init
-               (ulong p0,wchar_t p1)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init(ulong p0,wchar_t p1)
 
 {
   ulong uVar1;
@@ -174,9 +166,7 @@ LAB_005e7304:
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&, unsigned long,
    unsigned long, std::__ndk1::allocator<wchar_t> const&) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     basic_string(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long param_2,unsigned long param_3,std::__ndk1::allocator<wchar_t> const& param_4)
+template<> std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::basic_string(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long param_2,unsigned long param_3,std::__ndk1::allocator<wchar_t> const& param_4)
 
 {
   ulong uVar1;
@@ -217,15 +207,13 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::~basic_string() */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     ~basic_string(byte *param_1)
+template<> std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::~basic_string()
 
 {
-  if ((*param_1 & 1) == 0) {
+  if ((*(byte *)this & 1) == 0) {
     return;
   }
-  operator delete(*(void **)(param_1 + 0x10));
+  operator delete(*(void **)((byte *)this + 0x10));
   return;
 }
 
@@ -239,24 +227,22 @@ void std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_string<wchar_t,
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&) */
 
-byte * std::__ndk1::
-       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-       operator=(byte *param_1,byte *param_2)
+template<> byte * std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::operator=(byte *param_2)
 
 {
   ulong uVar1;
   byte *pbVar2;
   
-  if (param_1 != param_2) {
+  if ((byte *)this != param_2) {
     uVar1 = (ulong)(*param_2 >> 1);
     pbVar2 = param_2 + 4;
     if ((*param_2 & 1) != 0) {
       uVar1 = *(ulong *)(param_2 + 8);
       pbVar2 = *(byte **)(param_2 + 0x10);
     }
-    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::assign(param_1,pbVar2,uVar1);
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::assign((byte *)this,pbVar2,uVar1);
   }
-  return param_1;
+  return (byte *)this;
 }
 
 
@@ -268,9 +254,7 @@ byte * std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::assign(wchar_t const*, unsigned long) */
 
-wchar_t * std::__ndk1::
-          basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-          assign(wchar_t *p0,ulong p1)
+template<> wchar_t * std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign(wchar_t *p0,ulong p1)
 
 {
   byte bVar1;
@@ -327,9 +311,7 @@ LAB_005e7544:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::assign(wchar_t const*) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign
-               (wchar_t *p0)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign(wchar_t *p0)
 
 {
   wcslen();
@@ -346,9 +328,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::TEMPNAMEPLACEHOLDERVALUE(wchar_t) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     operator=(wchar_t p0)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::operator=(wchar_t p0)
 
 {
   byte *pbVar1;
@@ -388,9 +368,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::resize(unsigned long, wchar_t) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::resize
-               (ulong p0,wchar_t p1)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::resize(ulong p0,wchar_t p1)
 
 {
   byte bVar1;
@@ -428,9 +406,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::append(unsigned long, wchar_t) */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      append(ulong p0,wchar_t p1)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append(ulong p0,wchar_t p1)
 
 {
   long lVar1;
@@ -487,9 +463,7 @@ ulong std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::reserve(unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     reserve(ulong p0)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::reserve(ulong p0)
 
 {
   ulong uVar1;
@@ -611,9 +585,7 @@ joined_r0x005e7c1c:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::at(unsigned long) const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at
-               (ulong p0)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at(ulong p0)
 
 {
   byte bVar1;
@@ -647,9 +619,7 @@ long std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::at(unsigned long) */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at
-               (ulong p0)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at(ulong p0)
 
 {
   byte bVar1;
@@ -683,9 +653,7 @@ long std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::append(wchar_t const*) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append
-               (wchar_t *p0)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append(wchar_t *p0)
 
 {
   wcslen();
@@ -702,9 +670,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::push_back(wchar_t) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     push_back(wchar_t p0)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::push_back(wchar_t p0)
 
 {
   undefined4 *puVar1;
@@ -752,9 +718,7 @@ LAB_005e806c:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::append(wchar_t const*, unsigned long) */
 
-wchar_t * std::__ndk1::
-          basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-          append(wchar_t *p0,ulong p1)
+template<> wchar_t * std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append(wchar_t *p0,ulong p1)
 
 {
   byte bVar1;
@@ -807,9 +771,7 @@ wchar_t * std::__ndk1::
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&, unsigned long,
    unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append
-               (undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -848,9 +810,7 @@ void std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::__grow_by_and_replace(unsigned long, unsigned long, unsigned
    long, unsigned long, unsigned long, unsigned long, wchar_t const*) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     __grow_by_and_replace(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5,wchar_t *p6)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__grow_by_and_replace(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5,wchar_t *p6)
 
 {
   long lVar1;
@@ -928,9 +888,7 @@ void std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::__grow_by(unsigned long, unsigned long, unsigned long,
    unsigned long, unsigned long, unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     __grow_by(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__grow_by(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5)
 
 {
   long lVar1;
@@ -1001,9 +959,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&, unsigned long,
    unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign
-               (undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -1041,9 +997,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::assign(unsigned long, wchar_t) */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      assign(ulong p0,wchar_t p1)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign(ulong p0,wchar_t p1)
 
 {
   byte bVar1;
@@ -1105,9 +1059,7 @@ joined_r0x005e8718:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::insert(unsigned long, wchar_t const*, unsigned long) */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      insert(ulong p0,wchar_t *p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert(ulong p0,wchar_t *p1,ulong p2)
 
 {
   long lVar1;
@@ -1180,9 +1132,7 @@ ulong std::__ndk1::
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&, unsigned long,
    unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert
-               (undefined8 param_1,undefined8 param_2,byte *param_3,ulong param_4,ulong param_5)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert(undefined8 param_1,undefined8 param_2,byte *param_3,ulong param_4,ulong param_5)
 
 {
   ulong uVar1;
@@ -1220,9 +1170,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::insert(unsigned long, wchar_t const*) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert
-               (ulong p0,wchar_t *p1)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert(ulong p0,wchar_t *p1)
 
 {
   wcslen();
@@ -1239,9 +1187,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::insert(unsigned long, unsigned long, wchar_t) */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      insert(ulong p0,ulong p1,wchar_t p2)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert(ulong p0,ulong p1,wchar_t p2)
 
 {
   long lVar1;
@@ -1310,9 +1256,7 @@ ulong std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::insert(std::__ndk1::__wrap_iter<wchar_t const*>, wchar_t) */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert
-               (ulong *param_1,long param_2,undefined4 param_3)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert(ulong *param_1,long param_2,undefined4 param_3)
 
 {
   long lVar1;
@@ -1378,9 +1322,7 @@ LAB_005e8b60:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::erase(unsigned long, unsigned long) */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::erase
-                (ulong p0,ulong p1)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::erase(ulong p0,ulong p1)
 
 {
   ulong uVar1;
@@ -1443,9 +1385,7 @@ ulong std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::replace(unsigned long, unsigned long, wchar_t const*, unsigned
    long) */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      replace(ulong p0,ulong p1,wchar_t *p2,ulong p3)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::replace(ulong p0,ulong p1,wchar_t *p2,ulong p3)
 
 {
   byte bVar1;
@@ -1551,9 +1491,7 @@ LAB_005e9230:
    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&, unsigned long, unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     replace(void)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::replace(void)
 
 {
   ulong uVar1;
@@ -1581,9 +1519,7 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::replace(unsigned long, unsigned long, wchar_t const*) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     replace(ulong p0,ulong p1,wchar_t *p2)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::replace(ulong p0,ulong p1,wchar_t *p2)
 
 {
   wcslen();
@@ -1601,9 +1537,7 @@ void std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::replace(unsigned long, unsigned long, unsigned long, wchar_t)
     */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      replace(ulong p0,ulong p1,ulong p2,wchar_t p3)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::replace(ulong p0,ulong p1,ulong p2,wchar_t p3)
 
 {
   long lVar1;
@@ -1680,9 +1614,7 @@ LAB_005e9410:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::copy(wchar_t*, unsigned long, unsigned long) const */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::copy
-                (wchar_t *p0,ulong p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::copy(wchar_t *p0,ulong p1,ulong p2)
 
 {
   byte bVar1;
@@ -1729,9 +1661,7 @@ ulong std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::find(wchar_t const*, unsigned long, unsigned long) const */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find
-                (wchar_t *p0,ulong p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find(wchar_t *p0,ulong p1,ulong p2)
 
 {
   wchar_t *pwVar1;
@@ -1792,9 +1722,7 @@ ulong std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::find(wchar_t, unsigned long) const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find
-               (wchar_t p0,ulong p1)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find(wchar_t p0,ulong p1)
 
 {
   bool bVar1;
@@ -1842,9 +1770,7 @@ LAB_005e9a8c:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::rfind(wchar_t const*, unsigned long, unsigned long) const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::rfind
-               (wchar_t *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::rfind(wchar_t *p0,ulong p1,ulong p2)
 
 {
   wchar_t *pwVar1;
@@ -1927,9 +1853,7 @@ LAB_005e9cd4:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::rfind(wchar_t, unsigned long) const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::rfind
-               (wchar_t p0,ulong p1)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::rfind(wchar_t p0,ulong p1)
 
 {
   byte *pbVar1;
@@ -1975,9 +1899,7 @@ long std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::find_first_of(wchar_t const*, unsigned long, unsigned long)
    const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_first_of(wchar_t *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find_first_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
   wchar_t *pwVar1;
@@ -2032,9 +1954,7 @@ LAB_005e9f68:
    std::__ndk1::allocator<wchar_t> >::find_last_of(wchar_t const*, unsigned long, unsigned long)
    const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_last_of(wchar_t *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find_last_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
   wchar_t *pwVar1;
@@ -2080,9 +2000,7 @@ LAB_005ea19c:
    std::__ndk1::allocator<wchar_t> >::find_first_not_of(wchar_t const*, unsigned long, unsigned
    long) const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_first_not_of(wchar_t *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find_first_not_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
   wchar_t *pwVar1;
@@ -2125,9 +2043,7 @@ long std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::find_last_not_of(wchar_t const*, unsigned long, unsigned long)
    const */
 
-long std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_last_not_of(wchar_t *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find_last_not_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
   long lVar1;
@@ -2171,9 +2087,7 @@ long std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::compare(unsigned long, unsigned long, wchar_t const*, unsigned
    long) const */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      compare(ulong p0,ulong p1,wchar_t *p2,ulong p3)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::compare(ulong p0,ulong p1,wchar_t *p2,ulong p3)
 
 {
   wchar_t *pwVar1;
@@ -2230,9 +2144,7 @@ ulong std::__ndk1::
    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&, unsigned long, unsigned long) const */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      compare(byte *param_1,ulong param_2,ulong param_3,byte *param_4,ulong param_5,ulong param_6)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::compare(byte *param_1,ulong param_2,ulong param_3,byte *param_4,ulong param_5,ulong param_6)
 
 {
   byte *pbVar1;
@@ -2310,9 +2222,7 @@ ulong std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::compare(wchar_t const*) const */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      compare(wchar_t *p0)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::compare(wchar_t *p0)
 
 {
   byte bVar1;
@@ -2364,9 +2274,7 @@ ulong std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::compare(unsigned long, unsigned long, wchar_t const*) const */
 
-ulong std::__ndk1::
-      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      compare(ulong p0,ulong p1,wchar_t *p2)
+template<> ulong std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::compare(ulong p0,ulong p1,wchar_t *p2)
 
 {
   wchar_t *pwVar1;
@@ -2422,9 +2330,7 @@ ulong std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::__init(wchar_t const*, unsigned long, unsigned long) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init
-               (wchar_t *p0,ulong p1,ulong p2)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init(wchar_t *p0,ulong p1,ulong p2)
 
 {
   wchar_t *pwVar1;

@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<WaterConcept::World::WorldSpoutConnection,
    std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::~__vector_base()
 
 {
   byte *pbVar1;

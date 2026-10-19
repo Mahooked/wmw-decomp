@@ -9,7 +9,7 @@
 
 /* std::__ndk1::collate_byname<wchar_t>::collate_byname(char const*, unsigned long) */
 
-void std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1, long in_x2)
+template<> std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
@@ -90,8 +90,7 @@ LAB_005d64f8:
 /* std::__ndk1::collate_byname<wchar_t>::collate_byname(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
-void std::__ndk1::collate_byname<wchar_t>::collate_byname
-               (undefined8 *param_1,byte *param_2,long param_3)
+template<> std::__ndk1::collate_byname<wchar_t>::collate_byname(undefined8 *param_1,byte *param_2,long param_3)
 
 {
   long lVar1;
@@ -134,7 +133,7 @@ void std::__ndk1::collate_byname<wchar_t>::collate_byname
 
 /* std::__ndk1::collate_byname<wchar_t>::~collate_byname() */
 
-void std::__ndk1::collate_byname<wchar_t>::~collate_byname()
+template<> std::__ndk1::collate_byname<wchar_t>::~collate_byname()
 
 {
   *this = &PTR__collate_byname_00717730;
@@ -152,7 +151,7 @@ void std::__ndk1::collate_byname<wchar_t>::~collate_byname()
 
 /* std::__ndk1::collate_byname<wchar_t>::~collate_byname() */
 
-void std::__ndk1::collate_byname<wchar_t>::~collate_byname()
+template<> std::__ndk1::collate_byname<wchar_t>::~collate_byname()
 
 {
   *this = &PTR__collate_byname_00717730;
@@ -172,8 +171,7 @@ void std::__ndk1::collate_byname<wchar_t>::~collate_byname()
 /* std::__ndk1::collate_byname<wchar_t>::do_compare(wchar_t const*, wchar_t const*, wchar_t const*,
    wchar_t const*) const */
 
-ulong std::__ndk1::collate_byname<wchar_t>::do_compare
-                (wchar_t *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
+template<> ulong std::__ndk1::collate_byname<wchar_t>::do_compare(wchar_t *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
 
 {
   void *pvVar1;
@@ -189,12 +187,12 @@ ulong std::__ndk1::collate_byname<wchar_t>::do_compare
   auStack_60[0] = 0;
   auStack_60[1] = 0;
   pvStack_50 = (void *)0x0;
-  std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(auStack_60);
+  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(auStack_60);
   auStack_78[0] = 0;
   auStack_78[1] = 0;
   pvStack_68 = (void *)0x0;
                     /* try { // try from 005d673c to 005d674f has its CatchHandler @ 005d67d8 */
-  std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(auStack_78,p3);
+  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(auStack_78,p3);
   pvVar1 = (void *)((ulong)auStack_60 | 4);
   if ((auStack_60[0] & 1) != 0) {
     pvVar1 = pvStack_50;
@@ -225,7 +223,7 @@ ulong std::__ndk1::collate_byname<wchar_t>::do_compare
 
 /* std::__ndk1::collate_byname<wchar_t>::do_transform(wchar_t const*, wchar_t const*) const */
 
-void std::__ndk1::collate_byname<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
+template<> void std::__ndk1::collate_byname<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
 
 {
   void *pvVar1;
@@ -238,7 +236,7 @@ void std::__ndk1::collate_byname<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
   auStack_50[0] = 0;
   auStack_50[1] = 0;
   pvStack_40 = (void *)0x0;
-  std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(auStack_50);
+  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(auStack_50);
   pvVar1 = (void *)((ulong)auStack_50 | 4);
   if ((auStack_50[0] & 1) != 0) {
     pvVar1 = pvStack_40;

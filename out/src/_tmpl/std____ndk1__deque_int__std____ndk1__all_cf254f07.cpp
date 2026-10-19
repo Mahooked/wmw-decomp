@@ -9,7 +9,7 @@
 
 /* std::__ndk1::deque<int, std::__ndk1::allocator<int> >::pop_front() */
 
-void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::pop_front(long param_1)
+template<> void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::pop_front(long param_1)
 
 {
   ulong uVar1;
@@ -33,7 +33,7 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::pop_front(long param_1
 
 /* std::__ndk1::deque<int, std::__ndk1::allocator<int> >::push_back(int&&) */
 
-void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::push_back(int **p0, undefined4 * in_x1)
+template<> void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::push_back(int **p0, undefined4 * in_x1)
 
 {
   ulong uVar1;
@@ -68,7 +68,7 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::push_back(int **p0, un
 
 /* std::__ndk1::deque<int, std::__ndk1::allocator<int> >::__add_back_capacity() */
 
-void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::__add_back_capacity(ulong *param_1)
+template<> void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::__add_back_capacity(ulong *param_1)
 
 {
   void *pvVar2;

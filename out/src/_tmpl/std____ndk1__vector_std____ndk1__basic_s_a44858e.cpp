@@ -11,9 +11,7 @@
    std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > >::__vdeallocate() */
 
-void std::__ndk1::
-     vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::__vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>::__vdeallocate(undefined8 *param_1)
 
 {
   byte *pbVar1;
@@ -56,9 +54,7 @@ void std::__ndk1::
    std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > > const&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -97,9 +93,7 @@ void std::__ndk1::
    std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>::__vallocate(ulong p0)
 
 {
   long lVar1;

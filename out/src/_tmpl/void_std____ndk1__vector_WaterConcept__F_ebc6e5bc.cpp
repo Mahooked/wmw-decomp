@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Fluids::FluidCollisionRecord
    const&>(WaterConcept::Fluids::FluidCollisionRecord const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
-     ::__push_back_slow_path<WaterConcept::Fluids::FluidCollisionRecord_const&>
-               (WaterConcept__Fluids__FluidCollisionRecord *p0)
+template<> void std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::__push_back_slow_path(WaterConcept__Fluids__FluidCollisionRecord *p0)
 
 {
   undefined8 *in_x1;

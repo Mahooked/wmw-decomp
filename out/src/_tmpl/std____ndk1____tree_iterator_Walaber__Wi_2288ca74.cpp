@@ -15,10 +15,7 @@
    >::__emplace_multi<Walaber::Widget_Group::WidgetInfo const&>(Walaber::Widget_Group::WidgetInfo
    const&) */
 
-long std::__ndk1::
-     __tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>
-     ::__emplace_multi<Walaber::Widget_Group::WidgetInfo_const&>
-               (Walaber__Widget_Group__WidgetInfo *p0)
+template<> long std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__emplace_multi(Walaber__Widget_Group__WidgetInfo *p0)
 
 {
   ulong uVar1;

@@ -11,12 +11,10 @@
    std::__ndk1::less<unsigned int>, std::__ndk1::allocator<std::__ndk1::pair<unsigned int const,
    WaterConcept::PlayerDataSerializer::CollectibleInfo> > >::~map() */
 
-void std::__ndk1::
-     map<unsigned_int,WaterConcept::PlayerDataSerializer::CollectibleInfo,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<std::__ndk1::pair<unsigned_int_const,WaterConcept::PlayerDataSerializer::CollectibleInfo>>>
-     ::~map(long param_1)
+template<> std::__ndk1::map<unsigned_int,WaterConcept::PlayerDataSerializer::CollectibleInfo,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<std::__ndk1::pair<unsigned_int_const,WaterConcept::PlayerDataSerializer::CollectibleInfo>>>::~map()
 
 {
-  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, WaterConcept::PlayerDataSerializer::CollectibleInfo>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, WaterConcept::PlayerDataSerializer::CollectibleInfo>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, WaterConcept::PlayerDataSerializer::CollectibleInfo>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, WaterConcept::PlayerDataSerializer::CollectibleInfo>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, WaterConcept::PlayerDataSerializer::CollectibleInfo>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, WaterConcept::PlayerDataSerializer::CollectibleInfo>>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

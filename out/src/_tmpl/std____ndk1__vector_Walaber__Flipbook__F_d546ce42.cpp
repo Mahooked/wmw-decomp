@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Flipbook::FlipbookFrame,
    std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::Flipbook::FlipbookFrame,std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::Flipbook::FlipbookFrame,std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;

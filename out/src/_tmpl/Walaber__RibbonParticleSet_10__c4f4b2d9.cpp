@@ -9,30 +9,30 @@
 
 /* Walaber::RibbonParticleSet<10>::~RibbonParticleSet() */
 
-void Walaber::RibbonParticleSet<10>::~RibbonParticleSet(undefined8 *param_1,ulong param_2)
+template<> Walaber::RibbonParticleSet<10>::~RibbonParticleSet()
 
 {
   void *p0;
   ulong extraout_x1;
   ulong extraout_x1_00;
   
-  if ((void *)param_1[9] != (void *)0x0) {
-    operator delete[]((void *)param_1[9],param_2);
+  if ((void *)(byte *)this[9] != (void *)0x0) {
+    operator delete[]((void *)(byte *)this[9],param_2);
     param_2 = extraout_x1;
   }
-  if ((void *)param_1[10] != (void *)0x0) {
-    operator delete[]((void *)param_1[10],param_2);
+  if ((void *)(byte *)this[10] != (void *)0x0) {
+    operator delete[]((void *)(byte *)this[10],param_2);
     param_2 = extraout_x1_00;
   }
-  if ((void *)param_1[0xb] != (void *)0x0) {
-    operator delete[]((void *)param_1[0xb],param_2);
+  if ((void *)(byte *)this[0xb] != (void *)0x0) {
+    operator delete[]((void *)(byte *)this[0xb],param_2);
   }
-  ((Walaber::SharedPtr<Walaber::Callback> *)param_1 + 0xc)->~SharedPtr<Walaber::Callback>();
-  ((Walaber::VerletIntegrator *)param_1 + 8)->~VerletIntegrator();
-  std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(param_1 + 3);
-  p0 = (void *)*param_1;
+  ((Walaber::SharedPtr<Walaber::Callback> *)(byte *)this + 0xc)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::VerletIntegrator *)(byte *)this + 8)->~VerletIntegrator();
+  std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear((byte *)this + 3);
+  p0 = (void *)*(byte *)this;
   if (p0 != (void *)0x0) {
-    param_1[1] = p0;
+    (byte *)this[1] = p0;
     operator delete(p0);
     return;
   }
@@ -47,7 +47,7 @@ void Walaber::RibbonParticleSet<10>::~RibbonParticleSet(undefined8 *param_1,ulon
 
 /* Walaber::RibbonParticleSet<10>::RibbonParticleSet(unsigned int) */
 
-void Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0, uint in_w1)
+template<> Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0, uint in_w1)
 
 {
   ulong uVar1;
@@ -119,7 +119,7 @@ void Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0, uint in_w1)
 
 /* Walaber::RibbonParticleSet<10>::updateParticles(float) */
 
-void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
+template<> void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
 
 {
   long lVar1;
@@ -184,8 +184,7 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
 /* Walaber::RibbonParticleSet<10>::drawParticles(Walaber::SpriteBatch&,
    Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, int) */
 
-void Walaber::RibbonParticleSet<10>::drawParticles
-               (long *param_1,undefined8 param_2,long *param_3,byte *param_4,undefined4 param_5)
+template<> void Walaber::RibbonParticleSet<10>::drawParticles(long *param_1,undefined8 param_2,long *param_3,byte *param_4,undefined4 param_5)
 
 {
   byte *pbVar1;
@@ -429,10 +428,7 @@ LAB_00453b08:
    const&, float, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float,
    float, int, int&) */
 
-undefined8
-Walaber::RibbonParticleSet<10>::addParticle
-          (float p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float p3,Walaber__Vector2 *p4,
-          Walaber__Vector2 *p5,Walaber__Vector2 *p6,float p7,float p8,int p9,int *p10)
+template<> undefined8 Walaber::RibbonParticleSet<10>::addParticle(float p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float p3,Walaber__Vector2 *p4, Walaber__Vector2 *p5,Walaber__Vector2 *p6,float p7,float p8,int p9,int *p10)
 
 {
   float fVar1;
@@ -510,7 +506,7 @@ Walaber::RibbonParticleSet<10>::addParticle
 
 /* Walaber::RibbonParticleSet<10>::removeParticle(int) */
 
-void Walaber::RibbonParticleSet<10>::removeParticle(int p0, int in_w1)
+template<> void Walaber::RibbonParticleSet<10>::removeParticle(int p0, int in_w1)
 
 {
   char cVar1;

@@ -11,8 +11,7 @@
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >*)
     */
 
-long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
-                 (long *param_1,long *param_2)
+template<> long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(long *param_2)
 
 {
   undefined1 *puVar1;
@@ -25,16 +24,16 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   long *plStack_50;
   
   auStack_58[0] = 0;
-  plVar5 = (long *)(*param_1 + -0x18);
-  plStack_50 = param_1;
-  if (*(int *)((long)param_1 + *plVar5 + 0x20) == 0) {
-    if (*(long *)((long)param_1 + *plVar5 + 0x88) != 0) {
+  plVar5 = (long *)(*(byte *)this + -0x18);
+  plStack_50 = (byte *)this;
+  if (*(int *)((long)(byte *)this + *plVar5 + 0x20) == 0) {
+    if (*(long *)((long)(byte *)this + *plVar5 + 0x88) != 0) {
                     /* try { // try from 005ad4c4 to 005ad4c7 has its CatchHandler @ 005ad5e4 */
       std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::flush();
-      plVar5 = (long *)(*param_1 + -0x18);
+      plVar5 = (long *)(*(byte *)this + -0x18);
     }
     auStack_58[0] = 1;
-    lVar7 = (long)param_1 + *plVar5;
+    lVar7 = (long)(byte *)this + *plVar5;
     if (param_2 != (long *)0x0) {
       plVar5 = *(long **)(lVar7 + 0x28);
       lVar7 = 0;
@@ -83,7 +82,7 @@ LAB_005ad484:
   return plVar5;
 LAB_005ad5ac:
   if (lVar7 == 0) {
-    lVar7 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar7 = (long)(byte *)this + *(long *)(*(byte *)this + -0x18);
                     /* try { // try from 005ad5c4 to 005ad5c7 has its CatchHandler @ 005ad5e0 */
     std::__ndk1::ios_base::clear(lVar7,*(uint *)(lVar7 + 0x20) | 4);
   }

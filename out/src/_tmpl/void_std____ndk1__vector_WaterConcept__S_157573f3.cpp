@@ -12,9 +12,7 @@
    >::__push_back_slow_path<WaterConcept::SeaweedStrand* const&>(WaterConcept::SeaweedStrand*
    const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::SeaweedStrand*,std::__ndk1::allocator<WaterConcept::SeaweedStrand*>>::
-     __push_back_slow_path<WaterConcept::SeaweedStrand*const&>(WaterConcept__SeaweedStrand **p0)
+template<> void std::__ndk1::vector<WaterConcept::SeaweedStrand*,std::__ndk1::allocator<WaterConcept::SeaweedStrand*>>::__push_back_slow_path(WaterConcept__SeaweedStrand **p0)
 
 {
   undefined8 *in_x1;

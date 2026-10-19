@@ -12,10 +12,7 @@
    >::insert(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject* const*>,
    WaterConcept::InteractiveObject* const&) */
 
-undefined8 *
-std::__ndk1::
-vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::
-insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> undefined8 * std::__ndk1::vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   undefined8 *puVar2;
@@ -162,9 +159,7 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
    std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>&, WaterConcept::InteractiveObject**)
     */
 
-long std::__ndk1::
-     vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+template<> long std::__ndk1::vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   long lVar1;

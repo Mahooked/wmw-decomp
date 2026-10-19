@@ -9,7 +9,7 @@
 
 /* ndk::SafeQueue<int>::SafeQueue() */
 
-void ndk::SafeQueue<int>::SafeQueue(long param_1)
+template<> ndk::SafeQueue<int>::SafeQueue(long param_1)
 
 {
   *(long *)param_1 = param_1;
@@ -29,11 +29,11 @@ void ndk::SafeQueue<int>::SafeQueue(long param_1)
 
 /* ndk::SafeQueue<int>::~SafeQueue() */
 
-void ndk::SafeQueue<int>::~SafeQueue(long param_1)
+template<> ndk::SafeQueue<int>::~SafeQueue()
 
 {
-  ((ndk::Mutex *)param_1 + 0x18)->~Mutex();
-  std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(param_1);
+  ((ndk::Mutex *)(byte *)this + 0x18)->~Mutex();
+  std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear((byte *)this);
   return;
 }
 
@@ -45,7 +45,7 @@ void ndk::SafeQueue<int>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<int>::pop(int&) */
 
-bool ndk::SafeQueue<int>::pop(int *p0, undefined4 * in_x1)
+template<> bool ndk::SafeQueue<int>::pop(int *p0, undefined4 * in_x1)
 
 {
   long lVar1;
@@ -76,7 +76,7 @@ bool ndk::SafeQueue<int>::pop(int *p0, undefined4 * in_x1)
 
 /* ndk::SafeQueue<int>::push(int const&) */
 
-void ndk::SafeQueue<int>::push(int *p0, undefined4 * in_x1)
+template<> void ndk::SafeQueue<int>::push(int *p0, undefined4 * in_x1)
 
 {
   long *plVar1;

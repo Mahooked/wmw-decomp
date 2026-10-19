@@ -12,9 +12,7 @@
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,
    std::__ndk1::allocator<Walaber::PositionTextureColorVert> > > >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>::~__vector_base()
 
 {
   void *p0;

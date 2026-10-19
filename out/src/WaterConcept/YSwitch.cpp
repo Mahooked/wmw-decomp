@@ -437,7 +437,7 @@ LAB_00499154:
       while( true ) {
         if (puStack_68 == puStack_60) {
                     /* try { // try from 004991a8 to 004991af has its CatchHandler @ 004993d0 */
-          void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection const&>(&puStack_70,*(long *)(param_2 + 0x4a0) + lVar6);
+          std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection const&>(&puStack_70,*(long *)(param_2 + 0x4a0) + lVar6);
         }
         else {
           puVar2 = (undefined8 *)(*(long *)(param_2 + 0x4a0) + lVar6);
@@ -460,7 +460,7 @@ LAB_00499154:
         do {
           if (puStack_68 == puStack_60) {
                     /* try { // try from 00499274 to 0049927b has its CatchHandler @ 004993c8 */
-            void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection const&>(&puStack_70,*(long *)(param_2 + 0x4a0) + uVar5);
+            std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection const&>(&puStack_70,*(long *)(param_2 + 0x4a0) + uVar5);
           }
           else {
             puVar2 = (undefined8 *)(*(long *)(param_2 + 0x4a0) + uVar5);
@@ -481,7 +481,7 @@ LAB_00499154:
         do {
           if (puStack_68 == puStack_60) {
                     /* try { // try from 0049920c to 00499213 has its CatchHandler @ 004993cc */
-            void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection const&>(&puStack_70,lVar6 + lVar8);
+            std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection const&>(&puStack_70,lVar6 + lVar8);
           }
           else {
             uVar9 = *(undefined8 *)(lVar6 + lVar8);

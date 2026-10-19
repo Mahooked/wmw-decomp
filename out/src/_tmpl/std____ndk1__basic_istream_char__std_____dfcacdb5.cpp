@@ -10,8 +10,7 @@
 /* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>
    >::sentry::sentry(std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >&, bool) */
 
-void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::sentry
-               (undefined1 *param_1,long *param_2,uint param_3)
+template<> std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::sentry(undefined1 *param_1,long *param_2,uint param_3)
 
 {
   byte bVar2;
@@ -79,8 +78,7 @@ LAB_003d5f20:
 /* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>
    >::sentry::sentry(std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >&, bool) */
 
-void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::sentry
-               (undefined1 *param_1,long *param_2,uint param_3)
+template<> std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::sentry(undefined1 *param_1,long *param_2,uint param_3)
 
 {
   byte bVar2;

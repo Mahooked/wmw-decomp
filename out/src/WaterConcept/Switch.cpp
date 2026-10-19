@@ -260,7 +260,7 @@ LAB_00494bac:
       uStack_8c = Walaber::Property::asInt(lVar4);
       puVar8 = (undefined4 *)p0[0x29].f_0x0;
       if (puVar8 == (undefined4 *)p0[0x29].f_0x8) {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(&p0[0x28].f_0x10,&uStack_8c);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(&p0[0x28].f_0x10,&uStack_8c);
       }
       else {
         *puVar8 = uStack_8c;
@@ -802,7 +802,7 @@ void WaterConcept::Switch::connectObject(WaterConcept__InteractiveObject *p0)
 {
   undefined1 auStack_30 [8];
   
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long>, bool> std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(&p0[1].field_0xf0,auStack_30,auStack_30);
+  std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(&p0[1].field_0xf0,auStack_30,auStack_30);
   return;
 }
 

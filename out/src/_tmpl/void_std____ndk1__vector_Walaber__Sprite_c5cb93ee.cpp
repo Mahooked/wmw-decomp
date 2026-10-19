@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>
    >::__push_back_slow_path<Walaber::SpriteAnimationTrack*>(Walaber::SpriteAnimationTrack*&&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack*,std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::
-     __push_back_slow_path<Walaber::SpriteAnimationTrack*>(Walaber__SpriteAnimationTrack ***p0)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack*,std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path(Walaber__SpriteAnimationTrack ***p0)
 
 {
   undefined8 *in_x1;
@@ -85,9 +83,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::SpriteAnimationTrack* const&>(Walaber::SpriteAnimationTrack*
    const&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack*,std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::
-     __push_back_slow_path<Walaber::SpriteAnimationTrack*const&>(Walaber__SpriteAnimationTrack **p0)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack*,std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>>::__push_back_slow_path(Walaber__SpriteAnimationTrack **p0)
 
 {
   undefined8 *in_x1;

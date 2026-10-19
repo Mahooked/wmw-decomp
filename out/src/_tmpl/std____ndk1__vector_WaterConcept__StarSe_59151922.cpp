@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::StarSeed::TeleportWaypoint,
    std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::StarSeed::TeleportWaypoint,std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::StarSeed::TeleportWaypoint,std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;

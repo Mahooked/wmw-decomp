@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>
    >::__push_back_slow_path<Walaber::TextLineInfo>(Walaber::TextLineInfo&&) */
 
-void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     __push_back_slow_path<Walaber::TextLineInfo>(Walaber__TextLineInfo **p0)
+template<> void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::__push_back_slow_path(Walaber__TextLineInfo **p0)
 
 {
   undefined8 *in_x1;

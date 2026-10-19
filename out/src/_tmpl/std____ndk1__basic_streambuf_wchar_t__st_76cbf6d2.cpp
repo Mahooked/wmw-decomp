@@ -10,8 +10,7 @@
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::pubimbue(std::__ndk1::locale const&) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubimbue
-               (std____ndk1__locale *p0)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubimbue(std____ndk1__locale *p0)
 
 {
   (**(code **)(p0->f_0x0 + 0x10))();
@@ -28,8 +27,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_streambuf() */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_streambuf
-               ()
+template<> std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_streambuf()
 
 {
   *this = &PTR__basic_streambuf_00716288;
@@ -45,8 +43,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::~b
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_streambuf() */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_streambuf
-               ()
+template<> std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_streambuf()
 
 {
   *this = &PTR__basic_streambuf_00716288;
@@ -63,8 +60,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::~b
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::getloc() const */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::getloc
-               (undefined8 param_1,long param_2)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::getloc(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::locale(param_2 + 8);
@@ -80,8 +76,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::ge
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pubsetbuf(wchar_t*,
    long) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubsetbuf
-               (wchar_t *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubsetbuf(wchar_t *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5a08. Too many branches */
@@ -99,8 +94,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pubseekoff(long long,
    std::__ndk1::ios_base::seekdir, unsigned int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubseekoff
-               (long *param_1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubseekoff(long *param_1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5a14. Too many branches */
@@ -118,8 +112,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::pubseekpos(std::__ndk1::fpos<mbstate_t>, unsigned int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubseekpos
-               (long *param_1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubseekpos(long *param_1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5a20. Too many branches */
@@ -136,7 +129,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pubsync() */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubsync(long *param_1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubsync(long *param_1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5a2c. Too many branches */
@@ -153,8 +146,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::in_avail() */
 
-long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::in_avail
-               (long *param_1)
+template<> long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::in_avail(long *param_1)
 
 {
   long lVar1;
@@ -176,7 +168,7 @@ long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::in
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::snextc() */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::snextc(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::snextc(long *param_1)
 
 {
   int *piVar1;
@@ -212,7 +204,7 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sbumpc() */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sbumpc(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sbumpc(long *param_1)
 
 {
   uint *puVar1;
@@ -237,7 +229,7 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sgetc() */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sgetc(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sgetc(long *param_1)
 
 {
   ulong uVar1;
@@ -260,8 +252,7 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sgetn(wchar_t*, long)
     */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sgetn
-               (wchar_t *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sgetn(wchar_t *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5b24. Too many branches */
@@ -278,7 +269,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sg
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputbackc(wchar_t) */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputbackc(wchar_t p0, uint in_w1)
+template<> ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputbackc(wchar_t p0, uint in_w1)
 
 {
   long *plVar1;
@@ -304,8 +295,7 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sungetc() */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sungetc
-                (long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sungetc(long *param_1)
 
 {
   long lVar1;
@@ -330,7 +320,7 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputc(wchar_t) */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputc(wchar_t p0, uint in_w1)
+template<> ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputc(wchar_t p0, uint in_w1)
 
 {
   uint *puVar1;
@@ -359,8 +349,7 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputn(wchar_t const*,
    long) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputn
-               (wchar_t *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputn(wchar_t *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5bb8. Too many branches */
@@ -377,8 +366,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sp
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::basic_streambuf() */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_streambuf
-               (undefined8 *param_1)
+template<> std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_streambuf(undefined8 *param_1)
 
 {
   *param_1 = &PTR__basic_streambuf_00716288;
@@ -402,8 +390,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::ba
    >::basic_streambuf(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >
    const&) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_streambuf
-               (undefined8 *param_1,long param_2)
+template<> std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_streambuf(undefined8 *param_1,long param_2)
 
 {
   undefined8 uVar1;
@@ -432,23 +419,22 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::ba
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_streambuf<wchar_t,
    std::__ndk1::char_traits<wchar_t> > const&) */
 
-long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator=
-               (long param_1,long param_2)
+template<> long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator=(long param_2)
 
 {
   undefined8 uVar1;
   
-  ((std::__ndk1::locale *)(param_1 + 8))->operator=(param_2 + 8);
+  ((std::__ndk1::locale *)((byte *)this + 8))->operator=(param_2 + 8);
   uVar1 = *(undefined8 *)(param_2 + 0x10);
-  *(undefined8 *)(param_1 + 0x18) = *(undefined8 *)(param_2 + 0x18);
-  *(undefined8 *)(param_1 + 0x10) = uVar1;
+  *(undefined8 *)((byte *)this + 0x18) = *(undefined8 *)(param_2 + 0x18);
+  *(undefined8 *)((byte *)this + 0x10) = uVar1;
   uVar1 = *(undefined8 *)(param_2 + 0x20);
-  *(undefined8 *)(param_1 + 0x28) = *(undefined8 *)(param_2 + 0x28);
-  *(undefined8 *)(param_1 + 0x20) = uVar1;
+  *(undefined8 *)((byte *)this + 0x28) = *(undefined8 *)(param_2 + 0x28);
+  *(undefined8 *)((byte *)this + 0x20) = uVar1;
   uVar1 = *(undefined8 *)(param_2 + 0x30);
-  *(undefined8 *)(param_1 + 0x38) = *(undefined8 *)(param_2 + 0x38);
-  *(undefined8 *)(param_1 + 0x30) = uVar1;
-  return param_1;
+  *(undefined8 *)((byte *)this + 0x38) = *(undefined8 *)(param_2 + 0x38);
+  *(undefined8 *)((byte *)this + 0x30) = uVar1;
+  return (byte *)this;
 }
 
 
@@ -460,8 +446,7 @@ long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::swap(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >&) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap
-               (long param_1,long param_2)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap(long param_1,long param_2)
 
 {
   undefined8 uVar2;
@@ -500,7 +485,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sw
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::gbump(int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gbump(int p0, int in_w1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gbump(int p0, int in_w1)
 
 {
   
@@ -517,8 +502,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gb
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::setg(wchar_t*,
    wchar_t*, wchar_t*) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setg
-               (wchar_t *p0,wchar_t *p1,wchar_t *p2)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setg(wchar_t *p0,wchar_t *p1,wchar_t *p2)
 
 {
   undefined8 in_x3;
@@ -537,7 +521,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pbump(int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbump(int p0, int in_w1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbump(int p0, int in_w1)
 
 {
   
@@ -554,8 +538,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pb
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::setp(wchar_t*,
    wchar_t*) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setp
-               (wchar_t *p0,wchar_t *p1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setp(wchar_t *p0,wchar_t *p1)
 
 {
   undefined8 in_x2;
@@ -575,8 +558,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::imbue(std::__ndk1::locale const&) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::imbue
-               (std____ndk1__locale *p0)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::imbue(std____ndk1__locale *p0)
 
 {
   return;
@@ -591,8 +573,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::im
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::setbuf(wchar_t*, long)
     */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setbuf
-               (wchar_t *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setbuf(wchar_t *p0,long p1)
 
 {
   return;
@@ -607,8 +588,7 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::seekoff(long long,
    std::__ndk1::ios_base::seekdir, unsigned int) */
 
-undefined1  [16]
-std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekoff(void)
+template<> undefined1 [16] std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekoff(void)
 
 {
   return ZEXT816(0xffffffffffffffff) << 0x40;
@@ -623,8 +603,7 @@ std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekoff
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::seekpos(std::__ndk1::fpos<mbstate_t>, unsigned int) */
 
-undefined1  [16]
-std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekpos(void)
+template<> undefined1 [16] std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekpos(void)
 
 {
   return ZEXT816(0xffffffffffffffff) << 0x40;
@@ -638,7 +617,7 @@ std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekpos
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sync() */
 
-undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sync(void)
+template<> undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sync(void)
 
 {
   return 0;
@@ -652,7 +631,7 @@ undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::showmanyc() */
 
-undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::showmanyc(void)
+template<> undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::showmanyc(void)
 
 {
   return 0;
@@ -667,8 +646,7 @@ undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::xsgetn(wchar_t*, long)
     */
 
-long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xsgetn
-               (wchar_t *p0,long p1)
+template<> long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xsgetn(wchar_t *p0,long p1)
 
 {
   int iVar1;
@@ -727,7 +705,7 @@ long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xs
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::underflow() */
 
-undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::underflow(void)
+template<> undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::underflow(void)
 
 {
   return 0xffffffff;
@@ -741,7 +719,7 @@ undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::uflow() */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::uflow(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::uflow(long *param_1)
 
 {
   ulong uVar1;
@@ -765,8 +743,7 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::u
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pbackfail(unsigned
    int) */
 
-undefined8
-std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbackfail(uint p0)
+template<> undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbackfail(uint p0)
 
 {
   return 0xffffffff;
@@ -781,8 +758,7 @@ std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbackfa
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::xsputn(wchar_t const*,
    long) */
 
-long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xsputn
-               (wchar_t *p0,long p1)
+template<> long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xsputn(wchar_t *p0,long p1)
 
 {
   long lVar1;
@@ -838,8 +814,7 @@ long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xs
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::overflow(unsigned int)
     */
 
-undefined8
-std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::overflow(uint p0)
+template<> undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::overflow(uint p0)
 
 {
   return 0xffffffff;

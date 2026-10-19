@@ -754,7 +754,7 @@ void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0, int
     {
       uVar11 = *(undefined8 *)((long)p0 + 0x90);
       uVar5 = Walaber::TextureManager::getManager();
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0,"/Textures/",(long)p0 + 0x108);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0,"/Textures/",(long)p0 + 0x108);
       uStack_170 = 0;
       uStack_168 = 0;
       uStack_e0 = 0;
@@ -776,7 +776,7 @@ void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0, int
   else {
     uVar11 = *(undefined8 *)((long)p0 + 0x98);
     uVar5 = Walaber::TextureManager::getManager();
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0,"/Textures/",pbVar12);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_b0,"/Textures/",pbVar12);
     uStack_170 = 0;
     uStack_168 = 0;
     uStack_c0 = 0;
@@ -989,7 +989,7 @@ LAB_004d9734:
                     /* try { // try from 004d9a4c to 004d9a53 has its CatchHandler @ 004d9f68 */
     uVar5 = Walaber::FontManager::getFont(uVar5,abStack_150);
                     /* try { // try from 004d9a5c to 004d9a6b has its CatchHandler @ 004d9f64 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_188,(long)p0 + 0xc0,&DAT_0063a9dd);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_188,(long)p0 + 0xc0,&DAT_0063a9dd);
     uVar1 = (ulong)(*(byte *)((long)p0 + 0xd8) >> 1);
     lVar8 = (long)p0 + 0xd9;
     if ((*(byte *)((long)p0 + 0xd8) & 1) != 0) {

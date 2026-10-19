@@ -11,9 +11,7 @@
    std::__ndk1::allocator<std::__ndk1::pair<int, int> >
    >::__push_back_slow_path<std::__ndk1::pair<int, int> >(std::__ndk1::pair<int, int>&&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::pair<int,int>,std::__ndk1::allocator<std::__ndk1::pair<int,int>>>::
-     __push_back_slow_path<std::__ndk1::pair<int,int>>(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<std::__ndk1::pair<int,int>,std::__ndk1::allocator<std::__ndk1::pair<int,int>>>::__push_back_slow_path(long *param_1,undefined8 *param_2)
 
 {
   ulong uVar2;

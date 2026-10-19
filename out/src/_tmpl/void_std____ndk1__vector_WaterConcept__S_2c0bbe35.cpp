@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData
    const&>(WaterConcept::Screen_Editor::ObjectData const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::__push_back_slow_path<WaterConcept::Screen_Editor::ObjectData_const&>
-               (WaterConcept__Screen_Editor__ObjectData *p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__push_back_slow_path(WaterConcept__Screen_Editor__ObjectData *p0)
 
 {
   ulong uVar1;

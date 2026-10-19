@@ -10,9 +10,7 @@
 /* std::__ndk1::__num_put<wchar_t>::__widen_and_group_int(char*, char*, char*, wchar_t*, wchar_t*&,
    wchar_t*&, std::__ndk1::locale const&) */
 
-void std::__ndk1::__num_put<wchar_t>::__widen_and_group_int
-               (char *p0,char *p1,char *p2,wchar_t *p3,wchar_t **p4,wchar_t **p5,
-               std____ndk1__locale *p6)
+template<> void std::__ndk1::__num_put<wchar_t>::__widen_and_group_int(char *p0,char *p1,char *p2,wchar_t *p3,wchar_t **p4,wchar_t **p5, std____ndk1__locale *p6)
 
 {
   void *pvVar1;
@@ -154,9 +152,7 @@ void std::__ndk1::__num_put<wchar_t>::__widen_and_group_int
 /* std::__ndk1::__num_put<wchar_t>::__widen_and_group_float(char*, char*, char*, wchar_t*,
    wchar_t*&, wchar_t*&, std::__ndk1::locale const&) */
 
-void std::__ndk1::__num_put<wchar_t>::__widen_and_group_float
-               (char *p0,char *p1,char *p2,wchar_t *p3,wchar_t **p4,wchar_t **p5,
-               std____ndk1__locale *p6)
+template<> void std::__ndk1::__num_put<wchar_t>::__widen_and_group_float(char *p0,char *p1,char *p2,wchar_t *p3,wchar_t **p4,wchar_t **p5, std____ndk1__locale *p6)
 
 {
   void *pvVar1;

@@ -10,8 +10,7 @@
 /* std::__ndk1::__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>
    >::~__vector_base() */
 
-void std::__ndk1::__vector_base<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::
-     ~__vector_base()
+template<> std::__ndk1::__vector_base<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::~__vector_base()
 
 {
   void *pvVar1;

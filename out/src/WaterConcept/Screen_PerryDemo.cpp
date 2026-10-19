@@ -1111,7 +1111,7 @@ void WaterConcept::Screen_PerryDemo::_finishedLoadingWidgets(void *p0, int * in_
     else {
 LAB_00543f64:
                     /* try { // try from 00543f64 to 00543f77 has its CatchHandler @ 0054440c */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110,"/Textures/wmp_ui_logo_",abStack_90);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110,"/Textures/wmp_ui_logo_",abStack_90);
                     /* try { // try from 00543f78 to 00543f8b has its CatchHandler @ 005443f8 */
       puVar8 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_110,".png",4);
       pvStack_b0 = (void *)puVar8[2];

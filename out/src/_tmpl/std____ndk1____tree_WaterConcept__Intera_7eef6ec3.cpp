@@ -12,9 +12,7 @@
    std::__ndk1::allocator<WaterConcept::InteractiveObject*>
    >::destroy(std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*) */
 
-void std::__ndk1::
-     __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::destroy(undefined8 param_1,undefined8 *param_2)
+template<> void std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::destroy(undefined8 param_1,undefined8 *param_2)
 
 {
   if (param_2 != (undefined8 *)0x0) {
@@ -38,9 +36,7 @@ void std::__ndk1::
    >::__insert_node_at(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*,
    std::__ndk1::__tree_node_base<void*>*&, std::__ndk1::__tree_node_base<void*>*) */
 
-void std::__ndk1::
-     __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
+template<> void std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
 
 {
   *param_4 = 0;
@@ -51,7 +47,7 @@ void std::__ndk1::
     *param_1 = *(long *)*param_1;
     param_4 = (undefined8 *)*param_3;
   }
-  void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
   param_1[2] = param_1[2] + 1;
   return;
 }
@@ -68,9 +64,7 @@ void std::__ndk1::
    >::erase(std::__ndk1::__tree_const_iterator<WaterConcept::InteractiveObject*,
    std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long>) */
 
-long * std::__ndk1::
-       __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-       ::erase(undefined8 *param_1,void *param_2)
+template<> long * std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::erase(undefined8 *param_1,void *param_2)
 
 {
   long *plVar1;
@@ -99,7 +93,7 @@ long * std::__ndk1::
     *param_1 = plVar3;
   }
   param_1[2] = param_1[2] + -1;
-  void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
+  std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
   operator delete(param_2);
   return plVar3;
 }
@@ -118,9 +112,7 @@ long * std::__ndk1::
    std::__ndk1::allocator<WaterConcept::InteractiveObject*> >&, std::__ndk1::integral_constant<bool,
    true>) */
 
-void std::__ndk1::
-     __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::__move_assign(std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>& param_1,std::__ndk1::integral_constant<bool, true> param_2)
+template<> void std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__move_assign(std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>& param_1,std::__ndk1::integral_constant<bool, true> param_2)
 
 {
   long *plVar1;

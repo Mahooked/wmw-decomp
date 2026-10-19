@@ -14,11 +14,7 @@
    >::assign<WaterConcept::Screen_WaterTest::FingerStamp*>(WaterConcept::Screen_WaterTest::FingerStamp*,
    WaterConcept::Screen_WaterTest::FingerStamp*) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_WaterTest::FingerStamp,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>
-     ::assign<WaterConcept::Screen_WaterTest::FingerStamp*>
-               (WaterConcept__Screen_WaterTest__FingerStamp *p0,
-               WaterConcept__Screen_WaterTest__FingerStamp *p1)
+template<> void std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::assign(WaterConcept__Screen_WaterTest__FingerStamp *p0, WaterConcept__Screen_WaterTest__FingerStamp *p1)
 
 {
   uint *puVar1;

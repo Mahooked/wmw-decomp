@@ -106,7 +106,7 @@
   puVar3 = *(undefined8 **)(this + 0x30);
   if (puVar3 == *(undefined8 **)(this + 0x38)) {
                     /* try { // try from 00359b94 to 00359b9f has its CatchHandler @ 00359bd8 */
-    void std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame const&>((undefined8 *)(this + 0x28),&uStack_80);
+    std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame const&>((undefined8 *)(this + 0x28),&uStack_80);
   }
   else {
     *puVar3 = uStack_80;
@@ -460,7 +460,7 @@ LAB_00359fd8:
             }
             else {
                     /* try { // try from 0035a41c to 0035a427 has its CatchHandler @ 0035a754 */
-              void std::__ndk1::vector<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>::__push_back_slow_path<Walaber::SpriteAnimation::FrameImport>(param_1 + 0x14,&uStack_110);
+              std::__ndk1::vector<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>::__push_back_slow_path<Walaber::SpriteAnimation::FrameImport>(param_1 + 0x14,&uStack_110);
               if (((ulong)uStack_110 & 1) != 0) {
                 operator delete(pvStack_100);
               }
@@ -700,7 +700,7 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0, int * in_x1)
         }
         else {
                     /* try { // try from 0035ab64 to 0035ab6f has its CatchHandler @ 0035ad1c */
-          void std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame>((long)p0 + 0x28,&uStack_a0);
+          std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame>((long)p0 + 0x28,&uStack_a0);
         }
         ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_88)->~SharedPtr<Walaber::Texture>();
         lVar6 = *(long *)((long)p0 + 0x28);

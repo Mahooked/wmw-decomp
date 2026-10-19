@@ -12,8 +12,7 @@
    std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>
    >::assign<Walaber::TextLineInfo*>(Walaber::TextLineInfo*, Walaber::TextLineInfo*) */
 
-void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     assign<Walaber::TextLineInfo*>(Walaber__TextLineInfo *p0,Walaber__TextLineInfo *p1)
+template<> void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::assign(Walaber__TextLineInfo *p0,Walaber__TextLineInfo *p1)
 
 {
   Walaber__TextLineInfo *pWVar1;

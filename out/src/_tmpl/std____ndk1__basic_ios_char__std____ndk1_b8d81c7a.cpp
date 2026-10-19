@@ -9,7 +9,7 @@
 
 /* std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char> >::~basic_ios() */
 
-void std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios(void)
+template<> std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios()
 
 {
   ios_base::~ios_base();
@@ -24,11 +24,11 @@ void std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios(voi
 
 /* std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char> >::~basic_ios() */
 
-void std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios(void *param_1)
+template<> std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios()
 
 {
   std::__ndk1::ios_base::~ios_base();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 
@@ -41,7 +41,7 @@ void std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios(voi
 /* std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char>
    >::copyfmt(std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char> > const&) */
 
-long std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::copyfmt(long param_1,long param_2)
+template<> long std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::copyfmt(long param_1,long param_2)
 
 {
   long lVar1;

@@ -9,8 +9,7 @@
 
 /* std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char> >::~basic_fstream() */
 
-void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream
-               ()
+template<> std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream()
 
 {
   *this = &PTR__basic_fstream_00710720;
@@ -29,8 +28,7 @@ void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fst
 
 /* std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char> >::~basic_fstream() */
 
-void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream
-               ()
+template<> std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream()
 
 {
   *this = &PTR__basic_fstream_00710720;

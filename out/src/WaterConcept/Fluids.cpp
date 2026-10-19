@@ -802,7 +802,7 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
     puVar1 = *(undefined4 **)(p0 + 2);
     if (puVar1 == *(undefined4 **)(p0 + 4)) {
                     /* try { // try from 00405584 to 0040558f has its CatchHandler @ 0040572c */
-      void std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>::__push_back_slow_path<WaterConcept::Fluid const&>(p0,auStack_160);
+      std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>::__push_back_slow_path<WaterConcept::Fluid const&>(p0,auStack_160);
     }
     else {
       *puVar1 = auStack_160[0];
@@ -1270,7 +1270,7 @@ void WaterConcept::Fluids::addCollisionBehavior
   plVar1 = (long *)((long)&__DT_SYMTAB[0x1c0a].st_size + uVar3);
   uStack_40 = in_x3;
   if ((undefined8 *)*plVar1 == *(undefined8 **)((long)&__DT_SYMTAB[0x1c0b].st_name + uVar3)) {
-    void std::__ndk1::vector<WaterConcept::Fluids::CollisionBehavior*, std::__ndk1::allocator<WaterConcept::Fluids::CollisionBehavior*>>::__push_back_slow_path<WaterConcept::Fluids::CollisionBehavior* const&>(uVar3 + 0x3cf58,&uStack_40);
+    std::__ndk1::vector<WaterConcept::Fluids::CollisionBehavior*, std::__ndk1::allocator<WaterConcept::Fluids::CollisionBehavior*>>::__push_back_slow_path<WaterConcept::Fluids::CollisionBehavior* const&>(uVar3 + 0x3cf58,&uStack_40);
   }
   else {
     *(undefined8 *)*plVar1 = in_x3;
@@ -1354,7 +1354,7 @@ void WaterConcept::Fluids::changeParticleToFluidType(int p0,WaterConcept__Partic
     uStack_70 = (uint)*(byte *)(**(long **)(*plVar3 + lVar12 * 0xf0 + 0xe0) + (long)iStack_6c * 0x90
                                + 0x34);
     if (puVar4 == *(undefined8 **)(lVar5 + uVar13 * 0x18 + 0x10)) {
-      void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(puVar11,&uStack_78);
+      std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(puVar11,&uStack_78);
     }
     else {
       *(uint *)(puVar4 + 1) = uStack_70;
@@ -1449,7 +1449,7 @@ void WaterConcept::Fluids::changeParticleToFluidTypeWithDamping
     uStack_80 = (uint)*(byte *)(**(long **)(*plVar4 + lVar10 * 0xf0 + 0xe0) + (long)iStack_7c * 0x90
                                + 0x34);
     if (puVar6 == *(undefined8 **)(lVar5 + uVar11 * 0x18 + 0x10)) {
-      void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(puVar9,&uStack_88);
+      std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(puVar9,&uStack_88);
     }
     else {
       *(uint *)(puVar6 + 1) = uStack_80;
@@ -1843,7 +1843,7 @@ void WaterConcept::Fluids::_updateFluidGrid(long *param_1)
               plVar13 = (long *)(lVar7 + 8);
               puVar9 = (undefined8 *)*plVar13;
               if (puVar9 == *(undefined8 **)(lVar7 + 0x10)) {
-                void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(*(long *)(param_1[0x79fa] + 8) + (ulong)uVar3 * 0x18,&iStack_78);
+                std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(*(long *)(param_1[0x79fa] + 8) + (ulong)uVar3 * 0x18,&iStack_78);
               }
               else {
                 *(uint *)(puVar9 + 1) = uStack_70;
@@ -2050,7 +2050,7 @@ void WaterConcept::Fluids::_calculate_densities(long *param_1)
                             if (lVar21 != 0) {
                               puVar15 = *(undefined8 **)(lVar21 + 0x18);
                               if (puVar15 == *(undefined8 **)(lVar21 + 0x20)) {
-                                void std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::__push_back_slow_path<WaterConcept::Fluids::FluidCollisionRecord const&>(lVar21 + 0x10,&uStack_c0);
+                                std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::__push_back_slow_path<WaterConcept::Fluids::FluidCollisionRecord const&>(lVar21 + 0x10,&uStack_c0);
                                 iVar12 = iStack_d0;
                               }
                               else {
@@ -2852,7 +2852,7 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
       fStack_c4 = fVar19;
       uStack_b8 = uVar7;
       if (WVar9 == *pWVar6) {
-        void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
+        std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
       }
       else {
         *(uint *)((long)WVar9 + 0x10) = uVar7;
@@ -2863,7 +2863,7 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
       if (iVar13 == 0) {
         WVar9 = *pWVar5;
         if (WVar9 == *pWVar6) {
-          void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
+          std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
         }
         else {
           *(uint *)((long)WVar9 + 0x10) = uStack_b8;
@@ -2888,7 +2888,7 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
       if (WVar9 == *pWVar6) {
         fStack_c8 = fVar26;
         uStack_b8 = uVar7;
-        void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
+        std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
       }
       else {
         *(uint *)((long)WVar9 + 0x10) = uVar7;
@@ -2904,7 +2904,7 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
     } while (iVar13 != 0x10);
     WVar9 = *pWVar5;
     if (WVar9 == *pWVar6) {
-      void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
+      std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(pWVar4,&fStack_c8);
     }
     else {
       *(uint *)((long)WVar9 + 0x10) = uStack_b8;

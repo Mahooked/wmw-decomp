@@ -193,11 +193,11 @@ void Walaber::Camera::animate
     *(undefined4 **)(param_2 + 0x18) = puVar1 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_2 + 0x10,&uStack_40);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_2 + 0x10,&uStack_40);
   }
   puVar2 = *(undefined8 **)(param_2 + 0x30);
   if (puVar2 == *(undefined8 **)(param_2 + 0x38)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_2 + 0x28,param_4);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_2 + 0x28,param_4);
   }
   else {
     *puVar2 = *param_4;
@@ -205,7 +205,7 @@ void Walaber::Camera::animate
   }
   puVar2 = *(undefined8 **)(param_2 + 0x48);
   if (puVar2 == *(undefined8 **)(param_2 + 0x50)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_2 + 0x40,param_5);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_2 + 0x40,param_5);
   }
   else {
     *puVar2 = *param_5;
@@ -213,7 +213,7 @@ void Walaber::Camera::animate
   }
   puVar1 = *(undefined4 **)(param_2 + 0x60);
   if (puVar1 == *(undefined4 **)(param_2 + 0x68)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_2 + 0x58,&uStack_3c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_2 + 0x58,&uStack_3c);
   }
   else {
     *puVar1 = uStack_3c;
@@ -226,7 +226,7 @@ void Walaber::Camera::animate
     *(undefined4 **)(param_2 + 0x78) = puVar1 + 1;
   }
   else {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_2 + 0x70,&uStack_40);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_2 + 0x70,&uStack_40);
   }
   *(undefined1 *)(param_2 + 0x88) = 0;
   return;
@@ -261,11 +261,11 @@ void Walaber::Camera::animate
     *(undefined4 **)(param_3 + 0x18) = puVar1 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_3 + 0x10,&uStack_44);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_3 + 0x10,&uStack_44);
   }
   puVar2 = *(undefined8 **)(param_3 + 0x30);
   if (puVar2 == *(undefined8 **)(param_3 + 0x38)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_3 + 0x28,param_5);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_3 + 0x28,param_5);
   }
   else {
     *puVar2 = *param_5;
@@ -273,7 +273,7 @@ void Walaber::Camera::animate
   }
   puVar2 = *(undefined8 **)(param_3 + 0x48);
   if (puVar2 == *(undefined8 **)(param_3 + 0x50)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_3 + 0x40,param_6);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_3 + 0x40,param_6);
   }
   else {
     *puVar2 = *param_6;
@@ -281,7 +281,7 @@ void Walaber::Camera::animate
   }
   puVar1 = *(undefined4 **)(param_3 + 0x60);
   if (puVar1 == *(undefined4 **)(param_3 + 0x68)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_3 + 0x58,&uStack_3c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_3 + 0x58,&uStack_3c);
   }
   else {
     *puVar1 = uStack_3c;
@@ -289,7 +289,7 @@ void Walaber::Camera::animate
   }
   puVar1 = *(undefined4 **)(param_3 + 0x78);
   if (puVar1 == *(undefined4 **)(param_3 + 0x80)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_3 + 0x70,&uStack_40);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_3 + 0x70,&uStack_40);
   }
   else {
     *puVar1 = uStack_40;

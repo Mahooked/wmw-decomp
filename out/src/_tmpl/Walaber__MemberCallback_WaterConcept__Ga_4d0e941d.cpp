@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<WaterConcept::GameState>::~MemberCallback() */
 
-void Walaber::MemberCallback<WaterConcept::GameState>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<WaterConcept::GameState>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<WaterConcept::GameState>::~MemberCallback(void *p0)
 
 /* Walaber::MemberCallback<WaterConcept::GameState>::invoke(void*) */
 
-void Walaber::MemberCallback<WaterConcept::GameState>::invoke(void *p0)
+template<> void Walaber::MemberCallback<WaterConcept::GameState>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

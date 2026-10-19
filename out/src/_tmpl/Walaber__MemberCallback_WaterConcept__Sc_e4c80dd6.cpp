@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::~MemberCallback() */
 
-void Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::~MemberCallbac
 
 /* Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::invoke(void*) */
 
-void Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::invoke(void *p0)
+template<> void Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

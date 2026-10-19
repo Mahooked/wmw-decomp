@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>(Walaber::SpriteAnimationTrack::SpriteAnimationEvent&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__push_back_slow_path<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>
-               (Walaber__SpriteAnimationTrack__SpriteAnimationEvent **p0)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__push_back_slow_path(Walaber__SpriteAnimationTrack__SpriteAnimationEvent **p0)
 
 {
   ulong uVar1;

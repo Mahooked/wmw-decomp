@@ -16,11 +16,7 @@
    WaterConceptConstants::FluidType>(WaterConceptConstants::FluidType const&,
    WaterConceptConstants::FluidType&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<WaterConceptConstants::FluidType,std::__ndk1::less<WaterConceptConstants::FluidType>,std::__ndk1::allocator<WaterConceptConstants::FluidType>>
-::__emplace_unique_key_args<WaterConceptConstants::FluidType,WaterConceptConstants::FluidType>
-          (WaterConceptConstants__FluidType *p0,WaterConceptConstants__FluidType **p1)
+template<> undefined1 [16] std::__ndk1::__tree<WaterConceptConstants::FluidType,std::__ndk1::less<WaterConceptConstants::FluidType>,std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__emplace_unique_key_args(WaterConceptConstants__FluidType *p0,WaterConceptConstants__FluidType **p1)
 
 {
   bool bVar1;

@@ -10,8 +10,7 @@
 /* std::__ndk1::list<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>
    >::push_back(Walaber::CommandRegister const&) */
 
-void std::__ndk1::list<Walaber::CommandRegister,std::__ndk1::allocator<Walaber::CommandRegister>>::
-     push_back(Walaber__CommandRegister *p0)
+template<> void std::__ndk1::list<Walaber::CommandRegister,std::__ndk1::allocator<Walaber::CommandRegister>>::push_back(Walaber__CommandRegister *p0)
 
 {
   int *piVar1;

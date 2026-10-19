@@ -15,9 +15,7 @@
    WaterConcept::World::CoalDot> > >::__erase_unique<WaterConcept::GridCell>(WaterConcept::GridCell
    const&) */
 
-bool std::__ndk1::
-     __tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>>>
-     ::__erase_unique<WaterConcept::GridCell>(WaterConcept__GridCell *p0)
+template<> bool std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>>>::__erase_unique(WaterConcept__GridCell *p0)
 
 {
   WaterConcept__GridCell *pWVar1;

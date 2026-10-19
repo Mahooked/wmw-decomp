@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Floater::InternalSpring
    const&>(WaterConcept::Floater::InternalSpring const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Floater::InternalSpring,std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>>
-     ::__push_back_slow_path<WaterConcept::Floater::InternalSpring_const&>
-               (WaterConcept__Floater__InternalSpring *p0)
+template<> void std::__ndk1::vector<WaterConcept::Floater::InternalSpring,std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>>::__push_back_slow_path(WaterConcept__Floater__InternalSpring *p0)
 
 {
   ulong uVar1;

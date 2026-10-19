@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::TextureManager::SubTexInfo,
    std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::~__vector_base()
 
 {
   byte *pbVar1;

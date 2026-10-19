@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SpriteAnimation::FrameImport>(Walaber::SpriteAnimation::FrameImport&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>
-     ::__push_back_slow_path<Walaber::SpriteAnimation::FrameImport>
-               (Walaber__SpriteAnimation__FrameImport **p0)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>::__push_back_slow_path(Walaber__SpriteAnimation__FrameImport **p0)
 
 {
   ulong uVar1;

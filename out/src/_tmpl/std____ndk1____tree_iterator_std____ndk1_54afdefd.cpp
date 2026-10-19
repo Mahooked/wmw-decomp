@@ -15,9 +15,7 @@
    >::__emplace_multi<std::__ndk1::pair<void* const, void*> const&>(std::__ndk1::pair<void* const,
    void*> const&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<void*,void*>,std::__ndk1::__map_value_compare<void*,std::__ndk1::__value_type<void*,void*>,std::__ndk1::less<void*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<void*,void*>>>
-     ::__emplace_multi<std::__ndk1::pair<void*const,void*>const&>(long param_1,undefined8 *param_2)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<void*,void*>,std::__ndk1::__map_value_compare<void*,std::__ndk1::__value_type<void*,void*>,std::__ndk1::less<void*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<void*,void*>>>::__emplace_multi(long param_1,undefined8 *param_2)
 
 {
   long *plVar1;

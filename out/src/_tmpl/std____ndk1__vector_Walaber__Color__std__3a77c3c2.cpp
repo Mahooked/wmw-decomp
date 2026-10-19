@@ -10,7 +10,7 @@
 /* std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color> >::vector(unsigned
    long) */
 
-void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::vector(ulong p0, long in_x1)
+template<> std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::vector(ulong p0, long in_x1)
 
 {
   undefined4 *puVar1;
@@ -45,8 +45,7 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
 /* std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::__vallocate
-               (ulong p0)
+template<> void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -73,8 +72,7 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Color,
    std::__ndk1::allocator<Walaber::Color>&>&) */
 
-void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined1 *puVar1;

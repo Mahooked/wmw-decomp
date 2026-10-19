@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>
    >::__push_back_slow_path<ndk::MotionEvent>(ndk::MotionEvent&&) */
 
-void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::
-     __push_back_slow_path<ndk::MotionEvent>(ndk__MotionEvent **p0)
+template<> void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::__push_back_slow_path(ndk__MotionEvent **p0)
 
 {
   undefined8 *in_x1;

@@ -9,7 +9,7 @@
 
 /* WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int, int) */
 
-void WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int p0,int p1, int in_w2)
+template<> WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int p0,int p1, int in_w2)
 
 {
   int iVar1;

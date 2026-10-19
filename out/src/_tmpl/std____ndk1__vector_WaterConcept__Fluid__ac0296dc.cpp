@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>
    >::vector(unsigned long) */
 
-void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::vector
-               (ulong p0)
+template<> std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::vector(ulong p0)
 
 {
   long in_x1;
@@ -36,8 +35,7 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
 /* std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -63,8 +61,7 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
 /* std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>
    >::__construct_at_end(unsigned long) */
 
-void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __construct_at_end(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::__construct_at_end(ulong p0)
 
 {
   long in_x1;
@@ -96,8 +93,7 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Fluid,
    std::__ndk1::allocator<WaterConcept::Fluid>&>&) */
 
-void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 uVar1;

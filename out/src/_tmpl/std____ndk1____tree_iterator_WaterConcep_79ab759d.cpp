@@ -18,11 +18,7 @@
    std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long>,
    WaterConcept::InteractiveObject* const&, WaterConcept::InteractiveObject* const&) */
 
-long std::__ndk1::
-     __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::
-     __emplace_hint_unique_key_args<WaterConcept::InteractiveObject*,WaterConcept::InteractiveObject*const&>
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
+template<> long std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   long *plVar1;

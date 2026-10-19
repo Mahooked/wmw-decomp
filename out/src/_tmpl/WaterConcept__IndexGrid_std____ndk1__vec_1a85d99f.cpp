@@ -10,9 +10,7 @@
 /* WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,
    std::__ndk1::allocator<WaterConcept::ParticleDescription> > >::~IndexGrid() */
 
-void WaterConcept::
-     IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>
-     ::~IndexGrid(long param_1,ulong param_2)
+template<> WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>::~IndexGrid()
 
 {
   void *p0;
@@ -20,7 +18,7 @@ void WaterConcept::
   long lVar1;
   long lVar2;
   
-  lVar2 = *(long *)(param_1 + 8);
+  lVar2 = *(long *)((byte *)this + 8);
   if (lVar2 != 0) {
     lVar1 = *(long *)(lVar2 + -8);
     if (lVar1 != 0) {
@@ -50,9 +48,7 @@ void WaterConcept::
 /* WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,
    std::__ndk1::allocator<WaterConcept::ParticleDescription> > >::IndexGrid(int, int) */
 
-void WaterConcept::
-     IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>
-     ::IndexGrid(int p0,int p1)
+template<> WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>::IndexGrid(int p0,int p1)
 
 {
   long lVar1;
@@ -93,9 +89,7 @@ void WaterConcept::
 /* WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,
    std::__ndk1::allocator<WaterConcept::ParticleDescription> > >::resize(int, int) */
 
-void WaterConcept::
-     IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>
-     ::resize(int p0,int p1)
+template<> void WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>::resize(int p0,int p1)
 
 {
   uint uVar1;

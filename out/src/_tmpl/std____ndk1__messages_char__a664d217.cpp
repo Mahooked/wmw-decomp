@@ -11,7 +11,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, std::__ndk1::locale
    const&) const */
 
-undefined8 std::__ndk1::messages<char>::do_open(void)
+template<> undefined8 std::__ndk1::messages<char>::do_open(void)
 
 {
   return 0xffffffffffffffff;
@@ -26,7 +26,7 @@ undefined8 std::__ndk1::messages<char>::do_open(void)
 /* std::__ndk1::messages<char>::do_get(long, int, int, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) const */
 
-void std::__ndk1::messages<char>::do_get(undefined8 param_1)
+template<> void std::__ndk1::messages<char>::do_get(undefined8 param_1)
 
 {
   undefined8 in_x4;
@@ -43,7 +43,7 @@ void std::__ndk1::messages<char>::do_get(undefined8 param_1)
 
 /* std::__ndk1::messages<char>::do_close(long) const */
 
-void std::__ndk1::messages<char>::do_close(long p0)
+template<> void std::__ndk1::messages<char>::do_close(long p0)
 
 {
   return;

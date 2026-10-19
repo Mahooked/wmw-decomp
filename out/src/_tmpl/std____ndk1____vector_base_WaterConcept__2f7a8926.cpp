@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<WaterConcept::Screen_Editor::ObjectData,
    std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::~__vector_base()
 
 {
   void *p0;

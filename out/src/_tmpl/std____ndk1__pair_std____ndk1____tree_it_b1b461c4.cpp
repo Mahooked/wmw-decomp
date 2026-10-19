@@ -19,12 +19,7 @@
    std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned char&&>&&,
    std::__ndk1::tuple<>&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::__map_value_compare<unsigned_char,std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::less<unsigned_char>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>>>
-::
-__emplace_unique_key_args<unsigned_char,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<unsigned_char&&>,std::__ndk1::tuple<>>
-          (unsigned char const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<unsigned char&&>&& param_3,std::__ndk1::tuple<>&& param_4)
+template<> undefined1 [16] std::__ndk1::__tree<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::__map_value_compare<unsigned_char,std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::less<unsigned_char>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>>>::__emplace_unique_key_args(unsigned char const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<unsigned char&&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

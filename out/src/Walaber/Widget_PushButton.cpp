@@ -93,7 +93,7 @@ Walaber__Widget_PushButton * Walaber::Widget_PushButton::operator=(Walaber__Widg
   p0->f_0x1a2 = in_x1->f_0x1a2;
   p0->f_0x1a3 = in_x1->f_0x1a3;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Widget_Label**>::value&&is_constructible<Walaber::Widget_Label*, std::__ndk1::iterator_traits<Walaber::Widget_Label**>::reference>::value, void>::type std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::assign<Walaber::Widget_Label**>(&p0->f_0x1a8,in_x1->f_0x1a8,in_x1->f_0x1b0);
+    std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::assign<Walaber::Widget_Label**>(&p0->f_0x1a8,in_x1->f_0x1a8,in_x1->f_0x1b0);
   }
   p0->f_0x1c0 = in_x1->f_0x1c0;
   return p0;
@@ -928,7 +928,7 @@ void Walaber::Widget_PushButton::addLabel(Walaber__Widget_Label *p0, undefined8 
     *(undefined8 *)&p0[1].field_0x38 = uVar2;
   }
   if (puVar3 == *(undefined8 **)&p0[1].field_0x30) {
-    void std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::__push_back_slow_path<Walaber::Widget_Label* const&>(&p0[1].field_0x20,&uStack_40);
+    std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::__push_back_slow_path<Walaber::Widget_Label* const&>(&p0[1].field_0x20,&uStack_40);
   }
   else {
     *puVar3 = uStack_40;

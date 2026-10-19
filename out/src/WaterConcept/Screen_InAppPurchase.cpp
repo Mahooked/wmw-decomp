@@ -1771,7 +1771,7 @@ void WaterConcept::Screen_InAppPurchase::update(float p0,bool p1)
             appuStack_d0[0] = (undefined **)0x0;
             apiStack_118[0]._0_4_ = 0x2c;
                     /* try { // try from 004e6360 to 004e636b has its CatchHandler @ 004e6b10 */
-            void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,apiStack_118);
+            std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,apiStack_118);
             apiStack_118[0]._0_4_ = 0x2d;
             if (uStack_d8 < appuStack_d0[0]) {
               *(int *)uStack_d8 = 0x2d;
@@ -1779,7 +1779,7 @@ void WaterConcept::Screen_InAppPurchase::update(float p0,bool p1)
             }
             else {
                     /* try { // try from 004e66b0 to 004e66bb has its CatchHandler @ 004e6ae8 */
-              void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,apiStack_118);
+              std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,apiStack_118);
             }
             apiStack_118[0] = (int *)CONCAT44(apiStack_118[0]._4_4_,0x28);
             if (uStack_d8 < appuStack_d0[0]) {
@@ -1788,7 +1788,7 @@ void WaterConcept::Screen_InAppPurchase::update(float p0,bool p1)
             }
             else {
                     /* try { // try from 004e66dc to 004e66e7 has its CatchHandler @ 004e6ae4 */
-              void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,apiStack_118);
+              std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,apiStack_118);
             }
             if (uStack_d8 != uStack_e0) {
               lVar8 = uVar6 + 0x178;
@@ -2998,7 +2998,7 @@ LAB_004e8a4c:
         lVar17 = *(long *)&p0[0x24].field_0x8;
         if (lVar17 == *(long *)(p0 + 0x25)) {
                     /* try { // try from 004e7d28 to 004e7d33 has its CatchHandler @ 004e9674 */
-          void std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__push_back_slow_path<WaterConcept::Screen_InAppPurchase::product const&>(p0 + 0x24,&fStack_130);
+          std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__push_back_slow_path<WaterConcept::Screen_InAppPurchase::product const&>(p0 + 0x24,&fStack_130);
         }
         else {
                     /* try { // try from 004e7c24 to 004e7c33 has its CatchHandler @ 004e9674 */
@@ -3174,7 +3174,7 @@ LAB_004e7f70:
         uVar11 = 3;
       }
                     /* try { // try from 004e80a8 to 004e80bf has its CatchHandler @ 004e9670 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_130,&DAT_0077a6c8,&DAT_00619cc6);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_130,&DAT_0077a6c8,&DAT_00619cc6);
       uVar14 = ram0x0077a7a8;
       puVar15 = DAT_0077a7b0;
       if ((DAT_0077a7a0 & 1) == 0) {
@@ -3453,7 +3453,7 @@ LAB_004e8444:
       if (p0[0x1c].field_0x8 == '\0') {
         if (p0[0x1c].field_0xb == '\0') {
                     /* try { // try from 004e8ab0 to 004e8abf has its CatchHandler @ 004e9404 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_2c8,&p0[10].field_0x8,"_SHORT");
+          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_2c8,&p0[10].field_0x8,"_SHORT");
                     /* try { // try from 004e8ac0 to 004e8acf has its CatchHandler @ 004e93f0 */
           Walaber::TextManager::getString(&uStack_200,abStack_2c8);
           uStack_1e0 = 0;
@@ -3586,7 +3586,7 @@ joined_r0x004e8d80:
                     /* try { // try from 004e86d0 to 004e86e3 has its CatchHandler @ 004e93c4 */
               new ((void *)(&fStack_130)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(puVar23,0,lVar21,puVar23);
                     /* try { // try from 004e86e4 to 004e86f3 has its CatchHandler @ 004e93b4 */
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_298,&fStack_130,pcVar24);
+              std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_298,&fStack_130,pcVar24);
                     /* try { // try from 004e86f4 to 004e8703 has its CatchHandler @ 004e939c */
               Walaber::TextManager::getString(auStack_218,abStack_298);
               uStack_1f8 = 0;
@@ -3655,7 +3655,7 @@ LAB_004e8efc:
               goto LAB_004e8810;
             }
                     /* try { // try from 004e8c5c to 004e8c6f has its CatchHandler @ 004e9338 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_2b0,puVar23,"_DESC");
+            std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_2b0,puVar23,"_DESC");
                     /* try { // try from 004e8c70 to 004e8c7f has its CatchHandler @ 004e9324 */
             Walaber::TextManager::getString(&uStack_200,abStack_2b0);
             uStack_1e0 = 0;
@@ -4665,7 +4665,7 @@ void WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(long param_1,l
   }
   if (*(char *)(param_1 + 0x1c8) == '\0') {
                     /* try { // try from 004e9a50 to 004e9a5f has its CatchHandler @ 004ea678 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_180,param_1 + 0xa8,"_SHORT");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_180,param_1 + 0xa8,"_SHORT");
   }
   else {
     uStack_16c = 0;

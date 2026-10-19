@@ -11,9 +11,7 @@
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&, unsigned int*, unsigned int*&, char*) */
 
-undefined8
-std::__ndk1::__num_get<char>::__stage2_int_loop
-          (char param_1,int param_2,char *param_3,char*& param_4,unsigned int& param_5,char param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,unsigned int *param_8,unsigned int*& param_9,char *param_10)
+template<> undefined8 std::__ndk1::__num_get<char>::__stage2_int_loop(char param_1,int param_2,char *param_3,char*& param_4,unsigned int& param_5,char param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,unsigned int *param_8,unsigned int*& param_9,char *param_10)
 
 {
   ulong uVar1;
@@ -203,8 +201,7 @@ LAB_005b5958:
 
 /* std::__ndk1::__num_get<char>::__stage2_float_prep(std::__ndk1::ios_base&, char*, char&, char&) */
 
-void std::__ndk1::__num_get<char>::__stage2_float_prep
-               (std____ndk1__ios_base *p0,char *p1,char *p2,char *p3)
+template<> void std::__ndk1::__num_get<char>::__stage2_float_prep(std____ndk1__ios_base *p0,char *p1,char *p2,char *p3)
 
 {
   char cVar2;
@@ -236,9 +233,7 @@ void std::__ndk1::__num_get<char>::__stage2_float_prep
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&, unsigned int*, unsigned int*&, unsigned int&, char*) */
 
-undefined8
-std::__ndk1::__num_get<char>::__stage2_float_loop
-          (char param_1,bool& param_2,char& param_3,char *param_4,char*& param_5,char param_6,char param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8,unsigned int *param_9,unsigned int*& param_10,unsigned int& param_11,char *param_12)
+template<> undefined8 std::__ndk1::__num_get<char>::__stage2_float_loop(char param_1,bool& param_2,char& param_3,char *param_4,char*& param_5,char param_6,char param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8,unsigned int *param_9,unsigned int*& param_10,unsigned int& param_11,char *param_12)
 
 {
   ulong uVar1;
@@ -443,7 +438,7 @@ LAB_005b9adc:
 
 /* std::__ndk1::__num_get<char>::__stage2_int_prep(std::__ndk1::ios_base&, char*, char&) */
 
-void std::__ndk1::__num_get<char>::__stage2_int_prep(std____ndk1__ios_base *p0,char *p1,char *p2)
+template<> void std::__ndk1::__num_get<char>::__stage2_int_prep(std____ndk1__ios_base *p0,char *p1,char *p2)
 
 {
   char cVar2;

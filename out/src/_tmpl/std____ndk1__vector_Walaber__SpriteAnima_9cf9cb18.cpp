@@ -12,10 +12,7 @@
    >::insert(std::__ndk1::__wrap_iter<Walaber::SpriteAnimationTrack::SpriteAnimationEvent const*>,
    Walaber::SpriteAnimationTrack::SpriteAnimationEvent&&) */
 
-undefined8 *
-std::__ndk1::
-vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> undefined8 * std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   undefined8 *puVar2;
@@ -119,11 +116,7 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
    Walaber::SpriteAnimationTrack::SpriteAnimationEvent*,
    Walaber::SpriteAnimationTrack::SpriteAnimationEvent*) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__move_range(Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p0,
-                   Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p1,
-                   Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p2)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__move_range(Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p0, Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p1, Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p2)
 
 {
   Walaber__SpriteAnimationTrack__SpriteAnimationEvent *pWVar1;
@@ -201,9 +194,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>&,
    Walaber::SpriteAnimationTrack::SpriteAnimationEvent*) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   undefined8 *puVar1;
@@ -277,9 +268,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -337,9 +326,7 @@ void std::__ndk1::
    >::vector(std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent> > const&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::vector(undefined8 *param_1,long *param_2)
 
 {
   undefined8 *puVar1;
@@ -382,9 +369,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -410,9 +395,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent> >::__vdeallocate() */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__vdeallocate(undefined8 *param_1)
 
 {
   void *pvVar1;

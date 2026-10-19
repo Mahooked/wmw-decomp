@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::SpriteAnimation::AnimationFrame,
    std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::~__vector_base()
 
 {
   long lVar1;

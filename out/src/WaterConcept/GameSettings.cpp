@@ -171,7 +171,7 @@ LAB_0040c104:
     if (p3) goto LAB_0040c06c;
 LAB_0040c110:
                     /* try { // try from 0040c110 to 0040c11f has its CatchHandler @ 0040c4b8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110,&uStack_f0,&bStack_a0);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110,&uStack_f0,&bStack_a0);
     if ((bStack_a0 & 1) != 0) {
       *puStack_90 = 0;
       uStack_98 = 0;
@@ -272,7 +272,7 @@ LAB_0040c130:
                     /* try { // try from 0040c18c to 0040c197 has its CatchHandler @ 0040c4d8 */
     ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_a0))->operator=(&uStack_110);
                     /* try { // try from 0040c198 to 0040c1a7 has its CatchHandler @ 0040c4b4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_70,&uStack_f0,&uStack_d0);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_70,&uStack_f0,&uStack_d0);
     if (((byte)uStack_d0 & 1) != 0) {
       *puStack_c0 = 0;
       uStack_c8 = 0;
@@ -372,7 +372,7 @@ LAB_0040c130:
     }
   }
                     /* try { // try from 0040c33c to 0040c34b has its CatchHandler @ 0040c4f4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110,&bStack_a0,&uStack_b8);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_110,&bStack_a0,&uStack_b8);
   uVar1 = uStack_d0 >> 1 & 0x7f;
   puVar2 = (undefined1 *)((ulong)&uStack_d0 | 1);
   if ((uStack_d0 & 1) != 0) {
@@ -531,7 +531,7 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
   uStack_10f = 0x6e496c6576654c;
   uStack_108 = 0x66;
                     /* try { // try from 0040c664 to 0040c677 has its CatchHandler @ 0040d2f4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_00734418,"=\'");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_00734418,"=\'");
   uVar15 = *(ulong *)(param_2 + 8);
   pbVar16 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
@@ -572,7 +572,7 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
                     /* try { // try from 0040c720 to 0040c72f has its CatchHandler @ 0040d2b4 */
     Walaber::DatabaseIterator::getStringAtIndex(&uStack_150,auStack_178,0);
                     /* try { // try from 0040c730 to 0040c747 has its CatchHandler @ 0040d2ac */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_00734718,&DAT_0063d328);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_00734718,&DAT_0063d328);
     uVar15 = DAT_007345b8;
     puVar5 = DAT_007345c0;
     if ((DAT_007345b0 & 1) == 0) {
@@ -636,7 +636,7 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
                     /* try { // try from 0040c804 to 0040c817 has its CatchHandler @ 0040d290 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_110,"LevelPackInfo",0xd);
                     /* try { // try from 0040c818 to 0040c82f has its CatchHandler @ 0040d28c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_007345c8,"=\'");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_007345c8,"=\'");
     pcVar24 = (char *)((ulong)&uStack_150 | 1);
     uVar15 = uStack_150 >> 1 & 0x7f;
     pcVar23 = pcVar24;
@@ -721,7 +721,7 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
                     /* try { // try from 0040c968 to 0040c977 has its CatchHandler @ 0040d244 */
       ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_f8))->operator=(&DAT_007345c8);
                     /* try { // try from 0040c978 to 0040c993 has its CatchHandler @ 0040d240 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_1f8,&DAT_00734718,"=");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_1f8,&DAT_00734718,"=");
                     /* try { // try from 0040c994 to 0040c9a3 has its CatchHandler @ 0040d238 */
       Walaber::StringHelper::intToStr(abStack_210,uVar9);
       uVar15 = (ulong)(abStack_210[0] >> 1);
@@ -900,7 +900,7 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
         operator delete(pvStack_1e8);
       }
                     /* try { // try from 0040cd04 to 0040cd1b has its CatchHandler @ 0040d150 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_007345b0,&DAT_00635526);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_007345b0,&DAT_00635526);
                     /* try { // try from 0040cd1c to 0040cd3f has its CatchHandler @ 0040d148 */
       new ((void *)(&uStack_1a0)) Walaber::DatabaseIterator(0,&bStack_f8,&bStack_110,&bStack_130,&uStack_170);
       iVar25 = 0;
@@ -961,7 +961,7 @@ joined_r0x0040cdec:
       ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_f8))->operator=(&DAT_00734418);
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_110,"LevelInfo",9);
                     /* try { // try from 0040ce4c to 0040ce63 has its CatchHandler @ 0040d144 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,&DAT_00734430,"=\'");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,&DAT_00734430,"=\'");
       uVar15 = uStack_150 >> 1 & 0x7f;
       if ((uStack_150 & 1) != 0) {
         uVar15 = uStack_148;
@@ -1039,7 +1039,7 @@ joined_r0x0040cdec:
         operator delete(pvStack_b0);
       }
                     /* try { // try from 0040cf4c to 0040cf63 has its CatchHandler @ 0040d110 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_007343e8,&DAT_00635526);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_007343e8,&DAT_00635526);
       if ((uStack_170 & 1) != 0) {
         *pbStack_160 = 0;
         uStack_168 = 0;
@@ -1254,7 +1254,7 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
   undefined1 uStack_81;
   void *pvStack_80;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_158,"LevelInfo.",&DAT_00734430);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_158,"LevelInfo.",&DAT_00734430);
                     /* try { // try from 0040d3ec to 0040d3ff has its CatchHandler @ 0040e9b8 */
   puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_158,&DAT_0063552b,4);
   pcStack_130 = (char *)puVar13[2];
@@ -1302,7 +1302,7 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
     }
     else {
                     /* try { // try from 0040d4e0 to 0040d4eb has its CatchHandler @ 0040e984 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_10,&uStack_158);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_10,&uStack_158);
       puVar18 = (undefined4 *)*param_10;
       puVar21 = (undefined4 *)param_10[1];
     }
@@ -1321,7 +1321,7 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
       puStack_148 = (undefined1 *)0x0;
       if (iVar11 == -1) {
                     /* try { // try from 0040d864 to 0040d87b has its CatchHandler @ 0040eba8 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,"LevelInfo.",&DAT_00734418);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,"LevelInfo.",&DAT_00734418);
                     /* try { // try from 0040d87c to 0040d88f has its CatchHandler @ 0040eb94 */
         puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_90,"=\'",2);
         pbStack_180 = (byte *)puVar13[2];
@@ -1389,7 +1389,7 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
       }
       else {
                     /* try { // try from 0040d588 to 0040d59f has its CatchHandler @ 0040ec7c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_268,"LevelInfo.",&DAT_007345c8);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_268,"LevelInfo.",&DAT_007345c8);
                     /* try { // try from 0040d5a0 to 0040d5b3 has its CatchHandler @ 0040edb8 */
         puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(abStack_268,"=LevelPackInfo.",0xf);
         pvStack_240 = (void *)puVar13[2];
@@ -1612,7 +1612,7 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
       }
       if ((param_11 & 1) == 0) {
                     /* try { // try from 0040db28 to 0040db3f has its CatchHandler @ 0040ebdc */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190," AND LevelInfo.",&DAT_007345c8);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190," AND LevelInfo.",&DAT_007345c8);
                     /* try { // try from 0040db40 to 0040db53 has its CatchHandler @ 0040ebd4 */
         puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_190,"!=\'LP_BURSTLY_REWARD\'",0x15);
         pbStack_160 = (byte *)puVar13[2];
@@ -1632,7 +1632,7 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
       }
       else {
                     /* try { // try from 0040dabc to 0040dad3 has its CatchHandler @ 0040ebcc */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190," AND LevelInfo.",&DAT_007345c8);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190," AND LevelInfo.",&DAT_007345c8);
                     /* try { // try from 0040dad4 to 0040dae7 has its CatchHandler @ 0040ebb4 */
         puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_190,"=\'LP_BURSTLY_REWARD\'",0x14);
         pbStack_160 = (byte *)puVar13[2];
@@ -1752,7 +1752,7 @@ LAB_0040dc78:
         }
         *(bool *)param_9 = bVar9;
                     /* try { // try from 0040dd84 to 0040dd9b has its CatchHandler @ 0040ebc4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00734718,&DAT_0063d328);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00734718,&DAT_0063d328);
         uVar15 = DAT_007345b8;
         puVar7 = DAT_007345c0;
         if ((DAT_007345b0 & 1) == 0) {
@@ -1826,7 +1826,7 @@ LAB_0040dc78:
                     /* try { // try from 0040ded8 to 0040deeb has its CatchHandler @ 0040edd0 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&uStack_140,"LevelPackInfo",0xd);
                     /* try { // try from 0040deec to 0040df03 has its CatchHandler @ 0040ebc0 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190,&DAT_007345c8,"=\'");
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190,&DAT_007345c8,"=\'");
         pbVar25 = pbVar2;
         uVar15 = (ulong)(byte)((byte)*param_2 >> 1);
         if (((byte)*param_2 & 1) != 0) {
@@ -1909,7 +1909,7 @@ LAB_0040dc78:
                     /* try { // try from 0040e084 to 0040e093 has its CatchHandler @ 0040edc0 */
         ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&uStack_120))->operator=(&DAT_007345c8);
                     /* try { // try from 0040e094 to 0040e0ab has its CatchHandler @ 0040eb5c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1f0,&DAT_00734718,"=");
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1f0,&DAT_00734718,"=");
                     /* try { // try from 0040e0b4 to 0040e0bb has its CatchHandler @ 0040eb54 */
         Walaber::StringHelper::intToStr(&uStack_210,*param_7);
         pvVar3 = (void *)((ulong)&uStack_210 | 1);
@@ -2069,7 +2069,7 @@ LAB_0040dc78:
           operator delete(pvStack_1e0);
         }
                     /* try { // try from 0040e36c to 0040e383 has its CatchHandler @ 0040ea6c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_007345b0,&DAT_00635526);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_007345b0,&DAT_00635526);
                     /* try { // try from 0040e384 to 0040e39f has its CatchHandler @ 0040ea64 */
         new ((void *)(&uStack_1b0)) Walaber::DatabaseIterator(0,&uStack_120,&uStack_140,&uStack_158,&uStack_170);
                     /* try { // try from 0040e3a0 to 0040e3a7 has its CatchHandler @ 0040edf0 */
@@ -2129,7 +2129,7 @@ joined_r0x0040e440:
 LAB_0040e48c:
         *param_6 = 0;
                     /* try { // try from 0040e490 to 0040e4a7 has its CatchHandler @ 0040ea5c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,&DAT_00734418,&DAT_0063d328);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,&DAT_00734418,&DAT_0063d328);
         uVar15 = DAT_00734408;
         puVar18 = DAT_00734410;
         if ((DAT_00734400 & 1) == 0) {
@@ -2207,7 +2207,7 @@ LAB_0040e48c:
                     /* try { // try from 0040e5e4 to 0040e5f7 has its CatchHandler @ 0040ea10 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&uStack_140,"LevelInfo",9);
                     /* try { // try from 0040e5f8 to 0040e60f has its CatchHandler @ 0040ea0c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00734430,"=\'");
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00734430,"=\'");
         pbVar25 = pbVar2;
         uVar15 = (ulong)(byte)((byte)*param_2 >> 1);
         if (((byte)*param_2 & 1) != 0) {
@@ -2261,7 +2261,7 @@ LAB_0040e48c:
           operator delete(pvStack_80);
         }
                     /* try { // try from 0040e6ec to 0040e703 has its CatchHandler @ 0040e9dc */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190,&DAT_007343e8,&DAT_00635526);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190,&DAT_007343e8,&DAT_00635526);
         if ((uStack_170 & 1) != 0) {
           *pbStack_160 = 0;
           uStack_168 = 0;
@@ -2825,7 +2825,7 @@ void WaterConcept::GameSettings::goPlayPack(byte *param_1,int param_2,char *para
         pvStack_f0 = (void *)0x0;
         uStack_120 = CONCAT44(uStack_120._4_4_,currentStoryline);
                     /* try { // try from 0040f478 to 0040f483 has its CatchHandler @ 0040f5d8 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&bStack_100,&uStack_120);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&bStack_100,&uStack_120);
                     /* try { // try from 0040f484 to 0040f493 has its CatchHandler @ 0040f5d4 */
         Walaber::DatabaseIterator::getStringAtIndex(&uStack_120,auStack_140,0);
                     /* try { // try from 0040f494 to 0040f49f has its CatchHandler @ 0040f5bc */
@@ -3110,7 +3110,7 @@ void WaterConcept::GameSettings::goPlayLevel
   abStack_e0[5] = 0x6c;
   abStack_e0[6] = 0;
                     /* try { // try from 0040fa04 to 0040fa17 has its CatchHandler @ 00410bcc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_118,param_1,".png");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_118,param_1,".png");
                     /* try { // try from 0040fa18 to 0040fa23 has its CatchHandler @ 00410bb4 */
   new ((void *)(&bStack_c0)) Walaber::Property(auStack_118);
                     /* try { // try from 0040fa28 to 0040fa37 has its CatchHandler @ 00410ba4 */
@@ -3320,7 +3320,7 @@ void WaterConcept::GameSettings::goPlayLevel
     uStack_110 = 0x61;
     uStack_105 = 0;
                     /* try { // try from 0040fb74 to 0040fb8b has its CatchHandler @ 00410ad4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_150,&DAT_007349a0,"=\'");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_150,&DAT_007349a0,"=\'");
     uVar7 = *(ulong *)(param_1 + 8);
     pbVar13 = *(byte **)(param_1 + 0x10);
     if ((*param_1 & 1) == 0) {
@@ -3374,7 +3374,7 @@ void WaterConcept::GameSettings::goPlayLevel
         uStack_148 = 0x43;
         uStack_13b = 0;
                     /* try { // try from 0040fe20 to 0040fe37 has its CatchHandler @ 004108c4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b0,&DAT_007349a0,"=\'");
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b0,&DAT_007349a0,"=\'");
         uVar7 = (ulong)(*param_1 >> 1);
         pbVar13 = param_1 + 1;
         if ((*param_1 & 1) != 0) {
@@ -3645,7 +3645,7 @@ void WaterConcept::GameSettings::goPlayLevel
     }
     if (currentLevelIsAllie == '\0' && cVar1 == '\0') {
                     /* try { // try from 004102a0 to 004102b7 has its CatchHandler @ 00410950 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,&DAT_007348b0,"=");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,&DAT_007348b0,"=");
                     /* try { // try from 004102bc to 004102c7 has its CatchHandler @ 00410948 */
       Walaber::StringHelper::intToStr(&bStack_170,param_2);
       uVar7 = (ulong)(bStack_170 >> 1);
@@ -4087,7 +4087,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
     uStack_88 = 0x73;
     uStack_87 = 0;
                     /* try { // try from 00410fd4 to 00410feb has its CatchHandler @ 00411740 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_007347d8,"=\'PresentUnavailableChallenges\'");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_007347d8,"=\'PresentUnavailableChallenges\'");
                     /* try { // try from 00410fec to 00411007 has its CatchHandler @ 00411728 */
     new ((void *)(auStack_70)) Walaber::DatabaseIterator(0,&DAT_007347f0,&bStack_90,abStack_a8);
     if ((abStack_a8[0] & 1) != 0) {
@@ -4107,7 +4107,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
     *param_2 = 0;
     *param_3 = 0;
                     /* try { // try from 00411054 to 0041106b has its CatchHandler @ 00411724 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_007348c8,&DAT_0063d328);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_007348c8,&DAT_0063d328);
     uVar9 = DAT_007348b8;
     puVar3 = DAT_007348c0;
     if ((DAT_007348b0 & 1) == 0) {
@@ -4149,7 +4149,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
     abStack_a8[8] = 0x68;
     uStack_97 = 0x6f666e;
                     /* try { // try from 004110e8 to 004110ff has its CatchHandler @ 00411708 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_f8,&DAT_00734910,"=\'");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_f8,&DAT_00734910,"=\'");
     uVar9 = *(ulong *)(param_1 + 8);
     pbVar1 = *(byte **)(param_1 + 0x10);
     if ((*param_1 & 1) == 0) {
@@ -4207,7 +4207,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
       abStack_f8[8] = 0x43;
       uStack_e3 = 0;
                     /* try { // try from 00411234 to 0041124b has its CatchHandler @ 00411688 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_158,&DAT_007349a0,"=\'");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_158,&DAT_007349a0,"=\'");
       uVar9 = (ulong)(*param_1 >> 1);
       pbVar1 = param_1 + 1;
       if ((*param_1 & 1) != 0) {
@@ -4243,7 +4243,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
       uVar9 = Walaber::DatabaseIterator::next(auStack_160);
       if ((uVar9 & 1) == 0) {
                     /* try { // try from 00411338 to 0041134f has its CatchHandler @ 00411610 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_158,&DAT_007348c8,&DAT_0063d328);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_158,&DAT_007348c8,&DAT_0063d328);
         uVar9 = DAT_007348b8;
         puVar3 = DAT_007348c0;
         if ((DAT_007348b0 & 1) == 0) {
@@ -4284,7 +4284,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
         abStack_158[8] = 0x61;
         uStack_145 = 0;
                     /* try { // try from 004113c4 to 004113db has its CatchHandler @ 004115f4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_1b8,&DAT_00734910,"=\'");
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_1b8,&DAT_00734910,"=\'");
         uVar9 = (ulong)(*param_1 >> 1);
         pbVar1 = param_1 + 1;
         if ((*param_1 & 1) != 0) {
@@ -4938,7 +4938,7 @@ void WaterConcept::GameSettings::updateLOTWParameters(WaterConceptConstants::LOW
     operator delete(puStack_c8);
   }
                     /* try { // try from 00411fac to 00411fc3 has its CatchHandler @ 004129ec */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d8,&DAT_00735ca8,&DAT_0061d586);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d8,&DAT_00735ca8,&DAT_0061d586);
                     /* try { // try from 00411fc4 to 00411fd3 has its CatchHandler @ 004129d8 */
   Walaber::StringHelper::intToStr(&uStack_f0,param_1);
   uVar7 = (ulong)((byte)uStack_f0 >> 1);
@@ -5623,7 +5623,7 @@ void WaterConcept::GameSettings::goPlayLOTWLevel(uint param_1)
                     /* try { // try from 00412ed8 to 00412ee7 has its CatchHandler @ 00413e24 */
     new ((void *)(&bStack_100)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00734430);
                     /* try { // try from 00412ee8 to 00412eff has its CatchHandler @ 00413e1c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_230,&DAT_00734400,"=\'");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_230,&DAT_00734400,"=\'");
     uVar7 = uStack_d0 >> 1 & 0x7f;
     pvVar1 = (void *)((ulong)&uStack_d0 | 1);
     if ((uStack_d0 & 1) != 0) {
@@ -5695,7 +5695,7 @@ void WaterConcept::GameSettings::goPlayLOTWLevel(uint param_1)
                     /* try { // try from 0041306c to 00413077 has its CatchHandler @ 00413f48 */
       ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_100))->operator=(&DAT_007345c8);
                     /* try { // try from 00413078 to 0041308f has its CatchHandler @ 00413e54 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_198,&DAT_00734718,"=");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_198,&DAT_00734718,"=");
                     /* try { // try from 00413090 to 0041309b has its CatchHandler @ 00413e94 */
       Walaber::StringHelper::intToStr(abStack_1b0,param_1);
       uVar7 = (ulong)(abStack_1b0[0] >> 1);
@@ -5893,7 +5893,7 @@ void WaterConcept::GameSettings::goPlayLOTWLevel(uint param_1)
                     /* try { // try from 004133d0 to 004133df has its CatchHandler @ 00413dd4 */
     ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_100))->operator=(&DAT_007345b0);
                     /* try { // try from 004133e0 to 004133f7 has its CatchHandler @ 00413dd0 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_230,&DAT_007345c8,"=\'");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_230,&DAT_007345c8,"=\'");
     uVar7 = DAT_00735df0;
     puVar14 = DAT_00735df8;
     if ((_currentLevelPackName & 1) == 0) {
@@ -6069,7 +6069,7 @@ void WaterConcept::GameSettings::goPlayLOTWLevel(uint param_1)
     uStack_22f = 0x6576654c;
     uStack_22b = 0x6c;
                     /* try { // try from 004136b0 to 004136c3 has its CatchHandler @ 00413d34 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,auStack_e8,".png");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,auStack_e8,".png");
                     /* try { // try from 004136c4 to 004136cf has its CatchHandler @ 00413d1c */
     new ((void *)(&bStack_210)) Walaber::Property(&bStack_90);
                     /* try { // try from 004136d0 to 004136df has its CatchHandler @ 00413d0c */
@@ -6660,7 +6660,7 @@ ulong WaterConcept::GameSettings::goNextLevel(void)
     puStack_c0 = (undefined1 *)0x0;
     uStack_110 = CONCAT44(uStack_110._4_4_,currentStoryline);
                     /* try { // try from 00414584 to 0041458f has its CatchHandler @ 00414660 */
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&pvStack_d0,&uStack_110);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&pvStack_d0,&uStack_110);
                     /* try { // try from 00414590 to 0041459b has its CatchHandler @ 0041465c */
     new ((void *)(&pvStack_170)) std::__ndk1::vector<int, std::__ndk1::allocator<int>>(&pvStack_d0);
                     /* try { // try from 0041459c to 004145af has its CatchHandler @ 00414640 */
@@ -6719,7 +6719,7 @@ void WaterConcept::GameSettings::goPlayRewardLevel(void)
     uStack_58 = 0;
     uStack_6c = 0;
                     /* try { // try from 00414880 to 0041488b has its CatchHandler @ 0041492c */
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&pvStack_68,&uStack_6c);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&pvStack_68,&uStack_6c);
                     /* try { // try from 00414890 to 0041489b has its CatchHandler @ 00414928 */
     new ((void *)(&pvStack_88)) std::__ndk1::vector<int, std::__ndk1::allocator<int>>(&pvStack_68);
     iVar2 = 0;
@@ -6785,7 +6785,7 @@ void WaterConcept::GameSettings::getLevelList(undefined8 *param_1)
   ulong uStack_48;
   void *pvStack_40;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,&DAT_00734418,&DAT_0063d328);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,&DAT_00734418,&DAT_0063d328);
   abStack_100[0] = 0x1e;
   abStack_100[9] = 0x28;
   abStack_100[10] = 0x27;
@@ -6988,7 +6988,7 @@ void WaterConcept::GameSettings::getLevelList(undefined8 *param_1)
         }
         else {
                     /* try { // try from 00414d14 to 00414d1f has its CatchHandler @ 00414e84 */
-          void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,&bStack_90);
+          std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,&bStack_90);
           if ((bStack_90 & 1) != 0) {
             operator delete(pvStack_80);
           }
@@ -7134,7 +7134,7 @@ void WaterConcept::GameSettings::getChallengeDescription(int p0,bool *p1)
   *p1 = true;
   if (currentLevelIsAllie == '\0') {
     if (currentLevelIsMyst == '\0') {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88,&DAT_00734970,&DAT_0063d328);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88,&DAT_00734970,&DAT_0063d328);
       uVar6 = DAT_007348d0;
       puVar2 = DAT_007348d8;
       if ((DAT_007348c8 & 1) == 0) {
@@ -7167,7 +7167,7 @@ void WaterConcept::GameSettings::getChallengeDescription(int p0,bool *p1)
       uStack_75 = 0x6f;
       uStack_74 = 0;
                     /* try { // try from 00415474 to 0041548b has its CatchHandler @ 00415650 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_b8,&DAT_007348b0,"=");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_b8,&DAT_007348b0,"=");
                     /* try { // try from 0041548c to 0041549b has its CatchHandler @ 0041564c */
       Walaber::StringHelper::intToStr(abStack_d0,p0);
       uVar6 = (ulong)(abStack_d0[0] >> 1);
@@ -7216,7 +7216,7 @@ void WaterConcept::GameSettings::getChallengeDescription(int p0,bool *p1)
       uStack_80 = 0x43;
       uStack_73 = 0;
                     /* try { // try from 0041530c to 0041531f has its CatchHandler @ 00415664 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_b8,&DAT_00734988,"=");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_b8,&DAT_00734988,"=");
                     /* try { // try from 00415320 to 0041532f has its CatchHandler @ 00415660 */
       Walaber::StringHelper::intToStr(abStack_d0,p0);
       uVar6 = (ulong)(abStack_d0[0] >> 1);
@@ -7276,7 +7276,7 @@ LAB_00415598:
     }
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88,&DAT_00734970,&DAT_0063d328);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88,&DAT_00734970,&DAT_0063d328);
     uVar6 = DAT_007348d0;
     puVar2 = DAT_007348d8;
     if ((DAT_007348c8 & 1) == 0) {
@@ -7309,7 +7309,7 @@ LAB_00415598:
     uStack_80 = 0x61;
     uStack_75 = 0;
                     /* try { // try from 004151d0 to 004151e7 has its CatchHandler @ 004156bc */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_b8,&DAT_007348b0,"=");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_b8,&DAT_007348b0,"=");
                     /* try { // try from 004151e8 to 004151f7 has its CatchHandler @ 004156a8 */
     Walaber::StringHelper::intToStr(abStack_d0,p0);
     uVar6 = (ulong)(abStack_d0[0] >> 1);
@@ -7542,7 +7542,7 @@ void WaterConcept::GameSettings::getChallengeIAPid(int p0)
   
   new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_007348e0);
                     /* try { // try from 004159ac to 004159bf has its CatchHandler @ 00415b78 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,&DAT_007348b0,"=");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,&DAT_007348b0,"=");
                     /* try { // try from 004159c0 to 004159cf has its CatchHandler @ 00415b64 */
   Walaber::StringHelper::intToStr(abStack_a0,p0);
   uVar6 = (ulong)(abStack_a0[0] >> 1);
@@ -9007,7 +9007,7 @@ void WaterConcept::GameSettings::packContainsLevels(byte *param_1)
   
   new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_007343e8);
                     /* try { // try from 00417980 to 00417993 has its CatchHandler @ 00417b0c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_00734430,"=\'");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_00734430,"=\'");
   uVar1 = *(ulong *)(param_1 + 8);
   pbVar2 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -9761,7 +9761,7 @@ ulong WaterConcept::GameSettings::onLastPackInStoryline(void)
   ulong uStack_58;
   void *pvStack_50;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_80,&DAT_007345c8,&DAT_0063d328);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_80,&DAT_007345c8,&DAT_0063d328);
   uVar11 = DAT_007345b8;
   puVar4 = DAT_007345c0;
   if ((DAT_007345b0 & 1) == 0) {
@@ -10501,7 +10501,7 @@ ulong WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineT
   undefined1 uStack_81;
   void *pvStack_80;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,&DAT_007345c8,&DAT_00619cc6);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,&DAT_007345c8,&DAT_00619cc6);
   uVar10 = (ulong)(DAT_007346a0 >> 1);
   puVar9 = &DAT_007346a1;
   if ((DAT_007346a0 & 1) != 0) {
@@ -10620,7 +10620,7 @@ ulong WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineT
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_f0,&DAT_006396be,4);
       }
                     /* try { // try from 00419ccc to 00419cdb has its CatchHandler @ 0041a0b4 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_150,&DAT_00734430,&DAT_006356a2);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_150,&DAT_00734430,&DAT_006356a2);
                     /* try { // try from 00419cdc to 00419ceb has its CatchHandler @ 0041a09c */
       Walaber::DatabaseIterator::getStringAtIndex(&bStack_90,auStack_138,0);
       uVar10 = (ulong)(bStack_90 >> 1);
@@ -10895,7 +10895,7 @@ ulong WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::Stor
   undefined1 uStack_81;
   void *pvStack_80;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,&DAT_007345c8,&DAT_00619cc6);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,&DAT_007345c8,&DAT_00619cc6);
   uVar11 = (ulong)(DAT_007346a0 >> 1);
   puVar10 = &DAT_007346a1;
   if ((DAT_007346a0 & 1) != 0) {
@@ -11156,7 +11156,7 @@ ulong WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::Stor
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_f0,&DAT_006396be,4);
       }
                     /* try { // try from 0041a670 to 0041a67f has its CatchHandler @ 0041aa3c */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00734430,&DAT_006356a2);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00734430,&DAT_006356a2);
                     /* try { // try from 0041a680 to 0041a68f has its CatchHandler @ 0041aa28 */
       Walaber::DatabaseIterator::getStringAtIndex(abStack_150,auStack_138,0);
       uVar11 = (ulong)(abStack_150[0] >> 1);
@@ -16233,7 +16233,7 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
     *param_2 = 0;
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
     uVar1 = DAT_00735e48;
     puVar3 = DAT_00735e50;
     if ((promotionSuffix & 1) == 0) {
@@ -16295,7 +16295,7 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
     *param_2 = 0;
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
     uVar1 = DAT_00735e60;
     puVar3 = DAT_00735e68;
     if ((themeSuffix & 1) == 0) {
@@ -16356,7 +16356,7 @@ void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8
     *param_2 = 0;
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
     uVar1 = DAT_00735e78;
     uVar5 = DAT_00735e80;
     if (((byte)duckSuffix & 1) == 0) {
@@ -16534,7 +16534,7 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
                     /* try { // try from 0042227c to 0042228b has its CatchHandler @ 004228d8 */
     Walaber::DatabaseIterator::getStringAtIndex(&bStack_d0,auStack_b0,0);
                     /* try { // try from 0042228c to 004222a3 has its CatchHandler @ 004228c0 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_148,&DAT_00734730,"=\'");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_148,&DAT_00734730,"=\'");
     uVar10 = (ulong)(bStack_d0 >> 1);
     pvVar1 = (void *)((ulong)&bStack_d0 | 1);
     if ((bStack_d0 & 1) != 0) {
@@ -16619,7 +16619,7 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
     }
     if (0 < iVar7) {
       if (param_1[1] == param_1[2]) {
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,&bStack_d0);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,&bStack_d0);
       }
       else {
                     /* try { // try from 00422424 to 00422447 has its CatchHandler @ 0042281c */
@@ -16773,7 +16773,7 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
         operator delete(pvStack_e0);
       }
       if (param_1[1] == param_1[2]) {
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,&bStack_d0);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,&bStack_d0);
       }
       else {
                     /* try { // try from 004226d4 to 004226f7 has its CatchHandler @ 004227d8 */
@@ -16885,7 +16885,7 @@ void WaterConcept::GameSettings::getLocksmithLevelPacks(undefined8 *param_1)
     }
     if (uVar4 != 0) {
       if (param_1[1] == param_1[2]) {
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,abStack_78);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_1,abStack_78);
       }
       else {
                     /* try { // try from 00422a54 to 00422a77 has its CatchHandler @ 00422afc */
@@ -17196,7 +17196,7 @@ ulong WaterConcept::GameSettings::getCloudSyncSetting(void)
   
   new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_007347f0);
                     /* try { // try from 004230fc to 0042310f has its CatchHandler @ 004231ec */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347d8,"=\'CloudSync\'");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347d8,"=\'CloudSync\'");
   abStack_78[10] = 0;
   abStack_78[0xb] = 0;
   abStack_78[0xc] = 0;
@@ -17258,7 +17258,7 @@ void WaterConcept::GameSettings::setCloudSyncSetting(bool p0)
   ulong uStack_38;
   void *pvStack_30;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347f0,"=");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347f0,"=");
   pcVar1 = "1";
   if (!p0) {
     pcVar1 = "0";
@@ -17275,7 +17275,7 @@ void WaterConcept::GameSettings::setCloudSyncSetting(bool p0)
     operator delete(pvStack_48);
   }
                     /* try { // try from 004232ac to 004232c3 has its CatchHandler @ 0042337c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347d8,"=\'CloudSync\'");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347d8,"=\'CloudSync\'");
   abStack_70[10] = 0;
   abStack_70[0xb] = 0;
   abStack_70[0xc] = 0;
@@ -17341,7 +17341,7 @@ ulong WaterConcept::GameSettings::hasPromptedForCloudSync(void)
   
   new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00734a18);
                     /* try { // try from 004233dc to 004233ef has its CatchHandler @ 00423588 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98,&DAT_00734a00,"=\'");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98,&DAT_00734a00,"=\'");
   uVar6 = DAT_00734ac8;
   puVar2 = DAT_00734ad0;
   if ((DAT_00734ac0 & 1) == 0) {
@@ -17438,7 +17438,7 @@ void WaterConcept::GameSettings::setPromptedForCloudSync(bool p0)
   ulong uStack_38;
   void *pvStack_30;
   
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,&DAT_00734a18,"=");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,&DAT_00734a18,"=");
   pcVar1 = "1";
   if (!p0) {
     pcVar1 = "0";
@@ -17455,7 +17455,7 @@ void WaterConcept::GameSettings::setPromptedForCloudSync(bool p0)
     operator delete(pvStack_50);
   }
                     /* try { // try from 00423648 to 0042365f has its CatchHandler @ 004237d4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98,&DAT_00734a00,"=\'");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98,&DAT_00734a00,"=\'");
   uVar2 = DAT_00734ac8;
   puVar4 = DAT_00734ad0;
   if ((DAT_00734ac0 & 1) == 0) {
@@ -19467,7 +19467,7 @@ LAB_00425d90:
     unaff_w20 = uStack_1b8;
   }
                     /* try { // try from 00425eb0 to 00425ec7 has its CatchHandler @ 004278dc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_108,&DAT_00735a20,&DAT_0063d328);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_108,&DAT_00735a20,&DAT_0063d328);
   uVar21 = DAT_00735a40;
   puVar31 = DAT_00735a48;
   if ((DAT_00735a38 & 1) == 0) {
@@ -21543,7 +21543,7 @@ LAB_00428874:
     if ((uVar1 != 0) ||
        (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
       uVar5 = Walaber::TextureManager::getManager();
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_70,"/Textures/",param_6);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_70,"/Textures/",param_6);
       uStack_b0 = 0;
       uStack_a8 = 0;
       uStack_a0 = 0;
@@ -21681,7 +21681,7 @@ long * WaterConcept::GameSettings::copyAndFormatButton
   if ((uVar1 != 0) ||
      (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_6);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_6);
     uStack_c8 = 0;
     uStack_c0 = 0;
     uStack_b8 = 0;
@@ -21712,7 +21712,7 @@ long * WaterConcept::GameSettings::copyAndFormatButton
   if ((uVar1 != 0) ||
      (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_7);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_7);
     uStack_c8 = 0;
     uStack_c0 = 0;
     uStack_e8 = 0;

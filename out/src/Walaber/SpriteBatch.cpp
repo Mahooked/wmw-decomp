@@ -40,7 +40,7 @@
   plVar6 = (long *)*in_x1;
   while (plVar6 != in_x1 + 1) {
                     /* try { // try from 0035dce4 to 0035dcf3 has its CatchHandler @ 0035dd88 */
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__emplace_hint_unique_key_args<int, std::__ndk1::pair<int const, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>> const&>(p0,puVar5,plVar6 + 4,plVar6 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__emplace_hint_unique_key_args<int, std::__ndk1::pair<int const, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>> const&>(p0,puVar5,plVar6 + 4,plVar6 + 4);
     plVar2 = (long *)plVar6[1];
     if ((long *)plVar6[1] == (long *)0x0) {
       plVar2 = plVar6 + 2;
@@ -96,7 +96,7 @@ Walaber__SpriteBatch * Walaber::SpriteBatch::operator=(Walaber__SpriteBatch *p0)
   Walaber__SpriteBatch *in_x1;
   
   if (p0 != in_x1) {
-    void std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, void*>*, long>>(p0,in_x1->f_0x0,&in_x1->field_0x8);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, void*>*, long>>(p0,in_x1->f_0x0,&in_x1->field_0x8);
   }
   uVar1 = in_x1->f_0x24;
   uVar2 = in_x1->f_0x18;
@@ -560,7 +560,7 @@ void Walaber::SpriteBatch::_addQuadToBatchImmediate
   Walaber::SpriteBatch::_addQuadToBatchUVRect(uVar4,uVar5,param_2,puVar3 + 2,puVar3 + 8,&uStack_98,param_4,param_5,*param_6,
                   param_7);
   if (*(undefined8 **)(lVar2 + 0x30) == *(undefined8 **)(lVar2 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar2 + 0x28,&puStack_70);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar2 + 0x28,&puStack_70);
   }
   else {
     **(undefined8 **)(lVar2 + 0x30) = puVar3;
@@ -757,7 +757,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_8);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035ec68 to 0035ec6f has its CatchHandler @ 0035ece8 */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = puVar4;
@@ -787,7 +787,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_8);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035ec7c to 0035ec83 has its CatchHandler @ 0035ecdc */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = puVar4;
@@ -908,7 +908,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_9);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035f064 to 0035f06b has its CatchHandler @ 0035f0e4 */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = piVar5;
@@ -939,7 +939,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_9);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035f078 to 0035f07f has its CatchHandler @ 0035f0d8 */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = piVar5;
@@ -1061,7 +1061,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_8);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035f448 to 0035f44f has its CatchHandler @ 0035f4c8 */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = puVar4;
@@ -1091,7 +1091,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_8);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035f45c to 0035f463 has its CatchHandler @ 0035f4bc */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = puVar4;
@@ -1212,7 +1212,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_9);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035f844 to 0035f84b has its CatchHandler @ 0035f8c4 */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = piVar5;
@@ -1243,7 +1243,7 @@ void Walaber::SpriteBatch::drawQuad
                     param_9);
     if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
                     /* try { // try from 0035f858 to 0035f85f has its CatchHandler @ 0035f8b8 */
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&piStack_80);
     }
     else {
       **(undefined8 **)(lVar3 + 0x30) = piVar5;
@@ -1369,7 +1369,7 @@ LAB_0035f96c:
   pWStack_70 = pWVar4;
   Walaber::SpriteBatch::_addQuadToBatchUVRect(uVar5,uVar6,p0,pWVar4 + 1,pWVar4 + 4,Rect::UnitRect,p2,p3,*in_x3,0);
   if (*(long **)(lVar3 + 0x30) == *(long **)(lVar3 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&pWStack_70);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&pWStack_70);
   }
   else {
     **(long **)(lVar3 + 0x30) = (long)pWVar4;
@@ -1470,7 +1470,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     }
     else {
       fStack_a0 = param_10;
-      void std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_5,&fStack_a0);
+      std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_5,&fStack_a0);
       puVar2 = (ulong *)param_5[1];
     }
   }
@@ -1489,12 +1489,12 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   fVar7 = fVar7 * 0.5;
   if (puVar3 == *(undefined8 **)(param_4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   else {
@@ -1519,7 +1519,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   param_2 = -fVar5 * param_2;
@@ -1535,7 +1535,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   fStack_a0 = (fVar8 - param_2) + *param_7;
@@ -1549,11 +1549,11 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   if (puVar3 == *(undefined8 **)(param_4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
   }
   else {
     *(undefined4 *)(puVar3 + 2) = *(undefined4 *)((long)puVar3 + -4);
@@ -1604,7 +1604,7 @@ void Walaber::SpriteBatch::_getDrawActionForTextureOnLayer(int p0,uint p1, int i
     piStack_68 = (int *)Walaber::SpriteBatch::_getDrawAction(p0);
     *piStack_68 = in_w2;
     if (*(undefined8 **)(lVar2 + 0x30) == *(undefined8 **)(lVar2 + 0x38)) {
-      void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>((long *)(lVar2 + 0x28),&piStack_68);
+      std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>((long *)(lVar2 + 0x28),&piStack_68);
     }
     else {
       **(undefined8 **)(lVar2 + 0x30) = piStack_68;
@@ -1676,7 +1676,7 @@ LAB_00360058:
   puStack_70 = puVar5;
   Walaber::SpriteBatch::_addQuadToBatchUVRect(uVar6,uVar7,uVar3,puVar5 + 2,puVar5 + 8,Rect::UnitRect,p3,p4,*in_x4,0);
   if (*(undefined8 **)(lVar4 + 0x30) == *(undefined8 **)(lVar4 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar4 + 0x28,&puStack_70);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar4 + 0x28,&puStack_70);
   }
   else {
     **(undefined8 **)(lVar4 + 0x30) = puVar5;
@@ -1741,7 +1741,7 @@ LAB_00360228:
   puStack_70 = puVar2;
   Walaber::SpriteBatch::_addCircleToBatch(param_1,param_2,puVar2 + 2,puVar2 + 8,param_5,param_6,param_7);
   if (*(undefined8 **)(lVar4 + 0x30) == *(undefined8 **)(lVar4 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar4 + 0x28,&puStack_70);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar4 + 0x28,&puStack_70);
   }
   else {
     **(undefined8 **)(lVar4 + 0x30) = puVar2;
@@ -1791,7 +1791,7 @@ void Walaber::SpriteBatch::_addCircleToBatch
       param_4[1] = (ulong)puVar4;
     }
     else {
-      void std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_4,&fStack_90);
+      std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_4,&fStack_90);
       puVar4 = (ulong *)param_4[1];
     }
   }
@@ -1816,12 +1816,12 @@ void Walaber::SpriteBatch::_addCircleToBatch
       *(long *)(param_3 + 8) = *(long *)(param_3 + 8) + 0x14;
     }
     else {
-      void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_3,&fStack_90);
+      std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_3,&fStack_90);
     }
     if (lVar5 == 0) {
       puVar1 = *(undefined8 **)(param_3 + 8);
       if (*(undefined8 **)(param_3 + 0x10) == puVar1) {
-        void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
+        std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
       }
       else {
         *(undefined4 *)(puVar1 + 2) = *(undefined4 *)((long)puVar1 + -4);
@@ -1834,7 +1834,7 @@ void Walaber::SpriteBatch::_addCircleToBatch
   } while (lVar5 != 0x20);
   puVar1 = *(undefined8 **)(param_3 + 8);
   if (*(undefined8 **)(param_3 + 0x10) == puVar1) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
   }
   else {
     *(undefined4 *)(puVar1 + 2) = *(undefined4 *)((long)puVar1 + -4);
@@ -1897,7 +1897,7 @@ LAB_003605d4:
   puStack_70 = puVar3;
   Walaber::SpriteBatch::_addCircleToBatch(param_1,param_2,puVar3 + 2,puVar3 + 8,param_4,param_5,param_6);
   if (*(undefined8 **)(lVar4 + 0x30) == *(undefined8 **)(lVar4 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar4 + 0x28,&puStack_70);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar4 + 0x28,&puStack_70);
   }
   else {
     **(undefined8 **)(lVar4 + 0x30) = puVar3;
@@ -1955,7 +1955,7 @@ LAB_00360758:
   pWStack_60 = pWVar4;
   Walaber::SpriteBatch::_addCircleToBatch(CONCAT44(in_register_00005004,p1),p0,pWVar4 + 1,pWVar4 + 4,p2);
   if (*(long **)(lVar3 + 0x30) == *(long **)(lVar3 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&pWStack_60);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&pWStack_60);
   }
   else {
     **(long **)(lVar3 + 0x30) = (long)pWVar4;
@@ -2126,7 +2126,7 @@ void Walaber::SpriteBatch::_addVertsToBatchImmediate
       *(ulong **)(puVar3 + 10) = puVar4;
     }
     else {
-      void std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(puVar3 + 8,&uStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(puVar3 + 8,&uStack_80);
       puVar4 = *(ulong **)(puVar3 + 10);
     }
   }
@@ -2145,7 +2145,7 @@ void Walaber::SpriteBatch::_addVertsToBatchImmediate
       uStack_80 = *(ulong *)(param_5 + lVar6);
       puVar4 = *(ulong **)(puStack_88 + 4);
       if (puVar4 == *(ulong **)(puStack_88 + 6)) {
-        void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(puStack_88 + 2,&uStack_80);
+        std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(puStack_88 + 2,&uStack_80);
       }
       else {
         *(undefined4 *)(puVar4 + 2) = uStack_70;
@@ -2156,7 +2156,7 @@ void Walaber::SpriteBatch::_addVertsToBatchImmediate
       if (((param_4 & 1) != 0) && ((lVar6 == 0 || ((ulong)(param_3 - 1) * 8 - lVar6 == 0)))) {
         puVar4 = *(ulong **)(puStack_88 + 4);
         if (puVar4 == *(ulong **)(puStack_88 + 6)) {
-          void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(puStack_88 + 2,&uStack_80);
+          std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(puStack_88 + 2,&uStack_80);
         }
         else {
           *(undefined4 *)(puVar4 + 2) = uStack_70;
@@ -2170,7 +2170,7 @@ void Walaber::SpriteBatch::_addVertsToBatchImmediate
     } while ((ulong)param_3 * 8 - lVar6 != 0);
   }
   if (*(undefined8 **)(lVar2 + 0x30) == *(undefined8 **)(lVar2 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar2 + 0x28,&puStack_88);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar2 + 0x28,&puStack_88);
   }
   else {
     **(undefined8 **)(lVar2 + 0x30) = puStack_88;
@@ -2228,7 +2228,7 @@ void Walaber::SpriteBatch::_addVertsToBatchOptimal
       *(ulong **)(lVar5 + 0x28) = puVar3;
     }
     else {
-      void std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>((ulong *)(lVar5 + 0x20),&uStack_80);
+      std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>((ulong *)(lVar5 + 0x20),&uStack_80);
       puVar3 = *(ulong **)(lVar5 + 0x28);
     }
   }
@@ -2247,7 +2247,7 @@ void Walaber::SpriteBatch::_addVertsToBatchOptimal
       uStack_80 = *(ulong *)(param_5 + lVar6);
       puVar3 = *(ulong **)(lVar5 + 0x10);
       if (puVar3 == *(ulong **)(lVar5 + 0x18)) {
-        void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(lVar5 + 8,&uStack_80);
+        std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(lVar5 + 8,&uStack_80);
       }
       else {
         *(undefined4 *)(puVar3 + 2) = uStack_70;
@@ -2258,7 +2258,7 @@ void Walaber::SpriteBatch::_addVertsToBatchOptimal
       if (((param_4 & 1) != 0) && ((lVar6 == 0 || ((ulong)(param_3 - 1) * 8 - lVar6 == 0)))) {
         puVar3 = *(ulong **)(lVar5 + 0x10);
         if (puVar3 == *(ulong **)(lVar5 + 0x18)) {
-          void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(lVar5 + 8,&uStack_80);
+          std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(lVar5 + 8,&uStack_80);
         }
         else {
           *(undefined4 *)(puVar3 + 2) = uStack_70;
@@ -3382,7 +3382,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     }
     else {
       fStack_a0 = param_10;
-      void std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_5,&fStack_a0);
+      std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_5,&fStack_a0);
       puVar2 = (ulong *)param_5[1];
     }
   }
@@ -3402,12 +3402,12 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   fVar7 = fVar7 * 0.5;
   if (puVar3 == *(undefined8 **)(param_4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   else {
@@ -3433,7 +3433,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   param_2 = -fVar5 * param_2;
@@ -3450,7 +3450,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   uStack_90 = param_9[3];
@@ -3465,11 +3465,11 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
   if (puVar3 == *(undefined8 **)(param_4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_4);
   }
   else {
     *(undefined4 *)(puVar3 + 2) = *(undefined4 *)((long)puVar3 + -4);
@@ -3616,7 +3616,7 @@ LAB_0038e55c:
   Walaber::SpriteBatch::_addTeardropToBatch(param_1,param_2,puVar3 + 2,puVar3 + 8,param_5,param_6,param_7,param_8,param_9 & 1)
   ;
   if (*(undefined8 **)(lVar2 + 0x30) == *(undefined8 **)(lVar2 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar2 + 0x28,&puStack_80);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar2 + 0x28,&puStack_80);
   }
   else {
     **(undefined8 **)(lVar2 + 0x30) = puVar3;
@@ -3673,7 +3673,7 @@ void Walaber::SpriteBatch::_addTeardropToBatch
       param_4[1] = (ulong)puVar6;
     }
     else {
-      void std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_4,&fStack_b0);
+      std::__ndk1::vector<Walaber::SpriteBatch::BlendSection, std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(param_4,&fStack_b0);
       puVar6 = (ulong *)param_4[1];
     }
   }
@@ -3718,12 +3718,12 @@ void Walaber::SpriteBatch::_addTeardropToBatch
       }
       else {
         uStack_a0 = uVar4;
-        void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_3,&fStack_b0);
+        std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_3,&fStack_b0);
       }
       if (uVar7 == 0) {
         puVar2 = *(undefined8 **)(param_3 + 8);
         if (*(undefined8 **)(param_3 + 0x10) == puVar2) {
-          void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
+          std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
         }
         else {
           *(undefined4 *)(puVar2 + 2) = *(undefined4 *)((long)puVar2 + -4);
@@ -3766,12 +3766,12 @@ void Walaber::SpriteBatch::_addTeardropToBatch
         *plVar1 = *plVar1 + 0x14;
       }
       else {
-        void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_3,&fStack_b0);
+        std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_3,&fStack_b0);
       }
       if (uVar7 == 0) {
         puVar2 = *(undefined8 **)(param_3 + 8);
         if (*(undefined8 **)(param_3 + 0x10) == puVar2) {
-          void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
+          std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
         }
         else {
           *(undefined4 *)(puVar2 + 2) = *(undefined4 *)((long)puVar2 + -4);
@@ -3787,7 +3787,7 @@ void Walaber::SpriteBatch::_addTeardropToBatch
   plVar1 = (long *)(param_3 + 8);
   puVar2 = (undefined8 *)*plVar1;
   if (*(undefined8 **)(param_3 + 0x10) == puVar2) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(param_3);
   }
   else {
     *(undefined4 *)(puVar2 + 2) = *(undefined4 *)((long)puVar2 + -4);
@@ -3866,7 +3866,7 @@ LAB_00494788:
   Walaber::SpriteBatch::_addTeardropToBatch(CONCAT44(in_register_00005004,p3),uVar2,puVar4 + 2,puVar4 + 8,p2,p4,p5.f_0x0,p6,
                   in_w6 & 1);
   if (*(undefined8 **)(lVar3 + 0x30) == *(undefined8 **)(lVar3 + 0x38)) {
-    void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_70);
+    std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path<Walaber::SpriteBatch::DrawAction* const&>(lVar3 + 0x28,&puStack_70);
   }
   else {
     **(undefined8 **)(lVar3 + 0x30) = puVar4;

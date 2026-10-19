@@ -12,12 +12,10 @@
    std::__ndk1::allocator<std::__ndk1::pair<WaterConcept::Screen_Hub::HubAction const,
    WaterConcept::Screen_Hub::WidgetName> > >::~map() */
 
-void std::__ndk1::
-     map<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,std::__ndk1::allocator<std::__ndk1::pair<WaterConcept::Screen_Hub::HubAction_const,WaterConcept::Screen_Hub::WidgetName>>>
-     ::~map(long param_1)
+template<> std::__ndk1::map<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,std::__ndk1::allocator<std::__ndk1::pair<WaterConcept::Screen_Hub::HubAction_const,WaterConcept::Screen_Hub::WidgetName>>>::~map()
 
 {
-  std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction, std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction, std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

@@ -43,7 +43,7 @@ void ndk::MotionEvent::set
     while( true ) {
       uVar2 = uVar2 - 1;
       if (puVar1 == *(undefined4 **)(param_1 + 6)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 2,param_4);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 2,param_4);
       }
       else {
         *puVar1 = *param_4;
@@ -51,7 +51,7 @@ void ndk::MotionEvent::set
       }
       puVar1 = *(undefined4 **)(param_1 + 10);
       if (puVar1 == *(undefined4 **)(param_1 + 0xc)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 8,param_5);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 8,param_5);
       }
       else {
         *puVar1 = *param_5;
@@ -59,7 +59,7 @@ void ndk::MotionEvent::set
       }
       puVar1 = *(undefined4 **)(param_1 + 0x1c);
       if (puVar1 == *(undefined4 **)(param_1 + 0x1e)) {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0x1a,param_6);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0x1a,param_6);
       }
       else {
         *puVar1 = *param_6;
@@ -67,7 +67,7 @@ void ndk::MotionEvent::set
       }
       puVar1 = *(undefined4 **)(param_1 + 0x10);
       if (puVar1 == *(undefined4 **)(param_1 + 0x12)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 0xe,param_4);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 0xe,param_4);
       }
       else {
         *puVar1 = *param_4;
@@ -75,7 +75,7 @@ void ndk::MotionEvent::set
       }
       puVar1 = *(undefined4 **)(param_1 + 0x16);
       if (puVar1 == *(undefined4 **)(param_1 + 0x18)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 0x14,param_5);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 0x14,param_5);
       }
       else {
         *puVar1 = *param_5;
@@ -120,7 +120,7 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
   fStack_30 = p1;
   fStack_2c = p0;
   if (pfVar1 == *(float **)(piVar4 + 6)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 2,&fStack_2c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 2,&fStack_2c);
   }
   else {
     *pfVar1 = p0;
@@ -128,7 +128,7 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
   }
   pfVar1 = *(float **)(piVar4 + 10);
   if (pfVar1 == *(float **)(piVar4 + 0xc)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 8,&fStack_30);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 8,&fStack_30);
   }
   else {
     *pfVar1 = fStack_30;
@@ -136,7 +136,7 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
   }
   puVar2 = *(undefined4 **)(piVar4 + 0x1c);
   if (puVar2 == *(undefined4 **)(piVar4 + 0x1e)) {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(piVar4 + 0x1a,&uStack_3c);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(piVar4 + 0x1a,&uStack_3c);
   }
   else {
     *puVar2 = uStack_3c;
@@ -144,7 +144,7 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
   }
   pfVar1 = *(float **)(piVar4 + 0x10);
   if (pfVar1 == *(float **)(piVar4 + 0x12)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 0xe,&fStack_34);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 0xe,&fStack_34);
   }
   else {
     *pfVar1 = fStack_34;
@@ -152,7 +152,7 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
   }
   pfVar1 = *(float **)(piVar4 + 0x16);
   if (pfVar1 == *(float **)(piVar4 + 0x18)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 0x14,&fStack_38);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(piVar4 + 0x14,&fStack_38);
   }
   else {
     *pfVar1 = fStack_38;

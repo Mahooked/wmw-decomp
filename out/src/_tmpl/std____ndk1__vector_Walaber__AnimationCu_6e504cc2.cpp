@@ -12,9 +12,7 @@
    >::vector(std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent> > const&) */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::vector(undefined8 *param_1,long *param_2)
 
 {
   undefined8 *puVar1;
@@ -57,9 +55,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -86,9 +82,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent> >::__vdeallocate()
     */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__vdeallocate(undefined8 *param_1)
 
 {
   void *pvVar1;
@@ -129,10 +123,7 @@ void std::__ndk1::
    >::insert(std::__ndk1::__wrap_iter<Walaber::AnimationCueAnimationTrack::CueAnimationEvent
    const*>, Walaber::AnimationCueAnimationTrack::CueAnimationEvent&&) */
 
-undefined4 *
-std::__ndk1::
-vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-::insert(long *param_1,undefined4 *param_2,undefined4 *param_3)
+template<> undefined4 * std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::insert(long *param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
   undefined4 *puVar2;
@@ -237,11 +228,7 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
    Walaber::AnimationCueAnimationTrack::CueAnimationEvent*,
    Walaber::AnimationCueAnimationTrack::CueAnimationEvent*) */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__move_range(Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p0,
-                   Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p1,
-                   Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p2)
+template<> void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__move_range(Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p0, Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p1, Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p2)
 
 {
   Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWVar1;
@@ -319,9 +306,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>&,
    Walaber::AnimationCueAnimationTrack::CueAnimationEvent*) */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined4 *param_3)
+template<> void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined4 *param_3)
 
 {
   undefined8 *puVar1;
@@ -395,9 +380,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined4 *puVar1;

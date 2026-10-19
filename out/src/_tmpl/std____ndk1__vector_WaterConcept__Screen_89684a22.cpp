@@ -12,9 +12,7 @@
    >::vector(std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,
    std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo> > const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::vector(undefined8 *param_1,long *param_2)
 
 {
   undefined1 *puVar1;
@@ -60,9 +58,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo> >::__vallocate(unsigned long)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -90,9 +86,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_MainMenu_v2::DuckInfo,
    std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined4 uVar1;

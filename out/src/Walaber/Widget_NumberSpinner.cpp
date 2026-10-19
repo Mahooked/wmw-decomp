@@ -81,7 +81,7 @@ void Walaber::Widget_NumberSpinner::setRange(int p0,int p1,bool p2, byte in_w3)
       *(undefined4 **)(uVar4 + 0x210) = puVar6 + 1;
     }
     else {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(uVar4 + 0x208,&iStack_3c);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(uVar4 + 0x208,&iStack_3c);
     }
     p1 = *(int *)(uVar4 + 0x1fc);
     uVar5 = *(uint *)(uVar4 + 0x200);
@@ -91,7 +91,7 @@ void Walaber::Widget_NumberSpinner::setRange(int p0,int p1,bool p2, byte in_w3)
     do {
       piVar7 = *(int **)(uVar4 + 0x210);
       if (piVar7 == *(int **)(uVar4 + 0x218)) {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(uVar4 + 0x208,&iStack_3c);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(uVar4 + 0x208,&iStack_3c);
       }
       else {
         *piVar7 = iStack_3c;

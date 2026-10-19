@@ -23,7 +23,7 @@ void Walaber::ScreenManager::addScreenLoader(Walaber::SharedPtr<Walaber::Callbac
   }
   auStack_40[0] = param_2;
                     /* try { // try from 002b3358 to 002b3367 has its CatchHandler @ 002b3394 */
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>(&mLoaderFunctions,auStack_40);
+  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>(&mLoaderFunctions,auStack_40);
   ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_38)->~SharedPtr<Walaber::Callback>();
   return;
 }
@@ -116,7 +116,7 @@ void Walaber::ScreenManager::pushScreen(uint p0)
     uStack_80 = 0x100000000;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f0698 to 003f06a7 has its CatchHandler @ 003f06e0 */
-      void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
+      std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
     }
     else {
       DAT_007304b8[4] = 0;
@@ -129,7 +129,7 @@ void Walaber::ScreenManager::pushScreen(uint p0)
         plVar7 = plStack_70;
         do {
                     /* try { // try from 003f0624 to 003f0633 has its CatchHandler @ 003f06e8 */
-          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
+          std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
           plVar3 = (long *)plVar7[1];
           if ((long *)plVar7[1] == (long *)0x0) {
             plVar3 = plVar7 + 2;
@@ -189,7 +189,7 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
     puVar2 = DAT_007304b8;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f0838 to 003f0847 has its CatchHandler @ 003f0880 */
-      void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
+      std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
     }
     else {
       DAT_007304b8[4] = 0;
@@ -202,7 +202,7 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
         plVar7 = plStack_70;
         do {
                     /* try { // try from 003f07c4 to 003f07d3 has its CatchHandler @ 003f0888 */
-          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
+          std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
           plVar3 = (long *)plVar7[1];
           if ((long *)plVar7[1] == (long *)0x0) {
             plVar3 = plVar7 + 2;
@@ -258,7 +258,7 @@ void Walaber::ScreenManager::swapScreen(uint p0)
     uStack_80 = 0x100000001;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f09c0 to 003f09cf has its CatchHandler @ 003f0a08 */
-      void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
+      std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
     }
     else {
       DAT_007304b8[4] = 0;
@@ -271,7 +271,7 @@ void Walaber::ScreenManager::swapScreen(uint p0)
         plVar7 = plStack_70;
         do {
                     /* try { // try from 003f094c to 003f095b has its CatchHandler @ 003f0a10 */
-          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
+          std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
           plVar3 = (long *)plVar7[1];
           if ((long *)plVar7[1] == (long *)0x0) {
             plVar3 = plVar7 + 2;
@@ -331,7 +331,7 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
     puVar2 = DAT_007304b8;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f0b5c to 003f0b6b has its CatchHandler @ 003f0ba4 */
-      void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
+      std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
     }
     else {
       DAT_007304b8[4] = 0;
@@ -344,7 +344,7 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
         plVar7 = plStack_70;
         do {
                     /* try { // try from 003f0ae8 to 003f0af7 has its CatchHandler @ 003f0bac */
-          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
+          std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
           plVar3 = (long *)plVar7[1];
           if ((long *)plVar7[1] == (long *)0x0) {
             plVar3 = plVar7 + 2;
@@ -409,7 +409,7 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
   }
   else if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f0d00 to 003f0d0f has its CatchHandler @ 003f0d48 */
-    void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
+    std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
   }
   else {
     DAT_007304b8[4] = 0;
@@ -422,7 +422,7 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
       plVar7 = plStack_70;
       do {
                     /* try { // try from 003f0c8c to 003f0c9b has its CatchHandler @ 003f0d54 */
-        std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
         plVar3 = (long *)plVar7[1];
         if ((long *)plVar7[1] == (long *)0x0) {
           plVar3 = plVar7 + 2;
@@ -479,7 +479,7 @@ void Walaber::ScreenManager::popAllScreens(void)
   uStack_7c = (undefined4)((ulong)(DAT_007304a0 - mScreenStack) >> 3);
   if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f12ac to 003f12bb has its CatchHandler @ 003f12f4 */
-    void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
+    std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
   }
   else {
     DAT_007304b8[4] = 0;
@@ -492,7 +492,7 @@ void Walaber::ScreenManager::popAllScreens(void)
       plVar7 = plStack_70;
       do {
                     /* try { // try from 003f1238 to 003f1247 has its CatchHandler @ 003f12fc */
-        std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
         plVar3 = (long *)plVar7[1];
         if ((long *)plVar7[1] == (long *)0x0) {
           plVar3 = plVar7 + 2;
@@ -547,7 +547,7 @@ void Walaber::ScreenManager::stopFlush(void)
   uStack_80 = 0x100000004;
   if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f1420 to 003f142f has its CatchHandler @ 003f1468 */
-    void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
+    std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
   }
   else {
     DAT_007304b8[4] = 0;
@@ -560,7 +560,7 @@ void Walaber::ScreenManager::stopFlush(void)
       plVar7 = plStack_70;
       do {
                     /* try { // try from 003f13ac to 003f13bb has its CatchHandler @ 003f1470 */
-        std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar6,plVar7 + 4,plVar7 + 4);
         plVar3 = (long *)plVar7[1];
         if ((long *)plVar7[1] == (long *)0x0) {
           plVar3 = plVar7 + 2;
@@ -626,7 +626,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
   uStack_38 = 0;
                     /* try { // try from 003f14d0 to 003f14e7 has its CatchHandler @ 003f1558 */
   uStack_2c = p0;
-  void std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int const&>(&pvStack_48,&uStack_2c);
+  std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int const&>(&pvStack_48,&uStack_2c);
   new ((void *)(&pvStack_60)) std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>(&pvStack_48);
                     /* try { // try from 003f14e8 to 003f14f3 has its CatchHandler @ 003f153c */
   Walaber::ScreenManager::commitScreenChanges(CONCAT44(in_register_00005004,p1),&pvStack_60);
@@ -662,7 +662,7 @@ void Walaber::ScreenManager::commitScreenChanges(undefined8 param_1,long *param_
       lStack_50 = Walaber::TransitionLoader::createTransition(*(undefined4 *)(lVar2 + uVar3 * 4));
       if (lStack_50 != 0) {
         if (DAT_00730540 == DAT_00730548) {
-          void std::__ndk1::vector<Walaber::Transition*, std::__ndk1::allocator<Walaber::Transition*>>::__push_back_slow_path<Walaber::Transition* const&>(&mTransitions,&lStack_50);
+          std::__ndk1::vector<Walaber::Transition*, std::__ndk1::allocator<Walaber::Transition*>>::__push_back_slow_path<Walaber::Transition* const&>(&mTransitions,&lStack_50);
         }
         else {
           *DAT_00730540 = lStack_50;
@@ -700,7 +700,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
   uStack_48 = 0;
                     /* try { // try from 003f1708 to 003f171f has its CatchHandler @ 003f1794 */
   uStack_3c = p0;
-  void std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int const&>(&pvStack_58,&uStack_3c);
+  std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int const&>(&pvStack_58,&uStack_3c);
   new ((void *)(&pvStack_70)) std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>(&pvStack_58);
                     /* try { // try from 003f1720 to 003f172f has its CatchHandler @ 003f1778 */
   Walaber::ScreenManager::commitScreenChanges(CONCAT44(in_register_00005004,p1),&pvStack_70,p2);
@@ -738,7 +738,7 @@ void Walaber::ScreenManager::commitScreenChanges
       lStack_50 = Walaber::TransitionLoader::createTransition(*(undefined4 *)(lVar3 + uVar4 * 4));
       if (lStack_50 != 0) {
         if (DAT_00730540 == DAT_00730548) {
-          void std::__ndk1::vector<Walaber::Transition*, std::__ndk1::allocator<Walaber::Transition*>>::__push_back_slow_path<Walaber::Transition* const&>(&mTransitions,&lStack_50);
+          std::__ndk1::vector<Walaber::Transition*, std::__ndk1::allocator<Walaber::Transition*>>::__push_back_slow_path<Walaber::Transition* const&>(&mTransitions,&lStack_50);
         }
         else {
           *DAT_00730540 = lStack_50;
@@ -909,7 +909,7 @@ void Walaber::ScreenManager::_goFlush(void)
       puStack_80 = &uStack_78;
       while (plVar12 != puVar3 + 3) {
                     /* try { // try from 003f1c10 to 003f1c1f has its CatchHandler @ 003f20ac */
-        std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_80,&uStack_78,plVar12 + 4,plVar12 + 4);
+        std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_80,&uStack_78,plVar12 + 4,plVar12 + 4);
         plVar4 = (long *)plVar12[1];
         if ((long *)plVar12[1] == (long *)0x0) {
           plVar4 = plVar12 + 2;
@@ -1053,7 +1053,7 @@ LAB_003f1e38:
             plVar12 = (long *)(mPrepList + uVar9 * 0x28);
             if (plStack_a0 == plStack_98) {
                     /* try { // try from 003f1f44 to 003f1f4b has its CatchHandler @ 003f2090 */
-              void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&uStack_a8);
+              std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&uStack_a8);
             }
             else {
               lVar10 = *plVar12;
@@ -1070,7 +1070,7 @@ LAB_003f1e38:
                 plVar13 = plStack_a0 + 2;
                 do {
                     /* try { // try from 003f1ed0 to 003f1edf has its CatchHandler @ 003f20c0 */
-                  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(plVar13,plVar7,plVar12 + 4,plVar12 + 4);
+                  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(plVar13,plVar7,plVar12 + 4,plVar12 + 4);
                   plVar5 = (long *)plVar12[1];
                   if ((long *)plVar12[1] == (long *)0x0) {
                     plVar5 = plVar12 + 2;
@@ -1100,7 +1100,7 @@ LAB_003f1e38:
           } while (uVar9 <= uVar15 && uVar15 - uVar9 != 0);
         }
                     /* try { // try from 003f1f78 to 003f1f7f has its CatchHandler @ 003f2084 */
-        std::__ndk1::enable_if<__is_forward_iterator<Walaber::ScreenManager::ScreenOperationDetails*>::value&&is_constructible<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::iterator_traits<Walaber::ScreenManager::ScreenOperationDetails*>::reference>::value, void>::type std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::assign<Walaber::ScreenManager::ScreenOperationDetails*>(&mPrepList,uStack_a8,plStack_a0);
+        std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::assign<Walaber::ScreenManager::ScreenOperationDetails*>(&mPrepList,uStack_a8,plStack_a0);
         mFlushMethod = 1;
         ((std::__ndk1::__vector_base<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>> *)&uStack_a8)->~__vector_base<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>();
         bVar2 = false;
@@ -1508,7 +1508,7 @@ void Walaber::ScreenManager::_pushScreen(Walaber__GameScreen *p0)
     (**(code **)(*(long *)DAT_007304a0[-1] + 0x28))();
   }
   if (DAT_007304a0 == DAT_007304a8) {
-    void std::__ndk1::vector<Walaber::GameScreen*, std::__ndk1::allocator<Walaber::GameScreen*>>::__push_back_slow_path<Walaber::GameScreen* const&>(&mScreenStack,&pWStack_40);
+    std::__ndk1::vector<Walaber::GameScreen*, std::__ndk1::allocator<Walaber::GameScreen*>>::__push_back_slow_path<Walaber::GameScreen* const&>(&mScreenStack,&pWStack_40);
   }
   else {
     *DAT_007304a0 = p0;

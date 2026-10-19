@@ -12,10 +12,7 @@
    std::__ndk1::allocator<unsigned int> >::__emplace_unique_key_args<unsigned int, unsigned
    int>(unsigned int const&, unsigned int&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<unsigned_int,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<unsigned_int>>::
-__emplace_unique_key_args<unsigned_int,unsigned_int>(uint *p0,uint **p1)
+template<> undefined1 [16] std::__ndk1::__tree<unsigned_int,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<unsigned_int>>::__emplace_unique_key_args(uint *p0,uint **p1)
 
 {
   bool bVar1;

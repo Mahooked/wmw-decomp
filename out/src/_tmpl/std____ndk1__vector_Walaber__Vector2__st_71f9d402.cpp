@@ -11,8 +11,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Vector2,
    std::__ndk1::allocator<Walaber::Vector2>&>&) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -61,8 +60,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
 /* std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2> >::vector(unsigned
    long, Walaber::Vector2 const&) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::vector
-               (ulong p0,Walaber__Vector2 *p1)
+template<> std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::vector(ulong p0,Walaber__Vector2 *p1)
 
 {
   undefined8 *in_x2;
@@ -98,8 +96,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
 /* std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__vallocate
-               (ulong p0)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -126,8 +123,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
    >::vector(std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2> >
    const&) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::vector
-               (undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::vector(undefined8 *param_1,long *param_2)
 
 {
   undefined8 *puVar1;
@@ -170,9 +166,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
 /* std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>
    >::insert(std::__ndk1::__wrap_iter<Walaber::Vector2 const*>, Walaber::Vector2 const&) */
 
-undefined8 *
-std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::insert
-          (long *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> undefined8 * std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   undefined8 *puVar2;
@@ -326,8 +320,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
    >::__move_assign(std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>
    >&, std::__ndk1::integral_constant<bool, true>) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__move_assign
-               (std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>& param_1,std::__ndk1::integral_constant<bool, true> param_2)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__move_assign(std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>& param_1,std::__ndk1::integral_constant<bool, true> param_2)
 
 {
   void *p0;
@@ -358,8 +351,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
 /* std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>
    >::__move_range(Walaber::Vector2*, Walaber::Vector2*, Walaber::Vector2*) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__move_range
-               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__move_range(Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
 
 {
   undefined8 *puVar1;
@@ -406,8 +398,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Vector2,
    std::__ndk1::allocator<Walaber::Vector2>&>&, Walaber::Vector2*) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   undefined8 *puVar1;

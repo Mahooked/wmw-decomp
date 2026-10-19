@@ -14,11 +14,7 @@
    >::assign<Walaber::SpriteAnimationTrack::SpriteAnimationEvent*>(Walaber::SpriteAnimationTrack::SpriteAnimationEvent*,
    Walaber::SpriteAnimationTrack::SpriteAnimationEvent*) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::assign<Walaber::SpriteAnimationTrack::SpriteAnimationEvent*>
-               (Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p0,
-               Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p1)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::assign(Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p0, Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p1)
 
 {
   Walaber__SpriteAnimationTrack__SpriteAnimationEvent *pWVar1;

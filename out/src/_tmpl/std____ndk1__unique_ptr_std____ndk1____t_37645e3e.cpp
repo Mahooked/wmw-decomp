@@ -28,11 +28,7 @@
    const, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,
    std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*> > > const&) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>
-     ::
-     __construct_node<std::__ndk1::pair<int_const,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>const&>
-               (long *param_1,long param_2,undefined4 *param_3)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__construct_node(long *param_1,long param_2,undefined4 *param_3)
 
 {
   long lVar1;

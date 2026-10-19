@@ -11,9 +11,7 @@
    WaterConcept::Screen_Hub::WidgetName>::create_map(WaterConcept::Screen_Hub::HubAction const&,
    WaterConcept::Screen_Hub::WidgetName const&) */
 
-void Walaber::Utilities::
-     create_map<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>::
-     create_map(WaterConcept__Screen_Hub__HubAction *p0,WaterConcept__Screen_Hub__WidgetName *p1)
+template<> Walaber::Utilities::create_map<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>::create_map(WaterConcept__Screen_Hub__HubAction *p0,WaterConcept__Screen_Hub__WidgetName *p1)
 
 {
   undefined4 uVar1;

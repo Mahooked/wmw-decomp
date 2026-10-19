@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo,
    std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined1 uVar1;

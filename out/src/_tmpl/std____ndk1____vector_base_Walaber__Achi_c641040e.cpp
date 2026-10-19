@@ -10,8 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>
    >::~__vector_base() */
 
-void std::__ndk1::__vector_base<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::
-     ~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::~__vector_base()
 
 {
   void *p0;

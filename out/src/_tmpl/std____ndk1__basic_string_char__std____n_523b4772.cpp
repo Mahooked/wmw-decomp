@@ -10,14 +10,13 @@
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::~basic_string() */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_string(byte *param_1)
+template<> std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_string()
 
 {
-  if ((*param_1 & 1) == 0) {
+  if ((*(byte *)this & 1) == 0) {
     return;
   }
-  operator delete(*(void **)(param_1 + 0x10));
+  operator delete(*(void **)((byte *)this + 0x10));
   return;
 }
 
@@ -31,23 +30,22 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-       operator=(byte *param_1,byte *param_2)
+template<> byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::operator=(byte *param_2)
 
 {
   ulong uVar1;
   byte *pbVar2;
   
-  if (param_1 != param_2) {
+  if ((byte *)this != param_2) {
     uVar1 = *(ulong *)(param_2 + 8);
     pbVar2 = *(byte **)(param_2 + 0x10);
     if ((*param_2 & 1) == 0) {
       pbVar2 = param_2 + 1;
       uVar1 = (ulong)(*param_2 >> 1);
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1,pbVar2,uVar1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign((byte *)this,pbVar2,uVar1);
   }
-  return param_1;
+  return (byte *)this;
 }
 
 
@@ -60,8 +58,7 @@ byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
    >::basic_string(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     basic_string(ulong *param_1,ulong *param_2)
+template<> std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::basic_string(ulong *param_1,ulong *param_2)
 
 {
   ulong uVar1;
@@ -113,8 +110,7 @@ LAB_002b35a8:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::append(char const*, unsigned long) */
 
-char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-       append(char *p0,ulong p1)
+template<> char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::append(char *p0,ulong p1)
 
 {
   byte bVar1;
@@ -165,8 +161,7 @@ char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
    >::__grow_by_and_replace(unsigned long, unsigned long, unsigned long, unsigned long, unsigned
    long, unsigned long, char const*) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __grow_by_and_replace(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5,char *p6)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::__grow_by_and_replace(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5,char *p6)
 
 {
   long lVar1;
@@ -229,8 +224,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::assign(char const*, unsigned long) */
 
-char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-       assign(char *p0,ulong p1)
+template<> char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::assign(char *p0,ulong p1)
 
 {
   byte bVar1;
@@ -285,8 +279,7 @@ char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::compare(unsigned long, unsigned long, char const*, unsigned long) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      compare(ulong p0,ulong p1,char *p2,ulong p3)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::compare(ulong p0,ulong p1,char *p2,ulong p3)
 
 {
   char *pcVar1;
@@ -341,8 +334,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::insert(unsigned long, char const*, unsigned long) */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      insert(ulong p0,char *p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::insert(ulong p0,char *p1,ulong p2)
 
 {
   char *pcVar1;
@@ -412,8 +404,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long, std::__ndk1::allocator<char>
    const&) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     basic_string(ulong *param_1,byte *param_2,ulong param_3,ulong param_4)
+template<> std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::basic_string(ulong *param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -473,8 +464,7 @@ LAB_002c2ff0:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::find(char, unsigned long) const */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     find(char p0,ulong p1)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::find(char p0,ulong p1)
 
 {
   byte *pbVar1;
@@ -521,8 +511,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::push_back(char) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     push_back(char p0)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::push_back(char p0)
 
 {
   byte bVar1;
@@ -568,8 +557,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::__grow_by(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned
    long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __grow_by(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::__grow_by(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5)
 
 {
   long lVar1;
@@ -628,8 +616,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::resize(unsigned long, char) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     resize(ulong p0,char p1)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::resize(ulong p0,char p1)
 
 {
   byte bVar1;
@@ -667,8 +654,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::append(unsigned long, char) */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      append(ulong p0,char p1)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::append(ulong p0,char p1)
 
 {
   long lVar1;
@@ -724,8 +710,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::erase(unsigned long, unsigned long) */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      erase(ulong p0,ulong p1)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::erase(ulong p0,ulong p1)
 
 {
   ulong uVar1;
@@ -785,8 +770,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::basic_string(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     basic_string(ulong *param_1,ulong *param_2)
+template<> std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::basic_string(ulong *param_1,ulong *param_2)
 
 {
   ulong uVar1;
@@ -838,8 +822,7 @@ LAB_005e3748:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::__init(char const*, unsigned long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __init(char *p0,ulong p1)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::__init(char *p0,ulong p1)
 
 {
   ulong in_x2;
@@ -878,8 +861,7 @@ LAB_005e37e0:
    >::basic_string(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, std::__ndk1::allocator<char> const&) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     basic_string(ulong *param_1,ulong *param_2)
+template<> std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::basic_string(ulong *param_1,ulong *param_2)
 
 {
   ulong uVar1;
@@ -931,8 +913,7 @@ LAB_005e389c:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::__init(unsigned long, char) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __init(ulong p0,char p1)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::__init(ulong p0,char p1)
 
 {
   ulong uVar1;
@@ -974,8 +955,7 @@ LAB_005e3b18:
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long, std::__ndk1::allocator<char>
    const&) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     basic_string(ulong *param_1,byte *param_2,ulong param_3,ulong param_4)
+template<> std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::basic_string(ulong *param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -1035,14 +1015,13 @@ LAB_005e3bd8:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::~basic_string() */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_string(byte *param_1)
+template<> std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_string()
 
 {
-  if ((*param_1 & 1) == 0) {
+  if ((*(byte *)this & 1) == 0) {
     return;
   }
-  operator delete(*(void **)(param_1 + 0x10));
+  operator delete(*(void **)((byte *)this + 0x10));
   return;
 }
 
@@ -1055,8 +1034,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::assign(char const*) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     assign(char *p0)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::assign(char *p0)
 
 {
   strlen();
@@ -1073,8 +1051,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::TEMPNAMEPLACEHOLDERVALUE(char) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     operator=(char p0)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::operator=(char p0)
 
 {
   byte *pbVar1;
@@ -1111,8 +1088,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::reserve(unsigned long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     reserve(ulong p0)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::reserve(ulong p0)
 
 {
   byte bVar1;
@@ -1211,8 +1187,7 @@ joined_r0x005e4440:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::at(unsigned long) const */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::at
-               (ulong p0)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::at(ulong p0)
 
 {
   byte bVar1;
@@ -1246,8 +1221,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::at(unsigned long) */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::at
-               (ulong p0)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::at(ulong p0)
 
 {
   byte bVar1;
@@ -1281,8 +1255,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::append(char const*) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     append(char *p0)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::append(char *p0)
 
 {
   strlen();
@@ -1300,8 +1273,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::append(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     append(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::append(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -1340,8 +1312,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::assign(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     assign(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::assign(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -1379,8 +1350,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::assign(unsigned long, char) */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      assign(ulong p0,char p1)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::assign(ulong p0,char p1)
 
 {
   byte bVar1;
@@ -1466,8 +1436,7 @@ joined_r0x005e49f4:
    >::insert(unsigned long, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert(undefined8 param_1,undefined8 param_2,byte *param_3,ulong param_4,ulong param_5)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::insert(undefined8 param_1,undefined8 param_2,byte *param_3,ulong param_4,ulong param_5)
 
 {
   ulong uVar1;
@@ -1505,8 +1474,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::insert(unsigned long, char const*) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert(ulong p0,char *p1)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::insert(ulong p0,char *p1)
 
 {
   strlen();
@@ -1523,8 +1491,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::insert(unsigned long, unsigned long, char) */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      insert(ulong p0,ulong p1,char p2)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::insert(ulong p0,ulong p1,char p2)
 
 {
   long lVar1;
@@ -1630,8 +1597,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::insert(std::__ndk1::__wrap_iter<char const*>, char) */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert(ulong *param_1,long param_2,undefined1 param_3)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::insert(ulong *param_1,long param_2,undefined1 param_3)
 
 {
   byte bVar1;
@@ -1730,8 +1696,7 @@ LAB_005e4e10:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::replace(unsigned long, unsigned long, char const*, unsigned long) */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      replace(ulong p0,ulong p1,char *p2,ulong p3)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::replace(ulong p0,ulong p1,char *p2,ulong p3)
 
 {
   byte bVar1;
@@ -1890,8 +1855,7 @@ LAB_005e55dc:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long, unsigned
    long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     replace(void)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::replace(void)
 
 {
   ulong uVar1;
@@ -1919,8 +1883,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::replace(unsigned long, unsigned long, char const*) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     replace(ulong p0,ulong p1,char *p2)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::replace(ulong p0,ulong p1,char *p2)
 
 {
   strlen();
@@ -1937,8 +1900,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::replace(unsigned long, unsigned long, unsigned long, char) */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      replace(ulong p0,ulong p1,ulong p2,char p3)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::replace(ulong p0,ulong p1,ulong p2,char p3)
 
 {
   ulong uVar1;
@@ -2052,8 +2014,7 @@ LAB_005e58b0:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::copy(char*, unsigned long, unsigned long) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      copy(char *p0,ulong p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::copy(char *p0,ulong p1,ulong p2)
 
 {
   byte bVar1;
@@ -2099,8 +2060,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::find(char const*, unsigned long, unsigned long) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      find(char *p0,ulong p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::find(char *p0,ulong p1,ulong p2)
 
 {
   char *pcVar1;
@@ -2159,8 +2119,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::rfind(char const*, unsigned long, unsigned long) const */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     rfind(char *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::rfind(char *p0,ulong p1,ulong p2)
 
 {
   char *pcVar1;
@@ -2241,8 +2200,7 @@ LAB_005e61d8:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::rfind(char, unsigned long) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      rfind(char p0,ulong p1)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::rfind(char p0,ulong p1)
 
 {
   byte *pbVar1;
@@ -2285,8 +2243,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::find_first_of(char const*, unsigned long, unsigned long) const */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     find_first_of(char *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::find_first_of(char *p0,ulong p1,ulong p2)
 
 {
   char *pcVar1;
@@ -2340,8 +2297,7 @@ LAB_005e643c:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::find_last_of(char const*, unsigned long, unsigned long) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      find_last_of(char *p0,ulong p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::find_last_of(char *p0,ulong p1,ulong p2)
 
 {
   char *pcVar1;
@@ -2383,8 +2339,7 @@ LAB_005e6654:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::find_first_not_of(char const*, unsigned long, unsigned long) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      find_first_not_of(char *p0,ulong p1,ulong p2)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::find_first_not_of(char *p0,ulong p1,ulong p2)
 
 {
   char *pcVar1;
@@ -2426,8 +2381,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::find_last_not_of(char const*, unsigned long, unsigned long) const */
 
-long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     find_last_not_of(char *p0,ulong p1,ulong p2)
+template<> long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::find_last_not_of(char *p0,ulong p1,ulong p2)
 
 {
   long lVar1;
@@ -2470,8 +2424,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long, unsigned
    long) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      compare(byte *param_1,ulong param_2,ulong param_3,byte *param_4,ulong param_5,ulong param_6)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::compare(byte *param_1,ulong param_2,ulong param_3,byte *param_4,ulong param_5,ulong param_6)
 
 {
   byte *pbVar1;
@@ -2549,8 +2502,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::compare(char const*) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      compare(char *p0)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::compare(char *p0)
 
 {
   byte bVar1;
@@ -2602,8 +2554,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::compare(unsigned long, unsigned long, char const*) const */
 
-ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      compare(ulong p0,ulong p1,char *p2)
+template<> ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::compare(ulong p0,ulong p1,char *p2)
 
 {
   char *pcVar1;
@@ -2659,8 +2610,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::__init(char const*, unsigned long, unsigned long) */
 
-void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __init(char *p0,ulong p1,ulong p2)
+template<> void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::__init(char *p0,ulong p1,ulong p2)
 
 {
   ulong in_x3;

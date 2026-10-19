@@ -10,8 +10,7 @@
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::basic_istream(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >*) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_istream
-               (long *param_1,long *param_2,long param_3)
+template<> std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_istream(long *param_1,long *param_2,long param_3)
 
 {
   long lVar1;
@@ -52,8 +51,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basi
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::basic_istream(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >*) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_istream
-               (undefined8 *param_1,long param_2)
+template<> std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_istream(undefined8 *param_1,long param_2)
 
 {
   *(undefined4 *)(param_1 + 3) = 0x1002;
@@ -89,7 +87,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basi
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_istream() */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_istream(void)
+template<> std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_istream()
 
 {
   return;
@@ -103,11 +101,10 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_istream() */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_istream
-               (long param_1)
+template<> std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_istream()
 
 {
-  ((std::__ndk1::ios_base *)param_1 + 0x10)->~ios_base();
+  ((std::__ndk1::ios_base *)(byte *)this + 0x10)->~ios_base();
   return;
 }
 
@@ -119,12 +116,11 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_istream() */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_istream
-               (void *param_1)
+template<> std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_istream()
 
 {
-  ((std::__ndk1::ios_base *)(long)param_1 + 0x10)->~ios_base();
-  operator delete(param_1);
+  ((std::__ndk1::ios_base *)(long)(byte *)this + 0x10)->~ios_base();
+  operator delete((byte *)this);
   return;
 }
 
@@ -137,8 +133,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::swap(std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >&) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap
-               (long *param_1,long *param_2)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap(long *param_1,long *param_2)
 
 {
   long lVar1;
@@ -171,8 +166,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >& (*)(std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >&)) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-               (undefined8 param_1,code *UNRECOVERED_JUMPTABLE)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(code *UNRECOVERED_JUMPTABLE)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a922c. Too many branches */
@@ -191,12 +185,11 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t> >&
    (*)(std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t> >&)) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,code *param_2)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(code *param_2)
 
 {
-  (*param_2)((long)param_1 + *(long *)(*param_1 + -0x18));
-  return param_1;
+  (*param_2)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
+  return (byte *)this;
 }
 
 
@@ -208,12 +201,11 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::ios_base& (*)(std::__ndk1::ios_base&)) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,code *param_2)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(code *param_2)
 
 {
-  (*param_2)((long)param_1 + *(long *)(*param_1 + -0x18));
-  return param_1;
+  (*param_2)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
+  return (byte *)this;
 }
 
 
@@ -226,8 +218,7 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_streambuf<wchar_t,
    std::__ndk1::char_traits<wchar_t> >*) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,long *param_2)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(long *param_2)
 
 {
   uint uVar1;
@@ -238,29 +229,29 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   uint uVar6;
   long lVar7;
   
-  param_1[1] = 0;
-  lVar7 = *(long *)(*param_1 + -0x18);
-  lVar4 = (long)param_1 + lVar7;
+  (byte *)this[1] = 0;
+  lVar7 = *(long *)(*(byte *)this + -0x18);
+  lVar4 = (long)(byte *)this + lVar7;
   if (*(uint *)(lVar4 + 0x20) != 0) {
                     /* try { // try from 005a92c0 to 005a92eb has its CatchHandler @ 005a9444 */
     std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 4);
-    return param_1;
+    return (byte *)this;
   }
   if (*(long *)(lVar4 + 0x88) != 0) {
     std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::flush(*(long *)(lVar4 + 0x88));
-    lVar7 = *(long *)(*param_1 + -0x18);
-    lVar4 = (long)param_1 + lVar7;
+    lVar7 = *(long *)(*(byte *)this + -0x18);
+    lVar4 = (long)(byte *)this + lVar7;
     if (*(int *)(lVar4 + 0x20) != 0) {
-      return param_1;
+      return (byte *)this;
     }
   }
   if (param_2 == (long *)0x0) {
                     /* try { // try from 005a93c4 to 005a93cb has its CatchHandler @ 005a9444 */
     std::__ndk1::ios_base::clear(lVar4,4);
-    return param_1;
+    return (byte *)this;
   }
   while( true ) {
-    plVar5 = *(long **)((long)param_1 + lVar7 + 0x28);
+    plVar5 = *(long **)((long)(byte *)this + lVar7 + 0x28);
     if ((int *)plVar5[3] == (int *)plVar5[4]) {
                     /* try { // try from 005a9340 to 005a93af has its CatchHandler @ 005a9400 */
       iVar3 = (**(code **)(*plVar5 + 0x48))();
@@ -276,25 +267,25 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
         uVar6 = 0;
 LAB_005a93d4:
         uVar1 = uVar6 | 4;
-        if (param_1[1] != 0) {
+        if ((byte *)this[1] != 0) {
           uVar1 = uVar6;
         }
-        lVar4 = (long)param_1 + *(long *)(*param_1 + -0x18);
+        lVar4 = (long)(byte *)this + *(long *)(*(byte *)this + -0x18);
                     /* try { // try from 005a93f4 to 005a93f7 has its CatchHandler @ 005a93fc */
         std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | uVar1);
-        return param_1;
+        return (byte *)this;
       }
     }
     else {
       param_2[6] = (long)(piVar2 + 1);
       *piVar2 = iVar3;
     }
-    lVar4 = *param_1;
-    param_1[1] = param_1[1] + 1;
-    plVar5 = *(long **)((long)param_1 + *(long *)(lVar4 + -0x18) + 0x28);
+    lVar4 = *(byte *)this;
+    (byte *)this[1] = (byte *)this[1] + 1;
+    plVar5 = *(long **)((long)(byte *)this + *(long *)(lVar4 + -0x18) + 0x28);
     if (plVar5[3] == plVar5[4]) {
       (**(code **)(*plVar5 + 0x50))();
-      lVar7 = *(long *)(*param_1 + -0x18);
+      lVar7 = *(long *)(*(byte *)this + -0x18);
     }
     else {
       plVar5[3] = plVar5[3] + 4;
@@ -314,7 +305,7 @@ LAB_005a93d4:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(bool&) */
 
-bool * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(bool *p0)
+template<> bool * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(bool *p0)
 
 {
   long *plVar2;
@@ -352,7 +343,7 @@ bool * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(short&) */
 
-short * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(short *p0)
+template<> short * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(short *p0)
 
 {
   long lVar1;
@@ -406,8 +397,7 @@ LAB_005a96cc:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned short&) */
 
-ushort * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                   (ushort *p0)
+template<> ushort * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(ushort *p0)
 
 {
   long lVar1;
@@ -445,7 +435,7 @@ ushort * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(int&) */
 
-int * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(int *p0)
+template<> int * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(int *p0)
 
 {
   long lVar1;
@@ -499,7 +489,7 @@ LAB_005a9998:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned int&) */
 
-uint * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(uint *p0)
+template<> uint * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(uint *p0)
 
 {
   long lVar1;
@@ -537,7 +527,7 @@ uint * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(long *p0)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(long *p0)
 
 {
   long lVar1;
@@ -574,7 +564,7 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned long&) */
 
-ulong * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(ulong *p0)
+template<> ulong * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(ulong *p0)
 
 {
   long lVar1;
@@ -612,8 +602,7 @@ ulong * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::o
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long long&) */
 
-longlong *
-std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(longlong *p0)
+template<> longlong * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(longlong *p0)
 
 {
   long lVar1;
@@ -651,8 +640,7 @@ std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned long long&) */
 
-ulonglong *
-std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(ulonglong *p0)
+template<> ulonglong * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(ulonglong *p0)
 
 {
   long lVar1;
@@ -690,7 +678,7 @@ std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(float&) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(float *p0)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(float *p0)
 
 {
   long lVar1;
@@ -728,7 +716,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(double&) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(double *p0)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(double *p0)
 
 {
   long lVar1;
@@ -766,8 +754,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long double&) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-               (longdouble *p0)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(longdouble *p0)
 
 {
   long lVar1;
@@ -805,7 +792,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(void*&) */
 
-void ** std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(void **p0)
+template<> void ** std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(void **p0)
 
 {
   long lVar1;
@@ -842,7 +829,7 @@ void ** std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::o
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get() */
 
-ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(long *param_1)
+template<> ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(long *param_1)
 
 {
   long lVar1;
@@ -896,7 +883,7 @@ ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get(wchar_t&) */
 
-wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0, int * in_x1)
+template<> wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0, int * in_x1)
 
 {
   int iVar1;
@@ -916,7 +903,7 @@ wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get(wchar_t*, long) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0,long p1)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0,long p1)
 
 {
   long *plVar2;
@@ -940,8 +927,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get(wchar_t*, long,
    wchar_t) */
 
-wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
-                    (wchar_t *p0,long p1,wchar_t p2)
+template<> wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0,long p1,wchar_t p2)
 
 {
   uint uVar1;
@@ -1045,8 +1031,7 @@ LAB_005aa7dc:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::get(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >&) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
-               (long *param_1,undefined8 param_2)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(long *param_1,undefined8 param_2)
 
 {
   undefined4 uVar2;
@@ -1071,8 +1056,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::get(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >&, wchar_t) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
-                 (long *param_1,long *param_2,int param_3)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(long *param_1,long *param_2,int param_3)
 
 {
   long lVar1;
@@ -1155,8 +1139,7 @@ LAB_005aab94:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::getline(wchar_t*, long)
     */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getline
-               (wchar_t *p0,long p1)
+template<> void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getline(wchar_t *p0,long p1)
 
 {
   long *plVar2;
@@ -1180,8 +1163,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getl
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::getline(wchar_t*, long,
    wchar_t) */
 
-wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getline
-                    (wchar_t *p0,long p1,wchar_t p2)
+template<> wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getline(wchar_t *p0,long p1,wchar_t p2)
 
 {
   uint uVar1;
@@ -1279,7 +1261,7 @@ LAB_005aae68:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::ignore(long, unsigned
    int) */
 
-long std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ignore(long p0,uint p1, int in_w2)
+template<> long std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ignore(long p0,uint p1, int in_w2)
 
 {
   int *piVar1;
@@ -1360,7 +1342,7 @@ LAB_005ab02c:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::peek() */
 
-ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::peek(long *param_1)
+template<> ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::peek(long *param_1)
 
 {
   long lVar1;
@@ -1410,8 +1392,7 @@ ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::pee
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::read(wchar_t*, long) */
 
-wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::read
-                    (wchar_t *p0,long p1)
+template<> wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::read(wchar_t *p0,long p1)
 
 {
   long *plVar1;
@@ -1460,8 +1441,7 @@ LAB_005ab1e8:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::readsome(wchar_t*, long)
     */
 
-undefined8
-std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::readsome(wchar_t *p0,long p1, long in_x2)
+template<> undefined8 std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::readsome(wchar_t *p0,long p1, long in_x2)
 
 {
   long *plVar1;
@@ -1519,7 +1499,7 @@ LAB_005ab2f8:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::putback(wchar_t) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::putback(wchar_t p0, int in_w1)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::putback(wchar_t p0, int in_w1)
 
 {
   long *plVar1;
@@ -1579,7 +1559,7 @@ LAB_005ab454:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::unget() */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::unget(long *param_1)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::unget(long *param_1)
 
 {
   int iVar1;
@@ -1639,8 +1619,7 @@ LAB_005ab5a4:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::sync() */
 
-undefined4
-std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sync(long *param_1)
+template<> undefined4 std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sync(long *param_1)
 
 {
   long lVar1;
@@ -1683,8 +1662,7 @@ LAB_005ab6c0:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::tellg() */
 
-undefined8
-std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::tellg(long *param_1)
+template<> undefined8 std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::tellg(long *param_1)
 
 {
   long lVar1;
@@ -1722,8 +1700,7 @@ LAB_005ab7a4:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::seekg(std::__ndk1::fpos<mbstate_t>) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekg
-                 (long *param_1,undefined8 param_2,undefined8 param_3)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekg(long *param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -1769,8 +1746,7 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::seekg(long long,
    std::__ndk1::ios_base::seekdir) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekg
-                 (long *param_1,undefined8 param_2,undefined4 param_3)
+template<> long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekg(long *param_1,undefined8 param_2,undefined4 param_3)
 
 {
   long lVar1;

@@ -13,10 +13,7 @@
    >::replace<char const*>(std::__ndk1::__wrap_iter<char const*>, std::__ndk1::__wrap_iter<char
    const*>, char const*, char const*) */
 
-undefined8
-std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-replace<char_const*>
-          (byte *param_1,long param_2,long param_3,undefined1 *param_4,undefined1 *param_5)
+template<> undefined8 std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::replace(byte *param_1,long param_2,long param_3,undefined1 *param_4,undefined1 *param_5)
 
 {
   undefined8 *puVar2;

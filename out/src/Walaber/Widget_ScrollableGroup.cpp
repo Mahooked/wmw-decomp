@@ -74,7 +74,7 @@ Walaber::Widget_ScrollableGroup::operator=(Walaber__Widget_ScrollableGroup *p0)
   *(undefined4 *)&p0->field_0x174 = uVar1;
   p0->f_0x178 = in_x1->f_0x178;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<int*>::value&&is_constructible<int, std::__ndk1::iterator_traits<int*>::reference>::value, void>::type std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x180,in_x1->f_0x180,in_x1->f_0x188);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x180,in_x1->f_0x180,in_x1->f_0x188);
   }
   *(undefined8 *)&p0[1].field_0x8 = *(undefined8 *)&in_x1[1].field_0x8;
   *(undefined4 *)&p0[1].field_0x10 = *(undefined4 *)&in_x1[1].field_0x10;

@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::PositionTextureColorVert>(Walaber::PositionTextureColorVert&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>
-     ::__push_back_slow_path<Walaber::PositionTextureColorVert>
-               (Walaber__PositionTextureColorVert **p0)
+template<> void std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path(Walaber__PositionTextureColorVert **p0)
 
 {
   ulong uVar1;
@@ -90,10 +87,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::PositionTextureColorVert
    const&>(Walaber::PositionTextureColorVert const&) */
 
-void std::__ndk1::
-     vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>
-     ::__push_back_slow_path<Walaber::PositionTextureColorVert_const&>
-               (Walaber__PositionTextureColorVert *p0)
+template<> void std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path(Walaber__PositionTextureColorVert *p0)
 
 {
   ulong uVar1;

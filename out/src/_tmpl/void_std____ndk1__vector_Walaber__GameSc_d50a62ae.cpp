@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::GameScreen*, std::__ndk1::allocator<Walaber::GameScreen*>
    >::__push_back_slow_path<Walaber::GameScreen* const&>(Walaber::GameScreen* const&) */
 
-void std::__ndk1::vector<Walaber::GameScreen*,std::__ndk1::allocator<Walaber::GameScreen*>>::
-     __push_back_slow_path<Walaber::GameScreen*const&>(Walaber__GameScreen **p0)
+template<> void std::__ndk1::vector<Walaber::GameScreen*,std::__ndk1::allocator<Walaber::GameScreen*>>::__push_back_slow_path(Walaber__GameScreen **p0)
 
 {
   undefined8 *in_x1;

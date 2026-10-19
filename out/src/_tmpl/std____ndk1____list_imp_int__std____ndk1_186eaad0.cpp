@@ -9,7 +9,7 @@
 
 /* std::__ndk1::__list_imp<int, std::__ndk1::allocator<int> >::clear() */
 
-void std::__ndk1::__list_imp<int,std::__ndk1::allocator<int>>::clear(long *param_1)
+template<> void std::__ndk1::__list_imp<int,std::__ndk1::allocator<int>>::clear(long *param_1)
 
 {
   long lVar1;

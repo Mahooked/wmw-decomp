@@ -11,8 +11,7 @@
    std::__ndk1::allocator<Walaber::Particle>&>::__split_buffer(unsigned long, unsigned long,
    std::__ndk1::allocator<Walaber::Particle>&) */
 
-void std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>&>::
-     __split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;
@@ -54,8 +53,7 @@ void std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walabe
    std::__ndk1::allocator<Walaber::Particle>&>::__construct_at_end(unsigned long, Walaber::Particle
    const&) */
 
-void std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>&>::
-     __construct_at_end(ulong p0,Walaber__Particle *p1)
+template<> void std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>&>::__construct_at_end(ulong p0,Walaber__Particle *p1)
 
 {
   long in_x2;

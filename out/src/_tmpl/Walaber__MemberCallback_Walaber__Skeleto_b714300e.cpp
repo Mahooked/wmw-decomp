@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<Walaber::Skeleton>::~MemberCallback() */
 
-void Walaber::MemberCallback<Walaber::Skeleton>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<Walaber::Skeleton>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<Walaber::Skeleton>::~MemberCallback(void *p0)
 
 /* Walaber::MemberCallback<Walaber::Skeleton>::invoke(void*) */
 
-void Walaber::MemberCallback<Walaber::Skeleton>::invoke(void *p0)
+template<> void Walaber::MemberCallback<Walaber::Skeleton>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

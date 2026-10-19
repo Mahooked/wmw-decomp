@@ -9,11 +9,11 @@
 
 /* std::__ndk1::__narrow_to_utf8<32ul>::~__narrow_to_utf8() */
 
-void std::__ndk1::__narrow_to_utf8<32ul>::~__narrow_to_utf8(void *param_1)
+template<> std::__ndk1::__narrow_to_utf8<32ul>::~__narrow_to_utf8()
 
 {
   std::__ndk1::__shared_count::~__shared_count();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 

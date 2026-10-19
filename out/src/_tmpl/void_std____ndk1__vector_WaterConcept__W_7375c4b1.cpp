@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::World::RegionInfo const&>(WaterConcept::World::RegionInfo
    const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::RegionInfo,std::__ndk1::allocator<WaterConcept::World::RegionInfo>>
-     ::__push_back_slow_path<WaterConcept::World::RegionInfo_const&>
-               (WaterConcept__World__RegionInfo *p0)
+template<> void std::__ndk1::vector<WaterConcept::World::RegionInfo,std::__ndk1::allocator<WaterConcept::World::RegionInfo>>::__push_back_slow_path(WaterConcept__World__RegionInfo *p0)
 
 {
   ulong uVar1;
@@ -58,7 +55,7 @@ void std::__ndk1::
     plVar11 = (long *)in_x1[2];
     do {
                     /* try { // try from 0046e608 to 0046e617 has its CatchHandler @ 0046e6c8 */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2,puVar10,plVar11 + 4,plVar11 + 4);
+      std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2,puVar10,plVar11 + 4,plVar11 + 4);
       plVar7 = (long *)plVar11[1];
       if ((long *)plVar11[1] == (long *)0x0) {
         plVar7 = plVar11 + 2;

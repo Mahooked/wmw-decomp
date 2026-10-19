@@ -12,9 +12,7 @@
    >::vector(std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,
    std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*> > const&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -43,9 +41,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,
    std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*> >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__vallocate(ulong p0)
 
 {
   long lVar1;

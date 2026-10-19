@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<WaterConcept::GameState::Goal,
    std::__ndk1::allocator<WaterConcept::GameState::Goal> >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<WaterConcept::GameState::Goal,std::__ndk1::allocator<WaterConcept::GameState::Goal>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::GameState::Goal,std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__vallocate(ulong p0)
 
 {
   long lVar1;

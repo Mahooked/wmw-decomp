@@ -10,8 +10,7 @@
 /* std::__ndk1::__vector_base<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>
    >::~__vector_base() */
 
-void std::__ndk1::__vector_base<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     ~__vector_base()
+template<> std::__ndk1::__vector_base<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::~__vector_base()
 
 {
   void *pvVar1;

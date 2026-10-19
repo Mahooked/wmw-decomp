@@ -11,8 +11,7 @@
    WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderSameRockOutline>(WaterConcept::GridCell,
    int, int, WaterConcept::ConsiderSameRockOutline) */
 
-byte WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderSameRockOutline>
-               (WaterConcept::GridCell param_1,int param_2,int param_3,WaterConcept::ConsiderSameRockOutline param_4)
+byte WaterConcept::World::_getGridEdgeValue(WaterConcept::GridCell param_1,int param_2,int param_3,WaterConcept::ConsiderSameRockOutline param_4)
 
 {
   int iVar1;

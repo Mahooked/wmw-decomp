@@ -240,7 +240,7 @@
                     /* try { // try from 0056a9a4 to 0056a9b3 has its CatchHandler @ 0056ad5c */
   new ((void *)(abStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0079dea8);
                     /* try { // try from 0056a9b4 to 0056a9cb has its CatchHandler @ 0056ad54 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_108,&DAT_0079dcb0,"=\'");
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_108,&DAT_0079dcb0,"=\'");
   uVar6 = DAT_00735df0;
   puVar2 = DAT_00735df8;
   if ((GameSettings::currentLevelPackName & 1) == 0) {
@@ -2055,7 +2055,7 @@ LAB_0056d1cc:
     puVar14 = &uStack_1e8;
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_c0,&DAT_0079e028,&DAT_0063d328);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_c0,&DAT_0079e028,&DAT_0063d328);
     uVar17 = (ulong)(DAT_0079e040 >> 1);
     puVar16 = &DAT_0079e041;
     if ((DAT_0079e040 & 1) != 0) {
@@ -2074,7 +2074,7 @@ LAB_0056d1cc:
       operator delete(pvStack_b0);
     }
                     /* try { // try from 0056be38 to 0056be4f has its CatchHandler @ 0056d84c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_e0,&DAT_0079df98,"=");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_e0,&DAT_0079df98,"=");
                     /* try { // try from 0056be54 to 0056be5f has its CatchHandler @ 0056d838 */
     Walaber::StringHelper::intToStr(&bStack_100,GameSettings::currentLevelChallengeID);
     uVar17 = (ulong)(bStack_100 >> 1);
@@ -2123,7 +2123,7 @@ LAB_0056d1cc:
       iVar13 = iVar10 + iVar13;
     }
                     /* try { // try from 0056bf60 to 0056bf77 has its CatchHandler @ 0056d814 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1a0,&DAT_0079e028,"=");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1a0,&DAT_0079e028,"=");
                     /* try { // try from 0056bf78 to 0056bf87 has its CatchHandler @ 0056d7fc */
     Walaber::StringHelper::intToStr(&uStack_1c0,iVar19);
     uVar15 = uStack_1c0 >> 1 & 0x7f;
@@ -2213,7 +2213,7 @@ LAB_0056d1cc:
     }
     if (0 < iVar13) {
                     /* try { // try from 0056c120 to 0056c137 has its CatchHandler @ 0056d738 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_140,&DAT_00619cc6,&DAT_0079dfe0);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_140,&DAT_00619cc6,&DAT_0079dfe0);
                     /* try { // try from 0056c138 to 0056c14b has its CatchHandler @ 0056d720 */
       puVar14 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_140,&DAT_0061d431,2);
       pvStack_110 = (void *)puVar14[2];
@@ -3385,7 +3385,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056ec94 to 0056ec9f has its CatchHandler @ 00570d38 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_148)->~SharedPtr<Walaber::Callback>();
@@ -3445,7 +3445,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056ed74 to 0056ed7f has its CatchHandler @ 00570d28 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_158)->~SharedPtr<Walaber::Callback>();
@@ -3488,7 +3488,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056ee3c to 0056ee47 has its CatchHandler @ 00570d18 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_168)->~SharedPtr<Walaber::Callback>();
@@ -3548,7 +3548,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056ef20 to 0056ef2b has its CatchHandler @ 00570d08 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_178)->~SharedPtr<Walaber::Callback>();
@@ -3591,7 +3591,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056efd8 to 0056efe3 has its CatchHandler @ 00570cf8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_188)->~SharedPtr<Walaber::Callback>();
@@ -3651,7 +3651,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f0b0 to 0056f0bb has its CatchHandler @ 00570ce8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_198)->~SharedPtr<Walaber::Callback>();
@@ -3711,7 +3711,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f188 to 0056f193 has its CatchHandler @ 00570cd8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1a8)->~SharedPtr<Walaber::Callback>();
@@ -3771,7 +3771,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f264 to 0056f26f has its CatchHandler @ 00570cc8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1b8)->~SharedPtr<Walaber::Callback>();
@@ -3831,7 +3831,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f344 to 0056f34f has its CatchHandler @ 00570cb8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1c8)->~SharedPtr<Walaber::Callback>();
@@ -3891,7 +3891,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f424 to 0056f42f has its CatchHandler @ 00570ca8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1d8)->~SharedPtr<Walaber::Callback>();
@@ -3952,7 +3952,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f4fc to 0056f507 has its CatchHandler @ 00570c98 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1e8)->~SharedPtr<Walaber::Callback>();
@@ -4012,7 +4012,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f5dc to 0056f5e7 has its CatchHandler @ 00570c88 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1f8)->~SharedPtr<Walaber::Callback>();
@@ -4055,7 +4055,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f694 to 0056f69f has its CatchHandler @ 00570c78 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_208)->~SharedPtr<Walaber::Callback>();
@@ -4115,7 +4115,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f770 to 0056f77b has its CatchHandler @ 00570c68 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_218)->~SharedPtr<Walaber::Callback>();
@@ -4158,7 +4158,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f824 to 0056f82f has its CatchHandler @ 00570c58 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_228)->~SharedPtr<Walaber::Callback>();
@@ -4218,7 +4218,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f900 to 0056f90b has its CatchHandler @ 00570c48 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_238)->~SharedPtr<Walaber::Callback>();
@@ -4278,7 +4278,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056f9dc to 0056f9e7 has its CatchHandler @ 00570c38 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
@@ -4338,7 +4338,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056fab4 to 0056fabf has its CatchHandler @ 00570c28 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_258)->~SharedPtr<Walaber::Callback>();
@@ -4398,7 +4398,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056fb8c to 0056fb97 has its CatchHandler @ 00570c18 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_268)->~SharedPtr<Walaber::Callback>();
@@ -4458,7 +4458,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056fc64 to 0056fc6f has its CatchHandler @ 00570c08 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_278)->~SharedPtr<Walaber::Callback>();
@@ -4519,7 +4519,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056fd44 to 0056fd4f has its CatchHandler @ 00570bf8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_288)->~SharedPtr<Walaber::Callback>();
@@ -4579,7 +4579,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056fe0c to 0056fe17 has its CatchHandler @ 00570be8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_298)->~SharedPtr<Walaber::Callback>();
@@ -4622,7 +4622,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056fec0 to 0056fecb has its CatchHandler @ 00570bd8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_2a8)->~SharedPtr<Walaber::Callback>();
@@ -4682,7 +4682,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0056ff88 to 0056ff93 has its CatchHandler @ 00570bc8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_2b8)->~SharedPtr<Walaber::Callback>();
@@ -4725,7 +4725,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 0057003c to 00570047 has its CatchHandler @ 00570bb8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_2c8)->~SharedPtr<Walaber::Callback>();
@@ -4785,7 +4785,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 00570104 to 0057010f has its CatchHandler @ 00570ba8 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_2d8)->~SharedPtr<Walaber::Callback>();
@@ -4845,7 +4845,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 005701cc to 005701d7 has its CatchHandler @ 00570b98 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_2e8)->~SharedPtr<Walaber::Callback>();
@@ -4905,7 +4905,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 005702a8 to 005702b3 has its CatchHandler @ 00570b88 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_2f8)->~SharedPtr<Walaber::Callback>();
@@ -4965,7 +4965,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 00570370 to 0057037b has its CatchHandler @ 00570b78 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_308)->~SharedPtr<Walaber::Callback>();
@@ -5025,7 +5025,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
   }
   else {
                     /* try { // try from 00570438 to 00570443 has its CatchHandler @ 00570b68 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar1,&bStack_100);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_100)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_318)->~SharedPtr<Walaber::Callback>();
@@ -5891,7 +5891,7 @@ void WaterConcept::Screen_WaterTest::_goToWorldSelectPuppetShowExists(void *p0, 
   puStack_60 = &uStack_58;
   while (plVar9 != puVar8 + 1) {
                     /* try { // try from 0057cf28 to 0057cf37 has its CatchHandler @ 0057d2a4 */
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_60,&uStack_58,plVar9 + 4,plVar9 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_60,&uStack_58,plVar9 + 4,plVar9 + 4);
     plVar5 = (long *)plVar9[1];
     if ((long *)plVar9[1] == (long *)0x0) {
       plVar5 = plVar9 + 2;
@@ -9405,7 +9405,7 @@ void WaterConcept::Screen_WaterTest::_touchCallback(void *p0, int * in_x1)
       if (((in_x1[1] | 2U) == 2) && (*(char *)(lVar9 + 0x28) != '\0')) {
         pcVar7 = *(char **)((long)p0 + 0x438);
         if (pcVar7 == *(char **)((long)p0 + 0x440)) {
-          void std::__ndk1::vector<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::__push_back_slow_path<WaterConcept::Screen_WaterTest::StrokeInfo const&>((long)p0 + 0x430);
+          std::__ndk1::vector<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::__push_back_slow_path<WaterConcept::Screen_WaterTest::StrokeInfo const&>((long)p0 + 0x430);
         }
         else {
           *pcVar7 = *(char *)(lVar9 + 0x28);
@@ -9438,7 +9438,7 @@ void WaterConcept::Screen_WaterTest::_touchCallback(void *p0, int * in_x1)
       }
       puVar2 = *(undefined4 **)(lVar9 + 0x38);
       if (puVar2 == *(undefined4 **)(lVar9 + 0x40)) {
-        void std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::__push_back_slow_path<WaterConcept::Screen_WaterTest::FingerStamp const&>(lVar9 + 0x30,&uStack_90);
+        std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::__push_back_slow_path<WaterConcept::Screen_WaterTest::FingerStamp const&>(lVar9 + 0x30,&uStack_90);
       }
       else {
         *puVar2 = uVar4;
@@ -9461,11 +9461,11 @@ void WaterConcept::Screen_WaterTest::_touchCallback(void *p0, int * in_x1)
     fStack_84 = 0.0;
     uStack_90 = CONCAT31(uStack_90._1_3_,(char)in_x1[6]);
                     /* try { // try from 005811a0 to 005811eb has its CatchHandler @ 00581350 */
-    void std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::__push_back_slow_path<WaterConcept::Screen_WaterTest::FingerStamp const&>(&fStack_88,&uStack_70);
+    std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::__push_back_slow_path<WaterConcept::Screen_WaterTest::FingerStamp const&>(&fStack_88,&uStack_70);
     lVar8 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>((long)p0 + 0x418);
     *(undefined1 *)(lVar8 + 0x28) = (undefined1)uStack_90;
     if ((undefined4 *)(lVar8 + 0x28) != &uStack_90) {
-      std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::Screen_WaterTest::FingerStamp*>::value&&is_constructible<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::iterator_traits<WaterConcept::Screen_WaterTest::FingerStamp*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::assign<WaterConcept::Screen_WaterTest::FingerStamp*>(lVar8 + 0x30,CONCAT44(fStack_84,fStack_88),CONCAT44(fStack_7c,fStack_80));
+      std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::assign<WaterConcept::Screen_WaterTest::FingerStamp*>(lVar8 + 0x30,CONCAT44(fStack_84,fStack_88),CONCAT44(fStack_7c,fStack_80));
     }
     if ((void *)CONCAT44(fStack_84,fStack_88) != (void *)0x0) {
       fStack_80 = fStack_88;
@@ -13739,7 +13739,7 @@ LAB_00586734:
     }
     else {
                     /* try { // try from 00586ba8 to 00586bbb has its CatchHandler @ 00586c9c */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_140,&fStack_b0,&DAT_0061d431);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_140,&fStack_b0,&DAT_0061d431);
       uStack_154 = 0;
       pvStack_150 = (void *)0x0;
       uStack_157 = 0x6174;
@@ -15609,7 +15609,7 @@ void WaterConcept::Screen_WaterTest::_finishedLoadingWidgets(void *p0, int * in_
       *(undefined4 **)((long)p0 + 0x100) = puVar3 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>((undefined8 *)((long)p0 + 0xf8),&uStack_90);
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>((undefined8 *)((long)p0 + 0xf8),&uStack_90);
     }
     lVar6 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),iVar5);
     uVar2 = *(undefined4 *)(lVar6 + 0x60);
@@ -15621,7 +15621,7 @@ void WaterConcept::Screen_WaterTest::_finishedLoadingWidgets(void *p0, int * in_
       *(undefined4 **)((long)p0 + 0x118) = puVar3 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>((undefined8 *)((long)p0 + 0x110),&uStack_90);
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>((undefined8 *)((long)p0 + 0x110),&uStack_90);
     }
     iVar5 = iVar5 + 1;
   } while (iVar5 != 0x262);

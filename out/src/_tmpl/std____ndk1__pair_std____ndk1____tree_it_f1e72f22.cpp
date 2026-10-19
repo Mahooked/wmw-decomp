@@ -28,12 +28,7 @@
    std::__ndk1::pair<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,
    std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData> > >&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>>>
-::
-__emplace_unique_key_args<int,std::__ndk1::pair<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>>
-          (long param_1,int *param_2,undefined4 *param_3)
+template<> undefined1 [16] std::__ndk1::__tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>>>::__emplace_unique_key_args(long param_1,int *param_2,undefined4 *param_3)
 
 {
   bool bVar1;

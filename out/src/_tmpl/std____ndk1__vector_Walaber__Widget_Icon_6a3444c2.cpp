@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<Walaber::Widget_IconList::Icon,
    std::__ndk1::allocator<Walaber::Widget_IconList::Icon> >::__vdeallocate() */
 
-void std::__ndk1::
-     vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__vdeallocate(undefined8 *param_1)
 
 {
   void *pvVar1;
@@ -52,9 +50,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::Widget_IconList::Icon,
    std::__ndk1::allocator<Walaber::Widget_IconList::Icon> >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -82,9 +78,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon,
    std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   int *piVar1;

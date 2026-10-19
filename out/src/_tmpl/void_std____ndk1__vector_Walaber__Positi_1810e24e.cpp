@@ -12,9 +12,7 @@
    >::__push_back_slow_path<Walaber::PositionTextureVert const&>(Walaber::PositionTextureVert
    const&) */
 
-void std::__ndk1::
-     vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>::
-     __push_back_slow_path<Walaber::PositionTextureVert_const&>(Walaber__PositionTextureVert *p0)
+template<> void std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path(Walaber__PositionTextureVert *p0)
 
 {
   undefined8 *in_x1;

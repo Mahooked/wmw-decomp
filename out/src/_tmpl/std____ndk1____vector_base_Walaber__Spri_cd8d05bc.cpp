@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::SpriteAnimation::FrameImport,
    std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>::~__vector_base()
 
 {
   byte *pbVar1;

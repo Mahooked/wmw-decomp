@@ -9,7 +9,7 @@
 
 /* std::__ndk1::collate<wchar_t>::~collate() */
 
-void std::__ndk1::collate<wchar_t>::~collate(void)
+template<> std::__ndk1::collate<wchar_t>::~collate()
 
 {
   __shared_count::~__shared_count();
@@ -24,11 +24,11 @@ void std::__ndk1::collate<wchar_t>::~collate(void)
 
 /* std::__ndk1::collate<wchar_t>::~collate() */
 
-void std::__ndk1::collate<wchar_t>::~collate(void *param_1)
+template<> std::__ndk1::collate<wchar_t>::~collate()
 
 {
   std::__ndk1::__shared_count::~__shared_count();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 
@@ -41,7 +41,7 @@ void std::__ndk1::collate<wchar_t>::~collate(void *param_1)
 /* std::__ndk1::collate<wchar_t>::do_compare(wchar_t const*, wchar_t const*, wchar_t const*, wchar_t
    const*) const */
 
-ulong std::__ndk1::collate<wchar_t>::do_compare(wchar_t *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3, wchar_t * in_x4)
+template<> ulong std::__ndk1::collate<wchar_t>::do_compare(wchar_t *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3, wchar_t * in_x4)
 
 {
   
@@ -70,7 +70,7 @@ ulong std::__ndk1::collate<wchar_t>::do_compare(wchar_t *p0,wchar_t *p1,wchar_t 
 
 /* std::__ndk1::collate<wchar_t>::do_transform(wchar_t const*, wchar_t const*) const */
 
-void std::__ndk1::collate<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
+template<> void std::__ndk1::collate<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
 
 {
   undefined8 *in_x8;
@@ -78,7 +78,7 @@ void std::__ndk1::collate<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
   *in_x8 = 0;
   in_x8[1] = 0;
   in_x8[2] = 0;
-  std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>();
+  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>();
   return;
 }
 
@@ -90,7 +90,7 @@ void std::__ndk1::collate<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
 
 /* std::__ndk1::collate<wchar_t>::do_hash(wchar_t const*, wchar_t const*) const */
 
-ulong std::__ndk1::collate<wchar_t>::do_hash(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
+template<> ulong std::__ndk1::collate<wchar_t>::do_hash(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   ulong uVar1;

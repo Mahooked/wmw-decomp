@@ -9,8 +9,7 @@
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::~basic_filebuf() */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_filebuf
-               ()
+template<> std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_filebuf()
 
 {
   ulong p1;
@@ -41,7 +40,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_fil
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::close() */
 
-long * std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::close(long *param_1)
+template<> long * std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::close(long *param_1)
 
 {
   long *plVar1;
@@ -74,11 +73,11 @@ long * std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::close(lo
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::~basic_filebuf() */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_filebuf(void *param_1)
+template<> std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_filebuf()
 
 {
   std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 
@@ -91,7 +90,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_fil
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::imbue(std::__ndk1::locale
    const&) */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::imbue(std____ndk1__locale *p0)
+template<> void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::imbue(std____ndk1__locale *p0)
 
 {
   ulong uVar1;
@@ -161,7 +160,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::imbue(std_
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::setbuf(char*, long) */
 
-char * std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::setbuf(char *p0,long p1, ulong in_x2)
+template<> char * std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::setbuf(char *p0,long p1, ulong in_x2)
 
 {
   char cVar1;
@@ -295,9 +294,7 @@ LAB_003d4a0c:
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::seekoff(long long,
    std::__ndk1::ios_base::seekdir, unsigned int) */
 
-undefined1  [16]
-std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::seekoff
-          (long *param_1,long param_2,uint param_3)
+template<> undefined1 [16] std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::seekoff(long *param_1,long param_2,uint param_3)
 
 {
   int iVar1;
@@ -346,9 +343,7 @@ LAB_003d4b10:
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>
    >::seekpos(std::__ndk1::fpos<mbstate_t>, unsigned int) */
 
-undefined1  [16]
-std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::seekpos
-          (std::__ndk1::fpos<mbstate_t> param_1,unsigned int param_2)
+template<> undefined1 [16] std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::seekpos(std::__ndk1::fpos<mbstate_t> param_1,unsigned int param_2)
 
 {
   int iVar1;
@@ -375,7 +370,7 @@ std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::seekpos
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::sync() */
 
-ulong std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::sync(long *param_1)
+template<> ulong std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::sync(long *param_1)
 
 {
   bool bVar2;
@@ -468,7 +463,7 @@ LAB_003d4d8c:
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::underflow() */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::underflow(long param_1)
+template<> void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::underflow(long param_1)
 
 {
   bool bVar2;
@@ -630,7 +625,7 @@ LAB_003d5108:
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::pbackfail(int) */
 
-uint std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::pbackfail(int p0, uint in_w1)
+template<> uint std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::pbackfail(int p0, uint in_w1)
 
 {
   ulong uVar1;
@@ -661,7 +656,7 @@ uint std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::pbackfail(
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::overflow(int) */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(int p0, int in_w1)
+template<> void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(int p0, int in_w1)
 
 {
   uint uVar2;
@@ -769,7 +764,7 @@ LAB_003d5448:
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::__write_mode() */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::__write_mode(long param_1)
+template<> void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::__write_mode(long param_1)
 
 {
   long lVar1;
@@ -808,7 +803,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::__write_mo
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::basic_filebuf() */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::basic_filebuf(long *param_1)
+template<> std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::basic_filebuf(long *param_1)
 
 {
   long *plVar1;

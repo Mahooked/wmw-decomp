@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>
    >::__vdeallocate() */
 
-void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     __vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::__vdeallocate(undefined8 *param_1)
 
 {
   byte *pbVar1;
@@ -50,8 +49,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
 /* std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -78,8 +76,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::TextLineInfo,
    std::__ndk1::allocator<Walaber::TextLineInfo>&>&) */
 
-void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;

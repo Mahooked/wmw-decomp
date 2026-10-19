@@ -10,8 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>
    >::~__vector_base() */
 
-void std::__ndk1::__vector_base<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::~__vector_base()
 
 {
   byte *pbVar1;

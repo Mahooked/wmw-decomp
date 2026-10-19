@@ -12,9 +12,7 @@
    std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,
    std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo> > > >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>::~__vector_base()
 
 {
   void *p0;

@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::ParticleEmitter::EmitterZone,
    std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::ParticleEmitter::EmitterZone,std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::ParticleEmitter::EmitterZone,std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;

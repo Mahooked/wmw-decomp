@@ -9,10 +9,10 @@
 
 /* std::__ndk1::set<int, std::__ndk1::less<int>, std::__ndk1::allocator<int> >::~set() */
 
-void std::__ndk1::set<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::~set(long param_1)
+template<> std::__ndk1::set<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::~set()
 
 {
-  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

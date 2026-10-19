@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::CurveManager::CurveCollection>(Walaber::CurveManager::CurveCollection&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::CurveManager::CurveCollection,std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>>
-     ::__push_back_slow_path<Walaber::CurveManager::CurveCollection>
-               (Walaber__CurveManager__CurveCollection **p0)
+template<> void std::__ndk1::vector<Walaber::CurveManager::CurveCollection,std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>>::__push_back_slow_path(Walaber__CurveManager__CurveCollection **p0)
 
 {
   undefined8 *in_x1;

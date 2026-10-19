@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection
    const&>(WaterConcept::World::WorldSpoutConnection const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection_const&>
-               (WaterConcept__World__WorldSpoutConnection *p0)
+template<> void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__push_back_slow_path(WaterConcept__World__WorldSpoutConnection *p0)
 
 {
   long in_x1;

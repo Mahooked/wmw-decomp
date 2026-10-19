@@ -18,11 +18,7 @@
    std::__ndk1::tuple<> >(std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int&&>&&,
    std::__ndk1::tuple<>&&) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>>>
-     ::
-     __construct_node<std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<int&&>,std::__ndk1::tuple<>>
-               (long *param_1,long param_2,undefined8 param_3,undefined8 *param_4)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>>>::__construct_node(long *param_1,long param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   undefined4 uVar1;

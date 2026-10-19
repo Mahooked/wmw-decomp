@@ -53,7 +53,7 @@ Walaber::Widget_MovingTextBox::operator=(Walaber__Widget_MovingTextBox *p0)
   *(undefined8 *)&p0->field_0x12c = *(undefined8 *)&in_x1->field_0x12c;
   *(undefined8 *)&p0->field_0x134 = *(undefined8 *)&in_x1->field_0x134;
   if (p0 != in_x1) {
-    void std::__ndk1::list<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::assign<std::__ndk1::__list_const_iterator<Walaber::TextLineInfo, void*>>(&p0->field_0x140,in_x1->f_0x148,&in_x1->field_0x140,0);
+    std::__ndk1::list<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::assign<std::__ndk1::__list_const_iterator<Walaber::TextLineInfo, void*>>(&p0->field_0x140,in_x1->f_0x148,&in_x1->field_0x140,0);
   }
   p0->f_0x158 = in_x1->f_0x158;
   p0->f_0x160 = in_x1->f_0x160;

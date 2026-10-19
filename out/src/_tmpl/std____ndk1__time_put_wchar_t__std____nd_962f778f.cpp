@@ -12,10 +12,7 @@
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, tm const*, wchar_t const*,
    wchar_t const*) const */
 
-long * std::__ndk1::
-       time_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::put(long *param_1,long *param_2,undefined8 param_3,undefined4 param_4,undefined8 param_5,
-            int *param_6,int *param_7)
+template<> long * std::__ndk1::time_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::put(long *param_1,long *param_2,undefined8 param_3,undefined4 param_4,undefined8 param_5, int *param_6,int *param_7)
 
 {
   uint uVar1;
@@ -159,9 +156,7 @@ LAB_005c4b6c:
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, wchar_t, tm const*, char, char)
    const */
 
-long * std::__ndk1::
-       time_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,tm const *param_4,char param_5,char param_6)
+template<> long * std::__ndk1::time_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,tm const *param_4,char param_5,char param_6)
 
 {
   int *piVar1;

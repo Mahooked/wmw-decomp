@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>
    >::__push_back_slow_path<WaterConcept::StarSeed* const&>(WaterConcept::StarSeed* const&) */
 
-void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::
-     __push_back_slow_path<WaterConcept::StarSeed*const&>(WaterConcept__StarSeed **p0)
+template<> void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path(WaterConcept__StarSeed **p0)
 
 {
   undefined8 *in_x1;
@@ -80,8 +79,7 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
 /* void std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>
    >::__push_back_slow_path<WaterConcept::StarSeed*>(WaterConcept::StarSeed*&&) */
 
-void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::
-     __push_back_slow_path<WaterConcept::StarSeed*>(WaterConcept__StarSeed ***p0)
+template<> void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path(WaterConcept__StarSeed ***p0)
 
 {
   undefined8 *in_x1;

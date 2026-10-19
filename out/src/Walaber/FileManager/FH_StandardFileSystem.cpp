@@ -21,7 +21,7 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
   auStack_48[0] = param_3;
   new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>();
                     /* try { // try from 002c1c80 to 002c1c87 has its CatchHandler @ 002c1cbc */
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(param_1 + 8,auStack_48);
+  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(param_1 + 8,auStack_48);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -71,7 +71,7 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
     if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d2f40 to 003d2f4f has its CatchHandler @ 003d30b4 */
       lVar4 = Walaber::FileManager::getInstancePtr();
-      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar4 + 0x18,param_1);
+      std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar4 + 0x18,param_1);
                     /* try { // try from 003d2f58 to 003d2f63 has its CatchHandler @ 003d30b0 */
       (**(code **)(*this + 0x20))(abStack_e0,this);
                     /* try { // try from 003d2f64 to 003d2f7f has its CatchHandler @ 003d3098 */
@@ -110,7 +110,7 @@ LAB_003d3010:
       goto LAB_003d3010;
     }
                     /* try { // try from 003d2e9c to 003d2ea7 has its CatchHandler @ 003d30b8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_c8,plVar7 + 5,param_1);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_c8,plVar7 + 5,param_1);
     if (((byte)uStack_70 & 1) != 0) {
       *puStack_60 = 0;
       uStack_68 = 0;
@@ -263,7 +263,7 @@ LAB_003d31c4:
       }
       else {
                     /* try { // try from 003d31f8 to 003d3203 has its CatchHandler @ 003d349c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_258,plVar8 + 5,param_1);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_258,plVar8 + 5,param_1);
         if ((auStack_1f0[0] & 1) != 0) {
           *puStack_1e0 = 0;
           auStack_1f0[1] = 0;

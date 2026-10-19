@@ -19,10 +19,7 @@
    WaterConcept::ParallaxPuppetShow::ColorCue> >(std::__ndk1::pair<float,
    WaterConcept::ParallaxPuppetShow::ColorCue>&&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::ColorCue>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::ColorCue>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::ColorCue>>>
-     ::__emplace_multi<std::__ndk1::pair<float,WaterConcept::ParallaxPuppetShow::ColorCue>>
-               (long param_1,float *param_2)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::ColorCue>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::ColorCue>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::ColorCue>>>::__emplace_multi(long param_1,float *param_2)
 
 {
   float fVar1;

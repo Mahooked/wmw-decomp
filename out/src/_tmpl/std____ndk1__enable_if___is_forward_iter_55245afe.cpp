@@ -18,10 +18,7 @@
    std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>,
    std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>) */
 
-long std::__ndk1::
-     vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>
-     ::insert<std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>>
-               (long *param_1,long param_2,undefined8 *param_3,undefined8 *param_4)
+template<> long std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::insert(long *param_1,long param_2,undefined8 *param_3,undefined8 *param_4)
 
 {
   undefined8 *puVar1;

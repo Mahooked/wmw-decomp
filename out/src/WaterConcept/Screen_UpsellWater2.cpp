@@ -1218,7 +1218,7 @@ joined_r0x00569694:
         if ((iVar14 + 1U | 2) == 2) {
           uStack_c8 = (ulong *)((ulong)(uint)uStack_c8._4_4_ << 0x20);
                     /* try { // try from 00569a90 to 00569a9b has its CatchHandler @ 00569edc */
-          void std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType, std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::__push_back_slow_path<WaterConcept::Screen_UpsellWater2::TransitionType>(&pvStack_1c8,&uStack_c8);
+          std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType, std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::__push_back_slow_path<WaterConcept::Screen_UpsellWater2::TransitionType>(&pvStack_1c8,&uStack_c8);
           uVar3 = uStack_e0;
           if (*(int *)(uStack_e0 + 0x84) == 10) {
             uVar22 = *(ulong *)(uStack_e0 + 0x110);
@@ -1260,7 +1260,7 @@ joined_r0x00569694:
         else {
           uStack_c8._0_4_ = 1.4013e-45;
                     /* try { // try from 00569b2c to 00569b37 has its CatchHandler @ 00569ed8 */
-          void std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType, std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::__push_back_slow_path<WaterConcept::Screen_UpsellWater2::TransitionType>(&pvStack_1c8,&uStack_c8);
+          std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType, std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::__push_back_slow_path<WaterConcept::Screen_UpsellWater2::TransitionType>(&pvStack_1c8,&uStack_c8);
           uVar3 = uStack_e0;
           fVar12 = DAT_0072d884;
           fVar11 = Walaber::ScreenCoord::sScreenSize;
@@ -1303,7 +1303,7 @@ joined_r0x00569694:
         *(ulong *)(lVar16 + 0x44) =
              CONCAT17(uStack_1cd,CONCAT43(uStack_1d1,CONCAT12(uStack_1d2,uStack_1d4)));
         if ((long *)(lVar16 + 0x28) != &uStack_1f0) {
-          std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::Screen_UpsellWater2::TransitionType*>::value&&is_constructible<WaterConcept::Screen_UpsellWater2::TransitionType, std::__ndk1::iterator_traits<WaterConcept::Screen_UpsellWater2::TransitionType*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType, std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::assign<WaterConcept::Screen_UpsellWater2::TransitionType*>(lVar16 + 0x50,pvStack_1c8,pvStack_1c0);
+          std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType, std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::assign<WaterConcept::Screen_UpsellWater2::TransitionType*>(lVar16 + 0x50,pvStack_1c8,pvStack_1c0);
         }
         uStack_c8 = &uStack_e0;
         lVar16 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>>>::__emplace_unique_key_args<Walaber::Widget*, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<Walaber::Widget* const&>, std::__ndk1::tuple<>>((long)p0 + 0xa8,&uStack_e0,&DAT_0063f3a2,&uStack_c8,abStack_f8);

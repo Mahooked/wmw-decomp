@@ -100,7 +100,7 @@ Walaber::SkeletonActorCueAnimationTrack::operator=(Walaber__SkeletonActorCueAnim
   
   p0->f_0x0 = in_x1->f_0x0;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent*>::value&&is_constructible<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::iterator_traits<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent*>::reference>::value, void>::type std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::assign<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent*>(&p0->f_0x8,in_x1->f_0x8,in_x1->f_0x10);
+    std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::assign<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent*>(&p0->f_0x8,in_x1->f_0x8,in_x1->f_0x10);
   }
   p0->f_0x20 = in_x1->f_0x20;
   return p0;

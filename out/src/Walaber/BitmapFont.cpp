@@ -253,7 +253,7 @@ void Walaber::BitmapFont::_xmlFileLoaded(void *p0, int * in_x1)
               }
               else {
                     /* try { // try from 00364c5c to 00364c67 has its CatchHandler @ 0036579c */
-                void std::__ndk1::vector<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>((long)p0 + 0x18,&fStack_e0);
+                std::__ndk1::vector<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>((long)p0 + 0x18,&fStack_e0);
                 if ((void *)CONCAT44(fStack_dc,fStack_e0) != (void *)0x0) {
                   fStack_d8 = fStack_e0;
                   fStack_d4 = fStack_dc;
@@ -384,7 +384,7 @@ LAB_00364e38:
               }
               else {
                     /* try { // try from 00364e94 to 00364e9f has its CatchHandler @ 003657b8 */
-                void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long *)((long)p0 + 0x60),&fStack_e0);
+                std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long *)((long)p0 + 0x60),&fStack_e0);
                 if (((uint)fStack_e0 & 1) != 0) {
                   operator delete((void *)CONCAT44(fStack_cc,fStack_d0));
                 }
@@ -818,7 +818,7 @@ void Walaber::BitmapFont::addGlyphKey
   uStack_68 = param_3;
   if (uStack_40 == uVar6) {
     if (*(long **)(param_2 + 0x88) == plVar4) {
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>((long *)(param_2 + 0x78),param_7);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>((long *)(param_2 + 0x78),param_7);
       plVar3 = *(long **)(param_2 + 0x78);
       plVar4 = *(long **)(param_2 + 0x80);
     }
@@ -1325,7 +1325,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
             fVar16 = param_3;
           }
                     /* try { // try from 003665c4 to 003665cf has its CatchHandler @ 003667f4 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_118,lStack_100 + uVar14 * 0x18,auStack_d0);
+          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_118,lStack_100 + uVar14 * 0x18,auStack_d0);
           uVar8 = (ulong)(afStack_118[0]._0_1_ >> 1);
           pvVar3 = (void *)((ulong)afStack_118 | 1);
           if (((uint)afStack_118[0] & 1) != 0) {
@@ -1400,7 +1400,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
             Walaber::BitmapFont::measureString(afStack_130,param_2,param_4,afStack_118);
             fVar16 = afStack_130[0];
                     /* try { // try from 00366668 to 00366677 has its CatchHandler @ 003667d8 */
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_130,afStack_118,auStack_d0);
+            std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_130,afStack_118,auStack_d0);
             pvVar3 = (void *)((ulong)afStack_130 | 1);
             uVar8 = (ulong)(afStack_130[0]._0_1_ >> 1);
             if (((uint)afStack_130[0] & 1) != 0) {
@@ -1862,7 +1862,7 @@ LAB_003672bc:
                   }
                   else {
                     /* try { // try from 00367284 to 0036728f has its CatchHandler @ 00367420 */
-                    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_130,&DAT_00616c51);
+                    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_130,&DAT_00616c51);
                     uVar2 = uStack_130 >> 1 & 0x7f;
                     pvVar7 = (void *)((ulong)&uStack_130 | 1);
                     if ((uStack_130 & 1) != 0) {
@@ -2442,7 +2442,7 @@ void Walaber::BitmapFont::_wrapText
           fVar10 = param_3;
         }
                     /* try { // try from 003680bc to 003680c7 has its CatchHandler @ 003681d4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_118,CONCAT44(uStack_fc,fStack_100) + lVar8,auStack_d0);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_118,CONCAT44(uStack_fc,fStack_100) + lVar8,auStack_d0);
         uVar1 = (ulong)(afStack_118[0]._0_1_ >> 1);
         pvVar3 = (void *)((ulong)afStack_118 | 1);
         if (((uint)afStack_118[0] & 1) != 0) {
@@ -2718,7 +2718,7 @@ void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0, int in_w1)
   plVar5 = (long *)(lVar4 + 8);
   puVar6 = (undefined8 *)*plVar5;
   if (puVar6 == *(undefined8 **)(lVar4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&mVerts);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&mVerts);
   }
   else {
     *(undefined4 *)(puVar6 + 2) = DAT_0072d8b8;
@@ -2732,7 +2732,7 @@ void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0, int in_w1)
   plVar5 = (long *)(lVar4 + 8);
   puVar6 = (undefined8 *)*plVar5;
   if (puVar6 == *(undefined8 **)(lVar4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&mVerts);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&mVerts);
   }
   else {
     *(undefined4 *)(puVar6 + 2) = DAT_0072d8b8;
@@ -2746,7 +2746,7 @@ void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0, int in_w1)
   plVar5 = (long *)(lVar4 + 8);
   puVar6 = (undefined8 *)*plVar5;
   if (puVar6 == *(undefined8 **)(lVar4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8bc);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8bc);
   }
   else {
     *(undefined4 *)(puVar6 + 2) = DAT_0072d8cc;
@@ -2760,7 +2760,7 @@ void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0, int in_w1)
   plVar5 = (long *)(lVar4 + 8);
   puVar6 = (undefined8 *)*plVar5;
   if (puVar6 == *(undefined8 **)(lVar4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8d0);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8d0);
   }
   else {
     *(undefined4 *)(puVar6 + 2) = DAT_0072d8e0;
@@ -2774,7 +2774,7 @@ void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0, int in_w1)
   plVar5 = (long *)(lVar4 + 8);
   puVar6 = (undefined8 *)*plVar5;
   if (puVar6 == *(undefined8 **)(lVar4 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8e4);
+    std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8e4);
   }
   else {
     *(undefined4 *)(puVar6 + 2) = DAT_0072d8f4;
@@ -2794,7 +2794,7 @@ void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0, int in_w1)
     *plVar5 = *plVar5 + 0x14;
     return;
   }
-  void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8e4);
+  std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert const&>(*(long *)(uVar3 + 0x18) + lVar7 * 0x18,&DAT_0072d8e4);
   return;
 }
 
@@ -2825,7 +2825,7 @@ void Walaber::BitmapFont::notifyTexture(long param_1,long *param_2)
     *(long **)(param_1 + 0x80) = plVar1 + 2;
     return;
   }
-  void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x78);
+  std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x78);
   return;
 }
 

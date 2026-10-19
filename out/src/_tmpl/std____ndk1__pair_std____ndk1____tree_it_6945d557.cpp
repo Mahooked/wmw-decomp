@@ -20,12 +20,7 @@
    std::__ndk1::tuple<> >(Walaber::Bone* const&, std::__ndk1::piecewise_construct_t const&,
    std::__ndk1::tuple<Walaber::Bone* const&>&&, std::__ndk1::tuple<>&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<std::__ndk1::__value_type<Walaber::Bone*,Walaber::Skeleton::BoneLocalData>,std::__ndk1::__map_value_compare<Walaber::Bone*,std::__ndk1::__value_type<Walaber::Bone*,Walaber::Skeleton::BoneLocalData>,std::__ndk1::less<Walaber::Bone*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Bone*,Walaber::Skeleton::BoneLocalData>>>
-::
-__emplace_unique_key_args<Walaber::Bone*,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<Walaber::Bone*const&>,std::__ndk1::tuple<>>
-          (Walaber::Bone* const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<Walaber::Bone* const&>&& param_3,std::__ndk1::tuple<>&& param_4)
+template<> undefined1 [16] std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Bone*,Walaber::Skeleton::BoneLocalData>,std::__ndk1::__map_value_compare<Walaber::Bone*,std::__ndk1::__value_type<Walaber::Bone*,Walaber::Skeleton::BoneLocalData>,std::__ndk1::less<Walaber::Bone*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Bone*,Walaber::Skeleton::BoneLocalData>>>::__emplace_unique_key_args(Walaber::Bone* const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<Walaber::Bone* const&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

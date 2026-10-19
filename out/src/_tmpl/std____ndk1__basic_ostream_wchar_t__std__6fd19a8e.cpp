@@ -9,7 +9,7 @@
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::flush() */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::flush(long *param_1)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::flush(long *param_1)
 
 {
   long lVar1;
@@ -50,8 +50,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::fl
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::basic_ostream(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >*) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_ostream
-               (long *param_1,long *param_2,long param_3)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_ostream(long *param_1,long *param_2,long param_3)
 
 {
   long lVar1;
@@ -91,8 +90,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basi
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::basic_ostream(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >*) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_ostream
-               (undefined8 *param_1,long param_2)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_ostream(undefined8 *param_1,long param_2)
 
 {
   param_1[6] = param_2;
@@ -127,7 +125,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::basi
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_ostream() */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream(void)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream()
 
 {
   return;
@@ -141,11 +139,10 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_ostream() */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream
-               (long param_1)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream()
 
 {
-  ((std::__ndk1::ios_base *)param_1 + 8)->~ios_base();
+  ((std::__ndk1::ios_base *)(byte *)this + 8)->~ios_base();
   return;
 }
 
@@ -157,12 +154,11 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_ostream() */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream
-               (void *param_1)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ostream()
 
 {
-  ((std::__ndk1::ios_base *)(long)param_1 + 8)->~ios_base();
-  operator delete(param_1);
+  ((std::__ndk1::ios_base *)(long)(byte *)this + 8)->~ios_base();
+  operator delete((byte *)this);
   return;
 }
 
@@ -175,8 +171,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::swap(std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >&) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap
-               (long *param_1,long *param_2)
+template<> void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap(long *param_1,long *param_2)
 
 {
   long lVar1;
@@ -205,7 +200,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(bool) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(bool p0)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(bool p0)
 
 {
   int iVar2;
@@ -268,7 +263,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(short) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(short p0)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(short p0)
 
 {
   ulong uVar1;
@@ -339,7 +334,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned short) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(ushort p0)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(ushort p0)
 
 {
   int iVar2;
@@ -402,7 +397,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(int) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(int p0)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(int p0)
 
 {
   ulong uVar1;
@@ -473,7 +468,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned int) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(uint p0)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(uint p0)
 
 {
   int iVar2;
@@ -536,7 +531,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long) */
 
-long std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(long p0)
+template<> long std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(long p0)
 
 {
   int iVar1;
@@ -604,7 +599,7 @@ long std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned long) */
 
-ulong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(ulong p0)
+template<> ulong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(ulong p0)
 
 {
   int iVar2;
@@ -665,8 +660,7 @@ ulong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ope
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long long) */
 
-longlong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<
-                   (longlong p0)
+template<> longlong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(longlong p0)
 
 {
   int iVar2;
@@ -727,8 +721,7 @@ longlong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned long long) */
 
-ulonglong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<
-                    (ulonglong p0)
+template<> ulonglong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(ulonglong p0)
 
 {
   int iVar2;
@@ -789,7 +782,7 @@ ulonglong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(float) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(float p0)
+template<> void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(float p0)
 
 {
   int iVar2;
@@ -848,7 +841,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(double) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(double p0)
+template<> void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(double p0)
 
 {
   int iVar2;
@@ -907,8 +900,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long double) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<
-               (longdouble p0)
+template<> void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(longdouble p0)
 
 {
   int iVar2;
@@ -967,7 +959,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(void const*) */
 
-void * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(void *p0)
+template<> void * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(void *p0)
 
 {
   int iVar2;
@@ -1027,7 +1019,7 @@ void * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::put(wchar_t) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::put(wchar_t p0, int in_w1)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::put(wchar_t p0, int in_w1)
 
 {
   int *piVar1;
@@ -1079,8 +1071,7 @@ LAB_005afb20:
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::write(wchar_t const*,
    long) */
 
-wchar_t * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::write
-                    (wchar_t *p0,long p1)
+template<> wchar_t * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::write(wchar_t *p0,long p1)
 
 {
   long *plVar2;
@@ -1118,8 +1109,7 @@ wchar_t * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::tellp() */
 
-undefined1  [16]
-std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::tellp(long *param_1)
+template<> undefined1 [16] std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::tellp(long *param_1)
 
 {
   long *plVar1;
@@ -1142,8 +1132,7 @@ std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::tellp(lon
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::seekp(std::__ndk1::fpos<mbstate_t>) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekp
-                 (long *param_1,undefined8 param_2,undefined8 param_3)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekp(long *param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long extraout_x1;
@@ -1188,8 +1177,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::seekp(long long,
    std::__ndk1::ios_base::seekdir) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekp
-                 (long *param_1,undefined8 param_2,undefined4 param_3)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::seekp(long *param_1,undefined8 param_2,undefined4 param_3)
 
 {
   long extraout_x1;

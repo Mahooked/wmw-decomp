@@ -11,9 +11,7 @@
    bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>
    >::__emplace_unique_key_args<int, int>(int const&, int&&) */
 
-undefined1  [16]
-std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::
-__emplace_unique_key_args<int,int>(int *p0,int **p1)
+template<> undefined1 [16] std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::__emplace_unique_key_args(int *p0,int **p1)
 
 {
   bool bVar1;
@@ -64,9 +62,7 @@ LAB_0046f4a4:
    bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>
    >::__emplace_unique_key_args<int, int const&>(int const&, int const&) */
 
-undefined1  [16]
-std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::
-__emplace_unique_key_args<int,int_const&>(int *p0,int *p1)
+template<> undefined1 [16] std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::__emplace_unique_key_args(int *p0,int *p1)
 
 {
   bool bVar1;

@@ -14,10 +14,7 @@
    >::__emplace_unique_key_args<WaterConcept::GridCell, WaterConcept::GridCell
    const&>(WaterConcept::GridCell const&, WaterConcept::GridCell const&) */
 
-long std::__ndk1::
-     __tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>
-     ::__emplace_unique_key_args<WaterConcept::GridCell,WaterConcept::GridCell_const&>
-               (WaterConcept__GridCell *p0,WaterConcept__GridCell *p1)
+template<> long std::__ndk1::__tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>::__emplace_unique_key_args(WaterConcept__GridCell *p0,WaterConcept__GridCell *p1)
 
 {
   bool bVar1;

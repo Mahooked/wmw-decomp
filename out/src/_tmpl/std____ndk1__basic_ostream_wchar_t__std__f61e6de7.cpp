@@ -11,8 +11,7 @@
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >& (*)(std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >&)) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<
-               (undefined8 param_1,code *UNRECOVERED_JUMPTABLE)
+template<> void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(code *UNRECOVERED_JUMPTABLE)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005adf08. Too many branches */

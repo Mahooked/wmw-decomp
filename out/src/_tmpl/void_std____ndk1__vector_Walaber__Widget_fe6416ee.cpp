@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>
    >::__push_back_slow_path<Walaber::Widget_Group* const&>(Walaber::Widget_Group* const&) */
 
-void std::__ndk1::vector<Walaber::Widget_Group*,std::__ndk1::allocator<Walaber::Widget_Group*>>::
-     __push_back_slow_path<Walaber::Widget_Group*const&>(Walaber__Widget_Group **p0)
+template<> void std::__ndk1::vector<Walaber::Widget_Group*,std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path(Walaber__Widget_Group **p0)
 
 {
   undefined8 *in_x1;

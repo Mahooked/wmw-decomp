@@ -16,9 +16,7 @@
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefault>
-               (long *param_1,undefined8 param_2,undefined8 param_3,uint param_4,undefined8 param_5,
-               int param_6)
+void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param_2,undefined8 param_3,uint param_4,undefined8 param_5, int param_6)
 
 {
   bool bVar1;
@@ -102,9 +100,7 @@ void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefa
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameRockOutline>
-               (long *param_1,undefined8 param_2,undefined8 param_3,uint param_4,undefined8 param_5,
-               int param_6)
+void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param_2,undefined8 param_3,uint param_4,undefined8 param_5, int param_6)
 
 {
   bool bVar1;
@@ -190,9 +186,7 @@ void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameRock
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAll>
-               (long *param_1,undefined8 param_2,undefined8 param_3,int param_4,undefined8 param_5,
-               int param_6)
+void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param_2,undefined8 param_3,int param_4,undefined8 param_5, int param_6)
 
 {
   bool bVar1;
@@ -278,9 +272,7 @@ void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAll>
    std::__ndk1::allocator<Walaber::PositionColorVert> >&, int,
    WaterConceptConstants::CollisionLayer, int) */
 
-void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAlgae>
-               (long *param_1,undefined8 param_2,undefined8 param_3,int param_4,undefined8 param_5,
-               int param_6)
+void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param_2,undefined8 param_3,int param_4,undefined8 param_5, int param_6)
 
 {
   bool bVar1;

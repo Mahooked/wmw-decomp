@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance>
    const&>(Walaber::SharedPtr<Walaber::SoundEffectInstance> const&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance>const&>
-               (Walaber__SharedPtr<Walaber::SoundEffectInstance> *p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::SoundEffectInstance> *p0)
 
 {
   long *in_x1;
@@ -69,10 +66,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance>
    >(Walaber::SharedPtr<Walaber::SoundEffectInstance>&&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance>>
-               (Walaber__SharedPtr<Walaber::SoundEffectInstance> **p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::SoundEffectInstance> **p0)
 
 {
   long *in_x1;

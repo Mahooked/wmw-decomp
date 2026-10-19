@@ -15,11 +15,7 @@
    std::__ndk1::allocator<Walaber::Vector2> > const&>(std::__ndk1::vector<Walaber::Vector2,
    std::__ndk1::allocator<Walaber::Vector2> > const&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>
-     ::
-     __push_back_slow_path<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>const&>
-               (long *param_1,undefined8 param_2)
+template<> void std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path(long *param_1,undefined8 param_2)
 
 {
   ulong uVar1;

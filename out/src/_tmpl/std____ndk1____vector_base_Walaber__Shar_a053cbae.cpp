@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>,
    std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture> > >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::SharedPtr<Walaber::Texture>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base()
 
 {
   void *p0;

@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>
    >::__push_back_slow_path<Walaber::Widget_Label* const&>(Walaber::Widget_Label* const&) */
 
-void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::
-     __push_back_slow_path<Walaber::Widget_Label*const&>(Walaber__Widget_Label **p0)
+template<> void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::__push_back_slow_path(Walaber__Widget_Label **p0)
 
 {
   undefined8 *in_x1;
@@ -80,8 +79,7 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
 /* void std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>
    >::__push_back_slow_path<Walaber::Widget_Label*>(Walaber::Widget_Label*&&) */
 
-void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::
-     __push_back_slow_path<Walaber::Widget_Label*>(Walaber__Widget_Label ***p0)
+template<> void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::__push_back_slow_path(Walaber__Widget_Label ***p0)
 
 {
   undefined8 *in_x1;

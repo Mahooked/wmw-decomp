@@ -166,7 +166,7 @@ void Walaber::SceneGraph::getFirstNodeWithGroupID(int p0)
 void Walaber::SceneGraph::getNodesWithGroupID(undefined8 *param_1)
 
 {
-  void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(*param_1);
+  Walaber::PCSNode::getNodesFromTree<Walaber::Node>(*param_1);
   return;
 }
 

@@ -11,8 +11,7 @@
    std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(std::__ndk1::__tree_node_base<void*>*,
    std::__ndk1::__tree_node_base<void*>*) */
 
-void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>
-               (long *param_1,long *param_2)
+void std::__ndk1::__tree_balance_after_insert(long *param_1,long *param_2)
 
 {
   bool bVar1;

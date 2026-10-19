@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::Flipbook::FlipbookFrame
    const&>(Walaber::Flipbook::FlipbookFrame const&) */
 
-void std::__ndk1::
-     vector<Walaber::Flipbook::FlipbookFrame,std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>>
-     ::__push_back_slow_path<Walaber::Flipbook::FlipbookFrame_const&>
-               (Walaber__Flipbook__FlipbookFrame *p0)
+template<> void std::__ndk1::vector<Walaber::Flipbook::FlipbookFrame,std::__ndk1::allocator<Walaber::Flipbook::FlipbookFrame>>::__push_back_slow_path(Walaber__Flipbook__FlipbookFrame *p0)
 
 {
   ulong uVar1;

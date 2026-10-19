@@ -9,7 +9,7 @@
 
 /* std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_ios() */
 
-void std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ios(void)
+template<> std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ios()
 
 {
   ios_base::~ios_base();
@@ -24,11 +24,11 @@ void std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_i
 
 /* std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_ios() */
 
-void std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ios(void *param_1)
+template<> std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_ios()
 
 {
   std::__ndk1::ios_base::~ios_base();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 
@@ -41,8 +41,7 @@ void std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_i
 /* std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::copyfmt(std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t> > const&) */
 
-long std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::copyfmt
-               (long param_1,long param_2)
+template<> long std::__ndk1::basic_ios<wchar_t,std::__ndk1::char_traits<wchar_t>>::copyfmt(long param_1,long param_2)
 
 {
   long lVar1;

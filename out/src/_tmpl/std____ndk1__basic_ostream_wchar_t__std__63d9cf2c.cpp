@@ -11,8 +11,7 @@
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_streambuf<wchar_t,
    std::__ndk1::char_traits<wchar_t> >*) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<
-                 (long *param_1,long *param_2)
+template<> long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(long *param_2)
 
 {
   int *piVar1;
@@ -23,16 +22,16 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   long *plStack_50;
   
   auStack_58[0] = 0;
-  plVar4 = (long *)(*param_1 + -0x18);
-  plStack_50 = param_1;
-  if (*(int *)((long)param_1 + *plVar4 + 0x20) == 0) {
-    if (*(long *)((long)param_1 + *plVar4 + 0x88) != 0) {
+  plVar4 = (long *)(*(byte *)this + -0x18);
+  plStack_50 = (byte *)this;
+  if (*(int *)((long)(byte *)this + *plVar4 + 0x20) == 0) {
+    if (*(long *)((long)(byte *)this + *plVar4 + 0x88) != 0) {
                     /* try { // try from 005af888 to 005af88b has its CatchHandler @ 005af9bc */
       std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::flush();
-      plVar4 = (long *)(*param_1 + -0x18);
+      plVar4 = (long *)(*(byte *)this + -0x18);
     }
     auStack_58[0] = 1;
-    lVar5 = (long)param_1 + *plVar4;
+    lVar5 = (long)(byte *)this + *plVar4;
     if (param_2 == (long *)0x0) {
                     /* try { // try from 005af9ac to 005af9af has its CatchHandler @ 005afa00 */
       std::__ndk1::ios_base::clear(lVar5,*(uint *)(lVar5 + 0x20) | 1);
@@ -74,14 +73,14 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
         lVar5 = lVar5 + -1;
       }
       if (lVar5 == 0) {
-        lVar5 = (long)param_1 + *(long *)(*param_1 + -0x18);
+        lVar5 = (long)(byte *)this + *(long *)(*(byte *)this + -0x18);
                     /* try { // try from 005af99c to 005af99f has its CatchHandler @ 005af9b8 */
         std::__ndk1::ios_base::clear(lVar5,*(uint *)(lVar5 + 0x20) | 4);
       }
     }
   }
   ((std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry *)auStack_58)->~sentry();
-  return param_1;
+  return (byte *)this;
 }
 
 

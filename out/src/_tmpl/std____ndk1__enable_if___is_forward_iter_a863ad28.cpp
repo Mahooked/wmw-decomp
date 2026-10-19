@@ -13,11 +13,7 @@
    >::__construct_at_end<WaterConcept::Screen_InAppPurchase::product*>(WaterConcept::Screen_InAppPurchase::product*,
    WaterConcept::Screen_InAppPurchase::product*, unsigned long) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
-     ::__construct_at_end<WaterConcept::Screen_InAppPurchase::product*>
-               (WaterConcept__Screen_InAppPurchase__product *p0,
-               WaterConcept__Screen_InAppPurchase__product *p1,ulong p2)
+template<> void std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__construct_at_end(WaterConcept__Screen_InAppPurchase__product *p0, WaterConcept__Screen_InAppPurchase__product *p1,ulong p2)
 
 {
   long lVar1;

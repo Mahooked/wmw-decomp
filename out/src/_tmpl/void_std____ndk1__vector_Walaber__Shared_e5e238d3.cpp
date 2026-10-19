@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>
    >(Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>&&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>
-               (Walaber__SharedPtr<Walaber::SkeletonActor::EventActionData> **p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::SkeletonActor::EventActionData> **p0)
 
 {
   long *in_x1;
@@ -69,10 +66,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>
    const&>(Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> const&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>
-     ::__push_back_slow_path<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>const&>
-               (Walaber__SharedPtr<Walaber::SkeletonActor::EventActionData> *p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__push_back_slow_path(Walaber__SharedPtr<Walaber::SkeletonActor::EventActionData> *p0)
 
 {
   long *in_x1;

@@ -13,10 +13,7 @@
    >::__construct_at_end<Walaber::Widget_IconList::Icon*>(Walaber::Widget_IconList::Icon*,
    Walaber::Widget_IconList::Icon*, unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __construct_at_end<Walaber::Widget_IconList::Icon*>
-               (Walaber__Widget_IconList__Icon *p0,Walaber__Widget_IconList__Icon *p1,ulong p2)
+template<> void std::__ndk1::vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__construct_at_end(Walaber__Widget_IconList__Icon *p0,Walaber__Widget_IconList__Icon *p1,ulong p2)
 
 {
   uint *puVar1;

@@ -14,11 +14,7 @@
    >::assign<WaterConcept::GameState::SecondaryGoal*>(WaterConcept::GameState::SecondaryGoal*,
    WaterConcept::GameState::SecondaryGoal*) */
 
-void std::__ndk1::
-     vector<WaterConcept::GameState::SecondaryGoal,std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>
-     ::assign<WaterConcept::GameState::SecondaryGoal*>
-               (WaterConcept__GameState__SecondaryGoal *p0,
-               WaterConcept__GameState__SecondaryGoal *p1)
+template<> void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal,std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign(WaterConcept__GameState__SecondaryGoal *p0, WaterConcept__GameState__SecondaryGoal *p1)
 
 {
   WaterConcept__GameState__SecondaryGoal *pWVar1;

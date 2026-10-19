@@ -9,7 +9,7 @@
 
 /* std::__ndk1::numpunct<char>::numpunct(unsigned long) */
 
-void std::__ndk1::numpunct<char>::numpunct(ulong p0, long in_x1)
+template<> std::__ndk1::numpunct<char>::numpunct(ulong p0, long in_x1)
 
 {
   
@@ -30,7 +30,7 @@ void std::__ndk1::numpunct<char>::numpunct(ulong p0, long in_x1)
 
 /* std::__ndk1::numpunct<char>::~numpunct() */
 
-void std::__ndk1::numpunct<char>::~numpunct()
+template<> std::__ndk1::numpunct<char>::~numpunct()
 
 {
   *this = &PTR__numpunct_byname_00717928;
@@ -50,7 +50,7 @@ void std::__ndk1::numpunct<char>::~numpunct()
 
 /* std::__ndk1::numpunct<char>::do_decimal_point() const */
 
-undefined1 std::__ndk1::numpunct<char>::do_decimal_point(long param_1)
+template<> undefined1 std::__ndk1::numpunct<char>::do_decimal_point(long param_1)
 
 {
   return *(undefined1 *)(param_1 + 0x10);
@@ -64,7 +64,7 @@ undefined1 std::__ndk1::numpunct<char>::do_decimal_point(long param_1)
 
 /* std::__ndk1::numpunct<char>::do_thousands_sep() const */
 
-undefined1 std::__ndk1::numpunct<char>::do_thousands_sep(long param_1)
+template<> undefined1 std::__ndk1::numpunct<char>::do_thousands_sep(long param_1)
 
 {
   return *(undefined1 *)(param_1 + 0x11);
@@ -78,7 +78,7 @@ undefined1 std::__ndk1::numpunct<char>::do_thousands_sep(long param_1)
 
 /* std::__ndk1::numpunct<char>::do_grouping() const */
 
-void std::__ndk1::numpunct<char>::do_grouping(undefined8 param_1,long param_2)
+template<> void std::__ndk1::numpunct<char>::do_grouping(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x18);
@@ -93,7 +93,7 @@ void std::__ndk1::numpunct<char>::do_grouping(undefined8 param_1,long param_2)
 
 /* std::__ndk1::numpunct<char>::do_truename() const */
 
-void std::__ndk1::numpunct<char>::do_truename()
+template<> void std::__ndk1::numpunct<char>::do_truename()
 
 {
   *this = 0;
@@ -113,7 +113,7 @@ void std::__ndk1::numpunct<char>::do_truename()
 
 /* std::__ndk1::numpunct<char>::do_falsename() const */
 
-void std::__ndk1::numpunct<char>::do_falsename()
+template<> void std::__ndk1::numpunct<char>::do_falsename()
 
 {
   *this = 0;

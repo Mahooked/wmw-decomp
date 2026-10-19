@@ -20,11 +20,7 @@
    Walaber::Vector2>, void*>*, long>, Walaber::Widget* const&, std::__ndk1::pair<Walaber::Widget*
    const, Walaber::Vector2> const&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::__map_value_compare<Walaber::Widget*,std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::less<Walaber::Widget*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>>>
-     ::
-     __emplace_hint_unique_key_args<Walaber::Widget*,std::__ndk1::pair<Walaber::Widget*const,Walaber::Vector2>const&>
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::__map_value_compare<Walaber::Widget*,std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::less<Walaber::Widget*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>>>::__emplace_hint_unique_key_args(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   long *plVar1;

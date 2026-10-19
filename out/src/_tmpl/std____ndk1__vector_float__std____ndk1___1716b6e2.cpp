@@ -9,7 +9,7 @@
 
 /* std::__ndk1::vector<float, std::__ndk1::allocator<float> >::reserve(unsigned long) */
 
-void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::reserve(ulong p0, ulong in_x1)
+template<> void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::reserve(ulong p0, ulong in_x1)
 
 {
   void *pvVar2;

@@ -11,7 +11,7 @@
 /* void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode*, int,
    std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*> >&) */
 
-void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode *param_1,int param_2,std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>& param_3)
+void Walaber::PCSNode::getNodesFromTree(Walaber::PCSNode *param_1,int param_2,std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>& param_3)
 
 {
   ulong uVar2;
@@ -41,7 +41,7 @@ void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode *param_1
       }
       else {
                     /* try { // try from 003ebed8 to 003ebee3 has its CatchHandler @ 003ebf1c */
-        void std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>::__push_back_slow_path<Walaber::Node*>(param_3,alStack_78);
+        std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>::__push_back_slow_path<Walaber::Node*>(param_3,alStack_78);
       }
     }
     else {

@@ -19,11 +19,7 @@
    const, Walaber::Widget_FingerCatcher::CaughtFingerInfo> const&>(std::__ndk1::pair<int const,
    Walaber::Widget_FingerCatcher::CaughtFingerInfo> const&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>
-     ::
-     __emplace_multi<std::__ndk1::pair<int_const,Walaber::Widget_FingerCatcher::CaughtFingerInfo>const&>
-               (long param_1,undefined8 *param_2)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::__emplace_multi(long param_1,undefined8 *param_2)
 
 {
   long *plVar1;

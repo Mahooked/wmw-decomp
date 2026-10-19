@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::__split_buffer(unsigned long,
    unsigned long, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&) */
 
-void std::__ndk1::
-     __split_buffer<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>
-     ::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;
@@ -54,9 +52,7 @@ void std::__ndk1::
 /* std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame,
    std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::~__split_buffer() */
 
-void std::__ndk1::
-     __split_buffer<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>
-     ::~__split_buffer()
+template<> std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::~__split_buffer()
 
 {
   long lVar1;

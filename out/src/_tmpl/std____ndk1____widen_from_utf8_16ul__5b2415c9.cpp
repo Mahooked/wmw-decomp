@@ -9,11 +9,11 @@
 
 /* std::__ndk1::__widen_from_utf8<16ul>::~__widen_from_utf8() */
 
-void std::__ndk1::__widen_from_utf8<16ul>::~__widen_from_utf8(void *param_1)
+template<> std::__ndk1::__widen_from_utf8<16ul>::~__widen_from_utf8()
 
 {
   std::__ndk1::__shared_count::~__shared_count();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 

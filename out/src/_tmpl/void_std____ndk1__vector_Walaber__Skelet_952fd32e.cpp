@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*>(Walaber::SkeletonActorCueAnimationTrack*&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::SkeletonActorCueAnimationTrack*,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>
-     ::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*>
-               (Walaber__SkeletonActorCueAnimationTrack ***p0)
+template<> void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path(Walaber__SkeletonActorCueAnimationTrack ***p0)
 
 {
   undefined8 *in_x1;
@@ -87,10 +84,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*
    const&>(Walaber::SkeletonActorCueAnimationTrack* const&) */
 
-void std::__ndk1::
-     vector<Walaber::SkeletonActorCueAnimationTrack*,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>
-     ::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack*const&>
-               (Walaber__SkeletonActorCueAnimationTrack **p0)
+template<> void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path(Walaber__SkeletonActorCueAnimationTrack **p0)
 
 {
   undefined8 *in_x1;

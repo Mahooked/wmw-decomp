@@ -12,9 +12,7 @@
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*,
    std::__ndk1::allocator<Walaber::Widget*> > > >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>>>::~__vector_base()
 
 {
   void *p0;

@@ -11,16 +11,14 @@
    std::__ndk1::less<int>, std::__ndk1::allocator<std::__ndk1::pair<int const,
    WaterConcept::World::VBOData> > > >::~IndexGrid() */
 
-void WaterConcept::
-     IndexGrid<std::__ndk1::map<int,WaterConcept::World::VBOData,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,WaterConcept::World::VBOData>>>>
-     ::~IndexGrid(long param_1,ulong param_2)
+template<> WaterConcept::IndexGrid<std::__ndk1::map<int,WaterConcept::World::VBOData,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,WaterConcept::World::VBOData>>>>::~IndexGrid()
 
 {
   ulong extraout_x1;
   long lVar1;
   long lVar2;
   
-  lVar2 = *(long *)(param_1 + 8);
+  lVar2 = *(long *)((byte *)this + 8);
   if (lVar2 != 0) {
     lVar1 = *(long *)(lVar2 + -8);
     if (lVar1 != 0) {
@@ -47,9 +45,7 @@ void WaterConcept::
    std::__ndk1::less<int>, std::__ndk1::allocator<std::__ndk1::pair<int const,
    WaterConcept::World::VBOData> > > >::IndexGrid(int, int) */
 
-void WaterConcept::
-     IndexGrid<std::__ndk1::map<int,WaterConcept::World::VBOData,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,WaterConcept::World::VBOData>>>>
-     ::IndexGrid(int p0,int p1)
+template<> WaterConcept::IndexGrid<std::__ndk1::map<int,WaterConcept::World::VBOData,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,WaterConcept::World::VBOData>>>>::IndexGrid(int p0,int p1)
 
 {
   uint uVar1;

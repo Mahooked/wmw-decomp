@@ -12,8 +12,7 @@
    std::__ndk1::char_traits<char> >&, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&, char) */
 
-long * std::__ndk1::getline<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-                 (long *param_1,byte *param_2,uint param_3)
+long * std::__ndk1::getline(long *param_1,byte *param_2,uint param_3)
 
 {
   byte *pbVar1;

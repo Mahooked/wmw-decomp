@@ -14,9 +14,7 @@
    unsigned long, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,
    std::__ndk1::allocator<Walaber::PositionTextureColorVert> > >&) */
 
-void std::__ndk1::
-     __split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>
-     ::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;
@@ -59,9 +57,7 @@ void std::__ndk1::
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,
    std::__ndk1::allocator<Walaber::PositionTextureColorVert> > >&>::~__split_buffer() */
 
-void std::__ndk1::
-     __split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>
-     ::~__split_buffer()
+template<> std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>::~__split_buffer()
 
 {
   long lVar1;

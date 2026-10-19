@@ -14,11 +14,7 @@
    >::assign<WaterConcept::Screen_UpsellWater2::TransitionType*>(WaterConcept::Screen_UpsellWater2::TransitionType*,
    WaterConcept::Screen_UpsellWater2::TransitionType*) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_UpsellWater2::TransitionType,std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>
-     ::assign<WaterConcept::Screen_UpsellWater2::TransitionType*>
-               (WaterConcept__Screen_UpsellWater2__TransitionType *p0,
-               WaterConcept__Screen_UpsellWater2__TransitionType *p1)
+template<> void std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType,std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::assign(WaterConcept__Screen_UpsellWater2__TransitionType *p0, WaterConcept__Screen_UpsellWater2__TransitionType *p1)
 
 {
   ulong uVar1;

@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Language>>::__vallocate
-               (ulong p0)
+template<> void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Language>>::__vallocate(ulong p0)
 
 {
   long lVar1;

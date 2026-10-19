@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<WaterConcept::World::RegionInfo,
    std::__ndk1::allocator<WaterConcept::World::RegionInfo> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<WaterConcept::World::RegionInfo,std::__ndk1::allocator<WaterConcept::World::RegionInfo>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<WaterConcept::World::RegionInfo,std::__ndk1::allocator<WaterConcept::World::RegionInfo>>::~__vector_base()
 
 {
   long lVar1;

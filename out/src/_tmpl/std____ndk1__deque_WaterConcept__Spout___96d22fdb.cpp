@@ -10,9 +10,7 @@
 /* std::__ndk1::deque<WaterConcept::Spout::QueuedParticle,
    std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle> >::pop_front() */
 
-void std::__ndk1::
-     deque<WaterConcept::Spout::QueuedParticle,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>
-     ::pop_front(long param_1)
+template<> void std::__ndk1::deque<WaterConcept::Spout::QueuedParticle,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::pop_front(long param_1)
 
 {
   ulong uVar1;
@@ -38,9 +36,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>
    >::push_back(WaterConcept::Spout::QueuedParticle&&) */
 
-void std::__ndk1::
-     deque<WaterConcept::Spout::QueuedParticle,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>
-     ::push_back(WaterConcept__Spout__QueuedParticle **p0)
+template<> void std::__ndk1::deque<WaterConcept::Spout::QueuedParticle,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::push_back(WaterConcept__Spout__QueuedParticle **p0)
 
 {
   WaterConcept__Spout__QueuedParticle *pWVar1;
@@ -75,9 +71,7 @@ void std::__ndk1::
 /* std::__ndk1::deque<WaterConcept::Spout::QueuedParticle,
    std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle> >::__add_back_capacity() */
 
-void std::__ndk1::
-     deque<WaterConcept::Spout::QueuedParticle,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>
-     ::__add_back_capacity(ulong *param_1)
+template<> void std::__ndk1::deque<WaterConcept::Spout::QueuedParticle,std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::__add_back_capacity(ulong *param_1)
 
 {
   void *pvVar2;

@@ -11,8 +11,7 @@
    >::vector(std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>
    > const&) */
 
-void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcept::Spout*>>::vector
-               (undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcept::Spout*>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -41,8 +40,7 @@ void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcep
 /* std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcept::Spout*>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcept::Spout*>>::__vallocate(ulong p0)
 
 {
   long lVar1;

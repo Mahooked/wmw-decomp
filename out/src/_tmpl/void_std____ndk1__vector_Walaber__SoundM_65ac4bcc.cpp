@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SoundManager::SoundInfo
    const&>(Walaber::SoundManager::SoundInfo const&) */
 
-void std::__ndk1::
-     vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>
-     ::__push_back_slow_path<Walaber::SoundManager::SoundInfo_const&>
-               (Walaber__SoundManager__SoundInfo *p0)
+template<> void std::__ndk1::vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__push_back_slow_path(Walaber__SoundManager__SoundInfo *p0)
 
 {
   ulong uVar1;

@@ -9,7 +9,7 @@
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::push_back(bool const&) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0, char * in_x1)
+template<> void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0, char * in_x1)
 
 {
   ulong uVar1;
@@ -57,7 +57,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0,
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::reserve(unsigned long) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0, ulong in_x1)
+template<> void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0, ulong in_x1)
 
 {
   undefined8 uVar2;
@@ -81,7 +81,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0, u
     uStack_30 = 0;
     uStack_40 = (uint)*(ulong *)(p0 + 8) & 0x3f;
     lStack_48 = lStack_38 + (*(ulong *)(p0 + 8) >> 3 & 0x1ffffffffffffff8);
-    std::__ndk1::enable_if<__is_forward_iterator<std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0ul>>::value, void>::type std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::__construct_at_end<std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0ul>>(&pvStack_60,&lStack_38,&lStack_48);
+    std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::__construct_at_end<std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0ul>>(&pvStack_60,&lStack_38,&lStack_48);
     uVar3 = *(undefined8 *)(p0 + 8);
     p0_00 = *(void **)p0;
     *(undefined8 *)(p0 + 8) = uStack_58;
@@ -106,7 +106,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0, u
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p0, long in_x1)
+template<> void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p0, long in_x1)
 
 {
   long lVar1;
@@ -132,7 +132,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::vector(unsigned long, bool const&) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,bool *p1, char * in_x2)
+template<> std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,bool *p1, char * in_x2)
 
 {
   Elf64_Phdr *pEVar1;
@@ -167,10 +167,10 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,boo
     lStack_48 = (long)puVar5 + (uVar4 >> 3 & 0x1ffffffffffffff8);
     uStack_40 = (uint)uVar4 & 0x3f;
     if (cVar2 == '\0') {
-      void std::__ndk1::__fill_n_false<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>>(&lStack_48,p1);
+      std::__ndk1::__fill_n_false<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>>(&lStack_48,p1);
     }
     else {
-      void std::__ndk1::__fill_n_true<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>>(&lStack_48,p1);
+      std::__ndk1::__fill_n_true<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>>(&lStack_48,p1);
     }
   }
   return;

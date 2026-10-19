@@ -87,7 +87,7 @@ Walaber::AnimationCueAnimationTrack::operator=(Walaber__AnimationCueAnimationTra
   p0->f_0x8 = in_x1->f_0x8;
   p0->f_0x0 = uVar1;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent*>::value&&is_constructible<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::iterator_traits<Walaber::AnimationCueAnimationTrack::CueAnimationEvent*>::reference>::value, void>::type std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::assign<Walaber::AnimationCueAnimationTrack::CueAnimationEvent*>(&p0->f_0x10,in_x1->f_0x10,in_x1->f_0x18);
+    std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::assign<Walaber::AnimationCueAnimationTrack::CueAnimationEvent*>(&p0->f_0x10,in_x1->f_0x10,in_x1->f_0x18);
   }
   p0->f_0x28 = in_x1->f_0x28;
   return p0;
@@ -144,7 +144,7 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
     }
     else {
                     /* try { // try from 00433b0c to 00433b17 has its CatchHandler @ 00433b7c */
-      void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>(plVar1,&uStack_80);
+      std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__push_back_slow_path<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>(plVar1,&uStack_80);
       if ((uStack_78 & 1) != 0) {
         operator delete(pvStack_68);
       }

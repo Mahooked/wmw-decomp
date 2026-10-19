@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>(Walaber::SpriteBatch::BlendSection&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::SpriteBatch::BlendSection,std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>
-     ::__push_back_slow_path<Walaber::SpriteBatch::BlendSection>
-               (Walaber__SpriteBatch__BlendSection **p0)
+template<> void std::__ndk1::vector<Walaber::SpriteBatch::BlendSection,std::__ndk1::allocator<Walaber::SpriteBatch::BlendSection>>::__push_back_slow_path(Walaber__SpriteBatch__BlendSection **p0)
 
 {
   undefined8 *in_x1;

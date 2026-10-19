@@ -14,10 +14,7 @@
    >::assign<Walaber::Widget_IconList::Icon*>(Walaber::Widget_IconList::Icon*,
    Walaber::Widget_IconList::Icon*) */
 
-void std::__ndk1::
-     vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     assign<Walaber::Widget_IconList::Icon*>
-               (Walaber__Widget_IconList__Icon *p0,Walaber__Widget_IconList__Icon *p1)
+template<> void std::__ndk1::vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::assign(Walaber__Widget_IconList__Icon *p0,Walaber__Widget_IconList__Icon *p1)
 
 {
   Walaber__Widget_IconList__Icon *pWVar1;
@@ -74,7 +71,7 @@ void std::__ndk1::
     }
     std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__vallocate(p0,uVar7);
   }
-  std::__ndk1::enable_if<__is_forward_iterator<Walaber::Widget_IconList::Icon*>::value, void>::type std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__construct_at_end<Walaber::Widget_IconList::Icon*>(p0,p1);
+  std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__construct_at_end<Walaber::Widget_IconList::Icon*>(p0,p1);
   return;
 }
 

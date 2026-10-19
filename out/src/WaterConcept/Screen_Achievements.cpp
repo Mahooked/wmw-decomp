@@ -1188,7 +1188,7 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
           }
           else {
                     /* try { // try from 004a3364 to 004a336f has its CatchHandler @ 004a3b10 */
-            void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0xd0,&uStack_2c0);
+            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0xd0,&uStack_2c0);
             if (((ulong)uStack_2c0 & 1) != 0) {
               operator delete(apcStack_2b0[0]);
             }
@@ -1201,7 +1201,7 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
             goto LAB_004a33ac;
           }
-          void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0xe8,CONCAT44(fStack_154,fStack_158) + lVar27 + 0x60);
+          std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0xe8,CONCAT44(fStack_154,fStack_158) + lVar27 + 0x60);
         }
         else {
           uStack_2c0 = (undefined **)((ulong)uStack_2c0 & 0xffffffffffffff00);
@@ -1223,7 +1223,7 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
           }
           else {
                     /* try { // try from 004a32e8 to 004a32f3 has its CatchHandler @ 004a3b2c */
-            void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0xd0,&uStack_2c0);
+            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0xd0,&uStack_2c0);
             if (((ulong)uStack_2c0 & 1) != 0) {
               operator delete(apcStack_2b0[0]);
             }
@@ -1247,7 +1247,7 @@ LAB_004a33ac:
           }
           else {
                     /* try { // try from 004a3344 to 004a334f has its CatchHandler @ 004a3b28 */
-            void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0xe8,&uStack_2c0);
+            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0xe8,&uStack_2c0);
             if (((ulong)uStack_2c0 & 1) != 0) {
               operator delete(apcStack_2b0[0]);
             }
@@ -1309,7 +1309,7 @@ LAB_004a33ac:
         uVar31 = Walaber::WidgetManager::getWidget(*puVar43,uVar44 + 0x12d & 0xffffffff);
         Walaber::Widget_Label::setText(uVar31,&uStack_2c0);
         if (*(long *)((long)p0 + 0xc0) == *(long *)((long)p0 + 200)) {
-          void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0xb8,CONCAT44(fStack_154,fStack_158) + lVar27);
+          std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0xb8,CONCAT44(fStack_154,fStack_158) + lVar27);
         }
         else {
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();

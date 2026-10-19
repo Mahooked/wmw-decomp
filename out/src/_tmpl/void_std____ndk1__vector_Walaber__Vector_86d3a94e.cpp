@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>
    >::__push_back_slow_path<Walaber::Vector2 const&>(Walaber::Vector2 const&) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     __push_back_slow_path<Walaber::Vector2_const&>(Walaber__Vector2 *p0)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path(Walaber__Vector2 *p0)
 
 {
   undefined8 *in_x1;
@@ -64,8 +63,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
 /* void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>
    >::__push_back_slow_path<Walaber::Vector2>(Walaber::Vector2&&) */
 
-void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     __push_back_slow_path<Walaber::Vector2>(Walaber__Vector2 **p0)
+template<> void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path(Walaber__Vector2 **p0)
 
 {
   undefined8 *in_x1;

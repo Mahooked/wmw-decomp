@@ -15,10 +15,7 @@
    Walaber::Vector2> > >::__emplace_multi<std::__ndk1::pair<int const, Walaber::Vector2>
    const&>(std::__ndk1::pair<int const, Walaber::Vector2> const&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Vector2>>>
-     ::__emplace_multi<std::__ndk1::pair<int_const,Walaber::Vector2>const&>
-               (long param_1,undefined8 *param_2)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Vector2>>>::__emplace_multi(long param_1,undefined8 *param_2)
 
 {
   long *plVar1;

@@ -11,8 +11,7 @@
    >::sentry::sentry(std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >&, bool)
     */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::sentry
-               (undefined1 *param_1,long *param_2,ulong param_3)
+template<> std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::sentry(undefined1 *param_1,long *param_2,ulong param_3)
 
 {
   long lVar1;

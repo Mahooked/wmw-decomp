@@ -10,8 +10,7 @@
 /* std::__ndk1::__list_imp<WaterConcept::GridCell, std::__ndk1::allocator<WaterConcept::GridCell>
    >::clear() */
 
-void std::__ndk1::__list_imp<WaterConcept::GridCell,std::__ndk1::allocator<WaterConcept::GridCell>>
-     ::clear(long *param_1)
+template<> void std::__ndk1::__list_imp<WaterConcept::GridCell,std::__ndk1::allocator<WaterConcept::GridCell>>::clear(long *param_1)
 
 {
   long lVar1;

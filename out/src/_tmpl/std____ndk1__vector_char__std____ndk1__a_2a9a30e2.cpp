@@ -9,7 +9,7 @@
 
 /* std::__ndk1::vector<char, std::__ndk1::allocator<char> >::vector(unsigned long, char const&) */
 
-void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector(ulong p0,char *p1, undefined1 * in_x2)
+template<> std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector(ulong p0,char *p1, undefined1 * in_x2)
 
 {
   undefined1 *puVar1;
@@ -39,7 +39,7 @@ void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector(ulong p0,cha
 
 /* std::__ndk1::vector<char, std::__ndk1::allocator<char> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::__vallocate(ulong p0, ulong in_x1)
+template<> void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::__vallocate(ulong p0, ulong in_x1)
 
 {
   long lVar1;

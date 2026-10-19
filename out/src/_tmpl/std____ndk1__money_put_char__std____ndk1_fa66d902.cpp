@@ -11,10 +11,7 @@
    std::__ndk1::char_traits<char> > >::do_put(std::__ndk1::ostreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, bool, std::__ndk1::ios_base&, char, long double) const */
 
-undefined8
-std::__ndk1::money_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long param_5,
-      undefined4 param_6)
+template<> undefined8 std::__ndk1::money_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long param_5, undefined4 param_6)
 
 {
   void *pvVar1;
@@ -215,9 +212,7 @@ LAB_005cb750:
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) const */
 
-undefined8
-std::__ndk1::money_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,bool param_2,std::__ndk1::ios_base& param_3,char param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5)
+template<> undefined8 std::__ndk1::money_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,bool param_2,std::__ndk1::ios_base& param_3,char param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5)
 
 {
   ulong uVar1;

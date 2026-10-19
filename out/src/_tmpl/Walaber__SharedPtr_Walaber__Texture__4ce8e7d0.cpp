@@ -10,8 +10,7 @@
 /* Walaber::SharedPtr<Walaber::Texture>::TEMPNAMEPLACEHOLDERVALUE(Walaber::SharedPtr<Walaber::Texture>
    const&) */
 
-Walaber__SharedPtr<Walaber::Texture> *
-Walaber::SharedPtr<Walaber::Texture>::operator=(Walaber__SharedPtr<Walaber::Texture> *p0)
+template<> Walaber__SharedPtr<Walaber::Texture> * Walaber::SharedPtr<Walaber::Texture>::operator=(Walaber__SharedPtr<Walaber::Texture> *p0)
 
 {
   int iVar1;
@@ -48,18 +47,18 @@ Walaber::SharedPtr<Walaber::Texture>::operator=(Walaber__SharedPtr<Walaber::Text
 
 /* Walaber::SharedPtr<Walaber::Texture>::~SharedPtr() */
 
-void Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(long *param_1)
+template<> Walaber::SharedPtr<Walaber::Texture>::~SharedPtr()
 
 {
   int iVar1;
   long *plVar2;
   
-  plVar2 = (long *)*param_1;
+  plVar2 = (long *)*(byte *)this;
   if ((plVar2 != (long *)0x0) &&
-     (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
+     (iVar1 = *(int *)(byte *)this[1] + -1, *(int *)(byte *)this[1] = iVar1, iVar1 == 0)) {
     (**(code **)(*plVar2 + 8))();
-    if ((void *)param_1[1] != (void *)0x0) {
-      operator delete((void *)param_1[1]);
+    if ((void *)(byte *)this[1] != (void *)0x0) {
+      operator delete((void *)(byte *)this[1]);
       return;
     }
   }

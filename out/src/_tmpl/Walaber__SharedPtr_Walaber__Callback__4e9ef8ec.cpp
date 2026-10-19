@@ -9,18 +9,18 @@
 
 /* Walaber::SharedPtr<Walaber::Callback>::~SharedPtr() */
 
-void Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(long *param_1)
+template<> Walaber::SharedPtr<Walaber::Callback>::~SharedPtr()
 
 {
   int iVar1;
   long *plVar2;
   
-  plVar2 = (long *)*param_1;
+  plVar2 = (long *)*(byte *)this;
   if ((plVar2 != (long *)0x0) &&
-     (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
+     (iVar1 = *(int *)(byte *)this[1] + -1, *(int *)(byte *)this[1] = iVar1, iVar1 == 0)) {
     (**(code **)(*plVar2 + 8))();
-    if ((void *)param_1[1] != (void *)0x0) {
-      operator delete((void *)param_1[1]);
+    if ((void *)(byte *)this[1] != (void *)0x0) {
+      operator delete((void *)(byte *)this[1]);
       return;
     }
   }
@@ -36,8 +36,7 @@ void Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(long *param_1)
 /* Walaber::SharedPtr<Walaber::Callback>::TEMPNAMEPLACEHOLDERVALUE(Walaber::SharedPtr<Walaber::Callback>
    const&) */
 
-Walaber__SharedPtr<Walaber::Callback> *
-Walaber::SharedPtr<Walaber::Callback>::operator=(Walaber__SharedPtr<Walaber::Callback> *p0)
+template<> Walaber__SharedPtr<Walaber::Callback> * Walaber::SharedPtr<Walaber::Callback>::operator=(Walaber__SharedPtr<Walaber::Callback> *p0)
 
 {
   int iVar1;

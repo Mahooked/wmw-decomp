@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>
    >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::~__vector_base()
 
 {
   void *pvVar1;

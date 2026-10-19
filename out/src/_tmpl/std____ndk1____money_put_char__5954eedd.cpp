@@ -13,8 +13,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&, int&) */
 
-void std::__ndk1::__money_put<char>::__gather_info
-               (bool param_1,bool param_2,std::__ndk1::locale const& param_3,std::__ndk1::money_base::pattern& param_4,char& param_5,char& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_8,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_9,int& param_10)
+template<> void std::__ndk1::__money_put<char>::__gather_info(bool param_1,bool param_2,std::__ndk1::locale const& param_3,std::__ndk1::money_base::pattern& param_4,char& param_5,char& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_8,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_9,int& param_10)
 
 {
   byte bVar1;
@@ -158,8 +157,7 @@ void std::__ndk1::__money_put<char>::__gather_info
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&, int) */
 
-void std::__ndk1::__money_put<char>::__format
-               (char *param_1,char*& param_2,char*& param_3,unsigned int param_4,char const *param_5,char const *param_6,std::__ndk1::ctype<char> const& param_7,bool param_8,std::__ndk1::money_base::pattern const& param_9,char param_10,char param_11,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_12,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_13,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_14,int param_15)
+template<> void std::__ndk1::__money_put<char>::__format(char *param_1,char*& param_2,char*& param_3,unsigned int param_4,char const *param_5,char const *param_6,std::__ndk1::ctype<char> const& param_7,bool param_8,std::__ndk1::money_base::pattern const& param_9,char param_10,char param_11,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_12,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_13,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_14,int param_15)
 
 {
   bool bVar1;

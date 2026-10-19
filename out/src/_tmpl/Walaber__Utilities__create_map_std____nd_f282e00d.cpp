@@ -12,9 +12,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::WidgetType
    const&) */
 
-void Walaber::Utilities::
-     create_map<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::WidgetType>
-     ::create_map(undefined8 *param_1,undefined8 param_2,undefined4 *param_3)
+template<> Walaber::Utilities::create_map<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::WidgetType>::create_map(undefined8 *param_1,undefined8 param_2,undefined4 *param_3)
 
 {
   undefined4 uVar1;

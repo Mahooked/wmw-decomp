@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame
    const&>(Walaber::SpriteAnimation::AnimationFrame const&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>
-     ::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame_const&>
-               (Walaber__SpriteAnimation__AnimationFrame *p0)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__push_back_slow_path(Walaber__SpriteAnimation__AnimationFrame *p0)
 
 {
   ulong uVar1;
@@ -73,10 +70,7 @@ void std::__ndk1::
    >::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame>(Walaber::SpriteAnimation::AnimationFrame&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>
-     ::__push_back_slow_path<Walaber::SpriteAnimation::AnimationFrame>
-               (Walaber__SpriteAnimation__AnimationFrame **p0)
+template<> void std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__push_back_slow_path(Walaber__SpriteAnimation__AnimationFrame **p0)
 
 {
   ulong uVar1;

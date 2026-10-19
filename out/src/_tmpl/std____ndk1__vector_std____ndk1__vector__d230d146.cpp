@@ -12,9 +12,7 @@
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,
    std::__ndk1::allocator<Walaber::PositionTextureColorVert> > > >::reserve(unsigned long) */
 
-void std::__ndk1::
-     vector<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>
-     ::reserve(ulong p0)
+template<> void std::__ndk1::vector<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>::reserve(ulong p0)
 
 {
   ulong in_x1;
@@ -45,9 +43,7 @@ void std::__ndk1::
    std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,
    std::__ndk1::allocator<Walaber::PositionTextureColorVert> > >&>&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;

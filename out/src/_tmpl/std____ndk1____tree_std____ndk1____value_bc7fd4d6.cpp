@@ -17,9 +17,7 @@
    >::destroy(std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>,
    Walaber::SoundManager::GotSoundCallbackData>, void*>*) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>
-     ::destroy(undefined8 param_1,undefined8 *param_2)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>::destroy(undefined8 param_1,undefined8 *param_2)
 
 {
   if (param_2 != (undefined8 *)0x0) {
@@ -49,9 +47,7 @@ void std::__ndk1::
    >::__find_leaf_high(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    std::__ndk1::pair<int, int> const&) */
 
-long * std::__ndk1::
-       __tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>
-       ::__find_leaf_high(long param_1,long *param_2,int *param_3)
+template<> long * std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>::__find_leaf_high(long param_1,long *param_2,int *param_3)
 
 {
   long *plVar1;
@@ -96,9 +92,7 @@ long * std::__ndk1::
    >::__insert_node_at(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*,
    std::__ndk1::__tree_node_base<void*>*&, std::__ndk1::__tree_node_base<void*>*) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>
-     ::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
 
 {
   *param_4 = 0;
@@ -109,7 +103,7 @@ void std::__ndk1::
     *param_1 = *(long *)*param_1;
     param_4 = (undefined8 *)*param_3;
   }
-  void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
   param_1[2] = param_1[2] + 1;
   return;
 }
@@ -132,9 +126,7 @@ void std::__ndk1::
    std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>,
    Walaber::SoundManager::GotSoundCallbackData>, void*>*, long>) */
 
-long * std::__ndk1::
-       __tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>
-       ::erase(undefined8 *param_1,void *param_2)
+template<> long * std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>::erase(undefined8 *param_1,void *param_2)
 
 {
   long *plVar1;
@@ -163,7 +155,7 @@ long * std::__ndk1::
     *param_1 = plVar3;
   }
   param_1[2] = param_1[2] + -1;
-  void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
+  std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
   ((Walaber::SharedPtr<Walaber::Callback> *)(long)param_2 + 0x40)->~SharedPtr<Walaber::Callback>();
   ((Walaber::PropertyList *)(long)param_2 + 0x28)->~PropertyList();
   operator delete(param_2);

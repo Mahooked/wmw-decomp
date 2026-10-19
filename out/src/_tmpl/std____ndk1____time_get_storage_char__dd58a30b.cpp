@@ -9,7 +9,7 @@
 
 /* std::__ndk1::__time_get_storage<char>::__time_get_storage(char const*) */
 
-void std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
+template<> std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
 
 {
   undefined **ppuVar2;
@@ -50,7 +50,7 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
 /* std::__ndk1::__time_get_storage<char>::__time_get_storage(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byte *param_2)
+template<> std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byte *param_2)
 
 {
   long lVar1;
@@ -73,7 +73,7 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byt
   lVar3 = newlocale(0x1fbf,pbVar4,0);
   *param_1 = lVar3;
   if (lVar3 == 0) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(appuStack_60,"time_get_byname failed to construct for ",param_2);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(appuStack_60,"time_get_byname failed to construct for ",param_2);
                     /* try { // try from 005c23f8 to 005c23ff has its CatchHandler @ 005c2404 */
     FUN_005d5db0(appuStack_60);
   }
@@ -112,7 +112,7 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byt
 
 /* std::__ndk1::__time_get_storage<char>::__do_date_order() const */
 
-undefined8 std::__ndk1::__time_get_storage<char>::__do_date_order(long param_1)
+template<> undefined8 std::__ndk1::__time_get_storage<char>::__do_date_order(long param_1)
 
 {
   byte bVar1;
@@ -363,7 +363,7 @@ undefined8 std::__ndk1::__time_get_storage<char>::__do_date_order(long param_1)
 
 /* std::__ndk1::__time_get_storage<char>::__analyze(char, std::__ndk1::ctype<char> const&) */
 
-void std::__ndk1::__time_get_storage<char>::__analyze(char p0,std____ndk1__ctype<char> *p1)
+template<> void std::__ndk1::__time_get_storage<char>::__analyze(char p0,std____ndk1__ctype<char> *p1)
 
 {
   byte *pbVar1;
@@ -672,7 +672,7 @@ LAB_005ddfd0:
 
 /* std::__ndk1::__time_get_storage<char>::init(std::__ndk1::ctype<char> const&) */
 
-void std::__ndk1::__time_get_storage<char>::init(std____ndk1__ctype<char> *p0)
+template<> void std::__ndk1::__time_get_storage<char>::init(std____ndk1__ctype<char> *p0)
 
 {
   byte bVar1;

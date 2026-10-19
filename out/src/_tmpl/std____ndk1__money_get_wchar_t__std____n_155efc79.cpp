@@ -13,10 +13,7 @@
    std::__ndk1::char_traits<wchar_t> >, bool, std::__ndk1::ios_base&, unsigned int&, long double&)
    const */
 
-long * std::__ndk1::
-       money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_get(undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5,
-               uint *param_6,undefined8 param_7)
+template<> long * std::__ndk1::money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5, uint *param_6,undefined8 param_7)
 
 {
   long lVar1;
@@ -200,9 +197,7 @@ LAB_005c9a28:
    int&, bool&, std::__ndk1::ctype<wchar_t> const&, std::__ndk1::unique_ptr<wchar_t, void
    (*)(void*)>&, wchar_t*&, wchar_t*) */
 
-ulong std::__ndk1::
-      money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-      ::__do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>& param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,bool param_3,std::__ndk1::locale const& param_4,unsigned int param_5,unsigned int& param_6,bool& param_7,std::__ndk1::ctype<wchar_t> const& param_8,std::__ndk1::unique_ptr<wchar_t, void (*param_9)(void*)>&,wchar_t*& param_10,wchar_t *param_11)
+template<> ulong std::__ndk1::money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::__do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>& param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,bool param_3,std::__ndk1::locale const& param_4,unsigned int param_5,unsigned int& param_6,bool& param_7,std::__ndk1::ctype<wchar_t> const& param_8,std::__ndk1::unique_ptr<wchar_t, void (*param_9)(void*)>&,wchar_t*& param_10,wchar_t *param_11)
 
 {
   undefined4 *puVar1;
@@ -1204,9 +1199,7 @@ LAB_005cadac:
    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >&) const */
 
-long * std::__ndk1::
-       money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_6)
+template<> long * std::__ndk1::money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_6)
 
 {
   int *piVar1;
@@ -1264,7 +1257,7 @@ long * std::__ndk1::
         piVar1 = piVar1 + 1) {
     }
                     /* try { // try from 005caff0 to 005caffb has its CatchHandler @ 005cb0f0 */
-    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__append_forward_unsafe<wchar_t*>(param_6,piVar1);
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__append_forward_unsafe<wchar_t*>(param_6,piVar1);
   }
   if (plStack_208 == (long *)0x0) {
 LAB_005cb050:

@@ -339,7 +339,7 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
   plVar5 = plStack_60;
   while (plVar5 != alStack_58) {
                     /* try { // try from 003eec48 to 003eec57 has its CatchHandler @ 003eed10 */
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_88,&uStack_80,plVar5 + 4,plVar5 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_88,&uStack_80,plVar5 + 4,plVar5 + 4);
     plVar3 = (long *)plVar5[1];
     if ((long *)plVar5[1] == (long *)0x0) {
       plVar3 = plVar5 + 2;
@@ -411,7 +411,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   
   plVar1 = *(long **)(param_1 + 0x48);
   if (plVar1 == *(long **)(param_1 + 0x50)) {
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x40);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x40);
   }
   else {
     lVar10 = *param_2;
@@ -434,7 +434,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     *(undefined8 **)(param_1 + 0x18) = puVar8 + 1;
   }
   else {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x10,&fStack_80);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x10,&fStack_80);
   }
   uStack_7a = 0;
   uStack_78 = 0;
@@ -466,7 +466,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(float **)(param_1 + 0x30) = pfVar3 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x28,&fStack_80);
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x28,&fStack_80);
     }
   }
   else {
@@ -492,7 +492,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003eeed0 to 003eeedb has its CatchHandler @ 003ef9fc */
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x28,&uStack_a0);
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x28,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -532,7 +532,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(undefined8 **)(param_1 + 0xb0) = puVar8 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xa8,&fStack_80);
+      std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xa8,&fStack_80);
     }
   }
   else {
@@ -559,7 +559,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003eefd0 to 003eefdb has its CatchHandler @ 003ef9f8 */
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xa8,&uStack_a0);
+      std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xa8,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -599,7 +599,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(undefined8 **)(param_1 + 200) = puVar8 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xc0,&fStack_80);
+      std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xc0,&fStack_80);
     }
   }
   else {
@@ -626,7 +626,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003ef0d4 to 003ef0df has its CatchHandler @ 003ef9f4 */
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xc0,&uStack_a0);
+      std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xc0,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -657,7 +657,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(undefined4 **)(param_1 + 0xe0) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xd8,&fStack_80);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xd8,&fStack_80);
     }
   }
   else {
@@ -683,7 +683,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003ef1b0 to 003ef1bb has its CatchHandler @ 003ef9f0 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xd8,&uStack_a0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xd8,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -714,7 +714,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(undefined4 **)(param_1 + 0x110) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x108,&fStack_80);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x108,&fStack_80);
     }
   }
   else {
@@ -740,7 +740,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003ef290 to 003ef29b has its CatchHandler @ 003ef9ec */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x108,&uStack_a0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x108,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -771,7 +771,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(undefined4 **)(param_1 + 0xf8) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xf0,&fStack_80);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xf0,&fStack_80);
     }
   }
   else {
@@ -797,7 +797,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003ef370 to 003ef37b has its CatchHandler @ 003ef9e8 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xf0,&uStack_a0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xf0,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -828,7 +828,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(undefined4 **)(param_1 + 0x128) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x120,&fStack_80);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x120,&fStack_80);
     }
   }
   else {
@@ -854,7 +854,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003ef45c to 003ef467 has its CatchHandler @ 003ef9e4 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x120,&uStack_a0);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x120,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -885,7 +885,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       *(undefined4 **)(param_1 + 0x140) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x138,&fStack_80);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x138,&fStack_80);
     }
   }
   else {
@@ -911,7 +911,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     }
     else {
                     /* try { // try from 003ef540 to 003ef54b has its CatchHandler @ 003ef9e0 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x138,&uStack_a0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x138,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -955,7 +955,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     fStack_80 = 0.0;
     piVar9 = *(int **)(param_1 + 0x90);
     if (*(int **)(param_1 + 0x98) <= piVar9) {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x88,&fStack_80);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x88,&fStack_80);
       goto LAB_003ef7a0;
     }
     *piVar9 = 0;
@@ -970,7 +970,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
         *(float **)(param_1 + 0x60) = pfVar3 + 1;
       }
       else {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x58,&fStack_80);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x58,&fStack_80);
       }
       fStack_80 = (float)Walaber::Property::asFloat(uVar7);
       pfVar3 = *(float **)(param_1 + 0x78);
@@ -979,7 +979,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
         *(float **)(param_1 + 0x78) = pfVar3 + 1;
       }
       else {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x70,&fStack_80);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x70,&fStack_80);
       }
       iStack_84 = iStack_84 + 1;
       Walaber::StringHelper::intToStr(&uStack_a0);
@@ -1043,7 +1043,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     } while (lVar10 != 0);
     piVar9 = *(int **)(param_1 + 0x90);
     if (piVar9 == *(int **)(param_1 + 0x98)) {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0x88,&iStack_84);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0x88,&iStack_84);
       goto LAB_003ef7a0;
     }
     *piVar9 = iStack_84;
@@ -1075,7 +1075,7 @@ LAB_003ef7a0:
       *(undefined4 **)(param_1 + 0x158) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x150,&fStack_80);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x150,&fStack_80);
     }
   }
   else {
@@ -1101,7 +1101,7 @@ LAB_003ef7a0:
     }
     else {
                     /* try { // try from 003ef86c to 003ef877 has its CatchHandler @ 003ef9dc */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x150,&uStack_a0);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x150,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -1132,7 +1132,7 @@ LAB_003ef7a0:
       *(undefined4 **)(param_1 + 0x170) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x168,&fStack_80);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x168,&fStack_80);
     }
   }
   else {
@@ -1158,7 +1158,7 @@ LAB_003ef7a0:
     }
     else {
                     /* try { // try from 003ef94c to 003ef957 has its CatchHandler @ 003ef9d8 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x168,&uStack_a0);
+      std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x168,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));

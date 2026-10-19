@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>
    >::__push_back_slow_path<Walaber::Rect>(Walaber::Rect&&) */
 
-void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
-     __push_back_slow_path<Walaber::Rect>(Walaber__Rect **p0)
+template<> void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path(Walaber__Rect **p0)
 
 {
   undefined8 *in_x1;

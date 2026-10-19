@@ -23,7 +23,7 @@ void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZ
     p0[5].f_0x0 = p0[5].f_0x0 + 0x1c;
     return;
   }
-  void std::__ndk1::vector<Walaber::ParticleEmitter::EmitterZone, std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>>::__push_back_slow_path<Walaber::ParticleEmitter::EmitterZone const&>((undefined1 *)((long)&p0[4].f_0x14 + 4));
+  std::__ndk1::vector<Walaber::ParticleEmitter::EmitterZone, std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>>::__push_back_slow_path<Walaber::ParticleEmitter::EmitterZone const&>((undefined1 *)((long)&p0[4].f_0x14 + 4));
   return;
 }
 
@@ -619,7 +619,7 @@ LAB_00391174:
                 plVar10 = *(long **)((long)p0 + 0x88);
                 if (plVar10 == *(long **)((long)p0 + 0x90)) {
                     /* try { // try from 00391154 to 0039115f has its CatchHandler @ 00392790 */
-                  void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>((long)p0 + 0x80,&bStack_158);
+                  std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>((long)p0 + 0x80,&bStack_158);
                 }
                 else {
                   lVar2 = CONCAT17(uStack_151,
@@ -2170,7 +2170,7 @@ void Walaber::ParticleEmitter::addDirectionRangeDegrees(long in_x0, float p0,flo
     *(long *)(in_x0 + 0xe8) = *(long *)(in_x0 + 0xe8) + 8;
   }
   else {
-    void std::__ndk1::vector<std::__ndk1::pair<float, float>, std::__ndk1::allocator<std::__ndk1::pair<float, float>>>::__push_back_slow_path<std::__ndk1::pair<float, float>>(in_x0 + 0xe0,&fStack_30);
+    std::__ndk1::vector<std::__ndk1::pair<float, float>, std::__ndk1::allocator<std::__ndk1::pair<float, float>>>::__push_back_slow_path<std::__ndk1::pair<float, float>>(in_x0 + 0xe0,&fStack_30);
   }
   return;
 }

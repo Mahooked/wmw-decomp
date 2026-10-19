@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>(Walaber::AnimationCueAnimationTrack::CueAnimationEvent&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__push_back_slow_path<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>
-               (Walaber__AnimationCueAnimationTrack__CueAnimationEvent **p0)
+template<> void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__push_back_slow_path(Walaber__AnimationCueAnimationTrack__CueAnimationEvent **p0)
 
 {
   ulong uVar1;

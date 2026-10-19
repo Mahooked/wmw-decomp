@@ -80,8 +80,8 @@ Walaber::Widget_ScrollableSet::operator=(Walaber__Widget_ScrollableSet *p0)
   p0->currentIndex = uVar13;
   p0->f_0x100 = uVar15;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Widget_Group**>::value&&is_constructible<Walaber::Widget_Group*, std::__ndk1::iterator_traits<Walaber::Widget_Group**>::reference>::value, void>::type std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::assign<Walaber::Widget_Group**>(&p0->f_0x140,in_x1->f_0x140,in_x1->f_0x148);
-    std::__ndk1::enable_if<__is_forward_iterator<int*>::value&&is_constructible<int, std::__ndk1::iterator_traits<int*>::reference>::value, void>::type std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x158,in_x1->f_0x158,in_x1->f_0x160);
+    std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::assign<Walaber::Widget_Group**>(&p0->f_0x140,in_x1->f_0x140,in_x1->f_0x148);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x158,in_x1->f_0x158,in_x1->f_0x160);
   }
   uVar16 = in_x1->camera;
   uVar15 = in_x1->f_0x170;
@@ -449,7 +449,7 @@ void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0, undefine
     Walaber::Widget_Group::setLocalPosition();
   }
   if (*(undefined8 **)&p0[1].field_0x30 == *(undefined8 **)&p0[1].field_0x38) {
-    void std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x28,&uStack_50);
+    std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x28,&uStack_50);
   }
   else {
     **(undefined8 **)&p0[1].field_0x30 = uStack_50;
@@ -463,7 +463,7 @@ void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0, undefine
     *(int **)&p0[1].field_0x48 = piVar1 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[1].field_0x40,&iStack_68);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[1].field_0x40,&iStack_68);
   }
   *(int *)((long)&p0->f_0x110 + 4) = *(int *)((long)&p0->f_0x110 + 4) + 1;
   return;

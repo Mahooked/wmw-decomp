@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Achievement*, std::__ndk1::allocator<Walaber::Achievement*>
    >::__push_back_slow_path<Walaber::Achievement* const&>(Walaber::Achievement* const&) */
 
-void std::__ndk1::vector<Walaber::Achievement*,std::__ndk1::allocator<Walaber::Achievement*>>::
-     __push_back_slow_path<Walaber::Achievement*const&>(Walaber__Achievement **p0)
+template<> void std::__ndk1::vector<Walaber::Achievement*,std::__ndk1::allocator<Walaber::Achievement*>>::__push_back_slow_path(Walaber__Achievement **p0)
 
 {
   undefined8 *in_x1;

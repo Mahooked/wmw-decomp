@@ -11,9 +11,7 @@
    std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > >::clear() */
 
-void std::__ndk1::
-     __list_imp<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::clear(long *param_1)
+template<> void std::__ndk1::__list_imp<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>::clear(long *param_1)
 
 {
   long lVar1;

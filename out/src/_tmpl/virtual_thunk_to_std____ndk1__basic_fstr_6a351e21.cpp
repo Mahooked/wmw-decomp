@@ -10,12 +10,12 @@
 /* virtual thunk to std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char>
    >::~basic_fstream() */
 
-void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream(long *param_1)
+template<> std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream()
 
 {
   undefined8 *puVar1;
   
-  puVar1 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  puVar1 = (undefined8 *)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
   *puVar1 = &PTR__basic_fstream_00710720;
   puVar1[0x18] = &PTR__basic_fstream_00710770;
   puVar1[2] = &PTR__basic_fstream_00710748;
@@ -33,12 +33,12 @@ void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fst
 /* virtual thunk to std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char>
    >::~basic_fstream() */
 
-void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream(long *param_1)
+template<> std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream()
 
 {
   undefined8 *p0;
   
-  p0 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  p0 = (undefined8 *)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
   *p0 = &PTR__basic_fstream_00710720;
   p0[0x18] = &PTR__basic_fstream_00710770;
   p0[2] = &PTR__basic_fstream_00710748;

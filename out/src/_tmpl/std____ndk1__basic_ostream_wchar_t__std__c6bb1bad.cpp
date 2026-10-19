@@ -10,8 +10,7 @@
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::sentry::sentry(std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >&) */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::sentry
-               (undefined1 *param_1,long *param_2)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::sentry(undefined1 *param_1,long *param_2)
 
 {
   *param_1 = 0;
@@ -34,8 +33,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sent
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::sentry::~sentry() */
 
-void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::~sentry
-               (long param_1)
+template<> std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::~sentry()
 
 {
   int iVar1;
@@ -43,17 +41,17 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sent
   long *plVar3;
   long lVar4;
   
-  plVar3 = *(long **)(param_1 + 8);
+  plVar3 = *(long **)((byte *)this + 8);
   lVar4 = *(long *)(*plVar3 + -0x18);
                     /* try { // try from 005adebc to 005adee3 has its CatchHandler @ 005adef0 */
   if ((((*(long *)((long)plVar3 + lVar4 + 0x28) != 0) &&
        (*(int *)((long)plVar3 + lVar4 + 0x20) == 0)) &&
       ((*(byte *)((long)plVar3 + lVar4 + 9) >> 5 & 1) != 0)) &&
      ((uVar2 = std::uncaught_exception(), (uVar2 & 1) == 0 &&
-      (iVar1 = (**(code **)(**(long **)((long)*(long **)(param_1 + 8) +
-                                       *(long *)(**(long **)(param_1 + 8) + -0x18) + 0x28) + 0x30))
+      (iVar1 = (**(code **)(**(long **)((long)*(long **)((byte *)this + 8) +
+                                       *(long *)(**(long **)((byte *)this + 8) + -0x18) + 0x28) + 0x30))
                          (), iVar1 == -1)))) {
-    lVar4 = (long)*(long **)(param_1 + 8) + *(long *)(**(long **)(param_1 + 8) + -0x18);
+    lVar4 = (long)*(long **)((byte *)this + 8) + *(long *)(**(long **)((byte *)this + 8) + -0x18);
     std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 1);
   }
   return;

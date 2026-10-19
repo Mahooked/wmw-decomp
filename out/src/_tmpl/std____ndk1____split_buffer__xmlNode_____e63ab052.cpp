@@ -11,8 +11,7 @@
    std::__ndk1::allocator<_xmlNode**>&>::__split_buffer(unsigned long, unsigned long,
    std::__ndk1::allocator<_xmlNode**>&) */
 
-void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>::__split_buffer
-               (long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;
@@ -53,8 +52,7 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>
 /* std::__ndk1::__split_buffer<_xmlNode**,
    std::__ndk1::allocator<_xmlNode**>&>::push_back(_xmlNode**&&) */
 
-void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>::push_back
-               (_xmlNode ****p0)
+template<> void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>::push_back(_xmlNode ****p0)
 
 {
   long lVar1;
@@ -147,8 +145,7 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>
 /* std::__ndk1::__split_buffer<_xmlNode**,
    std::__ndk1::allocator<_xmlNode**>&>::push_front(_xmlNode** const&) */
 
-void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>::push_front
-               (_xmlNode ***p0)
+template<> void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>&>::push_front(_xmlNode ***p0)
 
 {
   undefined8 *in_x1;

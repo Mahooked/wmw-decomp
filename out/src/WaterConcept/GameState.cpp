@@ -243,7 +243,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       param_1[1] = (ulong)(puVar11 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
+      std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
       puVar9 = (undefined4 *)param_1[4];
     }
     uStack_a8 = (ulong)uStack_a8._4_4_ << 0x20;
@@ -252,7 +252,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       param_1[4] = (ulong)(puVar9 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(puVar15,&uStack_a8);
+      std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(puVar15,&uStack_a8);
     }
     lVar10 = *param_3;
     if (param_3[1] != lVar10) {
@@ -264,7 +264,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
         uStack_94 = uStack_94 & 0xffffff00;
         plVar1 = (long *)param_1[7];
         if (plVar1 == (long *)param_1[8]) {
-          void std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
+          std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
         }
         else {
           plVar1[2] = CONCAT44(uStack_94,0x41f00000);
@@ -304,7 +304,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
           plVar1 = (long *)param_1[10];
           if (plVar1 == (long *)param_1[0xb]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -319,7 +319,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
             (GameSettings::currentLevelChallengeID < 0)))) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -331,7 +331,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
         if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -423,7 +423,7 @@ LAB_0042add0:
       param_1[1] = (ulong)(puVar11 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
+      std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
       puVar9 = (undefined4 *)param_1[4];
     }
     uStack_a8 = (ulong)uStack_a8._4_4_ << 0x20;
@@ -432,7 +432,7 @@ LAB_0042add0:
       param_1[4] = (ulong)(puVar9 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(puVar15,&uStack_a8);
+      std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(puVar15,&uStack_a8);
     }
     lVar10 = *param_3;
     if (param_3[1] != lVar10) {
@@ -444,7 +444,7 @@ LAB_0042add0:
         uStack_94 = uStack_94 & 0xffffff00;
         plVar1 = (long *)param_1[7];
         if (plVar1 == (long *)param_1[8]) {
-          void std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
+          std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
         }
         else {
           plVar1[2] = CONCAT44(uStack_94,0x41a00000);
@@ -484,7 +484,7 @@ LAB_0042add0:
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
           plVar1 = (long *)param_1[10];
           if (plVar1 == (long *)param_1[0xb]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -499,7 +499,7 @@ LAB_0042add0:
             (GameSettings::currentLevelChallengeID < 0)))) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -511,7 +511,7 @@ LAB_0042add0:
         if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -619,7 +619,7 @@ LAB_0042add0:
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
           plVar1 = (long *)param_1[10];
           if (plVar1 == (long *)param_1[0xb]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -634,7 +634,7 @@ LAB_0042add0:
             (GameSettings::currentLevelChallengeID < 0)))) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -646,7 +646,7 @@ LAB_0042add0:
         if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -673,7 +673,7 @@ LAB_0042a07c:
             param_1[1] = (ulong)(piVar2 + 1);
           }
           else {
-            void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&puStack_90);
+            std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&puStack_90);
           }
         }
         lVar10 = *param_4;
@@ -689,7 +689,7 @@ LAB_0042a07c:
       param_1[1] = (ulong)(puVar11 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
+      std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
     }
     lVar10 = *param_3;
     if (param_3[1] != lVar10) {
@@ -701,7 +701,7 @@ LAB_0042a07c:
         uStack_94 = uStack_94 & 0xffffff00;
         plVar1 = (long *)param_1[7];
         if (plVar1 == (long *)param_1[8]) {
-          void std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
+          std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
         }
         else {
           plVar1[2] = CONCAT44(uStack_94,0x41a00000);
@@ -741,7 +741,7 @@ LAB_0042a07c:
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
           plVar1 = (long *)param_1[10];
           if (plVar1 == (long *)param_1[0xb]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -756,7 +756,7 @@ LAB_0042a07c:
             (GameSettings::currentLevelChallengeID < 0)))) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -768,7 +768,7 @@ LAB_0042a07c:
         if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
           plVar1 = (long *)param_1[0xd];
           if (plVar1 == (long *)param_1[0xe]) {
-            void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
+            std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
@@ -906,16 +906,16 @@ switchD_00429e9c_default:
   this[0xf] = param_2;
   if (this != param_3) {
                     /* try { // try from 0042b10c to 0042b163 has its CatchHandler @ 0042b184 */
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConceptConstants::FluidType*>::value&&is_constructible<WaterConceptConstants::FluidType, std::__ndk1::iterator_traits<WaterConceptConstants::FluidType*>::reference>::value, void>::type std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::assign<WaterConceptConstants::FluidType*>(this,*param_3,param_3[1]);
+    std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::assign<WaterConceptConstants::FluidType*>(this,*param_3,param_3[1]);
   }
   if (this + 6 != param_4) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::Goal*>::value&&is_constructible<WaterConcept::GameState::Goal, std::__ndk1::iterator_traits<WaterConcept::GameState::Goal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::assign<WaterConcept::GameState::Goal*>(this + 6,*param_4,param_4[1]);
+    std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::assign<WaterConcept::GameState::Goal*>(this + 6,*param_4,param_4[1]);
   }
   if (this + 9 != param_5) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 9,*param_5,param_5[1]);
+    std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 9,*param_5,param_5[1]);
   }
   if (this + 0xc != param_6) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 0xc,*param_6,param_6[1]);
+    std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 0xc,*param_6,param_6[1]);
   }
   this[0x10] = *(undefined8 *)(this[0xf] + 0x440);
   WaterConcept::GameState::reset(this);
@@ -1237,7 +1237,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                     do {
                     /* try { // try from 0042bcd8 to 0042bcef has its CatchHandler @ 0042bec4 */
                       uStack_b4 = WaterConceptConstants::stringToFluidType(uStack_b0 + uVar8 * 0x18);
-                      std::__ndk1::pair<std::__ndk1::__tree_iterator<WaterConceptConstants::FluidType, std::__ndk1::__tree_node<WaterConceptConstants::FluidType, void*>*, long>, bool> std::__ndk1::__tree<WaterConceptConstants::FluidType, std::__ndk1::less<WaterConceptConstants::FluidType>, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__emplace_unique_key_args<WaterConceptConstants::FluidType, WaterConceptConstants::FluidType>(param_1 + 0x170,&uStack_b4,&uStack_b4);
+                      std::__ndk1::__tree<WaterConceptConstants::FluidType, std::__ndk1::less<WaterConceptConstants::FluidType>, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__emplace_unique_key_args<WaterConceptConstants::FluidType, WaterConceptConstants::FluidType>(param_1 + 0x170,&uStack_b4,&uStack_b4);
                       uVar6 = ((long)(uStack_a8 - uStack_b0) >> 3) * -0x5555555555555555;
                       uVar7 = (ulong)uVar10;
                       uVar8 = (ulong)uVar10;
@@ -2143,7 +2143,7 @@ LAB_0042cffc:
   }
   *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 0042d014 to 0042d01f has its CatchHandler @ 0042d064 */
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x138,&uStack_60,&uStack_60);
+  std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x138,&uStack_60,&uStack_60);
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -2235,7 +2235,7 @@ void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0, long
 LAB_0042d160:
   *(undefined1 *)((long)pvVar3 + uVar2) = 0;
                     /* try { // try from 0042d168 to 0042d173 has its CatchHandler @ 0042d1b8 */
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&p0->field_0x108,&uStack_60,&uStack_60);
+  std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&p0->field_0x108,&uStack_60,&uStack_60);
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }

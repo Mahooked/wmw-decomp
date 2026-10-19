@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<Walaber::SoundManager::SoundInfo,
    std::__ndk1::allocator<Walaber::SoundManager::SoundInfo> >::__vdeallocate() */
 
-void std::__ndk1::
-     vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>
-     ::__vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__vdeallocate(undefined8 *param_1)
 
 {
   void *pvVar1;
@@ -57,9 +55,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo,
    std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined4 uVar1;

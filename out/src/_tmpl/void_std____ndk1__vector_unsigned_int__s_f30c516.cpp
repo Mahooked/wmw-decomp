@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>
    >::__push_back_slow_path<unsigned int const&>(unsigned int const&) */
 
-void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
-     __push_back_slow_path<unsigned_int_const&>(uint *p0)
+template<> void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::__push_back_slow_path(uint *p0)
 
 {
   undefined4 *in_x1;
@@ -81,8 +80,7 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
 /* void std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>
    >::__push_back_slow_path<unsigned int>(unsigned int&&) */
 
-void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
-     __push_back_slow_path<unsigned_int>(uint **p0)
+template<> void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::__push_back_slow_path(uint **p0)
 
 {
   undefined4 *in_x1;

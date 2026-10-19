@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal
    const&>(WaterConcept::GameState::SecondaryGoal const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::GameState::SecondaryGoal,std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>
-     ::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal_const&>
-               (WaterConcept__GameState__SecondaryGoal *p0)
+template<> void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal,std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path(WaterConcept__GameState__SecondaryGoal *p0)
 
 {
   ulong uVar1;

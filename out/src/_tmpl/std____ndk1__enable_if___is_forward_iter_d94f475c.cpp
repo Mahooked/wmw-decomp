@@ -14,10 +14,7 @@
    >::assign<Walaber::SpriteBatch::DrawAction**>(Walaber::SpriteBatch::DrawAction**,
    Walaber::SpriteBatch::DrawAction**) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>
-     ::assign<Walaber::SpriteBatch::DrawAction**>
-               (Walaber__SpriteBatch__DrawAction **p0,Walaber__SpriteBatch__DrawAction **p1)
+template<> void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::assign(Walaber__SpriteBatch__DrawAction **p0,Walaber__SpriteBatch__DrawAction **p1)
 
 {
   ulong uVar1;

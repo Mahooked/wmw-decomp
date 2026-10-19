@@ -11,7 +11,7 @@
    std::__ndk1::iterator_traits<int*>::reference>::value, void>::type std::__ndk1::vector<int,
    std::__ndk1::allocator<int> >::assign<int*>(int*, int*) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::assign<int*>(int *p0,int *p1)
+template<> void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::assign(int *p0,int *p1)
 
 {
   ulong uVar1;

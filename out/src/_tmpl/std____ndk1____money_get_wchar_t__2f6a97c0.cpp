@@ -16,8 +16,7 @@
    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >&, int&) */
 
-void std::__ndk1::__money_get<wchar_t>::__gather_info
-               (bool param_1,std::__ndk1::locale const& param_2,std::__ndk1::money_base::pattern& param_3,wchar_t& param_4,wchar_t& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_7,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_8,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_9,int& param_10)
+template<> void std::__ndk1::__money_get<wchar_t>::__gather_info(bool param_1,std::__ndk1::locale const& param_2,std::__ndk1::money_base::pattern& param_3,wchar_t& param_4,wchar_t& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_7,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_8,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_9,int& param_10)
 
 {
   byte bVar1;

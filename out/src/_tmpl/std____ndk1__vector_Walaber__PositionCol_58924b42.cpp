@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<Walaber::PositionColorVert,
    std::__ndk1::allocator<Walaber::PositionColorVert> >::vector(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::vector
-               (ulong p0)
+template<> std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::vector(ulong p0)
 
 {
   long in_x1;
@@ -37,9 +35,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::PositionColorVert,
    std::__ndk1::allocator<Walaber::PositionColorVert> >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::__vallocate(ulong p0)
 
 {
   long lVar1;

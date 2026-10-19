@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupData>(Walaber::SkeletonActor::AnimationGroupData&&)
     */
 
-void std::__ndk1::
-     vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>
-     ::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupData>
-               (Walaber__SkeletonActor__AnimationGroupData **p0)
+template<> void std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>::__push_back_slow_path(Walaber__SkeletonActor__AnimationGroupData **p0)
 
 {
   undefined8 *in_x1;

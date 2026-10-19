@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<Walaber::Texture2D>::~MemberCallback() */
 
-void Walaber::MemberCallback<Walaber::Texture2D>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<Walaber::Texture2D>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<Walaber::Texture2D>::~MemberCallback(void *p0)
 
 /* Walaber::MemberCallback<Walaber::Texture2D>::invoke(void*) */
 
-void Walaber::MemberCallback<Walaber::Texture2D>::invoke(void *p0)
+template<> void Walaber::MemberCallback<Walaber::Texture2D>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

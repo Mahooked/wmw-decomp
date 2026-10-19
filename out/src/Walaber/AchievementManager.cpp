@@ -571,14 +571,14 @@ void Walaber::AchievementManager::loadAchievements
     uStack_a4 = Walaber::DatabaseIterator::getIntAtIndex(&uStack_200,6);
     uStack_a8 = Walaber::DatabaseIterator::getFloatAtIndex(&uStack_200,7);
     if (*(long *)(param_1 + 0x20) == *(long *)(param_1 + 0x28)) {
-      void std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>>::__push_back_slow_path<Walaber::Achievement const&>((long *)(param_1 + 0x18),&uStack_120);
+      std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>>::__push_back_slow_path<Walaber::Achievement const&>((long *)(param_1 + 0x18),&uStack_120);
     }
     else {
       new ((void *)(*(long *)(param_1 + 0x20))) Walaber::Achievement(&uStack_120);
       *(long *)(param_1 + 0x20) = *(long *)(param_1 + 0x20) + 0x88;
     }
     if ((void *)uStack_198 == pvStack_190) {
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&uStack_1a0,&uStack_1c0);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&uStack_1a0,&uStack_1c0);
     }
     else {
       new ((void *)(uStack_198)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1c0);
@@ -823,7 +823,7 @@ void Walaber::AchievementManager::reportAchievement
       }
       if (*(long **)(param_2 + 0x88) == *(long **)(param_2 + 0x90)) {
                     /* try { // try from 00330238 to 0033023f has its CatchHandler @ 00330364 */
-        void std::__ndk1::vector<Walaber::Achievement*, std::__ndk1::allocator<Walaber::Achievement*>>::__push_back_slow_path<Walaber::Achievement* const&>(param_2 + 0x80,plVar11);
+        std::__ndk1::vector<Walaber::Achievement*, std::__ndk1::allocator<Walaber::Achievement*>>::__push_back_slow_path<Walaber::Achievement* const&>(param_2 + 0x80,plVar11);
       }
       else {
         **(long **)(param_2 + 0x88) = *plVar11;

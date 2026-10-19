@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<WaterConceptConstants::MaterialType,
    std::__ndk1::allocator<WaterConceptConstants::MaterialType> >::reserve(unsigned long) */
 
-void std::__ndk1::
-     vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>
-     ::reserve(ulong p0)
+template<> void std::__ndk1::vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::reserve(ulong p0)
 
 {
   ulong in_x1;

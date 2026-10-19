@@ -11,9 +11,7 @@
    std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionCallbackParameters>
    >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<WaterConcept::Fluids::FluidCollisionCallbackParameters,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionCallbackParameters>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<WaterConcept::Fluids::FluidCollisionCallbackParameters,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionCallbackParameters>>::~__vector_base()
 
 {
   void *p0;

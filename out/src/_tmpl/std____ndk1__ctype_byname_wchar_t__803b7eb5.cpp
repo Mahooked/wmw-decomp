@@ -9,7 +9,7 @@
 
 /* std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char const*, unsigned long) */
 
-void std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char *p0,ulong p1, long in_x2)
+template<> std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
@@ -89,8 +89,7 @@ LAB_005d7858:
 /* std::__ndk1::ctype_byname<wchar_t>::ctype_byname(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
-void std::__ndk1::ctype_byname<wchar_t>::ctype_byname
-               (undefined8 *param_1,byte *param_2,long param_3)
+template<> std::__ndk1::ctype_byname<wchar_t>::ctype_byname(undefined8 *param_1,byte *param_2,long param_3)
 
 {
   long lVar1;
@@ -112,7 +111,7 @@ void std::__ndk1::ctype_byname<wchar_t>::ctype_byname
   param_1[2] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d7964 to 005d7977 has its CatchHandler @ 005d799c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<wchar_t>::ctype_byname failed to construct for ",param_2);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<wchar_t>::ctype_byname failed to construct for ",param_2);
                     /* try { // try from 005d7978 to 005d797f has its CatchHandler @ 005d7984 */
     FUN_005d5db0(auStack_50);
   }
@@ -131,7 +130,7 @@ void std::__ndk1::ctype_byname<wchar_t>::ctype_byname
 
 /* std::__ndk1::ctype_byname<wchar_t>::~ctype_byname() */
 
-void std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
+template<> std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
 
 {
   *this = &PTR__ctype_byname_00717840;
@@ -151,7 +150,7 @@ void std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
 /* WARNING: Type propagation algorithm not settling */
 /* std::__ndk1::ctype_byname<wchar_t>::do_is(unsigned long, wchar_t) const */
 
-bool std::__ndk1::ctype_byname<wchar_t>::do_is(ulong p0,wchar_t p1, undefined4 in_w2)
+template<> bool std::__ndk1::ctype_byname<wchar_t>::do_is(ulong p0,wchar_t p1, undefined4 in_w2)
 
 {
   undefined1 uVar1;
@@ -212,7 +211,7 @@ bool std::__ndk1::ctype_byname<wchar_t>::do_is(ulong p0,wchar_t p1, undefined4 i
 /* std::__ndk1::ctype_byname<wchar_t>::do_is(wchar_t const*, wchar_t const*, unsigned long*) const
     */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2, ulong * in_x3)
+template<> wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2, ulong * in_x3)
 
 {
   wchar_t wVar1;
@@ -291,7 +290,7 @@ LAB_005d7ca4:
 /* std::__ndk1::ctype_byname<wchar_t>::do_scan_is(unsigned long, wchar_t const*, wchar_t const*)
    const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
+template<> wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
 
 {
   wchar_t wVar1;
@@ -342,7 +341,7 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wc
 /* std::__ndk1::ctype_byname<wchar_t>::do_scan_not(unsigned long, wchar_t const*, wchar_t const*)
    const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
+template<> wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
 
 {
   wchar_t wVar1;
@@ -387,7 +386,7 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,w
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t) const */
 
-void std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t p0, undefined4 in_w1)
+template<> void std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t p0, undefined4 in_w1)
 
 {
   
@@ -403,7 +402,7 @@ void std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t p0, undefined4 in_w1
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t*, wchar_t const*) const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
+template<> wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   wchar_t *pwVar1;
@@ -426,7 +425,7 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t) const */
 
-void std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t p0, undefined4 in_w1)
+template<> void std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t p0, undefined4 in_w1)
 
 {
   
@@ -442,7 +441,7 @@ void std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t p0, undefined4 in_w1
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t*, wchar_t const*) const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
+template<> wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   wchar_t *pwVar1;
@@ -465,7 +464,7 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_widen(char) const */
 
-undefined4 std::__ndk1::ctype_byname<wchar_t>::do_widen(char p0, undefined1 in_w1)
+template<> undefined4 std::__ndk1::ctype_byname<wchar_t>::do_widen(char p0, undefined1 in_w1)
 
 {
   undefined4 uVar1;
@@ -489,7 +488,7 @@ undefined4 std::__ndk1::ctype_byname<wchar_t>::do_widen(char p0, undefined1 in_w
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_widen(char const*, char const*, wchar_t*) const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2, undefined4 * in_x3)
+template<> wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2, undefined4 * in_x3)
 
 {
   wchar_t *pwVar1;
@@ -522,7 +521,7 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_widen(char *p0,char *p1,wchar_t
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t, char) const */
 
-int std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t p0,char p1, int in_w2)
+template<> int std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t p0,char p1, int in_w2)
 
 {
   int iVar1;
@@ -550,7 +549,7 @@ int std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t p0,char p1, int in_w2)
 /* std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t const*, wchar_t const*, char, char*) const
     */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,char p2,char *p3, undefined1 * in_x4)
+template<> wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,char p2,char *p3, undefined1 * in_x4)
 
 {
   int iVar1;
@@ -593,7 +592,7 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,
 
 /* std::__ndk1::ctype_byname<wchar_t>::~ctype_byname() */
 
-void std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
+template<> std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
 
 {
   *this = &PTR__ctype_byname_00717840;

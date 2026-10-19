@@ -258,7 +258,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff120 to 004ff12b has its CatchHandler @ 004ff778 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -276,7 +276,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff188 to 004ff193 has its CatchHandler @ 004ff774 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   GameSettings::mSupportsMenuAnimations = 1;
@@ -295,7 +295,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff1fc to 004ff207 has its CatchHandler @ 004ff770 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -313,7 +313,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff264 to 004ff26f has its CatchHandler @ 004ff76c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -331,7 +331,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff2cc to 004ff2d7 has its CatchHandler @ 004ff768 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -349,7 +349,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff334 to 004ff33f has its CatchHandler @ 004ff764 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -367,7 +367,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff39c to 004ff3a7 has its CatchHandler @ 004ff760 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -385,7 +385,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff404 to 004ff40f has its CatchHandler @ 004ff75c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -403,7 +403,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff46c to 004ff477 has its CatchHandler @ 004ff758 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -421,7 +421,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff4d4 to 004ff4df has its CatchHandler @ 004ff754 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -439,7 +439,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff53c to 004ff547 has its CatchHandler @ 004ff750 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -457,7 +457,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff5a4 to 004ff5af has its CatchHandler @ 004ff74c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -475,7 +475,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff60c to 004ff617 has its CatchHandler @ 004ff748 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -493,7 +493,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff674 to 004ff67f has its CatchHandler @ 004ff744 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   ppuVar5 = (undefined **)operator new(0x10);
@@ -511,7 +511,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   }
   else {
                     /* try { // try from 004ff6dc to 004ff6e7 has its CatchHandler @ 004ff740 */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Callback>>(lVar1,&ppuStack_70);
   }
   ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_70)->~SharedPtr<Walaber::Callback>();
   WaterConcept::Screen_Loading::_doPromoAndThemeCheck();
@@ -623,7 +623,7 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
       ((Walaber::PropertyList *)apvStack_b0)->~PropertyList();
       new ((void *)(abStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077fb70);
                     /* try { // try from 004ff960 to 004ff973 has its CatchHandler @ 005004ac */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_160,&DAT_0077fb58,"=\'");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_160,&DAT_0077fb58,"=\'");
       uVar10 = DAT_0077fcb0;
       puVar5 = DAT_0077fcb8;
       if ((DAT_0077fca8 & 1) == 0) {
@@ -687,7 +687,7 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
         uStack_158 = 0x61;
         uStack_155 = 0;
                     /* try { // try from 004ffa9c to 004ffab3 has its CatchHandler @ 005002f4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_110,&DAT_0077fb70,&DAT_0061d431);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_110,&DAT_0077fb70,&DAT_0061d431);
                     /* try { // try from 004ffab4 to 004ffac7 has its CatchHandler @ 005002dc */
         Walaber::DatabaseManager::updateEntry(0,&bStack_160,&bStack_110,&bStack_f0);
         if ((bStack_110 & 1) != 0) {
@@ -704,7 +704,7 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
         uStack_158 = 0x61;
         uStack_155 = 0;
                     /* try { // try from 004ffb08 to 004ffb1f has its CatchHandler @ 005002d8 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_0077fb70,"=\'");
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_0077fb70,"=\'");
         uVar10 = (ulong)(bStack_c0 >> 1);
         pvVar2 = (void *)((ulong)&bStack_c0 | 1);
         if ((bStack_c0 & 1) != 0) {
@@ -3805,7 +3805,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     uStack_16a = 0;
     builtin_strncpy(pcVar14,"LN_MEET_ME_IN_THE_MIDDLE",0x19);
                     /* try { // try from 005034d4 to 005034df has its CatchHandler @ 00504474 */
-    void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
     if ((bStack_170 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_15c,
                                     CONCAT13(uStack_15d,
@@ -3848,7 +3848,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 0050354c to 00503557 has its CatchHandler @ 005043cc */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -3892,7 +3892,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 005035c8 to 005035d3 has its CatchHandler @ 005043c8 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -3936,7 +3936,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 00503644 to 0050364f has its CatchHandler @ 005043c4 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -3980,7 +3980,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 005036bc to 005036c7 has its CatchHandler @ 005043c0 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -4024,7 +4024,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 00503738 to 00503743 has its CatchHandler @ 005043bc */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -4068,7 +4068,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 005037b4 to 005037bf has its CatchHandler @ 005043b8 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -4112,7 +4112,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 00503830 to 0050383b has its CatchHandler @ 005043b4 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -4156,7 +4156,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 005038a4 to 005038af has its CatchHandler @ 005043b0 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -4200,7 +4200,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 00503920 to 0050392b has its CatchHandler @ 005043ac */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -4244,7 +4244,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 00503994 to 0050399f has its CatchHandler @ 005043a8 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,
@@ -4306,7 +4306,7 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
     }
     else {
                     /* try { // try from 00503a18 to 00503a23 has its CatchHandler @ 005043a4 */
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&bStack_1e0,&bStack_170);
       if ((bStack_170 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_15c,
                                       CONCAT13(uStack_15d,

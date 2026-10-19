@@ -13,10 +13,7 @@
    std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner> >
    >::__erase_unique<int>(int const&) */
 
-undefined8
-std::__ndk1::
-__tree<std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>>>
-::__erase_unique<int>(int *p0)
+template<> undefined8 std::__ndk1::__tree<std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>>>::__erase_unique(int *p0)
 
 {
   int iVar1;

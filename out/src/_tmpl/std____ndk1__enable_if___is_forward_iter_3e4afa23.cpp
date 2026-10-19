@@ -14,11 +14,7 @@
    >::assign<Walaber::AnimationCueAnimationTrack::CueAnimationEvent*>(Walaber::AnimationCueAnimationTrack::CueAnimationEvent*,
    Walaber::AnimationCueAnimationTrack::CueAnimationEvent*) */
 
-void std::__ndk1::
-     vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::assign<Walaber::AnimationCueAnimationTrack::CueAnimationEvent*>
-               (Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p0,
-               Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p1)
+template<> void std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::assign(Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p0, Walaber__AnimationCueAnimationTrack__CueAnimationEvent *p1)
 
 {
   Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWVar1;

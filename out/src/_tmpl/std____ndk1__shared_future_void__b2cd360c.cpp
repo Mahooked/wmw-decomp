@@ -9,10 +9,10 @@
 
 /* std::__ndk1::shared_future<void>::~shared_future() */
 
-void std::__ndk1::shared_future<void>::~shared_future(long *param_1)
+template<> std::__ndk1::shared_future<void>::~shared_future()
 
 {
-  if (*param_1 != 0) {
+  if (*(byte *)this != 0) {
     std::__ndk1::__shared_count::__release_shared();
     return;
   }
@@ -28,8 +28,7 @@ void std::__ndk1::shared_future<void>::~shared_future(long *param_1)
 /* std::__ndk1::shared_future<void>::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::shared_future<void>
    const&) */
 
-std____ndk1__shared_future<void> *
-std::__ndk1::shared_future<void>::operator=(std____ndk1__shared_future<void> *p0)
+template<> std____ndk1__shared_future<void> * std::__ndk1::shared_future<void>::operator=(std____ndk1__shared_future<void> *p0)
 
 {
   ulong *in_x1;

@@ -9,7 +9,7 @@
 
 /* std::__ndk1::codecvt_byname<wchar_t, char, mbstate_t>::~codecvt_byname() */
 
-void std::__ndk1::codecvt_byname<wchar_t,char,mbstate_t>::~codecvt_byname(void)
+template<> std::__ndk1::codecvt_byname<wchar_t,char,mbstate_t>::~codecvt_byname()
 
 {
   codecvt<wchar_t,char,mbstate_t>::~codecvt();
@@ -24,11 +24,11 @@ void std::__ndk1::codecvt_byname<wchar_t,char,mbstate_t>::~codecvt_byname(void)
 
 /* std::__ndk1::codecvt_byname<wchar_t, char, mbstate_t>::~codecvt_byname() */
 
-void std::__ndk1::codecvt_byname<wchar_t,char,mbstate_t>::~codecvt_byname(void *param_1)
+template<> std::__ndk1::codecvt_byname<wchar_t,char,mbstate_t>::~codecvt_byname()
 
 {
   std::__ndk1::codecvt<wchar_t, char, mbstate_t>::~codecvt();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 

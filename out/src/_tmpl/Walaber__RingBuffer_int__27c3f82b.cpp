@@ -9,7 +9,7 @@
 
 /* Walaber::RingBuffer<int>::setCapacity(int) */
 
-void Walaber::RingBuffer<int>::setCapacity(int p0, uint in_w1)
+template<> void Walaber::RingBuffer<int>::setCapacity(int p0, uint in_w1)
 
 {
   undefined8 *puVar1;

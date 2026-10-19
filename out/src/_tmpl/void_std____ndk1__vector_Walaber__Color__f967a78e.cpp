@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>
    >::__push_back_slow_path<Walaber::Color>(Walaber::Color&&) */
 
-void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::
-     __push_back_slow_path<Walaber::Color>(Walaber__Color **p0)
+template<> void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path(Walaber__Color **p0)
 
 {
   undefined1 *in_x1;
@@ -65,8 +64,7 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
 /* void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>
    >::__push_back_slow_path<Walaber::Color const&>(Walaber::Color const&) */
 
-void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::
-     __push_back_slow_path<Walaber::Color_const&>(Walaber__Color *p0)
+template<> void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path(Walaber__Color *p0)
 
 {
   undefined1 *in_x1;

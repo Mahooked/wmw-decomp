@@ -11,9 +11,7 @@
    std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType> >::__vallocate(unsigned
    long) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_UpsellWater2::TransitionType,std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType,std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::__vallocate(ulong p0)
 
 {
   long lVar1;

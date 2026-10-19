@@ -10,14 +10,12 @@
 /* virtual thunk to std::__ndk1::basic_stringstream<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >::~basic_stringstream() */
 
-void std::__ndk1::
-     basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_stringstream(long *param_1)
+template<> std::__ndk1::basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_stringstream()
 
 {
   undefined8 *puVar1;
   
-  puVar1 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  puVar1 = (undefined8 *)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
   *puVar1 = &PTR__basic_stringstream_007110f0;
   puVar1[0x10] = &PTR__basic_stringstream_00711140;
   puVar1[2] = &PTR__basic_stringstream_00711118;
@@ -40,14 +38,12 @@ void std::__ndk1::
 /* virtual thunk to std::__ndk1::basic_stringstream<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >::~basic_stringstream() */
 
-void std::__ndk1::
-     basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_stringstream(long *param_1)
+template<> std::__ndk1::basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_stringstream()
 
 {
   undefined8 *p0;
   
-  p0 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  p0 = (undefined8 *)((long)(byte *)this + *(long *)(*(byte *)this + -0x18));
   *p0 = &PTR__basic_stringstream_007110f0;
   p0[0x10] = &PTR__basic_stringstream_00711140;
   p0[2] = &PTR__basic_stringstream_00711118;

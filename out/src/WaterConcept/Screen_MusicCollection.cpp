@@ -806,7 +806,7 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int
   uVar7 = *(undefined1 *)(lVar24 + 0x19a);
   uVar8 = *(undefined1 *)(lVar24 + 0x19b);
                     /* try { // try from 00533b34 to 00533b4b has its CatchHandler @ 00536ca8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0,&DAT_00787058,&DAT_00619cc6);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0,&DAT_00787058,&DAT_00619cc6);
   uVar28 = DAT_00787090;
   puVar13 = DAT_00787098;
   if ((DAT_00787088 & 1) == 0) {
@@ -1217,7 +1217,7 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int
       uVar28 = Walaber::DatabaseIterator::getBoolAtIndex(auStack_1e8,2);
       if ((uVar28 & 1) != 0) {
                     /* try { // try from 00534574 to 00534583 has its CatchHandler @ 0053713c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1c0,"/Textures/",&fStack_310);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1c0,"/Textures/",&fStack_310);
                     /* try { // try from 00534584 to 00534597 has its CatchHandler @ 00537124 */
         puVar29 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_1c0,".png",4);
         uVar36 = puVar29[2];
@@ -1274,7 +1274,7 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int
                     /* try { // try from 00534660 to 00534663 has its CatchHandler @ 005371e0 */
       uVar36 = Walaber::TextureManager::getManager();
                     /* try { // try from 00534668 to 00534677 has its CatchHandler @ 005371dc */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,"/Textures/",&fStack_310);
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,"/Textures/",&fStack_310);
                     /* try { // try from 00534678 to 0053468b has its CatchHandler @ 005371c4 */
       puVar26 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_c0,".png",4);
       pvStack_1b0 = (void *)puVar26[2];
@@ -1482,7 +1482,7 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int
           puVar41 = *(undefined4 **)((long)p0 + 0xa8);
           if (puVar41 == *(undefined4 **)((long)p0 + 0xb0)) {
                     /* try { // try from 00534384 to 005343b7 has its CatchHandler @ 00537170 */
-            void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>((long)p0 + 0xa0,&uStack_330);
+            std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>((long)p0 + 0xa0,&uStack_330);
           }
           else {
             *puVar41 = (int)uStack_330;
@@ -2819,7 +2819,7 @@ LAB_00534fb8:
         }
         else {
                     /* try { // try from 005362b0 to 005362bb has its CatchHandler @ 00536cdc */
-          void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>((long)p0 + 0xa0,&bStack_1e0);
+          std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>((long)p0 + 0xa0,&bStack_1e0);
         }
                     /* try { // try from 005362c0 to 005362d7 has its CatchHandler @ 00536ea8 */
         plVar33 = (long *)Walaber::WidgetManager::getWidget(*puVar44,iVar1);
@@ -2859,7 +2859,7 @@ LAB_00535be4:
       std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::push_back((long)p0 + 0xf8,&bStack_1e0);
       if (*(long *)((long)p0 + 0x118) == *(long *)((long)p0 + 0x120)) {
                     /* try { // try from 00536058 to 005360cb has its CatchHandler @ 00537040 */
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0x110,&uStack_1c0);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0x110,&uStack_1c0);
       }
       else {
                     /* try { // try from 00535f58 to 00535f5f has its CatchHandler @ 00537040 */
@@ -2867,7 +2867,7 @@ LAB_00535be4:
         *(long *)((long)p0 + 0x118) = *(long *)((long)p0 + 0x118) + 0x18;
       }
       if (*(long *)((long)p0 + 0x130) == *(long *)((long)p0 + 0x138)) {
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0x128,&fStack_310);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>((long)p0 + 0x128,&fStack_310);
       }
       else {
         new ((void *)(*(long *)((long)p0 + 0x130))) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_310);
@@ -2921,7 +2921,7 @@ LAB_00535be4:
       }
       else {
                     /* try { // try from 00535fcc to 00535fd7 has its CatchHandler @ 00536dd0 */
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x110,&bStack_1e0);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x110,&bStack_1e0);
         if ((bStack_1e0 & 1) != 0) {
           operator delete(puStack_1d0);
         }
@@ -2957,7 +2957,7 @@ LAB_00535be4:
       }
       else {
                     /* try { // try from 00536034 to 0053603f has its CatchHandler @ 00536da4 */
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x128,&bStack_1e0);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>((long)p0 + 0x128,&bStack_1e0);
         if ((bStack_1e0 & 1) != 0) {
           operator delete(puStack_1d0);
         }
@@ -2967,7 +2967,7 @@ LAB_00535be4:
                     /* try { // try from 00536328 to 0053632b has its CatchHandler @ 00536f60 */
     uVar36 = Walaber::TextureManager::getManager();
                     /* try { // try from 00536330 to 00536343 has its CatchHandler @ 00536f64 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_e0,"/Textures/",&bStack_c0);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_e0,"/Textures/",&bStack_c0);
                     /* try { // try from 00536344 to 00536357 has its CatchHandler @ 00536f68 */
     puVar29 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_e0,".png",4);
     puStack_1d0 = (undefined1 *)puVar29[2];

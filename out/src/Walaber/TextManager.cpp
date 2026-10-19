@@ -68,7 +68,7 @@ void Walaber::TextManager::getString(byte *param_1,byte *param_2,int param_3)
   if (DAT_007308b8 == (undefined8 *)0x0) {
 LAB_003f9c6c:
                     /* try { // try from 003f9c6c to 003f9c7f has its CatchHandler @ 003f9d30 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_50,param_2,&DAT_00634534);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_50,param_2,&DAT_00634534);
   }
   else {
     puVar3 = &DAT_007308b8;
@@ -88,7 +88,7 @@ LAB_003f9c6c:
       goto LAB_003f9cc0;
     }
                     /* try { // try from 003f9d0c to 003f9d1f has its CatchHandler @ 003f9d28 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_50,param_2,&DAT_0063452c);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_50,param_2,&DAT_0063452c);
   }
   if ((*param_1 & 1) == 0) {
     param_1[0] = 0;
@@ -296,7 +296,7 @@ void Walaber::TextManager::getSubtitle(byte *param_1,byte *param_2,int param_3)
       puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar3 + 5,param_2);
       if (puVar3 + 6 == puVar2) {
                     /* try { // try from 003fa070 to 003fa083 has its CatchHandler @ 003fa0e0 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,param_2,&DAT_0063452c);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,param_2,&DAT_0063452c);
         if ((*param_1 & 1) == 0) {
           param_1[0] = 0;
           param_1[1] = 0;
@@ -337,7 +337,7 @@ void Walaber::TextManager::getSubtitle(byte *param_1,byte *param_2,int param_3)
     }
   }
                     /* try { // try from 003f9fa8 to 003f9fbb has its CatchHandler @ 003fa0ec */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,param_2,&DAT_00634534);
+  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,param_2,&DAT_00634534);
   if ((*param_1 & 1) == 0) {
     param_1[0] = 0;
     param_1[1] = 0;
@@ -483,7 +483,7 @@ void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std
   undefined1 auStack_50 [24];
   
   if (param_2 != &mLanguagesToLoad) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Language*>::value&&is_constructible<Walaber::Language, std::__ndk1::iterator_traits<Walaber::Language*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
+    std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
   }
   new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 003fa32c to 003fa32f has its CatchHandler @ 003fa3e4 */
@@ -1396,7 +1396,7 @@ void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, 
   undefined1 auStack_50 [24];
   
   if (param_2 != &mLanguagesToLoad) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Language*>::value&&is_constructible<Walaber::Language, std::__ndk1::iterator_traits<Walaber::Language*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
+    std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
   }
   new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 003fb838 to 003fb83b has its CatchHandler @ 003fb8f0 */
@@ -2405,7 +2405,7 @@ void Walaber::TextManager::getAvailableLanguages(long param_1)
     do {
       puVar1 = *(undefined4 **)(param_1 + 8);
       if (puVar1 == *(undefined4 **)(param_1 + 0x10)) {
-        void std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::__push_back_slow_path<Walaber::Language const&>(param_1);
+        std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::__push_back_slow_path<Walaber::Language const&>(param_1);
       }
       else {
         *puVar1 = (int)plVar5[4];
@@ -2474,7 +2474,7 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
       }
       else {
                     /* try { // try from 003fd0f8 to 003fd103 has its CatchHandler @ 003fd190 */
-        void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,&uStack_50);
+        std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,&uStack_50);
         if ((uStack_50 & 1) != 0) {
           operator delete(pvStack_40);
         }

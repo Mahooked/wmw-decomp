@@ -10,8 +10,7 @@
 /* Walaber::RingBuffer<WaterConcept::ParticleDescription>::push(WaterConcept::ParticleDescription)
     */
 
-void Walaber::RingBuffer<WaterConcept::ParticleDescription>::push
-               (long *param_1,undefined8 param_2,undefined4 param_3)
+template<> void Walaber::RingBuffer<WaterConcept::ParticleDescription>::push(long *param_1,undefined8 param_2,undefined4 param_3)
 
 {
   int iVar1;

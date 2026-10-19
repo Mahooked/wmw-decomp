@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback> > >::vector(unsigned long,
    Walaber::SharedPtr<Walaber::Callback> const&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>
-     ::vector(ulong p0,Walaber__SharedPtr<Walaber::Callback> *p1)
+template<> std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::vector(ulong p0,Walaber__SharedPtr<Walaber::Callback> *p1)
 
 {
   long *in_x2;
@@ -57,9 +55,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>,
    std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback> > >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -87,9 +83,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Callback>,
    std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback> >&>&) */
 
-void std::__ndk1::
-     vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long *plVar1;

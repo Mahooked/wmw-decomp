@@ -16,11 +16,7 @@
    const&>(std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,
    std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo> > const&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>
-     ::
-     __push_back_slow_path<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>const&>
-               (long *param_1,undefined8 param_2)
+template<> void std::__ndk1::vector<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>::__push_back_slow_path(long *param_1,undefined8 param_2)
 
 {
   ulong uVar1;

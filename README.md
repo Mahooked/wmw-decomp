@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **50,796** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **48,371** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,12 +57,15 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 50,796 diagnostics into
+   files against synthesised declarations and sorts the 48,371 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
-   declarations (see "The syntax gate"). The first two systematic defects it
-   named are fixed — illegal return types and parameters on 695 constructors
-   and destructors, then 17,182 calls spelled in Ghidra's static member form —
-   and the next one it names is call/definition arity divergence.
+   declarations (see "The syntax gate"). Five systematic defects it named are
+   now decided — illegal return types and parameters on 695 constructors and
+   destructors, 17,182 calls spelled in Ghidra's static member form, the arity
+   divergence re-bound at 764 definitions, template-qualified definitions
+   missing their `template<>` marker, and calls printed in declaration shape —
+   and the largest remaining bucket is *no matching function*: the residue of
+   that arity divergence, plus the free function templates nothing declares.
 3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
@@ -154,6 +157,30 @@ re-inferred.
   diagnostics that could have replaced it — *member reference type … is not a
   pointer*, *base type … is not a structure or union* — ended at exactly
   their previous count instead of rising.
+- The baseline driven **50,796 → 48,371** by making the two shapes Ghidra's
+  template output still used parseable. A template-qualified out-of-line
+  definition is an *explicit specialization* and needs `template<>` in front of
+  it, or clang reads `~basic_string()` of the instantiation as a specialization
+  missing its marker; `tools/shape_tmpl_defs.py` puts it there for **2,334**
+  definitions (the **28** *free* function templates get their explicit arguments
+  stripped instead — a namespace function is not a specialization), drops the
+  return type from constructors and destructors, drops a
+  destructor's parameter (rewritten to `(byte *)this` in the body), and strips
+  the explicit arguments from a member-template name so the name exists on the
+  primary. A **call** printed in declaration shape — `void A::f<T>(obj, arg);`
+  inside a body — is a declaration, which C++ forbids at block scope;
+  `tools/shape_decl_calls.py` drops the return type from **1,567** of them,
+  leaving a call expression with its explicit template arguments intact. The
+  harvest that feeds the synthesised declarations then had to learn the same
+  grammar: a wrapped signature whose qualifier is split across lines
+  (`num_get<…>`⏎`::f`) is joined back together, the `template<>` marker is not
+  a return type, and two signatures that differ only in parameter *names*
+  (`f(int a)` / `f(int b)`) or in Ghidra's width typedefs (`uint` /
+  `undefined4`) are one overload. *Implicit instantiation of undefined template*
+  **6,917 → 334**, *expected 'X' at end of declaration* and *definition … not
+  allowed inside a function* **407 → 19** each, *template specialization
+  requires 'template<>'* **273 → 0**, and *definitions parsed* rises 7,489 →
+  8,217 (12 headers left unparsed).
 
 ## What the game turned out to be
 
@@ -285,6 +312,22 @@ tools/
                       propagation, single-assignment alias/temporary folding,
                       and dead-copy removal, then drop the freed declarations;
                       --check gates that no coalescible copy is left
+  shape_inw.py        rebind the decompiler's unbound input registers as the
+                      parameters they are (append when AAPCS64 leaves no choice,
+                      insert at the front only when call sites corroborate)
+  shape_ctor_dtor.py  strip the return type and parameters Ghidra puts on
+                      constructor/destructor definitions
+  shape_ctor_calls.py rewrite static-form constructor/destructor/operator call
+                      sites onto their object: placement new, an explicit
+                      destructor call, the member form for operators
+  shape_tmpl_defs.py  make the template-qualified definitions parse: the
+                      explicit-specialization `template<>` marker, no return
+                      type on a constructor, no parameter on a destructor (read
+                      as `this` in the body), explicit arguments taken off a
+                      member-template name so the name exists on the primary
+  shape_decl_calls.py drop the return type from a call Ghidra printed in
+                      declaration shape inside a body, leaving the call
+                      expression with its explicit template arguments
   srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
   check_syntax.py     synthesise the declarations out/src is missing from the
                       definitions themselves, then have clang++ -fsyntax-only
@@ -999,13 +1042,15 @@ use, stands in for a data global the binary never named (`DAT_00634ed4`). Ghidra
 call operator takes any arguments, because the callbacks it is cast to before
 being called -- `(*(code *)xmlMalloc)(n)` -- were never recovered.
 
-Those declarations compile clean: **408 classes, 272 member declarations, 141
-unresolved type names** — 104 of them a flattened spelling the generator now
-aliases to the class it names, leaving 37 genuinely opaque structs — **7,489
-definitions parsed** (740 headers unparsed, 1,683
-template-qualified definitions skipped because a template member cannot be
-declared without the template's definition), **7,365 placeholder globals**, and
-**0 errors** in the generated `decls.h` itself. The bodies are then checked
+Those declarations compile clean: **408 classes, 272 member declarations, 173
+type names** that nothing declares (each an opaque forward declaration) and
+**280** aliases mapping Ghidra's flattened spelling to the class it names (a
+*nested* class's flat spelling cannot be aliased, because its owner must be
+defined before the alias could name it, so it stays opaque),
+**8,217 definitions parsed** (12 headers unparsed, 2,383 template-qualified
+definitions skipped because a template member cannot be declared without the
+template's definition), **7,365 placeholder globals**, and **0 errors** in the
+generated `decls.h` itself. The bodies are then checked
 freestanding — `-target aarch64-linux-gnu -ffreestanding -nostdinc -nostdinc++`
 — so that nothing depends on the host's headers.
 
@@ -1014,19 +1059,22 @@ The baseline over the whole tree:
 | | |
 |---|---|
 | Files checked | 1,467 |
-| Files with at least one error | 1,448 |
-| Diagnostics | 50,796 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) |
+| Files with at least one error | 1,311 |
+| Diagnostics | 48,371 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
 largest buckets are **not** defects in the game:
 
-- **6,917** *implicit instantiation of undefined template*: the libc++ primary
-  templates are outlines — declared with their exact arity and kinds now
-  (*too many template arguments* is **0**), but not defined.
-- **7,047** *no matching function*, **1,946** *too many arguments to function
-  call* (down from 4,817) and **2,151** *too few*: the call/definition arity
+- **334** *implicit instantiation of undefined template*, down from **6,917**:
+  the libc++ primary templates are outlines — declared with their exact arity
+  and kinds (*too many template arguments* is **0**) and now carrying the
+  members the template-qualified definitions prove exist — but not the whole of
+  libc++.
+- **7,618** *no matching function*, **2,029** *too many arguments to function
+  call* (down from 4,817 at its worst) and **2,192** *too few*: the
+  call/definition arity
   divergence, now largely decided. Ghidra binds the callee's `w0` as its
   object parameter but leaves the argument the binary passes in the next
   register as an unbound input register (`in_w1`), so the definition declares
@@ -1041,10 +1089,10 @@ largest buckets are **not** defects in the game:
   all. What remains is the residue: duplicate definitions of one member that
   decompile with divergent shapes, and call sites Ghidra printed without the
   argument.
-- **3,702** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
+- **3,646** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
   definition fails to parse, its own parameter names (`p0`, `p1`, `param_1`)
   are not in scope in the body, and every use of them is reported.
-- **195** *call to non-static member function without an object argument*,
+- **357** *call to non-static member function without an object argument*,
   down from **17,182**, and down from **730** as of the previous step: a
   decision, not a defect, and now decided. Ghidra writes every method call
   in static form, so member declarations are synthesised `static` unless the
@@ -1056,12 +1104,21 @@ largest buckets are **not** defects in the game:
   where the decompilation had dropped it to a raw address or a wrongly
   typed field. The declarations still compile with 0 errors and no
   *invalid use of `this`* diagnostic appeared — the guard holds.
-- **4,763** *no member named* and **666** *cannot convert … without a conversion
+- **5,018** *no member named* and **700** *cannot convert … without a conversion
   operator*: newly visible, not new defects. Completing the classes turned
   *member access into incomplete type* (2,932 → 40) and *subscript of pointer to
   incomplete type* (3,306 → 371) into these — the member the body names simply
   has no recovered declaration yet, and the conversion it performs has no
   declared operator.
+- **618** *arithmetic on a pointer to an incomplete type*, **943** *expected 'X'
+  for function-style cast*, **569** *indirection requires pointer operand* and
+  **381** *subscript of pointer to incomplete type*: the shapes that appear once
+  the undefined templates become real. A definition that parsed only up to its
+  header used to stop there; now its body is type-checked, and every raw
+  `undefined8` the decompiler left behind is reported where the body
+  dereferences, casts, indexes or does arithmetic on it. Each one replaces an
+  earlier *undefined template* diagnostic, which is why the total falls while
+  the bucket grows.
 
 The buckets that *are* real shape the next pass. Several defects the gate named
 are now decided: **0** constructor or destructor definitions carry a return
@@ -1069,15 +1126,33 @@ type or a parameter (695 reshaped by `tools/shape_ctor_dtor.py`), the arity
 divergence above is largely rebound (`tools/shape_inw.py`, 764 definitions),
 the static-form call sites are rewritten (`tools/shape_ctor_calls.py` —
 constructors placed with `new`, destructors and operators re-formed on their
-object), and the
-flattened type names are aliased to their real classes. What remains real:
-definitions of two distinct overloads that flatten to a single signature
-(`stold` of a `char` string and of a `wchar_t` string both become
-`stold(byte *, long *)`, so the second definition collides; **7** of them newly
-visible now that both overloads are declared), the libc++ primary-template
-definitions, and the member/conversion gaps the incomplete-type errors used to
-mask — a member access now resolves its class and has its member looked up for
-the first time.
+object), the template-qualified definitions carry their `template<>` marker
+and the declaration-shaped calls their call shape, and the flattened type
+names are aliased to their real classes. What the last pass exposed:
+
+- **119** *does not name a template but is followed by template arguments* — a
+  *free* function template called with its explicit arguments
+  (`std::__ndk1::__tree_balance_after_insert<…>(…)`,
+  `__put_character_sequence<…>`, `__tree_remove<…>`). A member template can be
+  added to the primary that the definitions prove exists; these belong to a
+  namespace, and the fix is a greedy namespace-scope template.
+- **618** *arithmetic on a pointer to an incomplete type* naming a *nested*
+  class by its flattened spelling (`Walaber__A__B` for `Walaber::A::B`). The
+  alias cannot be emitted while its owner is still incomplete, and the owner
+  has to come after the primaries, so those names stay opaque forward
+  declarations; a duplicate definition at namespace scope or an alias emitted
+  at the end of `decls.h` is the fix.
+- **91** *function cannot return array type* (44 before): a definition whose
+  recovered return is `undefined1 [16]`, the hidden buffer a struct-returning
+  function writes into — an array type is illegal in that position.
+- **7** definitions of two distinct overloads that flatten to a single
+  signature (`stold` of a `char` string and of a `wchar_t` string both become
+  `stold(byte *, long *)`, so the second definition collides), and the libc++
+  primary-template definitions behind the remaining **334** *undefined
+  template*.
+- the member/conversion gaps the incomplete-type errors used to mask — a
+  member access now resolves its class and has its member looked up for the
+  first time.
 
 Run it with:
 

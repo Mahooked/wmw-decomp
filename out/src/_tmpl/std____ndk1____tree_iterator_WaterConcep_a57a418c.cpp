@@ -13,10 +13,7 @@
    std::__ndk1::allocator<WaterConcept::GridCell>
    >::find<WaterConcept::GridCell>(WaterConcept::GridCell const&) */
 
-WaterConcept__GridCell
-std::__ndk1::
-__tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>
-::find<WaterConcept::GridCell>(WaterConcept__GridCell *p0)
+template<> WaterConcept__GridCell std::__ndk1::__tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>::find(WaterConcept__GridCell *p0)
 
 {
   int iVar1;

@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Screen_UpsellWater2::TransitionType>(WaterConcept::Screen_UpsellWater2::TransitionType&&)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_UpsellWater2::TransitionType,std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>
-     ::__push_back_slow_path<WaterConcept::Screen_UpsellWater2::TransitionType>
-               (WaterConcept__Screen_UpsellWater2__TransitionType **p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_UpsellWater2::TransitionType,std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>::__push_back_slow_path(WaterConcept__Screen_UpsellWater2__TransitionType **p0)
 
 {
   undefined4 *in_x1;

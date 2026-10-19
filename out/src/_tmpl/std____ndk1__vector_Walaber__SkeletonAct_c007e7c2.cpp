@@ -12,9 +12,7 @@
    >::vector(std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,
    std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent> > const&) */
 
-void std::__ndk1::
-     vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::vector(undefined8 *param_1,long *param_2)
 
 {
   undefined8 *puVar1;
@@ -63,9 +61,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -92,9 +88,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>
    >::__vdeallocate() */
 
-void std::__ndk1::
-     vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>
-     ::__vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::__vdeallocate(undefined8 *param_1)
 
 {
   void *pvVar1;

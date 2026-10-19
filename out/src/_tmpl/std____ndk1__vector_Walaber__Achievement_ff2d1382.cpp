@@ -11,8 +11,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Achievement,
    std::__ndk1::allocator<Walaber::Achievement>&>&) */
 
-void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -56,8 +55,7 @@ void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Ac
    >::vector(std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>
    > const&) */
 
-void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::vector
-               (undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -95,8 +93,7 @@ void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Ac
 /* std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::__vallocate(ulong p0)
 
 {
   long lVar1;

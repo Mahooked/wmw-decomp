@@ -363,7 +363,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
             }
             else {
                     /* try { // try from 004ce158 to 004ce163 has its CatchHandler @ 004ce2b4 */
-              void std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__push_back_slow_path<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&uStack_e0,&bStack_110);
+              std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__push_back_slow_path<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&uStack_e0,&bStack_110);
               if ((uStack_f8 & 1) != 0) {
                 operator delete(pvStack_e8);
               }
@@ -381,7 +381,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
             if (alStack_c8[0] == 0) break;
           }
           if (*(long *)((long)p0 + 0x148) == *(long *)((long)p0 + 0x150)) {
-            void std::__ndk1::vector<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>::__push_back_slow_path<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>> const&>((long)p0 + 0x140,&uStack_e0);
+            std::__ndk1::vector<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>::__push_back_slow_path<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>> const&>((long)p0 + 0x140,&uStack_e0);
           }
           else {
                     /* try { // try from 004ce1cc to 004ce1fb has its CatchHandler @ 004ce2b0 */
@@ -776,7 +776,7 @@ void WaterConcept::Screen_EditorObjectEditor::handleEvent
             Walaber::Node::transformPoint(&fStack_118,lVar10,lVar16 + uVar25 * 8);
             puVar11 = (undefined8 *)plVar9[0x26];
             if (puVar11 == (undefined8 *)plVar9[0x27]) {
-              void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(plVar9 + 0x25,&fStack_118);
+              std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(plVar9 + 0x25,&fStack_118);
             }
             else {
               *puVar11 = CONCAT44(fStack_114,fStack_118);
@@ -908,7 +908,7 @@ void WaterConcept::Screen_EditorObjectEditor::handleEvent
                 goto switchD_004ce9f0_caseD_4;
               }
             }
-            std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int const&>(plVar9 + 0x1c,&lStack_150,&lStack_150);
+            std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int const&>(plVar9 + 0x1c,&lStack_150,&lStack_150);
           }
         }
       }
@@ -962,7 +962,7 @@ switchD_004ce9f0_caseD_4:
             Walaber::Node::transformPoint(&fStack_118,lVar18,lVar10 + uVar25 * 8);
             puVar11 = (undefined8 *)plVar9[0x26];
             if (puVar11 == (undefined8 *)plVar9[0x27]) {
-              void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(plVar9 + 0x25,&fStack_118);
+              std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(plVar9 + 0x25,&fStack_118);
             }
             else {
               *puVar11 = CONCAT44(fStack_114,fStack_118);
@@ -1152,7 +1152,7 @@ LAB_004cecec:
     apuStack_108[0] = (undefined8 *)0x0;
     lStack_150 = 0x4000000000000000;
                     /* try { // try from 004cec04 to 004cec0f has its CatchHandler @ 004cfc68 */
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_118,&lStack_150);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_118,&lStack_150);
     puVar11 = (undefined8 *)CONCAT62(uStack_10e,CONCAT11(uStack_10f,uStack_110));
     lStack_150 = -0x3fffffffc0000000;
     if (puVar11 < apuStack_108[0]) {
@@ -1165,7 +1165,7 @@ LAB_004cecec:
     }
     else {
                     /* try { // try from 004cf1a4 to 004cf1af has its CatchHandler @ 004cfc60 */
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_118,&lStack_150);
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_118,&lStack_150);
       puVar21 = (undefined8 *)CONCAT62(uStack_10e,CONCAT11(uStack_10f,uStack_110));
     }
     lStack_150 = -0x3fffffff40000000;
@@ -1178,10 +1178,10 @@ LAB_004cecec:
     }
     else {
                     /* try { // try from 004cf1d0 to 004cf1db has its CatchHandler @ 004cfc5c */
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_118,&lStack_150);
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(&fStack_118,&lStack_150);
     }
     if (*(long *)(lVar10 + 0xe8) == *(long *)(lVar10 + 0xf0)) {
-      void std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>((long *)(lVar10 + 0xe0),&fStack_118);
+      std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__push_back_slow_path<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const&>((long *)(lVar10 + 0xe0),&fStack_118);
       lVar16 = *(long *)(lVar10 + 0xe8);
     }
     else {
@@ -1277,7 +1277,7 @@ LAB_004cecac:
       if (*plVar26 == lVar18) {
         puVar11 = (undefined8 *)*plVar17;
         if (puVar11 == *(undefined8 **)(lVar28 + lVar16 * 0x18 + 0x10)) {
-          void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(plVar26,&bStack_f0);
+          std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(plVar26,&bStack_f0);
         }
         else {
           *puVar11 = CONCAT71(uStack_ef,bStack_f0);
@@ -1293,7 +1293,7 @@ LAB_004cecac:
       plVar9[0x1d] = 0;
       plVar9[0x1e] = 0;
       auStack_130[0] = CONCAT44(auStack_130[0]._4_4_,iVar27 + 1);
-      std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(plVar14,auStack_130,auStack_130);
+      std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(plVar14,auStack_130,auStack_130);
     }
     break;
   case 6:
@@ -1316,7 +1316,7 @@ LAB_004cecac:
       while( true ) {
         if (puVar11 == apuStack_108[0]) {
                     /* try { // try from 004ceeec to 004ceef3 has its CatchHandler @ 004cfd34 */
-          void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(&fStack_118);
+          std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(&fStack_118);
         }
         else {
           lVar16 = (long)puVar11 + 4;
@@ -1416,7 +1416,7 @@ LAB_004cf6bc:
           do {
             lStack_150 = CONCAT44(lStack_150._4_4_,(int)uVar25);
                     /* try { // try from 004ced70 to 004ced7f has its CatchHandler @ 004cfd4c */
-            std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(plVar9 + 0x1c,&lStack_150,&lStack_150);
+            std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(plVar9 + 0x1c,&lStack_150,&lStack_150);
             uVar25 = (ulong)((int)uVar25 + 1);
             plVar14 = (long *)(CONCAT44(fStack_114,fStack_118) + (long)(int)plVar9[0x1b] * 0x18);
           } while (uVar25 < (ulong)(plVar14[1] - *plVar14 >> 3));
@@ -1791,7 +1791,7 @@ void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 para
   puStack_90 = &uStack_88;
   while (plVar17 != (long *)(lVar14 + 200)) {
                     /* try { // try from 004d05b8 to 004d05c7 has its CatchHandler @ 004d0740 */
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_90,&uStack_88,plVar17 + 4,plVar17 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_90,&uStack_88,plVar17 + 4,plVar17 + 4);
     plVar13 = (long *)plVar17[1];
     if ((long *)plVar17[1] == (long *)0x0) {
       plVar13 = plVar17 + 2;

@@ -9,19 +9,18 @@
 
 /* Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_SettingsReset> >::~SharedPtr() */
 
-void Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_SettingsReset>>::~SharedPtr
-               (long *param_1)
+template<> Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_SettingsReset>>::~SharedPtr()
 
 {
   int iVar1;
   long *plVar2;
   
-  plVar2 = (long *)*param_1;
+  plVar2 = (long *)*(byte *)this;
   if ((plVar2 != (long *)0x0) &&
-     (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
+     (iVar1 = *(int *)(byte *)this[1] + -1, *(int *)(byte *)this[1] = iVar1, iVar1 == 0)) {
     (**(code **)(*plVar2 + 8))();
-    if ((void *)param_1[1] != (void *)0x0) {
-      operator delete((void *)param_1[1]);
+    if ((void *)(byte *)this[1] != (void *)0x0) {
+      operator delete((void *)(byte *)this[1]);
       return;
     }
   }

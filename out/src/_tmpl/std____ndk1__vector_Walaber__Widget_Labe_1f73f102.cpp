@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -38,8 +37,7 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
    >::vector(std::__ndk1::vector<Walaber::Widget_Label*,
    std::__ndk1::allocator<Walaber::Widget_Label*> > const&) */
 
-void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::
-     vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::Widget_Label*>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;

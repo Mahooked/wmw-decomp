@@ -442,7 +442,7 @@ LAB_003d80e0:
               }
               if ((uVar6 & 1) != 0) {
                     /* try { // try from 003d8528 to 003d853b has its CatchHandler @ 003d89f0 */
-                std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_220,&mUserStoreBasePath,&uStack_1d0);
+                std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_220,&mUserStoreBasePath,&uStack_1d0);
                 if ((uStack_1d0 & 1) != 0) {
                   *puStack_1c0 = 0;
                   uStack_1c8 = 0;

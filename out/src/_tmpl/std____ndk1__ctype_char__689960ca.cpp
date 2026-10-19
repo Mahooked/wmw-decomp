@@ -9,7 +9,7 @@
 
 /* std::__ndk1::ctype<char>::classic_table() */
 
-undefined * std::__ndk1::ctype<char>::classic_table(void)
+template<> undefined * std::__ndk1::ctype<char>::classic_table(void)
 
 {
   return &DAT_00641af0;
@@ -23,7 +23,7 @@ undefined * std::__ndk1::ctype<char>::classic_table(void)
 
 /* std::__ndk1::ctype<char>::ctype(unsigned long const*, bool, unsigned long) */
 
-void std::__ndk1::ctype<char>::ctype(ulong *p0,bool p1,ulong p2, long in_x3)
+template<> std::__ndk1::ctype<char>::ctype(ulong *p0,bool p1,ulong p2, long in_x3)
 
 {
   
@@ -46,14 +46,14 @@ void std::__ndk1::ctype<char>::ctype(ulong *p0,bool p1,ulong p2, long in_x3)
 
 /* std::__ndk1::ctype<char>::~ctype() */
 
-void std::__ndk1::ctype<char>::~ctype(undefined8 *param_1,ulong param_2)
+template<> std::__ndk1::ctype<char>::~ctype()
 
 {
-  *param_1 = &PTR__ctype_00717770;
-  if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
-    operator delete[]((void *)param_1[2],param_2);
+  *(byte *)this = &PTR__ctype_00717770;
+  if (((void *)(byte *)this[2] != (void *)0x0) && (*(char *)((byte *)this + 3) != '\0')) {
+    operator delete[]((void *)(byte *)this[2],param_2);
   }
-  ((std::__ndk1::__shared_count *)param_1)->~__shared_count();
+  ((std::__ndk1::__shared_count *)(byte *)this)->~__shared_count();
   return;
 }
 
@@ -65,15 +65,15 @@ void std::__ndk1::ctype<char>::~ctype(undefined8 *param_1,ulong param_2)
 
 /* std::__ndk1::ctype<char>::~ctype() */
 
-void std::__ndk1::ctype<char>::~ctype(undefined8 *param_1,ulong param_2)
+template<> std::__ndk1::ctype<char>::~ctype()
 
 {
-  *param_1 = &PTR__ctype_00717770;
-  if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
-    operator delete[]((void *)param_1[2],param_2);
+  *(byte *)this = &PTR__ctype_00717770;
+  if (((void *)(byte *)this[2] != (void *)0x0) && (*(char *)((byte *)this + 3) != '\0')) {
+    operator delete[]((void *)(byte *)this[2],param_2);
   }
-  ((std::__ndk1::__shared_count *)param_1)->~__shared_count();
-  operator delete(param_1);
+  ((std::__ndk1::__shared_count *)(byte *)this)->~__shared_count();
+  operator delete((byte *)this);
   return;
 }
 
@@ -85,7 +85,7 @@ void std::__ndk1::ctype<char>::~ctype(undefined8 *param_1,ulong param_2)
 
 /* std::__ndk1::ctype<char>::do_toupper(char) const */
 
-uint std::__ndk1::ctype<char>::do_toupper(char p0, uint in_w1)
+template<> uint std::__ndk1::ctype<char>::do_toupper(char p0, uint in_w1)
 
 {
   int iVar1;
@@ -112,7 +112,7 @@ uint std::__ndk1::ctype<char>::do_toupper(char p0, uint in_w1)
 
 /* std::__ndk1::ctype<char>::do_toupper(char*, char const*) const */
 
-char * std::__ndk1::ctype<char>::do_toupper(char *p0,char *p1, char * in_x2)
+template<> char * std::__ndk1::ctype<char>::do_toupper(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
@@ -148,7 +148,7 @@ char * std::__ndk1::ctype<char>::do_toupper(char *p0,char *p1, char * in_x2)
 
 /* std::__ndk1::ctype<char>::do_tolower(char) const */
 
-uint std::__ndk1::ctype<char>::do_tolower(char p0, uint in_w1)
+template<> uint std::__ndk1::ctype<char>::do_tolower(char p0, uint in_w1)
 
 {
   int iVar1;
@@ -175,7 +175,7 @@ uint std::__ndk1::ctype<char>::do_tolower(char p0, uint in_w1)
 
 /* std::__ndk1::ctype<char>::do_tolower(char*, char const*) const */
 
-char * std::__ndk1::ctype<char>::do_tolower(char *p0,char *p1, char * in_x2)
+template<> char * std::__ndk1::ctype<char>::do_tolower(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
@@ -211,7 +211,7 @@ char * std::__ndk1::ctype<char>::do_tolower(char *p0,char *p1, char * in_x2)
 
 /* std::__ndk1::ctype<char>::do_widen(char) const */
 
-undefined4 std::__ndk1::ctype<char>::do_widen(char p0)
+template<> undefined4 std::__ndk1::ctype<char>::do_widen(char p0)
 
 {
   undefined4 in_w1;
@@ -227,7 +227,7 @@ undefined4 std::__ndk1::ctype<char>::do_widen(char p0)
 
 /* std::__ndk1::ctype<char>::do_widen(char const*, char const*, char*) const */
 
-char * std::__ndk1::ctype<char>::do_widen(char *p0,char *p1,char *p2, char * in_x3)
+template<> char * std::__ndk1::ctype<char>::do_widen(char *p0,char *p1,char *p2, char * in_x3)
 
 {
   char *pcVar1;
@@ -286,7 +286,7 @@ char * std::__ndk1::ctype<char>::do_widen(char *p0,char *p1,char *p2, char * in_
 
 /* std::__ndk1::ctype<char>::do_narrow(char, char) const */
 
-uint std::__ndk1::ctype<char>::do_narrow(char p0,char p1, uint in_w2)
+template<> uint std::__ndk1::ctype<char>::do_narrow(char p0,char p1, uint in_w2)
 
 {
   uint uVar1;
@@ -306,7 +306,7 @@ uint std::__ndk1::ctype<char>::do_narrow(char p0,char p1, uint in_w2)
 
 /* std::__ndk1::ctype<char>::do_narrow(char const*, char const*, char, char*) const */
 
-byte * std::__ndk1::ctype<char>::do_narrow(char *p0,char *p1,char p2,char *p3, byte * in_x4)
+template<> byte * std::__ndk1::ctype<char>::do_narrow(char *p0,char *p1,char p2,char *p3, byte * in_x4)
 
 {
   byte bVar1;

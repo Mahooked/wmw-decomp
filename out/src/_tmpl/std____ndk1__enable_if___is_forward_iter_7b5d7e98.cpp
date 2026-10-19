@@ -14,10 +14,7 @@
    >::assign<WaterConceptConstants::FluidType*>(WaterConceptConstants::FluidType*,
    WaterConceptConstants::FluidType*) */
 
-void std::__ndk1::
-     vector<WaterConceptConstants::FluidType,std::__ndk1::allocator<WaterConceptConstants::FluidType>>
-     ::assign<WaterConceptConstants::FluidType*>
-               (WaterConceptConstants__FluidType *p0,WaterConceptConstants__FluidType *p1)
+template<> void std::__ndk1::vector<WaterConceptConstants::FluidType,std::__ndk1::allocator<WaterConceptConstants::FluidType>>::assign(WaterConceptConstants__FluidType *p0,WaterConceptConstants__FluidType *p1)
 
 {
   long in_x2;

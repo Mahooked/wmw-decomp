@@ -20,11 +20,7 @@
    std::__ndk1::less<WaterConcept::InteractiveObject*>,
    std::__ndk1::allocator<WaterConcept::InteractiveObject*> > const&) */
 
-void std::__ndk1::
-     vector<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>
-     ::
-     __push_back_slow_path<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>const&>
-               (long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__push_back_slow_path(long *param_1,undefined8 *param_2)
 
 {
   ulong uVar1;
@@ -61,7 +57,7 @@ void std::__ndk1::
   plVar11 = (long *)*param_2;
   while (plVar11 != param_2 + 1) {
                     /* try { // try from 004cc484 to 004cc493 has its CatchHandler @ 004cc544 */
-    std::__ndk1::__tree_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long> std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(puVar3,puVar10,plVar11 + 4,plVar11 + 4);
+    std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(puVar3,puVar10,plVar11 + 4,plVar11 + 4);
     plVar8 = (long *)plVar11[1];
     if ((long *)plVar11[1] == (long *)0x0) {
       plVar8 = plVar11 + 2;

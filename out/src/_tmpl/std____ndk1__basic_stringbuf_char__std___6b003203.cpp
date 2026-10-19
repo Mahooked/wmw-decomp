@@ -10,8 +10,7 @@
 /* std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::~basic_stringbuf() */
 
-void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::~basic_stringbuf()
+template<> std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_stringbuf()
 
 {
   *this = &PTR__basic_stringbuf_007111c8;
@@ -32,8 +31,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
 /* std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::~basic_stringbuf() */
 
-void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::~basic_stringbuf()
+template<> std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::~basic_stringbuf()
 
 {
   *this = &PTR__basic_stringbuf_007111c8;
@@ -55,9 +53,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
 /* std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::seekoff(long long, std::__ndk1::ios_base::seekdir, unsigned int) */
 
-undefined1  [16]
-std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-seekoff(long param_1,long param_2,int param_3,uint param_4)
+template<> undefined1 [16] std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::seekoff(long param_1,long param_2,int param_3,uint param_4)
 
 {
   ulong uVar1;
@@ -136,8 +132,7 @@ LAB_003f94bc:
 /* std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::underflow() */
 
-ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-      ::underflow(long param_1)
+template<> ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::underflow(long param_1)
 
 {
   byte *pbVar1;
@@ -171,8 +166,7 @@ ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__nd
 /* std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::pbackfail(int) */
 
-uint std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::pbackfail(int p0)
+template<> uint std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::pbackfail(int p0)
 
 {
   ulong uVar1;
@@ -214,8 +208,7 @@ uint std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
 /* std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::overflow(int) */
 
-ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-      ::overflow(int p0)
+template<> ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::overflow(int p0)
 
 {
   undefined1 **ppuVar1;
@@ -318,8 +311,7 @@ ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__nd
    >::str(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::str(long param_1)
+template<> void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::str(long param_1)
 
 {
   byte *pbVar1;
@@ -395,8 +387,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
 /* std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::str() const */
 
-void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::str(ulong *param_1,long param_2)
+template<> void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::str(ulong *param_1,long param_2)
 
 {
   undefined1 *puVar1;

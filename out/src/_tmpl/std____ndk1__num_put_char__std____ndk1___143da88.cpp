@@ -11,9 +11,7 @@
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, bool) const */
 
-long * std::__ndk1::
-       num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-                 (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,bool param_4)
+template<> long * std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,bool param_4)
 
 {
   ulong uVar1;
@@ -112,9 +110,7 @@ long * std::__ndk1::
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, long) const */
 
-void std::__ndk1::
-     num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,long param_4)
+template<> void std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,long param_4)
 
 {
   uint uVar1;
@@ -200,9 +196,7 @@ void std::__ndk1::
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, long long) const */
 
-void std::__ndk1::
-     num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,long long param_4)
+template<> void std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,long long param_4)
 
 {
   uint uVar1;
@@ -286,9 +280,7 @@ void std::__ndk1::
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, unsigned long) const */
 
-void std::__ndk1::
-     num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,unsigned long param_4)
+template<> void std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,unsigned long param_4)
 
 {
   uint uVar1;
@@ -374,9 +366,7 @@ void std::__ndk1::
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, unsigned long long) const */
 
-void std::__ndk1::
-     num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,unsigned long long param_4)
+template<> void std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,unsigned long long param_4)
 
 {
   uint uVar1;
@@ -461,9 +451,7 @@ void std::__ndk1::
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, double) const */
 
-undefined8
-std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
+template<> undefined8 std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
 
 {
   char *pcVar1;
@@ -633,9 +621,7 @@ LAB_005bb73c:
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, long double) const */
 
-undefined8
-std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
+template<> undefined8 std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
 
 {
   char *pcVar1;
@@ -799,9 +785,7 @@ LAB_005bc210:
    > >::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, char, void const*) const */
 
-void std::__ndk1::
-     num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,void const *param_4)
+template<> void std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,void const *param_4)
 
 {
   char *pcVar1;

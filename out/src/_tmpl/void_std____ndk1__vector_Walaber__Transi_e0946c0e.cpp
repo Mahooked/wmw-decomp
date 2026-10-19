@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Transition*, std::__ndk1::allocator<Walaber::Transition*>
    >::__push_back_slow_path<Walaber::Transition* const&>(Walaber::Transition* const&) */
 
-void std::__ndk1::vector<Walaber::Transition*,std::__ndk1::allocator<Walaber::Transition*>>::
-     __push_back_slow_path<Walaber::Transition*const&>(Walaber__Transition **p0)
+template<> void std::__ndk1::vector<Walaber::Transition*,std::__ndk1::allocator<Walaber::Transition*>>::__push_back_slow_path(Walaber__Transition **p0)
 
 {
   undefined8 *in_x1;

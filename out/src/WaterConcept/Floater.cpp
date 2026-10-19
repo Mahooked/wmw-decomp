@@ -148,7 +148,7 @@ void WaterConcept::Floater::_initFinished(long param_1)
           puVar6 = *(undefined8 **)(param_1 + 0x3c0);
           uStack_68 = uVar4;
           if (puVar6 == *(undefined8 **)(param_1 + 0x3c8)) {
-            void std::__ndk1::vector<WaterConcept::Floater::InternalSpring, std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>>::__push_back_slow_path<WaterConcept::Floater::InternalSpring const&>(param_1 + 0x3b8,&iStack_70);
+            std::__ndk1::vector<WaterConcept::Floater::InternalSpring, std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>>::__push_back_slow_path<WaterConcept::Floater::InternalSpring const&>(param_1 + 0x3b8,&iStack_70);
           }
           else {
             puVar6[2] = uStack_60;
@@ -274,7 +274,7 @@ void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1, long in_x2)
             (*(code *)xmlFree)(uVar4);
             puVar5 = *(ulong **)(p0 + 0x3f0);
             if (puVar5 == *(ulong **)(p0 + 0x3f8)) {
-              void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(p0 + 1000,&uStack_70);
+              std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(p0 + 1000,&uStack_70);
               p1 = extraout_x1_06;
             }
             else {
@@ -304,7 +304,7 @@ void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1, long in_x2)
                 p1 = extraout_x1_02;
               }
               else {
-                void std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int>(p0 + 0x410,&uStack_70);
+                std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__push_back_slow_path<unsigned int>(p0 + 0x410,&uStack_70);
                 p1 = extraout_x1_03;
               }
             }
@@ -452,7 +452,7 @@ void WaterConcept::Floater::setProperties(Walaber__PropertyList *p0)
       uStack_90 = uVar12;
       if (puVar8 == (undefined8 *)p0[0x28].f_0x8) {
                     /* try { // try from 0047b334 to 0047b33f has its CatchHandler @ 0047baac */
-        void std::__ndk1::vector<WaterConcept::Floater::InternalSpring, std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>>::__push_back_slow_path<WaterConcept::Floater::InternalSpring const&>(&p0[0x27].f_0x10,&uStack_98);
+        std::__ndk1::vector<WaterConcept::Floater::InternalSpring, std::__ndk1::allocator<WaterConcept::Floater::InternalSpring>>::__push_back_slow_path<WaterConcept::Floater::InternalSpring const&>(&p0[0x27].f_0x10,&uStack_98);
       }
       else {
         puVar8[2] = CONCAT44((uint)uStack_b0,uStack_88);

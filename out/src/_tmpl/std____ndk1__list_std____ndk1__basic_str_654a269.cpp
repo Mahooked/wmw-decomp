@@ -13,9 +13,7 @@
    >::erase(std::__ndk1::__list_const_iterator<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, void*>) */
 
-long std::__ndk1::
-     list<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::erase(long param_1,long *param_2)
+template<> long std::__ndk1::list<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>::erase(long param_1,long *param_2)
 
 {
   long lVar1;
@@ -45,9 +43,7 @@ long std::__ndk1::
    >::push_back(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::
-     list<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::push_back(long *param_1,undefined8 param_2)
+template<> void std::__ndk1::list<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>::push_back(long *param_1,undefined8 param_2)
 
 {
   long *plVar1;

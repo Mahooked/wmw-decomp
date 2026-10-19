@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::InteractiveObject*
    const&>(WaterConcept::InteractiveObject* const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::__push_back_slow_path<WaterConcept::InteractiveObject*const&>
-               (WaterConcept__InteractiveObject **p0)
+template<> void std::__ndk1::vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path(WaterConcept__InteractiveObject **p0)
 
 {
   undefined8 *in_x1;
@@ -86,10 +83,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::InteractiveObject*>
    >::__push_back_slow_path<WaterConcept::InteractiveObject*>(WaterConcept::InteractiveObject*&&) */
 
-void std::__ndk1::
-     vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::__push_back_slow_path<WaterConcept::InteractiveObject*>
-               (WaterConcept__InteractiveObject ***p0)
+template<> void std::__ndk1::vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path(WaterConcept__InteractiveObject ***p0)
 
 {
   undefined8 *in_x1;

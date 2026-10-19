@@ -12,9 +12,7 @@
    >::insert(std::__ndk1::__wrap_iter<WaterConcept::World::WorldSpoutConnection const*>,
    WaterConcept::World::WorldSpoutConnection const&) */
 
-ulong std::__ndk1::
-      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-      ::insert(long *param_1,ulong param_2,ulong param_3)
+template<> ulong std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::insert(long *param_1,ulong param_2,ulong param_3)
 
 {
   byte *pbVar1;
@@ -178,9 +176,7 @@ ulong std::__ndk1::
    >::vector(std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,
    std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection> > const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::vector(undefined8 *param_1,long *param_2)
 
 {
   undefined8 *puVar1;
@@ -222,9 +218,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection> >::__vallocate(unsigned long)
     */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__vallocate(ulong p0)
+template<> void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -252,9 +246,7 @@ void std::__ndk1::
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection,
    std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>&) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -309,9 +301,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,
    std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection> >::__vdeallocate() */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__vdeallocate(undefined8 *param_1)
+template<> void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__vdeallocate(undefined8 *param_1)
 
 {
   byte *pbVar1;
@@ -352,11 +342,7 @@ void std::__ndk1::
    >::__move_range(WaterConcept::World::WorldSpoutConnection*,
    WaterConcept::World::WorldSpoutConnection*, WaterConcept::World::WorldSpoutConnection*) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__move_range(WaterConcept__World__WorldSpoutConnection *p0,
-                   WaterConcept__World__WorldSpoutConnection *p1,
-                   WaterConcept__World__WorldSpoutConnection *p2)
+template<> void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__move_range(WaterConcept__World__WorldSpoutConnection *p0, WaterConcept__World__WorldSpoutConnection *p1, WaterConcept__World__WorldSpoutConnection *p2)
 
 {
   undefined8 *puVar1;
@@ -432,9 +418,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>&,
    WaterConcept::World::WorldSpoutConnection*) */
 
-void std::__ndk1::
-     vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
+template<> void std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   long lVar1;

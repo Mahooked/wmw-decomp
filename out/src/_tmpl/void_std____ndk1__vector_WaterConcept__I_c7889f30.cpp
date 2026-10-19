@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::InteractiveObject::TimerSetting
    const&>(WaterConcept::InteractiveObject::TimerSetting const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::InteractiveObject::TimerSetting,std::__ndk1::allocator<WaterConcept::InteractiveObject::TimerSetting>>
-     ::__push_back_slow_path<WaterConcept::InteractiveObject::TimerSetting_const&>
-               (WaterConcept__InteractiveObject__TimerSetting *p0)
+template<> void std::__ndk1::vector<WaterConcept::InteractiveObject::TimerSetting,std::__ndk1::allocator<WaterConcept::InteractiveObject::TimerSetting>>::__push_back_slow_path(WaterConcept__InteractiveObject__TimerSetting *p0)
 
 {
   undefined8 *in_x1;

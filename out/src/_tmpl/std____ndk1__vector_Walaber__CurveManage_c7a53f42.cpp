@@ -12,9 +12,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::CurveManager::CurveCollection,
    std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>&>&) */
 
-void std::__ndk1::
-     vector<Walaber::CurveManager::CurveCollection,std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::CurveManager::CurveCollection,std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined1 *puVar1;

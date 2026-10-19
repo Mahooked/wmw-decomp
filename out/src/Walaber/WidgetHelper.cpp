@@ -411,7 +411,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
         p1->f_0xf8 = p2->f_0xf8;
         p1->f_0x100 = p2->f_0x100;
         if (p1 != p2) {
-          void std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__assign_multi<std::__ndk1::__tree_const_iterator<Walaber::Widget_Group::WidgetInfo, std::__ndk1::__tree_node<Walaber::Widget_Group::WidgetInfo, void*>*, long>>(&p1->field_0x108,*(undefined8 *)&p2->field_0x108,&p2->field_0x110);
+          std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__assign_multi<std::__ndk1::__tree_const_iterator<Walaber::Widget_Group::WidgetInfo, std::__ndk1::__tree_node<Walaber::Widget_Group::WidgetInfo, void*>*, long>>(&p1->field_0x108,*(undefined8 *)&p2->field_0x108,&p2->field_0x110);
         }
         break;
       case 0x11:
@@ -784,7 +784,7 @@ void Walaber::WidgetHelper::getTextureNames(std::__ndk1::basic_string<char, std:
         iVar3 = xmlStrcmp(*(undefined8 *)(lVar4 + 0x10),"Widget");
         if ((iVar3 == 0) && (uVar5 = Walaber::WidgetHelper::_getTextureName(lVar4,auStack_60), (uVar5 & 1) != 0)) {
                     /* try { // try from 00371a30 to 00371a3f has its CatchHandler @ 00371af0 */
-          std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_78,&texturePath,auStack_60);
+          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_78,&texturePath,auStack_60);
           puVar1 = *(ulong **)(param_2 + 8);
           if (puVar1 < *(ulong **)(param_2 + 0x10)) {
             puVar1[2] = (ulong)pvStack_68;
@@ -797,7 +797,7 @@ void Walaber::WidgetHelper::getTextureNames(std::__ndk1::basic_string<char, std:
           }
           else {
                     /* try { // try from 00371a74 to 00371a7f has its CatchHandler @ 00371ad8 */
-            void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_2,&uStack_78);
+            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_2,&uStack_78);
             if ((uStack_78 & 1) != 0) {
               operator delete(pvStack_68);
             }
@@ -1073,7 +1073,7 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
   
   lVar4 = (long)p0 + 8;
   if (DAT_0072ddc0 == _DAT_0072ddc8) {
-    void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&mFilesToRead,lVar4);
+    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(&mFilesToRead,lVar4);
   }
   else {
     new ((void *)(DAT_0072ddc0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(lVar4);
@@ -4446,7 +4446,7 @@ void Walaber::WidgetHelper::_getTexture(undefined8 *param_1,byte *param_2)
                     /* try { // try from 003774c4 to 003774c7 has its CatchHandler @ 0037758c */
     uVar3 = Walaber::TextureManager::getManager();
                     /* try { // try from 003774cc to 003774df has its CatchHandler @ 00377588 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_60,&texturePath,param_2);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_60,&texturePath,param_2);
     uStack_80 = 0;
     uStack_78 = 0;
     uStack_70 = 0;
@@ -4687,7 +4687,7 @@ void Walaber::WidgetHelper::_getTextureNames(_xmlNode *param_1,std::__ndk1::vect
     }
     if (uVar1 == 0) break;
     if (*(long *)(param_2 + 8) == *(long *)(param_2 + 0x10)) {
-      void std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_2,&uStack_a0);
+      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_2,&uStack_a0);
     }
     else {
                     /* try { // try from 00377e6c to 00377e8f has its CatchHandler @ 00377f48 */

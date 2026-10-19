@@ -14,9 +14,7 @@
    std::__ndk1::less<WaterConcept::InteractiveObject*>,
    std::__ndk1::allocator<WaterConcept::InteractiveObject*> > > >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::~__vector_base()
 
 {
   undefined8 *puVar1;

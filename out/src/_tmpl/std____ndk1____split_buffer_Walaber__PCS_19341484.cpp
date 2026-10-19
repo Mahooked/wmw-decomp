@@ -10,8 +10,7 @@
 /* std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>
    >::~__split_buffer() */
 
-void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>>::
-     ~__split_buffer()
+template<> std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>>::~__split_buffer()
 
 {
   long lVar1;
@@ -36,8 +35,7 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
 /* std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>
    >::push_back(Walaber::PCSNode**&&) */
 
-void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>>::
-     push_back(Walaber__PCSNode ****p0)
+template<> void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>>::push_back(Walaber__PCSNode ****p0)
 
 {
   long lVar1;
@@ -130,8 +128,7 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
 /* std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>
    >::push_front(Walaber::PCSNode**&&) */
 
-void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>>::
-     push_front(Walaber__PCSNode ****p0)
+template<> void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>>::push_front(Walaber__PCSNode ****p0)
 
 {
   undefined8 *in_x1;

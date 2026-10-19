@@ -11,9 +11,7 @@
    wchar_t, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned int*, unsigned int*&, wchar_t*) */
 
-undefined8
-std::__ndk1::__num_get<wchar_t>::__stage2_int_loop
-          (wchar_t param_1,int param_2,char *param_3,char*& param_4,unsigned int& param_5,wchar_t param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,unsigned int *param_8,unsigned int*& param_9,wchar_t *param_10)
+template<> undefined8 std::__ndk1::__num_get<wchar_t>::__stage2_int_loop(wchar_t param_1,int param_2,char *param_3,char*& param_4,unsigned int& param_5,wchar_t param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,unsigned int *param_8,unsigned int*& param_9,wchar_t *param_10)
 
 {
   ulong uVar1;
@@ -205,8 +203,7 @@ LAB_005b95d4:
 /* std::__ndk1::__num_get<wchar_t>::__stage2_float_prep(std::__ndk1::ios_base&, wchar_t*, wchar_t&,
    wchar_t&) */
 
-void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
-               (std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
+template<> void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep(std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
 
 {
   wchar_t wVar2;
@@ -238,9 +235,7 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
    wchar_t, wchar_t, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned int*, unsigned int*&, unsigned int&, wchar_t*) */
 
-undefined8
-std::__ndk1::__num_get<wchar_t>::__stage2_float_loop
-          (wchar_t param_1,bool& param_2,char& param_3,char *param_4,char*& param_5,wchar_t param_6,wchar_t param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8,unsigned int *param_9,unsigned int*& param_10,unsigned int& param_11,wchar_t *param_12)
+template<> undefined8 std::__ndk1::__num_get<wchar_t>::__stage2_float_loop(wchar_t param_1,bool& param_2,char& param_3,char *param_4,char*& param_5,wchar_t param_6,wchar_t param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8,unsigned int *param_9,unsigned int*& param_10,unsigned int& param_11,wchar_t *param_12)
 
 {
   int iVar1;
@@ -444,8 +439,7 @@ LAB_005ba144:
 
 /* std::__ndk1::__num_get<wchar_t>::__stage2_int_prep(std::__ndk1::ios_base&, wchar_t*, wchar_t&) */
 
-void std::__ndk1::__num_get<wchar_t>::__stage2_int_prep
-               (std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2)
+template<> void std::__ndk1::__num_get<wchar_t>::__stage2_int_prep(std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2)
 
 {
   wchar_t wVar2;

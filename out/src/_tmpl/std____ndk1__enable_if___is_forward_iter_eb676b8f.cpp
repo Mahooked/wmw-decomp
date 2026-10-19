@@ -14,10 +14,7 @@
    >::assign<Walaber::TextureManager::SubTexInfo*>(Walaber::TextureManager::SubTexInfo*,
    Walaber::TextureManager::SubTexInfo*) */
 
-void std::__ndk1::
-     vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::assign<Walaber::TextureManager::SubTexInfo*>
-               (Walaber__TextureManager__SubTexInfo *p0,Walaber__TextureManager__SubTexInfo *p1)
+template<> void std::__ndk1::vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::assign(Walaber__TextureManager__SubTexInfo *p0,Walaber__TextureManager__SubTexInfo *p1)
 
 {
   Walaber__TextureManager__SubTexInfo *pWVar1;
@@ -84,7 +81,7 @@ void std::__ndk1::
       return;
     }
   }
-  std::__ndk1::enable_if<__is_forward_iterator<Walaber::TextureManager::SubTexInfo*>::value, void>::type std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__construct_at_end<Walaber::TextureManager::SubTexInfo*>(p0,p1);
+  std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__construct_at_end<Walaber::TextureManager::SubTexInfo*>(p0,p1);
   return;
 }
 

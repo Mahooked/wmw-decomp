@@ -11,8 +11,7 @@
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Rect,
    std::__ndk1::allocator<Walaber::Rect>&>&) */
 
-void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;

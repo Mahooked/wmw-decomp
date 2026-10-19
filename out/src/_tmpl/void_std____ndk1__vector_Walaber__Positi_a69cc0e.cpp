@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::PositionColorVert>
    >::__push_back_slow_path<Walaber::PositionColorVert const&>(Walaber::PositionColorVert const&) */
 
-void std::__ndk1::
-     vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::
-     __push_back_slow_path<Walaber::PositionColorVert_const&>(Walaber__PositionColorVert *p0)
+template<> void std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path(Walaber__PositionColorVert *p0)
 
 {
   ulong uVar1;

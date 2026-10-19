@@ -10,8 +10,7 @@
 /* std::__ndk1::__num_put<char>::__widen_and_group_int(char*, char*, char*, char*, char*&, char*&,
    std::__ndk1::locale const&) */
 
-void std::__ndk1::__num_put<char>::__widen_and_group_int
-               (char *p0,char *p1,char *p2,char *p3,char **p4,char **p5,std____ndk1__locale *p6)
+template<> void std::__ndk1::__num_put<char>::__widen_and_group_int(char *p0,char *p1,char *p2,char *p3,char **p4,char **p5,std____ndk1__locale *p6)
 
 {
   void *pvVar1;
@@ -149,8 +148,7 @@ void std::__ndk1::__num_put<char>::__widen_and_group_int
 /* std::__ndk1::__num_put<char>::__widen_and_group_float(char*, char*, char*, char*, char*&, char*&,
    std::__ndk1::locale const&) */
 
-void std::__ndk1::__num_put<char>::__widen_and_group_float
-               (char *p0,char *p1,char *p2,char *p3,char **p4,char **p5,std____ndk1__locale *p6)
+template<> void std::__ndk1::__num_put<char>::__widen_and_group_float(char *p0,char *p1,char *p2,char *p3,char **p4,char **p5,std____ndk1__locale *p6)
 
 {
   void *pvVar1;

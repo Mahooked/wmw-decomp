@@ -13,9 +13,7 @@
    std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>, WaterConcept::ParticleDescription
    const&) */
 
-int * std::__ndk1::
-      remove<std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>,WaterConcept::ParticleDescription>
-                (int *param_1,int *param_2,int *param_3)
+int * std::__ndk1::remove(int *param_1,int *param_2,int *param_3)
 
 {
   int *piVar1;

@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::ParticleEmitter::EmitterZone
    const&>(Walaber::ParticleEmitter::EmitterZone const&) */
 
-void std::__ndk1::
-     vector<Walaber::ParticleEmitter::EmitterZone,std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>>
-     ::__push_back_slow_path<Walaber::ParticleEmitter::EmitterZone_const&>
-               (Walaber__ParticleEmitter__EmitterZone *p0)
+template<> void std::__ndk1::vector<Walaber::ParticleEmitter::EmitterZone,std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>>::__push_back_slow_path(Walaber__ParticleEmitter__EmitterZone *p0)
 
 {
   ulong uVar1;

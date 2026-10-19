@@ -175,7 +175,7 @@ void Walaber::FontManager::_fontLoaded(void *p0, int * in_x1)
           }
         }
                     /* try { // try from 00369ff4 to 00369fff has its CatchHandler @ 0036a154 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_98,p0,puVar4);
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_98,p0,puVar4);
         if ((uStack_80 & 1) != 0) {
           *puStack_70 = 0;
           piStack_78 = (int *)0x0;

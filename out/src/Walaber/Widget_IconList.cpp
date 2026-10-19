@@ -39,7 +39,7 @@ Walaber__Widget_IconList * Walaber::Widget_IconList::operator=(Walaber__Widget_I
   *(undefined8 *)&p0->field_0xf0 = *(undefined8 *)&in_x1->field_0xf0;
   *(undefined4 *)&p0->field_0xf8 = *(undefined4 *)&in_x1->field_0xf8;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Widget_IconList::Icon*>::value&&is_constructible<Walaber::Widget_IconList::Icon, std::__ndk1::iterator_traits<Walaber::Widget_IconList::Icon*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::assign<Walaber::Widget_IconList::Icon*>(&p0->f_0x100,in_x1->f_0x100,in_x1->f_0x108);
+    std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::assign<Walaber::Widget_IconList::Icon*>(&p0->f_0x100,in_x1->f_0x100,in_x1->f_0x108);
   }
   uVar2 = in_x1->f_0x118;
   fVar3 = in_x1->f_0x11c;
@@ -364,7 +364,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   }
   else {
                     /* try { // try from 0037d86c to 0037d873 has its CatchHandler @ 0037d948 */
-    void std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(param_1 + 0x100,&uStack_68);
+    std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(param_1 + 0x100,&uStack_68);
     if ((uStack_58 & 1) != 0) {
       operator delete(pvStack_48);
     }
@@ -438,7 +438,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
   }
   else {
                     /* try { // try from 0037da14 to 0037da1b has its CatchHandler @ 0037daf8 */
-    void std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(param_1 + 0x100,&uStack_68);
+    std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(param_1 + 0x100,&uStack_68);
     if ((uStack_58 & 1) != 0) {
       operator delete(pvStack_48);
     }

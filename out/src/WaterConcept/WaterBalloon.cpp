@@ -1144,7 +1144,7 @@ void WaterConcept::WaterBalloon::addFluidParticles
         uStack_88 = p0.f_0x0;
         if (&puStack_78 != (undefined8 **)(p0.f_0x0 + 0x458)) {
                     /* try { // try from 00496d74 to 00496d93 has its CatchHandler @ 00497024 */
-          std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::value&&is_constructible<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::iterator_traits<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&puStack_78,puVar6);
+          std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&puStack_78,puVar6);
           plVar4 = *(long **)(p0.f_0x0 + 0x4e8);
         }
         (**(code **)(*plVar4 + 0x10))(plVar4,&uStack_88);
@@ -1170,7 +1170,7 @@ LAB_00496df0:
           *(long *)(p0.f_0x0 + 0x460) = *(long *)(p0.f_0x0 + 0x460) + 8;
         }
         else {
-          void std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::__push_back_slow_path<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>((undefined8 **)(p0.f_0x0 + 0x458),&uStack_88);
+          std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::__push_back_slow_path<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>((undefined8 **)(p0.f_0x0 + 0x458),&uStack_88);
         }
         if ((int)uVar1 <= iVar13) break;
         puVar5 = *(ulong **)(p0.f_0x0 + 0x460);
@@ -1205,7 +1205,7 @@ LAB_00496df0:
         }
         else {
                     /* try { // try from 00496f08 to 00496f13 has its CatchHandler @ 00497040 */
-          void std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::__push_back_slow_path<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>(&puStack_78,&uStack_90);
+          std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::__push_back_slow_path<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>(&puStack_78,&uStack_90);
         }
         if (uVar1 <= uVar12) break;
         uVar12 = uVar12 + 1;
@@ -1376,7 +1376,7 @@ void WaterConcept::WaterBalloon::update(float p0)
       uStack_98 = in_x0;
       if (&pvStack_88 != (void **)(in_x0 + 0x8b)) {
                     /* try { // try from 00497388 to 004973a3 has its CatchHandler @ 00497408 */
-        std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::value&&is_constructible<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::iterator_traits<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&pvStack_88,in_x0[0x8b],in_x0[0x8c]);
+        std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&pvStack_88,in_x0[0x8b],in_x0[0x8c]);
         plVar2 = (long *)in_x0[0x9d];
       }
       (**(code **)(*plVar2 + 0x10))(plVar2,&uStack_98);
@@ -1801,7 +1801,7 @@ void WaterConcept::WaterBalloon::handleTouchUp(Walaber__Vector2 *p0)
         pWStack_58 = p0;
         if (&WStack_48 != p0 + 0x8b) {
                     /* try { // try from 00497b70 to 00497b8b has its CatchHandler @ 00497bd4 */
-          std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::value&&is_constructible<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::iterator_traits<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&WStack_48,p0[0x8b],p0[0x8c]);
+          std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&WStack_48,p0[0x8b],p0[0x8c]);
           WVar2 = p0[0x9d];
         }
         (**(code **)(*(long *)WVar2 + 0x10))(WVar2,&pWStack_58);

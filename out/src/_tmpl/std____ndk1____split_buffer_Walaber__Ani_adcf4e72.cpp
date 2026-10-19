@@ -12,9 +12,7 @@
    long, unsigned long,
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&) */
 
-void std::__ndk1::
-     __split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>
-     ::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;
@@ -56,9 +54,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::push_back(Walaber::AnimationCueAnimationTrack::CueAnimationEvent&&)
     */
 
-void std::__ndk1::
-     __split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>
-     ::push_back(Walaber__AnimationCueAnimationTrack__CueAnimationEvent **p0)
+template<> void std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::push_back(Walaber__AnimationCueAnimationTrack__CueAnimationEvent **p0)
 
 {
   long lVar1;
@@ -192,9 +188,7 @@ void std::__ndk1::
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::~__split_buffer()
     */
 
-void std::__ndk1::
-     __split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>
-     ::~__split_buffer()
+template<> std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::~__split_buffer()
 
 {
   long lVar1;

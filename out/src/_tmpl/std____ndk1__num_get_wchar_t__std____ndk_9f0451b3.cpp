@@ -12,10 +12,7 @@
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::istreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, bool&) const */
 
-undefined8
-std::__ndk1::
-num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get
-          (std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,bool& param_5)
+template<> undefined8 std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,bool& param_5)
 
 {
   long lVar1;
@@ -89,9 +86,7 @@ num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_trait
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::istreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, long&) const */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_signed<long>();
@@ -109,9 +104,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::istreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, long long&) const */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_signed<long_long>();
@@ -130,9 +123,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, unsigned short&)
    const */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_unsigned<unsigned_short>();
@@ -151,9 +142,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, unsigned int&) const
     */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_unsigned<unsigned_int>();
@@ -172,9 +161,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, unsigned long&) const
     */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_unsigned<unsigned_long>();
@@ -193,9 +180,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, unsigned long long&)
    const */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_unsigned<unsigned_long_long>();
@@ -213,9 +198,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::istreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, float&) const */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_floating_point<float>();
@@ -233,9 +216,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::istreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, double&) const */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_floating_point<double>();
@@ -254,9 +235,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, long double&) const
     */
 
-void std::__ndk1::
-     num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::
-     do_get(void)
+template<> void std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(void)
 
 {
   __do_get_floating_point<long_double>();
@@ -274,9 +253,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::istreambuf_iterator<wchar_t,
    std::__ndk1::char_traits<wchar_t> >, std::__ndk1::ios_base&, unsigned int&, void*&) const */
 
-long * std::__ndk1::
-       num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,void*& param_5)
+template<> long * std::__ndk1::num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>::do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,void*& param_5)
 
 {
   bool bVar2;

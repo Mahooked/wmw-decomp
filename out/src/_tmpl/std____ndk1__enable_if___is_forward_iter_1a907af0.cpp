@@ -12,8 +12,7 @@
    std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>
    >::assign<Walaber::Language*>(Walaber::Language*, Walaber::Language*) */
 
-void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Language>>::
-     assign<Walaber::Language*>(Walaber__Language *p0,Walaber__Language *p1)
+template<> void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Language>>::assign(Walaber__Language *p0,Walaber__Language *p1)
 
 {
   ulong uVar1;

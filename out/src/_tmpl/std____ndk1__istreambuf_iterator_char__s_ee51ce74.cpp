@@ -14,11 +14,7 @@
    >, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >,
    std::__ndk1::ios_base&, unsigned int&, long&) const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_signed<long>
-                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
-                 undefined8 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_signed(undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5, undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -240,11 +236,7 @@ LAB_005b2ca8:
    std::__ndk1::char_traits<char> >, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, long long&) const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_signed<long_long>
-                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
-                 undefined8 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_signed(undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5, undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -467,11 +459,7 @@ LAB_005b314c:
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, unsigned short&) const
     */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_unsigned<unsigned_short>
-                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
-                 undefined2 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_unsigned(undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5, undefined2 *param_6)
 
 {
   byte *pbVar1;
@@ -693,11 +681,7 @@ LAB_005b35f0:
    std::__ndk1::char_traits<char> >, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, unsigned int&) const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_unsigned<unsigned_int>
-                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
-                 undefined4 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_unsigned(undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5, undefined4 *param_6)
 
 {
   byte *pbVar1;
@@ -918,11 +902,7 @@ LAB_005b3a94:
    std::__ndk1::char_traits<char> >, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, unsigned long&) const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_unsigned<unsigned_long>
-                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
-                 undefined8 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_unsigned(undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5, undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -1145,11 +1125,7 @@ LAB_005b3f38:
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, unsigned long long&)
    const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_unsigned<unsigned_long_long>
-                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
-                 undefined8 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_unsigned(undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5, undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -1371,11 +1347,7 @@ LAB_005b43dc:
    std::__ndk1::char_traits<char> >, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, float&) const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_floating_point<float>
-                 (undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
-                 undefined4 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_floating_point(undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5, undefined4 *param_6)
 
 {
   byte *pbVar1;
@@ -1590,11 +1562,7 @@ LAB_005b4864:
    std::__ndk1::char_traits<char> >, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, double&) const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_floating_point<double>
-                 (undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
-                 undefined8 *param_6)
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_floating_point(undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5, undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -1809,11 +1777,7 @@ LAB_005b4cec:
    std::__ndk1::char_traits<char> >, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&, unsigned int&, long double&) const */
 
-long * std::__ndk1::
-       num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-       __do_get_floating_point<long_double>
-                 (undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
-                 undefined1 (*param_6) [16])
+template<> long * std::__ndk1::num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get_floating_point(undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5, undefined1 (*param_6) [16])
 
 {
   byte *pbVar1;

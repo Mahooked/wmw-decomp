@@ -17,11 +17,7 @@
    std::__ndk1::__tree_const_iterator<Walaber::Widget_Group::WidgetInfo,
    std::__ndk1::__tree_node<Walaber::Widget_Group::WidgetInfo, void*>*, long>) */
 
-void std::__ndk1::
-     __tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>
-     ::
-     __assign_multi<std::__ndk1::__tree_const_iterator<Walaber::Widget_Group::WidgetInfo,std::__ndk1::__tree_node<Walaber::Widget_Group::WidgetInfo,void*>*,long>>
-               (long *param_1,long *param_2,long *param_3)
+template<> void std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__assign_multi(long *param_1,long *param_2,long *param_3)
 
 {
   long lVar1;
@@ -100,7 +96,7 @@ LAB_003796b0:
     }
   }
   while (param_2 != param_3) {
-    std::__ndk1::__tree_iterator<Walaber::Widget_Group::WidgetInfo, std::__ndk1::__tree_node<Walaber::Widget_Group::WidgetInfo, void*>*, long> std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__emplace_multi<Walaber::Widget_Group::WidgetInfo const&>(param_1,param_2 + 4);
+    std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__emplace_multi<Walaber::Widget_Group::WidgetInfo const&>(param_1,param_2 + 4);
     plVar7 = (long *)param_2[1];
     if ((long *)param_2[1] == (long *)0x0) {
       plVar7 = param_2 + 2;

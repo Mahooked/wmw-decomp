@@ -10,9 +10,7 @@
 /* std::__ndk1::__list_imp<Walaber::CommandRegister,
    std::__ndk1::allocator<Walaber::CommandRegister> >::clear() */
 
-void std::__ndk1::
-     __list_imp<Walaber::CommandRegister,std::__ndk1::allocator<Walaber::CommandRegister>>::clear
-               (long *param_1)
+template<> void std::__ndk1::__list_imp<Walaber::CommandRegister,std::__ndk1::allocator<Walaber::CommandRegister>>::clear(long *param_1)
 
 {
   long lVar1;

@@ -12,8 +12,7 @@
    >(std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char> >&, char const*, unsigned long)
     */
 
-long * std::__ndk1::__put_character_sequence<char,std::__ndk1::char_traits<char>>
-                 (long *param_1,long param_2,long param_3)
+long * std::__ndk1::__put_character_sequence(long *param_1,long param_2,long param_3)
 
 {
   long lVar1;

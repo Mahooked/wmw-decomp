@@ -76,11 +76,11 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
   p0->currentIndexPercentage = fVar10;
   p0->f_0x114 = uVar11;
   if (p0 != in_x1) {
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Widget_Group**>::value&&is_constructible<Walaber::Widget_Group*, std::__ndk1::iterator_traits<Walaber::Widget_Group**>::reference>::value, void>::type std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::assign<Walaber::Widget_Group**>(&p0->f_0x140,in_x1->f_0x140,in_x1->f_0x148);
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Widget_Group**>::value&&is_constructible<Walaber::Widget_Group*, std::__ndk1::iterator_traits<Walaber::Widget_Group**>::reference>::value, void>::type std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::assign<Walaber::Widget_Group**>(&p0->f_0x158,in_x1->f_0x158,in_x1->f_0x160);
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::Widget_Label**>::value&&is_constructible<Walaber::Widget_Label*, std::__ndk1::iterator_traits<Walaber::Widget_Label**>::reference>::value, void>::type std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::assign<Walaber::Widget_Label**>(&p0->f_0x170,in_x1->f_0x170,in_x1->f_0x178);
-    std::__ndk1::enable_if<__is_forward_iterator<int*>::value&&is_constructible<int, std::__ndk1::iterator_traits<int*>::reference>::value, void>::type std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x188,in_x1->f_0x188,in_x1->f_0x190);
-    std::__ndk1::enable_if<__is_forward_iterator<int*>::value&&is_constructible<int, std::__ndk1::iterator_traits<int*>::reference>::value, void>::type std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x1a0,in_x1->f_0x1a0,in_x1->f_0x1a8);
+    std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::assign<Walaber::Widget_Group**>(&p0->f_0x140,in_x1->f_0x140,in_x1->f_0x148);
+    std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::assign<Walaber::Widget_Group**>(&p0->f_0x158,in_x1->f_0x158,in_x1->f_0x160);
+    std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::assign<Walaber::Widget_Label**>(&p0->f_0x170,in_x1->f_0x170,in_x1->f_0x178);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x188,in_x1->f_0x188,in_x1->f_0x190);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::assign<int*>(&p0->f_0x1a0,in_x1->f_0x1a0,in_x1->f_0x1a8);
   }
   uVar13 = in_x1->f_0x1b8;
   *(undefined8 *)&p0->field_0x1c0 = *(undefined8 *)&in_x1->field_0x1c0;
@@ -548,7 +548,7 @@ void Walaber::Widget_ScrollableCamera::addGroup(Walaber__Widget_Group *p0,bool p
   
   uStack_40 = (ulong)p1;
   if (*(ulong **)&p0[1].field_0x30 == *(ulong **)&p0[1].field_0x38) {
-    void std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x28,&uStack_40);
+    std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x28,&uStack_40);
   }
   else {
     **(ulong **)&p0[1].field_0x30 = uStack_40;
@@ -615,7 +615,7 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0, int in_w1)
   *(undefined4 *)((long)plVar4 + 0x144) = 0xffffffff;
   Walaber::WidgetManager::addWidget(*(undefined8 *)(uVar3 + 200),plVar4,0);
   if (*(long **)(uVar3 + 0x178) == *(long **)(uVar3 + 0x180)) {
-    void std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::__push_back_slow_path<Walaber::Widget_Label* const&>(uVar3 + 0x170,&plStack_48);
+    std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>::__push_back_slow_path<Walaber::Widget_Label* const&>(uVar3 + 0x170,&plStack_48);
   }
   else {
     **(long **)(uVar3 + 0x178) = (long)plVar4;
@@ -629,7 +629,7 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0, int in_w1)
     *(int **)(uVar3 + 400) = piVar1 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(uVar3 + 0x188,&iStack_6c);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(uVar3 + 0x188,&iStack_6c);
   }
   Walaber::Widget_ScrollableCamera::_updateSlider(uVar3);
   return;
@@ -653,7 +653,7 @@ void Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber__Widget_Group *p0
   
   uStack_30 = in_x1;
   if (*(undefined8 **)&p0[1].field_0x48 == *(undefined8 **)&p0[1].field_0x50) {
-    void std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x40,&uStack_30);
+    std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x40,&uStack_30);
   }
   else {
     **(undefined8 **)&p0[1].field_0x48 = in_x1;
@@ -667,7 +667,7 @@ void Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber__Widget_Group *p0
     *(int **)&p0[1].field_0x90 = piVar1 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[1].field_0x88,&iStack_34);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[1].field_0x88,&iStack_34);
   }
   return;
 }

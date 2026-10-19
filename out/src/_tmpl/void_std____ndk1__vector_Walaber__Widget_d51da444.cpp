@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::Widget_IconList::Icon>
    >::__push_back_slow_path<Walaber::Widget_IconList::Icon>(Walaber::Widget_IconList::Icon&&) */
 
-void std::__ndk1::
-     vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __push_back_slow_path<Walaber::Widget_IconList::Icon>(Walaber__Widget_IconList__Icon **p0)
+template<> void std::__ndk1::vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path(Walaber__Widget_IconList__Icon **p0)
 
 {
   ulong uVar1;

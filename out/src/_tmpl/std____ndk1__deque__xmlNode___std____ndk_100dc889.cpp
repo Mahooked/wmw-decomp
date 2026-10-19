@@ -9,7 +9,7 @@
 
 /* std::__ndk1::deque<_xmlNode*, std::__ndk1::allocator<_xmlNode*> >::push_back(_xmlNode* const&) */
 
-void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::push_back(_xmlNode **p0)
+template<> void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::push_back(_xmlNode **p0)
 
 {
   _xmlNode *p_Var1;
@@ -46,8 +46,7 @@ void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::push_back(
 
 /* std::__ndk1::deque<_xmlNode*, std::__ndk1::allocator<_xmlNode*> >::__add_back_capacity() */
 
-void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::__add_back_capacity
-               (ulong *param_1)
+template<> void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::__add_back_capacity(ulong *param_1)
 
 {
   void *pvVar2;
@@ -231,7 +230,7 @@ LAB_00347680:
 
 /* std::__ndk1::deque<_xmlNode*, std::__ndk1::allocator<_xmlNode*> >::pop_back() */
 
-void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::pop_back(long param_1)
+template<> void std::__ndk1::deque<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::pop_back(long param_1)
 
 {
   long lVar1;

@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<ndk::DatabaseCallbackClass>::~MemberCallback() */
 
-void Walaber::MemberCallback<ndk::DatabaseCallbackClass>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<ndk::DatabaseCallbackClass>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<ndk::DatabaseCallbackClass>::~MemberCallback(void *
 
 /* Walaber::MemberCallback<ndk::DatabaseCallbackClass>::invoke(void*) */
 
-void Walaber::MemberCallback<ndk::DatabaseCallbackClass>::invoke(void *p0)
+template<> void Walaber::MemberCallback<ndk::DatabaseCallbackClass>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

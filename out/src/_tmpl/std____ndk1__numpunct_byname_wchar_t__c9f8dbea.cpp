@@ -10,7 +10,7 @@
 
 /* std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname() */
 
-void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname()
+template<> std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname()
 
 {
   *this = &PTR__numpunct_byname_00717978;
@@ -29,7 +29,7 @@ void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname()
 
 /* std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char const*, unsigned long) */
 
-void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char *p0,ulong p1, long in_x2)
+template<> std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char *p0,ulong p1, long in_x2)
 
 {
   
@@ -80,7 +80,7 @@ void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char *p0,ulong p1, l
 
 /* std::__ndk1::numpunct_byname<wchar_t>::__init(char const*) */
 
-void std::__ndk1::numpunct_byname<wchar_t>::__init(char *p0)
+template<> void std::__ndk1::numpunct_byname<wchar_t>::__init(char *p0)
 
 {
   int iVar2;
@@ -180,8 +180,7 @@ LAB_005dc7a8:
 /* std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
-void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname
-               (undefined8 *param_1,byte *param_2,long param_3)
+template<> std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(undefined8 *param_1,byte *param_2,long param_3)
 
 {
   byte *pbVar1;
@@ -209,7 +208,7 @@ void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname
 
 /* std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname() */
 
-void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname()
+template<> std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname()
 
 {
   *this = &PTR__numpunct_byname_00717978;

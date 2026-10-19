@@ -12,9 +12,7 @@
    long, unsigned long,
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&) */
 
-void std::__ndk1::
-     __split_buffer<WaterConcept::NotificationSingleton::NotificationData*,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>
-     ::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;
@@ -56,9 +54,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::push_back(WaterConcept::NotificationSingleton::NotificationData*&&)
     */
 
-void std::__ndk1::
-     __split_buffer<WaterConcept::NotificationSingleton::NotificationData*,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>
-     ::push_back(WaterConcept__NotificationSingleton__NotificationData ***p0)
+template<> void std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::push_back(WaterConcept__NotificationSingleton__NotificationData ***p0)
 
 {
   long lVar1;
@@ -152,9 +148,7 @@ void std::__ndk1::
    std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::push_front(WaterConcept::NotificationSingleton::NotificationData*
    const&) */
 
-void std::__ndk1::
-     __split_buffer<WaterConcept::NotificationSingleton::NotificationData*,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>
-     ::push_front(WaterConcept__NotificationSingleton__NotificationData **p0)
+template<> void std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*,std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>::push_front(WaterConcept__NotificationSingleton__NotificationData **p0)
 
 {
   undefined8 *in_x1;

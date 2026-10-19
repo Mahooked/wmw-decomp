@@ -9,7 +9,7 @@
 
 /* std::__ndk1::ctype_byname<char>::ctype_byname(char const*, unsigned long) */
 
-void std::__ndk1::ctype_byname<char>::ctype_byname(char *p0,ulong p1, long in_x2)
+template<> std::__ndk1::ctype_byname<char>::ctype_byname(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
@@ -101,7 +101,7 @@ LAB_005d7478:
 /* std::__ndk1::ctype_byname<char>::ctype_byname(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
-void std::__ndk1::ctype_byname<char>::ctype_byname(undefined8 *param_1,byte *param_2,long param_3)
+template<> std::__ndk1::ctype_byname<char>::ctype_byname(undefined8 *param_1,byte *param_2,long param_3)
 
 {
   long lVar1;
@@ -125,7 +125,7 @@ void std::__ndk1::ctype_byname<char>::ctype_byname(undefined8 *param_1,byte *par
   param_1[4] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d75b8 to 005d75cb has its CatchHandler @ 005d75f0 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<char>::ctype_byname failed to construct for ",param_2);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<char>::ctype_byname failed to construct for ",param_2);
                     /* try { // try from 005d75cc to 005d75d3 has its CatchHandler @ 005d75d8 */
     FUN_005d5db0(auStack_50);
   }
@@ -144,7 +144,7 @@ void std::__ndk1::ctype_byname<char>::ctype_byname(undefined8 *param_1,byte *par
 
 /* std::__ndk1::ctype_byname<char>::~ctype_byname() */
 
-void std::__ndk1::ctype_byname<char>::~ctype_byname()
+template<> std::__ndk1::ctype_byname<char>::~ctype_byname()
 
 {
   ulong p1;
@@ -169,7 +169,7 @@ void std::__ndk1::ctype_byname<char>::~ctype_byname()
 
 /* std::__ndk1::ctype_byname<char>::do_toupper(char) const */
 
-void std::__ndk1::ctype_byname<char>::do_toupper(char p0, undefined1 in_w1)
+template<> void std::__ndk1::ctype_byname<char>::do_toupper(char p0, undefined1 in_w1)
 
 {
   
@@ -185,7 +185,7 @@ void std::__ndk1::ctype_byname<char>::do_toupper(char p0, undefined1 in_w1)
 
 /* std::__ndk1::ctype_byname<char>::do_toupper(char*, char const*) const */
 
-char * std::__ndk1::ctype_byname<char>::do_toupper(char *p0,char *p1, char * in_x2)
+template<> char * std::__ndk1::ctype_byname<char>::do_toupper(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
@@ -208,7 +208,7 @@ char * std::__ndk1::ctype_byname<char>::do_toupper(char *p0,char *p1, char * in_
 
 /* std::__ndk1::ctype_byname<char>::do_tolower(char) const */
 
-void std::__ndk1::ctype_byname<char>::do_tolower(char p0, undefined1 in_w1)
+template<> void std::__ndk1::ctype_byname<char>::do_tolower(char p0, undefined1 in_w1)
 
 {
   
@@ -224,7 +224,7 @@ void std::__ndk1::ctype_byname<char>::do_tolower(char p0, undefined1 in_w1)
 
 /* std::__ndk1::ctype_byname<char>::do_tolower(char*, char const*) const */
 
-char * std::__ndk1::ctype_byname<char>::do_tolower(char *p0,char *p1, char * in_x2)
+template<> char * std::__ndk1::ctype_byname<char>::do_tolower(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
@@ -247,7 +247,7 @@ char * std::__ndk1::ctype_byname<char>::do_tolower(char *p0,char *p1, char * in_
 
 /* std::__ndk1::ctype_byname<char>::~ctype_byname() */
 
-void std::__ndk1::ctype_byname<char>::~ctype_byname()
+template<> std::__ndk1::ctype_byname<char>::~ctype_byname()
 
 {
   ulong p1;

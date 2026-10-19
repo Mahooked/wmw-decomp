@@ -29,12 +29,7 @@
    >(Walaber::AnimationEventType const&, std::__ndk1::piecewise_construct_t const&,
    std::__ndk1::tuple<Walaber::AnimationEventType&&>&&, std::__ndk1::tuple<>&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>,std::__ndk1::__map_value_compare<Walaber::AnimationEventType,std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>,std::__ndk1::less<Walaber::AnimationEventType>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>>>
-::
-__emplace_unique_key_args<Walaber::AnimationEventType,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<Walaber::AnimationEventType&&>,std::__ndk1::tuple<>>
-          (Walaber::AnimationEventType const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<Walaber::AnimationEventType&&>&& param_3,std::__ndk1::tuple<>&& param_4)
+template<> undefined1 [16] std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>,std::__ndk1::__map_value_compare<Walaber::AnimationEventType,std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>,std::__ndk1::less<Walaber::AnimationEventType>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>>>::__emplace_unique_key_args(Walaber::AnimationEventType const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<Walaber::AnimationEventType&&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

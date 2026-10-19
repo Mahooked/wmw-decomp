@@ -28,11 +28,7 @@
    const&, std::__ndk1::pair<WaterConcept::Screen_Hub::HubAction const,
    WaterConcept::Screen_Hub::WidgetName> const&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction,std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>>>
-     ::
-     __emplace_hint_unique_key_args<WaterConcept::Screen_Hub::HubAction,std::__ndk1::pair<WaterConcept::Screen_Hub::HubAction_const,WaterConcept::Screen_Hub::WidgetName>const&>
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction,std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>>>::__emplace_hint_unique_key_args(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   long *plVar1;

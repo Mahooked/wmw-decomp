@@ -11,12 +11,10 @@
    int>, std::__ndk1::allocator<std::__ndk1::pair<unsigned int const,
    Walaber::SoundManager::MusicGroup> > >::~map() */
 
-void std::__ndk1::
-     map<unsigned_int,Walaber::SoundManager::MusicGroup,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<std::__ndk1::pair<unsigned_int_const,Walaber::SoundManager::MusicGroup>>>
-     ::~map(long param_1)
+template<> std::__ndk1::map<unsigned_int,Walaber::SoundManager::MusicGroup,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<std::__ndk1::pair<unsigned_int_const,Walaber::SoundManager::MusicGroup>>>::~map()
 
 {
-  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

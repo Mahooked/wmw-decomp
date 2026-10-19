@@ -19,10 +19,7 @@
    WaterConcept::ParallaxPuppetShow::CameraMove> >(std::__ndk1::pair<float,
    WaterConcept::ParallaxPuppetShow::CameraMove>&&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>>>
-     ::__emplace_multi<std::__ndk1::pair<float,WaterConcept::ParallaxPuppetShow::CameraMove>>
-               (long param_1,undefined8 *param_2)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>>>::__emplace_multi(long param_1,undefined8 *param_2)
 
 {
   long *plVar1;

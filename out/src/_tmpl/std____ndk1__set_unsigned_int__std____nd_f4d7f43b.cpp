@@ -10,12 +10,10 @@
 /* std::__ndk1::set<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned
    int> >::~set() */
 
-void std::__ndk1::
-     set<unsigned_int,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<unsigned_int>>::~set
-               (long param_1)
+template<> std::__ndk1::set<unsigned_int,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<unsigned_int>>::~set()
 
 {
-  std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::destroy((byte *)this,*(undefined8 *)((byte *)this + 8));
   return;
 }
 

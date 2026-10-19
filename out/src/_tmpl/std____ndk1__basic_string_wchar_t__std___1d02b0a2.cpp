@@ -12,9 +12,7 @@
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>
    >::__append_forward_unsafe<wchar_t*>(wchar_t*, wchar_t*) */
 
-wchar_t * std::__ndk1::
-          basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-          __append_forward_unsafe<wchar_t*>(wchar_t *p0,wchar_t *p1)
+template<> wchar_t * std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__append_forward_unsafe(wchar_t *p0,wchar_t *p1)
 
 {
   byte bVar1;
@@ -63,7 +61,7 @@ wchar_t * std::__ndk1::
     uStack_60 = 0;
     uStack_58 = 0;
     pvStack_50 = (void *)0x0;
-    std::__ndk1::enable_if<__is_forward_iterator<wchar_t*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t*>(&uStack_60,p1);
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t*>(&uStack_60,p1);
     uVar7 = uStack_60 >> 1 & 0x7f;
     pvVar4 = (void *)((ulong)&uStack_60 | 4);
     if ((uStack_60 & 1) != 0) {

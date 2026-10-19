@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>
    >::__push_back_slow_path<WaterConcept::Spout* const&>(WaterConcept::Spout* const&) */
 
-void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcept::Spout*>>::
-     __push_back_slow_path<WaterConcept::Spout*const&>(WaterConcept__Spout **p0)
+template<> void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcept::Spout*>>::__push_back_slow_path(WaterConcept__Spout **p0)
 
 {
   undefined8 *in_x1;

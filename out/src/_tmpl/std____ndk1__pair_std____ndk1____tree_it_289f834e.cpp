@@ -15,11 +15,7 @@
    >::__emplace_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject*
    const&>(WaterConcept::InteractiveObject* const&, WaterConcept::InteractiveObject* const&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-::__emplace_unique_key_args<WaterConcept::InteractiveObject*,WaterConcept::InteractiveObject*const&>
-          (WaterConcept__InteractiveObject **p0,WaterConcept__InteractiveObject **p1)
+template<> undefined1 [16] std::__ndk1::__tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_unique_key_args(WaterConcept__InteractiveObject **p0,WaterConcept__InteractiveObject **p1)
 
 {
   bool bVar1;

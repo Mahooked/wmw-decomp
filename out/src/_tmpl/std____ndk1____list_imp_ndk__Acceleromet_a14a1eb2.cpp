@@ -10,9 +10,7 @@
 /* std::__ndk1::__list_imp<ndk::AccelerometerEvent, std::__ndk1::allocator<ndk::AccelerometerEvent>
    >::clear() */
 
-void std::__ndk1::
-     __list_imp<ndk::AccelerometerEvent,std::__ndk1::allocator<ndk::AccelerometerEvent>>::clear
-               (long *param_1)
+template<> void std::__ndk1::__list_imp<ndk::AccelerometerEvent,std::__ndk1::allocator<ndk::AccelerometerEvent>>::clear(long *param_1)
 
 {
   long lVar1;

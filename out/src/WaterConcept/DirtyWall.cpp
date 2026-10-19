@@ -202,7 +202,7 @@ void WaterConcept::DirtyWall::particleHasCollided
     puVar4 = *(undefined8 **)(p0 + 0xfa);
     *(undefined1 *)&p0[0xf0].particlesForFluid = 1;
     if (puVar5 == puVar4) {
-      void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(p0 + 0xf6,puVar2);
+      std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(p0 + 0xf6,puVar2);
       uVar3 = 0;
     }
     else {

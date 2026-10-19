@@ -10,9 +10,7 @@
 /* std::__ndk1::__list_imp<WaterConcept::Fluids::CustomParticleDamping,
    std::__ndk1::allocator<WaterConcept::Fluids::CustomParticleDamping> >::clear() */
 
-void std::__ndk1::
-     __list_imp<WaterConcept::Fluids::CustomParticleDamping,std::__ndk1::allocator<WaterConcept::Fluids::CustomParticleDamping>>
-     ::clear(long *param_1)
+template<> void std::__ndk1::__list_imp<WaterConcept::Fluids::CustomParticleDamping,std::__ndk1::allocator<WaterConcept::Fluids::CustomParticleDamping>>::clear(long *param_1)
 
 {
   long lVar1;

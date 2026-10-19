@@ -17,11 +17,7 @@
    std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*, void*>,
    std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long>) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<void*,void*>,std::__ndk1::__map_value_compare<void*,std::__ndk1::__value_type<void*,void*>,std::__ndk1::less<void*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<void*,void*>>>
-     ::
-     __assign_multi<std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<void*,void*>,std::__ndk1::__tree_node<std::__ndk1::__value_type<void*,void*>,void*>*,long>>
-               (long *param_1,long *param_2,long *param_3)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<void*,void*>,std::__ndk1::__map_value_compare<void*,std::__ndk1::__value_type<void*,void*>,std::__ndk1::less<void*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<void*,void*>>>::__assign_multi(long *param_1,long *param_2,long *param_3)
 
 {
   long lVar1;
@@ -101,7 +97,7 @@ LAB_00403408:
     }
   }
   while (param_2 != param_3) {
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, void*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__emplace_multi<std::__ndk1::pair<void* const, void*> const&>(param_1,param_2 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>::__emplace_multi<std::__ndk1::pair<void* const, void*> const&>(param_1,param_2 + 4);
     plVar7 = (long *)param_2[1];
     if ((long *)param_2[1] == (long *)0x0) {
       plVar7 = param_2 + 2;

@@ -12,10 +12,7 @@
    >::__push_back_slow_path<WaterConcept::Screen_WaterTest::FingerStamp
    const&>(WaterConcept::Screen_WaterTest::FingerStamp const&) */
 
-void std::__ndk1::
-     vector<WaterConcept::Screen_WaterTest::FingerStamp,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>
-     ::__push_back_slow_path<WaterConcept::Screen_WaterTest::FingerStamp_const&>
-               (WaterConcept__Screen_WaterTest__FingerStamp *p0)
+template<> void std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::__push_back_slow_path(WaterConcept__Screen_WaterTest__FingerStamp *p0)
 
 {
   ulong uVar1;

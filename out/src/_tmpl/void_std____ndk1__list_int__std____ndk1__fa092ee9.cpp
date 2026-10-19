@@ -13,8 +13,7 @@
    std::__ndk1::enable_if<__is_input_iterator<std::__ndk1::__list_const_iterator<int, void*>
    >::value, void>::type*) */
 
-void std::__ndk1::list<int,std::__ndk1::allocator<int>>::
-     assign<std::__ndk1::__list_const_iterator<int,void*>>(long param_1,long param_2,long param_3)
+template<> void std::__ndk1::list<int,std::__ndk1::allocator<int>>::assign(long param_1,long param_2,long param_3)
 
 {
   long lVar1;
@@ -25,7 +24,7 @@ void std::__ndk1::list<int,std::__ndk1::allocator<int>>::
     param_2 = *(long *)(param_2 + 8);
   }
   if (param_1 == lVar1) {
-    std::__ndk1::__list_iterator<int, void*> std::__ndk1::list<int, std::__ndk1::allocator<int>>::insert<std::__ndk1::__list_const_iterator<int, void*>>(param_1,param_1,param_2,param_3,0);
+    std::__ndk1::list<int, std::__ndk1::allocator<int>>::insert<std::__ndk1::__list_const_iterator<int, void*>>(param_1,param_1,param_2,param_3,0);
     return;
   }
   std::__ndk1::list<int, std::__ndk1::allocator<int>>::erase(param_1,lVar1,param_1);

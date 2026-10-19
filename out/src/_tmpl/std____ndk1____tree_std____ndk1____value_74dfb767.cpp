@@ -13,9 +13,7 @@
    Walaber::Sprite*> > >::destroy(std::__ndk1::__tree_node<std::__ndk1::__value_type<int,
    Walaber::Sprite*>, void*>*) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Sprite*>>>
-     ::destroy(undefined8 param_1,undefined8 *param_2)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Sprite*>>>::destroy(undefined8 param_1,undefined8 *param_2)
 
 {
   if (param_2 != (undefined8 *)0x0) {
@@ -40,9 +38,7 @@ void std::__ndk1::
    >::__insert_node_at(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*,
    std::__ndk1::__tree_node_base<void*>*&, std::__ndk1::__tree_node_base<void*>*) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Sprite*>>>
-     ::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Sprite*>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Sprite*>>>::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
 
 {
   *param_4 = 0;
@@ -53,7 +49,7 @@ void std::__ndk1::
     *param_1 = *(long *)*param_1;
     param_4 = (undefined8 *)*param_3;
   }
-  void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
   param_1[2] = param_1[2] + 1;
   return;
 }

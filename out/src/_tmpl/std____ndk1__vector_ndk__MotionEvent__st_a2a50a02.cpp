@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent> >::resize(unsigned
    long) */
 
-void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::resize
-               (ulong p0)
+template<> void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::resize(ulong p0)
 
 {
   long lVar1;
@@ -77,8 +76,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
 /* std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>
    >::__append(unsigned long) */
 
-void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::__append
-               (ulong p0)
+template<> void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::__append(ulong p0)
 
 {
   long lVar1;
@@ -138,8 +136,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
    >::__swap_out_circular_buffer(std::__ndk1::__split_buffer<ndk::MotionEvent,
    std::__ndk1::allocator<ndk::MotionEvent>&>&) */
 
-void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+template<> void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;

@@ -10,8 +10,7 @@
 /* std::__ndk1::__list_imp<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>
    >::clear() */
 
-void std::__ndk1::__list_imp<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     clear(long *param_1)
+template<> void std::__ndk1::__list_imp<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::clear(long *param_1)
 
 {
   long lVar1;

@@ -18,12 +18,7 @@
    Walaber::CompressionRecord> >(unsigned char const&, std::__ndk1::pair<unsigned char,
    Walaber::CompressionRecord>&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::__map_value_compare<unsigned_char,std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::less<unsigned_char>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>>>
-::
-__emplace_unique_key_args<unsigned_char,std::__ndk1::pair<unsigned_char,Walaber::CompressionRecord>>
-          (long param_1,byte *param_2,undefined1 *param_3)
+template<> undefined1 [16] std::__ndk1::__tree<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::__map_value_compare<unsigned_char,std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::less<unsigned_char>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>>>::__emplace_unique_key_args(long param_1,byte *param_2,undefined1 *param_3)
 
 {
   bool bVar1;

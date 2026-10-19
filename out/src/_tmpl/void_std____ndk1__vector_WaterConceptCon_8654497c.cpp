@@ -11,10 +11,7 @@
    std::__ndk1::allocator<WaterConceptConstants::FluidType>
    >::__push_back_slow_path<WaterConceptConstants::FluidType>(WaterConceptConstants::FluidType&&) */
 
-void std::__ndk1::
-     vector<WaterConceptConstants::FluidType,std::__ndk1::allocator<WaterConceptConstants::FluidType>>
-     ::__push_back_slow_path<WaterConceptConstants::FluidType>
-               (WaterConceptConstants__FluidType **p0)
+template<> void std::__ndk1::vector<WaterConceptConstants::FluidType,std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path(WaterConceptConstants__FluidType **p0)
 
 {
   undefined4 *in_x1;

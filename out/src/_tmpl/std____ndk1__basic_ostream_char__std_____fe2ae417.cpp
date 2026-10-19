@@ -11,8 +11,7 @@
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char> >&
    (*)(std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char> >&)) */
 
-void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
-               (undefined8 param_1,code *UNRECOVERED_JUMPTABLE)
+template<> void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(code *UNRECOVERED_JUMPTABLE)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005abf24. Too many branches */

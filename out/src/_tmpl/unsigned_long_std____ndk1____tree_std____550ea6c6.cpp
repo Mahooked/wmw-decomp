@@ -13,10 +13,7 @@
    std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*,
    Walaber::SharedPtr<Walaber::Callback> > > >::__erase_unique<void*>(void* const&) */
 
-undefined8
-std::__ndk1::
-__tree<std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::__map_value_compare<void*,std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::less<void*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>>>
-::__erase_unique<void*>(void **p0)
+template<> undefined8 std::__ndk1::__tree<std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::__map_value_compare<void*,std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::less<void*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>>>::__erase_unique(void **p0)
 
 {
   undefined8 *in_x1;

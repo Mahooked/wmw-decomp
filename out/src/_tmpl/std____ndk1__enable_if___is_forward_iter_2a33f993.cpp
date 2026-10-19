@@ -14,11 +14,7 @@
    >::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(WaterConcept::WaterBalloon::WaterBalloonStoredParticle*,
    WaterConcept::WaterBalloon::WaterBalloonStoredParticle*) */
 
-void std::__ndk1::
-     vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle,std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>
-     ::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>
-               (WaterConcept__WaterBalloon__WaterBalloonStoredParticle *p0,
-               WaterConcept__WaterBalloon__WaterBalloonStoredParticle *p1)
+template<> void std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle,std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign(WaterConcept__WaterBalloon__WaterBalloonStoredParticle *p0, WaterConcept__WaterBalloon__WaterBalloonStoredParticle *p1)
 
 {
   ulong uVar1;

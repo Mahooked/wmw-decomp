@@ -12,9 +12,7 @@
    >::__construct_at_end<Walaber::FluidParticle*>(Walaber::FluidParticle*, Walaber::FluidParticle*,
    unsigned long) */
 
-void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __construct_at_end<Walaber::FluidParticle*>
-               (Walaber__FluidParticle *p0,Walaber__FluidParticle *p1,ulong p2)
+template<> void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::__construct_at_end(Walaber__FluidParticle *p0,Walaber__FluidParticle *p1,ulong p2)
 
 {
   Walaber__FluidParticle *pWVar1;

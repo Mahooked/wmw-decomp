@@ -1450,7 +1450,7 @@ void WaterConcept::IAPNotification::handleEvent
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(abStack_88,"cranky",6);
     }
                     /* try { // try from 0049c430 to 0049c443 has its CatchHandler @ 0049c7f0 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,abStack_88,"_flavor");
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,abStack_88,"_flavor");
                     /* try { // try from 0049c450 to 0049c45b has its CatchHandler @ 0049c7dc */
     Walaber::StringHelper::intToStr(abStack_100,GameSettings::currentADFlavor);
     uVar5 = (ulong)(abStack_100[0] >> 1);

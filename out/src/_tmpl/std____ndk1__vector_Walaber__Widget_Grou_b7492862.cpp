@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>
    >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<Walaber::Widget_Group*,std::__ndk1::allocator<Walaber::Widget_Group*>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::Widget_Group*,std::__ndk1::allocator<Walaber::Widget_Group*>>::__vallocate(ulong p0)
 
 {
   long lVar1;

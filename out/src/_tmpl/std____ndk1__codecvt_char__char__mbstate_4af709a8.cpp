@@ -9,11 +9,11 @@
 
 /* std::__ndk1::codecvt<char, char, mbstate_t>::~codecvt() */
 
-void std::__ndk1::codecvt<char,char,mbstate_t>::~codecvt(void *param_1)
+template<> std::__ndk1::codecvt<char,char,mbstate_t>::~codecvt()
 
 {
   std::__ndk1::__shared_count::~__shared_count();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 
@@ -26,9 +26,7 @@ void std::__ndk1::codecvt<char,char,mbstate_t>::~codecvt(void *param_1)
 /* std::__ndk1::codecvt<char, char, mbstate_t>::do_out(mbstate_t&, char const*, char const*, char
    const*&, char*, char*, char*&) const */
 
-undefined8
-std::__ndk1::codecvt<char,char,mbstate_t>::do_out
-          (mbstate_t *p0,char *p1,char *p2,char **p3,char *p4,char *p5,char **p6)
+template<> undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_out(mbstate_t *p0,char *p1,char *p2,char **p3,char *p4,char *p5,char **p6)
 
 {
   undefined8 *in_x7;
@@ -47,9 +45,7 @@ std::__ndk1::codecvt<char,char,mbstate_t>::do_out
 /* std::__ndk1::codecvt<char, char, mbstate_t>::do_in(mbstate_t&, char const*, char const*, char
    const*&, char*, char*, char*&) const */
 
-undefined8
-std::__ndk1::codecvt<char,char,mbstate_t>::do_in
-          (mbstate_t *p0,char *p1,char *p2,char **p3,char *p4,char *p5,char **p6)
+template<> undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_in(mbstate_t *p0,char *p1,char *p2,char **p3,char *p4,char *p5,char **p6)
 
 {
   undefined8 *in_x7;
@@ -68,8 +64,7 @@ std::__ndk1::codecvt<char,char,mbstate_t>::do_in
 /* std::__ndk1::codecvt<char, char, mbstate_t>::do_unshift(mbstate_t&, char*, char*, char*&) const
     */
 
-undefined8
-std::__ndk1::codecvt<char,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
+template<> undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
 
 {
   
@@ -85,7 +80,7 @@ std::__ndk1::codecvt<char,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,cha
 
 /* std::__ndk1::codecvt<char, char, mbstate_t>::do_encoding() const */
 
-undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_encoding(void)
+template<> undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_encoding(void)
 
 {
   return 1;
@@ -99,7 +94,7 @@ undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_encoding(void)
 
 /* std::__ndk1::codecvt<char, char, mbstate_t>::do_always_noconv() const */
 
-undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_always_noconv(void)
+template<> undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_always_noconv(void)
 
 {
   return 1;
@@ -114,8 +109,7 @@ undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_always_noconv(void)
 /* std::__ndk1::codecvt<char, char, mbstate_t>::do_length(mbstate_t&, char const*, char const*,
    unsigned long) const */
 
-undefined4
-std::__ndk1::codecvt<char,char,mbstate_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3, undefined4 in_w4)
+template<> undefined4 std::__ndk1::codecvt<char,char,mbstate_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3, undefined4 in_w4)
 
 {
   undefined4 uVar1;
@@ -136,7 +130,7 @@ std::__ndk1::codecvt<char,char,mbstate_t>::do_length(mbstate_t *p0,char *p1,char
 
 /* std::__ndk1::codecvt<char, char, mbstate_t>::do_max_length() const */
 
-undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_max_length(void)
+template<> undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_max_length(void)
 
 {
   return 1;

@@ -10,8 +10,7 @@
 /* std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>
    >::vector(std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int> > const&) */
 
-void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::vector
-               (undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -40,7 +39,7 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::vec
 /* std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int> >::__vallocate(unsigned
    long) */
 
-void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::__vallocate(ulong p0, ulong in_x1)
+template<> void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::__vallocate(ulong p0, ulong in_x1)
 
 {
   long lVar1;

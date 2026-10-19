@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<WaterConcept::Switch*, std::__ndk1::allocator<WaterConcept::Switch*>
    >::__push_back_slow_path<WaterConcept::Switch* const&>(WaterConcept::Switch* const&) */
 
-void std::__ndk1::vector<WaterConcept::Switch*,std::__ndk1::allocator<WaterConcept::Switch*>>::
-     __push_back_slow_path<WaterConcept::Switch*const&>(WaterConcept__Switch **p0)
+template<> void std::__ndk1::vector<WaterConcept::Switch*,std::__ndk1::allocator<WaterConcept::Switch*>>::__push_back_slow_path(WaterConcept__Switch **p0)
 
 {
   undefined8 *in_x1;

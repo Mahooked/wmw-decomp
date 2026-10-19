@@ -570,7 +570,7 @@ LAB_0042c5a8:
       }
       else {
                     /* try { // try from 004451ac to 004451b7 has its CatchHandler @ 00445bd8 */
-        void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance>>(uVar3 + 0x7c0,&puStack_98);
+        std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance>>(uVar3 + 0x7c0,&puStack_98);
       }
       ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)&puStack_98)->~SharedPtr<Walaber::SoundEffectInstance>();
       puStack_98 = (undefined8 *)((ulong)puStack_98 & 0xffffffff00000000);
@@ -581,7 +581,7 @@ LAB_0042c5a8:
       }
       else {
                     /* try { // try from 004451e0 to 004451eb has its CatchHandler @ 00445bd4 */
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(uVar3 + 0x7a8,&puStack_98);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(uVar3 + 0x7a8,&puStack_98);
       }
     }
     else {
@@ -942,7 +942,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar5;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar5 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -953,7 +953,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar6;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar6 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -964,7 +964,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar5;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar5 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -975,7 +975,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar6;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar6 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -986,7 +986,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar5;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar5 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -997,7 +997,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar6;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar6 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -1008,7 +1008,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar5;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar5 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -1019,7 +1019,7 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar6;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
     puVar6 = *(undefined4 **)(param_1 + 0x68);
     puVar8 = *(undefined4 **)(param_1 + 0x70);
   }
@@ -1029,139 +1029,139 @@ void WaterConcept::World::_initLookupTables(long param_1)
     *(undefined4 **)(param_1 + 0x68) = puVar6 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(lVar7,&uStack_70);
   }
   lVar7 = param_1 + 0x48;
   uStack_70._0_4_ = 0x28;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 9;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 3;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 6;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x14;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x90;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xc0;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x60;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 8;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 1;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 2;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 4;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x10;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x80;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x40;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x20;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x18;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x81;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x42;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x24;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x39;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x47;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x9c;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xe2;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x78;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x4b;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x1e;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xd2;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xbd;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xe7;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x6c;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x8b;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x36;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xd1;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x30;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x11;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x41;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x44;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xc;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x88;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x82;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x22;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x48;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 10;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x12;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x50;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x13;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x54;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 200;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x2a;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x99;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xc3;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x3c;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x66;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xd;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xcb;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x3e;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x6e;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xa0;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x21;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 5;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x84;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0xdb;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70._0_4_ = 0x7e;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   uStack_70 = (ulong)uStack_70._4_4_ << 0x20;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>, bool> std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::__emplace_unique_key_args<int, int>(lVar7,&uStack_70,&uStack_70);
   auVar10 = NEON_fmov(0x3f800000,4);
   uVar11 = auVar10._8_8_;
   auStack_58[0] = uVar11;
@@ -1487,7 +1487,7 @@ void WaterConcept::World::_gotAlgaeSE(void *p0, long in_x1)
   
   plVar2 = *(long **)((long)p0 + 0x798);
   if (plVar2 == *(long **)((long)p0 + 0x7a0)) {
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x790,in_x1 + 8);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x790,in_x1 + 8);
   }
   else {
     lVar5 = *(long *)(in_x1 + 8);
@@ -1506,7 +1506,7 @@ void WaterConcept::World::_gotAlgaeSE(void *p0, long in_x1)
     *(undefined4 **)((long)p0 + 0x780) = puVar4 + 1;
   }
   else {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x778,&uStack_2c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x778,&uStack_2c);
   }
   uStack_2c = 0;
   puVar4 = *(undefined4 **)((long)p0 + 0x768);
@@ -1515,7 +1515,7 @@ void WaterConcept::World::_gotAlgaeSE(void *p0, long in_x1)
     *(undefined4 **)((long)p0 + 0x768) = puVar4 + 1;
   }
   else {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x760,&uStack_2c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x760,&uStack_2c);
   }
   return;
 }
@@ -1539,7 +1539,7 @@ void WaterConcept::World::_gotMixSE(void *p0, long in_x1)
   
   plVar2 = *(long **)((long)p0 + 0x7c8);
   if (plVar2 == *(long **)((long)p0 + 2000)) {
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x7c0,in_x1 + 8);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x7c0,in_x1 + 8);
   }
   else {
     lVar5 = *(long *)(in_x1 + 8);
@@ -1558,7 +1558,7 @@ void WaterConcept::World::_gotMixSE(void *p0, long in_x1)
     *(undefined4 **)((long)p0 + 0x7b0) = puVar3 + 1;
   }
   else {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x7a8,&uStack_2c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x7a8,&uStack_2c);
   }
   return;
 }
@@ -1582,7 +1582,7 @@ void WaterConcept::World::_gotSpoutSE(void *p0, long in_x1)
   
   plVar2 = *(long **)((long)p0 + 0x7f8);
   if (plVar2 == *(long **)((long)p0 + 0x800)) {
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x7f0,in_x1 + 8);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x7f0,in_x1 + 8);
   }
   else {
     lVar5 = *(long *)(in_x1 + 8);
@@ -1601,7 +1601,7 @@ void WaterConcept::World::_gotSpoutSE(void *p0, long in_x1)
     *(undefined4 **)((long)p0 + 0x7e0) = puVar3 + 1;
   }
   else {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x7d8,&uStack_2c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x7d8,&uStack_2c);
   }
   return;
 }
@@ -1625,7 +1625,7 @@ void WaterConcept::World::_gotFanSE(void *p0, long in_x1)
   
   plVar2 = *(long **)((long)p0 + 0x8a0);
   if (plVar2 == *(long **)((long)p0 + 0x8a8)) {
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x898,in_x1 + 8);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::SoundEffectInstance> const&>((long)p0 + 0x898,in_x1 + 8);
   }
   else {
     lVar5 = *(long *)(in_x1 + 8);
@@ -1644,7 +1644,7 @@ void WaterConcept::World::_gotFanSE(void *p0, long in_x1)
     *(undefined4 **)((long)p0 + 0x888) = puVar4 + 1;
   }
   else {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x880,&uStack_2c);
+    std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>((long)p0 + 0x880,&uStack_2c);
   }
   uStack_2c = 0;
   puVar4 = *(undefined4 **)((long)p0 + 0x870);
@@ -1653,7 +1653,7 @@ void WaterConcept::World::_gotFanSE(void *p0, long in_x1)
     *(undefined4 **)((long)p0 + 0x870) = puVar4 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>((long)p0 + 0x868,&uStack_2c);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>((long)p0 + 0x868,&uStack_2c);
   }
   return;
 }
@@ -2473,7 +2473,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     *(undefined4 **)(param_1 + 0x610) = puVar18 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x608,&uStack_a0);
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x608,&uStack_a0);
   }
   uStack_a0 = 0xff94daff;
   puVar18 = *(undefined4 **)(param_1 + 0x658);
@@ -2485,7 +2485,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     *(undefined4 **)(param_1 + 0x658) = puVar19;
   }
   else {
-    void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(lVar12,&uStack_a0);
+    std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(lVar12,&uStack_a0);
     puVar19 = *(undefined4 **)(param_1 + 0x658);
     puVar22 = *(undefined4 **)(param_1 + 0x660);
   }
@@ -2496,7 +2496,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     *(undefined4 **)(param_1 + 0x658) = puVar18;
   }
   else {
-    void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(lVar12,&uStack_a0);
+    std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(lVar12,&uStack_a0);
     puVar18 = *(undefined4 **)(param_1 + 0x658);
     puVar22 = *(undefined4 **)(param_1 + 0x660);
   }
@@ -2506,7 +2506,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     *(undefined4 **)(param_1 + 0x658) = puVar18 + 1;
   }
   else {
-    void std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(lVar12,&uStack_a0);
+    std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>::__push_back_slow_path<Walaber::Color>(lVar12,&uStack_a0);
   }
   uVar11 = operator new(0x58);
                     /* try { // try from 004484fc to 00448503 has its CatchHandler @ 0044a978 */
@@ -2588,7 +2588,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 004486b0 to 004486bb has its CatchHandler @ 0044aa34 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_e8)->~SharedPtr<Walaber::Callback>();
@@ -2647,7 +2647,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 004487ec to 004487f7 has its CatchHandler @ 0044aa24 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_108)->~SharedPtr<Walaber::Callback>();
@@ -2690,7 +2690,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 004488ec to 004488f7 has its CatchHandler @ 0044a85c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_118)->~SharedPtr<Walaber::Callback>();
@@ -2726,7 +2726,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 004489c4 to 004489cf has its CatchHandler @ 0044a84c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_128)->~SharedPtr<Walaber::Callback>();
@@ -2778,7 +2778,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 00448adc to 00448ae7 has its CatchHandler @ 0044aa14 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_138)->~SharedPtr<Walaber::Callback>();
@@ -2821,7 +2821,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00448bdc to 00448be7 has its CatchHandler @ 0044a83c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_148)->~SharedPtr<Walaber::Callback>();
@@ -2857,7 +2857,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00448cac to 00448cb7 has its CatchHandler @ 0044a82c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_158)->~SharedPtr<Walaber::Callback>();
@@ -2893,7 +2893,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00448d7c to 00448d87 has its CatchHandler @ 0044a81c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_168)->~SharedPtr<Walaber::Callback>();
@@ -2927,7 +2927,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00448e40 to 00448e4b has its CatchHandler @ 0044a80c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_178)->~SharedPtr<Walaber::Callback>();
@@ -2963,7 +2963,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00448f10 to 00448f1b has its CatchHandler @ 0044a7fc */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_188)->~SharedPtr<Walaber::Callback>();
@@ -2999,7 +2999,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00448fdc to 00448fe7 has its CatchHandler @ 0044a7ec */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_198)->~SharedPtr<Walaber::Callback>();
@@ -3050,7 +3050,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 004490ec to 004490f7 has its CatchHandler @ 0044aa04 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1a8)->~SharedPtr<Walaber::Callback>();
@@ -3109,7 +3109,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 00449228 to 00449233 has its CatchHandler @ 0044a9f4 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1b8)->~SharedPtr<Walaber::Callback>();
@@ -3168,7 +3168,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 00449364 to 0044936f has its CatchHandler @ 0044a9e4 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1c8)->~SharedPtr<Walaber::Callback>();
@@ -3227,7 +3227,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 004494a0 to 004494ab has its CatchHandler @ 0044a9d4 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1d8)->~SharedPtr<Walaber::Callback>();
@@ -3286,7 +3286,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 004495dc to 004495e7 has its CatchHandler @ 0044a9c4 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1e8)->~SharedPtr<Walaber::Callback>();
@@ -3345,7 +3345,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 00449718 to 00449723 has its CatchHandler @ 0044a9b4 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1f8)->~SharedPtr<Walaber::Callback>();
@@ -3404,7 +3404,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 00449854 to 0044985f has its CatchHandler @ 0044a9a4 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_208)->~SharedPtr<Walaber::Callback>();
@@ -3448,7 +3448,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00449954 to 0044995f has its CatchHandler @ 0044a7dc */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_218)->~SharedPtr<Walaber::Callback>();
@@ -3484,7 +3484,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00449a24 to 00449a2f has its CatchHandler @ 0044a7cc */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_228)->~SharedPtr<Walaber::Callback>();
@@ -3520,7 +3520,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00449af0 to 00449afb has its CatchHandler @ 0044a7bc */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_238)->~SharedPtr<Walaber::Callback>();
@@ -3571,7 +3571,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 00449c00 to 00449c0b has its CatchHandler @ 0044a994 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
@@ -3631,7 +3631,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
     }
     else {
                     /* try { // try from 00449d40 to 00449d4b has its CatchHandler @ 0044a984 */
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
+      std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&lStack_88);
     }
     ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
     ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_258)->~SharedPtr<Walaber::Callback>();
@@ -3678,7 +3678,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00449e34 to 00449e3f has its CatchHandler @ 0044a7ac */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_268)->~SharedPtr<Walaber::Callback>();
@@ -3714,7 +3714,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00449f04 to 00449f0f has its CatchHandler @ 0044a79c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_278)->~SharedPtr<Walaber::Callback>();
@@ -3750,7 +3750,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 00449fd4 to 00449fdf has its CatchHandler @ 0044a78c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_288)->~SharedPtr<Walaber::Callback>();
@@ -3786,7 +3786,7 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   }
   else {
                     /* try { // try from 0044a0a0 to 0044a0ab has its CatchHandler @ 0044a77c */
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
+    std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture>>(lVar12,&uStack_c0);
   }
   ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
   ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_298)->~SharedPtr<Walaber::Callback>();
@@ -4484,7 +4484,7 @@ void WaterConcept::World::addCoalTexture(long param_1,long *param_2)
     *(long **)(param_1 + 0x498) = plVar1 + 2;
     return;
   }
-  void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x490);
+  std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x490);
   return;
 }
 
@@ -4535,7 +4535,7 @@ void WaterConcept::World::rebuildPolygonsForGrid(undefined8 param_1)
   puStack_30 = (undefined4 *)0x0;
   uStack_44 = 1;
                     /* try { // try from 0044b674 to 0044b67f has its CatchHandler @ 0044b754 */
-  void std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
+  std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
   uStack_44 = 2;
   if (puStack_38 < puStack_30) {
     *puStack_38 = 2;
@@ -4543,7 +4543,7 @@ void WaterConcept::World::rebuildPolygonsForGrid(undefined8 param_1)
   }
   else {
                     /* try { // try from 0044b6a0 to 0044b6ab has its CatchHandler @ 0044b74c */
-    void std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
+    std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
   }
   uStack_44 = 3;
   if (puStack_38 < puStack_30) {
@@ -4552,7 +4552,7 @@ void WaterConcept::World::rebuildPolygonsForGrid(undefined8 param_1)
   }
   else {
                     /* try { // try from 0044b6cc to 0044b6d7 has its CatchHandler @ 0044b748 */
-    void std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
+    std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
   }
   uStack_44 = 4;
   if (puStack_38 < puStack_30) {
@@ -4561,7 +4561,7 @@ void WaterConcept::World::rebuildPolygonsForGrid(undefined8 param_1)
   }
   else {
                     /* try { // try from 0044b6f8 to 0044b703 has its CatchHandler @ 0044b744 */
-    void std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
+    std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType>(&puStack_40,&uStack_44);
   }
                     /* try { // try from 0044b704 to 0044b70f has its CatchHandler @ 0044b750 */
   WaterConcept::World::createPolygonsForGrid(param_1,&puStack_40);
@@ -4883,7 +4883,7 @@ void WaterConcept::World::preUpdate(float p0)
                 (**(code **)(*plVar6 + 0x98))(plVar6,lVar13 + uVar18 * 0x18 + 8);
                 piVar8 = (int *)(*(long *)(in_x0 + 0x4e8) + uVar18 * 0x18 + 4);
               }
-              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>>>::__erase_unique<int>(lVar3,piVar8);
+              std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>>>::__erase_unique<int>(lVar3,piVar8);
               iVar5 = Walaber::SoundEffectInstance::getState(*(undefined8 *)(in_x0 + 0x738));
               if (iVar5 == 0) {
                 Walaber::SoundEffectInstance::pause(*(undefined8 *)(in_x0 + 0x738));
@@ -5407,7 +5407,7 @@ void WaterConcept::World::update(float p0)
       (**(code **)(*(long *)*plStack_d0 + 0x60))(uVar25);
       if (*(char *)(*plStack_d0 + 0xdc) != '\0') {
         if (plStack_c0 == plStack_b8) {
-          void std::__ndk1::vector<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>, std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>>::__push_back_slow_path<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**> const&>(&plStack_c8,&plStack_d0);
+          std::__ndk1::vector<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>, std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>>::__push_back_slow_path<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**> const&>(&plStack_c8,&plStack_d0);
         }
         else {
           *plStack_c0 = (long)plStack_d0;
@@ -6012,7 +6012,7 @@ void WaterConcept::World::update(float p0)
       }
       else if (plStack_f8 == plStack_f0) {
                     /* try { // try from 0044e004 to 0044e00f has its CatchHandler @ 0044ec38 */
-        void std::__ndk1::vector<WaterConcept::Switch*, std::__ndk1::allocator<WaterConcept::Switch*>>::__push_back_slow_path<WaterConcept::Switch* const&>(&uStack_100,&uStack_d8);
+        std::__ndk1::vector<WaterConcept::Switch*, std::__ndk1::allocator<WaterConcept::Switch*>>::__push_back_slow_path<WaterConcept::Switch* const&>(&uStack_100,&uStack_d8);
       }
       else {
         *plStack_f8 = uStack_d8;
@@ -6083,7 +6083,7 @@ void WaterConcept::World::update(float p0)
     do {
       uStack_d8 = plStack_f8[-1];
                     /* try { // try from 0044e284 to 0044e28f has its CatchHandler @ 0044ed0c */
-      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>, std::__ndk1::__map_value_compare<WaterConcept::Switch*, std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>, std::__ndk1::less<WaterConcept::Switch*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>>>::__erase_unique<WaterConcept::Switch*>(in_x0 + 0x128,&uStack_d8);
+      std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>, std::__ndk1::__map_value_compare<WaterConcept::Switch*, std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>, std::__ndk1::less<WaterConcept::Switch*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>>>::__erase_unique<WaterConcept::Switch*>(in_x0 + 0x128,&uStack_d8);
       plStack_f8 = plStack_f8 + -1;
     } while (uStack_100 != plStack_f8);
   }
@@ -6811,11 +6811,11 @@ LAB_0044fae4:
               cVar20 = *pcVar25;
               if (cVar20 == '\x06') {
                 uStack_b8 = uVar17;
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(param_1 + 0x7d,&uStack_b8);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(param_1 + 0x7d,&uStack_b8);
               }
               else if (cVar20 == '\x05') {
                 uStack_b8 = uVar17;
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
               }
               lVar26 = lVar26 + (long)iVar14 * 0x1c;
               *pcVar25 = '\0';
@@ -6934,11 +6934,11 @@ LAB_00450804:
                     cVar20 = *pcVar25;
                     if (cVar20 == '\x06') {
                       uStack_b8 = uVar17;
-                      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(param_1 + 0x7d,&uStack_b8);
+                      std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(param_1 + 0x7d,&uStack_b8);
                     }
                     else if (cVar20 == '\x05') {
                       uStack_b8 = uVar17;
-                      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
+                      std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
                     }
                     lVar26 = lVar26 + (long)iVar14 * 0x1c;
                     *pcVar25 = '\0';
@@ -6977,7 +6977,7 @@ LAB_00450804:
                     *(char *)(pfVar23 + 5) = '\x03';
                     WaterConcept::World::_flagCellForRedraw(param_1,uVar17);
                     uStack_b8 = uVar17;
-                    unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
+                    std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
                     uVar21 = 0;
                     do {
                       uVar17 = WaterConcept::World::_getClosestGridCell(param_1,&uStack_d8,7,5);
@@ -7002,7 +7002,7 @@ LAB_00450804:
                           (long)((int)uVar17 + *(int *)param_1[2] * iVar10) * 0x1c + 0x14) = uVar24;
                         WaterConcept::World::_flagCellForRedraw(param_1,uVar17);
                         uStack_b8 = uVar17;
-                        unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
+                        std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(plVar4,&uStack_b8);
                       }
                       uVar21 = uVar21 + 1;
                     } while (uVar21 < 0x10);
@@ -7411,7 +7411,7 @@ void WaterConcept::World::_resolveObjectCollisions(long *param_1)
                                 (plVar19,param_1[0x88],puVar21,uStack_f8 & 0xffffffff,&uStack_100);
                       if ((char)uStack_100 != '\0') {
                         if (puStack_c0 == puStack_b8) {
-                          void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(&puStack_c8,puVar21);
+                          std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(&puStack_c8,puVar21);
                         }
                         else {
                           uVar11 = *puVar21;
@@ -11103,7 +11103,7 @@ LAB_00457694:
             puVar26 = *(undefined8 **)((long)p0 + 0x9c0);
             if (puVar26 == *(undefined8 **)((long)p0 + 0x9c8)) {
                     /* try { // try from 00457800 to 0045780b has its CatchHandler @ 0045c51c */
-              void std::__ndk1::vector<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>>::__push_back_slow_path<WaterConcept::World::RegionInfo const&>((long)p0 + 0x9b8,&fStack_458);
+              std::__ndk1::vector<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>>::__push_back_slow_path<WaterConcept::World::RegionInfo const&>((long)p0 + 0x9b8,&fStack_458);
             }
             else {
               puVar26[4] = 0;
@@ -11126,7 +11126,7 @@ LAB_00457694:
                 puVar22 = puStack_448;
                 do {
                     /* try { // try from 0045778c to 0045779b has its CatchHandler @ 0045c814 */
-                  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar26 + 2,puVar45,puVar22 + 4,puVar22 + 4);
+                  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar26 + 2,puVar45,puVar22 + 4,puVar22 + 4);
                   puVar33 = (ulong *)puVar22[1];
                   if ((ulong *)puVar22[1] == (ulong *)0x0) {
                     puVar33 = puVar22 + 2;
@@ -12522,7 +12522,7 @@ LAB_00457894:
         ((Walaber::SharedPtr<Walaber::Callback> *)&pbStack_278)->~SharedPtr<Walaber::Callback>();
         if (*(undefined8 **)((long)p0 + 0x9f8) == *(undefined8 **)((long)p0 + 0xa00)) {
                     /* try { // try from 00458e3c to 00458e7f has its CatchHandler @ 0045c1f8 */
-          void std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path<WaterConcept::StarSeed* const&>((long)p0 + 0x9f0,&pbStack_630);
+          std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path<WaterConcept::StarSeed* const&>((long)p0 + 0x9f0,&pbStack_630);
         }
         else {
           **(undefined8 **)((long)p0 + 0x9f8) = pbStack_630;
@@ -12530,7 +12530,7 @@ LAB_00457894:
         }
         if (bVar10) {
           if (*(undefined8 **)((long)p0 + 0xa48) == *(undefined8 **)((long)p0 + 0xa50)) {
-            void std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path<WaterConcept::StarSeed* const&>((long)p0 + 0xa40,&pbStack_630);
+            std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path<WaterConcept::StarSeed* const&>((long)p0 + 0xa40,&pbStack_630);
           }
           else {
             **(undefined8 **)((long)p0 + 0xa48) = pbStack_630;
@@ -13755,7 +13755,7 @@ LAB_00459050:
             bStack_47f = 0;
             uStack_47e = 0;
                     /* try { // try from 004590fc to 00459107 has its CatchHandler @ 0045c924 */
-            std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>(&plStack_150,&fStack_458);
+            std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>(&plStack_150,&fStack_458);
             if ((uStack_440 & 1) != 0) {
               operator delete(pcStack_430);
             }
@@ -13855,7 +13855,7 @@ LAB_004591b0:
                     /* try { // try from 00459264 to 0045926f has its CatchHandler @ 0045c8c0 */
             new ((void *)(&uStack_440)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_480);
                     /* try { // try from 00459270 to 0045927b has its CatchHandler @ 0045c8e4 */
-            std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_168,&fStack_458);
+            std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_168,&fStack_458);
             if ((uStack_440 & 1) != 0) {
               operator delete(pcStack_430);
             }
@@ -13951,7 +13951,7 @@ LAB_00459314:
                     /* try { // try from 004593cc to 004593d7 has its CatchHandler @ 0045c600 */
           new ((void *)(&uStack_440)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_480);
                     /* try { // try from 004593d8 to 004593e3 has its CatchHandler @ 0045c62c */
-          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_180,&fStack_458);
+          std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_180,&fStack_458);
           if ((uStack_440 & 1) != 0) {
             operator delete(pcStack_430);
           }
@@ -13981,7 +13981,7 @@ LAB_00459314:
                     /* try { // try from 00459530 to 0045953b has its CatchHandler @ 0045c50c */
             new ((void *)(&uStack_440)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_480);
                     /* try { // try from 0045953c to 00459547 has its CatchHandler @ 0045c510 */
-            std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_1b0,&fStack_458);
+            std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_1b0,&fStack_458);
 LAB_00459548:
             if ((uStack_440 & 1) != 0) {
               operator delete(pcStack_430);
@@ -14013,7 +14013,7 @@ LAB_00459548:
                     /* try { // try from 00459494 to 0045949f has its CatchHandler @ 0045c508 */
             new ((void *)(&uStack_440)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_480);
                     /* try { // try from 004594a0 to 004594ab has its CatchHandler @ 0045c500 */
-            std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_198,&fStack_458);
+            std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(&plStack_198,&fStack_458);
             goto LAB_00459548;
           }
         }
@@ -14173,7 +14173,7 @@ LAB_004596c0:
 LAB_0045981c:
             if (*(undefined8 **)((long)p0 + 0x4c0) == *(undefined8 **)((long)p0 + 0x4c8)) {
                     /* try { // try from 00459844 to 00459877 has its CatchHandler @ 0045c744 */
-              void std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>((long)p0 + 0x4b8,&pbStack_5e0);
+              std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject* const&>((long)p0 + 0x4b8,&pbStack_5e0);
             }
             else {
               **(undefined8 **)((long)p0 + 0x4c0) = pbStack_5e0;
@@ -14599,7 +14599,7 @@ LAB_00459bec:
         }
         else {
                     /* try { // try from 0045a078 to 0045a083 has its CatchHandler @ 0045c644 */
-          void std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject*>((long)p0 + 0x4b8,&bStack_100);
+          std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject*>((long)p0 + 0x4b8,&bStack_100);
         }
         bStack_ff = 0;
         uStack_fe = 0;
@@ -14706,7 +14706,7 @@ LAB_0045a194:
       if (lVar44 != 0) {
         if (*(long **)((long)p0 + 0x9e0) == *(long **)((long)p0 + 0x9e8)) {
                     /* try { // try from 0045a204 to 0045a20f has its CatchHandler @ 0045c6ec */
-          void std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::__push_back_slow_path<WaterConcept::Spout* const&>((long)p0 + 0x9d8,&bStack_1d0);
+          std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::__push_back_slow_path<WaterConcept::Spout* const&>((long)p0 + 0x9d8,&bStack_1d0);
         }
         else {
           **(long **)((long)p0 + 0x9e0) = lVar44;
@@ -15022,7 +15022,7 @@ LAB_0045a194:
     }
     else {
                     /* try { // try from 0045a688 to 0045a693 has its CatchHandler @ 0045c300 */
-      void std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject*>(plVar30,&bStack_100);
+      std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject*>(plVar30,&bStack_100);
     }
     uStack_f2 = 0;
     pbStack_420 = &bStack_100;
@@ -15410,7 +15410,7 @@ LAB_0045a194:
                    (CONCAT17(uStack_c9,CONCAT25(uStack_cb,CONCAT41(uStack_cf,bStack_d0))) >> 0x20);
     }
                     /* try { // try from 0045b018 to 0045b02b has its CatchHandler @ 0045c260 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,"/Objects/",&bStack_1d0);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,"/Objects/",&bStack_1d0);
                     /* try { // try from 0045b02c to 0045b03f has its CatchHandler @ 0045c248 */
     puVar46 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_d0,".hs",3);
     pvStack_600 = (void *)puVar46[2];
@@ -15459,7 +15459,7 @@ LAB_0045a194:
     }
     else {
                     /* try { // try from 0045b12c to 0045b137 has its CatchHandler @ 0045c1c0 */
-      void std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject*>(plVar30,&bStack_d0);
+      std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__push_back_slow_path<WaterConcept::InteractiveObject*>(plVar30,&bStack_d0);
     }
     uStack_c3 = 0;
     uStack_c2 = 0;
@@ -17026,7 +17026,7 @@ LAB_0045d5f0:
     }
     else {
                     /* try { // try from 0045d2e4 to 0045d2ef has its CatchHandler @ 0045e9bc */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
     }
     uStack_1b8._0_4_ = 3;
     if (puStack_d8 < puStack_d0) {
@@ -17035,7 +17035,7 @@ LAB_0045d5f0:
     }
     else {
                     /* try { // try from 0045df24 to 0045df2f has its CatchHandler @ 0045e9b8 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
     }
     uStack_1b8._0_4_ = 4;
     if (puStack_d8 < puStack_d0) {
@@ -17044,7 +17044,7 @@ LAB_0045d5f0:
     }
     else {
                     /* try { // try from 0045df50 to 0045df5b has its CatchHandler @ 0045e9b4 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
     }
     uStack_1b8._0_4_ = 5;
     if (puStack_d8 < puStack_d0) {
@@ -17053,7 +17053,7 @@ LAB_0045d5f0:
     }
     else {
                     /* try { // try from 0045df7c to 0045df87 has its CatchHandler @ 0045e9b0 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
     }
     uStack_1b8 = CONCAT44(uStack_1b8._4_4_,6);
     if (puStack_d8 < puStack_d0) {
@@ -17062,7 +17062,7 @@ LAB_0045d5f0:
     }
     else {
                     /* try { // try from 0045dfa8 to 0045dfb3 has its CatchHandler @ 0045e9ac */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
     }
                     /* try { // try from 0045dfb4 to 0045dfbf has its CatchHandler @ 0045e9dc */
     new ((void *)(&pvStack_110)) std::__ndk1::vector<int, std::__ndk1::allocator<int>>(&uStack_e0);
@@ -17109,7 +17109,7 @@ LAB_0045e054:
           }
           else {
                     /* try { // try from 0045e7c4 to 0045e7cf has its CatchHandler @ 0045e92c */
-            void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+            std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
           }
           uStack_1b8._0_4_ = 3;
           if (puStack_d8 < puStack_d0) {
@@ -17118,7 +17118,7 @@ LAB_0045e054:
           }
           else {
                     /* try { // try from 0045e7f0 to 0045e7fb has its CatchHandler @ 0045e928 */
-            void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+            std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
           }
           uStack_1b8 = CONCAT44(uStack_1b8._4_4_,4);
           if (puStack_d8 < puStack_d0) {
@@ -17127,7 +17127,7 @@ LAB_0045e054:
           }
           else {
                     /* try { // try from 0045e81c to 0045e827 has its CatchHandler @ 0045e924 */
-            void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
+            std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_e0,&uStack_1b8);
           }
         }
         if ((int)in_x1[1] == 3) {
@@ -17266,7 +17266,7 @@ LAB_0045e428:
     Walaber::SoundManager::playSoundFromGroup(0x3f800000,uVar24,uVar20,uVar12);
 switchD_0045e218_default:
     if (*(int *)(*in_x1 + 0x3ac) != 5) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b8,&DAT_0073d3b8,"=\'");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b8,&DAT_0073d3b8,"=\'");
       uVar23 = DAT_0073d420;
       puVar3 = DAT_0073d428;
       if ((DAT_0073d418 & 1) == 0) {
@@ -17300,7 +17300,7 @@ switchD_0045e218_default:
       if ((uStack_1b8 & 1) != 0) {
         operator delete(pvStack_1a8);
       }
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b8,&DAT_0073d3b8,"=\'");
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b8,&DAT_0073d3b8,"=\'");
       uVar23 = DAT_0073d420;
       puVar3 = DAT_0073d428;
       if ((DAT_0073d418 & 1) == 0) {
@@ -17601,7 +17601,7 @@ void WaterConcept::World::_bombStateChangeCallback(void *p0, long * in_x1)
     }
     else {
                     /* try { // try from 0045eec8 to 0045eed3 has its CatchHandler @ 0045f0a8 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
     }
     fStack_108 = 4.2039e-45;
     if (puStack_c0 < puStack_b8) {
@@ -17610,7 +17610,7 @@ void WaterConcept::World::_bombStateChangeCallback(void *p0, long * in_x1)
     }
     else {
                     /* try { // try from 0045eef8 to 0045ef03 has its CatchHandler @ 0045f0a4 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
     }
     fStack_108 = 5.60519e-45;
     if (puStack_c0 < puStack_b8) {
@@ -17619,7 +17619,7 @@ void WaterConcept::World::_bombStateChangeCallback(void *p0, long * in_x1)
     }
     else {
                     /* try { // try from 0045ef24 to 0045ef2f has its CatchHandler @ 0045f0a0 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
     }
     fStack_108 = 8.40779e-45;
     if (puStack_c0 < puStack_b8) {
@@ -17628,7 +17628,7 @@ void WaterConcept::World::_bombStateChangeCallback(void *p0, long * in_x1)
     }
     else {
                     /* try { // try from 0045ef50 to 0045ef5b has its CatchHandler @ 0045f09c */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&fStack_c8,&fStack_108);
     }
     uVar13 = *(undefined4 *)((long)in_x1 + 0x14);
                     /* try { // try from 0045ef60 to 0045ef6b has its CatchHandler @ 0045f0c8 */
@@ -17658,7 +17658,7 @@ void WaterConcept::World::_bombStateChangeCallback(void *p0, long * in_x1)
   else {
     if ((int)in_x1[1] != 2) goto LAB_0045f010;
     if (*(long **)((long)p0 + 0x428) == *(long **)((long)p0 + 0x430)) {
-      void std::__ndk1::vector<WaterConcept::Bomb*, std::__ndk1::allocator<WaterConcept::Bomb*>>::__push_back_slow_path<WaterConcept::Bomb* const&>((long)p0 + 0x420);
+      std::__ndk1::vector<WaterConcept::Bomb*, std::__ndk1::allocator<WaterConcept::Bomb*>>::__push_back_slow_path<WaterConcept::Bomb* const&>((long)p0 + 0x420);
     }
     else {
       **(long **)((long)p0 + 0x428) = *in_x1;
@@ -17766,7 +17766,7 @@ void WaterConcept::World::_switchStateChangeCallback(void *p0, long * in_x1)
       } while (uVar8 < (ulong)(lVar3 >> 3));
     }
     if (*(long **)((long)p0 + 0x938) == plVar6) {
-      void std::__ndk1::vector<WaterConcept::Switch*, std::__ndk1::allocator<WaterConcept::Switch*>>::__push_back_slow_path<WaterConcept::Switch* const&>((long)p0 + 0x928);
+      std::__ndk1::vector<WaterConcept::Switch*, std::__ndk1::allocator<WaterConcept::Switch*>>::__push_back_slow_path<WaterConcept::Switch* const&>((long)p0 + 0x928);
     }
     else {
       *plVar6 = *in_x1;
@@ -18242,7 +18242,7 @@ void WaterConcept::World::_algaeHiderCallback(void *p0, int * in_x1)
               *pcVar14 = '\x02';
               WaterConcept::World::_flagCellForRedraw(p0,*(undefined8 *)(in_x1 + 6));
               uStack_b8 = *(undefined8 *)(in_x1 + 6);
-              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 0x3d0,&uStack_b8);
+              std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 0x3d0,&uStack_b8);
               uStack_b8 = CONCAT44(fStack_cc,fStack_d0);
               lVar10 = *(long *)((long)p0 + 0x760);
               fVar16 = *(float *)(*(long *)((long)p0 + 0x778) + 8) + 0.05;
@@ -18301,11 +18301,11 @@ void WaterConcept::World::_algaeHiderCallback(void *p0, int * in_x1)
             else {
               if (*pcVar14 == '\x06') {
                 uStack_b8 = uStack_c8;
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 1000,&uStack_b8);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 1000,&uStack_b8);
               }
               else if (*pcVar14 == '\x05') {
                 uStack_b8 = uStack_c8;
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 0x3d0,&uStack_b8);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 0x3d0,&uStack_b8);
               }
               lVar10 = lVar10 + (long)iVar6 * 0x1c;
               *pcVar14 = '\0';
@@ -18332,11 +18332,11 @@ void WaterConcept::World::_algaeHiderCallback(void *p0, int * in_x1)
     cVar1 = *pcVar14;
     if (cVar1 == '\x05') {
       uStack_b8 = *(undefined8 *)piVar12;
-      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 0x3d0,&uStack_b8);
+      std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 0x3d0,&uStack_b8);
     }
     else if (cVar1 == '\x06') {
       uStack_b8 = *(undefined8 *)piVar12;
-      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 1000,&uStack_b8);
+      std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>((long)p0 + 1000,&uStack_b8);
     }
     lVar10 = lVar10 + (long)iVar5 * 0x1c;
     *pcVar14 = '\0';
@@ -18899,7 +18899,7 @@ void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
     fStack_b8 = *(float *)(lVar4 + 0x3ac);
     if (fStack_b8 == 1.4013e-45) {
                     /* try { // try from 0046189c to 004618a7 has its CatchHandler @ 004620fc */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       fStack_b8 = 2.8026e-45;
       if (puStack_68 < puStack_60) {
         *puStack_68 = 2;
@@ -18907,7 +18907,7 @@ void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
       }
       else {
                     /* try { // try from 00461a24 to 00461a2f has its CatchHandler @ 004620a8 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       }
       fStack_b8 = 4.2039e-45;
       if (puStack_68 < puStack_60) {
@@ -18916,7 +18916,7 @@ void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
       }
       else {
                     /* try { // try from 00461a50 to 00461a5b has its CatchHandler @ 004620a4 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       }
       fStack_b8 = 5.60519e-45;
       if (puStack_68 < puStack_60) {
@@ -18925,7 +18925,7 @@ void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
       }
       else {
                     /* try { // try from 00461a7c to 00461a87 has its CatchHandler @ 004620a0 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       }
       fStack_b8 = 7.00649e-45;
       if (puStack_68 < puStack_60) {
@@ -18934,7 +18934,7 @@ void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
       }
       else {
                     /* try { // try from 00461aa8 to 00461ab3 has its CatchHandler @ 0046209c */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       }
       fStack_b8 = 8.40779e-45;
       if (puStack_68 < puStack_60) {
@@ -18943,13 +18943,13 @@ void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
       }
       else {
                     /* try { // try from 00461ad4 to 00461adf has its CatchHandler @ 00462098 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       }
     }
     else {
       fStack_b8 = 1.4013e-45;
                     /* try { // try from 004619c8 to 004619d3 has its CatchHandler @ 004620f8 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
     }
                     /* try { // try from 00461ae0 to 00461aeb has its CatchHandler @ 0046214c */
     Walaber::Node::getWorldPosition(&fStack_b8,lVar4);
@@ -18978,7 +18978,7 @@ void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
       }
       else {
                     /* try { // try from 00461b9c to 00461ba3 has its CatchHandler @ 00462094 */
-        void std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path<WaterConcept::StarSeed*>((long)p0 + 0x720,&fStack_b8);
+        std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::__push_back_slow_path<WaterConcept::StarSeed*>((long)p0 + 0x720,&fStack_b8);
       }
     }
   }
@@ -19142,7 +19142,7 @@ LAB_004618cc:
               *(long *)((long)p0 + 0x670) = *(long *)((long)p0 + 0x670) + 8;
             }
             else {
-              void std::__ndk1::vector<WaterConcept::IcyHot*, std::__ndk1::allocator<WaterConcept::IcyHot*>>::__push_back_slow_path<WaterConcept::IcyHot*>((long)p0 + 0x668,&puStack_70);
+              std::__ndk1::vector<WaterConcept::IcyHot*, std::__ndk1::allocator<WaterConcept::IcyHot*>>::__push_back_slow_path<WaterConcept::IcyHot*>((long)p0 + 0x668,&puStack_70);
             }
           }
         }
@@ -19168,7 +19168,7 @@ LAB_004618cc:
       puStack_60 = (undefined4 *)0x0;
       fStack_b8 = 1.4013e-45;
                     /* try { // try from 00461e20 to 00461e2b has its CatchHandler @ 00462060 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       fVar10 = *(float *)(*in_x1 + 0x74);
                     /* try { // try from 00461e34 to 00461e3b has its CatchHandler @ 0046205c */
       Walaber::Node::getWorldScale(&fStack_b8);
@@ -19207,7 +19207,7 @@ LAB_004618cc:
       puStack_60 = (undefined4 *)0x0;
       fStack_b8 = 1.4013e-45;
                     /* try { // try from 00461cc4 to 00461ccf has its CatchHandler @ 004620f4 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
+      std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&puStack_70,&fStack_b8);
       fVar10 = *(float *)(*in_x1 + 0x74);
                     /* try { // try from 00461cd8 to 00461cdf has its CatchHandler @ 004620f0 */
       Walaber::Node::getWorldScale(&fStack_b8);
@@ -19802,7 +19802,7 @@ void WaterConcept::World::_clearMaterialInCapsule
                 puVar21 = (uint *)param_1[1];
                 if (puVar21 == (uint *)param_1[2]) {
                     /* try { // try from 00463068 to 00463093 has its CatchHandler @ 004637e8 */
-                  void std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType const&>(param_1,&uStack_114);
+                  std::__ndk1::vector<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>>::__push_back_slow_path<WaterConceptConstants::MaterialType const&>(param_1,&uStack_114);
                 }
                 else {
                   *puVar21 = uStack_114;
@@ -19917,12 +19917,12 @@ void WaterConcept::World::_clearMaterialInCapsule
               cVar6 = *pcVar24;
               if (cVar6 == '\x06') {
                 uStack_b8 = CONCAT44(uStack_104,uStack_108);
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(param_3 + 0x7d,&uStack_b8);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(param_3 + 0x7d,&uStack_b8);
               }
               else if (cVar6 == '\x05') {
                 uStack_b8 = CONCAT44(uStack_104,uStack_108);
                     /* try { // try from 00463570 to 00463593 has its CatchHandler @ 004637e8 */
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(param_3 + 0x7a,&uStack_b8);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(param_3 + 0x7a,&uStack_b8);
               }
               lVar15 = lVar15 + (long)iVar10 * 0x1c;
               *pcVar24 = '\0';
@@ -20177,9 +20177,9 @@ void WaterConcept::World::_fillMaterialGridUsingObjectShape
               *pcVar10 = p2;
               *(undefined1 *)(lVar11 + (long)iVar1 * 0x1c + 0x15) = 0;
               uStack_70 = CONCAT44(uStack_84,uStack_88);
-              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(&p0[1].field_0x108,&uStack_70);
+              std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(&p0[1].field_0x108,&uStack_70);
               uStack_70 = CONCAT44(uStack_84,uStack_88);
-              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(&p0[1].field_0x120,&uStack_70);
+              std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(&p0[1].field_0x120,&uStack_70);
               uVar7 = uStack_88;
             }
           }
@@ -20452,7 +20452,7 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0, lo
       }
       else {
                     /* try { // try from 00464548 to 00464553 has its CatchHandler @ 00464e2c */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_d0,&fStack_110);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_d0,&fStack_110);
       }
       fStack_110 = 4.2039e-45;
       if (puStack_c8 < puStack_c0) {
@@ -20461,7 +20461,7 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0, lo
       }
       else {
                     /* try { // try from 00464574 to 0046457f has its CatchHandler @ 00464e30 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_d0,&fStack_110);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_d0,&fStack_110);
       }
       fStack_110 = 5.60519e-45;
       if (puStack_c8 < puStack_c0) {
@@ -20470,7 +20470,7 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0, lo
       }
       else {
                     /* try { // try from 004645a0 to 004645ab has its CatchHandler @ 00464e28 */
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_d0,&fStack_110);
+        std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&uStack_d0,&fStack_110);
       }
                     /* try { // try from 004645ac to 004645b7 has its CatchHandler @ 00464e3c */
       new ((void *)(&pvStack_100)) std::__ndk1::vector<int, std::__ndk1::allocator<int>>(&uStack_d0);
@@ -20892,7 +20892,7 @@ void WaterConcept::World::handleTouchDown(int p0,Walaber__Vector2 *p1, long * in
     *(long *)(uVar2 + 0x4f0) = *(long *)(uVar2 + 0x4f0) + 0x18;
   }
   else {
-    void std::__ndk1::vector<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__push_back_slow_path<WaterConcept::World::TouchEvent>(uVar2 + 0x4e8,&uStack_40);
+    std::__ndk1::vector<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__push_back_slow_path<WaterConcept::World::TouchEvent>(uVar2 + 0x4e8,&uStack_40);
   }
   return;
 }
@@ -20928,7 +20928,7 @@ void WaterConcept::World::handleTouchMoved(int p0,Walaber__Vector2 *p1,Walaber__
     *(long *)(uVar2 + 0x4f0) = *(long *)(uVar2 + 0x4f0) + 0x18;
   }
   else {
-    void std::__ndk1::vector<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__push_back_slow_path<WaterConcept::World::TouchEvent>(uVar2 + 0x4e8,&uStack_40);
+    std::__ndk1::vector<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__push_back_slow_path<WaterConcept::World::TouchEvent>(uVar2 + 0x4e8,&uStack_40);
   }
   return;
 }
@@ -20962,7 +20962,7 @@ void WaterConcept::World::handleTouchUp(int p0,Walaber__Vector2 *p1, undefined8 
     *(long *)(uVar2 + 0x4f0) = *(long *)(uVar2 + 0x4f0) + 0x18;
   }
   else {
-    void std::__ndk1::vector<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__push_back_slow_path<WaterConcept::World::TouchEvent>(uVar2 + 0x4e8,&uStack_40);
+    std::__ndk1::vector<WaterConcept::World::TouchEvent, std::__ndk1::allocator<WaterConcept::World::TouchEvent>>::__push_back_slow_path<WaterConcept::World::TouchEvent>(uVar2 + 0x4e8,&uStack_40);
   }
   return;
 }
@@ -21438,7 +21438,7 @@ void WaterConcept::World::_calculateCollisionGrid
             if (!bVar19) {
               uVar43 = uVar47 | uVar43 << 0x20;
               uStack_78 = uVar43;
-              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(lVar26,&uStack_78);
+              std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(lVar26,&uStack_78);
 LAB_00466580:
               lVar41 = lVar41 + (long)iVar20 * 0x1c;
               *pbVar39 = 0;
@@ -21474,7 +21474,7 @@ LAB_00466580:
             if (!bVar19) {
               uVar43 = uVar47 | uVar43 << 0x20;
               uStack_78 = uVar43;
-              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(lVar32,&uStack_78);
+              std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(lVar32,&uStack_78);
               goto LAB_00466580;
             }
           }
@@ -21621,11 +21621,11 @@ LAB_00465fbc:
                             uVar6 = (ulong)uVar24 | uVar43 + lVar30 << 0x20;
                             if (cVar12 == '\x05') {
                               uStack_78 = uVar6;
-                              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(lVar26,&uStack_78);
+                              std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(lVar26,&uStack_78);
                             }
                             else if (cVar12 == '\x06') {
                               uStack_78 = uVar6;
-                              unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(lVar32,&uStack_78);
+                              std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(lVar32,&uStack_78);
                             }
                             lVar35 = lVar35 + (long)iVar20 * 0x1c;
                             *pcVar31 = '\0';
@@ -21684,11 +21684,11 @@ LAB_00466040:
               cVar12 = *pcVar31;
               if (cVar12 == '\x06') {
                 uStack_78 = uVar48;
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(lVar32,&uStack_78);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(lVar32,&uStack_78);
               }
               else if (cVar12 == '\x05') {
                 uStack_78 = uVar48;
-                unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(lVar26,&uStack_78);
+                std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(lVar26,&uStack_78);
               }
               lVar41 = lVar41 + (long)iVar20 * 0x1c;
               *pcVar31 = '\0';
@@ -21733,10 +21733,10 @@ LAB_004665b0:
             lVar32 = (long)iVar27;
             *(undefined1 *)(lVar41 + 0x17) = 3;
             if (bVar33 == 1) {
-              void WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeDirt, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
+              WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeDirt, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
             }
             else if (bVar33 - 2 < 3) {
-              void WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeRockSmoothing, WaterConcept::ConsiderEdgeRockOutline, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
+              WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeRockSmoothing, WaterConcept::ConsiderEdgeRockOutline, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
             }
             else {
               if (bVar33 - 5 < 2) {
@@ -21773,7 +21773,7 @@ LAB_004665b0:
               }
               else {
                 if (bVar33 == 7) {
-                  void WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeDefault, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
+                  WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeDefault, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
                   goto LAB_004667d4;
                 }
                 lVar26 = lVar26 + lVar32 * 0x1c;
@@ -21896,7 +21896,7 @@ joined_r0x00466bf8:
     if (cVar2 == '\x06') {
       uVar9 = uVar9 | uVar11 & 0xffffffff;
       uStack_60 = uVar9;
-      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(p0 + 0x7d,&uStack_60);
+      std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__erase_unique<WaterConcept::GridCell>(p0 + 0x7d,&uStack_60);
     }
     else {
       uVar9 = uVar9 | uVar11 & 0xffffffff;
@@ -21935,7 +21935,7 @@ LAB_00466bc4:
 LAB_00466c2c:
       uVar9 = uVar9 | uVar11 & 0xffffffff;
       uStack_60 = uVar9;
-      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(p0 + 0x7a,&uStack_60);
+      std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>::__erase_unique<WaterConcept::GridCell>(p0 + 0x7a,&uStack_60);
       goto LAB_00466c4c;
     }
   }
@@ -22758,7 +22758,7 @@ void WaterConcept::World::_killFluidPool(WaterConcept__ParticleDescription *p0,f
   plStack_60 = &lStack_58;
                     /* try { // try from 00468824 to 0046883f has its CatchHandler @ 00468900 */
   WaterConcept::Fluids::getParticlesForFluid(*(undefined8 *)&p0[0x5a].f_0x8,*(undefined4 *)in_x1);
-  void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>(CONCAT44(in_register_00005004,p1),p0);
+  WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>(CONCAT44(in_register_00005004,p1),p0);
   uStack_68 = *(undefined4 *)(in_x1 + 1);
   uStack_70 = *in_x1;
   plVar5 = plStack_60;
@@ -22811,7 +22811,7 @@ void WaterConcept::World::_findMaterialPool(long *param_1,int *param_2,uint para
   
   lVar3 = std::__ndk1::__tree_iterator<WaterConcept::GridCell, std::__ndk1::__tree_node<WaterConcept::GridCell, void*>*, long> std::__ndk1::__tree<WaterConcept::GridCell, std::__ndk1::less<WaterConcept::GridCell>, std::__ndk1::allocator<WaterConcept::GridCell>>::find<WaterConcept::GridCell>(param_4);
   if (param_4 + 8 == lVar3) {
-    std::__ndk1::pair<std::__ndk1::__tree_iterator<WaterConcept::GridCell, std::__ndk1::__tree_node<WaterConcept::GridCell, void*>*, long>, bool> std::__ndk1::__tree<WaterConcept::GridCell, std::__ndk1::less<WaterConcept::GridCell>, std::__ndk1::allocator<WaterConcept::GridCell>>::__emplace_unique_key_args<WaterConcept::GridCell, WaterConcept::GridCell const&>(param_4,param_2,param_2);
+    std::__ndk1::__tree<WaterConcept::GridCell, std::__ndk1::less<WaterConcept::GridCell>, std::__ndk1::allocator<WaterConcept::GridCell>>::__emplace_unique_key_args<WaterConcept::GridCell, WaterConcept::GridCell const&>(param_4,param_2,param_2);
     iVar4 = param_2[1];
     iVar1 = iVar4 + -1;
     if (0 < iVar4) {
@@ -23071,8 +23071,8 @@ void WaterConcept::World::createCollisionForGrid
   if (iVar3 <= iVar5) {
     iVar5 = iVar3;
   }
-  void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAll>(param_1,uVar1,CONCAT44(iVar5,iVar4),1,param_5,2,param_2,param_3,4,1,0xffffffff);
-  void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAlgae>(param_1,uVar1,CONCAT44(iVar5,iVar4),5,param_5,1,param_2,param_3,4,2,0xffffffff);
+  WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAll>(param_1,uVar1,CONCAT44(iVar5,iVar4),1,param_5,2,param_2,param_3,4,1,0xffffffff);
+  WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAlgae>(param_1,uVar1,CONCAT44(iVar5,iVar4),5,param_5,1,param_2,param_3,4,2,0xffffffff);
   return;
 }
 
@@ -23182,7 +23182,7 @@ void WaterConcept::World::createPolygonsForGrid
   uStack_78._4_4_ = iVar8;
   if (param_5 - 2 < 3) {
                     /* try { // try from 004690d0 to 00469103 has its CatchHandler @ 004693e4 */
-    void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefault>(param_1,uVar2,CONCAT44(iVar5,iVar4),param_5);
+    WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefault>(param_1,uVar2,CONCAT44(iVar5,iVar4),param_5);
     if (param_5 == 2) {
       plVar12 = (long *)(*(long *)((int *)param_1[0x79] + 2) +
                          (long)(iVar14 + *(int *)param_1[0x79] * iVar17) * 0x18 + 8);
@@ -23197,7 +23197,7 @@ void WaterConcept::World::createPolygonsForGrid
         } while (plVar13 != (long *)0x0);
         if ((plVar16 != plVar12) && ((int)plVar16[4] < 3)) {
                     /* try { // try from 00469160 to 004691f7 has its CatchHandler @ 004693dc */
-          void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameRockOutline>(param_1,uVar2,CONCAT44(iVar5,iVar4),2);
+          WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameRockOutline>(param_1,uVar2,CONCAT44(iVar5,iVar4),2);
           *(int *)((long)plVar16 + 300) = (int)((ulong)(param_3[1] - *param_3) >> 2) * -0x55555555;
           glBindBuffer(0x8892,(int)plVar16[0x25]);
           iVar4 = *(int *)((long)plVar16 + 300);
@@ -23223,7 +23223,7 @@ void WaterConcept::World::createPolygonsForGrid
     } while (plVar13 != (long *)0x0);
     if ((plVar16 == plVar12) || (1 < (int)plVar16[4])) goto LAB_00469398;
                     /* try { // try from 00469260 to 004692f3 has its CatchHandler @ 004693d8 */
-    void WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefault>(param_1,uVar2,CONCAT44(iVar5,iVar4),1);
+    WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefault>(param_1,uVar2,CONCAT44(iVar5,iVar4),1);
     *(int *)((long)plVar16 + 300) = (int)((ulong)(param_3[1] - *param_3) >> 2) * -0x55555555;
     glBindBuffer(0x8892,(int)plVar16[0x25]);
     iVar4 = *(int *)((long)plVar16 + 300);
@@ -23378,7 +23378,7 @@ void WaterConcept::World::_createPolyWithGridCells
   ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
   puVar2 = *(undefined8 **)(param_3 + 8);
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
     puVar2 = *(undefined8 **)(param_3 + 8);
   }
   else {
@@ -23389,7 +23389,7 @@ void WaterConcept::World::_createPolyWithGridCells
   }
   fVar14 = fVar14 - fVar8;
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
   }
   else {
     puVar2[1] = uStack_80;
@@ -23413,7 +23413,7 @@ void WaterConcept::World::_createPolyWithGridCells
   ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
   puVar2 = *(undefined8 **)(param_3 + 8);
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
   }
   else {
     puVar2[1] = uStack_80;
@@ -23437,7 +23437,7 @@ void WaterConcept::World::_createPolyWithGridCells
   ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d0)->~SharedPtr<Walaber::Texture>();
   puVar2 = *(undefined8 **)(param_3 + 8);
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
   }
   else {
     puVar2[1] = uStack_80;
@@ -23459,7 +23459,7 @@ void WaterConcept::World::_createPolyWithGridCells
   ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_e0)->~SharedPtr<Walaber::Texture>();
   puVar2 = *(undefined8 **)(param_3 + 8);
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
     puVar2 = *(undefined8 **)(param_3 + 8);
   }
   else {
@@ -23469,7 +23469,7 @@ void WaterConcept::World::_createPolyWithGridCells
     *(undefined8 **)(param_3 + 8) = puVar2;
   }
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_88);
   }
   else {
     puVar2[1] = uStack_80;
@@ -24350,7 +24350,7 @@ void WaterConcept::World::_addSmoothingTriangle
   ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_78)->~SharedPtr<Walaber::Texture>();
   puVar2 = *(undefined8 **)(param_3 + 8);
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
     puVar2 = *(undefined8 **)(param_3 + 8);
   }
   else {
@@ -24360,7 +24360,7 @@ void WaterConcept::World::_addSmoothingTriangle
     *(undefined8 **)(param_3 + 8) = puVar2;
   }
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
   }
   else {
     puVar2[1] = uStack_60;
@@ -24384,7 +24384,7 @@ void WaterConcept::World::_addSmoothingTriangle
   ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
   puVar2 = *(undefined8 **)(param_3 + 8);
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
   }
   else {
     puVar2[1] = uStack_60;
@@ -24408,7 +24408,7 @@ void WaterConcept::World::_addSmoothingTriangle
   ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_98)->~SharedPtr<Walaber::Texture>();
   puVar2 = *(undefined8 **)(param_3 + 8);
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
     puVar2 = *(undefined8 **)(param_3 + 8);
   }
   else {
@@ -24418,7 +24418,7 @@ void WaterConcept::World::_addSmoothingTriangle
     *(undefined8 **)(param_3 + 8) = puVar2;
   }
   if (puVar2 == *(undefined8 **)(param_3 + 0x10)) {
-    void std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
+    std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>::__push_back_slow_path<Walaber::PositionTextureVert const&>(param_3,&uStack_68);
   }
   else {
     puVar2[1] = uStack_60;
@@ -24518,7 +24518,7 @@ void WaterConcept::World::addMaterialTexture(long param_1,long *param_2)
     *(long **)(param_1 + 0x468) = plVar1 + 2;
     return;
   }
-  void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x460);
+  std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x460);
   return;
 }
 
@@ -24549,7 +24549,7 @@ void WaterConcept::World::addAlgaeTexture(long param_1,long *param_2)
     *(long **)(param_1 + 0x480) = plVar1 + 2;
     return;
   }
-  void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x478);
+  std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x478);
   return;
 }
 

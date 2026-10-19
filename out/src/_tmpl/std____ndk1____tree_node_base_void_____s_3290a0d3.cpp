@@ -12,9 +12,7 @@
    >::__find_equal<WaterConcept::GridCell>(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    WaterConcept::GridCell const&) */
 
-long * std::__ndk1::
-       __tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>
-       ::__find_equal<WaterConcept::GridCell>(long param_1,long *param_2,int *param_3)
+template<> long * std::__ndk1::__tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>::__find_equal(long param_1,long *param_2,int *param_3)
 
 {
   int iVar1;

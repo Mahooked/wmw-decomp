@@ -11,9 +11,7 @@
    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::__init<wchar_t const*>(wchar_t const*, wchar_t const*) */
 
-void std::__ndk1::
-     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     __init<wchar_t_const*>(wchar_t *p0,wchar_t *p1)
+template<> void std::__ndk1::basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init(wchar_t *p0,wchar_t *p1)
 
 {
   long lVar1;

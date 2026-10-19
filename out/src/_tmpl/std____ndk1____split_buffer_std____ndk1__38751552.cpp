@@ -12,9 +12,7 @@
    >&>::__split_buffer(unsigned long, unsigned long,
    std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**> >&) */
 
-void std::__ndk1::
-     __split_buffer<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>,std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>&>
-     ::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>,std::__ndk1::allocator<std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject**>>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;

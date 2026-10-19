@@ -10,9 +10,7 @@
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::do_out(mbstate_t&, char16_t const*, char16_t
    const*, char16_t const*&, char*, char*, char*&) const */
 
-undefined8
-std::__ndk1::__codecvt_utf16<char16_t,false>::do_out
-          (mbstate_t& param_1,char16_t const *param_2,char16_t const *param_3,char16_t const*& param_4,char *param_5,char *param_6,char*& param_7)
+template<> undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_out(mbstate_t& param_1,char16_t const *param_2,char16_t const *param_3,char16_t const*& param_4,char *param_5,char *param_6,char*& param_7)
 
 {
   ushort uVar1;
@@ -66,9 +64,7 @@ LAB_005daba8:
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::do_in(mbstate_t&, char const*, char const*, char
    const*&, char16_t*, char16_t*, char16_t*&) const */
 
-undefined1
-std::__ndk1::__codecvt_utf16<char16_t,false>::do_in
-          (mbstate_t& param_1,char const *param_2,char const *param_3,char const*& param_4,char16_t *param_5,char16_t *param_6,char16_t*& param_7)
+template<> undefined1 std::__ndk1::__codecvt_utf16<char16_t,false>::do_in(mbstate_t& param_1,char const *param_2,char const *param_3,char const*& param_4,char16_t *param_5,char16_t *param_6,char16_t*& param_7)
 
 {
   ushort uVar1;
@@ -110,8 +106,7 @@ LAB_005dac38:
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::do_unshift(mbstate_t&, char*, char*, char*&) const
     */
 
-undefined8
-std::__ndk1::__codecvt_utf16<char16_t,false>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
+template<> undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
 
 {
   
@@ -127,7 +122,7 @@ std::__ndk1::__codecvt_utf16<char16_t,false>::do_unshift(mbstate_t *p0,char *p1,
 
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::do_encoding() const */
 
-undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_encoding(void)
+template<> undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_encoding(void)
 
 {
   return 0;
@@ -141,7 +136,7 @@ undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_encoding(void)
 
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::do_always_noconv() const */
 
-undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_always_noconv(void)
+template<> undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_always_noconv(void)
 
 {
   return 0;
@@ -156,8 +151,7 @@ undefined8 std::__ndk1::__codecvt_utf16<char16_t,false>::do_always_noconv(void)
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::do_length(mbstate_t&, char const*, char const*,
    unsigned long) const */
 
-int std::__ndk1::__codecvt_utf16<char16_t,false>::do_length
-              (mbstate_t *p0,char *p1,char *p2,ulong p3)
+template<> int std::__ndk1::__codecvt_utf16<char16_t,false>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
   mbstate_t mVar1;
@@ -191,7 +185,7 @@ int std::__ndk1::__codecvt_utf16<char16_t,false>::do_length
 
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::do_max_length() const */
 
-undefined4 std::__ndk1::__codecvt_utf16<char16_t,false>::do_max_length(long param_1)
+template<> undefined4 std::__ndk1::__codecvt_utf16<char16_t,false>::do_max_length(long param_1)
 
 {
   undefined4 uVar1;
@@ -211,11 +205,11 @@ undefined4 std::__ndk1::__codecvt_utf16<char16_t,false>::do_max_length(long para
 
 /* std::__ndk1::__codecvt_utf16<char16_t, false>::~__codecvt_utf16() */
 
-void std::__ndk1::__codecvt_utf16<char16_t,false>::~__codecvt_utf16(void *param_1)
+template<> std::__ndk1::__codecvt_utf16<char16_t,false>::~__codecvt_utf16()
 
 {
   std::__ndk1::__shared_count::~__shared_count();
-  operator delete(param_1);
+  operator delete((byte *)this);
   return;
 }
 

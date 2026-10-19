@@ -13,11 +13,7 @@
    std::__ndk1::allocator<Walaber::Widget*> >::__emplace_unique_key_args<Walaber::Widget*,
    Walaber::Widget*>(Walaber::Widget* const&, Walaber::Widget*&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<Walaber::Widget*,std::__ndk1::less<Walaber::Widget*>,std::__ndk1::allocator<Walaber::Widget*>>
-::__emplace_unique_key_args<Walaber::Widget*,Walaber::Widget*>
-          (Walaber__Widget **p0,Walaber__Widget ***p1)
+template<> undefined1 [16] std::__ndk1::__tree<Walaber::Widget*,std::__ndk1::less<Walaber::Widget*>,std::__ndk1::allocator<Walaber::Widget*>>::__emplace_unique_key_args(Walaber__Widget **p0,Walaber__Widget ***p1)
 
 {
   bool bVar1;

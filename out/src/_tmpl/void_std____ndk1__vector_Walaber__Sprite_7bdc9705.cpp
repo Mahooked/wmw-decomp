@@ -12,10 +12,7 @@
    >::__push_back_slow_path<Walaber::SpriteBatch::DrawAction*
    const&>(Walaber::SpriteBatch::DrawAction* const&) */
 
-void std::__ndk1::
-     vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>
-     ::__push_back_slow_path<Walaber::SpriteBatch::DrawAction*const&>
-               (Walaber__SpriteBatch__DrawAction **p0)
+template<> void std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::__push_back_slow_path(Walaber__SpriteBatch__DrawAction **p0)
 
 {
   undefined8 *in_x1;

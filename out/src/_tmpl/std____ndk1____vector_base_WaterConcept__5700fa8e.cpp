@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<WaterConcept::Screen_WaterTest::StrokeInfo,
    std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::~__vector_base()
 
 {
   void *pvVar1;

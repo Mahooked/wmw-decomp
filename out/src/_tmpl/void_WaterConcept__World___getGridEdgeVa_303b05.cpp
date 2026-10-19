@@ -12,10 +12,7 @@
    WaterConcept::ConsiderEdgeDefault, WaterConcept::ConsiderEdgeCollision, unsigned char&, unsigned
    char&, unsigned char&) */
 
-void WaterConcept::World::
-     _getGridEdgeValue<WaterConcept::ConsiderEdgeDefault,WaterConcept::ConsiderEdgeCollision>
-               (long param_1,undefined8 param_2,uint param_3,int param_4,int param_5,
-               undefined8 param_6,undefined8 param_7,byte *param_8,byte *param_9,byte *param_10)
+void WaterConcept::World::_getGridEdgeValue(long param_1,undefined8 param_2,uint param_3,int param_4,int param_5, undefined8 param_6,undefined8 param_7,byte *param_8,byte *param_9,byte *param_10)
 
 {
   byte bVar1;

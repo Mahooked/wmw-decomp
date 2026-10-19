@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::SkeletonActor::AnimationGroupDataAux,
    std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>::~__vector_base()
 
 {
   byte *pbVar1;

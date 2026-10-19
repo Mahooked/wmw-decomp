@@ -152,7 +152,7 @@ void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
         }
         else {
                     /* try { // try from 004799f4 to 004799ff has its CatchHandler @ 00479ce0 */
-          void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[0x27].f_0x8,&uStack_90);
+          std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[0x27].f_0x8,&uStack_90);
         }
         pbVar7 = pbVar7 + 0x18;
       } while (pbVar7 != (byte *)CONCAT71(uStack_57,uStack_58));
@@ -261,7 +261,7 @@ void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
         }
         else {
                     /* try { // try from 00479c28 to 00479c33 has its CatchHandler @ 00479cdc */
-          void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[0x28].f_0x8,&uStack_90);
+          std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[0x28].f_0x8,&uStack_90);
         }
         pbVar7 = pbVar7 + 0x18;
       } while (pbVar7 != (byte *)CONCAT71(uStack_57,uStack_58));
@@ -560,7 +560,7 @@ void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0, long in
   lStack_80 = in_x1;
   while (plVar5 != (long *)(in_x1 + 200)) {
                     /* try { // try from 0047a2b8 to 0047a2c7 has its CatchHandler @ 0047a4b0 */
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_98,&uStack_90,plVar5 + 4,plVar5 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(&puStack_98,&uStack_90,plVar5 + 4,plVar5 + 4);
     plVar4 = (long *)plVar5[1];
     if ((long *)plVar5[1] == (long *)0x0) {
       plVar4 = plVar5 + 2;
@@ -647,7 +647,7 @@ void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0, long in
   plVar5 = *(long **)&p0[1].field_0x148;
   if (plVar5 == *(long **)&p0[1].field_0x150) {
                     /* try { // try from 0047a43c to 0047a443 has its CatchHandler @ 0047a49c */
-    void std::__ndk1::vector<WaterConcept::Fan::PumpInfo, std::__ndk1::allocator<WaterConcept::Fan::PumpInfo>>::__push_back_slow_path<WaterConcept::Fan::PumpInfo const&>(&p0[1].field_0x140,&lStack_80);
+    std::__ndk1::vector<WaterConcept::Fan::PumpInfo, std::__ndk1::allocator<WaterConcept::Fan::PumpInfo>>::__push_back_slow_path<WaterConcept::Fan::PumpInfo const&>(&p0[1].field_0x140,&lStack_80);
   }
   else {
     *(undefined4 *)(plVar5 + 1) = uStack_b8;
@@ -705,7 +705,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
         *(undefined4 **)(param_1 + 0x428) = puVar7 + 2;
       }
       else {
-        void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x420,&uStack_90);
+        std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x420,&uStack_90);
         lVar4 = *(long *)(param_1 + 400);
       }
       uVar1 = *(undefined4 *)(*(long *)(lVar4 + uVar10 * 0x28) + 0x74);
@@ -716,7 +716,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
         *(undefined4 **)(param_1 + 0x440) = puVar7 + 1;
       }
       else {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x438,&uStack_90);
+        std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x438,&uStack_90);
         lVar4 = *(long *)(param_1 + 400);
       }
       uVar5 = (*(long *)(param_1 + 0x198) - lVar4 >> 3) * -0x3333333333333333;

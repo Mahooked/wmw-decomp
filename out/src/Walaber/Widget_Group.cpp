@@ -86,7 +86,7 @@ void Walaber::Widget_Group::addWidget(Walaber__Widget *p0, long in_x1)
                        (float)((ulong)*(undefined8 *)&p0->field_0x54 >> 0x20),
                        (float)*(undefined8 *)(in_x1 + 0x54) - (float)*(undefined8 *)&p0->field_0x54)
   ;
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<Walaber::Widget_Group::WidgetInfo, std::__ndk1::__tree_node<Walaber::Widget_Group::WidgetInfo, void*>*, long>, bool> std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__emplace_unique_key_args<Walaber::Widget_Group::WidgetInfo, Walaber::Widget_Group::WidgetInfo const&>(&p0->field_0x108,auStack_38,auStack_38);
+  std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__emplace_unique_key_args<Walaber::Widget_Group::WidgetInfo, Walaber::Widget_Group::WidgetInfo const&>(&p0->field_0x108,auStack_38,auStack_38);
   return;
 }
 

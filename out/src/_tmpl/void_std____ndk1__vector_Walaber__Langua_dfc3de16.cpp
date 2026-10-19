@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>
    >::__push_back_slow_path<Walaber::Language const&>(Walaber::Language const&) */
 
-void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Language>>::
-     __push_back_slow_path<Walaber::Language_const&>(Walaber__Language *p0)
+template<> void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Language>>::__push_back_slow_path(Walaber__Language *p0)
 
 {
   undefined4 *in_x1;

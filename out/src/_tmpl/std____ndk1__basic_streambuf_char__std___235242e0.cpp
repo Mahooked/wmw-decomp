@@ -9,7 +9,7 @@
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::showmanyc() */
 
-undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::showmanyc(void)
+template<> undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::showmanyc(void)
 
 {
   return 0;
@@ -23,7 +23,7 @@ undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sh
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::xsgetn(char*, long) */
 
-long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsgetn(char *p0,long p1, long in_x2)
+template<> long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsgetn(char *p0,long p1, long in_x2)
 
 {
   int iVar1;
@@ -80,7 +80,7 @@ long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsgetn(c
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::uflow() */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::uflow(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::uflow(long *param_1)
 
 {
   ulong uVar1;
@@ -103,7 +103,7 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::uflow(l
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::xsputn(char const*, long) */
 
-long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsputn(char *p0,long p1, long in_x2)
+template<> long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsputn(char *p0,long p1, long in_x2)
 
 {
   long lVar1;
@@ -154,8 +154,7 @@ long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsputn(c
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::~basic_streambuf() */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_streambuf
-               ()
+template<> std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_streambuf()
 
 {
   *this = &PTR__basic_streambuf_00710968;
@@ -171,8 +170,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_s
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::~basic_streambuf() */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_streambuf
-               ()
+template<> std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_streambuf()
 
 {
   *this = &PTR__basic_streambuf_00710968;
@@ -190,8 +188,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_s
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::imbue(std::__ndk1::locale
    const&) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::imbue
-               (std____ndk1__locale *p0)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::imbue(std____ndk1__locale *p0)
 
 {
   return;
@@ -205,7 +202,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::imbue
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::setbuf(char*, long) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setbuf(char *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setbuf(char *p0,long p1)
 
 {
   return;
@@ -220,7 +217,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setbuf(c
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::seekoff(long long,
    std::__ndk1::ios_base::seekdir, unsigned int) */
 
-undefined1  [16] std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::seekoff(void)
+template<> undefined1 [16] std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::seekoff(void)
 
 {
   return ZEXT816(0xffffffffffffffff) << 0x40;
@@ -235,7 +232,7 @@ undefined1  [16] std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>
    >::seekpos(std::__ndk1::fpos<mbstate_t>, unsigned int) */
 
-undefined1  [16] std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::seekpos(void)
+template<> undefined1 [16] std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::seekpos(void)
 
 {
   return ZEXT816(0xffffffffffffffff) << 0x40;
@@ -249,7 +246,7 @@ undefined1  [16] std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sync() */
 
-undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sync(void)
+template<> undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sync(void)
 
 {
   return 0;
@@ -263,7 +260,7 @@ undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sy
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::underflow() */
 
-undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::underflow(void)
+template<> undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::underflow(void)
 
 {
   return 0xffffffff;
@@ -277,7 +274,7 @@ undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::un
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::pbackfail(int) */
 
-undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbackfail(int p0)
+template<> undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbackfail(int p0)
 
 {
   return 0xffffffff;
@@ -291,7 +288,7 @@ undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pb
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::overflow(int) */
 
-undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::overflow(int p0)
+template<> undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::overflow(int p0)
 
 {
   return 0xffffffff;
@@ -306,8 +303,7 @@ undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::ov
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::pubimbue(std::__ndk1::locale
    const&) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubimbue
-               (std____ndk1__locale *p0)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubimbue(std____ndk1__locale *p0)
 
 {
   (**(code **)(p0->f_0x0 + 0x10))();
@@ -324,8 +320,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubimbue
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::~basic_streambuf() */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_streambuf
-               ()
+template<> std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_streambuf()
 
 {
   *this = &PTR__basic_streambuf_00710968;
@@ -341,8 +336,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_s
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::getloc() const */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::getloc
-               (undefined8 param_1,long param_2)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::getloc(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::locale(param_2 + 8);
@@ -357,7 +351,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::getloc
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::pubsetbuf(char*, long) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubsetbuf(char *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubsetbuf(char *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a55b8. Too many branches */
@@ -375,7 +369,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubsetbu
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::pubseekoff(long long,
    std::__ndk1::ios_base::seekdir, unsigned int) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubseekoff(long *param_1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubseekoff(long *param_1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a55c4. Too many branches */
@@ -393,7 +387,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubseeko
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>
    >::pubseekpos(std::__ndk1::fpos<mbstate_t>, unsigned int) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubseekpos(long *param_1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubseekpos(long *param_1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a55d0. Too many branches */
@@ -410,7 +404,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubseekp
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::pubsync() */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubsync(long *param_1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubsync(long *param_1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a55dc. Too many branches */
@@ -427,7 +421,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pubsync(
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::in_avail() */
 
-long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::in_avail(long *param_1)
+template<> long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::in_avail(long *param_1)
 
 {
   long lVar1;
@@ -449,7 +443,7 @@ long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::in_avail
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::snextc() */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::snextc(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::snextc(long *param_1)
 
 {
   ulong uVar1;
@@ -485,7 +479,7 @@ LAB_005a5658:
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sbumpc() */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sbumpc(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sbumpc(long *param_1)
 
 {
   byte *pbVar1;
@@ -510,7 +504,7 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sbumpc(
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sgetc() */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sgetc(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sgetc(long *param_1)
 
 {
   ulong uVar1;
@@ -532,7 +526,7 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sgetc(l
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sgetn(char*, long) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sgetn(char *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sgetn(char *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a56cc. Too many branches */
@@ -549,7 +543,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sgetn(ch
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sputbackc(char) */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputbackc(char p0, byte in_w1)
+template<> ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputbackc(char p0, byte in_w1)
 
 {
   long *plVar1;
@@ -575,7 +569,7 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputbac
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sungetc() */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sungetc(long *param_1)
+template<> ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sungetc(long *param_1)
 
 {
   long lVar1;
@@ -600,7 +594,7 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sungetc
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sputc(char) */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputc(char p0, byte in_w1)
+template<> ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputc(char p0, byte in_w1)
 
 {
   byte *pbVar1;
@@ -628,7 +622,7 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputc(c
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sputn(char const*, long) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputn(char *p0,long p1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputn(char *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a576c. Too many branches */
@@ -645,8 +639,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputn(ch
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::basic_streambuf() */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_streambuf
-               (undefined8 *param_1)
+template<> std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_streambuf(undefined8 *param_1)
 
 {
   *param_1 = &PTR__basic_streambuf_00710968;
@@ -669,8 +662,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_st
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>
    >::basic_streambuf(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> > const&) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_streambuf
-               (undefined8 *param_1,long param_2)
+template<> std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_streambuf(undefined8 *param_1,long param_2)
 
 {
   undefined8 uVar1;
@@ -699,23 +691,22 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_st
    >::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >
    const&) */
 
-long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::operator=
-               (long param_1,long param_2)
+template<> long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::operator=(long param_2)
 
 {
   undefined8 uVar1;
   
-  ((std::__ndk1::locale *)(param_1 + 8))->operator=(param_2 + 8);
+  ((std::__ndk1::locale *)((byte *)this + 8))->operator=(param_2 + 8);
   uVar1 = *(undefined8 *)(param_2 + 0x10);
-  *(undefined8 *)(param_1 + 0x18) = *(undefined8 *)(param_2 + 0x18);
-  *(undefined8 *)(param_1 + 0x10) = uVar1;
+  *(undefined8 *)((byte *)this + 0x18) = *(undefined8 *)(param_2 + 0x18);
+  *(undefined8 *)((byte *)this + 0x10) = uVar1;
   uVar1 = *(undefined8 *)(param_2 + 0x20);
-  *(undefined8 *)(param_1 + 0x28) = *(undefined8 *)(param_2 + 0x28);
-  *(undefined8 *)(param_1 + 0x20) = uVar1;
+  *(undefined8 *)((byte *)this + 0x28) = *(undefined8 *)(param_2 + 0x28);
+  *(undefined8 *)((byte *)this + 0x20) = uVar1;
   uVar1 = *(undefined8 *)(param_2 + 0x30);
-  *(undefined8 *)(param_1 + 0x38) = *(undefined8 *)(param_2 + 0x38);
-  *(undefined8 *)(param_1 + 0x30) = uVar1;
-  return param_1;
+  *(undefined8 *)((byte *)this + 0x38) = *(undefined8 *)(param_2 + 0x38);
+  *(undefined8 *)((byte *)this + 0x30) = uVar1;
+  return (byte *)this;
 }
 
 
@@ -727,8 +718,7 @@ long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::operator
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>
    >::swap(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >&) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::swap
-               (long param_1,long param_2)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::swap(long param_1,long param_2)
 
 {
   undefined8 uVar2;
@@ -767,7 +757,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::swap
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::gbump(int) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::gbump(int p0, int in_w1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::gbump(int p0, int in_w1)
 
 {
   
@@ -783,8 +773,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::gbump(in
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::setg(char*, char*, char*) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setg
-               (char *p0,char *p1,char *p2)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setg(char *p0,char *p1,char *p2)
 
 {
   undefined8 in_x3;
@@ -803,7 +792,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setg
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::pbump(int) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbump(int p0, int in_w1)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbump(int p0, int in_w1)
 
 {
   
@@ -819,7 +808,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbump(in
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::setp(char*, char*) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setp(char *p0,char *p1, undefined8 in_x2)
+template<> void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setp(char *p0,char *p1, undefined8 in_x2)
 
 {
   

@@ -18,9 +18,7 @@
    >::__find_equal<WaterConcept::Screen_Hub::HubAction>(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    WaterConcept::Screen_Hub::HubAction const&) */
 
-long * std::__ndk1::
-       __tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction,std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>>>
-       ::__find_equal<WaterConcept::Screen_Hub::HubAction>(long param_1,long *param_2,int *param_3)
+template<> long * std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction,std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>>>::__find_equal(long param_1,long *param_2,int *param_3)
 
 {
   long *plVar1;
@@ -72,10 +70,7 @@ long * std::__ndk1::
    std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*&,
    std::__ndk1::__tree_node_base<void*>*&, WaterConcept::Screen_Hub::HubAction const&) */
 
-long * std::__ndk1::
-       __tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction,std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>>>
-       ::__find_equal<WaterConcept::Screen_Hub::HubAction>
-                 (undefined8 *param_1,long *param_2,long *param_3,long *param_4,int *param_5)
+template<> long * std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction,std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>,std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>>>::__find_equal(undefined8 *param_1,long *param_2,long *param_3,long *param_4,int *param_5)
 
 {
   int iVar1;

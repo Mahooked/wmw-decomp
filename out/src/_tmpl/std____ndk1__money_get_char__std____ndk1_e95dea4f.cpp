@@ -13,10 +13,7 @@
    std::__ndk1::char_traits<char> >, bool, std::__ndk1::ios_base&, unsigned int&, long double&)
    const */
 
-long * std::__ndk1::
-       money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get
-                 (undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5,
-                 uint *param_6,undefined8 param_7)
+template<> long * std::__ndk1::money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get(undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5, uint *param_6,undefined8 param_7)
 
 {
   char cVar1;
@@ -195,9 +192,7 @@ LAB_005c7cd8:
    bool&, std::__ndk1::ctype<char> const&, std::__ndk1::unique_ptr<char, void (*)(void*)>&, char*&,
    char*) */
 
-ulong std::__ndk1::
-      money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-      __do_get(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,bool param_3,std::__ndk1::locale const& param_4,unsigned int param_5,unsigned int& param_6,bool& param_7,std::__ndk1::ctype<char> const& param_8,std::__ndk1::unique_ptr<char, void (*param_9)(void*)>&,char*& param_10,char *param_11)
+template<> ulong std::__ndk1::money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__do_get(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,bool param_3,std::__ndk1::locale const& param_4,unsigned int param_5,unsigned int& param_6,bool& param_7,std::__ndk1::ctype<char> const& param_8,std::__ndk1::unique_ptr<char, void (*param_9)(void*)>&,char*& param_10,char *param_11)
 
 {
   byte *pbVar1;
@@ -1104,9 +1099,7 @@ LAB_005c8fc0:
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&)
    const */
 
-long * std::__ndk1::
-       money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6)
+template<> long * std::__ndk1::money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6)
 
 {
   byte *pbVar1;
@@ -1161,7 +1154,7 @@ long * std::__ndk1::
         pbVar1 = pbVar1 + 1) {
     }
                     /* try { // try from 005c9258 to 005c9263 has its CatchHandler @ 005c9340 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::__append_forward_unsafe<char*>(param_6,pbVar1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::__append_forward_unsafe<char*>(param_6,pbVar1);
   }
   if ((plStack_e0 == (long *)0x0) || (plStack_e0[3] != plStack_e0[4])) {
 joined_r0x005c9278:

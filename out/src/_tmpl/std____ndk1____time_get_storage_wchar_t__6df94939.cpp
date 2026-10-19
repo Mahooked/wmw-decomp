@@ -9,7 +9,7 @@
 
 /* std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char const*) */
 
-void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
+template<> std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
 
 {
   undefined **appuStack_50 [2];
@@ -38,7 +38,7 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
 /* std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long *param_1,byte *param_2)
+template<> std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long *param_1,byte *param_2)
 
 {
   long lVar1;
@@ -57,7 +57,7 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long *param_1,
   lVar2 = newlocale(0x1fbf,pbVar3,0);
   *param_1 = lVar2;
   if (lVar2 == 0) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(appuStack_50,"time_get_byname failed to construct for ",param_2);
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(appuStack_50,"time_get_byname failed to construct for ",param_2);
                     /* try { // try from 005c33bc to 005c33c3 has its CatchHandler @ 005c33c8 */
     FUN_005d5db0(appuStack_50);
   }
@@ -88,7 +88,7 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long *param_1,
 
 /* std::__ndk1::__time_get_storage<wchar_t>::__do_date_order() const */
 
-undefined8 std::__ndk1::__time_get_storage<wchar_t>::__do_date_order(long param_1)
+template<> undefined8 std::__ndk1::__time_get_storage<wchar_t>::__do_date_order(long param_1)
 
 {
   int iVar1;
@@ -339,7 +339,7 @@ undefined8 std::__ndk1::__time_get_storage<wchar_t>::__do_date_order(long param_
 
 /* std::__ndk1::__time_get_storage<wchar_t>::__analyze(char, std::__ndk1::ctype<wchar_t> const&) */
 
-void std::__ndk1::__time_get_storage<wchar_t>::__analyze(char p0,std____ndk1__ctype<wchar_t> *p1)
+template<> void std::__ndk1::__time_get_storage<wchar_t>::__analyze(char p0,std____ndk1__ctype<wchar_t> *p1)
 
 {
   byte *pbVar1;
@@ -664,7 +664,7 @@ LAB_005dec28:
 
 /* std::__ndk1::__time_get_storage<wchar_t>::init(std::__ndk1::ctype<wchar_t> const&) */
 
-void std::__ndk1::__time_get_storage<wchar_t>::init(std____ndk1__ctype<wchar_t> *p0, undefined8 in_x1)
+template<> void std::__ndk1::__time_get_storage<wchar_t>::init(std____ndk1__ctype<wchar_t> *p0, undefined8 in_x1)
 
 {
   byte bVar1;

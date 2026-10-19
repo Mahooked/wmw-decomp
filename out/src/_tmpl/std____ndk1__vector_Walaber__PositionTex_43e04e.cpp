@@ -13,9 +13,7 @@
    std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>&, Walaber::PositionTextureColorVert*)
     */
 
-long std::__ndk1::
-     vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+template<> long std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   long lVar1;

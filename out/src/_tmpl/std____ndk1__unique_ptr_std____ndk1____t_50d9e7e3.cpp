@@ -22,11 +22,7 @@
    Walaber::SoundManager::GotSoundCallbackData> >(std::__ndk1::pair<std::__ndk1::pair<int, int>,
    Walaber::SoundManager::GotSoundCallbackData>&&) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>
-     ::
-     __construct_node<std::__ndk1::pair<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>
-               (long *param_1,long param_2,undefined8 *param_3)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>::__construct_node(long *param_1,long param_2,undefined8 *param_3)
 
 {
   undefined8 uVar1;
@@ -52,7 +48,7 @@ void std::__ndk1::
   if (plVar8 != param_3 + 2) {
     do {
                     /* try { // try from 003571b8 to 003571c7 has its CatchHandler @ 00357254 */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(lVar3 + 0x28,puVar7,plVar8 + 4,plVar8 + 4);
+      std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(lVar3 + 0x28,puVar7,plVar8 + 4,plVar8 + 4);
       plVar4 = (long *)plVar8[1];
       if ((long *)plVar8[1] == (long *)0x0) {
         plVar4 = plVar8 + 2;

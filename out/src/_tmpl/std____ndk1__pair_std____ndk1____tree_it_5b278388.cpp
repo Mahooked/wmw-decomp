@@ -20,12 +20,7 @@
    >(float const&, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<float const&>&&,
    std::__ndk1::tuple<>&&) */
 
-undefined1  [16]
-std::__ndk1::
-__tree<std::__ndk1::__value_type<float,Walaber::SpriteAnimation::AnimationMarker>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,Walaber::SpriteAnimation::AnimationMarker>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,Walaber::SpriteAnimation::AnimationMarker>>>
-::
-__emplace_unique_key_args<float,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<float_const&>,std::__ndk1::tuple<>>
-          (long param_1,float *param_2,undefined8 param_3,undefined8 *param_4)
+template<> undefined1 [16] std::__ndk1::__tree<std::__ndk1::__value_type<float,Walaber::SpriteAnimation::AnimationMarker>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,Walaber::SpriteAnimation::AnimationMarker>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,Walaber::SpriteAnimation::AnimationMarker>>>::__emplace_unique_key_args(long param_1,float *param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   bool bVar1;

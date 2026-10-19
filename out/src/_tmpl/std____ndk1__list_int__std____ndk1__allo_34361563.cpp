@@ -11,8 +11,7 @@
    >::erase(std::__ndk1::__list_const_iterator<int, void*>, std::__ndk1::__list_const_iterator<int,
    void*>) */
 
-long * std::__ndk1::list<int,std::__ndk1::allocator<int>>::erase
-                 (long param_1,long *param_2,long *param_3)
+template<> long * std::__ndk1::list<int,std::__ndk1::allocator<int>>::erase(long param_1,long *param_2,long *param_3)
 
 {
   long lVar1;
@@ -43,7 +42,7 @@ long * std::__ndk1::list<int,std::__ndk1::allocator<int>>::erase
 /* std::__ndk1::list<int, std::__ndk1::allocator<int> >::list(std::__ndk1::list<int,
    std::__ndk1::allocator<int> > const&) */
 
-void std::__ndk1::list<int,std::__ndk1::allocator<int>>::list(long *param_1,long param_2)
+template<> std::__ndk1::list<int,std::__ndk1::allocator<int>>::list(long *param_1,long param_2)
 
 {
   undefined4 uVar1;

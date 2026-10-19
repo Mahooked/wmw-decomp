@@ -494,7 +494,7 @@ void WaterConcept::IcyHot::addOffsetToMouthWithProbability(Walaber__Vector2 *p0,
     lStack_40 = CONCAT44(iVar1 + (int)(p1 * 100.0),iVar1);
     if ((ulong)p0[0x7a] <= (ulong)WVar3) {
 LAB_0047f468:
-      void std::__ndk1::vector<std::__ndk1::pair<int, int>, std::__ndk1::allocator<std::__ndk1::pair<int, int>>>::__push_back_slow_path<std::__ndk1::pair<int, int>>(p0 + 0x78,&lStack_40);
+      std::__ndk1::vector<std::__ndk1::pair<int, int>, std::__ndk1::allocator<std::__ndk1::pair<int, int>>>::__push_back_slow_path<std::__ndk1::pair<int, int>>(p0 + 0x78,&lStack_40);
       goto LAB_0047f474;
     }
     *(long *)WVar3 = lStack_40;
@@ -503,7 +503,7 @@ LAB_0047f468:
 LAB_0047f474:
   WVar3 = p0[0x76];
   if (WVar3 == p0[0x77]) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(p0 + 0x75);
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(p0 + 0x75);
   }
   else {
     *(undefined8 *)WVar3 = *in_x1;

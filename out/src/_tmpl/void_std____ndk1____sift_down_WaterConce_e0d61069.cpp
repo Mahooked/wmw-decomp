@@ -31,9 +31,7 @@
    WaterConcept::NotificationSingleton::NotificationData&,
    WaterConcept::NotificationSingleton::NotificationData**, long, 64l>) */
 
-void std::__ndk1::
-     __sift_down<WaterConcept::NotificationSingleton::NotificationData::NotificationCompare&,std::__ndk1::__deque_iterator<WaterConcept::NotificationSingleton::NotificationData,WaterConcept::NotificationSingleton::NotificationData*,WaterConcept::NotificationSingleton::NotificationData&,WaterConcept::NotificationSingleton::NotificationData**,long,64l>>
-               (long *param_1,byte *param_2)
+void std::__ndk1::__sift_down(long *param_1,byte *param_2)
 
 {
   byte *pbVar1;

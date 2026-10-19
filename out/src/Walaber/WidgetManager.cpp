@@ -346,7 +346,7 @@ LAB_0036b440:
                     if ((uVar8 & 1) != 0) {
                       lStack_d0 = CONCAT44(lStack_d0._4_4_,*(undefined4 *)(lVar17 + 0x20));
                     /* try { // try from 0036b20c to 0036b217 has its CatchHandler @ 0036b978 */
-                      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Widget*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::Widget*>>(&uStack_b8,&lStack_d0);
+                      std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::Widget*>>(&uStack_b8,&lStack_d0);
                     }
                   }
                   if (*(long *)(lVar17 + 0x18) != 0) {
@@ -509,7 +509,7 @@ LAB_0036b458:
                   if ((uVar8 & 1) != 0) {
                     lStack_d0 = CONCAT44(lStack_d0._4_4_,*(undefined4 *)(lVar17 + 0x20));
                     /* try { // try from 0036b620 to 0036b62b has its CatchHandler @ 0036b984 */
-                    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Widget*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::Widget*>>(&uStack_b8,&lStack_d0);
+                    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::Widget*>>(&uStack_b8,&lStack_d0);
                   }
                 }
                 if (*(long *)(lVar17 + 0x18) != 0) {
@@ -1941,7 +1941,7 @@ void Walaber::WidgetManager::reloadFonts(long *param_1)
   plVar10 = *(long **)(in_x1 + 0x30);
   while (plVar10 != (long *)(in_x1 + 0x38)) {
                     /* try { // try from 0049ca78 to 0049ca87 has its CatchHandler @ 0049cbd8 */
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::__emplace_hint_unique_key_args<int, std::__ndk1::pair<int const, Walaber::FingerInfo*> const&>(&p0->f_0x30,puVar9,plVar10 + 4,plVar10 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::__emplace_hint_unique_key_args<int, std::__ndk1::pair<int const, Walaber::FingerInfo*> const&>(&p0->f_0x30,puVar9,plVar10 + 4,plVar10 + 4);
     plVar4 = (long *)plVar10[1];
     if ((long *)plVar10[1] == (long *)0x0) {
       plVar4 = plVar10 + 2;
@@ -1973,7 +1973,7 @@ void Walaber::WidgetManager::reloadFonts(long *param_1)
     plVar10 = *(long **)(in_x1 + 0x50);
     do {
                     /* try { // try from 0049cb0c to 0049cb1b has its CatchHandler @ 0049cbc0 */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::__emplace_hint_unique_key_args<Walaber::Widget*, std::__ndk1::pair<Walaber::Widget* const, Walaber::Vector2> const&>(&p0->field_0x50,puVar9,plVar10 + 4,plVar10 + 4);
+      std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::__emplace_hint_unique_key_args<Walaber::Widget*, std::__ndk1::pair<Walaber::Widget* const, Walaber::Vector2> const&>(&p0->field_0x50,puVar9,plVar10 + 4,plVar10 + 4);
       plVar4 = (long *)plVar10[1];
       if ((long *)plVar10[1] == (long *)0x0) {
         plVar4 = plVar10 + 2;

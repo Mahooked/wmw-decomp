@@ -10,8 +10,7 @@
 /* std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>
    >::basic_iostream(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >*) */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_iostream
-               (long *param_1,long *param_2,long param_3)
+template<> std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_iostream(long *param_1,long *param_2,long param_3)
 
 {
   long lVar1;
@@ -59,8 +58,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_ios
 /* std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>
    >::basic_iostream(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >*) */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_iostream
-               (undefined8 *param_1,long param_2)
+template<> std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_iostream(undefined8 *param_1,long param_2)
 
 {
   *(undefined4 *)(param_1 + 4) = 0x1002;
@@ -99,7 +97,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_ios
 
 /* std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char> >::~basic_iostream() */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(void)
+template<> std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream()
 
 {
   return;
@@ -113,10 +111,10 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 
 /* std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char> >::~basic_iostream() */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(long param_1)
+template<> std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream()
 
 {
-  ((std::__ndk1::ios_base *)param_1 + 0x18)->~ios_base();
+  ((std::__ndk1::ios_base *)(byte *)this + 0x18)->~ios_base();
   return;
 }
 
@@ -128,12 +126,11 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 
 /* std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char> >::~basic_iostream() */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream
-               (void *param_1)
+template<> std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream()
 
 {
-  ((std::__ndk1::ios_base *)(long)param_1 + 0x18)->~ios_base();
-  operator delete(param_1);
+  ((std::__ndk1::ios_base *)(long)(byte *)this + 0x18)->~ios_base();
+  operator delete((byte *)this);
   return;
 }
 
@@ -146,8 +143,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 /* std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>
    >::swap(std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char> >&) */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::swap
-               (long *param_1,long *param_2)
+template<> void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::swap(long *param_1,long *param_2)
 
 {
   long lVar1;

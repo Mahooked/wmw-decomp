@@ -9,10 +9,10 @@
 
 /* Walaber::MemberCallback<WaterConcept::Screen_Collectibles>::~MemberCallback() */
 
-void Walaber::MemberCallback<WaterConcept::Screen_Collectibles>::~MemberCallback(void *p0)
+template<> Walaber::MemberCallback<WaterConcept::Screen_Collectibles>::~MemberCallback()
 
 {
-  operator_delete(p0);
+  operator_delete((byte *)this);
   return;
 }
 
@@ -24,7 +24,7 @@ void Walaber::MemberCallback<WaterConcept::Screen_Collectibles>::~MemberCallback
 
 /* Walaber::MemberCallback<WaterConcept::Screen_Collectibles>::invoke(void*) */
 
-void Walaber::MemberCallback<WaterConcept::Screen_Collectibles>::invoke(void *p0)
+template<> void Walaber::MemberCallback<WaterConcept::Screen_Collectibles>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;

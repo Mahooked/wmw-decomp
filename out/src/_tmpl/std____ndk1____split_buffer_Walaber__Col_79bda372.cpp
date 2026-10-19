@@ -11,8 +11,7 @@
    std::__ndk1::allocator<Walaber::Color>&>::__split_buffer(unsigned long, unsigned long,
    std::__ndk1::allocator<Walaber::Color>&) */
 
-void std::__ndk1::__split_buffer<Walaber::Color,std::__ndk1::allocator<Walaber::Color>&>::
-     __split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
+template<> std::__ndk1::__split_buffer<Walaber::Color,std::__ndk1::allocator<Walaber::Color>&>::__split_buffer(long *param_1,ulong param_2,long param_3,long param_4)
 
 {
   long lVar1;

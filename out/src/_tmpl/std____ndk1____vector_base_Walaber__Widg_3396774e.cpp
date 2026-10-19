@@ -10,9 +10,7 @@
 /* std::__ndk1::__vector_base<Walaber::Widget_IconList::Icon,
    std::__ndk1::allocator<Walaber::Widget_IconList::Icon> >::~__vector_base() */
 
-void std::__ndk1::
-     __vector_base<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>
-     ::~__vector_base()
+template<> std::__ndk1::__vector_base<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::~__vector_base()
 
 {
   void *pvVar1;

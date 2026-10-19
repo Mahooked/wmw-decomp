@@ -10,7 +10,7 @@
 /* WARNING: Type propagation algorithm not settling */
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::init(char const*) */
 
-void std::__ndk1::moneypunct_byname<wchar_t,true>::init(char *p0, long in_x1)
+template<> void std::__ndk1::moneypunct_byname<wchar_t,true>::init(char *p0, long in_x1)
 
 {
   uint uVar1;
@@ -455,7 +455,7 @@ LAB_005c764c:
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_decimal_point() const */
 
-undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_decimal_point(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_decimal_point(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x10);
@@ -469,7 +469,7 @@ undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_decimal_point(long p
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_thousands_sep() const */
 
-undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_thousands_sep(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_thousands_sep(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x14);
@@ -483,7 +483,7 @@ undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_thousands_sep(long p
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_grouping() const */
 
-void std::__ndk1::moneypunct_byname<wchar_t,true>::do_grouping(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<wchar_t,true>::do_grouping(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2 + 0x18);
@@ -498,7 +498,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,true>::do_grouping(undefined8 param_
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_curr_symbol() const */
 
-void std::__ndk1::moneypunct_byname<wchar_t,true>::do_curr_symbol(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<wchar_t,true>::do_curr_symbol(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(param_2 + 0x30);
@@ -513,7 +513,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,true>::do_curr_symbol(undefined8 par
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_positive_sign() const */
 
-void std::__ndk1::moneypunct_byname<wchar_t,true>::do_positive_sign(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<wchar_t,true>::do_positive_sign(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(param_2 + 0x48);
@@ -528,7 +528,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,true>::do_positive_sign(undefined8 p
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_negative_sign() const */
 
-void std::__ndk1::moneypunct_byname<wchar_t,true>::do_negative_sign(undefined8 param_1,long param_2)
+template<> void std::__ndk1::moneypunct_byname<wchar_t,true>::do_negative_sign(undefined8 param_1,long param_2)
 
 {
   new ((void *)(param_1)) std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>(param_2 + 0x60);
@@ -543,7 +543,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,true>::do_negative_sign(undefined8 p
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_frac_digits() const */
 
-undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_frac_digits(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_frac_digits(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x78);
@@ -557,7 +557,7 @@ undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_frac_digits(long par
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_pos_format() const */
 
-undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_pos_format(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_pos_format(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x7c);
@@ -571,7 +571,7 @@ undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_pos_format(long para
 
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::do_neg_format() const */
 
-undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_neg_format(long param_1)
+template<> undefined4 std::__ndk1::moneypunct_byname<wchar_t,true>::do_neg_format(long param_1)
 
 {
   return *(undefined4 *)(param_1 + 0x80);

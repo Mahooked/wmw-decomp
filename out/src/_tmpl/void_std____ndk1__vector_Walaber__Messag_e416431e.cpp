@@ -11,9 +11,7 @@
    std::__ndk1::allocator<Walaber::MessageReceiver*>
    >::__push_back_slow_path<Walaber::MessageReceiver* const&>(Walaber::MessageReceiver* const&) */
 
-void std::__ndk1::
-     vector<Walaber::MessageReceiver*,std::__ndk1::allocator<Walaber::MessageReceiver*>>::
-     __push_back_slow_path<Walaber::MessageReceiver*const&>(Walaber__MessageReceiver **p0)
+template<> void std::__ndk1::vector<Walaber::MessageReceiver*,std::__ndk1::allocator<Walaber::MessageReceiver*>>::__push_back_slow_path(Walaber__MessageReceiver **p0)
 
 {
   undefined8 *in_x1;

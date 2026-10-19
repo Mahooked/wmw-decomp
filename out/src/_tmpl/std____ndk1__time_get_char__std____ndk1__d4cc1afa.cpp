@@ -12,10 +12,7 @@
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&,
    unsigned int&, tm*, char const*, char const*) const */
 
-long * std::__ndk1::
-       time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::get
-                 (long *param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
-                 undefined8 param_6,byte *param_7,byte *param_8)
+template<> long * std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::get(long *param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5, undefined8 param_6,byte *param_7,byte *param_8)
 
 {
   byte *pbVar2;
@@ -180,9 +177,7 @@ LAB_005beb50:
 /* std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>
    > >::do_date_order() const */
 
-undefined8
-std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_date_order(void)
+template<> undefined8 std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_date_order(void)
 
 {
   return 2;
@@ -199,9 +194,7 @@ do_date_order(void)
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&,
    unsigned int&, tm*) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_time(void)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get_time(void)
 
 {
   
@@ -220,9 +213,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&,
    unsigned int&, tm*) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_date(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get_date(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   ulong uVar1;
@@ -251,9 +242,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&,
    unsigned int&, tm*) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_weekday(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get_weekday(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   undefined1 auVar1 [16];
@@ -290,10 +279,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<char> >&, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, unsigned int&, std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_weekdayname(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                      undefined8 param_5,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_weekdayname(long param_1,int *param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5,undefined8 param_6)
 
 {
   undefined1 auVar1 [16];
@@ -321,9 +307,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&,
    unsigned int&, tm*) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_monthname(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get_monthname(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   undefined8 uVar2;
@@ -360,10 +344,7 @@ void std::__ndk1::
    >&, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_monthname(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                    undefined8 param_5,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_monthname(long param_1,int *param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5,undefined8 param_6)
 
 {
   long lVar1;
@@ -391,9 +372,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&,
    unsigned int&, tm*) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_year(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get_year(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   int iVar2;
@@ -434,10 +413,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_year(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,byte *param_5,
-               undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_year(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,byte *param_5, undefined8 param_6)
 
 {
   int iVar1;
@@ -470,9 +446,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, std::__ndk1::ios_base&,
    unsigned int&, tm*, char, char) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get
-               (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5,char param_6,char param_7)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5,char param_6,char param_7)
 
 {
   byte bVar1;
@@ -725,10 +699,7 @@ switchD_005bf260_caseD_26:
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_day
-               (undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5,
-               undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_day(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5, undefined8 param_6)
 
 {
   int iVar1;
@@ -754,10 +725,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_hour(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5,
-               undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_hour(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5, undefined8 param_6)
 
 {
   int iVar1;
@@ -783,10 +751,7 @@ void std::__ndk1::
    >&, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_12_hour(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                  uint *param_5,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_12_hour(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4, uint *param_5,undefined8 param_6)
 
 {
   int iVar1;
@@ -812,10 +777,7 @@ void std::__ndk1::
    std::__ndk1::char_traits<char> >&, std::__ndk1::istreambuf_iterator<char,
    std::__ndk1::char_traits<char> >, unsigned int&, std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_day_year_num(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                       uint *param_5,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_day_year_num(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4, uint *param_5,undefined8 param_6)
 
 {
   int iVar1;
@@ -841,10 +803,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_month(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5
-                ,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_month(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5 ,undefined8 param_6)
 
 {
   int iVar1;
@@ -870,10 +829,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_minute(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                 uint *param_5,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_minute(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4, uint *param_5,undefined8 param_6)
 
 {
   int iVar1;
@@ -899,9 +855,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_white_space(undefined8 param_1,long *param_2,long *param_3,uint *param_4,long param_5)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_white_space(undefined8 param_1,long *param_2,long *param_3,uint *param_4,long param_5)
 
 {
   byte bVar1;
@@ -984,10 +938,7 @@ LAB_005bfaf0:
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_am_pm(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5,
-                undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_am_pm(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5, undefined8 param_6)
 
 {
   int iVar1;
@@ -1039,10 +990,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_second(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                 uint *param_5,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_second(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4, uint *param_5,undefined8 param_6)
 
 {
   int iVar1;
@@ -1068,10 +1016,7 @@ void std::__ndk1::
    >&, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_weekday(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                  uint *param_5,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_weekday(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4, uint *param_5,undefined8 param_6)
 
 {
   int iVar1;
@@ -1097,10 +1042,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_year4(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,byte *param_5
-                ,undefined8 param_6)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_year4(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,byte *param_5 ,undefined8 param_6)
 
 {
   int iVar1;
@@ -1123,9 +1065,7 @@ void std::__ndk1::
    std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char> >, unsigned int&,
    std::__ndk1::ctype<char> const&) const */
 
-void std::__ndk1::
-     time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_percent(undefined8 param_1,long *param_2,long *param_3,uint *param_4,long *param_5)
+template<> void std::__ndk1::time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_percent(undefined8 param_1,long *param_2,long *param_3,uint *param_4,long *param_5)
 
 {
   char cVar1;

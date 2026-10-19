@@ -1906,7 +1906,7 @@ void WaterConcept::Spout::addParticles
     if (*(ulong *)(param_2 + 0x428) < (ulong)(long)*(int *)(param_2 + 0x430)) {
       puVar5 = *(undefined8 **)(param_2 + 0x440);
       if (puVar5 == *(undefined8 **)(param_2 + 0x448)) {
-        void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(param_2 + 0x438,param_3);
+        std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(param_2 + 0x438,param_3);
       }
       else {
         uVar6 = *(undefined8 *)param_3;
@@ -1920,7 +1920,7 @@ void WaterConcept::Spout::addParticles
         *(long *)(param_2 + 0x458) = *(long *)(param_2 + 0x458) + 8;
       }
       else {
-        void std::__ndk1::vector<std::__ndk1::pair<int, float>, std::__ndk1::allocator<std::__ndk1::pair<int, float>>>::__push_back_slow_path<std::__ndk1::pair<int, float>>(param_2 + 0x450,&uStack_78);
+        std::__ndk1::vector<std::__ndk1::pair<int, float>, std::__ndk1::allocator<std::__ndk1::pair<int, float>>>::__push_back_slow_path<std::__ndk1::pair<int, float>>(param_2 + 0x450,&uStack_78);
       }
       uVar6 = 1;
       goto LAB_0048dc64;
@@ -2018,7 +2018,7 @@ void WaterConcept::Spout::pickFinalParticles(long param_1,undefined8 param_2,lon
             param_3[1] = lVar9;
           }
           else {
-            void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription>(param_3,&uStack_78);
+            std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription>(param_3,&uStack_78);
             lVar9 = param_3[1];
           }
           lVar9 = lVar9 - *param_3;
@@ -2113,7 +2113,7 @@ void WaterConcept::Spout::addConnectedSpout
     *(long *)(param_2 + 0x4a8) = *(long *)(param_2 + 0x4a8) + 0x10;
   }
   else {
-    void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection>(param_2 + 0x4a0,&lStack_48);
+    std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection>(param_2 + 0x4a0,&lStack_48);
   }
   if (*(int *)(param_3 + 0x3d4) == 1) {
     *(undefined1 *)(param_3 + 0x4d4) = 0;

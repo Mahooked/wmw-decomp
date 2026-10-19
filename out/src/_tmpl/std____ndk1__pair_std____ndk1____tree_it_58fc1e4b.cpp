@@ -18,11 +18,7 @@
    std::__ndk1::tuple<int&&>, std::__ndk1::tuple<> >(int const&, std::__ndk1::piecewise_construct_t
    const&, std::__ndk1::tuple<int&&>&&, std::__ndk1::tuple<>&&) */
 
-void std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>>>
-     ::
-     __emplace_unique_key_args<int,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<int&&>,std::__ndk1::tuple<>>
-               (long param_1,int *param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5)
+template<> void std::__ndk1::__tree<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>>>::__emplace_unique_key_args(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5)
 
 {
   bool bVar1;
@@ -52,7 +48,7 @@ LAB_0046d000:
   lVar4 = *plVar6;
   bVar1 = lVar4 == 0;
   if (bVar1) {
-    std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, void*>, std::__ndk1::__tree_node_destructor<std::__ndk1::allocator<std::__ndk1::__tree_node<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, void*>>>> std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>>>::__construct_node<std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int&&>, std::__ndk1::tuple<>>(alStack_50,param_1,param_3,param_4,param_5);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>>>::__construct_node<std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int&&>, std::__ndk1::tuple<>>(alStack_50,param_1,param_3,param_4,param_5);
     std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>>>::__insert_node_at(param_1,plVar5,plVar6,alStack_50[0]);
     lVar4 = alStack_50[0];
   }

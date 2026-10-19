@@ -10,8 +10,7 @@
 /* void std::__ndk1::vector<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>
    >::__push_back_slow_path<Walaber::PCSNode* const&>(Walaber::PCSNode* const&) */
 
-void std::__ndk1::vector<Walaber::PCSNode*,std::__ndk1::allocator<Walaber::PCSNode*>>::
-     __push_back_slow_path<Walaber::PCSNode*const&>(Walaber__PCSNode **p0)
+template<> void std::__ndk1::vector<Walaber::PCSNode*,std::__ndk1::allocator<Walaber::PCSNode*>>::__push_back_slow_path(Walaber__PCSNode **p0)
 
 {
   undefined8 *in_x1;

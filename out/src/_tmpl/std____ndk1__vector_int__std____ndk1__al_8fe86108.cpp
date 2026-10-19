@@ -9,7 +9,7 @@
 
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::reserve(unsigned long) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::reserve(ulong p0, ulong in_x1)
+template<> void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::reserve(ulong p0, ulong in_x1)
 
 {
   void *pvVar2;
@@ -55,7 +55,7 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::reserve(ulong p0, ulo
 
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__vallocate(ulong p0, ulong in_x1)
+template<> void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__vallocate(ulong p0, ulong in_x1)
 
 {
   long lVar1;
@@ -80,7 +80,7 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__vallocate(ulong p0,
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::vector(std::__ndk1::vector<int,
    std::__ndk1::allocator<int> > const&) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(undefined8 *param_1,long *param_2)
+template<> std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
@@ -108,7 +108,7 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(undefined8 *pa
 
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::vector(unsigned long) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(ulong p0, long in_x1)
+template<> std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(ulong p0, long in_x1)
 
 {
   long lVar1;

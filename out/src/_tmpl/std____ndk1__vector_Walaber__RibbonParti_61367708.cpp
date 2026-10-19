@@ -10,9 +10,7 @@
 /* std::__ndk1::vector<Walaber::RibbonParticle<10>,
    std::__ndk1::allocator<Walaber::RibbonParticle<10> > >::vector(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::vector
-               (ulong p0)
+template<> std::__ndk1::vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::vector(ulong p0)
 
 {
   long in_x1;
@@ -37,9 +35,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::RibbonParticle<10>,
    std::__ndk1::allocator<Walaber::RibbonParticle<10> > >::__vallocate(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::
-     __vallocate(ulong p0)
+template<> void std::__ndk1::vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::__vallocate(ulong p0)
 
 {
   long lVar1;
@@ -65,9 +61,7 @@ void std::__ndk1::
 /* std::__ndk1::vector<Walaber::RibbonParticle<10>,
    std::__ndk1::allocator<Walaber::RibbonParticle<10> > >::__construct_at_end(unsigned long) */
 
-void std::__ndk1::
-     vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::
-     __construct_at_end(ulong p0)
+template<> void std::__ndk1::vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::__construct_at_end(ulong p0)
 
 {
   long in_x1;

@@ -16,10 +16,7 @@
    > >::__emplace_multi<std::__ndk1::pair<int, Walaber::FileManager::FileHandler*>
    >(std::__ndk1::pair<int, Walaber::FileManager::FileHandler*>&&) */
 
-long std::__ndk1::
-     __tree<std::__ndk1::__value_type<int,Walaber::FileManager::FileHandler*>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::FileManager::FileHandler*>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::FileManager::FileHandler*>>>
-     ::__emplace_multi<std::__ndk1::pair<int,Walaber::FileManager::FileHandler*>>
-               (long param_1,int *param_2)
+template<> long std::__ndk1::__tree<std::__ndk1::__value_type<int,Walaber::FileManager::FileHandler*>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::FileManager::FileHandler*>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::FileManager::FileHandler*>>>::__emplace_multi(long param_1,int *param_2)
 
 {
   int iVar1;

@@ -10,8 +10,7 @@
 /* std::__ndk1::deque<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>
    >::push_back(Walaber::Node*&&) */
 
-void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::push_back
-               (Walaber__Node ***p0)
+template<> void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::push_back(Walaber__Node ***p0)
 
 {
   ulong uVar1;
@@ -48,8 +47,7 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
 /* std::__ndk1::deque<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>
    >::__add_back_capacity() */
 
-void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::__add_back_capacity
-               (ulong *param_1)
+template<> void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::__add_back_capacity(ulong *param_1)
 
 {
   void *pvVar2;
@@ -233,8 +231,7 @@ LAB_0033f80c:
 
 /* std::__ndk1::deque<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*> >::pop_back() */
 
-void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::pop_back
-               (long param_1)
+template<> void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::pop_back(long param_1)
 
 {
   long lVar1;
