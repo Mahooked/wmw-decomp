@@ -253,12 +253,17 @@ struct multimap;
 template <class K, class C = less<K>, class A = allocator<K>> struct set;
 template <class T, class C = less<T>, class A = allocator<T>> struct __tree;
 template <class K, class V> struct __value_type;
-template <class K, class V, class C> struct __map_value_compare;
+/* libc++ gives these more parameters than the recovered signatures spell, and
+   some of them are non-type (`moneypunct<char, false>`,
+   `__map_value_compare<…, true>`), so a fixed arity of the wrong shape makes
+   every use "too many template arguments" (1,717 of them).  Declared with the
+   arity and the kinds libc++ actually uses. */
+template <class K, class V, class C, bool B = true> struct __map_value_compare;
 template <class T, class P> struct __tree_node;
 template <class T> struct __tree_node_base;
 template <class T> struct __tree_end_node;
-template <class T> struct __tree_iterator;
-template <class T> struct __tree_const_iterator;
+template <class T, class N, class D> struct __tree_iterator;
+template <class T, class N, class D> struct __tree_const_iterator;
 template <class T> struct __tree_node_destructor;
 template <class T, class A> struct __split_buffer;
 template <class...> struct __deque_base { };
@@ -268,22 +273,23 @@ template <class C, class T = char_traits<C>> struct basic_ostream;
 template <class C, class T = char_traits<C>> struct basic_istream;
 template <class C, class T = char_traits<C>> struct basic_iostream;
 template <class C, class T = char_traits<C>> struct basic_streambuf;
-template <class C, class T = char_traits<C>> struct basic_stringbuf;
+template <class C, class T = char_traits<C>, class A = allocator<C>>
+struct basic_stringbuf;
 template <class C, class T = char_traits<C>> struct basic_filebuf { template <class... _A> basic_filebuf(_A...); };
 template <class C, class T = char_traits<C>> struct istreambuf_iterator;
 template <class C, class T = char_traits<C>> struct ostreambuf_iterator;
 template <class C> struct __basic_string_common;
-template <class T> struct ctype;
-template <class T> struct codecvt;
-template <class T> struct moneypunct;
-template <class T> struct moneypunct_byname;
-template <class T> struct numpunct;
-template <class T> struct num_get;
-template <class T> struct num_put;
-template <class T> struct time_get;
-template <class T> struct time_put;
-template <class T> struct collate;
-template <class T> struct messages;
+template <class C> struct ctype;
+template <class I, class E, class S> struct codecvt;
+template <class C, bool I = false> struct moneypunct;
+template <class C, bool I = false> struct moneypunct_byname;
+template <class C> struct numpunct;
+template <class C, class I> struct num_get;
+template <class C, class O> struct num_put;
+template <class C, class I> struct time_get;
+template <class C, class O> struct time_put;
+template <class C> struct collate;
+template <class C> struct messages;
 struct locale;
 struct ios_base;
 struct __shared_count;
