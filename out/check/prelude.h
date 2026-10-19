@@ -47,7 +47,15 @@ typedef unsigned long long uint5;
 typedef unsigned long long uint6;
 typedef unsigned long long uint7;
 typedef unsigned long long uint8;
-typedef unsigned long long code;
+struct _Datum;                          /* the data-global placeholder, below */
+/* Ghidra's `code` is its function-pointer type; libxml2's callback globals
+   are called through it as `(*(code *)xmlMalloc)(n)` or
+   `(**(code **)(*p + 0x10))(a, b)`.  As an integer typedef every one of those
+   calls is "called object type 'code' is not a function" (3,154 of them), so
+   `code` is a class whose call operator takes any arguments and yields a
+   `_Datum` -- convertible to, assignable to and indexable by anything, which
+   is all the gate needs of a pointer to code that was never recovered. */
+struct code { template <class... A> _Datum operator()(A...); };
 
 typedef unsigned char      uint8_t;
 typedef unsigned short     uint16_t;

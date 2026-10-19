@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **55,468** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **52,323** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 55,468 diagnostics into
+   files against synthesised declarations and sorts the 52,323 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). The first two systematic defects it
    named are fixed — illegal return types and parameters on 695 constructors
@@ -132,6 +132,10 @@ re-inferred.
   member access or subscript through the flat spelling read *incomplete type*:
   *subscript of pointer to incomplete type* **3,306 → 371** and *member access
   into incomplete type* **2,932 → 40**. See "The syntax gate".
+- The baseline driven **55,468 → 52,323** by making Ghidra's `code`
+  function-pointer type callable. It was `typedef unsigned long long code`, so
+  every recovered callback call — `(*(code *)xmlMalloc)(n)` — was *called
+  object type 'code' is not a function*: **3,154 → 0**.
 
 ## What the game turned out to be
 
@@ -973,7 +977,9 @@ Everything the bodies name that is *not* the game — Ghidra's `undefined8`
 primitives, the ABI helpers, libc and libm, the libc++ primary templates, the
 GLES/XML/NEON/FMOD symbols the `.so` calls by their bare C names — is declared
 in the hand-written `out/check/prelude.h`. `_Datum`, a type that accepts any
-use, stands in for a data global the binary never named (`DAT_00634ed4`).
+use, stands in for a data global the binary never named (`DAT_00634ed4`). Ghidra's `code` is a class whose
+call operator takes any arguments, because the callbacks it is cast to before
+being called -- `(*(code *)xmlMalloc)(n)` -- were never recovered.
 
 Those declarations compile clean: **408 classes, 272 member declarations, 141
 unresolved type names** — 104 of them a flattened spelling the generator now
@@ -990,9 +996,9 @@ The baseline over the whole tree:
 | | |
 |---|---|
 | Files checked | 1,467 |
-| Files with at least one error | 1,450 |
-| Diagnostics | 55,468 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → **55,468** (flattened type names aliased to their real classes) |
+| Files with at least one error | 1,448 |
+| Diagnostics | 52,323 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → **52,323** (Ghidra's `code` made callable) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
