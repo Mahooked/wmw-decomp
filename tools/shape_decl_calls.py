@@ -17,6 +17,11 @@ Only statements that are indented (inside a body) are touched, and only when
 the text before the argument list looks like a type and the text after it like
 a qualified, explicitly-instantiated name.  Idempotent: a shaped line starts
 with the name, so it no longer has a type to find.
+
+A recovered signature can also wrap: the decompiler prints one statement over
+several lines when the signature is long.  Those are found by walking from the
+first line to the ``;`` that closes the statement at parenthesis depth zero
+(the return type is always on that first line).
 """
 
 import argparse
@@ -76,6 +81,18 @@ def shape_line(line):
     indent = len(stripped) - len(stripped.lstrip())
     if not indent or not body.endswith(");") or body.startswith("//"):
         return None
+    found = _shape_body(body)
+    if found is None:
+        return None
+    start, name, open_paren = found
+    ending = line[len(stripped):]
+    return line[:indent] + name + body[open_paren:] + ending
+
+
+def _shape_body(body):
+    """``(type length, name, argument paren)`` for a declaration-shaped call."""
+    if not body.endswith(");"):
+        return None
     here = body.rfind(")")
     if here != len(body) - 2:
         return None
@@ -91,16 +108,67 @@ def shape_line(line):
         return None
     if type_.split()[0] in _STATEMENTS:
         return None
-    ending = line[len(stripped):]
-    return line[:indent] + name + body[open_paren:] + ending
+    return start, name, open_paren
+
+
+def _statement_end(text, start):
+    """Index just past the ``;`` that ends the statement at ``start``, if any."""
+    depth = 0
+    i = start
+    n = len(text)
+    while i < n:
+        c = text[i]
+        if c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+        elif c == ";" and depth == 0:
+            return i + 1
+        elif c in "{}" and depth == 0:
+            return None
+        i += 1
+    return None
+
+
+def shape_wrapped(text, start, line):
+    """Remove the return type from a statement that spans several lines.
+
+    ``start`` is the offset of ``line``; the returned text replaces that one
+    line only, because the return type always sits at its head.
+    """
+    stripped = line.rstrip("\r\n")
+    body = stripped.strip()
+    indent = len(stripped) - len(stripped.lstrip())
+    if not indent or not body or body.startswith("//"):
+        return None
+    if body.endswith(");") or "::" not in body or "<" not in body:
+        return None
+    if "(" not in body:
+        return None
+    end = _statement_end(text, start)
+    if end is None:
+        return None
+    statement = text[start:end].replace("\r", " ").replace("\n", " ")
+    found = _shape_body(statement.strip())
+    if found is None:
+        return None
+    drop, _name, _open = found
+    if drop > len(body):
+        return None
+    return line[:indent] + body[drop:] + line[len(stripped):]
 
 
 def shape_file(path, stats, dry_run=False, sink=None):
     text = open(path, encoding="utf-8", errors="replace").read()
+    lines = text.splitlines(keepends=True)
     out = []
     changed = 0
-    for line in text.splitlines(keepends=True):
+    offset = 0
+    for line in lines:
         new = shape_line(line)
+        if new is None:
+            new = shape_wrapped(text, offset, line)
+        offset += len(line)
         if new is None or new == line:
             out.append(line)
             continue

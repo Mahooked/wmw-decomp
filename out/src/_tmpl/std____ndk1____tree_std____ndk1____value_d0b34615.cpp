@@ -52,7 +52,7 @@ template<> void std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Bone*,Wal
     *param_1 = *(long *)*param_1;
     param_4 = (undefined8 *)*param_3;
   }
-  std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  std::__ndk1::__tree_balance_after_insert(param_1[1],param_4);
   param_1[2] = param_1[2] + 1;
   return;
 }

@@ -167,10 +167,10 @@ void Walaber::CameraController::update(undefined8 * in_x0, float p0)
         uVar2 = uVar8 + 1 & 0x3f;
         lStack_58 = lVar10 + (ulong)(uVar8 >> 6) * 8;
         if (uStack_50 == uVar2) {
-          std::__ndk1::__copy_aligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, true>(auStack_68);
+          std::__ndk1::__copy_aligned(auStack_68);
         }
         else {
-          std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0> std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, true>(auStack_68,
+          std::__ndk1::__copy_unaligned(auStack_68,
                           lVar10 + (ulong)(uVar8 >> 6) * 8 + ((ulong)(uStack_50 + 1 >> 3) & 8),uVar2
                           ,lVar10 + ((ulong)in_x0[0x13] >> 3 & 0x1ffffffffffffff8),
                           in_x0[0x13] & 0x3f,&lStack_58);

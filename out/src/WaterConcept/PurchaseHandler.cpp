@@ -362,7 +362,7 @@ LAB_0043d9fc:
         goto LAB_0043da6c;
       }
                     /* try { // try from 0043dba8 to 0043dbbf has its CatchHandler @ 0043e470 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0,&DAT_0073a068,
+      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0,&DAT_0073a068,
                       " NOT IN (\'bundle01\',\'megabundle01\',\'locksmith_one\',\'alliepack01\',\'locksmith_allie\')"
                      );
       if ((uStack_e0 & 1) != 0) {
@@ -424,7 +424,7 @@ LAB_0043da6c:
       iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_b0,0,0xffffffffffffffff,"megabundle01",0xc);
       if (iVar6 == 0) {
                     /* try { // try from 0043dbd0 to 0043dbe7 has its CatchHandler @ 0043e468 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0,&DAT_0073a068,
+        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2c0,&DAT_0073a068,
                         " NOT IN (\'bundle01\',\'megabundle01\',\'locksmith_one\')");
         if ((uStack_e0 & 1) != 0) {
           *puStack_d0 = 0;

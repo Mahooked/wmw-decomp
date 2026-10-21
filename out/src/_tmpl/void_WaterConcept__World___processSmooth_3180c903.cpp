@@ -71,7 +71,7 @@ void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param
               pcVar7 = (char *)(lVar6 + 0x1a);
             }
             if (*pcVar7 != '\0') {
-              void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>(param_1,uVar12 | uVar11,CONCAT44(uVar8,uVar2),CONCAT44(iVar9,iVar3),
+              WaterConcept::World::_walkStrip(param_1,uVar12 | uVar11,CONCAT44(uVar8,uVar2),CONCAT44(iVar9,iVar3),
                               param_4);
             }
           }
@@ -157,7 +157,7 @@ void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param
               pcVar8 = (char *)(lVar7 + 0x1a);
             }
             if (*pcVar8 != '\0') {
-              void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>(param_1,uVar13 | uVar12,CONCAT44(uVar9,uVar2),CONCAT44(iVar10,iVar3),
+              WaterConcept::World::_walkStrip(param_1,uVar13 | uVar12,CONCAT44(uVar9,uVar2),CONCAT44(iVar10,iVar3),
                               param_4);
             }
           }
@@ -243,7 +243,7 @@ void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param
               pcVar7 = (char *)(lVar6 + 0x1a);
             }
             if (*pcVar7 != '\0') {
-              void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>(param_1,uVar13 | uVar12,CONCAT44(uVar8,uVar2),CONCAT44(iVar10,iVar3),
+              WaterConcept::World::_walkStrip(param_1,uVar13 | uVar12,CONCAT44(uVar8,uVar2),CONCAT44(iVar10,iVar3),
                               param_4);
             }
           }
@@ -327,7 +327,7 @@ void WaterConcept::World::_processSmoothingStrips(long *param_1,undefined8 param
               pcVar7 = (char *)(lVar6 + 0x1a);
             }
             if (*pcVar7 != '\0') {
-              void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>(param_1,uVar12 | uVar11,CONCAT44(uVar8,uVar2),CONCAT44(iVar9,iVar3),
+              WaterConcept::World::_walkStrip(param_1,uVar12 | uVar11,CONCAT44(uVar8,uVar2),CONCAT44(iVar9,iVar3),
                               param_4);
             }
           }

@@ -2579,7 +2579,7 @@ LAB_004b1360:
       uVar24 = uStack_188;
     }
                     /* try { // try from 004b1210 to 004b1233 has its CatchHandler @ 004b29f4 */
-    plVar27 = (long *)std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(std::__ndk1::cout,pvVar39,uVar24);
+    plVar27 = (long *)std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(std::__ndk1::cout,pvVar39,uVar24);
     std::__ndk1::ios_base::getloc(&uStack_1b0,(long)plVar27 + *(long *)(*plVar27 + -0x18));
                     /* try { // try from 004b1234 to 004b1253 has its CatchHandler @ 004b28e0 */
     plVar32 = (long *)std::__ndk1::locale::use_facet(&uStack_1b0,&std::__ndk1::ctype<char>::id);

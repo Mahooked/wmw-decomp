@@ -71,7 +71,7 @@ template<> long * std::__ndk1::__tree<std::__ndk1::__value_type<void*,Walaber::S
     *param_1 = plVar3;
   }
   param_1[2] = param_1[2] + -1;
-  std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
+  std::__ndk1::__tree_remove(param_1[1],param_2);
   ((Walaber::SharedPtr<Walaber::Callback> *)(long)param_2 + 0x28)->~SharedPtr<Walaber::Callback>();
   operator delete(param_2);
   return plVar3;
@@ -101,7 +101,7 @@ template<> void std::__ndk1::__tree<std::__ndk1::__value_type<void*,Walaber::Sha
     *param_1 = *(long *)*param_1;
     param_4 = (undefined8 *)*param_3;
   }
-  std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  std::__ndk1::__tree_balance_after_insert(param_1[1],param_4);
   param_1[2] = param_1[2] + 1;
   return;
 }

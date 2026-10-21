@@ -231,7 +231,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0, undefi
     uStack_118 = 0x18;
                     /* try { // try from 004013fc to 0040142f has its CatchHandler @ 004014c0 */
     uVar2 = ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>> *)(*in_x1))->operator<<(&ppuStack_180);
-    std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar2,&DAT_0062359c,1);
+    std::__ndk1::__put_character_sequence(uVar2,&DAT_0062359c,1);
     ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>> *)(in_x1[1]))->operator<<();
     std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& std::__ndk1::operator>><char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_190,(long)p0 + 0x20);
     Walaber::ValueTweaker::TweakableValue::_fireMappings(p0);
@@ -309,11 +309,11 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
     uStack_118 = 0x18;
                     /* try { // try from 00401774 to 004017d7 has its CatchHandler @ 00401868 */
     uVar2 = ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>> *)(*param_2))->operator<<(&ppuStack_180);
-    std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar2,&DAT_0062359c,1);
+    std::__ndk1::__put_character_sequence(uVar2,&DAT_0062359c,1);
     uVar2 = ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>> *)(param_2[1]))->operator<<();
-    std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar2,&DAT_0062359c,1);
+    std::__ndk1::__put_character_sequence(uVar2,&DAT_0062359c,1);
     uVar2 = ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>> *)(param_2[2]))->operator<<();
-    std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar2,&DAT_0062359c,1);
+    std::__ndk1::__put_character_sequence(uVar2,&DAT_0062359c,1);
     ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>> *)(param_2[3]))->operator<<();
     std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& std::__ndk1::operator>><char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_190,param_1 + 8);
     Walaber::ValueTweaker::TweakableValue::_fireMappings(param_1);
@@ -394,16 +394,16 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0, undefine
     uStack_118 = 0x18;
     auStack_194[0] = *in_x1;
                     /* try { // try from 00401b58 to 00401be7 has its CatchHandler @ 00401c78 */
-    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(&ppuStack_180,auStack_194,1);
-    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,&DAT_0062359c,1);
+    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(&ppuStack_180,auStack_194,1);
+    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(uVar3,&DAT_0062359c,1);
     auStack_194[0] = in_x1[1];
-    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,auStack_194,1);
-    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,&DAT_0062359c,1);
+    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(uVar3,auStack_194,1);
+    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(uVar3,&DAT_0062359c,1);
     auStack_194[0] = in_x1[2];
-    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,auStack_194,1);
-    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,&DAT_0062359c,1);
+    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(uVar3,auStack_194,1);
+    uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(uVar3,&DAT_0062359c,1);
     auStack_194[0] = in_x1[3];
-    std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,auStack_194,1);
+    std::__ndk1::__put_character_sequence(uVar3,auStack_194,1);
     std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& std::__ndk1::operator>><char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_190,piVar2 + 8);
     Walaber::ValueTweaker::TweakableValue::_fireMappings(piVar2);
     ppuStack_190 = &PTR__basic_stringstream_007110f0;

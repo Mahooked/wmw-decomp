@@ -295,7 +295,7 @@ void WaterConcept::NotificationSingleton::notify
     iStack_74 = param_5;
     ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(auStack_70))->operator=(param_4);
     std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::push_back(param_2 + 0x18,auStack_90);
-    std::__ndk1::__sift_up<WaterConcept::NotificationSingleton::NotificationData::NotificationCompare&, std::__ndk1::__deque_iterator<WaterConcept::NotificationSingleton::NotificationData, WaterConcept::NotificationSingleton::NotificationData*, WaterConcept::NotificationSingleton::NotificationData&, WaterConcept::NotificationSingleton::NotificationData**, long, 64l>>();
+    std::__ndk1::__sift_up();
     pvVar1 = (void *)((ulong)auStack_90 | 1);
     if ((auStack_90[0] & 1) != 0) {
       pvVar1 = pvStack_80;
@@ -353,7 +353,7 @@ void WaterConcept::NotificationSingleton::notify
   uStack_68 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) * (float)((ulong)*param_6 >> 0x20),
                        (float)_sScreenSize * (float)*param_6);
   std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::push_back(param_2 + 0x18,auStack_a0);
-  std::__ndk1::__sift_up<WaterConcept::NotificationSingleton::NotificationData::NotificationCompare&, std::__ndk1::__deque_iterator<WaterConcept::NotificationSingleton::NotificationData, WaterConcept::NotificationSingleton::NotificationData*, WaterConcept::NotificationSingleton::NotificationData&, WaterConcept::NotificationSingleton::NotificationData**, long, 64l>>();
+  std::__ndk1::__sift_up();
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -570,7 +570,7 @@ void WaterConcept::NotificationSingleton::update(void *p0, float * in_x1)
         *(ulong *)((long)puVar16 + -0x1f) = CONCAT17(uStack_81,uStack_88);
         puVar16[-2] = uVar2;
         puVar16[-1] = uVar12;
-        std::__ndk1::__sift_down<WaterConcept::NotificationSingleton::NotificationData::NotificationCompare&, std::__ndk1::__deque_iterator<WaterConcept::NotificationSingleton::NotificationData, WaterConcept::NotificationSingleton::NotificationData*, WaterConcept::NotificationSingleton::NotificationData&, WaterConcept::NotificationSingleton::NotificationData**, long, 64l>>(plVar9,puVar14,plVar15,puVar16 + -8,&uStack_b0,lVar11 + -1,plVar9,puVar14);
+        std::__ndk1::__sift_down(plVar9,puVar14,plVar15,puVar16 + -8,&uStack_b0,lVar11 + -1,plVar9,puVar14);
       }
     }
     std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::pop_back((long)p0 + 0x18);
@@ -1937,7 +1937,7 @@ void WaterConcept::NotificationSingleton::clearNotifications(long param_1)
           *(undefined8 *)((long)puVar17 + -0x1f) = uVar9;
           puVar17[-2] = uVar4;
           puVar17[-1] = uVar11;
-          std::__ndk1::__sift_down<WaterConcept::NotificationSingleton::NotificationData::NotificationCompare&, std::__ndk1::__deque_iterator<WaterConcept::NotificationSingleton::NotificationData, WaterConcept::NotificationSingleton::NotificationData*, WaterConcept::NotificationSingleton::NotificationData&, WaterConcept::NotificationSingleton::NotificationData**, long, 64l>>(plVar1,puVar14,plVar15,puVar17 + -8,&uStack_78,lVar8 + -1,plVar1,puVar14);
+          std::__ndk1::__sift_down(plVar1,puVar14,plVar15,puVar17 + -8,&uStack_78,lVar8 + -1,plVar1,puVar14);
         }
       }
       std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::pop_back(param_1 + 0x18);

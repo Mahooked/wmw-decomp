@@ -21654,7 +21654,7 @@ LAB_00465fbc:
               }
 LAB_00465fc4:
               if (uVar24 - 2 < 3) {
-                iVar20 = int WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderSameRockOutline>(p0,uVar48,iVar10,iVar11);
+                iVar20 = int WaterConcept::World::_getGridEdgeValue(p0,uVar48,iVar10,iVar11);
                 uVar37 = uVar37 | iVar20 == 0;
               }
             }
@@ -21733,10 +21733,10 @@ LAB_004665b0:
             lVar32 = (long)iVar27;
             *(undefined1 *)(lVar41 + 0x17) = 3;
             if (bVar33 == 1) {
-              WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeDirt, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
+              WaterConcept::World::_getGridEdgeValue(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
             }
             else if (bVar33 - 2 < 3) {
-              WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeRockSmoothing, WaterConcept::ConsiderEdgeRockOutline, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
+              WaterConcept::World::_getGridEdgeValue(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
             }
             else {
               if (bVar33 - 5 < 2) {
@@ -21773,7 +21773,7 @@ LAB_004665b0:
               }
               else {
                 if (bVar33 == 7) {
-                  WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderEdgeDefault, WaterConcept::ConsiderEdgeCollision>(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
+                  WaterConcept::World::_getGridEdgeValue(p0,uVar43 | uVar47,bVar33,iVar10,iVar11);
                   goto LAB_004667d4;
                 }
                 lVar26 = lVar26 + lVar32 * 0x1c;
@@ -22758,7 +22758,7 @@ void WaterConcept::World::_killFluidPool(WaterConcept__ParticleDescription *p0,f
   plStack_60 = &lStack_58;
                     /* try { // try from 00468824 to 0046883f has its CatchHandler @ 00468900 */
   WaterConcept::Fluids::getParticlesForFluid(*(undefined8 *)&p0[0x5a].f_0x8,*(undefined4 *)in_x1);
-  WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>(CONCAT44(in_register_00005004,p1),p0);
+  WaterConcept::World::_addParticleAndNeighbors(CONCAT44(in_register_00005004,p1),p0);
   uStack_68 = *(undefined4 *)(in_x1 + 1);
   uStack_70 = *in_x1;
   plVar5 = plStack_60;
@@ -23071,8 +23071,8 @@ void WaterConcept::World::createCollisionForGrid
   if (iVar3 <= iVar5) {
     iVar5 = iVar3;
   }
-  WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAll>(param_1,uVar1,CONCAT44(iVar5,iVar4),1,param_5,2,param_2,param_3,4,1,0xffffffff);
-  WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameAlgae>(param_1,uVar1,CONCAT44(iVar5,iVar4),5,param_5,1,param_2,param_3,4,2,0xffffffff);
+  WaterConcept::World::_processSmoothingStrips(param_1,uVar1,CONCAT44(iVar5,iVar4),1,param_5,2,param_2,param_3,4,1,0xffffffff);
+  WaterConcept::World::_processSmoothingStrips(param_1,uVar1,CONCAT44(iVar5,iVar4),5,param_5,1,param_2,param_3,4,2,0xffffffff);
   return;
 }
 
@@ -23182,7 +23182,7 @@ void WaterConcept::World::createPolygonsForGrid
   uStack_78._4_4_ = iVar8;
   if (param_5 - 2 < 3) {
                     /* try { // try from 004690d0 to 00469103 has its CatchHandler @ 004693e4 */
-    WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefault>(param_1,uVar2,CONCAT44(iVar5,iVar4),param_5);
+    WaterConcept::World::_processSmoothingStrips(param_1,uVar2,CONCAT44(iVar5,iVar4),param_5);
     if (param_5 == 2) {
       plVar12 = (long *)(*(long *)((int *)param_1[0x79] + 2) +
                          (long)(iVar14 + *(int *)param_1[0x79] * iVar17) * 0x18 + 8);
@@ -23197,7 +23197,7 @@ void WaterConcept::World::createPolygonsForGrid
         } while (plVar13 != (long *)0x0);
         if ((plVar16 != plVar12) && ((int)plVar16[4] < 3)) {
                     /* try { // try from 00469160 to 004691f7 has its CatchHandler @ 004693dc */
-          WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameRockOutline>(param_1,uVar2,CONCAT44(iVar5,iVar4),2);
+          WaterConcept::World::_processSmoothingStrips(param_1,uVar2,CONCAT44(iVar5,iVar4),2);
           *(int *)((long)plVar16 + 300) = (int)((ulong)(param_3[1] - *param_3) >> 2) * -0x55555555;
           glBindBuffer(0x8892,(int)plVar16[0x25]);
           iVar4 = *(int *)((long)plVar16 + 300);
@@ -23223,7 +23223,7 @@ void WaterConcept::World::createPolygonsForGrid
     } while (plVar13 != (long *)0x0);
     if ((plVar16 == plVar12) || (1 < (int)plVar16[4])) goto LAB_00469398;
                     /* try { // try from 00469260 to 004692f3 has its CatchHandler @ 004693d8 */
-    WaterConcept::World::_processSmoothingStrips<WaterConcept::ConsiderSameDefault>(param_1,uVar2,CONCAT44(iVar5,iVar4),1);
+    WaterConcept::World::_processSmoothingStrips(param_1,uVar2,CONCAT44(iVar5,iVar4),1);
     *(int *)((long)plVar16 + 300) = (int)((ulong)(param_3[1] - *param_3) >> 2) * -0x55555555;
     glBindBuffer(0x8892,(int)plVar16[0x25]);
     iVar4 = *(int *)((long)plVar16 + 300);

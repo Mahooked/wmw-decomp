@@ -883,7 +883,7 @@ LAB_00402a20:
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,10);
       ((std::__ndk1::locale *)&pbStack_1f0)->~locale();
                     /* try { // try from 00402ad4 to 00402ae3 has its CatchHandler @ 00402cb8 */
-      std::__ndk1::getline<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_1c0,auStack_1d8,uVar2);
+      std::__ndk1::getline(&ppuStack_1c0,auStack_1d8,uVar2);
       if (!bVar7) {
                     /* try { // try from 00402ae8 to 00402af7 has its CatchHandler @ 00402c74 */
         Walaber::StringHelper::split(&pbStack_1f0,auStack_1d8,0x3b);

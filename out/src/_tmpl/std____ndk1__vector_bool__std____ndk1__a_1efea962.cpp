@@ -167,10 +167,10 @@ template<> std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong 
     lStack_48 = (long)puVar5 + (uVar4 >> 3 & 0x1ffffffffffffff8);
     uStack_40 = (uint)uVar4 & 0x3f;
     if (cVar2 == '\0') {
-      std::__ndk1::__fill_n_false<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>>(&lStack_48,p1);
+      std::__ndk1::__fill_n_false(&lStack_48,p1);
     }
     else {
-      std::__ndk1::__fill_n_true<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>>(&lStack_48,p1);
+      std::__ndk1::__fill_n_true(&lStack_48,p1);
     }
   }
   return;

@@ -112,7 +112,7 @@ template<> std::__ndk1::collate_byname<wchar_t>::collate_byname(undefined8 *para
   param_1[2] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d6604 to 005d6617 has its CatchHandler @ 005d663c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,
+    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,
                  "collate_byname<wchar_t>::collate_byname(size_t refs) failed to construct for ",
                  param_2);
                     /* try { // try from 005d6618 to 005d661f has its CatchHandler @ 005d6624 */

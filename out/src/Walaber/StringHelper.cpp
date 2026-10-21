@@ -270,7 +270,7 @@ long Walaber::StringHelper::split(std::__ndk1::basic_string<char, std::__ndk1::c
   auStack_1a8[1] = 0;
   pvStack_198 = (void *)0x0;
                     /* try { // try from 003f8208 to 003f825f has its CatchHandler @ 003f8308 */
-  while (plVar1 = (long *)std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& std::__ndk1::getline<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_190,auStack_1a8,param_2),
+  while (plVar1 = (long *)std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& std::__ndk1::getline(&ppuStack_190,auStack_1a8,param_2),
         (*(byte *)((long)plVar1 + *(long *)(*plVar1 + -0x18) + 0x20) & 5) == 0) {
     if (*(long *)(param_3 + 8) == *(long *)(param_3 + 0x10)) {
       std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__push_back_slow_path<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(param_3,auStack_1a8);

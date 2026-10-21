@@ -45,7 +45,7 @@ template<> void std::__ndk1::__tree<unsigned_int,std::__ndk1::less<unsigned_int>
     *param_1 = *(long *)*param_1;
     param_4 = (undefined8 *)*param_3;
   }
-  std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  std::__ndk1::__tree_balance_after_insert(param_1[1],param_4);
   param_1[2] = param_1[2] + 1;
   return;
 }
@@ -89,7 +89,7 @@ template<> long * std::__ndk1::__tree<unsigned_int,std::__ndk1::less<unsigned_in
     *param_1 = plVar3;
   }
   param_1[2] = param_1[2] + -1;
-  std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
+  std::__ndk1::__tree_remove(param_1[1],param_2);
   operator delete(param_2);
   return plVar3;
 }

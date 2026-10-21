@@ -284,7 +284,7 @@ void Walaber::SpriteBatch::_flushImmediate(undefined8 *param_1)
           piVar1 = piVar15 + 2;
           if (iVar13 == *piVar17) {
             param_1 = (undefined8 *)
-                      std::__ndk1::enable_if<__is_forward_iterator<std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>>::value&&is_constructible<Walaber::PositionTextureColorVert, std::__ndk1::iterator_traits<std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>>::reference>::value, std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>>::type std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::insert<std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>>(piVar1,*(undefined8 *)(piVar15 + 4),
+                      std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::insert<std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>>(piVar1,*(undefined8 *)(piVar15 + 4),
                                       *(undefined8 *)(piVar17 + 2),*(undefined8 *)(piVar17 + 4));
             puVar18 = *(uint **)(piVar17 + 8);
             puVar10 = *(uint **)(piVar17 + 10);

@@ -81,7 +81,7 @@ template<> std::__ndk1::promise<void>::~promise()
         puStack_78 = puStack_48;
         uStack_80 = uStack_50;
         appuStack_90[0] = &PTR__future_error_00719378;
-        std::make_exception_ptr<std::__ndk1::future_error>(auStack_70,appuStack_90);
+        std::make_exception_ptr(auStack_70,appuStack_90);
                     /* try { // try from 005f1534 to 005f153f has its CatchHandler @ 005f15dc */
         std::__ndk1::__assoc_sub_state::set_exception(lVar3,auStack_70);
         ((std::exception_ptr *)auStack_70)->~exception_ptr();

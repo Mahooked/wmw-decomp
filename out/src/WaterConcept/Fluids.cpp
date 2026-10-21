@@ -1242,7 +1242,7 @@ void WaterConcept::Fluids::removeParticle(WaterConcept__ParticleDescription *p0,
   lVar1 = (ulong)*(uint *)(**(long **)(*(long *)p0 + (long)*in_x1 * 0xf0 + 0xe0) +
                            (long)in_x1[1] * 0x90 + 0x8c) * 0x18;
   plVar3 = (long *)(lVar2 + lVar1 + 8);
-  lVar1 = std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove<std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>, WaterConcept::ParticleDescription>(*(undefined8 *)(lVar2 + lVar1),*plVar3);
+  lVar1 = std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove(*(undefined8 *)(lVar2 + lVar1),*plVar3);
   if (lVar1 != *plVar3) {
     *plVar3 = lVar1;
   }
@@ -1346,7 +1346,7 @@ void WaterConcept::Fluids::changeParticleToFluidType(int p0,WaterConcept__Partic
     lVar5 = *(long *)(plVar3[0x79fa] + 8);
     puVar11 = (undefined8 *)(lVar5 + uVar13 * 0x18);
     plVar10 = puVar11 + 1;
-    puVar4 = (undefined8 *)std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove<std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>, WaterConcept::ParticleDescription>(*puVar11,*plVar10,&uStack_78);
+    puVar4 = (undefined8 *)std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove(*puVar11,*plVar10,&uStack_78);
     if (puVar4 != (undefined8 *)*plVar10) {
       *plVar10 = (long)puVar4;
     }
@@ -1441,7 +1441,7 @@ void WaterConcept::Fluids::changeParticleToFluidTypeWithDamping
     lVar5 = *(long *)(plVar4[0x79fa] + 8);
     puVar9 = (undefined8 *)(lVar5 + uVar11 * 0x18);
     plVar8 = puVar9 + 1;
-    puVar6 = (undefined8 *)std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove<std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>, WaterConcept::ParticleDescription>(*puVar9,*plVar8,&uStack_88);
+    puVar6 = (undefined8 *)std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove(*puVar9,*plVar8,&uStack_88);
     if (puVar6 != (undefined8 *)*plVar8) {
       *plVar8 = (long)puVar6;
     }
@@ -1833,7 +1833,7 @@ void WaterConcept::Fluids::_updateFluidGrid(long *param_1)
                                          + 0x34);
               plVar13 = (long *)(*(long *)(param_1[0x79fa] + 8) + lVar7 + 8);
               iStack_78 = iVar2;
-              lVar7 = std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove<std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>, WaterConcept::ParticleDescription>(*(undefined8 *)(*(long *)(param_1[0x79fa] + 8) + lVar7),
+              lVar7 = std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*> std::__ndk1::remove(*(undefined8 *)(*(long *)(param_1[0x79fa] + 8) + lVar7),
                                       *plVar13,&iStack_78);
               if (lVar7 != *plVar13) {
                 *plVar13 = lVar7;
@@ -2394,7 +2394,7 @@ void WaterConcept::Fluids::_handleParticleCollisions(long param_1)
     uStack_50 = 0;
     if (&pvStack_60 != (void **)puVar1) {
                     /* try { // try from 00408708 to 00408723 has its CatchHandler @ 0040881c */
-      std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::Fluids::FluidCollisionRecord*>::value&&is_constructible<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::iterator_traits<WaterConcept::Fluids::FluidCollisionRecord*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::assign<WaterConcept::Fluids::FluidCollisionRecord*>(&pvStack_60,*puVar1,
+      std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>::assign<WaterConcept::Fluids::FluidCollisionRecord*>(&pvStack_60,*puVar1,
                       *(undefined8 *)((long)&__DT_SYMTAB[0x1c09].st_name + param_1));
       plVar3 = (long *)*plVar4;
     }

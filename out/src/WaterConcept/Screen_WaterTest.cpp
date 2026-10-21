@@ -3318,7 +3318,7 @@ void WaterConcept::Screen_WaterTest::enter(long param_1)
       uVar6 = CONCAT17(uStack_a9,CONCAT16(uStack_aa,CONCAT51(uStack_af,uStack_b0)));
     }
                     /* try { // try from 0056eb60 to 0056eb83 has its CatchHandler @ 00571178 */
-    plVar15 = (long *)std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(std::__ndk1::cout,uVar6,uVar14);
+    plVar15 = (long *)std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence(std::__ndk1::cout,uVar6,uVar14);
     std::__ndk1::ios_base::getloc(&bStack_100,(long)plVar15 + *(long *)(*plVar15 + -0x18));
                     /* try { // try from 0056eb84 to 0056eba3 has its CatchHandler @ 005710a4 */
     plVar16 = (long *)std::__ndk1::locale::use_facet(&bStack_100,&std::__ndk1::ctype<char>::id);

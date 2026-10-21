@@ -7536,7 +7536,7 @@ LAB_00593df4:
               uStack_2b8 = 99;
               uStack_2b2 = 0;
                     /* try { // try from 00593f6c to 00593f7b has its CatchHandler @ 005979f4 */
-              std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2e0,"PackName=\'",
+              std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_2e0,"PackName=\'",
                            plVar17[0x1b] + (long)(int)(uVar4 - *(int *)((long)plVar17 + 500)) * 0x18
                           );
                     /* try { // try from 00593f7c to 00593f8f has its CatchHandler @ 005979e0 */
