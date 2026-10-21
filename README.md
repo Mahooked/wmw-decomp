@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **45,048** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **44,981** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 45,048 diagnostics into
+   files against synthesised declarations and sorts the 44,981 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
    now decided — illegal return types and parameters on 695 constructors and
@@ -240,7 +240,7 @@ re-inferred.
   SFINAE-disabled for an *arithmetic* target (`_EnableIf<!__is_arithmetic(T)>`),
   which leaves a single non-template `operator long long()` as the only
   candidate there, while a pointer, class or enum target still uses the
-  template. *use of overloaded operator is ambiguous* **2,016 → 30** (the 30
+  template. *use of overloaded operator is ambiguous* **2,016 → 35** (the 35
   that remain are `widget = &something`, where the address of a `_Datum` is an
   `_Addr` that converts to any pointer type), and the file it dominated —
   `_globals.cpp`, the libxml2/zlib/GLES bodies with no owning class — falls by
@@ -267,6 +267,31 @@ re-inferred.
   (`&storage` reaching a parameter Ghidra typed `long`, 17; a `byte *` reaching
   an `undefined8` parameter, 14; two overloads that now exist to be chosen
   between). The 22 files carry 11,313 diagnostics before and 11,024 after.
+- The baseline driven **45,048 → 44,981** by putting libc++'s exception
+  hierarchy back where the ABI has it. libc++ is built with an inline namespace,
+  and a *mangled* name elides it, so the same entity reaches the tree spelled
+  two ways: the `.so`'s own symbols say `_ZNSt11logic_error…` — `std::logic_error`,
+  declared directly in `std` — while a *type* printed inside another signature
+  says `std::__ndk1::…`. The prelude had declared `exception`, `exception_ptr`,
+  `logic_error` and `runtime_error` inside `inline namespace __ndk1`, which is
+  both spellings at once; the declarations then declared the real
+  `std::logic_error` as well, and the compiler had two classes for every one of
+  them — *reference to 'logic_error' is ambiguous*, **205** diagnostics, every one
+  of them a reference to one of those four names. The four declarations now sit
+  in `std` beside the ones libc++ really does keep there (`bad_alloc`,
+  `type_info`, `bad_cast`…), `_PRELUDE_CLASSES` loses the four duplicate
+  spellings (408 → **404** classes declared), and the flat spelling the bodies
+  use — `std__logic_error`, `std__exception_ptr` — can now be aliased like any
+  other, which retires the exception the generator had been making for exactly
+  these names. `std/exception.cpp` compiles clean; **219** diagnostics repaired
+  (the 205 ambiguities, 5 *expected unqualified-id*, 5 *variable has incomplete
+  type*), **152** re-spelled one level deeper, of which **100** are the
+  constructor-name error a *static-form* constructor call produces once the name
+  stops being ambiguous (`std::logic_error::logic_error(puVar6,\n "…")`, the
+  wrapped form `tools/shape_ctor_calls.py` deliberately leaves alone) and the
+  rest are the residue inside `out/src/std` — the four files that were hiding
+  behind the ambiguity, which is also where 5 of the 35 *operator `=` is
+  ambiguous* sites now show up.
 
 ## What the game turned out to be
 
@@ -1147,12 +1172,18 @@ an integer first — to `long long` through a *non-template* conversion that an
 arithmetic target prefers (`_EnableIf` removes the template for those, so the
 built-in operator has one candidate). Ghidra's `code` is a class whose
 call operator takes any arguments, because the callbacks it is cast to before
-being called -- `(*(code *)xmlMalloc)(n)` -- were never recovered.
+being called -- `(*(code *)xmlMalloc)(n)` -- were never recovered. libc++ is
+split the way the ABI splits it: what libc++ puts in its inline namespace is
+declared in `__ndk1` (`locale`, `ios_base`, the shared-count and threading
+types, the `basic_string`/`vector`/`unique_ptr` primaries), while the exception
+hierarchy and `type_info` — whose mangled names carry no `__ndk1`
+(`_ZNSt11logic_error…`) — are declared directly in `std`.
 
-Those declarations compile clean: **408 classes, 272 member declarations, 173
+Those declarations compile clean: **404 classes, 272 member declarations, 173
 type names** that nothing declares (each an opaque forward declaration) and
-**373** aliases mapping Ghidra's flattened spelling to the class it names —
-280 for a class at namespace scope, 93 for one nested inside a class, emitted
+**388** aliases mapping Ghidra's flattened spelling to the class it names —
+295 for a class at namespace scope (19 of them new: the flat spelling of the
+exceptions is no longer skipped), 93 for one nested inside a class, emitted
 as soon as its owner is defined — plus **14** derived stubs for the nested
 names a declaration printed before that point already used,
 **8,217 definitions parsed** (12 headers unparsed, 2,383 template-qualified
@@ -1168,9 +1199,9 @@ The baseline over the whole tree:
 | | |
 |---|---|
 | Files checked | 1,467 |
-| Files with at least one error | 1,309 |
-| Diagnostics | 45,048 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) → **45,337** (`_Datum` converts to `long long` through a non-template conversion, so the 1,986 ambiguous `DAT_x` binary expressions resolve — 2,032 diagnostics repaired, 7 re-spelled) → **45,048** (320 singleton statics recovered from the call-shaped qualifier Ghidra prints, `getInstancePtr()::instance` → `instance` declared as `_Datum` — 323 diagnostics repaired, 34 re-spelled one level deeper) |
+| Files with at least one error | 1,308 |
+| Diagnostics | 44,981 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) → **45,337** (`_Datum` converts to `long long` through a non-template conversion, so the 1,986 ambiguous `DAT_x` binary expressions resolve — 2,032 diagnostics repaired, 7 re-spelled) → **45,048** (320 singleton statics recovered from the call-shaped qualifier Ghidra prints, `getInstancePtr()::instance` → `instance` declared as `_Datum` — 323 diagnostics repaired, 34 re-spelled one level deeper) → **44,981** (the libc++ inline-namespace split put right: the exception hierarchy is declared in `std`, as the `.so`'s mangled names have it, so the 205 *reference to 'X' is ambiguous* are gone — 219 diagnostics repaired, 152 re-spelled one level deeper) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
@@ -1181,8 +1212,8 @@ largest buckets are **not** defects in the game:
   and kinds (*too many template arguments* is **0**) and now carrying the
   members the template-qualified definitions prove exist — but not the whole of
   libc++.
-- **7,621** *no matching function*, **2,029** *too many arguments to function
-  call* (down from 4,817 at its worst) and **2,193** *too few*: the
+- **7,630** *no matching function*, **2,035** *too many arguments to function
+  call* (down from 4,817 at its worst) and **2,191** *too few*: the
   call/definition arity
   divergence, now largely decided. Ghidra binds the callee's `w0` as its
   object parameter but leaves the argument the binary passes in the next
@@ -1198,10 +1229,10 @@ largest buckets are **not** defects in the game:
   all. What remains is the residue: duplicate definitions of one member that
   decompile with divergent shapes, and call sites Ghidra printed without the
   argument.
-- **3,648** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
+- **3,666** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
   definition fails to parse, its own parameter names (`p0`, `p1`, `param_1`)
   are not in scope in the body, and every use of them is reported.
-- **357** *call to non-static member function without an object argument*,
+- **362** *call to non-static member function without an object argument*,
   down from **17,182**, and down from **730** as of the previous step: a
   decision, not a defect, and now decided. Ghidra writes every method call
   in static form, so member declarations are synthesised `static` unless the

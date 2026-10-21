@@ -296,12 +296,17 @@ struct ios_base;
 struct __shared_count;
 struct __shared_weak_count;
 struct piecewise_construct_t;
+struct __thread_struct;
+}
+/* The exception hierarchy is the other way round: libc++ declares it directly
+   in ``std``, and the .so's own mangled names say so (``_ZNSt11logic_error...``,
+   ``_ZNSt13exception_ptr...``) -- there is no ``__ndk1`` in them.  Declaring
+   these inside the inline namespace would make ``std::logic_error`` two
+   classes at once, and every reference to it ambiguous. */
 struct exception;
 struct exception_ptr;
 struct logic_error;
 struct runtime_error;
-struct __thread_struct;
-}
 }
 
 namespace Walaber {

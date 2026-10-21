@@ -103,16 +103,20 @@ _NAMESPACE_ROOT = frozenset((
 ))
 
 #: Classes the prelude declares, so the class/namespace split stays consistent.
+#: libc++ splits in two: the containers and utilities are members of the inline
+#: namespace ``__ndk1``, while the exception hierarchy, ``type_info`` and
+#: ``nothrow`` are declared directly in ``std`` -- the .so's mangled names say
+#: which (``_ZNSt11logic_error...`` has no ``__ndk1`` in it).
 _PRELUDE_CLASSES = [
-    "std::__ndk1::locale", "std::__ndk1::ios_base", "std::__ndk1::exception",
-    "std::__ndk1::exception_ptr", "std::__ndk1::logic_error",
-    "std::__ndk1::runtime_error", "std::__ndk1::piecewise_construct_t",
+    "std::__ndk1::locale", "std::__ndk1::ios_base",
+    "std::__ndk1::piecewise_construct_t",
     "std::__ndk1::__shared_count", "std::__ndk1::__shared_weak_count",
     "std::__ndk1::__thread_struct", "std::__ndk1::mutex",
     "std::__ndk1::recursive_mutex", "std::__ndk1::condition_variable",
     "std::__ndk1::thread", "std::__ndk1::once_flag",
     "std::bad_cast", "std::bad_alloc", "std::bad_typeid",
     "std::bad_array_length", "std::bad_array_new_length", "std::exception",
+    "std::exception_ptr", "std::logic_error", "std::runtime_error",
     "std::type_info", "std::nested_exception",
 ]
 
@@ -993,11 +997,11 @@ def generate(model, path):
     for cls in model.classes:
         if "<" in cls or cls in _CLANG_IMPLICIT:
             continue
-        # ``std::exception`` and ``std::__ndk1::exception`` are the same
-        # inline-namespace member, so the unqualified-in-std spelling is
-        # ambiguous; only the explicitly nested ``std::__ndk1::`` form is safe.
-        if cls.startswith("std::") and not cls.startswith("std::__ndk1::"):
-            continue
+        # ``std::exception`` is *not* ``std::__ndk1::exception``: libc++
+        # declares the exception hierarchy directly in ``std`` (the .so's
+        # mangled names have no ``__ndk1`` in them), so the flat spelling the
+        # bodies use -- ``std__exception_ptr``, ``std__logic_error`` -- names a
+        # class that exists once and can be aliased like any other.
         flat = cls.replace("::", "__")
         if flat == cls:
             continue
