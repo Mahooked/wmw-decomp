@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **47,362** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **45,337** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 47,362 diagnostics into
+   files against synthesised declarations and sorts the 45,337 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
    now decided — illegal return types and parameters on 695 constructors and
@@ -224,6 +224,27 @@ re-inferred.
   **381 → 0**, *member access into incomplete type* **157 → 0**; the 90 that
   remain are the external types the prelude leaves opaque (`_xmlNode`,
   `_xmlDoc`, `tm`, `__sFILE`).
+
+- The baseline driven **47,362 → 45,337** by making `_Datum` an integer. The
+  placeholder the gate uses for an unnamed data global (`DAT_00634ed4`) was
+  convertible to *any* type through a template conversion function, and that is
+  exactly what a binary expression cannot use: `DAT_x & 1` (a guard byte),
+  `DAT_x >> 3`, `0 < DAT_x`, `DAT_x + lVar1` all have every built-in operator
+  as a candidate, and the candidates do not agree on which conversion function
+  to use, so the compiler declares the expression ambiguous and the body stops
+  there — **1,928** of the **2,016** *use of overloaded operator is ambiguous*
+  diagnostics named a `_Datum` operand. The template conversion is now
+  SFINAE-disabled for an *arithmetic* target (`_EnableIf<!__is_arithmetic(T)>`),
+  which leaves a single non-template `operator long long()` as the only
+  candidate there, while a pointer, class or enum target still uses the
+  template. *use of overloaded operator is ambiguous* **2,016 → 30** (the 30
+  that remain are `widget = &something`, where the address of a `_Datum` is an
+  `_Addr` that converts to any pointer type), and the file it dominated —
+  `_globals.cpp`, the libxml2/zlib/GLES bodies with no owning class — falls by
+  **245** diagnostics (7,113 → 6,868) with no ambiguity left there at all.
+  Diagnostics **47,362 → 45,337**; 2,032 repaired, 7 re-spelled (an expression
+  that used to be ambiguous now resolves to a built-in operator that does not
+  fit exactly, which is where the next pass starts).
 
 ## What the game turned out to be
 
@@ -1097,7 +1118,11 @@ Everything the bodies name that is *not* the game — Ghidra's `undefined8`
 primitives, the ABI helpers, libc and libm, the libc++ primary templates, the
 GLES/XML/NEON/FMOD symbols the `.so` calls by their bare C names — is declared
 in the hand-written `out/check/prelude.h`. `_Datum`, a type that accepts any
-use, stands in for a data global the binary never named (`DAT_00634ed4`). Ghidra's `code` is a class whose
+use, stands in for a data global the binary never named (`DAT_00634ed4`); it
+converts to any pointer, class or enum, and — because a data global is read as
+an integer first — to `long long` through a *non-template* conversion that an
+arithmetic target prefers (`_EnableIf` removes the template for those, so the
+built-in operator has one candidate). Ghidra's `code` is a class whose
 call operator takes any arguments, because the callbacks it is cast to before
 being called -- `(*(code *)xmlMalloc)(n)` -- were never recovered.
 
@@ -1121,8 +1146,8 @@ The baseline over the whole tree:
 |---|---|
 | Files checked | 1,467 |
 | Files with at least one error | 1,309 |
-| Diagnostics | 47,362 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) |
+| Diagnostics | 45,337 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) → **45,337** (`_Datum` converts to `long long` through a non-template conversion, so the 1,986 ambiguous `DAT_x` binary expressions resolve — 2,032 diagnostics repaired, 7 re-spelled) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
@@ -1133,7 +1158,7 @@ largest buckets are **not** defects in the game:
   and kinds (*too many template arguments* is **0**) and now carrying the
   members the template-qualified definitions prove exist — but not the whole of
   libc++.
-- **7,616** *no matching function*, **2,029** *too many arguments to function
+- **7,619** *no matching function*, **2,029** *too many arguments to function
   call* (down from 4,817 at its worst) and **2,193** *too few*: the
   call/definition arity
   divergence, now largely decided. Ghidra binds the callee's `w0` as its

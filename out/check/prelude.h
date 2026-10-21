@@ -310,13 +310,29 @@ template <class T> struct MemberCallback;
 template <class T> struct WeakPtr;
 }
 
+/* SFINAE helper: ``_EnableIf<cond>::type`` names a type only when ``cond``
+   holds, which is how a template member is removed from an overload set
+   without <type_traits> (a freestanding prelude has no headers). */
+template <bool> struct _EnableIf {};
+template <> struct _EnableIf<true> { struct type {}; };
+
 /* ---- placeholder for unresolved data symbols ----
    Globals the .so never named (``DAT_00e12345``) are declared as this type, so
    that any of the ways a body touches them -- load, store, take the address,
    index, call through, cast -- still parses. */
 struct _Datum {
   _Datum() {}
-  template <class T> operator T() const;
+  /* A data global is read as an integer first -- a guard byte (`DAT_x & 1`), a
+     length (`0 < DAT_x`), an offset (`DAT_x + lVar1`) -- and a *template*
+     conversion makes every one of those ambiguous: each built-in operator is
+     a candidate and they use different conversion functions, so the compiler
+     cannot choose between them (1,928 diagnostics).  The template is SFINAE-
+     disabled for an arithmetic target, which leaves the non-template
+     conversion below as the only candidate there; a pointer, class or enum
+     target still uses the template. */
+  template <class T, class = typename _EnableIf<!__is_arithmetic(T)>::type>
+  operator T() const;
+  operator long long() const;
   template <class T> _Datum &operator=(T);
   _Datum &operator=(const _Datum &);
   template <class T> _Datum &operator[](T) const;
