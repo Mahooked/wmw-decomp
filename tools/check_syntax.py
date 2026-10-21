@@ -731,6 +731,18 @@ def _emit_primary(model, key, params, defined):
     lines.append("  template <class... _A> %s(_A...);" % name)
     if ("~" + name) not in members:
         lines.append("  ~%s();" % name)
+    # ``s[i]`` on a recovered string, vector or tuple is a subscript the
+    # harvest missed -- libc++'s ``operator[]`` is a template, so members.tsv
+    # has no row for the class -- and 449 diagnostics named one of the classes
+    # this emits for.  Unlike ``operator=``, a subscript is written in both
+    # forms in the bodies (``basic_string::operator[](p, i)`` *and* ``s[i]``),
+    # so a non-template catch-all for one argument is what both can use.  It is
+    # only declared when the harvest mentions no subscript at all: the classes
+    # the bodies really do subscript -- tuple, Vector2, Color, Rect -- keep the
+    # rows they have, and adding a member to their overload set loses more than
+    # the 51 subscripts it would repair.
+    if not any("operator[" in short for short in members):
+        lines.append("  _Datum operator[](long long);")
     for short in sorted(members):
         if short.startswith("~") or short == name:
             continue

@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **44,981** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **44,499** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 44,981 diagnostics into
+   files against synthesised declarations and sorts the 44,499 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
    now decided — illegal return types and parameters on 695 constructors and
@@ -292,6 +292,27 @@ re-inferred.
   rest are the residue inside `out/src/std` — the four files that were hiding
   behind the ambiguity, which is also where 5 of the 35 *operator `=` is
   ambiguous* sites now show up.
+- The baseline driven **44,981 → 44,499** by giving the two placeholders a
+  subscript. A string table the binary keeps as data is addressed through an
+  address it never named — `(&PTR_s_UTF_8_006123f6_0x27_00706270)[i]`,
+  `(&DAT_0061b001)[*param_1]` — and the operand there is the result of
+  `operator&`, an `_Addr`, which converts to any *pointer* but had no
+  subscript: **160** diagnostics, *type '_Addr' does not provide a subscript
+  operator*. `_Addr` now has `char operator[](long long)`, and — the other
+  half of the same story — a recovered class the harvest shows no `operator[`
+  for gets one non-template `_Datum operator[](long long)`, because libc++'s
+  own `basic_string::operator[]` is a *template* and members.tsv therefore has
+  no row for it: another **337** subscript diagnostics, almost all on
+  `basic_string`, plus 13 on `vector` and 14 on `SharedPtr`. The catch-all is
+  deliberately withheld from the classes the bodies really do subscript
+  (`tuple<>`, `Vector2`, `Color`, `Rect`): an extra member there is an
+  overload set the compiler cannot rank, and it costs more than the 51
+  subscripts it repairs. **536** diagnostics repaired, **54** re-spelled one
+  level deeper (19 *expression is not assignable* — `(&DAT_x)[i] = v` is a
+  `char` rvalue — and 16 *no viable overloaded `operator[]`* on a `const
+  basic_string`, where the const overload set is now what is being chosen
+  between), 24 files improved and none regressed; the subscript bucket falls
+  **584 → 48**.
 
 ## What the game turned out to be
 
@@ -1177,7 +1198,11 @@ split the way the ABI splits it: what libc++ puts in its inline namespace is
 declared in `__ndk1` (`locale`, `ios_base`, the shared-count and threading
 types, the `basic_string`/`vector`/`unique_ptr` primaries), while the exception
 hierarchy and `type_info` — whose mangled names carry no `__ndk1`
-(`_ZNSt11logic_error…`) — are declared directly in `std`.
+(`_ZNSt11logic_error…`) — are declared directly in `std`. Both placeholders
+carry the two operations a data global is actually used through: `_Datum`
+converts, assigns and indexes, and the `_Addr` that `&DAT_x` produces converts
+to any pointer *and* has `char operator[](long long)` — the element type a
+string table indexed by an integer is read as.
 
 Those declarations compile clean: **404 classes, 272 member declarations, 173
 type names** that nothing declares (each an opaque forward declaration) and
@@ -1200,8 +1225,8 @@ The baseline over the whole tree:
 |---|---|
 | Files checked | 1,467 |
 | Files with at least one error | 1,308 |
-| Diagnostics | 44,981 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) → **45,337** (`_Datum` converts to `long long` through a non-template conversion, so the 1,986 ambiguous `DAT_x` binary expressions resolve — 2,032 diagnostics repaired, 7 re-spelled) → **45,048** (320 singleton statics recovered from the call-shaped qualifier Ghidra prints, `getInstancePtr()::instance` → `instance` declared as `_Datum` — 323 diagnostics repaired, 34 re-spelled one level deeper) → **44,981** (the libc++ inline-namespace split put right: the exception hierarchy is declared in `std`, as the `.so`'s mangled names have it, so the 205 *reference to 'X' is ambiguous* are gone — 219 diagnostics repaired, 152 re-spelled one level deeper) |
+| Diagnostics | 44,499 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) → **45,337** (`_Datum` converts to `long long` through a non-template conversion, so the 1,986 ambiguous `DAT_x` binary expressions resolve — 2,032 diagnostics repaired, 7 re-spelled) → **45,048** (320 singleton statics recovered from the call-shaped qualifier Ghidra prints, `getInstancePtr()::instance` → `instance` declared as `_Datum` — 323 diagnostics repaired, 34 re-spelled one level deeper) → **44,981** (the libc++ inline-namespace split put right: the exception hierarchy is declared in `std`, as the `.so`'s mangled names have it, so the 205 *reference to 'X' is ambiguous* are gone — 219 diagnostics repaired, 152 re-spelled one level deeper) → **44,499** (`_Addr` and the recovered classes given a subscript: 536 repaired, 54 re-spelled one level deeper, the subscript bucket 584 → 48) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
@@ -1250,6 +1275,13 @@ largest buckets are **not** defects in the game:
   to incomplete type* (3,306 → **0**) into these — the member the body names simply
   has no recovered declaration yet, and the conversion it performs has no
   declared operator.
+- **48** *does not provide a subscript operator*, down from **584**: the two
+  shapes a subscript can take in this tree — `s[i]` on a recovered class whose
+  libc++ `operator[]` is a template the harvest therefore never recorded, and
+  `(&DAT_x)[i]` on the `_Addr` of a data global — are both given one. What is
+  left names a class the bodies genuinely subscript and the harvest *does*
+  have rows for (`tuple<>`, `Vector2`, `Color`, `Rect`), where an extra member
+  would be an overload set the compiler cannot rank.
 - **90** *arithmetic on a pointer to an incomplete type*, **921** *expected 'X'
   for function-style cast*, **569** *indirection requires pointer operand* and
   **0** *subscript of pointer to incomplete type*: the shapes that appear once

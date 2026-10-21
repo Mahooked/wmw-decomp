@@ -343,7 +343,15 @@ struct _Datum {
   template <class T> _Datum &operator[](T) const;
   long long operator()(...) const;             /* call through a data global */
   _Datum operator*() const;                    /* indirect through one */
-  struct _Addr { template <class T> operator T *() const; };
+  /* ``(&DAT_x)[i]`` is the other half of the address story: the operand is an
+     ``_Addr``, which converts to any *pointer* and had no subscript, so the
+     160 string-table bodies that index one could not parse.  The conversion
+     has to name the element type, and a data global indexed with an integer is
+     text far more often than not: ``char``. */
+  struct _Addr {
+    template <class T> operator T *() const;
+    char operator[](long long) const;
+  };
   _Addr operator&() const;
 };
 
