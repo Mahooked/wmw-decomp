@@ -985,9 +985,11 @@ def generate(model, path):
     # every member access or subscript through it reads "incomplete type", and
     # a call spelled with the scoped name matches no parameter declared with
     # the flat one.  Alias each flat spelling to the class it names.  A nested
-    # class is skipped -- its owner has to be defined before the alias could
-    # name it, which no earlier declaration can do.
+    # class cannot be aliased here -- its owner has to be defined before the
+    # alias could name it -- so those wait until every definition is out
+    # (nested_alias, below).
     flat_alias = {}
+    nested_alias = {}
     for cls in model.classes:
         if "<" in cls or cls in _CLANG_IMPLICIT:
             continue
@@ -997,15 +999,59 @@ def generate(model, path):
         if cls.startswith("std::") and not cls.startswith("std::__ndk1::"):
             continue
         flat = cls.replace("::", "__")
-        if flat == cls or cls.rsplit("::", 1)[0] in model.classes:
+        if flat == cls:
+            continue
+        if cls.rsplit("::", 1)[0] in model.classes:
+            nested_alias[flat] = cls
             continue
         flat_alias[flat] = cls
+
+    # Every definition is generated up front, out of output order: a nested
+    # class's alias can only follow the top-level class that contains it, and a
+    # name that a definition emitted *before* that point already uses has to be
+    # a forward declaration instead (a name cannot be both a class and an
+    # alias).
+    emitted = set()
+    class_text = []
+    owner = {}
+    for cls in sorted(model.classes):
+        if cls in _CLANG_IMPLICIT:
+            continue
+        comps = cls.split("::")
+        if len(comps) == 1 or "::".join(comps[:-1]) not in model.classes:
+            buf = []
+            emit_class(model, cls, buf, 0, emitted, set())
+            i = len(class_text)
+            for flat, target in nested_alias.items():
+                if target == cls or target.startswith(cls + "::"):
+                    owner[flat] = i
+            class_text.append((comps[:-1], "\n".join(buf)))
+    _TOKEN = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
+    blocked = set()
+    for i, (_ns, text) in enumerate(class_text):
+        for flat in set(_TOKEN.findall(text)) & set(nested_alias):
+            if flat not in blocked and i <= owner.get(flat, len(class_text)):
+                blocked.add(flat)
+    nested_at = {}
+    for flat, i in owner.items():
+        if flat not in blocked:
+            nested_at.setdefault(i, []).append(flat)
+    for i in nested_at:
+        nested_at[i].sort()
+    # A nested class the *declarations themselves* name before its owner is
+    # complete cannot be aliased; deriving the flat name from it gives the
+    # bodies a complete type instead, whose pointer still converts to the base
+    # pointer a declaration asks for.
+    stubs = {flat for flat in blocked if nested_alias[flat] in emitted}
+    aliased = set()
+    for flats in nested_at.values():
+        aliased.update(flats)
     for flat in sorted(flat_alias):
         out.append("using %s = %s;" % (flat, flat_alias[flat]))
 
     for t in extra:
-        if t in flat_alias:
-            continue
+        if t in flat_alias or t in aliased:
+            continue        # aliased to its real class after the definitions
         comps = t.split("::")
         out.append(_wrap(comps[:-1], "struct %s;" % comps[-1]))
     declared = model.defined | set(model.funcs)
@@ -1022,20 +1068,24 @@ def generate(model, path):
             comps = key.split("::")
             out.append(_wrap(comps[:-1],
                              "template <%s> struct %s;" % (params, comps[-1])))
+
+    for i, (ns, text) in enumerate(class_text):
+        out.append(_wrap(ns, text))
+        # Every definition of this group is out, so a nested class's owner is
+        # complete and the flat spelling can finally be aliased -- the reason
+        # the bodies' `A__B__C` spellings were reading "arithmetic on a pointer
+        # to an incomplete type".
+        for flat in nested_at.get(i, ()):
+            out.append("using %s = %s;" % (flat, nested_alias[flat]))
+    for flat in sorted(stubs):
+        out.append("struct %s : %s {};" % (flat, nested_alias[flat]))
+    # The definitions come last because their members are typed with those flat
+    # spellings too; only their forward declarations (above) had to precede the
+    # classes, and an incomplete template is enough to *name*.
     for key, params in primaries:
         comps = key.split("::")
         out.append(_wrap(comps[:-1],
                          _emit_primary(model, key, params, defined)))
-
-    emitted = set()
-    for cls in sorted(model.classes):
-        if cls in _CLANG_IMPLICIT:
-            continue
-        comps = cls.split("::")
-        if len(comps) == 1 or "::".join(comps[:-1]) not in model.classes:
-            buf = []
-            emit_class(model, cls, buf, 0, emitted, set())
-            out.append(_wrap(comps[:-1], "\n".join(buf)))
     for ns in sorted(model.funcs):
         decls = "\n".join(d for n in sorted(model.funcs[ns])
                           for d in model.funcs[ns][n])

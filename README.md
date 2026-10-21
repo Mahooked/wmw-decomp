@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **48,165** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **47,362** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 48,165 diagnostics into
+   files against synthesised declarations and sorts the 47,362 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
    now decided — illegal return types and parameters on 695 constructors and
@@ -203,6 +203,27 @@ re-inferred.
   name and declares it at file scope, **8** sites). *does not name a template*
   **119 → 0**, *expected 'X' for function-style cast* **943 → 921**, *definition
   or redeclaration … inside a function* **19 → 10**.
+- The baseline driven **48,165 → 47,362** by giving the *nested* classes the
+  same treatment their owners already had. Ghidra flattens every scope
+  separator to `__`, so `Walaber::ScreenManager::ScreenOperationDetails` is
+  spelled `Walaber__ScreenManager__ScreenOperationDetails` in the bodies, and
+  the generator's flat→scoped `using` alias could not cover it: an alias has to
+  name its class's owner, and the owner is only complete later in the file. A
+  nested class left as an opaque forward declaration is an *incomplete* type,
+  which is 618 *arithmetic on a pointer to an incomplete type*, 381 *subscript
+  of pointer to incomplete type* and 157 *member access into incomplete type* —
+  every one of them an expression the decompiler typed with the flat spelling.
+  The definitions are now generated first, out of output order, so the flat
+  spelling of a nested class can be aliased to the real class immediately after
+  the top-level definition that contains it — 93 aliases — and one that a
+  *declaration emitted earlier* already names is given a one-line derived stub
+  instead (`struct Walaber__Widget__WidgetActionRet : Walaber::Widget::WidgetActionRet {};`)
+  — which is complete for the bodies and still converts to the base pointer
+  that declaration wants, 14 stubs in all. *arithmetic on a pointer to an
+  incomplete type* **618 → 90**, *subscript of pointer to incomplete type*
+  **381 → 0**, *member access into incomplete type* **157 → 0**; the 90 that
+  remain are the external types the prelude leaves opaque (`_xmlNode`,
+  `_xmlDoc`, `tm`, `__sFILE`).
 
 ## What the game turned out to be
 
@@ -360,7 +381,8 @@ tools/
   srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
   check_syntax.py     synthesise the declarations out/src is missing from the
                       definitions themselves (plus a variadic overload for the
-                      names out/check/tmpl_calls.tsv records), then have
+                      names out/check/tmpl_calls.tsv records, and a `using`
+                      alias for every flattened type spelling), then have
                       clang++ -fsyntax-only parse every file and tally the
                       diagnostics; --check gates the tree, --decls-only checks
                       just the generated headers
@@ -1061,8 +1083,12 @@ require:
   for the class `Walaber::Vector2`) becomes a `using` alias to the real class;
   otherwise the two spellings are distinct types, one of them forward-declared
   only, and every member access or subscript through the flat one reads
-  "incomplete type". A nested class stays opaque, because its owner must be
-  defined before the alias could name it;
+  "incomplete type". A *nested* class cannot be aliased where its owner's own
+  alias is, because an alias has to name a class that is already defined; its
+  alias is emitted right after the top-level definition that contains it
+  instead, and if a declaration printed *before* that point already names the
+  flat spelling, the flat name is given a derived stub that the bodies can use
+  as a complete type;
 - the constructor/destructor return type Ghidra writes (`void A::A(...)`) is
   dropped in the declaration, because the declaration has to be legal C++ even
   where the body is not yet.
@@ -1077,9 +1103,10 @@ being called -- `(*(code *)xmlMalloc)(n)` -- were never recovered.
 
 Those declarations compile clean: **408 classes, 272 member declarations, 173
 type names** that nothing declares (each an opaque forward declaration) and
-**280** aliases mapping Ghidra's flattened spelling to the class it names (a
-*nested* class's flat spelling cannot be aliased, because its owner must be
-defined before the alias could name it, so it stays opaque),
+**373** aliases mapping Ghidra's flattened spelling to the class it names —
+280 for a class at namespace scope, 93 for one nested inside a class, emitted
+as soon as its owner is defined — plus **14** derived stubs for the nested
+names a declaration printed before that point already used,
 **8,217 definitions parsed** (12 headers unparsed, 2,383 template-qualified
 definitions skipped because a template member cannot be declared without the
 template's definition), **17** variadic overloads for the names a call site
@@ -1093,21 +1120,21 @@ The baseline over the whole tree:
 | | |
 |---|---|
 | Files checked | 1,467 |
-| Files with at least one error | 1,310 |
-| Diagnostics | 48,165 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) |
+| Files with at least one error | 1,309 |
+| Diagnostics | 47,362 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
 largest buckets are **not** defects in the game:
 
-- **334** *implicit instantiation of undefined template*, down from **6,917**:
+- **332** *implicit instantiation of undefined template*, down from **6,917**:
   the libc++ primary templates are outlines — declared with their exact arity
   and kinds (*too many template arguments* is **0**) and now carrying the
   members the template-qualified definitions prove exist — but not the whole of
   libc++.
-- **7,619** *no matching function*, **2,029** *too many arguments to function
-  call* (down from 4,817 at its worst) and **2,192** *too few*: the
+- **7,616** *no matching function*, **2,029** *too many arguments to function
+  call* (down from 4,817 at its worst) and **2,193** *too few*: the
   call/definition arity
   divergence, now largely decided. Ghidra binds the callee's `w0` as its
   object parameter but leaves the argument the binary passes in the next
@@ -1123,7 +1150,7 @@ largest buckets are **not** defects in the game:
   all. What remains is the residue: duplicate definitions of one member that
   decompile with divergent shapes, and call sites Ghidra printed without the
   argument.
-- **3,646** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
+- **3,648** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
   definition fails to parse, its own parameter names (`p0`, `p1`, `param_1`)
   are not in scope in the body, and every use of them is reported.
 - **357** *call to non-static member function without an object argument*,
@@ -1138,21 +1165,23 @@ largest buckets are **not** defects in the game:
   where the decompilation had dropped it to a raw address or a wrongly
   typed field. The declarations still compile with 0 errors and no
   *invalid use of `this`* diagnostic appeared — the guard holds.
-- **5,018** *no member named* and **700** *cannot convert … without a conversion
+- **5,247** *no member named* and **700** *cannot convert … without a conversion
   operator*: newly visible, not new defects. Completing the classes turned
-  *member access into incomplete type* (2,932 → 40) and *subscript of pointer to
-  incomplete type* (3,306 → 371) into these — the member the body names simply
+  *member access into incomplete type* (2,932 → **0**) and *subscript of pointer
+  to incomplete type* (3,306 → **0**) into these — the member the body names simply
   has no recovered declaration yet, and the conversion it performs has no
   declared operator.
-- **618** *arithmetic on a pointer to an incomplete type*, **943** *expected 'X'
+- **90** *arithmetic on a pointer to an incomplete type*, **921** *expected 'X'
   for function-style cast*, **569** *indirection requires pointer operand* and
-  **381** *subscript of pointer to incomplete type*: the shapes that appear once
+  **0** *subscript of pointer to incomplete type*: the shapes that appear once
   the undefined templates become real. A definition that parsed only up to its
   header used to stop there; now its body is type-checked, and every raw
   `undefined8` the decompiler left behind is reported where the body
-  dereferences, casts, indexes or does arithmetic on it. Each one replaces an
-  earlier *undefined template* diagnostic, which is why the total falls while
-  the bucket grows.
+  dereferences, casts, indexes or does arithmetic on it. The 90 that are left
+  name a type the prelude deliberately leaves opaque (`_xmlNode`, `_xmlDoc`,
+  `tm`, `__sFILE`) and wait on a real layout for that external struct. Each of
+  these replaces an earlier *undefined template* diagnostic, which is why the
+  total falls while the bucket grows.
 
 The buckets that *are* real shape the next pass. Several defects the gate named
 are now decided: **0** constructor or destructor definitions carry a return
@@ -1165,7 +1194,8 @@ and the declaration-shaped calls their call shape, the calls to a function
 template the tree flattened had their explicit arguments dropped and bridged
 (`tools/shape_tmpl_calls.py`), the static locals Ghidra named by full signature
 are plain names again (`tools/shape_static_locals.py`), and the flattened type
-names are aliased to their real classes. What the last pass exposed:
+names are aliased to their real classes — nested spellings included, which is
+what the class generator had to be reordered for. What the last pass exposed:
 
 - **0** *does not name a template but is followed by template arguments*
   (119 before). A *free* function template called with its explicit arguments
@@ -1179,19 +1209,19 @@ names are aliased to their real classes. What the last pass exposed:
   next bucket, not a defect of its own: with the arguments gone the call is
   checked against the recovered declaration's parameter types for the first
   time.
-- **618** *arithmetic on a pointer to an incomplete type* naming a *nested*
-  class by its flattened spelling (`Walaber__A__B` for `Walaber::A::B`). The
-  alias cannot be emitted while its owner is still incomplete, and the owner
-  has to come after the primaries, so those names stay opaque forward
-  declarations; a duplicate definition at namespace scope or an alias emitted
-  at the end of `decls.h` is the fix.
+- **90** *arithmetic on a pointer to an incomplete type*, down from **618** and
+  now naming only the external structs the prelude leaves opaque (`_xmlNode`,
+  `_xmlDoc`, `tm`, `__sFILE`, `_JavaVM`, `_jobject`). Every nested-class
+  spelling (`Walaber__A__B` for `Walaber::A::B`) is out of this bucket: the
+  generator emits the aliases after the definitions they need. Completing an
+  external type is a different job — it needs the real layout, not a shape.
 - **91** *function cannot return array type* (44 before): a definition whose
   recovered return is `undefined1 [16]`, the hidden buffer a struct-returning
   function writes into — an array type is illegal in that position.
 - **7** definitions of two distinct overloads that flatten to a single
   signature (`stold` of a `char` string and of a `wchar_t` string both become
   `stold(byte *, long *)`, so the second definition collides), and the libc++
-  primary-template definitions behind the remaining **334** *undefined
+  primary-template definitions behind the remaining **332** *undefined
   template*.
 - the member/conversion gaps the incomplete-type errors used to mask — a
   member access now resolves its class and has its member looked up for the
