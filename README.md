@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **45,337** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **45,048** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 45,337 diagnostics into
+   files against synthesised declarations and sorts the 45,048 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
    now decided — illegal return types and parameters on 695 constructors and
@@ -200,7 +200,10 @@ re-inferred.
   Ghidra names by full signature
   (`_walkStrip<…>(GridCell, …, int)::stripID`, whose type names the compiler
   then parses as arguments — `tools/shape_static_locals.py` restores the plain
-  name and declares it at file scope, **8** sites). *does not name a template*
+  name and declares it at file scope, **8** sites; **320** more sites are a
+  singleton accessor spelled the same way, `getInstancePtr()::instance`, where
+  the same tool drops the call-shaped qualifier and declares storage of the
+  gate's `_Datum` placeholder). *does not name a template*
   **119 → 0**, *expected 'X' for function-style cast* **943 → 921**, *definition
   or redeclaration … inside a function* **19 → 10**.
 - The baseline driven **48,165 → 47,362** by giving the *nested* classes the
@@ -245,6 +248,25 @@ re-inferred.
   Diagnostics **47,362 → 45,337**; 2,032 repaired, 7 re-spelled (an expression
   that used to be ambiguous now resolves to a built-in operator that does not
   fit exactly, which is where the next pass starts).
+- The baseline driven **45,337 → 45,048** by recovering 320 *singleton statics*.
+  A function-local static is spelled with its owning function in front of it,
+  and when the owner is an accessor Ghidra prints the call:
+  `if (((Walaber::AchievementManager::getInstancePtr()::instance & 1) == 0) &&
+  (iVar8 = __cxa_guard_acquire(&…::getInstancePtr()::instance), iVar8 != 0))`.
+  A nested-name-specifier cannot be a call, so the shape is never C++ — and the
+  compiler said so 298 times (*no member named 'getInstancePtr' in
+  'Walaber::AchievementManager'*, once per site, plus a second guard block's
+  worth of *expected ')'*, *expected ';' after return statement* and *cannot
+  take the address of an rvalue*). `tools/shape_static_locals.py` now rewrites
+  the call form as well as the signature form: the qualifier is dropped and the
+  storage is declared once per file as `static _Datum NAME;` — the guard byte it
+  is tested with, the address it is guarded by, the storage the placement `new`
+  operates on and the object pointer it is passed as are all the ways a
+  `_Datum` is used, so one declaration covers every site. 320 sites over 22
+  files; **323** diagnostics repaired, **34** re-spelled one level deeper
+  (`&storage` reaching a parameter Ghidra typed `long`, 17; a `byte *` reaching
+  an `undefined8` parameter, 14; two overloads that now exist to be chosen
+  between). The 22 files carry 11,313 diagnostics before and 11,024 after.
 
 ## What the game turned out to be
 
@@ -393,9 +415,10 @@ tools/
                       declaration shape inside a body, leaving the call
                       expression with its explicit template arguments; a
                       signature that wraps is walked to the `;` that closes it
-  shape_static_locals.py recover a function-local static Ghidra named by full
-                      signature (`f<T>(int)::stripID` -> `stripID`, declared
-                      at file scope)
+  shape_static_locals.py recover a function-local static Ghidra qualified with
+                      its owner (`f<T>(int)::stripID` -> `stripID`, declared at
+                      file scope; `getInstancePtr()::instance` -> `instance`,
+                      declared as the gate's `_Datum`)
   shape_tmpl_calls.py drop the explicit template arguments from a call whose
                       callee the tree recovered as an ordinary function, and
                       record the names so the declarations can bridge them
@@ -1146,8 +1169,8 @@ The baseline over the whole tree:
 |---|---|
 | Files checked | 1,467 |
 | Files with at least one error | 1,309 |
-| Diagnostics | 45,337 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) → **45,337** (`_Datum` converts to `long long` through a non-template conversion, so the 1,986 ambiguous `DAT_x` binary expressions resolve — 2,032 diagnostics repaired, 7 re-spelled) |
+| Diagnostics | 45,048 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → 74,002 (input-register rebinding, 503743b) → **65,416** (ctor/dtor call rewrites + align_val_t fix) → 59,141 (template-qualified dtor rewrites + prelude template definitions) → 55,468 (flattened type names aliased to their real classes) → 52,323 (Ghidra's `code` made callable) → **51,351** (libc++ shim templates given their real arity) → **50,796** (static-form operator calls re-formed on their object, cast to the operator's class) → **48,371** (template definitions reshaped with their `template<>` marker and declaration-shaped calls given their call shape — 2,362 and 1,567 rewrites) → **48,165** (explicit template arguments dropped at 186 call sites and bridged by a variadic overload — 211 diagnostics repaired, 5 re-spelled) → **47,362** (nested classes' flat spellings aliased to the real class — 93 aliases + 14 derived stubs, 1,089 diagnostics repaired, 286 re-spelled one level deeper) → **45,337** (`_Datum` converts to `long long` through a non-template conversion, so the 1,986 ambiguous `DAT_x` binary expressions resolve — 2,032 diagnostics repaired, 7 re-spelled) → **45,048** (320 singleton statics recovered from the call-shaped qualifier Ghidra prints, `getInstancePtr()::instance` → `instance` declared as `_Datum` — 323 diagnostics repaired, 34 re-spelled one level deeper) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
@@ -1158,7 +1181,7 @@ largest buckets are **not** defects in the game:
   and kinds (*too many template arguments* is **0**) and now carrying the
   members the template-qualified definitions prove exist — but not the whole of
   libc++.
-- **7,619** *no matching function*, **2,029** *too many arguments to function
+- **7,621** *no matching function*, **2,029** *too many arguments to function
   call* (down from 4,817 at its worst) and **2,193** *too few*: the
   call/definition arity
   divergence, now largely decided. Ghidra binds the callee's `w0` as its
@@ -1190,7 +1213,7 @@ largest buckets are **not** defects in the game:
   where the decompilation had dropped it to a raw address or a wrongly
   typed field. The declarations still compile with 0 errors and no
   *invalid use of `this`* diagnostic appeared — the guard holds.
-- **5,247** *no member named* and **700** *cannot convert … without a conversion
+- **4,949** *no member named* and **700** *cannot convert … without a conversion
   operator*: newly visible, not new defects. Completing the classes turned
   *member access into incomplete type* (2,932 → **0**) and *subscript of pointer
   to incomplete type* (3,306 → **0**) into these — the member the body names simply
@@ -1217,8 +1240,9 @@ constructors placed with `new`, destructors and operators re-formed on their
 object), the template-qualified definitions carry their `template<>` marker
 and the declaration-shaped calls their call shape, the calls to a function
 template the tree flattened had their explicit arguments dropped and bridged
-(`tools/shape_tmpl_calls.py`), the static locals Ghidra named by full signature
-are plain names again (`tools/shape_static_locals.py`), and the flattened type
+(`tools/shape_tmpl_calls.py`), the static locals Ghidra qualified with their owner
+are plain names again — both the signature form and the accessor call
+(`tools/shape_static_locals.py`) — and the flattened type
 names are aliased to their real classes — nested spellings included, which is
 what the class generator had to be reordered for. What the last pass exposed:
 

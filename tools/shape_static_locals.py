@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Recover a function-local static that Ghidra named by full signature.
+"""Recover a function-local static that Ghidra qualified with its owner.
 
-Ghidra qualifies a static local with the function it belongs to, and for a
+Ghidra qualifies a static local with the function it belongs to.  For a
 template it prints the whole signature rather than a name::
 
     _walkStrip<WaterConcept::ConsiderSameDefault>(WaterConcept::GridCell, ..., int)
@@ -13,13 +13,25 @@ callee is declared a template (see ``tools/shape_tmpl_calls.py``) the compiler
 starts parsing those type names as arguments -- one such statement is worth a
 hundred diagnostics.  The original source said just ``stripID``.
 
-Only the *signature* form is rewritten: the qualifier must be a qualified name
-with optional template arguments and a parameter list in which every component
-is a type spelling and at least one is a pointer, a reference or a template
-use.  A plain call that is followed by ``::`` (``getInstancePtr()::instance``)
-can be a value argument, so it is left alone.  The file gains one
-``static long long NAME;`` per recovered name, which is what a static local
-degrades to once it is lifted to file scope.
+A singleton accessor is spelled with the *call* in the qualifier instead::
+
+    if (((getInstancePtr()::instance & 1) == 0) &&
+        (iVar8 = __cxa_guard_acquire(&getInstancePtr()::instance), iVar8 != 0)) {
+      new ((void *)(getInstancePtr()::instance)) NotificationSingleton();
+
+The guard byte, the address and the object pointer are all that storage is
+ever used for, and the original source said just ``instance``.  ``expr::name``
+is not C++ -- a nested-name-specifier cannot be a call -- so this form is
+always the same shape artifact.  It is recognised by an *empty* argument list
+(``decltype(f())::`` is the one legal ``)::`` spelling and it has arguments);
+a signature form is recognised instead by a parameter list in which every
+component is a type spelling and at least one is a pointer, a reference or a
+template use.
+
+The file gains one file-scope declaration per recovered name: ``static long
+long NAME;`` for a signature static (a counter), ``static _Datum NAME;`` for a
+singleton's storage (the gate's placeholder for a datum that accepts a load, a
+store, an address, a subscript, a call, an argument and a cast).
 """
 
 import argparse
@@ -87,7 +99,11 @@ def _type_list(args):
 
 
 def static_locals(code):
-    """Yield ``(qualifier start, name start, name)`` for every ``sig::var``."""
+    """Yield ``(qualifier start, name end, name, kind)`` per ``sig::var``.
+
+    ``kind`` is ``"sig"`` for the signature form and ``"call"`` for the
+    singleton-accessor form.
+    """
     n = len(code)
     pos = 0
     while True:
@@ -99,10 +115,19 @@ def static_locals(code):
         if close < 0 or code[close] != ")":
             continue
         open_paren = _match_back(code, close)
-        if open_paren is None or not _type_list(code[open_paren + 1:close]):
+        if open_paren is None:
+            continue
+        args = code[open_paren + 1:close]
+        if _type_list(args):
+            kind = "sig"
+        elif not args.strip():
+            kind = "call"
+        else:
             continue
         k = _skip_ws_back(code, open_paren - 1)
         if k >= 0 and code[k] == ">":
+            if kind != "sig":
+                continue
             angle = _angle_back(code, k)
             if angle is None:
                 continue
@@ -122,7 +147,7 @@ def static_locals(code):
             end += 1
         if end == var:
             continue
-        yield start, end, code[var:end]
+        yield start, end, code[var:end], kind
 
 
 def shape_file(path, stats, dry_run=False, sink=None):
@@ -142,12 +167,13 @@ def shape_file(path, stats, dry_run=False, sink=None):
     code = "".join(chars)
 
     edits = []
-    names = []
-    for start, end, name in static_locals(code):
+    names = {}                        # name -> kind
+    for start, end, name, kind in static_locals(code):
         edits.append((start, end, name))
-        if name not in names:
-            names.append(name)
+        if name not in names or kind == "call":
+            names[name] = kind
         stats["statics"] += 1
+        stats[kind] += 1
         if sink is not None:
             sink.write("%s: %s -> %s\n" % (path, code[start:end].strip()[:90],
                                            name))
@@ -158,7 +184,9 @@ def shape_file(path, stats, dry_run=False, sink=None):
     for start, end, name in reversed(edits):
         text = text[:start] + name + text[end:]
     if names:
-        head = "".join("static long long %s;\n" % name for name in names)
+        head = "".join("static %s %s;\n"
+                       % ("_Datum" if kind == "call" else "long long", name)
+                       for name, kind in names.items())
         text = head + text
     with open(path, "w", encoding="utf-8", newline="") as fh:
         fh.write(text)
@@ -168,16 +196,20 @@ def shape_file(path, stats, dry_run=False, sink=None):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--src", default=os.path.join("out", "src"))
+    ap.add_argument("--only", default="",
+                    help="restrict to paths containing this substring")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--show", type=int, default=0,
                     help="print the first N rewrites")
     args = ap.parse_args(argv)
-    stats = {"statics": 0}
+    stats = {"statics": 0, "sig": 0, "call": 0}
     sink = sys.stdout if args.show else None
     files = 0
     shapes = 0
     paths = sorted(glob.glob(os.path.join(args.src, "**", "*.cpp"),
                              recursive=True))
+    if args.only:
+        paths = [p for p in paths if args.only in p.replace("\\", "/")]
     for path in paths:
         if sink is not None and stats["statics"] >= args.show:
             sink = None
@@ -185,8 +217,9 @@ def main(argv=None):
         if count:
             files += 1
             shapes += count
-    print("files %d, changed %d, statics %d%s"
-          % (len(paths), files, shapes, " (dry run)" if args.dry_run else ""))
+    print("files %d, changed %d, statics %d (sig %d, call %d)%s"
+          % (len(paths), files, shapes, stats["sig"], stats["call"],
+             " (dry run)" if args.dry_run else ""))
     return 0
 
 
