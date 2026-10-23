@@ -478,3 +478,7 @@ extern _Datum xmlXPathCastToNumber;
 extern _Datum xmlXPathNAN;
 extern _Datum xmlXPathNINF;
 extern _Datum xmlXPathStringEvalNumber;
+
+struct _xmlNode { char data[256]; };
+struct _xmlDoc { char data[512]; };
+struct __sFILE { char data[256]; };
