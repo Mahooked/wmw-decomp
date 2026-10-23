@@ -4634,8 +4634,7 @@ LAB_004c2fbc:
                 Walaber::PropertyList::setValueForKey(&fStack_200,&uStack_140,&uStack_108);
                 ((Walaber::Property *)&uStack_108)->~Property();
                     /* try { // try from 004c3150 to 004c3157 has its CatchHandler @ 004c3e10 */
-                Walaber::Property::Property(*(undefined4 *)(*(long *)(lVar24 + 0x58) + uVar10 * 0x20 + 0x18),
-                                &uStack_108);
+                new ((void *)(*(undefined4 *)(*(long *)(lVar24 + 0x58) + uVar10 * 0x20 + 0x18))) Walaber::Property(&uStack_108);
                     /* try { // try from 004c3158 to 004c3167 has its CatchHandler @ 004c3e08 */
                 Walaber::PropertyList::setValueForKey(&fStack_200,&uStack_170,&uStack_108);
                 ((Walaber::Property *)&uStack_108)->~Property();

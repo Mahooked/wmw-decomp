@@ -2289,8 +2289,7 @@ ulong ndk::ApplicationContext::messageRx(Walaber__Message *p0, long in_x1)
   if (iVar9 < 0x3a) {
     switch(iVar9) {
     case 0:
-      Walaber::PropertyList::operator[](in_x1 + 0x10,&Walaber::Message_AchievementUnlocked::kPropAchievementIdentifier
-                     );
+      ((Walaber::PropertyList *)(in_x1 + 0x10))->operator[](&Walaber::Message_AchievementUnlocked::kPropAchievementIdentifier);
       Walaber::Property::asString(&bStack_e0);
                     /* try { // try from 002b5ed8 to 002b5ee7 has its CatchHandler @ 002b8b70 */
       iVar9 = (**(code **)(**(long **)(p0 + 1) + 0x30))(*(long **)(p0 + 1),&bStack_120,0x10006);

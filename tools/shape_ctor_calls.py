@@ -461,17 +461,174 @@ def process_block(body, addr, index, stats):
             elif n_true is not None and n_def != n_true:
                 stats['ctor_arity_mismatch'] += 1
 
-    # --- call sites: every indented line ---------------------------------
+    # --- call sites: every indented statement (single or multi-line) -------
     total = 0
-    new_lines = []
-    for line in body.split('\n'):
-        if line[:1] in (' ', '\t'):
-            line, n = rewrite_calls(line)
-            total += n
-        new_lines.append(line)
+    lines = body.split('\n')
+    out_lines = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line[:1] not in (' ', '\t'):
+            out_lines.append(line)
+            i += 1
+            continue
+        # Check if this statement opens parens/brackets/braces that don't close
+        depth = 0
+        angle = 0
+        in_s = False
+        in_d = False
+        in_c = False
+        in_cpp = False
+        for ch in line:
+            if in_c:
+                if ch == '*':
+                    in_c = False
+                continue
+            if in_cpp:
+                continue
+            if ch == '/' and not in_s and not in_d:
+                # lookahead already handled roughly? easier to just scan
+                pass
+            if in_s:
+                if ch == '\\':
+                    continue
+                if ch == "'":
+                    in_s = False
+                continue
+            if in_d:
+                if ch == '\\':
+                    continue
+                if ch == '"':
+                    in_d = False
+                continue
+            if ch == '/' and line.find('//', line.index(ch)) == line.index(ch) if False else False:
+                pass
+        # simpler depth scan ignoring strings/comments
+        depth = 0
+        angle = 0
+        j = 0
+        while j < len(line):
+            if j + 1 < len(line) and line[j] == '/' and line[j + 1] == '*':
+                k = line.find('*/', j + 2)
+                if k < 0:
+                    j = len(line)
+                    break
+                j = k + 2
+                continue
+            if j + 1 < len(line) and line[j] == '/' and line[j + 1] == '/':
+                break
+            ch = line[j]
+            if ch == '"':
+                j += 1
+                while j < len(line):
+                    if line[j] == '\\':
+                        j += 2
+                        continue
+                    if line[j] == '"':
+                        break
+                    j += 1
+                j += 1
+                continue
+            if ch == "'":
+                j += 1
+                while j < len(line):
+                    if line[j] == '\\':
+                        j += 2
+                        continue
+                    if line[j] == "'":
+                        break
+                    j += 1
+                j += 1
+                continue
+            if ch in '([{':
+                depth += 1
+            elif ch in ')]}':
+                depth -= 1
+            elif ch == '<':
+                angle += 1
+            elif ch == '>':
+                if angle > 0:
+                    angle -= 1
+            j += 1
+        if depth != 0 or angle != 0:
+            # join lines until depth/angle balance
+            joined = line
+            k = i + 1
+            while k < len(lines):
+                nl = lines[k]
+                # stop if we hit an unindented line (new statement)
+                if nl and nl[:1] not in (' ', '\t'):
+                    break
+                joined += '\n' + nl
+                # rescan
+                depth = 0
+                angle = 0
+                j = 0
+                while j < len(joined):
+                    if j + 1 < len(joined) and joined[j] == '/' and joined[j + 1] == '*':
+                        x = joined.find('*/', j + 2)
+                        if x < 0:
+                            j = len(joined)
+                            break
+                        j = x + 2
+                        continue
+                    if j + 1 < len(joined) and joined[j] == '/' and joined[j + 1] == '/':
+                        # skip to end of this logical line in the join
+                        nlpos = joined.find('\n', j)
+                        if nlpos < 0:
+                            break
+                        j = nlpos
+                        continue
+                    ch = joined[j]
+                    if ch == '"':
+                        j += 1
+                        while j < len(joined):
+                            if joined[j] == '\\':
+                                j += 2
+                                continue
+                            if joined[j] == '"':
+                                break
+                            j += 1
+                        j += 1
+                        continue
+                    if ch == "'":
+                        j += 1
+                        while j < len(joined):
+                            if joined[j] == '\\':
+                                j += 2
+                                continue
+                            if joined[j] == "'":
+                                break
+                            j += 1
+                        j += 1
+                        continue
+                    if ch in '([{':
+                        depth += 1
+                    elif ch in ')]}':
+                        depth -= 1
+                    elif ch == '<':
+                        angle += 1
+                    elif ch == '>':
+                        if angle > 0:
+                            angle -= 1
+                    elif ch == '\n':
+                        pass
+                    j += 1
+                if depth == 0 and angle == 0:
+                    k += 1
+                    break
+                k += 1
+            line = joined
+            i = k
+        else:
+            i += 1
+        line, n = rewrite_calls(line)
+        total += n
+        # split back into lines
+        out_lines.extend(line.split('\n'))
     if total:
         stats['calls'] += total
-    return '\n'.join(new_lines)
+    return '\n'.join(out_lines)
 
 
 def process(text, index, stats):

@@ -1127,7 +1127,7 @@ LAB_003e2a90:
                     /* try { // try from 003e2ac8 to 003e2acf has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)operator new(0x30);
                     /* try { // try from 003e2adc to 003e2aeb has its CatchHandler @ 003e33a4 */
-            Walaber::Curve::Curve(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            new ((void *)(ppuVar12)) Walaber::Curve(param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
             ppuVar17 = &PTR__Curve_00710b68;
             break;
@@ -1135,7 +1135,7 @@ LAB_003e2a90:
                     /* try { // try from 003e2b48 to 003e2b4f has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)operator new(0x30);
                     /* try { // try from 003e2b5c to 003e2b6b has its CatchHandler @ 003e33a8 */
-            Walaber::Curve::Curve(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            new ((void *)(ppuVar12)) Walaber::Curve(param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
             ppuVar17 = &PTR__Curve_00710a28;
             break;
@@ -1143,7 +1143,7 @@ LAB_003e2a90:
                     /* try { // try from 003e2af4 to 003e2afb has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)operator new(0x30);
                     /* try { // try from 003e2b08 to 003e2b17 has its CatchHandler @ 003e33ac */
-            Walaber::Curve::Curve(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            new ((void *)(ppuVar12)) Walaber::Curve(param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
             ppuVar17 = &PTR__Curve_00710be8;
             break;
@@ -1151,7 +1151,7 @@ LAB_003e2a90:
                     /* try { // try from 003e2b20 to 003e2b27 has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)operator new(0x60);
                     /* try { // try from 003e2b34 to 003e2b43 has its CatchHandler @ 003e33b0 */
-            Walaber::TweenedLinearCurve::TweenedLinearCurve(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            new ((void *)(ppuVar12)) Walaber::TweenedLinearCurve(param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
             goto LAB_003e2b74;
           default:

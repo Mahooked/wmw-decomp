@@ -1330,7 +1330,7 @@ LAB_003ea128:
     puStack_80 = puStack_b8;
     pppuStack_90 = pppuStack_c8;
                     /* try { // try from 003ea198 to 003ea1a7 has its CatchHandler @ 003ea2b8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&pppuStack_c8,param_2,(lVar10 << 0x20) + 0x100000000 >> 0x20,
+    new ((void *)(&pppuStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(param_2,(lVar10 << 0x20) + 0x100000000 >> 0x20,
                     (long)(int)(uVar14 - iVar15),auStack_70);
     if (((ulong)pppuStack_b0 & 1) != 0) {
       *puStack_a0 = 0;

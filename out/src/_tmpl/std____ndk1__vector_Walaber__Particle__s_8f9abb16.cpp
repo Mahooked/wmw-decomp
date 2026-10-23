@@ -137,7 +137,7 @@ template<> undefined8 * std::__ndk1::vector<Walaber::Particle,std::__ndk1::alloc
          (uVar4 = lVar5 * 0x69ee58469ee5846a, uVar3 = uVar6, uVar6 <= uVar4)) {
         uVar3 = uVar4;
       }
-      std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>::__split_buffer(&pvStack_90,uVar3,((long)param_2 - lVar7 >> 2) * 0x34f72c234f72c235,
+      new ((void *)(&pvStack_90)) std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>(uVar3,((long)param_2 - lVar7 >> 2) * 0x34f72c234f72c235,
                       param_1 + 2);
                     /* try { // try from 00393c2c to 00393c4b has its CatchHandler @ 00393e20 */
       std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>::__construct_at_end(&pvStack_90,param_3,param_4);

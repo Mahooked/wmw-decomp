@@ -1683,8 +1683,7 @@ LAB_004d22a4:
               pvStack_548 = (void *)0x0;
               auStack_558[0] = 0x454c444908;
                     /* try { // try from 004d2600 to 004d2623 has its CatchHandler @ 004d3c7c */
-              Walaber::Sprite::Sprite(0,uVar11,&uStack_150,&uStack_530,&uStack_538,&uStack_540,auStack_558,0
-                             );
+              new ((void *)(0)) Walaber::Sprite(uVar11,&uStack_150,&uStack_530,&uStack_538,&uStack_540,auStack_558,0);
               if ((auStack_558[0] & 1) != 0) {
                 operator delete(pvStack_548);
               }

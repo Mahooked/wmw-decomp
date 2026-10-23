@@ -7221,8 +7221,7 @@ LAB_0051f794:
       goto switchD_0052014c_caseD_2;
     }
     if (uVar12 == 900) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_1e0,
-                      *(long *)(plVar15[0x77] + 0x98) + (long)*(int *)(plVar15[0x77] + 0x6c) * 0x18)
+      new ((void *)(&fStack_1e0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)(plVar15[0x77] + 0x98) + (long)*(int *)(plVar15[0x77] + 0x6c) * 0x18)
       ;
       uVar28 = (ulong)(fStack_1e0._0_1_ >> 1);
       if (((uint)fStack_1e0 & 1) != 0) {
@@ -7324,8 +7323,7 @@ LAB_0051f794:
       }
     }
     if ((uVar12 == 0x385) && (GameSettings::musicOn != '\0')) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_1e0,
-                      *(long *)(plVar15[0x77] + 0x98) + (long)*(int *)(plVar15[0x77] + 0x6c) * 0x18)
+      new ((void *)(&fStack_1e0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)(plVar15[0x77] + 0x98) + (long)*(int *)(plVar15[0x77] + 0x6c) * 0x18)
       ;
       uVar28 = (ulong)(fStack_1e0._0_1_ >> 1);
       if (((uint)fStack_1e0 & 1) != 0) {
@@ -8529,8 +8527,7 @@ void WaterConcept::Screen_MainMenu_v2::handleFocus(long param_1,long param_2,int
       (iVar4 = Walaber::Widget::getWidgetNameAsInt(param_2), 899 < iVar4)))) {
     iVar4 = Walaber::Widget::getWidgetNameAsInt(param_2);
     if ((899 < iVar4) && (iVar4 = Walaber::Widget::getWidgetNameAsInt(param_2), iVar4 < 0x388)) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,
-                      *(long *)(*(long *)(param_1 + 0x3b8) + 0x98) +
+      new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(*(long *)(*(long *)(param_1 + 0x3b8) + 0x98) +
                       (long)*(int *)(*(long *)(param_1 + 0x3b8) + 0x6c) * 0x18);
       uVar1 = (ulong)(abStack_50[0] >> 1);
       if ((abStack_50[0] & 1) != 0) {

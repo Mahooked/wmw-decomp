@@ -9682,7 +9682,7 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0, long * in_x1)
                     /* try { // try from 00454c7c to 00454c83 has its CatchHandler @ 00455744 */
   uVar8 = operator new(0x30);
                     /* try { // try from 00454ca4 to 00454cb3 has its CatchHandler @ 0045571c */
-  WaterConcept::Grid::Grid(fStack_d8 - (float)uStack_e0,-(fStack_d4 - uStack_e0._4_4_),uVar8,afStack_e8,
+  new ((void *)(fStack_d8 - (float)uStack_e0)) WaterConcept::Grid(-(fStack_d4 - uStack_e0._4_4_),uVar8,afStack_e8,
                   iVar14,iVar15);
   *(undefined8 *)p0 = uVar8;
                     /* try { // try from 00454cb8 to 00454cbf has its CatchHandler @ 00455744 */
@@ -9738,7 +9738,7 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0, long * in_x1)
   iVar3 = (iVar14 >> 5) + 1;
   iVar2 = (iVar15 >> 5) + 1;
                     /* try { // try from 00454e34 to 00454e43 has its CatchHandler @ 00455708 */
-  WaterConcept::Grid::Grid(fVar17 * (float)iVar3 * 32.0,-(fVar18 * (float)iVar2 * 32.0),uVar8,afStack_e8,
+  new ((void *)(fVar17 * (float)iVar3 * 32.0)) WaterConcept::Grid(-(fVar18 * (float)iVar2 * 32.0),uVar8,afStack_e8,
                   iVar3,iVar2);
   *(undefined8 *)((long)p0 + 0x18) = uVar8;
                     /* try { // try from 00454e48 to 00454e4f has its CatchHandler @ 00455748 */
@@ -14787,10 +14787,10 @@ LAB_0045a194:
         if (lStack_560 != 0) {
           *piStack_558 = *piStack_558 + 1;
         }
-        Walaber::SharedPtr<Walaber::Callback>::operator=(CONCAT44(uStack_1cc,
+        ((Walaber::SharedPtr<Walaber::Callback> *)(CONCAT44(uStack_1cc,
                                  CONCAT13(uStack_1cd,
                                           CONCAT12(uStack_1ce,CONCAT11(uStack_1cf,bStack_1d0)))) +
-                        0x490,&lStack_560);
+                        0x490))->operator=(&lStack_560);
         ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_560)->~SharedPtr<Walaber::Callback>();
         ((Walaber::SharedPtr<Walaber::Callback> *)&fStack_458)->~SharedPtr<Walaber::Callback>();
         ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::World>> *)&bStack_100)->~SharedPtr<Walaber::MemberCallback<WaterConcept::World>>();

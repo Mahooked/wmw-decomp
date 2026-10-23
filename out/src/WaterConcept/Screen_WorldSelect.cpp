@@ -3060,8 +3060,7 @@ LAB_0058db14:
     }
 LAB_0058d6f4:
                     /* try { // try from 0058d704 to 0058d70f has its CatchHandler @ 0058edfc */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&GameSettings::currentLevelPackName,
-                    *(long *)(param_1 + 0xd8) + (long)GameSettings::currentLevelPackIndex * 0x18);
+    ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&GameSettings::currentLevelPackName))->operator=(*(long *)(param_1 + 0xd8) + (long)GameSettings::currentLevelPackIndex * 0x18);
   }
 LAB_0058db3c:
   iStack_41c = -1;
@@ -8892,8 +8891,7 @@ LAB_00596420:
                   uStack_44a = 0x654e;
                   uStack_448 = 0x65;
                     /* try { // try from 00596bc8 to 00596bcf has its CatchHandler @ 005975c4 */
-                  Walaber::Property::Property(&bStack_280,
-                                  *(undefined4 *)
+                  new ((void *)(&bStack_280)) Walaber::Property(*(undefined4 *)
                                    (plVar17[0x21] +
                                    (long)(int)(uVar4 - *(int *)((long)plVar17 + 500)) * 4));
                     /* try { // try from 00596bd0 to 00596bdf has its CatchHandler @ 005975b4 */

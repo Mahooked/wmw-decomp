@@ -85,8 +85,7 @@ template<> undefined8 * std::__ndk1::vector<WaterConcept::ParticleDescription,st
        (uVar13 = lVar12 * 0x5555555555555556, uVar8 = uVar10, uVar10 <= uVar13)) {
       uVar8 = uVar13;
     }
-    std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>::__split_buffer(&puStack_a8,uVar8,((long)param_2 - lVar9 >> 2) * -0x5555555555555555,param_1 + 2
-                   );
+    new ((void *)(&puStack_a8)) std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>(uVar8,((long)param_2 - lVar9 >> 2) * -0x5555555555555555,param_1 + 2);
     if (puStack_98 == puStack_90) {
       if (puStack_a0 < puStack_a8 || (long)puStack_a0 - (long)puStack_a8 == 0) {
         uVar10 = ((long)puStack_90 - (long)puStack_a8 >> 2) * 0x5555555555555556;

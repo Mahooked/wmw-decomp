@@ -267,8 +267,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
   uStack_108 = 0x74;
   uStack_ff = 0x74;
                     /* try { // try from 004cdfc4 to 004cdfd3 has its CatchHandler @ 004ce27c */
-  Walaber::XMLDocument::XMLDocument(&lStack_68,*(undefined8 *)(in_x1 + 0x20),*(undefined8 *)(in_x1 + 0x28),&bStack_110
-                 );
+  new ((void *)(&lStack_68)) Walaber::XMLDocument(*(undefined8 *)(in_x1 + 0x20),*(undefined8 *)(in_x1 + 0x28),&bStack_110);
   if ((bStack_110 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_fd,CONCAT21(uStack_ff,uStack_100)));
   }
