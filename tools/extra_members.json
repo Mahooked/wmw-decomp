@@ -859,6 +859,7 @@
   "field_0x8"
  ],
  "WaterConcept::Screen_Hub": [
+  "HubAction_const",
   "WidgetName"
  ],
  "Walaber::PCSNode": [
