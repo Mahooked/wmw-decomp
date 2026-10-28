@@ -68,6 +68,9 @@ typedef long long          int64_t;
 typedef __SIZE_TYPE__      size_t;
 typedef __PTRDIFF_TYPE__   ssize_t;
 typedef long double        longdouble;
+#define NAN __builtin_nanf("")
+#define SQRT(x) __builtin_sqrt(x)
+#define ABS(x) __builtin_abs(x)
 typedef char16_t           wchar16;
 typedef unsigned int       unsigned_int;   /* Ghidra writes this as a type name */
 typedef unsigned int       word;
@@ -192,6 +195,12 @@ float  fmaxf(float, float);
 /* further libc the PLT imports resolve to */
 int    sscanf(const char *, const char *, ...);
 void  *memchr(const void *, int, size_t);
+
+/* ---- locale / time (C library) ---- */
+void  *newlocale(int, const char *, void *);
+void   freelocale(void *);
+void  *uselocale(void *);
+size_t strftime(char *, size_t, const char *, const void *);
 char  *builtin_strncpy(char *, const char *, size_t);   /* Ghidra's name for strncpy */
 int    pthread_mutex_lock(pthread_mutex_t *);
 int    pthread_mutex_unlock(pthread_mutex_t *);
@@ -253,6 +262,7 @@ template <class... A> void xmlFreeParserInputBuffer(A...);
 template <class... A> void xmlStrcasecmp(A...);
 template <class... A> void xmlCurrentChar(A...);
 template <class... A> void xmlErrMemory(A...);
+template <class... A> void __xmlRegisterCallbacks(A...);
 template <class... A> void xmlLinkGetData(A...);
 template <class... A> void xmlXPathRegisterFuncNS(A...);
 template <class... A> float sqrtf(A...);
