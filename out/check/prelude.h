@@ -72,6 +72,7 @@ typedef long double        longdouble;
 #define NAN __builtin_nanf("")
 #define SQRT(x) __builtin_sqrt(x)
 #define ABS(x) __builtin_abs(x)
+#define LZCOUNT(x) __builtin_clz(x)
 #define tpidr_el0 0
 #define register0x00000008 0
 typedef char16_t           wchar16;
@@ -199,6 +200,8 @@ float  fmaxf(float, float);
 int    sscanf(const char *, const char *, ...);
 void  *memchr(const void *, int, size_t);
 void  *wmemset(void *, int, size_t);
+void  *wmemcpy(void *, const void *, size_t);
+void  *wmemmove(void *, const void *, size_t);
 
 /* ---- locale / time (C library) ---- */
 void  *newlocale(int, const char *, void *);
@@ -443,6 +446,7 @@ extern _Datum NEON_ucvtf;
 extern _Datum _sScreenSize;
 extern _Datum WebPUpsamplers;
 extern void *__DT_SYMTAB;
+extern void *_stderr;
 extern _Datum mCurrentAtlas;
 extern _Datum mLoadingAlpha;
 extern _Datum sm_pInstance;
@@ -450,6 +454,15 @@ extern _Datum _currentLevelPackName;
 extern _Datum mAtlasesToLoadCount;
 extern _Datum mInstancePtr;
 extern _Datum fde_table_entry;
+extern _Datum kVP8Log2Range;
+extern _Datum kVP8NewRange;
+extern _Datum ram0x00734438;
+extern _Datum _sRockTexCoords;
+extern _Datum instance;
+extern _Datum mColors;
+extern _Datum mNumUpdateSteps;
+struct sqlite3;
+extern _Datum sqlite3;
 extern _Datum NEON_ushl;
 extern _Datum crc32;
 extern _Datum deflate;
