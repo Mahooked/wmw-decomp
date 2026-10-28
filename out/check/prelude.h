@@ -72,6 +72,8 @@ typedef long double        longdouble;
 #define NAN __builtin_nanf("")
 #define SQRT(x) __builtin_sqrt(x)
 #define ABS(x) __builtin_abs(x)
+#define tpidr_el0 0
+#define register0x00000008 0
 typedef char16_t           wchar16;
 typedef unsigned int       unsigned_int;   /* Ghidra writes this as a type name */
 typedef unsigned int       word;
@@ -437,6 +439,9 @@ extern _Datum NEON_scvtf;
 extern _Datum NEON_smax;
 extern _Datum NEON_smin;
 extern _Datum NEON_ucvtf;
+extern _Datum _sScreenSize;
+extern _Datum WebPUpsamplers;
+extern void *__DT_SYMTAB;
 extern _Datum NEON_ushl;
 extern _Datum crc32;
 extern _Datum deflate;
@@ -548,3 +553,9 @@ extern _Datum xmlXPathStringEvalNumber;
 struct _xmlNode { char data[256]; };
 struct _xmlDoc { char data[512]; };
 struct __sFILE { char data[256]; };
+
+namespace Walaber { struct ScreenCoord { static _Datum sScreenSize; }; }
+
+/* System/ARM helpers */
+extern "C" int ExclusiveMonitorsStatus(void);
+extern "C" int ExclusiveMonitorPass(void);
