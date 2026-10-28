@@ -1171,6 +1171,7 @@ def build_preamble(prelude, path):
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(text)
         fh.write("\n#include \"decls.h\"\n")
+        fh.write("\nnamespace non_virtual_thunk_to_WaterConcept = WaterConcept;\n")
 
 
 def run_clang(clang, preamble, path):

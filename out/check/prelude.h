@@ -22,7 +22,8 @@ typedef unsigned int       undefined4;
 typedef unsigned long long undefined5;
 typedef unsigned long long undefined6;
 typedef unsigned long long undefined7;
-typedef unsigned long long undefined8;
+struct _Datum;
+typedef _Datum undefined8;
 typedef unsigned char      byte;
 typedef unsigned char      uchar;
 typedef unsigned short     ushort;
@@ -390,6 +391,7 @@ template <> struct _EnableIf<true> { struct type {}; };
    index, call through, cast -- still parses. */
 struct _Datum {
   _Datum() {}
+  template <class T> _Datum(T) {}
   /* A data global is read as an integer first -- a guard byte (`DAT_x & 1`), a
      length (`0 < DAT_x`), an offset (`DAT_x + lVar1`) -- and a *template*
      conversion makes every one of those ambiguous: each built-in operator is
