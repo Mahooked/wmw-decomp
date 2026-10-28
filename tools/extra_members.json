@@ -1,0 +1,870 @@
+{
+ "std::bad_alloc": [
+  "typeinfo"
+ ],
+ "std::bad_exception": [
+  "typeinfo"
+ ],
+ "WaterConcept::GameSettings": [
+  "AllowDeviceRotation",
+  "ContentBasePath",
+  "CurrentDeviceOrientation",
+  "TargetFramerate",
+  "UserStoreBasePath",
+  "aboveMinAge",
+  "currentADFlavor",
+  "currentADScreen",
+  "currentADStoryLine",
+  "currentAge",
+  "currentLevelChallengeID",
+  "currentLevelIndex",
+  "currentLevelIsAllie",
+  "currentLevelIsBonus",
+  "currentLevelIsLOTW",
+  "currentLevelIsMyst",
+  "currentLevelIsSecret",
+  "currentLevelName",
+  "currentLevelPackFacebookName",
+  "currentLevelPackIndex",
+  "currentLevelPackName",
+  "currentPhotoFinishDuck",
+  "currentSKU",
+  "currentScreenIndex",
+  "currentStoryline",
+  "duckLockMode",
+  "duckSuffix",
+  "enabledFeatures",
+  "greyscaleMode",
+  "jumpLevel",
+  "lastChallengeAttempt",
+  "lastStoryline",
+  "mAllowNotifications",
+  "mLanguageList",
+  "mLevelList",
+  "mReloadSwampy",
+  "mShowLOTWNotification",
+  "mShowingNotification",
+  "mSupportsMenuAnimations",
+  "marketingMode",
+  "menuEntriesUntilPopup",
+  "musicOn",
+  "promotionSuffix",
+  "selectedLevelPackName",
+  "soundOn",
+  "systemLanguage",
+  "themeSuffix"
+ ],
+ "WaterConcept::World": [
+  "AlgaeDot",
+  "CoalDot",
+  "MaterialInfo",
+  "RegionInfo",
+  "SwitchAnimInfo",
+  "TouchOwner",
+  "VBOData",
+  "field_0x100",
+  "field_0x108",
+  "field_0x110",
+  "field_0x118",
+  "field_0x120",
+  "field_0x128",
+  "field_0x130",
+  "field_0x138",
+  "field_0x140",
+  "field_0x148",
+  "field_0x150",
+  "field_0x154",
+  "field_0x15a",
+  "field_0x164",
+  "field_0x170",
+  "field_0x178",
+  "field_0x180",
+  "field_0x188",
+  "field_0x190",
+  "field_0x198",
+  "field_0x1a0",
+  "field_0x1a8",
+  "field_0x1b0",
+  "field_0x1b8",
+  "field_0x1c0",
+  "field_0x1c8",
+  "field_0x1d4",
+  "field_0x78",
+  "field_0x80",
+  "field_0x90",
+  "field_0x94",
+  "field_0x9c",
+  "field_0xa8",
+  "field_0xb0",
+  "field_0xb8",
+  "field_0xc0",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xd8",
+  "field_0xdc",
+  "field_0xe4",
+  "field_0xf0",
+  "field_0xf8"
+ ],
+ "WaterConcept::Fluids": [
+  "CustomParticleDamping",
+  "FluidCollisionCallbackParameters",
+  "NeighborList",
+  "particlesForFluid"
+ ],
+ "WaterConcept::InteractiveObject": [
+  "SpriteInfo",
+  "TimerSetting",
+  "field_0x10",
+  "field_0x148",
+  "field_0x150",
+  "field_0x15c",
+  "field_0x164",
+  "field_0x16c",
+  "field_0x188",
+  "field_0x1a0",
+  "field_0x1a8",
+  "field_0x1b0",
+  "field_0x1bc",
+  "field_0x1d8",
+  "field_0x20",
+  "field_0x208",
+  "field_0x210",
+  "field_0x211",
+  "field_0x212",
+  "field_0x220",
+  "field_0x228",
+  "field_0x24",
+  "field_0x240",
+  "field_0x244",
+  "field_0x8",
+  "field_0x98",
+  "field_0xf0",
+  "getClosestPoint",
+  "getClosestPointOnShape"
+ ],
+ "Walaber::Curve": [
+  "evaluate",
+  "findSegment"
+ ],
+ "Walaber::Vector2": [
+  "One",
+  "Zero",
+  "_4_4_"
+ ],
+ "Walaber::SpriteBatch": [
+  "field_0x10",
+  "field_0x11",
+  "field_0x12",
+  "field_0x13",
+  "field_0x14",
+  "field_0x2c",
+  "field_0x2d",
+  "field_0x2e",
+  "field_0x2f",
+  "field_0x8",
+  "field_0xc",
+  "field_0xd"
+ ],
+ "Walaber::Color": [
+  "Black",
+  "Blue",
+  "Cyan",
+  "Green",
+  "Grey",
+  "Magenta",
+  "Purple",
+  "Red",
+  "White",
+  "Yellow"
+ ],
+ "Walaber::Transition": [
+  "tk_color",
+  "tk_fontColor",
+  "tk_fontName",
+  "tk_fontPos",
+  "tk_fontScale",
+  "tk_fontText",
+  "tk_pauseLength",
+  "tk_slideDirection",
+  "tk_slideMaskSize",
+  "tk_slideMaskTexture"
+ ],
+ "WaterConcept::AlgaeHider": [
+  "field_0x10"
+ ],
+ "Walaber::TextManager": [
+  "SubtitleInfo",
+  "mCurrentLanguage",
+  "mDictionary"
+ ],
+ "Walaber::Message": [
+  "field_0x1",
+  "field_0x2",
+  "field_0x4",
+  "field_0x5",
+  "field_0x6",
+  "field_0x7",
+  "field_0x8",
+  "field_0x9",
+  "field_0xa",
+  "field_0xb"
+ ],
+ "Walaber::Widget": [
+  "_tail",
+  "angle",
+  "baseSize",
+  "field_0x10",
+  "field_0x108",
+  "field_0x110",
+  "field_0x114",
+  "field_0x118",
+  "field_0x11c",
+  "field_0x120",
+  "field_0x124",
+  "field_0x128",
+  "field_0x12c",
+  "field_0x130",
+  "field_0x138",
+  "field_0x13a",
+  "field_0x140",
+  "field_0x148",
+  "field_0x14c",
+  "field_0x14d",
+  "field_0x14e",
+  "field_0x14f",
+  "field_0x15",
+  "field_0x152",
+  "field_0x153",
+  "field_0x154",
+  "field_0x16",
+  "field_0x17",
+  "field_0x20",
+  "field_0x54",
+  "field_0x74",
+  "field_0x78",
+  "field_0xa0",
+  "field_0xbc",
+  "field_0xd0",
+  "field_0xfc",
+  "field_0xfd",
+  "field_0xfe",
+  "field_0xff",
+  "widgetMgr"
+ ],
+ "Walaber::XML": [
+  "parseAspectRatio"
+ ],
+ "Walaber::WidgetHelper": [
+  "LoadPassThroughParams"
+ ],
+ "Walaber::Widget_PushButton": [
+  "field_0x15c",
+  "field_0x164",
+  "field_0x16c",
+  "field_0x170",
+  "field_0x8c",
+  "field_0xd0",
+  "tile",
+  "tileAnimation"
+ ],
+ "Walaber::Widget_Canvas": [
+  "field_0x12c",
+  "field_0x70",
+  "field_0x78",
+  "field_0x80",
+  "field_0x88",
+  "field_0x8c",
+  "field_0x90",
+  "field_0x94",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa4",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xd0",
+  "field_0xf8"
+ ],
+ "Walaber::Widget_Toggle": [
+  "field_0x19d",
+  "field_0x19e",
+  "field_0x19f",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xf8"
+ ],
+ "Walaber::Widget_Slider": [
+  "field_0x108",
+  "field_0x10c",
+  "field_0x114",
+  "field_0x118",
+  "field_0x120",
+  "field_0x128",
+  "field_0x138",
+  "field_0x160",
+  "field_0x180",
+  "field_0x188",
+  "field_0x18c",
+  "field_0x198",
+  "field_0x199",
+  "field_0x19a",
+  "field_0x19b",
+  "field_0x19c",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xe8",
+  "field_0xf0",
+  "field_0xf8",
+  "handleSize",
+  "stepSize"
+ ],
+ "Walaber::Widget_Label": [
+  "field_0x160",
+  "field_0x20",
+  "field_0x28",
+  "field_0x30",
+  "field_0x38",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "tileAnimation",
+  "tileOffset"
+ ],
+ "Walaber::Widget_SlideWheel": [
+  "field_0x100",
+  "field_0x110"
+ ],
+ "Walaber::Widget_ProgressBar": [
+  "field_0x164"
+ ],
+ "Walaber::Widget_MovingTextBox": [
+  "field_0x100",
+  "field_0x114",
+  "field_0x11c",
+  "field_0x124",
+  "field_0x12c",
+  "field_0x134",
+  "field_0x140",
+  "field_0x16c",
+  "field_0x17c",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xf0",
+  "field_0xf8"
+ ],
+ "WaterConcept::Screen_MainMenu_v2": [
+  "DuckInfo"
+ ],
+ "Walaber::SkeletonActor": [
+  "AnimationData",
+  "Prop",
+  "field_0x18",
+  "field_0x20",
+  "getAnimationLength"
+ ],
+ "Walaber::Widget_Group": [
+  "field_0x10",
+  "field_0x14",
+  "field_0x28",
+  "field_0x30",
+  "field_0x38",
+  "field_0x4",
+  "field_0x40",
+  "field_0x48",
+  "field_0x50",
+  "field_0x68",
+  "field_0x8",
+  "field_0x88",
+  "field_0x90",
+  "field_0x94",
+  "field_0x98",
+  "field_0xc",
+  "field_0xdc"
+ ],
+ "Walaber::ScreenManager": [
+  "mBackKeyPressed",
+  "mLayerCount",
+  "mPostDrawCallback",
+  "mPostUpdateCallback",
+  "mPrepList",
+  "mScreenStack",
+  "mTouchFirstResponderCallback"
+ ],
+ "WaterConcept::Screen_WaterTest": [
+  "StrokeInfo"
+ ],
+ "WaterConcept::Screen_Editor": [
+  "SelectedObjData"
+ ],
+ "Walaber__Widget__WidgetActionRet": [
+  "field_0x1",
+  "field_0x4",
+  "field_0x8",
+  "field_0x9"
+ ],
+ "WaterConcept::YSwitch": [
+  "field_0x188"
+ ],
+ "WaterConcept::Spout": [
+  "field_0x108",
+  "field_0x188",
+  "field_0x400",
+  "field_0x498"
+ ],
+ "Walaber::BaseParticle": [
+  "field_0x10",
+  "field_0x14"
+ ],
+ "WaterConcept::ParallaxPuppetShow": [
+  "AnimationCue",
+  "CameraMove",
+  "ColorCue",
+  "ShowElement",
+  "TransitionData"
+ ],
+ "Walaber::Logger": [
+  "mMinimalSeverityToLog"
+ ],
+ "Walaber::Message_AchievementUnlocked": [
+  "kPropAchievementIdentifier"
+ ],
+ "std::runtime_error": [
+  "typeinfo"
+ ],
+ "std::out_of_range": [
+  "typeinfo"
+ ],
+ "std::invalid_argument": [
+  "typeinfo"
+ ],
+ "std::system_error": [
+  "typeinfo"
+ ],
+ "code": [
+  "_4_4_"
+ ],
+ "FMOD::ChannelGroup": [
+  "release",
+  "setMute",
+  "setPaused",
+  "setVolume",
+  "stop"
+ ],
+ "Walaber::SoundManager": [
+  "GotSoundCallbackData",
+  "MusicGroup",
+  "SoundGroup",
+  "SoundInfo"
+ ],
+ "FMOD::Sound": [
+  "getDefaults",
+  "getFormat",
+  "getLength",
+  "getName",
+  "getSystemObject",
+  "lock",
+  "release",
+  "setMode",
+  "unlock"
+ ],
+ "Walaber::FileManager::ReadFileCallbackParameters": [
+  "field_0x10"
+ ],
+ "Walaber::Widget_IconList": [
+  "field_0x12c",
+  "field_0x138",
+  "field_0x13a",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xe8",
+  "field_0xf0",
+  "field_0xf8"
+ ],
+ "Walaber::CurveManager": [
+  "CurveMapEntry",
+  "PtrCurvePtrCallback"
+ ],
+ "Walaber::Skeleton": [
+  "bindPoseDataForBone",
+  "field_0x80",
+  "field_0x88",
+  "field_0x98",
+  "field_0xb0",
+  "field_0xc8",
+  "field_0xe0",
+  "field_0xe8"
+ ],
+ "Walaber::Sprite": [
+  "field_0x10",
+  "field_0x20",
+  "field_0x28",
+  "field_0x30",
+  "field_0x38",
+  "field_0x3c"
+ ],
+ "Walaber::Bone": [
+  "field_0x30",
+  "field_0x48"
+ ],
+ "Walaber::Animation": [
+  "field_0x10",
+  "field_0x8",
+  "field_0xf8"
+ ],
+ "Walaber::NodeAnimationTrack": [
+  "animation",
+  "field_0x10",
+  "field_0x20",
+  "field_0x30",
+  "field_0x40",
+  "field_0x50"
+ ],
+ "Walaber::NumericAnimationTrack": [
+  "animation",
+  "field_0x8"
+ ],
+ "Walaber::BitmapFont": [
+  "_getKern"
+ ],
+ "Walaber::Widget_ScrollableCamera": [
+  "currentIndex",
+  "currentIndexPercentage",
+  "field_0x10",
+  "field_0x124",
+  "field_0x12c",
+  "field_0x134",
+  "field_0x138",
+  "field_0x1c0",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x90",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xe8",
+  "field_0xf0",
+  "field_0xf8"
+ ],
+ "std::length_error": [
+  "typeinfo"
+ ],
+ "Walaber::Widget_ScrollableSet": [
+  "camera",
+  "cameraMode",
+  "currentIndex",
+  "distanceBetween",
+  "field_0x11c",
+  "field_0x12c",
+  "field_0x18",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x90",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xe8",
+  "field_0xf0",
+  "field_0xf8"
+ ],
+ "Walaber::Widget_ScrollableGroup": [
+  "directionMask",
+  "field_0x10",
+  "field_0x10c",
+  "field_0x14c",
+  "field_0x154",
+  "field_0x164",
+  "field_0x16c",
+  "field_0x174",
+  "field_0x8",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xe8",
+  "field_0xf0",
+  "field_0xf8",
+  "group"
+ ],
+ "Walaber::Rect": [
+  "UnitRect"
+ ],
+ "Walaber::Widget_ScoreCounter": [
+  "field_0x100",
+  "field_0x114",
+  "field_0x11c",
+  "field_0x124",
+  "field_0x12c",
+  "field_0x134",
+  "field_0x188",
+  "field_0x1a8",
+  "field_0x1ad",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xf0",
+  "field_0xf8"
+ ],
+ "WaterConcept::Floater": [
+  "InternalSpring"
+ ],
+ "Walaber::Widget_ColorPicker": [
+  "_tail",
+  "field_0x104",
+  "field_0x121",
+  "field_0x4",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xe8",
+  "field_0xf8"
+ ],
+ "Walaber::FingerInfo": [
+  "field_0x1"
+ ],
+ "Walaber::SpriteAnimation": [
+  "AnimationMarker"
+ ],
+ "WaterConcept::IAPNotification": [
+  "field_0x1f0",
+  "field_0x264"
+ ],
+ "Walaber::FileManager": [
+  "FileRecord"
+ ],
+ "Walaber::Widget_FingerCatcher": [
+  "CaughtFingerInfo",
+  "field_0x84",
+  "field_0x8c",
+  "field_0x90",
+  "field_0x98",
+  "field_0xa0",
+  "field_0xa8",
+  "field_0xac",
+  "field_0xb0",
+  "field_0xb4",
+  "field_0xbc",
+  "field_0xc4",
+  "field_0xc8",
+  "field_0xd0",
+  "field_0xe8",
+  "field_0xf0",
+  "field_0xf8",
+  "lostFingerPosition"
+ ],
+ "std::ios_base::failure": [
+  "typeinfo"
+ ],
+ "std::ios_base": [
+  "field_0x18",
+  "field_0x30"
+ ],
+ "std::bad_cast": [
+  "typeinfo"
+ ],
+ "Walaber::WidgetManager": [
+  "customizeMode",
+  "field_0x50",
+  "field_0x60",
+  "field_0x68",
+  "field_0x71"
+ ],
+ "Walaber::LinearCurve": [
+  "vtable"
+ ],
+ "Walaber::BezierCurve": [
+  "vtable"
+ ],
+ "WaterConcept::Screen_UpsellWater2": [
+  "TransitionInfo"
+ ],
+ "WaterConcept::Fan": [
+  "PumpInfo"
+ ],
+ "WaterConcept::Notification": [
+  "field_0x11b",
+  "field_0x11f",
+  "field_0x128",
+  "field_0x19b",
+  "field_0x19f",
+  "field_0x1d0",
+  "field_0xa0",
+  "field_0xa8"
+ ],
+ "std::future_error": [
+  "typeinfo"
+ ],
+ "Walaber::Node": [
+  "localAngle",
+  "localPosition",
+  "localScale",
+  "worldAngle",
+  "worldPosition",
+  "worldScale"
+ ],
+ "mbstate_t": [
+  "_1_7_",
+  "__count"
+ ],
+ "Walaber::AnimationManager": [
+  "field_0x10",
+  "field_0x28",
+  "field_0x30",
+  "field_0x44",
+  "field_0x8"
+ ],
+ "Walaber::DatabaseManager": [
+  "databaseMap"
+ ],
+ "Walaber::Flipbook": [
+  "FlipbookFrame"
+ ],
+ "Walaber::ZipArchiveReader": [
+  "FileLocation"
+ ],
+ "WaterConcept::HDAssetsNotification": [
+  "field_0x1e8",
+  "field_0x1f0"
+ ],
+ "Walaber::Transition_Iris": [
+  "BladeInfo"
+ ],
+ "WaterConcept__Screen_Editor__ObjectData": [
+  "field_0x0",
+  "field_0x10",
+  "field_0x20",
+  "field_0x28",
+  "field_0x30",
+  "field_0x38",
+  "field_0x40",
+  "field_0x48",
+  "field_0x8"
+ ],
+ "Walaber::DrawableNode": [
+  "layer"
+ ],
+ "WaterConceptConstants::FluidDescription": [
+  "field_0x10",
+  "field_0x18",
+  "field_0x20",
+  "field_0x28",
+  "field_0x30",
+  "field_0x8"
+ ],
+ "ndk::AccelerometerEvent": [
+  "field_0x4"
+ ],
+ "WaterConcept::Screen_WaterTest::FingerStamp": [
+  "_tail",
+  "field_0x15"
+ ],
+ "Walaber::TextureManager::SubTexInfo": [
+  "field_0x10",
+  "field_0x8"
+ ],
+ "Walaber::Widget_IconList::Icon": [
+  "field_0x10",
+  "field_0x8"
+ ],
+ "Walaber::PositionTextureColorVert": [
+  "field_0x8"
+ ],
+ "WaterConcept::Screen_Hub": [
+  "WidgetName"
+ ],
+ "Walaber::PCSNode": [
+  "field_0x1"
+ ],
+ "Walaber::Utilities": [
+  "create_map"
+ ]
+}

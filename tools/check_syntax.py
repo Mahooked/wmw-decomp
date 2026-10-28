@@ -867,6 +867,20 @@ def _decl(ret, name, params, post, static=False):
     return ("static " + text) if static else text
 
 
+# Extra members harvested from "no member named" errors: class -> list of member names.
+# Loaded once at import time; missing file is silently ignored.
+_EXTRA_MEMBERS = {}
+try:
+    import json as _json
+    import os as _os
+    _em_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                             "extra_members.json")
+    with open(_em_path, encoding="utf-8") as _fh:
+        _EXTRA_MEMBERS = _json.load(_fh)
+except Exception:
+    _EXTRA_MEMBERS = {}
+
+
 def emit_class(model, qname, out, depth, emitted, stack):
     if qname in emitted:
         return
@@ -885,6 +899,10 @@ def emit_class(model, qname, out, depth, emitted, stack):
     for short in sorted(model.members.get(qname, {})):
         for decl in model.members[qname][short]:
             out.append("%s  %s" % (indent, decl))
+    # Extra members harvested from "no member named" errors: declare them as
+    # static _Datum so that both `ClassName::member` and `obj.member` resolve.
+    for em in _EXTRA_MEMBERS.get(qname, ()):
+        out.append("%s  static _Datum %s;" % (indent, em))
     # Greedy variadic overloads for every harvested method: a call site
     # Ghidra printed with a different arity or an integer-typed object
     # argument cannot match the exact declaration, so the overload is what
