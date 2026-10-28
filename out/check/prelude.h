@@ -235,6 +235,10 @@ int    __android_log_vprint(int, const char *, const char *, void *);
 int   *__errno(void);
 }
 
+/* ---- C library function templates (outside extern C) ---- */
+template <class... A> void *uselocale(A...);
+template <class... A> int ExclusiveMonitorPass(A...);
+
 /* ---- C library functions: greedy template overloads for integer-typed args ---- */
 template <class... A> void *memcpy(A...);
 template <class... A> void *memmove(A...);
@@ -248,6 +252,17 @@ template <class... A> char *strncpy(A...);
 template <class... A> int sscanf(A...);
 template <class... A> int sprintf(A...);
 template <class... A> int snprintf(A...);
+template <class... A> int fclose(A...);
+template <class... A> void *fopen(A...);
+template <class... A> int fseek(A...);
+template <class... A> long ftell(A...);
+template <class... A> int fflush(A...);
+template <class... A> size_t fwrite(A...);
+template <class... A> size_t fread(A...);
+template <class... A> int fputs(A...);
+template <class... A> int puts(A...);
+template <class... A> int remove(A...);
+template <class... A> int rename(A...);
 
 /* ---- libxml2 free functions (variadic templates) ---- */
 template <class... A> char *xmlStrdup(A...);
@@ -272,6 +287,21 @@ template <class... A> void xmlErrMemory(A...);
 template <class... A> void __xmlRegisterCallbacks(A...);
 template <class... A> void xmlLinkGetData(A...);
 template <class... A> void xmlXPathRegisterFuncNS(A...);
+template <class... A> void xmlMutexLock(A...);
+template <class... A> void xmlMutexUnlock(A...);
+template <class... A> void xmlPopInput(A...);
+template <class... A> void xmlNewCharEncodingHandler(A...);
+template <class... A> void xmlStringCurrentChar(A...);
+template <class... A> void xmlStrcat(A...);
+template <class... A> void xmlFindCharEncodingHandler(A...);
+template <class... A> void xmlStrndup(A...);
+template <class... A> void xmlNextChar(A...);
+template <class... A> void xmlOutputBufferClose(A...);
+template <class... A> void xmlBufferFree(A...);
+template <class... A> void xmlNewChild(A...);
+template <class... A> void xmlNewProp(A...);
+template <class... A> void xmlHashFree(A...);
+template <class... A> void xmlFreeNodeList(A...);
 template <class... A> float sqrtf(A...);
 
 /* ---- libxml2 types ---- */
