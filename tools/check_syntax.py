@@ -96,6 +96,23 @@ __num_get_unsigned_integral SharedPtr MemberCallback WeakPtr unique_lock
 lock_guard
 """.split())
 
+# Functions whose signatures are provided (correctly) by out/check/prelude.h
+# rather than harvested from the binary.  Skipping them in decls.h avoids
+# conflicting redeclarations; the prelude's version wins.
+_PRELUDE_FUNCS = frozenset({
+    "xmlGetProp", "xmlGetNsProp", "xmlHasNsProp",
+    "xmlStrEqual", "xmlStrcmp",
+    "xmlOutputBufferWrite", "xmlOutputBufferWriteString",
+    "xmlStrdup", "xmlParserInputGrow", "xmlDictLookup",
+    "xmlXPathErr", "xmlDictOwns", "xmlParserHandlePEReference",
+    "xmlStrlen", "__xmlSimpleError", "__xmlRaiseError",
+    "xmlBufferWriteChar", "xmlXPathFreeObject",
+    "xmlFreeParserCtxt", "xmlBufferAdd", "xmlSkipBlankChars",
+    "xmlListFront", "xmlFreeParserInputBuffer", "xmlStrcasecmp",
+    "xmlCurrentChar", "xmlErrMemory", "xmlLinkGetData",
+    "xmlXPathRegisterFuncNS",
+})
+
 #: Names that are namespaces, never classes, however they are used.
 _NAMESPACE_ROOT = frozenset((
     "std", "std::__ndk1", "ndk", "Walaber", "WaterConcept",
@@ -868,6 +885,23 @@ def emit_class(model, qname, out, depth, emitted, stack):
     for short in sorted(model.members.get(qname, {})):
         for decl in model.members[qname][short]:
             out.append("%s  %s" % (indent, decl))
+    # Greedy variadic overloads for every harvested method: a call site
+    # Ghidra printed with a different arity or an integer-typed object
+    # argument cannot match the exact declaration, so the overload is what
+    # makes those call sites resolve (mirrors _emit_primary).
+    _seen_methods = set()
+    for short in sorted(model.members.get(qname, {})):
+        if short.startswith("~") or short == qname.split("::")[-1]:
+            continue
+        if short in _seen_methods:
+            continue
+        _seen_methods.add(short)
+        if short.startswith("operator"):
+            out.append("%s  template <class... _A> _Datum %s(_A...);"
+                       % (indent, short))
+        else:
+            out.append("%s  template <class... _A> static _Datum %s(_A..., ...);"
+                       % (indent, short))
     # A constructor call site is rewritten to placement new -- `new (obj)
     # Cls(args)` -- but most called constructors have no decompiled body, so
     # every class gets one greedy constructor template covering every arity;
@@ -1104,7 +1138,10 @@ def generate(model, path):
                          _emit_primary(model, key, params, defined)))
     for ns in sorted(model.funcs):
         decls = "\n".join(d for n in sorted(model.funcs[ns])
+                          if n not in _PRELUDE_FUNCS
                           for d in model.funcs[ns][n])
+        if not decls.strip():
+            continue
         out.append(_wrap(ns.split("::") if ns else [""], decls))
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(out) + "\n")

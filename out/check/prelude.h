@@ -219,6 +219,59 @@ int    __android_log_vprint(int, const char *, const char *, void *);
 int   *__errno(void);
 }
 
+/* ---- C library functions: greedy template overloads for integer-typed args ---- */
+template <class... A> void *memcpy(A...);
+template <class... A> void *memmove(A...);
+template <class... A> void *memset(A...);
+template <class... A> int memcmp(A...);
+template <class... A> size_t strlen(A...);
+template <class... A> int strcmp(A...);
+template <class... A> int strncmp(A...);
+template <class... A> char *strcpy(A...);
+template <class... A> char *strncpy(A...);
+template <class... A> int sscanf(A...);
+template <class... A> int sprintf(A...);
+template <class... A> int snprintf(A...);
+
+/* ---- libxml2 free functions (variadic templates) ---- */
+template <class... A> char *xmlStrdup(A...);
+template <class... A> int xmlParserInputGrow(A...);
+template <class... A> void *xmlDictLookup(A...);
+template <class... A> void xmlXPathErr(A...);
+template <class... A> int xmlDictOwns(A...);
+template <class... A> void xmlParserHandlePEReference(A...);
+template <class... A> int xmlStrlen(A...);
+template <class... A> void *__xmlSimpleError(A...);
+template <class... A> void *__xmlRaiseError(A...);
+template <class... A> void xmlBufferWriteChar(A...);
+template <class... A> void xmlXPathFreeObject(A...);
+template <class... A> void xmlFreeParserCtxt(A...);
+template <class... A> void xmlBufferAdd(A...);
+template <class... A> void xmlSkipBlankChars(A...);
+template <class... A> void xmlListFront(A...);
+template <class... A> void xmlFreeParserInputBuffer(A...);
+template <class... A> void xmlStrcasecmp(A...);
+template <class... A> void xmlCurrentChar(A...);
+template <class... A> void xmlErrMemory(A...);
+template <class... A> void xmlLinkGetData(A...);
+template <class... A> void xmlXPathRegisterFuncNS(A...);
+template <class... A> float sqrtf(A...);
+
+/* ---- libxml2 types ---- */
+typedef unsigned char xmlChar;
+struct _xmlNode;
+typedef struct _xmlNode *xmlNodePtr;
+typedef const struct _xmlNode *xmlConstNodePtr;
+
+/* ---- libxml2 functions (variadic templates: accept any args) ---- */
+template <class... A> xmlChar *xmlGetProp(A...);
+template <class... A> xmlChar *xmlGetNsProp(A...);
+template <class... A> int xmlHasNsProp(A...);
+template <class... A> int xmlStrEqual(A...);
+template <class... A> int xmlStrcmp(A...);
+template <class... A> int xmlOutputBufferWrite(A...);
+template <class... A> unsigned long xmlOutputBufferWriteString(A...);
+
 /* ---- libc++ skeletons ----
    Recovered signatures reach into libc++ (``basic_string<char, char_traits<char>,
    allocator<char>>``) and the bodies call its members in static form.  The real
