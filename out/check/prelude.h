@@ -396,6 +396,7 @@ struct _Datum {
   template <class T> _Datum &operator[](T) const;
   long long operator()(...) const;             /* call through a data global */
   _Datum operator*() const;                    /* indirect through one */
+  template <class T> T *operator->() const;    /* member access through a data global */
   /* ``(&DAT_x)[i]`` is the other half of the address story: the operand is an
      ``_Addr``, which converts to any *pointer* and had no subscript, so the
      160 string-table bodies that index one could not parse.  The conversion
