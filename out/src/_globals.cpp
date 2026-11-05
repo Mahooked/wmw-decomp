@@ -95938,19 +95938,17 @@ undefined8 WebPSafeCalloc(ulong param_1,ulong param_2)
 /* mangled: call_zopen64 */
 /* call_zopen64 */
 
-void call_zopen64(undefined8 *param_1)
+long call_zopen64(undefined8 *param_1,long param_2,int param_3)
 
 {
   if ((code *)*param_1 != (code *)0x0) {
                     /* WARNING: Could not recover jumptable at 0x003d97e0. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (*(code *)*param_1)(param_1[7]);
-    return;
+    return (long)(*(code *)*param_1)(param_1[7],param_2,param_3);
   }
                     /* WARNING: Could not recover jumptable at 0x003d97ec. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*(code *)param_1[8])(param_1[7]);
-  return;
+  return (long)(*(code *)param_1[8])(param_1[7],param_2,param_3);
 }
 
 
@@ -95959,7 +95957,7 @@ void call_zopen64(undefined8 *param_1)
 /* mangled: call_zseek64 */
 /* call_zseek64 */
 
-void call_zseek64(long param_1)
+long call_zseek64(long param_1,long param_2,long param_3,int param_4)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -95970,8 +95968,7 @@ void call_zseek64(long param_1)
   }
                     /* WARNING: Could not recover jumptable at 0x003d9800. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*UNRECOVERED_JUMPTABLE)(*(undefined8 *)(param_1 + 0x38));
-  return;
+  return (*UNRECOVERED_JUMPTABLE)(*(undefined8 *)(param_1 + 0x38),param_2,param_3,param_4);
 }
 
 
@@ -95980,19 +95977,17 @@ void call_zseek64(long param_1)
 /* mangled: call_ztell64 */
 /* call_ztell64 */
 
-void call_ztell64(long param_1)
+long call_ztell64(long param_1,long param_2)
 
 {
   if (*(long *)(param_1 + 0x20) != 0) {
                     /* WARNING: Could not recover jumptable at 0x003d9814. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (**(code **)(param_1 + 0x18))(*(undefined8 *)(param_1 + 0x38));
-    return;
+    return (**(code **)(param_1 + 0x18))(*(undefined8 *)(param_1 + 0x38),param_2);
   }
                     /* WARNING: Could not recover jumptable at 0x003d9820. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(param_1 + 0x48))(*(undefined8 *)(param_1 + 0x38));
-  return;
+  return (**(code **)(param_1 + 0x48))(*(undefined8 *)(param_1 + 0x38),param_2);
 }
 
 
@@ -97170,7 +97165,7 @@ int wUnzReadCurrentFile(long param_1,long param_2,uint param_3)
               if ((int)uVar6 == 0) {
                 return 0;
               }
-              lVar3 = call_zseek64(plVar8 + 0x19,plVar8[0x24],plVar8[0x26] + plVar8[0xf],0);
+              lVar3 = call_zseek64((long)(plVar8 + 0x19),plVar8[0x24],plVar8[0x26] + plVar8[0xf],0);
               if ((lVar3 != 0) ||
                  (uVar4 = (*(code *)plVar8[0x1a])(plVar8[0x20],plVar8[0x24],*plVar8,uVar6),
                  uVar4 != uVar6)) {
@@ -98002,12 +97997,12 @@ void * wZipOpen3(undefined8 param_1,int param_2,undefined8 *param_3,long param_4
   if (param_2 != 0) {
     uVar4 = 7;
   }
-  lStack_101a0 = call_zopen64(auStack_101f8,param_1,uVar4);
+  lStack_101a0 = call_zopen64((undefined8 *)auStack_101f8,param_1,uVar4);
   if (lStack_101a0 != 0) {
     if (param_2 == 1) {
-      call_zseek64(auStack_101f8,lStack_101a0,0,2);
+      call_zseek64((long)auStack_101f8,lStack_101a0,0,2);
     }
-    call_ztell64(auStack_101f8,lStack_101a0);
+    call_ztell64((long)auStack_101f8,lStack_101a0);
     uStack_10110 = 0;
     uStack_10190 = 0;
     uStack_10198 = 0;
@@ -99784,7 +99779,7 @@ int wZipClose(void *param_1,long param_2)
   if (param_2 == 0) {
     param_2 = *(long *)((long)param_1 + 0x10198);
   }
-  lVar4 = call_ztell64(param_1,*(undefined8 *)((long)param_1 + 0x58));
+  lVar4 = call_ztell64((long)param_1,*(undefined8 *)((long)param_1 + 0x58));
   plVar1 = (long *)((long)param_1 + 0x60);
   if (iVar2 == 0) {
     plVar9 = (long *)*plVar1;
@@ -99826,7 +99821,7 @@ LAB_003df7bc:
   *plVar1 = 0;
   *(undefined8 *)((long)param_1 + 0x68) = 0;
   if (0xfffffffe < (ulong)(lVar4 - *(long *)((long)param_1 + 0x10188))) {
-    uVar6 = call_ztell64(param_1,*(undefined8 *)((long)param_1 + 0x58));
+    uVar6 = call_ztell64((long)param_1,*(undefined8 *)((long)param_1 + 0x58));
     Write_Zip64EndOfCentralDirectoryRecord(param_1,lVar8,lVar4);
     Write_Zip64EndOfCentralDirectoryLocator(param_1,uVar6);
   }

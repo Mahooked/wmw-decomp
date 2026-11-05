@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | current worktree: **18,136** diagnostics across 1,467 files with synthesized declarations compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | current worktree: **18,084** diagnostics across 1,467 files with synthesized declarations compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 18,136 current
+   files against synthesised declarations and sorts the 18,084 current
    worktree diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
@@ -66,7 +66,7 @@ re-inferred.
    divergence re-bound at 764 definitions, template-qualified definitions
    missing their `template<>` marker, calls printed in declaration shape, and
    calls to a function template the tree recovered as an ordinary function.
-   The largest current bucket is 1,703 *no matching function* diagnostics;
+   The largest current bucket is 1,676 *no matching function* diagnostics;
    remaining cases include imported or unresolved call signatures and malformed
    decompiler expressions.
 3. **Re-infer local identifiers and file organisation.** These were never in the
@@ -1232,7 +1232,7 @@ Current working-tree check (1,467 files):
 |---|---|
 | Files checked | 1,467 |
 | Files with at least one error | 1,183 |
-| Diagnostics | 18,136 |
+| Diagnostics | 18,084 |
 | Generated declarations | **0 errors** |
 
 The gate now gives synthesized template-member declarations separate packs for
@@ -1299,6 +1299,12 @@ count to 18,152.
 `VP8LEncodeStream` also holds the bit writer state address in a `long`, while
 `VP8LWriteBits` reads it as `long *`. Casting the address at its 16 write sites
 removes those call mismatches and brings the current count to 18,136.
+
+The zlib `call_zopen64`, `call_zseek64` and `call_ztell64` tail-call wrappers now
+forward their recovered stream, filename, mode, offset and origin arguments and
+return their callback results. Six caller address representations are cast to
+the wrappers' recovered pointer types. This resolves 52 diagnostics and brings
+the current count to 18,084.
 
 Earlier baseline and diagnostic breakdown:
 
