@@ -1535,6 +1535,15 @@ asks it about synthetic names. `tools/test_cxxfilt.py` runs the whole comparison
 as a regression gate and exits non-zero on any mismatch — run it before touching
 `cxxfilt.py`.
 
+`refprobe.py` finds the bundled demangler under a Ghidra installation supplied
+with `--ghidra` (or `GHIDRA_INSTALL_DIR` / `GHIDRA_HOME`). Use `--exe` to select
+one executable directly. For example:
+
+```powershell
+py tools/refprobe.py --ghidra 'C:\tools\ghidra_12.1.4_PUBLIC' _Z3foov
+py tools/refprobe.py --exe 'C:\tools\demangler_gnu_v2_41.exe' --file names.txt
+```
+
 | Reference set (6,769 names) | |
 |---|---|
 | Match GCC | 6,769 (100%) |
