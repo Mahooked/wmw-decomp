@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | current worktree: **18,455** diagnostics across 1,467 files with synthesized declarations compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | current worktree: **18,424** diagnostics across 1,467 files with synthesized declarations compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 18,455 current
+   files against synthesised declarations and sorts the 18,424 current
    worktree diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
@@ -1231,7 +1231,7 @@ Current working-tree check (1,467 files):
 |---|---|
 | Files checked | 1,467 |
 | Files with at least one error | 1,183 |
-| Diagnostics | 18,455 |
+| Diagnostics | 18,424 |
 | Generated declarations | **0 errors** |
 
 The gate now gives synthesized template-member declarations separate packs for
@@ -1242,6 +1242,10 @@ calls that carry a third, hidden result argument; it resolves 371 no-match
 errors and the three illegal three-argument operator definitions. Together,
 these changes reduce the count from 19,203 to 18,455 while the generated
 declarations still compile cleanly.
+
+The current worktree also casts the 31 pointer-to-address calls to
+`FUN_00261e7c` explicitly, reducing the diagnostic count to 18,424; the
+decompiled definition accepts its parser-context address as `long`.
 
 Earlier baseline and diagnostic breakdown:
 

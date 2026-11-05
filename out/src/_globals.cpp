@@ -10907,7 +10907,7 @@ void xmlParserHandlePEReference(long *param_1)
             if (-1 < iVar4) {
               if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
                  (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-                FUN_00261e7c(param_1);
+                FUN_00261e7c((long)param_1);
               }
               puVar1 = *(undefined1 **)(param_1[7] + 0x20);
               if (3 < *(long *)(param_1[7] + 0x28) - (long)puVar1) {
@@ -13405,7 +13405,7 @@ void xmlParseCharData(long *param_1,int param_2)
         (499 < *(long *)(lVar5 + 0x28) - *(long *)(lVar5 + 0x20))) ||
        (FUN_00266398(param_1), *(int *)((long)param_1 + 0x1c4) == 0)) &&
       (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)))) {
-    FUN_00261e7c(param_1);
+    FUN_00261e7c((long)param_1);
   }
   lVar5 = param_1[7];
   if (param_2 == 0) {
@@ -13560,7 +13560,7 @@ LAB_00266964:
               (499 < *(long *)(lVar5 + 0x28) - (long)pbVar11)) ||
              (FUN_00266398(param_1), *(int *)((long)param_1 + 0x1c4) == 0)) &&
             (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)))) {
-          FUN_00261e7c(param_1);
+          FUN_00261e7c((long)param_1);
         }
         lVar5 = param_1[7];
         pbVar7 = *(byte **)(lVar5 + 0x20);
@@ -13598,7 +13598,7 @@ void xmlParseCharDataComplex(long *param_1,int param_2)
          (499 < *(long *)(lVar5 + 0x28) - *(long *)(lVar5 + 0x20))) ||
         (FUN_00266398(param_1), *(int *)((long)param_1 + 0x1c4) == 0)) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
   }
   uVar2 = xmlCurrentChar(param_1,&iStack_1a8);
@@ -13654,7 +13654,7 @@ void xmlParseCharDataComplex(long *param_1,int param_2)
     else {
       if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
          (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-        FUN_00261e7c(param_1);
+        FUN_00261e7c((long)param_1);
       }
       iVar4 = 0;
     }
@@ -13917,7 +13917,7 @@ void xmlParseComment(long *param_1)
          (499 < *(long *)(lVar10 + 0x28) - *(long *)(lVar10 + 0x20))) ||
         (FUN_00266398(param_1), *(int *)((long)param_1 + 0x1c4) == 0)) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
   }
   lVar11 = param_1[7];
@@ -14008,7 +14008,7 @@ LAB_00267938:
             (499 < *(long *)(lVar11 + 0x28) - (long)pbVar19)) ||
            (FUN_00266398(param_1), *(int *)((long)param_1 + 0x1c4) == 0)) &&
           (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)))) {
-        FUN_00261e7c(param_1);
+        FUN_00261e7c((long)param_1);
       }
       lVar11 = param_1[7];
       pbVar20 = *(byte **)(lVar11 + 0x20);
@@ -14081,7 +14081,7 @@ LAB_002677a8:
   }
   if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
      (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-    FUN_00261e7c(param_1);
+    FUN_00261e7c((long)param_1);
   }
   uVar4 = xmlCurrentChar(param_1,&iStack_6c);
   if (uVar4 == 0) {
@@ -14171,7 +14171,7 @@ LAB_00267b30:
           else {
             if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
                (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-              FUN_00261e7c(param_1);
+              FUN_00261e7c((long)param_1);
             }
             iVar18 = 0;
           }
@@ -14205,7 +14205,7 @@ LAB_00267b30:
                 lVar11 = *(long *)(lVar15 + 0x20);
               }
               if (*(long *)(lVar15 + 0x28) - lVar11 < 0xfa) {
-                FUN_00261e7c(param_1);
+                FUN_00261e7c((long)param_1);
               }
             }
 LAB_00267cb4:
@@ -14477,7 +14477,7 @@ LAB_00268454:
               else {
                 if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
                    (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-                  FUN_00261e7c(param_1);
+                  FUN_00261e7c((long)param_1);
                 }
                 iVar3 = 0;
               }
@@ -14512,7 +14512,7 @@ LAB_00268454:
                    (499 < *(long *)(lVar11 + 0x28) - *(long *)(lVar11 + 0x20))) ||
                   (FUN_00266398(param_1), *(int *)((long)param_1 + 0x1c4) == 0)) &&
                  (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-                FUN_00261e7c(param_1);
+                FUN_00261e7c((long)param_1);
               }
             }
           } while( true );
@@ -15457,7 +15457,7 @@ void xmlParseAttributeListDecl(long *param_1)
       xmlSkipBlankChars(param_1);
       if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
          (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-        FUN_00261e7c(param_1);
+        FUN_00261e7c((long)param_1);
       }
       lVar15 = param_1[7];
       plVar18 = (long *)(lVar15 + 0x20);
@@ -15467,7 +15467,7 @@ void xmlParseAttributeListDecl(long *param_1)
         lStack_90 = 0;
         if ((*(int *)((long)param_1 + 0x1c4) == 0) && (*(long *)(lVar15 + 0x28) - *plVar18 < 0xfa))
         {
-          FUN_00261e7c(param_1);
+          FUN_00261e7c((long)param_1);
         }
         lStack_88 = 0;
         lVar15 = xmlParseName(param_1);
@@ -15480,7 +15480,7 @@ LAB_0026a570:
         }
         if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
            (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-          FUN_00261e7c(param_1);
+          FUN_00261e7c((long)param_1);
         }
         if ((0x20 < **(byte **)(param_1[7] + 0x20)) ||
            ((1L << ((ulong)**(byte **)(param_1[7] + 0x20) & 0x3f) & 0x100002600U) == 0)) {
@@ -15493,7 +15493,7 @@ LAB_0026a570:
         if (iVar5 < 1) break;
         if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
            (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-          FUN_00261e7c(param_1);
+          FUN_00261e7c((long)param_1);
         }
         if ((0x20 < **(byte **)(param_1[7] + 0x20)) ||
            ((1L << ((ulong)**(byte **)(param_1[7] + 0x20) & 0x3f) & 0x100002600U) == 0)) {
@@ -15520,7 +15520,7 @@ LAB_0026a5e0:
         }
         if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
            (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-          FUN_00261e7c(param_1);
+          FUN_00261e7c((long)param_1);
         }
         pbVar16 = *(byte **)(param_1[7] + 0x20);
         bVar1 = *pbVar16;
@@ -15648,7 +15648,7 @@ joined_r0x0026a4ec:
         }
         if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
            (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-          FUN_00261e7c(param_1);
+          FUN_00261e7c((long)param_1);
         }
         lVar15 = param_1[7];
         plVar18 = (long *)(lVar15 + 0x20);
@@ -17083,7 +17083,7 @@ long xmlParseEntityRef(long *param_1)
   
   if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
      (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-    FUN_00261e7c(param_1);
+    FUN_00261e7c((long)param_1);
   }
   if (**(char **)(param_1[7] + 0x20) != '&') {
     return 0;
@@ -17351,7 +17351,7 @@ long xmlParseStartTag(long *param_1)
       xmlSkipBlankChars(param_1);
       if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
          (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-        FUN_00261e7c(param_1);
+        FUN_00261e7c((long)param_1);
       }
       lVar18 = 0;
       lVar13 = lStack_78;
@@ -17432,7 +17432,7 @@ LAB_0026e010:
       iVar17 = (int)lVar18;
       if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
          (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-        FUN_00261e7c(param_1);
+        FUN_00261e7c((long)param_1);
       }
       bVar2 = **(byte **)(param_1[7] + 0x20);
       uVar12 = (ulong)bVar2;
@@ -17460,7 +17460,7 @@ LAB_0026e07c:
               (499 < *(long *)(lVar9 + 0x28) - *(long *)(lVar9 + 0x20))) ||
              (FUN_00266398(param_1), *(int *)((long)param_1 + 0x1c4) == 0)) &&
             (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)))) {
-          FUN_00261e7c(param_1);
+          FUN_00261e7c((long)param_1);
         }
         goto LAB_0026de8c;
       }
@@ -17657,7 +17657,7 @@ LAB_0026e990:
               else {
                 if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
                    (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-                  FUN_00261e7c(param_1);
+                  FUN_00261e7c((long)param_1);
                 }
                 iVar2 = 0;
               }
@@ -18464,7 +18464,7 @@ void xmlParseDocument(long *param_1)
   if ((param_1 != (long *)0x0) && (lVar6 = param_1[7], lVar6 != 0)) {
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
        (*(long *)(lVar6 + 0x28) - *(long *)(lVar6 + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
     FUN_0026c920(param_1);
     if ((*param_1 != 0) && (pcVar7 = *(code **)(*param_1 + 0x58), pcVar7 != (code *)0x0)) {
@@ -18487,7 +18487,7 @@ void xmlParseDocument(long *param_1)
     }
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
     pcVar8 = *(char **)(param_1[7] + 0x20);
     if ((((((*pcVar8 == '<') && (pcVar8[1] == '?')) && (pcVar8[2] == 'x')) &&
@@ -18508,12 +18508,12 @@ void xmlParseDocument(long *param_1)
     }
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
     xmlParseMisc(param_1);
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
     pcVar8 = *(char **)(param_1[7] + 0x20);
     if (((((*pcVar8 == '<') && (pcVar8[1] == '!')) && (pcVar8[2] == 'D')) &&
@@ -18538,7 +18538,7 @@ void xmlParseDocument(long *param_1)
     }
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
     if (**(char **)(param_1[7] + 0x20) == '<') {
       *(undefined4 *)(param_1 + 0x22) = 7;
@@ -18652,7 +18652,7 @@ LAB_0027199c:
     FUN_0026c920(param_1);
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
     if ((*param_1 != 0) && (pcVar7 = *(code **)(*param_1 + 0x58), pcVar7 != (code *)0x0)) {
       (*pcVar7)(param_1[1],xmlDefaultSAXLocator);
@@ -18673,7 +18673,7 @@ LAB_0027199c:
     }
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
        (*(long *)(param_1[7] + 0x28) - *(long *)(param_1[7] + 0x20) < 0xfa)) {
-      FUN_00261e7c(param_1);
+      FUN_00261e7c((long)param_1);
     }
     pcVar8 = *(char **)(param_1[7] + 0x20);
     if (((((*pcVar8 == '<') && (pcVar8[1] == '?')) && (pcVar8[2] == 'x')) &&
@@ -19932,7 +19932,7 @@ ulong xmlParseCtxtExternalEntity(undefined8 *param_1,long param_2,long param_3,l
             }
             if ((*(int *)((long)puVar6 + 0x1c4) == 0) &&
                (*(long *)(puVar6[7] + 0x28) - *(long *)(puVar6[7] + 0x20) < 0xfa)) {
-              FUN_00261e7c(puVar6);
+              FUN_00261e7c((long)puVar6);
             }
             puVar1 = *(undefined1 **)(puVar6[7] + 0x20);
             if (3 < *(long *)(puVar6[7] + 0x28) - (long)puVar1) {
