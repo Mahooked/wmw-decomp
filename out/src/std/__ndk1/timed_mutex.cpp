@@ -25,13 +25,13 @@
   undefined8 uVar1;
   
                     /* try { // try from 005e2bac to 005e2baf has its CatchHandler @ 005e2be8 */
-  uVar1 = pthread_mutex_lock();
+  uVar1 = pthread_mutex_lock((pthread_mutex_t *)this);
   if ((int)uVar1 == 0) {
                     /* try { // try from 005e2bb4 to 005e2bbb has its CatchHandler @ 005e2c04 */
-    pthread_mutex_unlock(this);
+    pthread_mutex_unlock((pthread_mutex_t *)this);
     ((std::__ndk1::condition_variable *)this + 0x28)->~condition_variable();
                     /* try { // try from 005e2bc4 to 005e2bcb has its CatchHandler @ 005e2be4 */
-    pthread_mutex_destroy(this);
+    pthread_mutex_destroy((pthread_mutex_t *)this);
     return;
   }
                     /* try { // try from 005e2bd8 to 005e2be3 has its CatchHandler @ 005e2be8 */
@@ -56,7 +56,7 @@ void std::__ndk1::timed_mutex::lock(long param_1)
   
   cStack_40 = '\x01';
   lStack_48 = param_1;
-  uVar2 = pthread_mutex_lock();
+  uVar2 = pthread_mutex_lock((pthread_mutex_t *)param_1);
   if ((int)uVar2 != 0) {
     std::__ndk1::__throw_system_error(uVar2,"mutex lock failed");
     return;
@@ -72,7 +72,7 @@ void std::__ndk1::timed_mutex::lock(long param_1)
     if (cStack_40 == '\0') goto LAB_005e2c84;
   }
                     /* try { // try from 005e2c80 to 005e2c83 has its CatchHandler @ 005e2cb8 */
-  pthread_mutex_unlock(lStack_48);
+  pthread_mutex_unlock((pthread_mutex_t *)lStack_48);
 LAB_005e2c84:
   return;
 }
@@ -92,14 +92,14 @@ bool std::__ndk1::timed_mutex::try_lock(long param_1)
   bool bVar2;
   
                     /* try { // try from 005e2ccc to 005e2ccf has its CatchHandler @ 005e2d10 */
-  iVar1 = pthread_mutex_trylock();
+  iVar1 = pthread_mutex_trylock((pthread_mutex_t *)param_1);
   if (iVar1 == 0) {
     bVar2 = *(char *)(param_1 + 0x58) == '\0';
     if (bVar2) {
       *(undefined1 *)(param_1 + 0x58) = 1;
     }
                     /* try { // try from 005e2cf4 to 005e2cfb has its CatchHandler @ 005e2d0c */
-    pthread_mutex_unlock(param_1);
+    pthread_mutex_unlock((pthread_mutex_t *)param_1);
   }
   else {
     bVar2 = false;
@@ -121,12 +121,12 @@ void std::__ndk1::timed_mutex::unlock(long param_1)
   undefined8 uVar1;
   
                     /* try { // try from 005e2d24 to 005e2d27 has its CatchHandler @ 005e2d58 */
-  uVar1 = pthread_mutex_lock();
+  uVar1 = pthread_mutex_lock((pthread_mutex_t *)param_1);
   if ((int)uVar1 == 0) {
     *(undefined1 *)(param_1 + 0x58) = 0;
     std::__ndk1::condition_variable::notify_one(param_1 + 0x28);
                     /* try { // try from 005e2d38 to 005e2d3f has its CatchHandler @ 005e2d5c */
-    pthread_mutex_unlock(param_1);
+    pthread_mutex_unlock((pthread_mutex_t *)param_1);
     return;
   }
                     /* try { // try from 005e2d4c to 005e2d57 has its CatchHandler @ 005e2d58 */

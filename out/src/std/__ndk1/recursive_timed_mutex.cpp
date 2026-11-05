@@ -26,13 +26,13 @@
   undefined8 uVar1;
   
                     /* try { // try from 005e2d88 to 005e2d8b has its CatchHandler @ 005e2dc4 */
-  uVar1 = pthread_mutex_lock();
+  uVar1 = pthread_mutex_lock((pthread_mutex_t *)this);
   if ((int)uVar1 == 0) {
                     /* try { // try from 005e2d90 to 005e2d97 has its CatchHandler @ 005e2de0 */
-    pthread_mutex_unlock(this);
+    pthread_mutex_unlock((pthread_mutex_t *)this);
     ((std::__ndk1::condition_variable *)this + 0x28)->~condition_variable();
                     /* try { // try from 005e2da0 to 005e2da7 has its CatchHandler @ 005e2dc0 */
-    pthread_mutex_destroy(this);
+    pthread_mutex_destroy((pthread_mutex_t *)this);
     return;
   }
                     /* try { // try from 005e2db4 to 005e2dbf has its CatchHandler @ 005e2dc4 */
@@ -61,7 +61,7 @@ void std::__ndk1::recursive_timed_mutex::lock(long param_1)
   uVar3 = pthread_self();
   cStack_40 = '\x01';
   lStack_48 = param_1;
-  uVar4 = pthread_mutex_lock(param_1);
+  uVar4 = pthread_mutex_lock((pthread_mutex_t *)param_1);
   if ((int)uVar4 != 0) {
     std::__ndk1::__throw_system_error(uVar4,"mutex lock failed");
     return;
@@ -92,7 +92,7 @@ void std::__ndk1::recursive_timed_mutex::lock(long param_1)
     *(long *)(param_1 + 0x58) = lVar5 + 1;
   }
                     /* try { // try from 005e2e50 to 005e2e53 has its CatchHandler @ 005e2ed4 */
-  pthread_mutex_unlock(lStack_48);
+  pthread_mutex_unlock((pthread_mutex_t *)lStack_48);
 LAB_005e2e54:
   return;
 }
@@ -115,7 +115,7 @@ undefined4 std::__ndk1::recursive_timed_mutex::try_lock(long param_1)
   
   uVar2 = pthread_self();
                     /* try { // try from 005e2f10 to 005e2f17 has its CatchHandler @ 005e2f90 */
-  iVar1 = pthread_mutex_trylock(param_1);
+  iVar1 = pthread_mutex_trylock((pthread_mutex_t *)param_1);
   if (iVar1 == 0) {
     lVar3 = 0;
                     /* try { // try from 005e2f30 to 005e2f37 has its CatchHandler @ 005e2f74 */
@@ -130,7 +130,7 @@ undefined4 std::__ndk1::recursive_timed_mutex::try_lock(long param_1)
       uVar4 = 0;
     }
                     /* try { // try from 005e2f5c to 005e2f63 has its CatchHandler @ 005e2f8c */
-    pthread_mutex_unlock(param_1);
+    pthread_mutex_unlock((pthread_mutex_t *)param_1);
   }
   else {
     uVar4 = 0;
@@ -153,7 +153,7 @@ void std::__ndk1::recursive_timed_mutex::unlock(long param_1)
   undefined8 uVar2;
   
                     /* try { // try from 005e2fa4 to 005e2fa7 has its CatchHandler @ 005e3000 */
-  uVar2 = pthread_mutex_lock();
+  uVar2 = pthread_mutex_lock((pthread_mutex_t *)param_1);
   if ((int)uVar2 != 0) {
                     /* try { // try from 005e2fec to 005e2ff7 has its CatchHandler @ 005e3000 */
     std::__ndk1::__throw_system_error(uVar2,"mutex lock failed");
@@ -163,12 +163,12 @@ void std::__ndk1::recursive_timed_mutex::unlock(long param_1)
   *(long *)(param_1 + 0x58) = lVar1;
   if (lVar1 != 0) {
                     /* try { // try from 005e2fbc to 005e2fc3 has its CatchHandler @ 005e2ffc */
-    pthread_mutex_unlock(param_1);
+    pthread_mutex_unlock((pthread_mutex_t *)param_1);
     return;
   }
   *(undefined8 *)(param_1 + 0x60) = 0;
                     /* try { // try from 005e2fd4 to 005e2fdb has its CatchHandler @ 005e2ff8 */
-  pthread_mutex_unlock(param_1);
+  pthread_mutex_unlock((pthread_mutex_t *)param_1);
   std::__ndk1::condition_variable::notify_one(param_1 + 0x28);
   return;
 }

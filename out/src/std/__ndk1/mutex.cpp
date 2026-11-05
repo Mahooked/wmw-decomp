@@ -5,7 +5,7 @@
 
 /* ok  address 0x5e29d4  size 24 */std::__ndk1::mutex::~mutex(){
                     /* try { // try from 005e29dc to 005e29df has its CatchHandler @ 005e29e8 */
-  pthread_mutex_destroy();
+  pthread_mutex_destroy((pthread_mutex_t *)this);
   return;
 }
 
@@ -22,7 +22,7 @@ void std::__ndk1::mutex::lock(void)
 {
   int iVar1;
   
-  iVar1 = pthread_mutex_lock();
+  iVar1 = pthread_mutex_lock((pthread_mutex_t *)this);
   if (iVar1 == 0) {
     return;
   }
@@ -44,7 +44,7 @@ bool std::__ndk1::mutex::try_lock(void)
   int iVar1;
   
                     /* try { // try from 005e2a18 to 005e2a1b has its CatchHandler @ 005e2a2c */
-  iVar1 = pthread_mutex_trylock();
+  iVar1 = pthread_mutex_trylock((pthread_mutex_t *)this);
   return iVar1 == 0;
 }
 
@@ -60,7 +60,7 @@ void std::__ndk1::mutex::unlock(void)
 
 {
                     /* try { // try from 005e2a38 to 005e2a3b has its CatchHandler @ 005e2a44 */
-  pthread_mutex_unlock();
+  pthread_mutex_unlock((pthread_mutex_t *)this);
   return;
 }
 

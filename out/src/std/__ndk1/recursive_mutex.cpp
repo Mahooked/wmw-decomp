@@ -18,7 +18,7 @@
         if (iVar2 == 0) {
           return;
         }
-        pthread_mutex_destroy(this);
+        pthread_mutex_destroy((pthread_mutex_t *)this);
         iStack_44 = iVar2;
       }
     }
@@ -34,7 +34,7 @@
 
 /* ok  address 0x5e2b0c  size 24 */std::__ndk1::recursive_mutex::~recursive_mutex(){
                     /* try { // try from 005e2b14 to 005e2b17 has its CatchHandler @ 005e2b20 */
-  pthread_mutex_destroy();
+  pthread_mutex_destroy((pthread_mutex_t *)this);
   return;
 }
 
@@ -51,7 +51,7 @@ void std::__ndk1::recursive_mutex::lock(void)
 {
   int iVar1;
   
-  iVar1 = pthread_mutex_lock();
+  iVar1 = pthread_mutex_lock((pthread_mutex_t *)this);
   if (iVar1 == 0) {
     return;
   }
@@ -71,7 +71,7 @@ void std::__ndk1::recursive_mutex::unlock(void)
 
 {
                     /* try { // try from 005e2b50 to 005e2b53 has its CatchHandler @ 005e2b5c */
-  pthread_mutex_unlock();
+  pthread_mutex_unlock((pthread_mutex_t *)this);
   return;
 }
 
@@ -89,7 +89,7 @@ bool std::__ndk1::recursive_mutex::try_lock(void)
   int iVar1;
   
                     /* try { // try from 005e2b68 to 005e2b6b has its CatchHandler @ 005e2b7c */
-  iVar1 = pthread_mutex_trylock();
+  iVar1 = pthread_mutex_trylock((pthread_mutex_t *)this);
   return iVar1 == 0;
 }
 
