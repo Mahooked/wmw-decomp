@@ -52213,7 +52213,7 @@ undefined8 xmlXPathPopNodeSet(long param_1)
         }
         uVar5 = *(undefined8 *)(lVar3 + 8);
         *(undefined8 *)(lVar3 + 8) = 0;
-        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18));
+        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar3);
         return uVar5;
       }
       uVar5 = 0xb;
@@ -52271,7 +52271,7 @@ undefined8 xmlXPathPopExternal(long param_1)
         }
         uVar5 = *(undefined8 *)(lVar3 + 0x28);
         *(undefined8 *)(lVar3 + 0x28) = 0;
-        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18));
+        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar3);
         return uVar5;
       }
       uVar5 = 0xb;
@@ -59441,7 +59441,7 @@ LAB_002a8770:
       *(undefined8 *)(lVar4 + lVar5 * 8) = 0;
       if (lVar2 == 0) break;
       iVar7 = iVar7 + 1;
-      FUN_0029ecb8(param_2);
+      FUN_0029ecb8(param_2,(undefined4 *)lVar2);
       iVar3 = *(int *)(puVar1 + 5);
     } while (0 < iVar3);
     if ((lVar6 != 0) && (iVar7 != 0)) {
@@ -59526,7 +59526,7 @@ long xmlXPathEvalExpression(undefined8 param_1,long param_2)
       lVar2 = *(long *)(lVar4 + lVar5 * 8);
       *(undefined8 *)(lVar4 + lVar5 * 8) = 0;
       if (lVar2 == 0) break;
-      FUN_0029ecb8(param_2);
+      FUN_0029ecb8(param_2,(undefined4 *)lVar2);
       iVar3 = *(int *)(puVar1 + 5);
       iVar7 = iVar7 + 1;
     } while (0 < iVar3);
