@@ -518,7 +518,8 @@ out/
     signatures.tsv    address, size, mangled, name, params, kind
     classnames.txt    project class names occurring as parameter types
     reference.tsv     the 6,769-name GCC oracle
-    classes.tsv       RTTI class inventory
+    classes.tsv       RTTI class addresses + member-function-symbol counts;
+                      exact vtable slots are listed in out/rtti/vtables.tsv
     gnu_symbols.tsv   Ghidra's demangled names, as a cross-check oracle
     imports.tsv       one row per PLT stub: address, GOT slot, .dynsym index,
                       mangled and resolved callee name

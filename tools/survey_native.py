@@ -14,11 +14,12 @@ the whole decompilation: it names every function and, through the ``_ZTV``/
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -28,9 +29,6 @@ from wmwtools.elf import ELF, STT_FUNC, STT_OBJECT  # noqa: E402
 # Symbol kinds we can tell apart from the demangled prefix.
 RE_VTABLE = re.compile(r"^vtable for (.+)$")
 RE_TINFO = re.compile(r"^typeinfo for (.+)$")
-RE_TNAME = re.compile(r"^typeinfo name for (.+)$")
-RE_VTT = re.compile(r"^VTT for (.+)$")
-RE_CTOR = re.compile(r"^.+::(~?[A-Za-z_][A-Za-z0-9_]*)(\(.*\))?( const)?$")
 
 
 def split_scope(dem: str) -> tuple[str, str]:
@@ -65,25 +63,13 @@ def split_scope(dem: str) -> tuple[str, str]:
     return dem[:last_sep], dem[last_sep + 2 :]
 
 
-def is_ctor_like(member: str, owner: str) -> bool:
-    """True for constructors, destructors, and the C1/C2/D0 manglings of both."""
-    base = owner.split("<")[0]
-    simple = base.rpartition("::")[2]
-    if not simple:
-        return False
-    return member in (simple, "~" + simple)
-
-
-def build(vaddr_base_shift: int = 0) -> dict:
-    so = SO_PATH
-    elf = ELF(so)
+def build(so_path: str | os.PathLike[str]) -> dict:
+    elf = ELF(os.fspath(so_path))
 
     funcs = []
     data_syms = []
     vtables = []
     tinfos = []
-    tnames = []
-    vtts = []
 
     for sym in elf.symbols("all"):
         if not sym.name:
@@ -101,44 +87,38 @@ def build(vaddr_base_shift: int = 0) -> dict:
         if m:
             tinfos.append((sym.value, sym.size, sym.name, m.group(1)))
             continue
-        m = RE_TNAME.match(dem)
-        if m:
-            tnames.append((sym.value, sym.size, sym.name, m.group(1)))
-            continue
-        m = RE_VTT.match(dem)
-        if m:
-            vtts.append((sym.value, sym.size, sym.name, m.group(1)))
-
     funcs.sort()
-    # index by start address for later address->symbol lookups
-    by_addr = {a: (a, sz, mn, dm) for a, sz, mn, dm in funcs}
 
     return dict(
         elf=elf,
         funcs=funcs,
-        by_addr=by_addr,
         data_syms=data_syms,
         vtables=vtables,
         tinfos=tinfos,
-        tnames=tnames,
-        vtts=vtts,
     )
 
 
-SO_PATH = r"C:\Users\Mahook\AppData\Local\Temp\opencode\wmw\lib\arm64-v8a\libwmw.so"
-OUT = r"C:\AIC\wmw-decomp\out"
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("so", type=os.fspath, help="path to libwmw.so")
+    ap.add_argument(
+        "--out",
+        default=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "out"),
+        help="output directory (default: this repository's out/)",
+    )
+    args = ap.parse_args(argv)
+    if not os.path.isfile(args.so):
+        ap.error("input shared library not found: %s" % args.so)
 
-
-def main() -> int:
-    st = build()
+    st = build(args.so)
     elf: ELF = st["elf"]
     funcs = st["funcs"]
+    out = args.out
 
-    os.makedirs(os.path.join(OUT, "symbols"), exist_ok=True)
-    os.makedirs(os.path.join(OUT, "headers"), exist_ok=True)
+    os.makedirs(os.path.join(out, "symbols"), exist_ok=True)
 
     # ---- functions.tsv -------------------------------------------------
-    fp = os.path.join(OUT, "symbols", "functions.tsv")
+    fp = os.path.join(out, "symbols", "functions.tsv")
     with open(fp, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("# address\tsize\tmangled\tdemangled\n")
         for addr, size, mn, dm in funcs:
@@ -147,16 +127,10 @@ def main() -> int:
 
     # ---- class inventory ---------------------------------------------
     classes: dict[str, dict] = {}
-    for addr, size, mn, dem in st["vtables"] + st["tinfos"]:
-        e = classes.setdefault(
-            dem, {"vtable": None, "typeinfo": None, "methods": [], "sizes": []}
-        )
-        if RE_TINFO.match("typeinfo for " + dem) or dem in [d for _, _, _, d in st["tinfos"]]:
-            pass
     for addr, size, mn, dem in st["vtables"]:
-        classes.setdefault(dem, {})["vtable"] = addr
+        classes.setdefault(dem, {"methods": []})["vtable"] = addr
     for addr, size, mn, dem in st["tinfos"]:
-        classes.setdefault(dem, {})["typeinfo"] = addr
+        classes.setdefault(dem, {"methods": []})["typeinfo"] = addr
 
     # methods per class
     for addr, size, mn, dm in funcs:
@@ -168,18 +142,17 @@ def main() -> int:
     for c in classes.values():
         c["methods"].sort()
 
-    cp = os.path.join(OUT, "symbols", "classes.tsv")
+    cp = os.path.join(out, "symbols", "classes.tsv")
     with open(cp, "w", encoding="utf-8", newline="\n") as fh:
-        fh.write("# class\tvtable\t typeinfo\tvfunc_symbols\tmethod_symbols\n")
+        fh.write("# class\tvtable\ttypeinfo\tmethod_symbols\n")
         for dem in sorted(classes):
             c = classes[dem]
             fh.write(
-                "%s\t%s\t%s\t%d\t%d\n"
+                "%s\t%s\t%s\t%d\n"
                 % (
                     dem,
                     hex(c["vtable"]) if c.get("vtable") else "-",
                     hex(c["typeinfo"]) if c.get("typeinfo") else "-",
-                    len(c["methods"]),
                     len(c["methods"]),
                 )
             )
@@ -191,7 +164,7 @@ def main() -> int:
         parts = dm.split("::")
         ns[parts[0] if len(parts) > 1 else "<global>"] += 1
     summary = {
-        "so": os.path.basename(SO_PATH),
+        "so": os.path.basename(args.so),
         "so_size": len(elf.data),
         "sections": {s.name: s.size for s in elf.sections if s.name},
         "dynsym_count": len(elf.symbols("dyn")),
@@ -202,7 +175,7 @@ def main() -> int:
         "data_symbols": len(st["data_syms"]),
         "by_namespace": dict(ns.most_common()),
     }
-    sp = os.path.join(OUT, "symbols", "summary.json")
+    sp = os.path.join(out, "symbols", "summary.json")
     with open(sp, "w", encoding="utf-8") as fh:
         json.dump(summary, fh, indent=2)
     print("wrote %s" % sp)
