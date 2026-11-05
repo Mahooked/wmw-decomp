@@ -90705,8 +90705,8 @@ LAB_003c9940:
         free(pvVar12);
         *(uint *)((long)p0 + 0x3c) = (uint)(dVar36 < dVar35);
         if (dVar36 < dVar35) {
-          VP8LWriteBits(param_3,1,1);
-          VP8LWriteBits(param_3,2,2);
+          VP8LWriteBits((long *)param_3,1,1);
+          VP8LWriteBits((long *)param_3,2,2);
           VP8LSubtractGreenFromBlueAndRed(p0[2],uVar9);
         }
       }
@@ -90715,9 +90715,9 @@ LAB_003c9940:
         lVar27 = p0[5];
         uVar14 = ~(-1 << (ulong)(uVar9 & 0x1f));
         VP8LResidualImage((int)lVar27,uVar32,uVar9,p0[2],p0[3],p0[4]);
-        VP8LWriteBits(param_3,1,1);
-        VP8LWriteBits(param_3,2,0);
-        VP8LWriteBits(param_3,3,uVar9 - 2);
+        VP8LWriteBits((long *)param_3,1,1);
+        VP8LWriteBits((long *)param_3,2,0);
+        VP8LWriteBits((long *)param_3,3,uVar9 - 2);
         iVar10 = func_0x003ca394(param_3,p0[4],(int)lVar27 + uVar14 >> (ulong)(uVar9 & 0x1f),
                                  uVar17 + uVar14 >> (ulong)(uVar9 & 0x1f),iVar33);
         if (iVar10 == 0) goto LAB_003c9c90;
@@ -90731,14 +90731,14 @@ LAB_003c9940:
           uVar16 = 8;
         }
         VP8LColorSpaceTransform((int)lVar27,uVar32,uVar9,uVar16,p0[2],p0[4]);
-        VP8LWriteBits(param_3,1,1);
-        VP8LWriteBits(param_3,2,1);
-        VP8LWriteBits(param_3,3,uVar9 - 2);
+        VP8LWriteBits((long *)param_3,1,1);
+        VP8LWriteBits((long *)param_3,2,1);
+        VP8LWriteBits((long *)param_3,3,uVar9 - 2);
         iVar10 = func_0x003ca394(param_3,p0[4],(int)lVar27 + uVar14 >> (ulong)(uVar9 & 0x1f),
                                  uVar17 + uVar14 >> (ulong)(uVar9 & 0x1f),iVar33);
         if (iVar10 == 0) goto LAB_003c9c90;
       }
-      VP8LWriteBits(param_3,1,0);
+      VP8LWriteBits((long *)param_3,1,0);
       iVar10 = *piVar20;
       if (0 < iVar10) {
         iVar10 = VP8LCalculateEstimateForCacheSize(p0[2],(int)p0[5],uVar32,piVar20);
@@ -90775,11 +90775,11 @@ LAB_003c9e5c:
         pvVar12 = (void *)WebPSafeCalloc(uVar32,0x18);
         if ((pvVar12 == (void *)0x0) || (iVar11 = FUN_003ca4f8(puVar21,pvVar12), iVar11 == 0))
         goto LAB_003c9e5c;
-        VP8LWriteBits(param_3,1,0 < iVar10);
+        VP8LWriteBits((long *)param_3,1,0 < iVar10);
         if (0 < iVar10) {
-          VP8LWriteBits(param_3,4,iVar10);
+          VP8LWriteBits((long *)param_3,4,iVar10);
         }
-        VP8LWriteBits(param_3,1,1 < (int)uVar30);
+        VP8LWriteBits((long *)param_3,1,1 < (int)uVar30);
         if (1 < (int)uVar30) {
           puVar13 = (uint *)WebPSafeMalloc(uVar23,4);
           if (puVar13 != (uint *)0x0) {
@@ -90798,7 +90798,7 @@ LAB_003c9e5c:
                 puVar19 = puVar19 + 1;
               } while (uVar23 != 0);
             }
-            VP8LWriteBits(param_3,3,uVar9 - 2);
+            VP8LWriteBits((long *)param_3,3,uVar9 - 2);
             iVar10 = func_0x003ca394(param_3,puVar13,uVar14,uVar17,iVar33);
             free(puVar13);
             if (iVar10 != 0) {
@@ -90896,9 +90896,9 @@ LAB_003c9e68:
           lVar18 = lVar18 + (long)*(int *)(lVar31 + 0x50) * 4;
         } while (iVar8 != iVar2);
       }
-      VP8LWriteBits(param_3,1,1);
-      VP8LWriteBits(param_3,2,3);
-      VP8LWriteBits(param_3,8,iVar11 + -1);
+      VP8LWriteBits((long *)param_3,1,1);
+      VP8LWriteBits((long *)param_3,2,3);
+      VP8LWriteBits((long *)param_3,8,iVar11 + -1);
       if (1 < iVar11) {
         uVar14 = *(uint *)((long)p0 + lVar27 * 4 + 0x48);
         do {
