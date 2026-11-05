@@ -81216,20 +81216,20 @@ void FUN_003b2948(uint param_1,int param_2,int param_3,int *param_4,long *param_
   piVar4 = param_4 + 0x1c;
   if (param_3 == 0) {
 LAB_003b2b9c:
-    iVar13 = VP8LReadBits(piVar3,1);
+    iVar13 = VP8LReadBits((ulong *)piVar3,1);
     if (iVar13 == 0) {
       uVar16 = 0;
     }
     else {
-      uVar16 = VP8LReadBits(piVar3,4);
+      uVar16 = VP8LReadBits((ulong *)piVar3,4);
       if (10 < uVar16 - 1) goto LAB_003b30f8;
     }
     puStack_e0 = (uint *)0x0;
     if (param_3 != 0) {
       uVar14 = 1;
-      iVar13 = VP8LReadBits(piVar3,1);
+      iVar13 = VP8LReadBits((ulong *)piVar3,1);
       if (iVar13 == 0) goto LAB_003b2c74;
-      iVar13 = VP8LReadBits(piVar3,3);
+      iVar13 = VP8LReadBits((ulong *)piVar3,3);
       uVar14 = iVar13 + 2;
       iVar13 = 1 << (ulong)(uVar14 & 0x1f);
       uVar23 = (param_1 + iVar13) - 1 >> (ulong)(uVar14 & 0x1f);
@@ -81287,10 +81287,10 @@ LAB_003b30d4:
           }
           uVar2 = (ulong)(ushort)(&DAT_0062f6e0)[uVar24] + (long)iVar13;
           lVar7 = lVar29 + lStack_130 * 0x50 + uVar24 * 0x10;
-          iVar13 = VP8LReadBits(piVar3,1);
+          iVar13 = VP8LReadBits((ulong *)piVar3,1);
           if (iVar13 == 0) {
             memset(auStack_d4,0,0x4c);
-            iVar13 = VP8LReadBits(piVar3,4);
+            iVar13 = VP8LReadBits((ulong *)piVar3,4);
             uVar23 = iVar13 + 4;
             if ((int)uVar23 < 0x14) {
               pvVar28 = (void *)WebPSafeCalloc(uVar2,4);
@@ -81299,7 +81299,7 @@ LAB_003b30d4:
                 uVar27 = (ulong)uVar23;
                 pbVar30 = &DAT_0062f6ea;
                 do {
-                  uVar17 = VP8LReadBits(piVar3,3);
+                  uVar17 = VP8LReadBits((ulong *)piVar3,3);
                   uVar27 = uVar27 - 1;
                   auStack_d4[*pbVar30] = uVar17;
                   pbVar30 = pbVar30 + 1;
@@ -81311,12 +81311,12 @@ LAB_003b30d4:
                 *param_4 = 3;
               }
               else {
-                iVar13 = VP8LReadBits(piVar3,1);
+                iVar13 = VP8LReadBits((ulong *)piVar3,1);
                 uVar27 = uVar2 & 0xffffffff;
                 iVar15 = (int)uVar2;
                 if (iVar13 != 0) {
-                  iVar13 = VP8LReadBits(piVar3,3);
-                  iVar13 = VP8LReadBits(piVar3,iVar13 * 2 + 2);
+                  iVar13 = VP8LReadBits((ulong *)piVar3,3);
+                  iVar13 = VP8LReadBits((ulong *)piVar3,iVar13 * 2 + 2);
                   uVar27 = (ulong)(iVar13 + 2U);
                   if (iVar15 < (int)(iVar13 + 2U)) {
                     *param_4 = 3;
@@ -81361,7 +81361,7 @@ LAB_003b30d4:
                     }
                     else {
                       iVar9 = *(int *)(&DAT_0062f70c + (long)(iVar18 + -0x10) * 4);
-                      iVar19 = VP8LReadBits(piVar3,*(undefined4 *)
+                      iVar19 = VP8LReadBits((ulong *)piVar3,*(undefined4 *)
                                                     (&DAT_0062f700 + (long)(iVar18 + -0x10) * 4));
                       iVar5 = iVar19 + iVar9;
                       if (iVar15 < iVar5 + iVar13) {
@@ -81399,17 +81399,17 @@ LAB_003b30dc:
             iVar13 = 3;
             goto LAB_003b30e0;
           }
-          iVar13 = VP8LReadBits(piVar3,1);
-          iVar15 = VP8LReadBits(piVar3,1);
+          iVar13 = VP8LReadBits((ulong *)piVar3,1);
+          iVar15 = VP8LReadBits((ulong *)piVar3,1);
           uVar17 = 8;
           if (iVar15 == 0) {
             uVar17 = 1;
           }
-          auStack_d4[0] = VP8LReadBits(piVar3,uVar17);
+          auStack_d4[0] = VP8LReadBits((ulong *)piVar3,uVar17);
           uStack_80 = 0;
           iStack_88 = iVar13;
           if (iVar13 + 1 == 2) {
-            auStack_d4[1] = VP8LReadBits(piVar3,8);
+            auStack_d4[1] = VP8LReadBits((ulong *)piVar3,8);
             uStack_7c = 1;
             iStack_84 = iVar13;
           }
@@ -81470,10 +81470,10 @@ LAB_003b31c0:
   }
   else {
     do {
-      iVar13 = VP8LReadBits(piVar3,1);
+      iVar13 = VP8LReadBits((ulong *)piVar3,1);
       if (iVar13 == 0) goto LAB_003b2b9c;
       lVar29 = (long)param_4[0x2c];
-      uVar14 = VP8LReadBits(piVar3,2);
+      uVar14 = VP8LReadBits((ulong *)piVar3,2);
       uVar16 = 1 << (ulong)(uVar14 & 0x1f);
       if ((param_4[0x46] & uVar16) != 0) break;
       param_4[0x46] = param_4[0x46] | uVar16;
@@ -81486,7 +81486,7 @@ LAB_003b31c0:
       param_4[lVar29 * 6 + 0x31] = param_2;
       param_4[0x2c] = param_4[0x2c] + 1;
       if (uVar14 < 2) {
-        iVar13 = VP8LReadBits(piVar3,3);
+        iVar13 = VP8LReadBits((ulong *)piVar3,3);
         uVar16 = iVar13 + 2;
         param_4[lVar29 * 6 + 0x2f] = uVar16;
         uVar14 = ~(-1 << (ulong)(uVar16 & 0x1f));
@@ -81496,7 +81496,7 @@ LAB_003b31c0:
       }
       else {
         if (uVar14 == 3) {
-          iVar13 = VP8LReadBits(piVar3,8);
+          iVar13 = VP8LReadBits((ulong *)piVar3,8);
           iVar13 = iVar13 + 1;
           if (iVar13 < 0x11) {
             if (iVar13 < 5) {
