@@ -2,7 +2,8 @@
   Decompile libwmw.so with Ghidra in headless mode.
 
   Usage (from PowerShell):
-    tools\run_ghidra.ps1 [-NoAnalyze] [-Project <name>]
+    tools\run_ghidra.ps1 -So <libwmw.so> [-Tools <dir>] [-Project <name>]
+                         [-Out <dir>] [-Timeout <seconds>]
 
   Writes  out/ghidra/apply.log  (Ghidra stdout/stderr)
          out/src/**.cpp         (decompiled C++)
@@ -13,13 +14,14 @@
 #>
 param(
   [string]$Tools = (Join-Path $env:TEMP "opencode"),
-  [string]$So = (Join-Path $env:TEMP "opencode\wmw\lib\arm64-v8a\libwmw.so"),
+  [string]$So,
   [string]$Project = "wmw",
-  [string]$Out = "C:\AIC\wmw-decomp\out",
+  [string]$Out = (Join-Path (Split-Path $PSScriptRoot -Parent) "out"),
   [int]$Timeout = 180
 )
 
 $ErrorActionPreference = "Stop"
+if ([string]::IsNullOrWhiteSpace($So)) { throw "Specify -So with the path to libwmw.so" }
 $ghidra = Join-Path $Tools "ghidra_12.1.4_PUBLIC\support\analyzeHeadless.bat"
 $jdk = Join-Path $Tools "jdk-21.0.12.1+1"
 $scriptDir = Join-Path $PSScriptRoot "ghidra"

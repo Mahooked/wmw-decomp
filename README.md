@@ -1662,8 +1662,8 @@ effectively idempotent.
 ## What is not in this repository
 
 - **The APK and its extracted assets** (textures, audio, level data, art). These
-  remain Disney's copyrighted material and are not redistributed. `run_ghidra.ps1`
-  takes a path to an APK you supply.
+  remain Disney's copyrighted material and are not redistributed. Supply the
+  extracted `libwmw.so` path to `run_ghidra.ps1` with `-So`.
 - **Ghidra analysis logs**, which are large and machine-specific.
 
 ## Legal
