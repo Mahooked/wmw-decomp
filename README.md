@@ -1283,8 +1283,8 @@ This resolves 17 further diagnostics and brings the current count to 18,235.
 The `FUN_0029ecb8` XML XPath object cleanup calls now explicitly cast their
 integer and `int *` object representations to the helper's recovered pointer
 type at 39 two-argument call sites. This reduces the current count to 18,196;
-four additional calls now pass the object popped from the XPath stack. These
-changes reduce the current count to 18,192.
+four additional calls now pass the object popped from the XPath stack, reducing
+the count again to 18,192.
 
 Earlier baseline and diagnostic breakdown:
 
