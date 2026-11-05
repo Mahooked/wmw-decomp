@@ -240,6 +240,8 @@ template <class... A> void *uselocale(A...);
 template <class... A> int ExclusiveMonitorPass(A...);
 /* Ghidra models locale_t results as integer addresses and some names as bytes. */
 long newlocale(int, const unsigned char *, long);
+void freelocale(long);
+void freelocale(undefined8);
 /* Ghidra may type strftime buffers/formats as byte or stack-word pointers. */
 template <class Output, class Format, class Time>
 size_t strftime(Output *, size_t, Format, Time);
