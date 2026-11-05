@@ -1579,6 +1579,9 @@ either demangler.
 
 ## Pipeline
 
+`ghidra.ps1` defaults to the local Ghidra/JDK bundle used for this analysis.
+For other install locations, pass `-ToolsRoot`, `-GhidraPath`, or `-JdkPath`.
+
 ```powershell
 $so  = '<extracted-apk>\lib\arm64-v8a\libwmw.so'
 $apk = '<extracted-apk>'

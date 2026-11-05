@@ -11,6 +11,7 @@
     Usage:
         gh.ps1 import  <so-path>
         gh.ps1 script  <so-name> <symbolTsv> <outDir> <timeoutSec> <maxFunctions>
+        gh.ps1 <mode> ... [-ToolsRoot <dir>] [-JdkPath <dir>] [-GhidraPath <dir>]
 #>
 param(
     [Parameter(Mandatory = $true)][ValidateSet('import', 'script', 'probe')][string]$Mode,
@@ -19,6 +20,9 @@ param(
     # Appended after the standard postScript arguments, so a script can take
     # extra options without editing this wrapper (e.g. -Extra 'symbol').
     [string[]]$Extra = @(),
+    [string]$ToolsRoot = (Join-Path $env:LOCALAPPDATA 'Temp\opencode'),
+    [string]$JdkPath,
+    [string]$GhidraPath,
     # Point at a scratch project when the checked-in one has been touched by an
     # earlier headless run: headless runs save the program, so any functions
     # created last time persist and pollute a re-import.
@@ -27,9 +31,9 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$Temp = Join-Path $env:LOCALAPPDATA 'Temp\opencode'
-$Jdk = Join-Path $Temp 'jdk-21.0.12.1+1'
-$Ghidra = Join-Path $Temp 'ghidra_12.1.4_PUBLIC'
+$Temp = $ToolsRoot
+$Jdk = if ($JdkPath) { $JdkPath } else { Join-Path $Temp 'jdk-21.0.12.1+1' }
+$Ghidra = if ($GhidraPath) { $GhidraPath } else { Join-Path $Temp 'ghidra_12.1.4_PUBLIC' }
 $Project = if ($ProjectDir) { $ProjectDir } else { Join-Path $Temp 'ghidra_proj' }
 $ProjectName = if ($ProjectName) { $ProjectName } else { 'wmw' }
 $Bat = Join-Path $Ghidra 'support\analyzeHeadless.bat'
@@ -39,6 +43,7 @@ $LogDir = Join-Path (Split-Path $PSScriptRoot -Parent) 'out\ghidra'
 if (-not (Test-Path $Jdk)) { throw "JDK not found at $Jdk" }
 if (-not (Test-Path $Bat)) { throw "analyzeHeadless.bat not found at $Bat" }
 New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
+New-Item -ItemType Directory -Path $Temp -Force | Out-Null
 
 $env:JAVA_HOME = $Jdk
 $env:Path = (Join-Path $Jdk 'bin') + ';' + $env:Path
