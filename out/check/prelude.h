@@ -238,6 +238,9 @@ int   *__errno(void);
 /* ---- C library function templates (outside extern C) ---- */
 template <class... A> void *uselocale(A...);
 template <class... A> int ExclusiveMonitorPass(A...);
+/* Ghidra may type strftime buffers/formats as byte or stack-word pointers. */
+template <class Output, class Format, class Time>
+size_t strftime(Output *, size_t, Format, Time);
 
 /* ---- C library functions: greedy template overloads for integer-typed args ---- */
 template <class... A> void *memcpy(A...);
