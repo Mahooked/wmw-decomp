@@ -66231,28 +66231,17 @@ LAB_002cfe9c:
 /* mangled: sqlite3_backup_init */
 /* sqlite3_backup_init */
 
-void FUN_002cfef0(long param_1,undefined4 param_2,long param_3,undefined8 param_4,undefined8 param_5
-                 ,undefined8 param_6,undefined8 param_7,undefined8 param_8)
+void FUN_002cfef0(long param_1,undefined4 param_2,const char *param_3,...)
 
 {
   long *plVar2;
   undefined8 uVar3;
   undefined1 auStack_c0 [8];
-  undefined8 uStack_b8;
-  undefined8 uStack_b0;
-  undefined8 uStack_a8;
-  undefined8 uStack_a0;
-  undefined8 uStack_98;
   undefined1 *puStack_90;
   undefined1 **ppuStack_88;
   undefined1 *puStack_80;
   undefined8 uStack_78;
   
-  uStack_b8 = param_4;
-  uStack_b0 = param_5;
-  uStack_a8 = param_6;
-  uStack_a0 = param_7;
-  uStack_98 = param_8;
   if (param_1 != 0) {
     plVar2 = *(long **)(param_1 + 0x138);
     if (plVar2 == (long *)0x0) {
@@ -71879,7 +71868,7 @@ undefined4 sqlite3_close(long *param_1)
     if (param_1[0x15] != 0) {
       pcVar2 = "unable to close due to unfinalised statements";
 LAB_002d91b0:
-      FUN_002cfef0(param_1,5,pcVar2);
+      FUN_002cfef0((long)param_1,5,pcVar2);
       if (param_1[0xb] == 0) {
         return 5;
       }
@@ -71955,7 +71944,7 @@ LAB_002d91b0:
       FUN_002d3cd0(param_1,lVar4);
     }
     FUN_002d9750(param_1 + 0x36);
-    FUN_002cfef0(param_1,0,0);
+    FUN_002cfef0((long)param_1,0,0);
     puVar7 = (undefined8 *)param_1[0x27];
     if (puVar7 != (undefined8 *)0x0) {
       FUN_002d26bc(puVar7);
@@ -73076,7 +73065,7 @@ LAB_002dab94:
           if (lStack_88 != 0) {
             pcVar1 = "%s";
           }
-          FUN_002cfef0(puVar7,iVar6,pcVar1,lStack_88);
+          FUN_002cfef0((long)puVar7,iVar6,pcVar1,lStack_88);
           sqlite3_free(lVar8);
           uVar9 = uStack_80;
           goto LAB_002dae60;
@@ -73086,7 +73075,7 @@ LAB_002dab94:
           if (iVar6 == 0xc0a) {
             iVar6 = 7;
           }
-          FUN_002cfef0(puVar7,iVar6,0);
+          FUN_002cfef0((long)puVar7,iVar6,0);
           goto LAB_002dae60;
         }
         uVar10 = FUN_00324ffc(puVar7,*(undefined8 *)(puVar7[2] + 8));
@@ -73108,7 +73097,7 @@ LAB_002dab94:
         *(undefined1 *)((long)puVar12 + 0x31) = 1;
         *(undefined4 *)(puVar7 + 9) = 0xa029a697;
         if (*(char *)((long)puVar7 + 0x2a) != '\0') goto LAB_002dae60;
-        FUN_002cfef0(puVar7,0,0);
+        FUN_002cfef0((long)puVar7,0,0);
         iVar6 = sqlite3_overload_function(puVar7,"MATCH",2);
         if (iVar6 == 7) {
           *(undefined1 *)((long)puVar7 + 0x2a) = 1;
@@ -73142,7 +73131,7 @@ LAB_002daf70:
             if ((pcVar14 != (code *)0x0) &&
                (iVar6 = (*pcVar14)(puVar7,&uStack_70,&PTR_sqlite3_aggregate_context_0070d738),
                iVar6 != 0)) {
-              FUN_002cfef0(puVar7,1,"automatic extension loading failed: %s",uStack_70);
+              FUN_002cfef0((long)puVar7,1,"automatic extension loading failed: %s",uStack_70);
               bVar4 = false;
             }
             sqlite3_free(uStack_70);
@@ -73151,7 +73140,7 @@ LAB_002daf70:
         }
         iVar6 = sqlite3_errcode(puVar7);
         if (iVar6 == 0) {
-          FUN_002cfef0(puVar7,0,0);
+          FUN_002cfef0((long)puVar7,0,0);
           FUN_002d9018(puVar7,0,DAT_00729004,DAT_00729008);
           if (puVar7[0xb] == 0) {
             puVar7[0x22] = 0x2da508;
@@ -73317,7 +73306,7 @@ LAB_002dab94:
           if (lStack_88 != 0) {
             pcVar1 = "%s";
           }
-          FUN_002cfef0(puVar7,iVar6,pcVar1,lStack_88);
+          FUN_002cfef0((long)puVar7,iVar6,pcVar1,lStack_88);
           sqlite3_free(lVar8);
           uVar9 = uStack_80;
           goto LAB_002dae60;
@@ -73327,7 +73316,7 @@ LAB_002dab94:
           if (iVar6 == 0xc0a) {
             iVar6 = 7;
           }
-          FUN_002cfef0(puVar7,iVar6,0);
+          FUN_002cfef0((long)puVar7,iVar6,0);
           goto LAB_002dae60;
         }
         uVar10 = FUN_00324ffc(puVar7,*(undefined8 *)(puVar7[2] + 8));
@@ -73349,7 +73338,7 @@ LAB_002dab94:
         *(undefined1 *)((long)puVar12 + 0x31) = 1;
         *(undefined4 *)(puVar7 + 9) = 0xa029a697;
         if (*(char *)((long)puVar7 + 0x2a) != '\0') goto LAB_002dae60;
-        FUN_002cfef0(puVar7,0,0);
+        FUN_002cfef0((long)puVar7,0,0);
         iVar6 = sqlite3_overload_function(puVar7,"MATCH",2);
         if (iVar6 == 7) {
           *(undefined1 *)((long)puVar7 + 0x2a) = 1;
@@ -73383,7 +73372,7 @@ LAB_002daf70:
             if ((pcVar14 != (code *)0x0) &&
                (iVar6 = (*pcVar14)(puVar7,&uStack_70,&PTR_sqlite3_aggregate_context_0070d738),
                iVar6 != 0)) {
-              FUN_002cfef0(puVar7,1,"automatic extension loading failed: %s",uStack_70);
+              FUN_002cfef0((long)puVar7,1,"automatic extension loading failed: %s",uStack_70);
               bVar4 = false;
             }
             sqlite3_free(uStack_70);
@@ -73392,7 +73381,7 @@ LAB_002daf70:
         }
         iVar6 = sqlite3_errcode(puVar7);
         if (iVar6 == 0) {
-          FUN_002cfef0(puVar7,0,0);
+          FUN_002cfef0((long)puVar7,0,0);
           FUN_002d9018(puVar7,0,DAT_00729004,DAT_00729008);
           if (puVar7[0xb] == 0) {
             puVar7[0x22] = 0x2da508;
