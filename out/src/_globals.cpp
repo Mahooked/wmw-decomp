@@ -66274,7 +66274,7 @@ void FUN_002cfef0(long param_1,undefined4 param_2,const char *param_3,...)
       puStack_90 = (undefined1 *)register0x00000008;
       uVar3 = FUN_002dea18(param_1,param_3,&puStack_90);
       if (*(long *)(param_1 + 0x138) != 0) {
-        FUN_002d2ba0(*(long *)(param_1 + 0x138),uVar3,0xffffffff,1,FUN_002d3cd0);
+        FUN_002d2ba0((long *)(*(long *)(param_1 + 0x138)),uVar3,0xffffffff,1,FUN_002d3cd0);
       }
     }
   }
@@ -66817,7 +66817,7 @@ uint FUN_002d24dc(long *param_1)
     if ((*(int *)((long)param_1 + 0x94) != 0) && (*(char *)((long)param_1 + 0x9b) != '\0')) {
       FUN_002cfef0(lVar1,*(int *)((long)param_1 + 0x94),0);
       if (*(long *)(lVar1 + 0x138) != 0) {
-        FUN_002d2ba0(*(long *)(lVar1 + 0x138),param_1[0xb],0xffffffff,1,0xffffffffffffffff);
+        FUN_002d2ba0((long *)(*(long *)(lVar1 + 0x138)),(long)(param_1[0xb]),0xffffffff,1,(code *)(0xffffffffffffffff));
       }
       FUN_002d3cd0(lVar1,param_1[0xb]);
       param_1[0xb] = 0;
@@ -66832,7 +66832,7 @@ uint FUN_002d24dc(long *param_1)
         (*DAT_0072d678)();
       }
       if (*(long *)(lVar1 + 0x138) != 0) {
-        FUN_002d2ba0(*(long *)(lVar1 + 0x138),param_1[0xb],0xffffffff,1,0xffffffffffffffff);
+        FUN_002d2ba0((long *)(*(long *)(lVar1 + 0x138)),(long)(param_1[0xb]),0xffffffff,1,(code *)(0xffffffffffffffff));
       }
       if (DAT_0072d680 != (code *)0x0) {
         (*DAT_0072d680)();
@@ -67315,10 +67315,10 @@ void sqlite3_result_blob(long param_1,undefined8 param_2,undefined8 param_3,unde
 {
   int iVar1;
   
-  iVar1 = FUN_002d2ba0(param_1 + 0x10,param_2,param_3,0,param_4);
+  iVar1 = FUN_002d2ba0((long *)(param_1 + 0x10),param_2,param_3,0,param_4);
   if (iVar1 == 0x12) {
     *(undefined4 *)(param_1 + 0x50) = 0x12;
-    FUN_002d2ba0(param_1 + 0x10,"string or blob too big",0xffffffff,1,0);
+    FUN_002d2ba0((long *)(param_1 + 0x10),(long)("string or blob too big"),0xffffffff,1,(code *)(0));
     return;
   }
   return;
@@ -67365,7 +67365,7 @@ void sqlite3_result_error(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   *(undefined4 *)(param_1 + 0x50) = 1;
-  FUN_002d2ba0(param_1 + 0x10,param_2,param_3,1,0xffffffffffffffff);
+  FUN_002d2ba0((long *)(param_1 + 0x10),(long)(param_2),param_3,1,(code *)(0xffffffffffffffff));
   return;
 }
 
@@ -67523,7 +67523,7 @@ void sqlite3_result_error16(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   *(undefined4 *)(param_1 + 0x50) = 1;
-  FUN_002d2ba0(param_1 + 0x10,param_2,param_3,2,0xffffffffffffffff);
+  FUN_002d2ba0((long *)(param_1 + 0x10),(long)(param_2),param_3,2,(code *)(0xffffffffffffffff));
   return;
 }
 
@@ -67610,10 +67610,10 @@ void sqlite3_result_text(long param_1,undefined8 param_2,undefined8 param_3,unde
 {
   int iVar1;
   
-  iVar1 = FUN_002d2ba0(param_1 + 0x10,param_2,param_3,1,param_4);
+  iVar1 = FUN_002d2ba0((long *)(param_1 + 0x10),param_2,param_3,1,param_4);
   if (iVar1 == 0x12) {
     *(undefined4 *)(param_1 + 0x50) = 0x12;
-    FUN_002d2ba0(param_1 + 0x10,"string or blob too big",0xffffffff,1,0);
+    FUN_002d2ba0((long *)(param_1 + 0x10),(long)("string or blob too big"),0xffffffff,1,(code *)(0));
     return;
   }
   return;
@@ -67630,10 +67630,10 @@ void sqlite3_result_text16(long param_1,undefined8 param_2,undefined8 param_3,un
 {
   int iVar1;
   
-  iVar1 = FUN_002d2ba0(param_1 + 0x10,param_2,param_3,2,param_4);
+  iVar1 = FUN_002d2ba0((long *)(param_1 + 0x10),param_2,param_3,2,param_4);
   if (iVar1 == 0x12) {
     *(undefined4 *)(param_1 + 0x50) = 0x12;
-    FUN_002d2ba0(param_1 + 0x10,"string or blob too big",0xffffffff,1,0);
+    FUN_002d2ba0((long *)(param_1 + 0x10),(long)("string or blob too big"),0xffffffff,1,(code *)(0));
     return;
   }
   return;
@@ -67650,10 +67650,10 @@ void sqlite3_result_text16be(long param_1,undefined8 param_2,undefined8 param_3,
 {
   int iVar1;
   
-  iVar1 = FUN_002d2ba0(param_1 + 0x10,param_2,param_3,3,param_4);
+  iVar1 = FUN_002d2ba0((long *)(param_1 + 0x10),param_2,param_3,3,param_4);
   if (iVar1 == 0x12) {
     *(undefined4 *)(param_1 + 0x50) = 0x12;
-    FUN_002d2ba0(param_1 + 0x10,"string or blob too big",0xffffffff,1,0);
+    FUN_002d2ba0((long *)(param_1 + 0x10),(long)("string or blob too big"),0xffffffff,1,(code *)(0));
     return;
   }
   return;
@@ -67670,10 +67670,10 @@ void sqlite3_result_text16le(long param_1,undefined8 param_2,undefined8 param_3,
 {
   int iVar1;
   
-  iVar1 = FUN_002d2ba0(param_1 + 0x10,param_2,param_3,2,param_4);
+  iVar1 = FUN_002d2ba0((long *)(param_1 + 0x10),param_2,param_3,2,param_4);
   if (iVar1 == 0x12) {
     *(undefined4 *)(param_1 + 0x50) = 0x12;
-    FUN_002d2ba0(param_1 + 0x10,"string or blob too big",0xffffffff,1,0);
+    FUN_002d2ba0((long *)(param_1 + 0x10),(long)("string or blob too big"),0xffffffff,1,(code *)(0));
     return;
   }
   return;
@@ -67769,7 +67769,7 @@ void sqlite3_result_error_code(long param_1,uint param_2)
   if ((param_2 < 0x1b) && (param_2 != 2)) {
     pcVar1 = (&PTR_s_not_an_error_0070e170)[param_2];
   }
-  FUN_002d2ba0(param_1 + 0x10,pcVar1,0xffffffff,1,0);
+  FUN_002d2ba0((long *)(param_1 + 0x10),(long)(pcVar1),0xffffffff,1,(code *)(0));
   return;
 }
 
@@ -67783,7 +67783,7 @@ void sqlite3_result_error_toobig(long param_1)
 
 {
   *(undefined4 *)(param_1 + 0x50) = 0x12;
-  FUN_002d2ba0(param_1 + 0x10,"string or blob too big",0xffffffff,1,0);
+  FUN_002d2ba0((long *)(param_1 + 0x10),(long)("string or blob too big"),0xffffffff,1,(code *)(0));
   return;
 }
 
@@ -68162,7 +68162,7 @@ LAB_002d3ac0:
         *(undefined1 *)(lVar28 + 0xcf) = 1;
       }
       else {
-        FUN_002d2ba0(lVar28 + 0xa8,pcVar20,0xffffffff,1,0);
+        FUN_002d2ba0((long *)(lVar28 + 0xa8),(long)(pcVar20),0xffffffff,1,(code *)(0));
       }
       *(undefined1 *)(lVar28 + 0xce) = 3;
       bVar3 = *(byte *)((long)param_1 + 0x99);
@@ -71441,7 +71441,7 @@ uint sqlite3_complete16(undefined8 param_1)
       *puVar2 = 0;
       *(undefined2 *)((long)puVar2 + 0x24) = 1;
       *(undefined1 *)((long)puVar2 + 0x26) = 5;
-      FUN_002d2ba0(puVar2,param_1,0xffffffff,2,0);
+      FUN_002d2ba0((long *)(puVar2),param_1,0xffffffff,2,0);
     }
     lVar3 = FUN_002d29c0(puVar2,1);
     if (lVar3 == 0) {
@@ -72876,7 +72876,7 @@ wchar16 * sqlite3_errmsg16(long param_1)
           }
           uVar4 = 0;
           if (*(long *)(param_1 + 0x138) != 0) {
-            FUN_002d2ba0(*(long *)(param_1 + 0x138),pcVar5,0xffffffff,1,0);
+            FUN_002d2ba0((long *)(*(long *)(param_1 + 0x138)),(long)(pcVar5),0xffffffff,1,(code *)(0));
             uVar4 = *(undefined8 *)(param_1 + 0x138);
           }
           pwVar3 = (wchar16 *)FUN_002d29c0(uVar4,2);
@@ -73470,7 +73470,7 @@ ulong sqlite3_open16(undefined8 param_1,long *param_2)
       *puVar3 = 0;
       *(undefined2 *)((long)puVar3 + 0x24) = 1;
       *(undefined1 *)((long)puVar3 + 0x26) = 5;
-      FUN_002d2ba0(puVar3,param_1,0xffffffff,2,0);
+      FUN_002d2ba0((long *)(puVar3),param_1,0xffffffff,2,0);
     }
     lVar4 = FUN_002d29c0(puVar3,1);
     if (lVar4 == 0) {
