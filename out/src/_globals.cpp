@@ -52904,7 +52904,7 @@ int * xmlXPathNodeSetCreate(undefined8 *param_1)
 /* mangled: xmlXPathNodeSetCreate */
 /* xmlXPathNodeSetCreate */
 
-void FUN_0029fcd0(long param_1,long param_2)
+void FUN_0029fcd0(long param_1,const char *param_2)
 
 {
   undefined8 uVar2;
