@@ -238,6 +238,8 @@ int   *__errno(void);
 /* ---- C library function templates (outside extern C) ---- */
 template <class... A> void *uselocale(A...);
 template <class... A> int ExclusiveMonitorPass(A...);
+/* SQLite's public API takes a format string followed by variable arguments. */
+void sqlite3_log(int, const char *, ...);
 /* Ghidra models locale_t results as integer addresses and some names as bytes. */
 long newlocale(int, const unsigned char *, long);
 void freelocale(long);

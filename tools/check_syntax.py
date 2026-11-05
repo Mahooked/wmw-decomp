@@ -111,6 +111,7 @@ _PRELUDE_FUNCS = frozenset({
     "xmlListFront", "xmlFreeParserInputBuffer", "xmlStrcasecmp",
     "xmlCurrentChar", "xmlErrMemory", "xmlLinkGetData",
     "xmlXPathRegisterFuncNS",
+    "sqlite3_log",
 })
 
 #: Names that are namespaces, never classes, however they are used.
