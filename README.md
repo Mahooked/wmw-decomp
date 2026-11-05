@@ -1535,6 +1535,10 @@ asks it about synthetic names. `tools/test_cxxfilt.py` runs the whole comparison
 as a regression gate and exits non-zero on any mismatch — run it before touching
 `cxxfilt.py`.
 
+`refdemangle.py` checks each bundled demangler's exit status and refuses to
+write a reference corpus if no executable succeeds or if successful versions
+give conflicting renderings.
+
 `refprobe.py` finds the bundled demangler under a Ghidra installation supplied
 with `--ghidra` (or `GHIDRA_INSTALL_DIR` / `GHIDRA_HOME`). Use `--exe` to select
 one executable directly. For example:

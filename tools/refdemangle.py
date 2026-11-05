@@ -52,6 +52,10 @@ def run(exe: Path, names: list[str]) -> dict[str, str]:
     except (OSError, subprocess.SubprocessError) as exc:
         print("refdemangle: %s: %s" % (exe.name, exc), file=sys.stderr)
         return {}
+    if proc.returncode:
+        detail = proc.stderr.strip() or "exit code %d" % proc.returncode
+        print("refdemangle: %s: %s" % (exe.name, detail), file=sys.stderr)
+        return {}
     out = [ln.rstrip("\n") for ln in proc.stdout.splitlines()]
     if len(out) != len(names):
         print(
@@ -104,18 +108,36 @@ def main(argv: list[str]) -> int:
         good = sum(1 for n in names if res.get(n, n) != n)
         per_exe[exe.name] = res
         print("refdemangle:   %-28s resolved %d/%d" % (exe.name, good, len(names)))
+    if not per_exe:
+        print("refdemangle: every bundled demangler failed", file=sys.stderr)
+        return 1
 
     # Merge: prefer any build that produced something other than the input.
     merged: dict[str, str] = {}
     agree = 0
+    conflicts: list[tuple[str, list[str]]] = []
     for n in names:
-        vals = [r[n] for r in per_exe.values() if n in r and r[n] != n]
+        results = [r[n] for r in per_exe.values() if n in r]
+        vals = [result for result in results if result != n]
+        if len(results) >= 2 and len(set(results)) == 1:
+            agree += 1
         if not vals:
             merged[n] = n
             continue
-        if len(set(vals)) == 1:
-            agree += 1
+        if len(set(vals)) > 1:
+            conflicts.append((n, vals))
         merged[n] = vals[0]
+    if conflicts:
+        print(
+            "refdemangle: %d names have conflicting GCC renderings; reference not written"
+            % len(conflicts),
+            file=sys.stderr,
+        )
+        for mangled, vals in conflicts[:10]:
+            print("  %s: %s" % (mangled, " | ".join(vals)), file=sys.stderr)
+        if len(conflicts) > 10:
+            print("  ... and %d more" % (len(conflicts) - 10), file=sys.stderr)
+        return 1
     resolved = sum(1 for n in names if merged[n] != n)
     print(
         "refdemangle: merged %d/%d resolved, %d identical across builds"

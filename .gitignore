@@ -20,6 +20,7 @@ Thumbs.db
 out/smoke_src/
 out/valid/
 out/check/after_template_member_fix.tsv
+out/check/diagnostics_after_refprobe.tsv
 out/check/committed_prelude_diagnostics.tsv
 out/check/current_diagnostics.tsv
 out/check/no_generic_operators.tsv
