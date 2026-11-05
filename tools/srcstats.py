@@ -10,31 +10,40 @@ The no-layout control and the layout-enabled run come from the same Ghidra
 pipeline (fresh import -> DecompileAll); the control adds -nolayout as the
 8th script argument so only the layouts differ.
 
-Usage:  py tools/srcstats.py <out-dir>
+Usage:  py tools/srcstats.py [out-dir]
 """
-import os
+import argparse
 import re
-import sys
+from pathlib import Path
+
+PATTERNS = {
+    "f0x": re.compile(r"\bf_0x[0-9a-f]+\b"),
+    "dat": re.compile(r"\bDAT_[0-9a-f]+\b"),
+    "param": re.compile(r"\bparam_[0-9]+\b"),
+    "call": re.compile(r"\b(?:FUN_[0-9a-f]{8}|func_0x[0-9a-f]+)\b"),
+}
 
 
 def main() -> None:
-    root = sys.argv[1] if len(sys.argv) > 1 else os.path.join("out", "src")
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("root", nargs="?", type=Path, default=Path("out/src"),
+                    help="source directory (default: out/src)")
+    args = ap.parse_args()
+    root: Path = args.root
+    if not root.is_dir():
+        ap.error("source directory not found: %s" % root)
+
     f0x = dat = param = call = files = 0
-    for base, _dirs, names in os.walk(root):
-        for name in names:
-            if not name.endswith(".cpp"):
-                continue
-            files += 1
-            body = [
-                line for line in open(os.path.join(base, name), encoding="utf-8",
-                                      errors="replace").read().splitlines()
-                if not line.startswith("/*")
-            ]
-            text = "\n".join(body)
-            f0x += len(re.findall(r"\bf_0x[0-9a-f]+\b", text))
-            dat += len(re.findall(r"\bDAT_[0-9a-f]+\b", text))
-            param += len(re.findall(r"\bparam_[0-9]+\b", text))
-            call += len(re.findall(r"\b(?:FUN_[0-9a-f]{8}|func_0x[0-9a-f]+)\b", text))
+    for path in root.rglob("*.cpp"):
+        files += 1
+        with path.open(encoding="utf-8", errors="replace") as source:
+            for line in source:
+                if line.startswith("/*"):
+                    continue
+                f0x += len(PATTERNS["f0x"].findall(line))
+                dat += len(PATTERNS["dat"].findall(line))
+                param += len(PATTERNS["param"].findall(line))
+                call += len(PATTERNS["call"].findall(line))
     print("files     %6d" % files)
     print("f_0x      %6d" % f0x)
     print("DAT_      %6d" % dat)
