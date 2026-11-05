@@ -51796,7 +51796,7 @@ int xmlXPathPopBoolean(long param_1)
     else {
       iVar1 = xmlXPathCastToBoolean(piVar2);
     }
-    FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar2);
+    FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar2);
   }
   return iVar1;
 }
@@ -52024,7 +52024,7 @@ undefined1  [16] xmlXPathPopNumber(long param_1)
     }
     uVar5 = auVar2._8_8_;
     uVar4 = auVar2._0_8_;
-    FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar1);
+    FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar1);
   }
   auVar3._8_8_ = uVar5;
   auVar3._0_8_ = uVar4;
@@ -52114,7 +52114,7 @@ long xmlXPathPopString(long param_1)
     if (*(long *)(lVar1 + 0x20) == lVar2) {
       *(undefined8 *)(lVar1 + 0x20) = 0;
     }
-    FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar1);
+    FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar1);
   }
   return lVar2;
 }
@@ -55888,7 +55888,7 @@ void xmlXPathNumberFunction(long param_1,int param_2)
         if (*piVar7 != 3) {
           xmlXPathCastToNumber(piVar7);
           piVar5 = (int *)FUN_002a4ee4(uVar3);
-          FUN_0029ecb8(uVar3,piVar7);
+          FUN_0029ecb8(uVar3,(undefined4 *)piVar7);
         }
         goto LAB_002a41bc;
       }
@@ -56007,7 +56007,7 @@ void xmlXPathAddValues(long param_1)
     goto LAB_002a4360;
   }
   dVar4 = (double)xmlXPathCastToNumber();
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar1);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar1);
   piVar3 = *(int **)(param_1 + 0x20);
   if (piVar3 != (int *)0x0) {
     if (*piVar3 != 3) {
@@ -56047,7 +56047,7 @@ void xmlXPathSubValues(long param_1)
     goto LAB_002a4404;
   }
   dVar4 = (double)xmlXPathCastToNumber();
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar1);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar1);
   piVar3 = *(int **)(param_1 + 0x20);
   if (piVar3 != (int *)0x0) {
     if (*piVar3 != 3) {
@@ -56087,7 +56087,7 @@ void xmlXPathMultValues(long param_1)
     goto LAB_002a44a8;
   }
   dVar4 = (double)xmlXPathCastToNumber();
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar1);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar1);
   piVar3 = *(int **)(param_1 + 0x20);
   if (piVar3 != (int *)0x0) {
     if (*piVar3 != 3) {
@@ -56129,7 +56129,7 @@ void xmlXPathDivValues(long param_1)
     goto LAB_002a456c;
   }
   dVar5 = (double)xmlXPathCastToNumber();
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar1);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar1);
   piVar3 = *(int **)(param_1 + 0x20);
   if (piVar3 != (int *)0x0) {
     if (*piVar3 != 3) {
@@ -56201,7 +56201,7 @@ void xmlXPathModValues(long param_1)
     goto LAB_002a4664;
   }
   dVar3 = (double)xmlXPathCastToNumber();
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar1);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar1);
   piVar2 = *(int **)(param_1 + 0x20);
   if (piVar2 != (int *)0x0) {
     if (*piVar2 != 3) {
@@ -57141,7 +57141,7 @@ void xmlXPathIdFunction(long param_1,int param_2)
         uVar5 = func_0x002a5374(**(undefined8 **)(param_1 + 0x18),*(undefined8 *)(lVar7 + 0x20));
         uVar5 = FUN_002a54dc(*(undefined8 *)(param_1 + 0x18),uVar5);
         valuePush(param_1,uVar5);
-        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar7);
+        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar7);
         return;
       }
     }
@@ -57233,7 +57233,7 @@ LAB_002a577c:
     uVar3 = FUN_002a5874(uVar3,pcVar4);
   }
   valuePush(param_1,uVar3);
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar7);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar7);
   return;
 }
 
@@ -57385,7 +57385,7 @@ LAB_002a59a4:
   uVar3 = FUN_002a57dc(uVar3);
 LAB_002a5a28:
   valuePush(param_1,uVar3);
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar6);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar6);
   return;
 }
 
@@ -57563,7 +57563,7 @@ void xmlXPathStringLengthFunction(long param_1,int param_2)
       iVar2 = xmlUTF8Strlen(*(undefined8 *)(lVar5 + 0x20));
       uVar6 = FUN_002a4ee4((double)iVar2,uVar6);
       valuePush(param_1,uVar6);
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar5);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar5);
       return;
     }
   }
@@ -57643,7 +57643,7 @@ LAB_002a5d9c:
         uVar3 = xmlStrcat(*(undefined8 *)(piVar6 + 8),*(undefined8 *)(piVar5 + 8));
         *(undefined8 *)(piVar6 + 8) = *(undefined8 *)(piVar5 + 8);
         *(undefined8 *)(piVar5 + 8) = uVar3;
-        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar6);
+        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar6);
         param_2 = param_2 + -1;
         if (param_2 < 3) {
           valuePush(param_1,piVar5);
@@ -57652,13 +57652,13 @@ LAB_002a5d9c:
       }
       piVar6 = (int *)0x0;
 LAB_002a5f00:
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar6);
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar5);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar6);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar5);
       uVar3 = 0xb;
       goto LAB_002a5d9c;
     }
   }
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar5);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar5);
   return;
 }
 
@@ -57740,13 +57740,13 @@ LAB_002a5fd8:
           lVar6 = xmlStrstr(*(undefined8 *)(piVar5 + 8),*(undefined8 *)(lVar7 + 0x20));
           uVar2 = FUN_002a60d8(*(undefined8 *)(param_1 + 0x18),lVar6 != 0);
           valuePush(param_1,uVar2);
-          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar5);
-          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar7);
+          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar5);
+          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar7);
           return;
         }
       }
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar5);
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar7);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar5);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar7);
     }
   }
 LAB_002a6084:
@@ -57873,13 +57873,13 @@ LAB_002a6200:
           iVar3 = xmlStrncmp(*(undefined8 *)(piVar6 + 8),*(undefined8 *)(lVar8 + 0x20),uVar2);
           uVar4 = FUN_002a60d8(*(undefined8 *)(param_1 + 0x18),iVar3 == 0);
           valuePush(param_1,uVar4);
-          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar6);
-          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar8);
+          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar6);
+          FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar8);
           return;
         }
       }
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),piVar6);
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar8);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)piVar6);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar8);
     }
   }
 LAB_002a62bc:
@@ -57929,7 +57929,7 @@ void xmlXPathSubstringFunction(long param_1,int param_2)
       if (*piVar6 == 3) {
         lVar2 = valuePop(param_1);
         dVar10 = *(double *)(lVar2 + 0x18);
-        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar2);
+        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar2);
         goto LAB_002a63b8;
       }
     }
@@ -57946,7 +57946,7 @@ LAB_002a63b8:
       if (*piVar6 == 3) {
         lVar2 = valuePop(param_1);
         dVar11 = *(double *)(lVar2 + 0x18);
-        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar2);
+        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar2);
         piVar6 = *(int **)(param_1 + 0x20);
         if (piVar6 != (int *)0x0) {
           if (*piVar6 != 4) {
@@ -58011,7 +58011,7 @@ LAB_002a6464:
             uVar4 = FUN_002a57dc(uVar4);
             valuePush(param_1,uVar4);
 LAB_002a6598:
-            FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar2);
+            FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar2);
             return;
           }
         }
@@ -58106,8 +58106,8 @@ void xmlXPathSubstringBeforeFunction(long param_1,int param_2)
     valuePush(param_1,uVar2);
     xmlBufferFree(lVar5);
   }
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar6);
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar7);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar6);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar7);
   return;
 }
 
@@ -58197,8 +58197,8 @@ void xmlXPathSubstringAfterFunction(long param_1,int param_2)
     valuePush(param_1,uVar3);
     xmlBufferFree(lVar6);
   }
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar7);
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar8);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar7);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar8);
   return;
 }
 
@@ -58277,7 +58277,7 @@ LAB_002a6ac8:
           valuePush(param_1,uVar6);
           xmlBufferFree(lVar5);
         }
-        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar8);
+        FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar8);
         goto LAB_002a6a14;
       }
     }
@@ -58445,9 +58445,9 @@ LAB_002a6dc0:
   uVar7 = FUN_002a5874(uVar15,uVar7);
   valuePush(param_1,uVar7);
   xmlBufferFree(lVar9);
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar8);
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar12);
-  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar13);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar8);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar12);
+  FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar13);
   return;
 }
 
@@ -58492,7 +58492,7 @@ void xmlXPathBooleanFunction(long param_1,int param_2)
           uVar7 = *(undefined8 *)(param_1 + 0x18);
           uVar3 = xmlXPathCastToBoolean(piVar6);
           piVar4 = (int *)FUN_002a60d8(uVar7,uVar3);
-          FUN_0029ecb8(uVar7,piVar6);
+          FUN_0029ecb8(uVar7,(undefined4 *)piVar6);
         }
         valuePush(param_1,piVar4);
         return;
@@ -58668,7 +58668,7 @@ joined_r0x002a71ac:
       if (lVar6 != 0) {
         (*(code *)xmlFree)(lVar6);
       }
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar7);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar7);
       uVar4 = FUN_002a60d8(*(undefined8 *)(param_1 + 0x18),uVar8);
       valuePush(param_1,uVar4);
       return;
@@ -58736,7 +58736,7 @@ void xmlXPathSumFunction(long param_1,int param_2)
       }
       uVar3 = FUN_002a4ee4(dVar8,*(undefined8 *)(param_1 + 0x18));
       valuePush(param_1,uVar3);
-      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),lVar6);
+      FUN_0029ecb8(*(undefined8 *)(param_1 + 0x18),(undefined4 *)lVar6);
       return;
     }
     uVar3 = 0xb;
