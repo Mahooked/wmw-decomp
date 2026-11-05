@@ -66,7 +66,7 @@ re-inferred.
    divergence re-bound at 764 definitions, template-qualified definitions
    missing their `template<>` marker, calls printed in declaration shape, and
    calls to a function template the tree recovered as an ordinary function.
-   The largest current bucket is 2,005 *no matching function* diagnostics;
+   The largest current bucket is 1,802 *no matching function* diagnostics;
    remaining cases include imported or unresolved call signatures and malformed
    decompiler expressions.
 3. **Re-infer local identifiers and file organisation.** These were never in the
