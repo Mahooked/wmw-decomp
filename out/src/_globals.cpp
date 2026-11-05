@@ -79330,36 +79330,36 @@ void VP8ParseQuant(long param_1)
   undefined8 uVar22;
   
   lVar18 = param_1 + 0x10;
-  uVar11 = VP8GetValue(lVar18,7);
-  iVar12 = VP8GetValue(lVar18,1);
+  uVar11 = VP8GetValue((ulong *)lVar18,7);
+  iVar12 = VP8GetValue((ulong *)lVar18,1);
   if (iVar12 == 0) {
     iVar12 = 0;
   }
   else {
     iVar12 = VP8GetSignedValue(lVar18,4);
   }
-  iVar13 = VP8GetValue(lVar18,1);
+  iVar13 = VP8GetValue((ulong *)lVar18,1);
   if (iVar13 == 0) {
     iVar13 = 0;
   }
   else {
     iVar13 = VP8GetSignedValue(lVar18,4);
   }
-  iVar14 = VP8GetValue(lVar18,1);
+  iVar14 = VP8GetValue((ulong *)lVar18,1);
   if (iVar14 == 0) {
     iVar14 = 0;
   }
   else {
     iVar14 = VP8GetSignedValue(lVar18,4);
   }
-  iVar15 = VP8GetValue(lVar18,1);
+  iVar15 = VP8GetValue((ulong *)lVar18,1);
   if (iVar15 == 0) {
     iVar15 = 0;
   }
   else {
     iVar15 = VP8GetSignedValue(lVar18,4);
   }
-  iVar16 = VP8GetValue(lVar18,1);
+  iVar16 = VP8GetValue((ulong *)lVar18,1);
   iVar17 = 0;
   if (iVar16 != 0) {
     iVar17 = VP8GetSignedValue(lVar18,4);
@@ -80254,26 +80254,26 @@ LAB_003b0690:
                   VP8InitBitReader(piVar1,pbVar17,pbVar17 + uVar16);
                   uVar16 = param_1[0x11];
                   if ((char)param_1[0x10] != '\0') {
-                    uVar7 = VP8GetValue(piVar1,1);
+                    uVar7 = VP8GetValue((ulong *)piVar1,1);
                     *(undefined1 *)((long)param_1 + 0x4e) = uVar7;
-                    uVar7 = VP8GetValue(piVar1,1);
+                    uVar7 = VP8GetValue((ulong *)piVar1,1);
                     *(undefined1 *)((long)param_1 + 0x4f) = uVar7;
                   }
-                  iVar8 = VP8GetValue(piVar1,1);
+                  iVar8 = VP8GetValue((ulong *)piVar1,1);
                   param_1[0x20] = iVar8;
                   if (iVar8 == 0) {
                     param_1[0x21] = 0;
                   }
                   else {
-                    iVar8 = VP8GetValue(piVar1,1);
+                    iVar8 = VP8GetValue((ulong *)piVar1,1);
                     param_1[0x21] = iVar8;
-                    iVar8 = VP8GetValue(piVar1,1);
+                    iVar8 = VP8GetValue((ulong *)piVar1,1);
                     if (iVar8 != 0) {
-                      iVar8 = VP8GetValue(piVar1,1);
+                      iVar8 = VP8GetValue((ulong *)piVar1,1);
                       lVar20 = 0;
                       param_1[0x22] = iVar8;
                       do {
-                        iVar8 = VP8GetValue(piVar1,1);
+                        iVar8 = VP8GetValue((ulong *)piVar1,1);
                         uVar7 = 0;
                         if (iVar8 != 0) {
                           uVar7 = VP8GetSignedValue(piVar1,7);
@@ -80283,7 +80283,7 @@ LAB_003b0690:
                       } while (lVar20 != 4);
                       lVar20 = 0;
                       do {
-                        iVar8 = VP8GetValue(piVar1,1);
+                        iVar8 = VP8GetValue((ulong *)piVar1,1);
                         uVar7 = 0;
                         if (iVar8 != 0) {
                           uVar7 = VP8GetSignedValue(piVar1,6);
@@ -80295,12 +80295,12 @@ LAB_003b0690:
                     if (param_1[0x21] != 0) {
                       lVar20 = 0;
                       do {
-                        iVar8 = VP8GetValue(piVar1,1);
+                        iVar8 = VP8GetValue((ulong *)piVar1,1);
                         if (iVar8 == 0) {
                           uVar7 = 0xff;
                         }
                         else {
-                          uVar7 = VP8GetValue(piVar1,8);
+                          uVar7 = VP8GetValue((ulong *)piVar1,8);
                         }
                         *(undefined1 *)((long)param_1 + lVar20 + 0x38c) = uVar7;
                         lVar20 = lVar20 + 1;
@@ -80308,18 +80308,18 @@ LAB_003b0690:
                     }
                   }
                   if (param_1[8] == 0) {
-                    iVar8 = VP8GetValue(piVar1,1);
+                    iVar8 = VP8GetValue((ulong *)piVar1,1);
                     param_1[0x14] = iVar8;
-                    iVar8 = VP8GetValue(piVar1,6);
+                    iVar8 = VP8GetValue((ulong *)piVar1,6);
                     param_1[0x15] = iVar8;
-                    iVar8 = VP8GetValue(piVar1,3);
+                    iVar8 = VP8GetValue((ulong *)piVar1,3);
                     param_1[0x16] = iVar8;
-                    iVar8 = VP8GetValue(piVar1,1);
+                    iVar8 = VP8GetValue((ulong *)piVar1,1);
                     param_1[0x17] = iVar8;
-                    if ((iVar8 != 0) && (iVar8 = VP8GetValue(piVar1,1), iVar8 != 0)) {
+                    if ((iVar8 != 0) && (iVar8 = VP8GetValue((ulong *)piVar1,1), iVar8 != 0)) {
                       lVar20 = 0;
                       do {
-                        iVar8 = VP8GetValue(piVar1,1);
+                        iVar8 = VP8GetValue((ulong *)piVar1,1);
                         if (iVar8 != 0) {
                           uVar9 = VP8GetSignedValue(piVar1,6);
                           *(undefined4 *)((long)param_1 + lVar20 + 0x60) = uVar9;
@@ -80328,7 +80328,7 @@ LAB_003b0690:
                       } while (lVar20 != 0x10);
                       lVar20 = 0;
                       do {
-                        iVar8 = VP8GetValue(piVar1,1);
+                        iVar8 = VP8GetValue((ulong *)piVar1,1);
                         if (iVar8 != 0) {
                           uVar9 = VP8GetSignedValue(piVar1,6);
                           *(undefined4 *)((long)param_1 + lVar20 + 0x70) = uVar9;
@@ -80363,7 +80363,7 @@ LAB_003b0690:
                       }
                     }
                     if (param_1[8] == 0) {
-                      uVar10 = VP8GetValue(piVar1,2);
+                      uVar10 = VP8GetValue((ulong *)piVar1,2);
                       iVar8 = 1 << (ulong)(uVar10 & 0x1f);
                       uVar10 = iVar8 - 1;
                       lVar20 = (-(ulong)(uVar10 >> 0x1f) & 0xfffffffe00000000 | (ulong)uVar10 << 1)
@@ -80409,7 +80409,7 @@ LAB_003b0690:
                           else {
                             param_1[0xca] = 0x103;
                             uVar16 = 1;
-                            VP8GetValue(piVar1,1);
+                            VP8GetValue((ulong *)piVar1,1);
                             VP8ParseProba(piVar1,param_1);
                             param_1[1] = 1;
                           }
