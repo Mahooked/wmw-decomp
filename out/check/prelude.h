@@ -204,7 +204,7 @@ void  *wmemcpy(void *, const void *, size_t);
 void  *wmemmove(void *, const void *, size_t);
 
 /* ---- locale / time (C library) ---- */
-void  *newlocale(int, const char *, void *);
+long   newlocale(int, const char *, long);
 void   freelocale(void *);
 void  *uselocale(void *);
 size_t strftime(char *, size_t, const char *, const void *);
@@ -238,6 +238,8 @@ int   *__errno(void);
 /* ---- C library function templates (outside extern C) ---- */
 template <class... A> void *uselocale(A...);
 template <class... A> int ExclusiveMonitorPass(A...);
+/* Ghidra models locale_t results as integer addresses and some names as bytes. */
+long newlocale(int, const unsigned char *, long);
 /* Ghidra may type strftime buffers/formats as byte or stack-word pointers. */
 template <class Output, class Format, class Time>
 size_t strftime(Output *, size_t, Format, Time);
