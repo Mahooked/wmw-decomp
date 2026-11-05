@@ -1187,6 +1187,9 @@ def run_clang(clang, preamble, path):
     msgs = [ln.split(": error: ", 1)[-1].split(": fatal error: ", 1)[-1]
             for ln in p.stderr.splitlines()
             if ": error: " in ln or ": fatal error: " in ln]
+    if p.returncode and not msgs:
+        detail = p.stderr.strip() or p.stdout.strip() or "no diagnostic output"
+        return None, "clang exited with %d: %s" % (p.returncode, detail[-1000:])
     return msgs, ""
 
 
@@ -1216,6 +1219,12 @@ def main(argv=None):
                     help="check the generated declarations and stop")
     ap.add_argument("--check", action="store_true")
     args = ap.parse_args(argv)
+    if args.jobs < 1:
+        ap.error("--jobs must be at least 1")
+    if args.sample < 0:
+        ap.error("--sample must be zero or greater")
+    if args.top < 0:
+        ap.error("--top must be zero or greater")
 
     model = Model()
     load_classes(model, args.types)
