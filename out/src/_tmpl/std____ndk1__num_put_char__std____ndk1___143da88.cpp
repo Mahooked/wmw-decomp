@@ -695,7 +695,7 @@ template<> undefined8 std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator
   pcStack_e0 = acStack_90;
   if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005bc2c0 to 005bc2d3 has its CatchHandler @ 005bc398 */
-    DAT_007a4e88 = newlocale(param_1,0x1fbf,"C",0);
+    DAT_007a4e88 = newlocale(0x1fbf,"C",0);
     __cxa_guard_release(&DAT_007a4e90);
   }
   if (bVar7) {
@@ -712,7 +712,7 @@ LAB_005bc128:
     if (bVar7) {
       if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(param_1,&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005bc304 to 005bc317 has its CatchHandler @ 005bc394 */
-        DAT_007a4e88 = newlocale(param_1,0x1fbf,"C",0);
+        DAT_007a4e88 = newlocale(0x1fbf,"C",0);
         __cxa_guard_release(&DAT_007a4e90);
       }
                     /* try { // try from 005bc140 to 005bc167 has its CatchHandler @ 005bc3b0 */
@@ -722,7 +722,7 @@ LAB_005bc128:
     else {
       if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(param_1,&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005bc344 to 005bc357 has its CatchHandler @ 005bc390 */
-        DAT_007a4e88 = newlocale(param_1,0x1fbf,"C",0);
+        DAT_007a4e88 = newlocale(0x1fbf,"C",0);
         __cxa_guard_release(&DAT_007a4e90);
       }
       iVar9 = std::__ndk1::__libcpp_asprintf_l(param_1,&pcStack_e0,DAT_007a4e88,&uStack_d8);
