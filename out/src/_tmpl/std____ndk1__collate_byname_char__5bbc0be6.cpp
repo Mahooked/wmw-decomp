@@ -130,7 +130,7 @@ template<> std::__ndk1::collate_byname<char>::collate_byname(undefined8 *param_1
   param_1[2] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d5e84 to 005d5e97 has its CatchHandler @ 005d5ebc */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"collate_byname<char>::collate_byname failed to construct for ",param_2)
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::__decomp_string_plus(auStack_50,"collate_byname<char>::collate_byname failed to construct for ",param_2)
     ;
                     /* try { // try from 005d5e98 to 005d5e9f has its CatchHandler @ 005d5ea4 */
     FUN_005d5db0(auStack_50);

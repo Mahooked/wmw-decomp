@@ -854,7 +854,7 @@ ulong Walaber::DatabaseManager::incrementValue
   }
   snprintf(auStack_60,5,"%d",iVar2 + 1);
                     /* try { // try from 0032bdc8 to 0032bddb has its CatchHandler @ 0032bf6c */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98,param_3,"=");
+  std::__ndk1::__decomp_string_plus(abStack_98,param_3,"=");
   uStack_b0 = 0;
   uStack_a8 = 0;
   pvStack_a0 = (void *)0x0;
@@ -2268,7 +2268,7 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
       iVar3 = sqlite3_column_int(lVar5,0);
     }
                     /* try { // try from 0032d7dc to 0032d7ef has its CatchHandler @ 0032d90c */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98,param_3,"=");
+    std::__ndk1::__decomp_string_plus(auStack_98,param_3,"=");
                     /* try { // try from 0032d7f8 to 0032d803 has its CatchHandler @ 0032d8f4 */
     Walaber::StringHelper::intToStr(abStack_b0,*param_4 + iVar3);
     uVar7 = (ulong)(abStack_b0[0] >> 1);
@@ -2389,7 +2389,7 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
     }
     if (iVar3 < *param_4) {
                     /* try { // try from 0032da4c to 0032da5f has its CatchHandler @ 0032db7c */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98,param_3,"=");
+      std::__ndk1::__decomp_string_plus(auStack_98,param_3,"=");
                     /* try { // try from 0032da64 to 0032da6f has its CatchHandler @ 0032db64 */
       Walaber::StringHelper::intToStr(abStack_b0,*param_4);
       uVar7 = (ulong)(abStack_b0[0] >> 1);

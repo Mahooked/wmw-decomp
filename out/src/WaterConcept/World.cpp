@@ -342,7 +342,7 @@ LAB_0042c5a8:
   *(undefined8 *)(uVar3 + 0x97c) = 0;
   *(undefined8 *)(uVar3 + 0x988) = 0xffffffffffffffff;
                     /* try { // try from 00444bdc to 00444be3 has its CatchHandler @ 00445ac4 */
-  Walaber::PropertyList::PropertyList();
+  { Walaber::PropertyList _dummy; }
   *(undefined2 *)(uVar3 + 0x9a8) = 0;
   *(undefined8 *)(uVar3 + 0x9ac) = 0;
   memset(uVar3 + 0x9b8,0,0x84);
@@ -384,7 +384,7 @@ LAB_0042c5a8:
   *(undefined8 *)(uVar3 + 0x398) = uStack_a8;
   *(undefined8 *)(uVar3 + 0x3a0) = uStack_a0;
                     /* try { // try from 00444cc8 to 00444ccf has its CatchHandler @ 00445abc */
-  new ((void *)(&uStack_b0)) std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>(1000);
+  new ((void *)(&uStack_b0)) std::__ndk1::vector<Walaber__PositionColorVert, std::__ndk1::allocator<Walaber__PositionColorVert>>(1000);
   pvVar4 = *(void **)(uVar3 + 0x3a8);
   if (pvVar4 != (void *)0x0) {
     *(void **)(uVar3 + 0x3b0) = pvVar4;
@@ -462,7 +462,7 @@ LAB_0042c5a8:
   *puVar5 = &PTR__Callback_00711408;
   puVar5[1] = 0;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_150 = puVar5;
   piStack_168 = (int *)operator new(4);
   *piStack_168 = 3;
@@ -491,7 +491,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_170 = puVar5;
   puStack_188 = (undefined4 *)operator new(4);
   *puStack_188 = 3;
@@ -634,7 +634,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_1f0 = puVar5;
   puStack_208 = (undefined4 *)operator new(4);
   *puStack_208 = 3;
@@ -660,7 +660,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_210 = puVar5;
   puStack_228 = (undefined4 *)operator new(4);
   *puStack_228 = 3;
@@ -686,7 +686,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_230 = puVar5;
   puStack_248 = (undefined4 *)operator new(4);
   *puStack_248 = 3;
@@ -712,7 +712,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_250 = puVar5;
   puStack_268 = (undefined4 *)operator new(4);
   *puStack_268 = 3;
@@ -773,7 +773,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_290 = puVar5;
   puStack_2b8 = (undefined4 *)operator new(4);
   *puStack_2b8 = 3;
@@ -799,7 +799,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_2c0 = puVar5;
   puStack_2d8 = (undefined4 *)operator new(4);
   *puStack_2d8 = 3;
@@ -825,7 +825,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_2e0 = puVar5;
   puStack_2f8 = (undefined4 *)operator new(4);
   *puStack_2f8 = 3;
@@ -851,7 +851,7 @@ LAB_0042c5a8:
   puVar5[2] = uVar3;
   *puVar5 = &PTR__Callback_00711408;
   puVar5[4] = 0;
-  puVar5[3] = _gotOtherSE;
+  puVar5[3] = (undefined8)(void(*)(void*,int*))&WaterConcept::World::_gotOtherSE;
   puStack_300 = puVar5;
   puStack_318 = (undefined4 *)operator new(4);
   *puStack_318 = 3;
@@ -15409,7 +15409,7 @@ LAB_0045a194:
                    (CONCAT17(uStack_c9,CONCAT25(uStack_cb,CONCAT41(uStack_cf,bStack_d0))) >> 0x20);
     }
                     /* try { // try from 0045b018 to 0045b02b has its CatchHandler @ 0045c260 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,"/Objects/",&bStack_1d0);
+    std::__ndk1::__decomp_string_plus(&bStack_d0,"/Objects/",&bStack_1d0);
                     /* try { // try from 0045b02c to 0045b03f has its CatchHandler @ 0045c248 */
     puVar46 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_d0,".hs",3);
     pvStack_600 = (void *)puVar46[2];
@@ -17265,7 +17265,7 @@ LAB_0045e428:
     Walaber::SoundManager::playSoundFromGroup(0x3f800000,uVar24,uVar20,uVar12);
 switchD_0045e218_default:
     if (*(int *)(*in_x1 + 0x3ac) != 5) {
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b8,&DAT_0073d3b8,"=\'");
+      std::__ndk1::__decomp_string_plus(&uStack_1b8,&DAT_0073d3b8,"=\'");
       uVar23 = DAT_0073d420;
       puVar3 = DAT_0073d428;
       if ((DAT_0073d418 & 1) == 0) {
@@ -17299,7 +17299,7 @@ switchD_0045e218_default:
       if ((uStack_1b8 & 1) != 0) {
         operator delete(pvStack_1a8);
       }
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b8,&DAT_0073d3b8,"=\'");
+      std::__ndk1::__decomp_string_plus(&uStack_1b8,&DAT_0073d3b8,"=\'");
       uVar23 = DAT_0073d420;
       puVar3 = DAT_0073d428;
       if ((DAT_0073d418 & 1) == 0) {
@@ -23003,12 +23003,12 @@ void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__Gr
 
 /* ok  address 0x468d80  size 80 */
 /* mangled: _ZN12WaterConcept5World25calculateCollisionForGridERNSt6__ndk16vectorIN7Walaber19PositionTextureVertENS1_9allocatorIS4_EEEERNS2_INS3_17PositionColorVertENS5_IS9_EEEENS_8GridCellE */
-/* WaterConcept::World::calculateCollisionForGrid(std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>&, std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>&, WaterConcept::GridCell) */
+/* WaterConcept::World::calculateCollisionForGrid(std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>&, std::__ndk1::vector<Walaber__PositionColorVert, std::__ndk1::allocator<Walaber__PositionColorVert>>&, WaterConcept::GridCell) */
 
 /* WaterConcept::World::calculateCollisionForGrid(std::__ndk1::vector<Walaber::PositionTextureVert,
    std::__ndk1::allocator<Walaber::PositionTextureVert> >&,
-   std::__ndk1::vector<Walaber::PositionColorVert,
-   std::__ndk1::allocator<Walaber::PositionColorVert> >&, WaterConcept::GridCell) */
+   std::__ndk1::vector<Walaber__PositionColorVert,
+   std::__ndk1::allocator<Walaber__PositionColorVert> >&, WaterConcept::GridCell) */
 
 void WaterConcept::World::calculateCollisionForGrid
                (long *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
@@ -23039,12 +23039,12 @@ void WaterConcept::World::calculateCollisionForGrid
 
 /* ok  address 0x468dd0  size 244 */
 /* mangled: _ZN12WaterConcept5World22createCollisionForGridERNSt6__ndk16vectorIN7Walaber19PositionTextureVertENS1_9allocatorIS4_EEEERNS2_INS3_17PositionColorVertENS5_IS9_EEEENS_8GridCellE */
-/* WaterConcept::World::createCollisionForGrid(std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>&, std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>&, WaterConcept::GridCell) */
+/* WaterConcept::World::createCollisionForGrid(std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>&, std::__ndk1::vector<Walaber__PositionColorVert, std::__ndk1::allocator<Walaber__PositionColorVert>>&, WaterConcept::GridCell) */
 
 /* WaterConcept::World::createCollisionForGrid(std::__ndk1::vector<Walaber::PositionTextureVert,
    std::__ndk1::allocator<Walaber::PositionTextureVert> >&,
-   std::__ndk1::vector<Walaber::PositionColorVert,
-   std::__ndk1::allocator<Walaber::PositionColorVert> >&, WaterConcept::GridCell) */
+   std::__ndk1::vector<Walaber__PositionColorVert,
+   std::__ndk1::allocator<Walaber__PositionColorVert> >&, WaterConcept::GridCell) */
 
 void WaterConcept::World::createCollisionForGrid
                (long *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
@@ -23079,12 +23079,12 @@ void WaterConcept::World::createCollisionForGrid
 
 /* ok  address 0x468ec4  size 1348 */
 /* mangled: _ZN12WaterConcept5World21createPolygonsForGridERNSt6__ndk16vectorIN7Walaber19PositionTextureVertENS1_9allocatorIS4_EEEERNS2_INS3_17PositionColorVertENS5_IS9_EEEENS_8GridCellEN21WaterConceptConstants12MaterialTypeE */
-/* WaterConcept::World::createPolygonsForGrid(std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>&, std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>&, WaterConcept::GridCell, WaterConceptConstants::MaterialType) */
+/* WaterConcept::World::createPolygonsForGrid(std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>&, std::__ndk1::vector<Walaber__PositionColorVert, std::__ndk1::allocator<Walaber__PositionColorVert>>&, WaterConcept::GridCell, WaterConceptConstants::MaterialType) */
 
 /* WaterConcept::World::createPolygonsForGrid(std::__ndk1::vector<Walaber::PositionTextureVert,
    std::__ndk1::allocator<Walaber::PositionTextureVert> >&,
-   std::__ndk1::vector<Walaber::PositionColorVert,
-   std::__ndk1::allocator<Walaber::PositionColorVert> >&, WaterConcept::GridCell,
+   std::__ndk1::vector<Walaber__PositionColorVert,
+   std::__ndk1::allocator<Walaber__PositionColorVert> >&, WaterConcept::GridCell,
    WaterConceptConstants::MaterialType) */
 
 void WaterConcept::World::createPolygonsForGrid

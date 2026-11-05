@@ -885,7 +885,7 @@ void WaterConcept::Screen_Collectibles::_finishedLoadingWidgets(void *p0, int * 
                     /* try { // try from 004aefc8 to 004aefcb has its CatchHandler @ 004b29d8 */
     uVar35 = Walaber::TextureManager::getManager();
                     /* try { // try from 004aefd0 to 004aefe3 has its CatchHandler @ 004b29d4 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190,"/Textures/",&bStack_150);
+    std::__ndk1::__decomp_string_plus(&uStack_190,"/Textures/",&bStack_150);
                     /* try { // try from 004aefe4 to 004aeff3 has its CatchHandler @ 004b29bc */
     puVar25 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_190,".png",4);
     pvStack_160 = (void *)puVar25[2];
@@ -944,7 +944,7 @@ void WaterConcept::Screen_Collectibles::_finishedLoadingWidgets(void *p0, int * 
       *(undefined1 *)(lVar23 + 0x19b) = uVar6;
     }
                     /* try { // try from 004af140 to 004af153 has its CatchHandler @ 004b2978 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_190,"/Textures/",&bStack_150);
+    std::__ndk1::__decomp_string_plus(&uStack_190,"/Textures/",&bStack_150);
                     /* try { // try from 004af154 to 004af163 has its CatchHandler @ 004b2974 */
     puVar25 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_190,".png",4);
     pvStack_160 = (void *)puVar25[2];
@@ -1066,9 +1066,9 @@ void WaterConcept::Screen_Collectibles::_finishedLoadingWidgets(void *p0, int * 
                     /* try { // try from 004af214 to 004af21f has its CatchHandler @ 004b2820 */
         WaterConcept::Screen_Collectibles::_addNewLabel(p0,iVar17,uVar40 < 9);
                     /* try { // try from 004af220 to 004af237 has its CatchHandler @ 004b281c */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_170,&DAT_00766aa8,&DAT_0061d431);
+        std::__ndk1::__decomp_string_plus(&bStack_170,&DAT_00766aa8,&DAT_0061d431);
                     /* try { // try from 004af238 to 004af24f has its CatchHandler @ 004b2808 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1b0,&DAT_00766a60,"=");
+        std::__ndk1::__decomp_string_plus(&uStack_1b0,&DAT_00766a60,"=");
                     /* try { // try from 004af250 to 004af25b has its CatchHandler @ 004b27f0 */
         Walaber::StringHelper::intToStr(&uStack_1d0,iVar18);
         pvVar39 = (void *)((ulong)&uStack_1d0 | 1);
@@ -2031,7 +2031,7 @@ LAB_004aff3c:
                     /* try { // try from 004b0874 to 004b0877 has its CatchHandler @ 004b294c */
     uVar31 = Walaber::TextureManager::getManager();
                     /* try { // try from 004b087c to 004b088f has its CatchHandler @ 004b2948 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1f0,"/Textures/",&uStack_1b0);
+    std::__ndk1::__decomp_string_plus(&uStack_1f0,"/Textures/",&uStack_1b0);
                     /* try { // try from 004b0890 to 004b08a3 has its CatchHandler @ 004b28f8 */
     puVar21 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_1f0,".png",4);
     pvStack_1c0 = (void *)puVar21[2];
@@ -4001,7 +4001,7 @@ LAB_004b3abc:
     abStack_150[4] = 100;
     abStack_150[7] = 0;
                     /* try { // try from 004b317c to 004b318f has its CatchHandler @ 004b3d7c */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_f0,"ITEM_NAME_",abStack_90);
+    std::__ndk1::__decomp_string_plus(abStack_f0,"ITEM_NAME_",abStack_90);
                     /* try { // try from 004b3190 to 004b319b has its CatchHandler @ 004b3d64 */
     Walaber::TextManager::getString(abStack_d8,abStack_f0);
                     /* try { // try from 004b319c to 004b31a7 has its CatchHandler @ 004b3d4c */
@@ -4037,7 +4037,7 @@ LAB_004b3abc:
     abStack_150[4] = 0x79;
     abStack_150[5] = 0;
                     /* try { // try from 004b3210 to 004b3223 has its CatchHandler @ 004b3d38 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_108,"ITEM_DESCRIPTION_",abStack_90);
+    std::__ndk1::__decomp_string_plus(abStack_108,"ITEM_DESCRIPTION_",abStack_90);
                     /* try { // try from 004b3224 to 004b322f has its CatchHandler @ 004b3d24 */
     Walaber::TextManager::getString(abStack_d8,abStack_108);
                     /* try { // try from 004b3230 to 004b323b has its CatchHandler @ 004b3d0c */

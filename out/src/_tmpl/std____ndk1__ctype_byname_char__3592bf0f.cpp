@@ -125,7 +125,7 @@ template<> std::__ndk1::ctype_byname<char>::ctype_byname(undefined8 *param_1,byt
   param_1[4] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d75b8 to 005d75cb has its CatchHandler @ 005d75f0 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<char>::ctype_byname failed to construct for ",param_2);
+    std::__ndk1::__decomp_string_plus(auStack_50,"ctype_byname<char>::ctype_byname failed to construct for ",param_2);
                     /* try { // try from 005d75cc to 005d75d3 has its CatchHandler @ 005d75d8 */
     FUN_005d5db0(auStack_50);
   }

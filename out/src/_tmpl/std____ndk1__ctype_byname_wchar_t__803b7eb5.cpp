@@ -111,7 +111,7 @@ template<> std::__ndk1::ctype_byname<wchar_t>::ctype_byname(undefined8 *param_1,
   param_1[2] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d7964 to 005d7977 has its CatchHandler @ 005d799c */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<wchar_t>::ctype_byname failed to construct for ",param_2);
+    std::__ndk1::__decomp_string_plus(auStack_50,"ctype_byname<wchar_t>::ctype_byname failed to construct for ",param_2);
                     /* try { // try from 005d7978 to 005d797f has its CatchHandler @ 005d7984 */
     FUN_005d5db0(auStack_50);
   }

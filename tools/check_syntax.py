@@ -638,6 +638,7 @@ def _harvest_template(model, ret, qname, params, post, uses_this):
         return
     owner = comps[:-1]
     cls = owner[-1]
+    key = "::".join(_strip_angles(c) for c in owner)
     # A parameter Ghidra printed as ``void (*param_9)(void*)`` carries the
     # name inside the template argument; a declarator needs no name there.
     params = re.sub(r"\(\s*(\*+)\s*\w+\s*\)", r"(\1)", params)
@@ -670,7 +671,6 @@ def _harvest_template(model, ret, qname, params, post, uses_this):
                 model.tmpl_args[top].add(
                     (len(args), all(_looks_like_type(a) for a in args)))
             break
-    key = "::".join(_strip_angles(c) for c in owner)
     if is_dtor:
         ret, params = "", ""
     elif is_ctor:
@@ -767,12 +767,14 @@ def _emit_primary(model, key, params, defined):
             lines.append("  template <class... _A> _Datum %s(_A...);"
                          % short)
         else:
-            # The trailing ellipsis matters: Ghidra writes a static-form call
-            # as ``Class<T>::name<Args>(object, arg)``, which spells explicit
-            # template arguments *and* passes the object on top.  A plain pack
-            # would fix the arity to the number of explicit arguments.
-            lines.append("  template <class... _A> static _Datum %s(_A..., ...);"
-                         % short)
+            # Ghidra writes template member calls in static form:
+            # ``Class<T>::name<Explicit...>(object, args...)``.  Keep the
+            # explicit member-template arguments separate from the function
+            # arguments, which include the object.  A single pack here binds
+            # the explicit types as function parameters and rejects the real
+            # arguments (e.g. vector<T>::__push_back_slow_path<U>(this, &x)).
+            lines.append("  template <class... _Explicit, class... _A> "
+                         "static _Datum %s(_A..., ...);" % short)
     lines.append("};")
     return "\n".join(lines)
 

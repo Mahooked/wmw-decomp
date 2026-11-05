@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **44,499** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | current worktree: **18,455** diagnostics across 1,467 files with synthesized declarations compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,16 +57,18 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 19,726 diagnostics into
+   files against synthesised declarations and sorts the 18,455 current
+   worktree diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). Six systematic defects it named are
    now decided — illegal return types and parameters on 695 constructors and
    destructors, 17,182 calls spelled in Ghidra's static member form, the arity
    divergence re-bound at 764 definitions, template-qualified definitions
    missing their `template<>` marker, calls printed in declaration shape, and
-   calls to a function template the tree recovered as an ordinary function — and
-   the largest remaining bucket is *no matching function*: the residue of that
-   arity divergence, plus the free function templates nothing declares.
+   calls to a function template the tree recovered as an ordinary function.
+   The largest current bucket is 2,005 *no matching function* diagnostics;
+   remaining cases include imported or unresolved call signatures and malformed
+   decompiler expressions.
 3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
@@ -292,7 +294,7 @@ re-inferred.
   rest are the residue inside `out/src/std` — the four files that were hiding
   behind the ambiguity, which is also where 5 of the 35 *operator `=` is
   ambiguous* sites now show up.
-- The baseline driven **44,981 → 44,499** by giving the two placeholders a
+- The historical baseline moved **44,981 → 44,499** by giving the two placeholders a
   subscript. A string table the binary keeps as data is addressed through an
   address it never named — `(&PTR_s_UTF_8_006123f6_0x27_00706270)[i]`,
   `(&DAT_0061b001)[*param_1]` — and the operand there is the result of
@@ -468,6 +470,10 @@ tools/
   shape_tmpl_calls.py drop the explicit template arguments from a call whose
                       callee the tree recovered as an ordinary function, and
                       record the names so the declarations can bridge them
+  shape_string_plus.py turn libc++ string `operator+` calls carrying the ABI's
+                      hidden result pointer into ordinary helper calls; the
+                      original signatures remain in comments; --check gates
+                      that all 377 call sites and 3 bodies are shaped
   srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
   check_syntax.py     synthesise the declarations out/src is missing from the
                       definitions themselves (plus a variadic overload for the
@@ -1219,7 +1225,25 @@ in the generated `decls.h` itself. The bodies are then checked
 freestanding — `-target aarch64-linux-gnu -ffreestanding -nostdinc -nostdinc++`
 — so that nothing depends on the host's headers.
 
-The baseline over the whole tree:
+Current working-tree check (1,467 files):
+
+| | |
+|---|---|
+| Files checked | 1,467 |
+| Files with at least one error | 1,183 |
+| Diagnostics | 18,455 |
+| Generated declarations | **0 errors** |
+
+The gate now gives synthesized template-member declarations separate packs for
+explicit member-template arguments and function-call arguments. That clears the
+`__push_back_slow_path` and `__emplace_unique_key_args` call errors (232 in the
+prior run). A second source-shaping pass renames ABI-lowered string `operator+`
+calls that carry a third, hidden result argument; it resolves 371 no-match
+errors and the three illegal three-argument operator definitions. Together,
+these changes reduce the count from 19,203 to 18,455 while the generated
+declarations still compile cleanly.
+
+Earlier baseline and diagnostic breakdown:
 
 | | |
 |---|---|

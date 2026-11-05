@@ -1275,7 +1275,7 @@ void WaterConcept::Screen_Hub::handleEvent
     uStack_125 = 0;
     do {
                     /* try { // try from 004dd50c to 004dd51b has its CatchHandler @ 004df30c */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00616c8a,puVar22);
+      std::__ndk1::__decomp_string_plus(&bStack_90,&DAT_00616c8a,puVar22);
                     /* try { // try from 004dd51c to 004dd52b has its CatchHandler @ 004df314 */
       puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_90,&DAT_00616c8a,1);
       apuStack_100[0] = (undefined1 *)puVar13[2];
@@ -1803,7 +1803,7 @@ LAB_004de60c:
           operator delete(puStack_80);
         }
                     /* try { // try from 004ddad8 to 004ddaef has its CatchHandler @ 004df03c */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_110,&DAT_00778bf8,&DAT_00619cc6);
+        std::__ndk1::__decomp_string_plus(&bStack_110,&DAT_00778bf8,&DAT_00619cc6);
         uVar14 = ram0x00778cd8;
         puVar12 = DAT_00778ce0;
         if ((DAT_00778cd0 & 1) == 0) {
@@ -5376,7 +5376,7 @@ LAB_004e3398:
     if ((uVar1 != 0) ||
        (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
       uVar5 = Walaber::TextureManager::getManager();
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_70,"/Textures/",param_7);
+      std::__ndk1::__decomp_string_plus(auStack_70,"/Textures/",param_7);
       uStack_b0 = 0;
       uStack_a8 = 0;
       uStack_a0 = 0;
@@ -5515,7 +5515,7 @@ long * WaterConcept::Screen_Hub::_copyAndFormatButton
   if ((uVar1 != 0) ||
      (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_7);
+    std::__ndk1::__decomp_string_plus(auStack_88,"/Textures/",param_7);
     uStack_c8 = 0;
     uStack_c0 = 0;
     uStack_b8 = 0;
@@ -5546,7 +5546,7 @@ long * WaterConcept::Screen_Hub::_copyAndFormatButton
   if ((uVar1 != 0) ||
      (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_8,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_8);
+    std::__ndk1::__decomp_string_plus(auStack_88,"/Textures/",param_8);
     uStack_c8 = 0;
     uStack_c0 = 0;
     uStack_e8 = 0;

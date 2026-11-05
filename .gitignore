@@ -19,6 +19,12 @@ Thumbs.db
 # Scratch output from validation runs.
 out/smoke_src/
 out/valid/
+out/check/after_template_member_fix.tsv
+out/check/committed_prelude_diagnostics.tsv
+out/check/current_diagnostics.tsv
+out/check/no_generic_operators.tsv
+out/check/prelude.base.h
+out/check/prelude_no_generic_operators.h
 
 # Compiled Ghidra scripts (rebuilt from tools/ghidra on demand).
 out/build/

@@ -690,7 +690,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
   if (0x1517f < lVar7 - DAT_0075e028) {
     new ((void *)(abStack_a8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0075cc78);
                     /* try { // try from 0049e83c to 0049e84f has its CatchHandler @ 0049f138 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_100,&DAT_0075cc60,"=\'");
+    std::__ndk1::__decomp_string_plus(&uStack_100,&DAT_0075cc60,"=\'");
     uVar9 = ram0x0075cd88;
     puVar8 = DAT_0075cd90;
     if ((DAT_0075cd80 & 1) == 0) {
@@ -749,7 +749,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
       if (0 < (long)(uVar9 - lVar10)) {
         if (uVar9 - lVar10 == 1) {
                     /* try { // try from 0049e960 to 0049e977 has its CatchHandler @ 0049f024 */
-          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_0075cc60,"=\'");
+          std::__ndk1::__decomp_string_plus(&bStack_90,&DAT_0075cc60,"=\'");
           uVar13 = DAT_0075cda0;
           puVar4 = DAT_0075cda8;
           if ((DAT_0075cd98 & 1) == 0) {
@@ -791,7 +791,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
                     /* try { // try from 0049ea2c to 0049ea3b has its CatchHandler @ 0049ef94 */
           ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(abStack_a8))->operator=(&DAT_0075cc78);
                     /* try { // try from 0049ea3c to 0049ea53 has its CatchHandler @ 0049ef78 */
-          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_100,&DAT_0075cc60,"=\'");
+          std::__ndk1::__decomp_string_plus(&uStack_100,&DAT_0075cc60,"=\'");
           uVar13 = DAT_0075cda0;
           puVar4 = DAT_0075cda8;
           if ((DAT_0075cd98 & 1) == 0) {
@@ -922,9 +922,9 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
         }
         else {
                     /* try { // try from 0049ead4 to 0049eaeb has its CatchHandler @ 0049f020 */
-          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_e0,&DAT_0075cc78,&DAT_006396dd);
+          std::__ndk1::__decomp_string_plus(&bStack_e0,&DAT_0075cc78,&DAT_006396dd);
                     /* try { // try from 0049eaec to 0049eb03 has its CatchHandler @ 0049eff8 */
-          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_120,&DAT_0075cc60,"=\'");
+          std::__ndk1::__decomp_string_plus(&uStack_120,&DAT_0075cc60,"=\'");
           uVar13 = DAT_0075cda0;
           puVar4 = DAT_0075cda8;
           if ((DAT_0075cd98 & 1) == 0) {
@@ -967,7 +967,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
           }
         }
                     /* try { // try from 0049ed0c to 0049ed23 has its CatchHandler @ 0049f0b8 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_100,&DAT_0075cc78,"=");
+        std::__ndk1::__decomp_string_plus(&uStack_100,&DAT_0075cc78,"=");
                     /* try { // try from 0049ed24 to 0049ed33 has its CatchHandler @ 0049f0a0 */
         Walaber::StringHelper::intToStr(&bStack_90,uVar9 & 0xffffffff);
         uVar13 = (ulong)(bStack_90 >> 1);
@@ -990,7 +990,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
         puVar8[2] = 0;
         *puVar8 = 0;
                     /* try { // try from 0049ed70 to 0049ed87 has its CatchHandler @ 0049f070 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_168,&DAT_0075cc60,"=\'");
+        std::__ndk1::__decomp_string_plus(abStack_168,&DAT_0075cc60,"=\'");
         uVar13 = ram0x0075cd88;
         puVar8 = DAT_0075cd90;
         if ((DAT_0075cd80 & 1) == 0) {

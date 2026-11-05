@@ -178,7 +178,7 @@
                     /* try { // try from 004ee6b4 to 004ee6c3 has its CatchHandler @ 004eea84 */
   new ((void *)(abStack_c8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077ddd0);
                     /* try { // try from 004ee6c4 to 004ee6db has its CatchHandler @ 004eea78 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_f8,&DAT_0077dbd8,"=\'");
+  std::__ndk1::__decomp_string_plus(abStack_f8,&DAT_0077dbd8,"=\'");
   uVar7 = DAT_00735df0;
   puVar2 = DAT_00735df8;
   if ((GameSettings::currentLevelPackName & 1) == 0) {
@@ -1026,7 +1026,7 @@ LAB_004ef8d0:
 LAB_004ef8dc:
   new ((void *)(&ppuStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077dbc0);
                     /* try { // try from 004ef8f0 to 004ef903 has its CatchHandler @ 004f0b24 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_138,&DAT_0077dbf0," = 0 AND ");
+  std::__ndk1::__decomp_string_plus(&fStack_138,&DAT_0077dbf0," = 0 AND ");
   uVar18 = ram0x0077dbe0;
   puVar14 = DAT_0077dbe8;
   if ((DAT_0077dbd8 & 1) == 0) {
@@ -2305,7 +2305,7 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * i
   if (*in_x1 != 1) goto LAB_004f2ed0;
   new ((void *)(abStack_100)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0077dd40);
                     /* try { // try from 004f0ef0 to 004f0f03 has its CatchHandler @ 004f3470 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_140,&DAT_0077dbd8,"=\'");
+  std::__ndk1::__decomp_string_plus(&bStack_140,&DAT_0077dbd8,"=\'");
   uVar19 = DAT_00735df0;
   puVar3 = DAT_00735df8;
   if ((GameSettings::currentLevelPackName & 1) == 0) {
@@ -4639,7 +4639,7 @@ void WaterConcept::Screen_LevelSelect::_loadLevelList(long param_1)
       uVar41 = 0;
       do {
                     /* try { // try from 004f7420 to 004f742b has its CatchHandler @ 004f7cd4 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_710,"/",lVar21 + lVar25);
+        std::__ndk1::__decomp_string_plus(&bStack_710,"/",lVar21 + lVar25);
         uVar30 = (ulong)(bStack_710 >> 1);
         pvVar36 = (void *)((ulong)&bStack_710 | 1);
         if ((bStack_710 & 1) != 0) {
@@ -5131,7 +5131,7 @@ void WaterConcept::Screen_LevelSelect::_loadLevelList(long param_1)
       operator delete(puStack_120);
     }
                     /* try { // try from 004f41c4 to 004f41db has its CatchHandler @ 004f78f4 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_130,&DAT_0077d9f8," ASC, ");
+    std::__ndk1::__decomp_string_plus(&uStack_130,&DAT_0077d9f8," ASC, ");
     uVar41 = _DAT_0077dbb0;
     puVar37 = DAT_0077dbb8;
     if ((DAT_0077dba8 & 1) == 0) {
@@ -8105,7 +8105,7 @@ joined_r0x004f9a04:
               uVar12 = 0;
               do {
                     /* try { // try from 004f9ae8 to 004f9af3 has its CatchHandler @ 004fb10c */
-                std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c8,lVar18 + lVar29,"/");
+                std::__ndk1::__decomp_string_plus(&bStack_c8,lVar18 + lVar29,"/");
                 uVar32 = (ulong)(bStack_c8 >> 1);
                 pvVar28 = (void *)((ulong)&bStack_c8 | 1);
                 if ((bStack_c8 & 1) != 0) {

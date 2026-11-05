@@ -2918,7 +2918,7 @@ ulong WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex(long para
   if ((*(char *)(param_1 + 0xe0) == '\0') && (*(long *)(param_1 + 0xa0) != 0)) {
     new ((void *)(abStack_50)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00783bc8);
                     /* try { // try from 0051ae88 to 0051ae9b has its CatchHandler @ 0051aff0 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_68,&DAT_00783d78,&DAT_0063576c);
+    std::__ndk1::__decomp_string_plus(abStack_68,&DAT_00783d78,&DAT_0063576c);
                     /* try { // try from 0051ae9c to 0051aeab has its CatchHandler @ 0051afe8 */
     new ((void *)(abStack_80)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00783d78);
     puStack_98 = (uint *)0x0;
@@ -5375,7 +5375,7 @@ LAB_0051f46c:
     GameSettings::currentStoryline = uVar12 - 0x192;
     new ((void *)(&fStack_e0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00783be0);
                     /* try { // try from 0051db40 to 0051db53 has its CatchHandler @ 00521138 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_1e0,&DAT_00783bc8,"=");
+    std::__ndk1::__decomp_string_plus(&fStack_1e0,&DAT_00783bc8,"=");
                     /* try { // try from 0051db58 to 0051db63 has its CatchHandler @ 00521124 */
     Walaber::StringHelper::intToStr(&bStack_200,GameSettings::currentStoryline);
     uVar16 = (ulong)(bStack_200 >> 1);
@@ -11884,7 +11884,7 @@ void WaterConcept::Screen_MainMenu_v2::_rebuildTextInHubForStoryLine(long param_
   lVar8 = Walaber::WidgetManager::getWidget(*(undefined8 *)(param_1 + 0x10),param_2 + 0x76e);
   if (((lVar8 == 0) || (6 < param_2)) || ((1 << (ulong)(param_2 & 0x1f) & 0x4bU) == 0))
   goto LAB_00525bc8;
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,&DAT_00783bf8,&DAT_0063d328);
+  std::__ndk1::__decomp_string_plus(&bStack_d0,&DAT_00783bf8,&DAT_0063d328);
   uVar11 = (ulong)(DAT_00783d78 >> 1);
   puVar10 = &DAT_00783d79;
   if ((DAT_00783d78 & 1) != 0) {
@@ -11903,7 +11903,7 @@ void WaterConcept::Screen_MainMenu_v2::_rebuildTextInHubForStoryLine(long param_
     operator delete(puStack_c0);
   }
                     /* try { // try from 0052515c to 00525173 has its CatchHandler @ 00525d80 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_f0,&DAT_00783bc8,"=");
+  std::__ndk1::__decomp_string_plus(&uStack_f0,&DAT_00783bc8,"=");
                     /* try { // try from 00525174 to 00525183 has its CatchHandler @ 00525d6c */
   Walaber::StringHelper::intToStr(&bStack_110,param_2);
   uVar11 = (ulong)(bStack_110 >> 1);
@@ -12195,7 +12195,7 @@ LAB_0052564c:
     }
   }
                     /* try { // try from 0052565c to 00525673 has its CatchHandler @ 00525ce8 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_168," AND ",&DAT_00783400);
+  std::__ndk1::__decomp_string_plus(&uStack_168," AND ",&DAT_00783400);
                     /* try { // try from 00525674 to 00525687 has its CatchHandler @ 00525cd4 */
   puVar9 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_168," >= 0 AND ",10);
   pvStack_140 = (void *)puVar9[2];
@@ -12957,7 +12957,7 @@ void WaterConcept::Screen_MainMenu_v2::_finishedLoadingWidgets(void *p0, int * i
     uStack_438 = 0x61;
     uStack_435 = 0;
                     /* try { // try from 005264fc to 00526513 has its CatchHandler @ 00528dbc */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_140,&DAT_00783850,"=\'AlliePackViewed\'");
+    std::__ndk1::__decomp_string_plus(&uStack_140,&DAT_00783850,"=\'AlliePackViewed\'");
                     /* try { // try from 00526514 to 0052652f has its CatchHandler @ 00528da4 */
     new ((void *)(&bStack_160)) Walaber::DatabaseIterator(0,&DAT_00783868,&fStack_440,&uStack_140);
     if ((uStack_140 & 1) != 0) {
@@ -15112,7 +15112,7 @@ void WaterConcept::Screen_MainMenu_v2::_createTriducks
   float fStack_88;
   undefined1 uStack_84;
   
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_d8," AND ",&DAT_007834f0);
+  std::__ndk1::__decomp_string_plus(abStack_d8," AND ",&DAT_007834f0);
   uStack_e8 = 0;
   pvStack_e0 = (void *)0x0;
   uStack_f0 = 0x203d212008;
@@ -16737,7 +16737,7 @@ void WaterConcept::Screen_MainMenu_v2::_buildLOWScreen(Walaber__Widget_Group *p0
   if ((in_x2 & 1) == 0) {
     uVar17 = Walaber::WidgetManager::getWidget(*(undefined8 *)&p0->field_0x10,3000);
     Walaber::Widget_Group::addWidget(p1,uVar17);
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_340,&DAT_00784b40,&DAT_00619cc5);
+    std::__ndk1::__decomp_string_plus(&uStack_340,&DAT_00784b40,&DAT_00619cc5);
     uVar22 = (ulong)(DAT_00784b58 >> 1);
     puVar19 = &DAT_00784b59;
     if ((DAT_00784b58 & 1) != 0) {
@@ -16968,7 +16968,7 @@ void WaterConcept::Screen_MainMenu_v2::_buildLOWScreen(Walaber__Widget_Group *p0
                     /* try { // try from 0052c3ec to 0052c3f7 has its CatchHandler @ 0052dba4 */
       uVar10 = Walaber::DatabaseIterator::getIntAtIndex(auStack_348,7);
                     /* try { // try from 0052c3fc to 0052c413 has its CatchHandler @ 0052dba0 */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1c0,&DAT_007832c8,&DAT_0063d328);
+      std::__ndk1::__decomp_string_plus(&bStack_1c0,&DAT_007832c8,&DAT_0063d328);
       uVar22 = DAT_007832a0;
       puVar8 = DAT_007832a8;
       if ((DAT_00783298 & 1) == 0) {
@@ -17932,7 +17932,7 @@ void WaterConcept::Screen_MainMenu_v2::_rebuildTextLabelForStoryLine(long param_
   uStack_230 = 0;
   pcStack_220 = (char *)0x0;
                     /* try { // try from 0052dd9c to 0052ddb3 has its CatchHandler @ 0052f808 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_2f0,&DAT_00784b40,&DAT_00619cc6);
+  std::__ndk1::__decomp_string_plus(&uStack_2f0,&DAT_00784b40,&DAT_00619cc6);
   uVar18 = ram0x00784b60;
   puVar16 = DAT_00784b68;
   if ((DAT_00784b58 & 1) == 0) {
@@ -18179,7 +18179,7 @@ void WaterConcept::Screen_MainMenu_v2::_rebuildTextLabelForStoryLine(long param_
                     /* try { // try from 0052e22c to 0052e237 has its CatchHandler @ 0052f874 */
   uVar12 = Walaber::DatabaseIterator::getIntAtIndex(auStack_2f8,4);
                     /* try { // try from 0052e23c to 0052e253 has its CatchHandler @ 0052f6dc */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1b0,&DAT_007832c8,&DAT_0063d328);
+  std::__ndk1::__decomp_string_plus(&bStack_1b0,&DAT_007832c8,&DAT_0063d328);
   uVar18 = DAT_007832a0;
   puVar8 = DAT_007832a8;
   if ((DAT_00783298 & 1) == 0) {
@@ -19265,7 +19265,7 @@ LAB_0052f144:
                     /* try { // try from 0052f1d0 to 0052f1d3 has its CatchHandler @ 0052f588 */
     uVar25 = Walaber::TextureManager::getManager();
                     /* try { // try from 0052f1d8 to 0052f1eb has its CatchHandler @ 0052f584 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_2b0,"/Textures/",&uStack_230);
+    std::__ndk1::__decomp_string_plus(&uStack_2b0,"/Textures/",&uStack_230);
     uStack_2f0 = 0;
     uStack_2e8 = 0;
     uStack_480 = 0;
@@ -19290,7 +19290,7 @@ LAB_0052f144:
                     /* try { // try from 0052f26c to 0052f26f has its CatchHandler @ 0052f544 */
     uVar25 = Walaber::TextureManager::getManager();
                     /* try { // try from 0052f274 to 0052f287 has its CatchHandler @ 0052f540 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_2b0,"/Textures/",&uStack_230);
+    std::__ndk1::__decomp_string_plus(&uStack_2b0,"/Textures/",&uStack_230);
     uStack_2f0 = 0;
     uStack_2e8 = 0;
     uStack_4a0 = 0;
@@ -19459,7 +19459,7 @@ void WaterConcept::Screen_MainMenu_v2::_mergeRemoteLOTWLevelInfo(long param_1,in
   }
   if (param_2 == 3) {
                     /* try { // try from 0052fab4 to 0052fac7 has its CatchHandler @ 0052fbd4 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_a0,&DAT_00636699,&uStack_50);
+    std::__ndk1::__decomp_string_plus(&uStack_a0,&DAT_00636699,&uStack_50);
     if ((uStack_50 & 1) != 0) {
       *puStack_40 = 0;
       uStack_48 = 0;

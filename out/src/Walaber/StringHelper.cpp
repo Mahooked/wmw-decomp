@@ -769,7 +769,7 @@ LAB_003f8af4:
     uStack_68 = uStack_80;
   }
                     /* try { // try from 003f8b94 to 003f8ba7 has its CatchHandler @ 003f8c5c */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_88,abStack_50,"/");
+  std::__ndk1::__decomp_string_plus(abStack_88,abStack_50,"/");
   uVar2 = uStack_70 >> 1 & 0x7f;
   puVar6 = (undefined1 *)((ulong)&uStack_70 | 1);
   if ((uStack_70 & 1) != 0) {

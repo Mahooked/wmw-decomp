@@ -784,7 +784,7 @@ void Walaber::WidgetHelper::getTextureNames(std::__ndk1::basic_string<char, std:
         iVar3 = xmlStrcmp(*(undefined8 *)(lVar4 + 0x10),"Widget");
         if ((iVar3 == 0) && (uVar5 = Walaber::WidgetHelper::_getTextureName(lVar4,auStack_60), (uVar5 & 1) != 0)) {
                     /* try { // try from 00371a30 to 00371a3f has its CatchHandler @ 00371af0 */
-          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_78,&texturePath,auStack_60);
+          std::__ndk1::__decomp_string_plus(&uStack_78,&texturePath,auStack_60);
           puVar1 = *(ulong **)(param_2 + 8);
           if (puVar1 < *(ulong **)(param_2 + 0x10)) {
             puVar1[2] = (ulong)pvStack_68;
@@ -4446,7 +4446,7 @@ void Walaber::WidgetHelper::_getTexture(undefined8 *param_1,byte *param_2)
                     /* try { // try from 003774c4 to 003774c7 has its CatchHandler @ 0037758c */
     uVar3 = Walaber::TextureManager::getManager();
                     /* try { // try from 003774cc to 003774df has its CatchHandler @ 00377588 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_60,&texturePath,param_2);
+    std::__ndk1::__decomp_string_plus(abStack_60,&texturePath,param_2);
     uStack_80 = 0;
     uStack_78 = 0;
     uStack_70 = 0;

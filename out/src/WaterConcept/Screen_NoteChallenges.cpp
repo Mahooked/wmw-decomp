@@ -810,7 +810,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0, int 
     auStack_160[0] = 0;
     pvStack_150 = (void *)0x0;
                     /* try { // try from 0053bfd8 to 0053bfef has its CatchHandler @ 0053f23c */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_260,&DAT_0078a130,&DAT_0063d328);
+    std::__ndk1::__decomp_string_plus(&bStack_260,&DAT_0078a130,&DAT_0063d328);
     uVar26 = DAT_0078a1f8;
     puVar40 = DAT_0078a200;
     if ((DAT_0078a1f0 & 1) == 0) {
@@ -1446,7 +1446,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0, int 
               builtin_strncpy(pcVar46,"LevelInfo",9);
               uStack_366 = 0;
                     /* try { // try from 0053cfac to 0053cfc3 has its CatchHandler @ 0053faf8 */
-              std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_220,&DAT_00789c98,"=\'");
+              std::__ndk1::__decomp_string_plus(&uStack_220,&DAT_00789c98,"=\'");
                     /* try { // try from 0053cfc4 to 0053cfd3 has its CatchHandler @ 0053fa7c */
               Walaber::DatabaseIterator::getStringAtIndex(&uStack_240,auStack_268,2);
               piVar3 = (int *)((ulong)uStack_240 >> 1 & 0x7f);
@@ -1571,7 +1571,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0, int 
                 operator delete(pvStack_3b8);
               }
                     /* try { // try from 0053d2ac to 0053d2bf has its CatchHandler @ 0053fa84 */
-              std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_240,&fStack_370,&DAT_0061b9ce);
+              std::__ndk1::__decomp_string_plus(&uStack_240,&fStack_370,&DAT_0061b9ce);
                     /* try { // try from 0053d2c0 to 0053d2cf has its CatchHandler @ 0053fa60 */
               Walaber::DatabaseIterator::getStringAtIndex(abStack_3e0,auStack_268,1);
                     /* try { // try from 0053d2d0 to 0053d2db has its CatchHandler @ 0053f9cc */
@@ -2406,7 +2406,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0, int 
           Walaber::WidgetManager::addWidget(*puVar45,plVar35,2);
           if (bVar10) {
                     /* try { // try from 0053e7b4 to 0053e7cb has its CatchHandler @ 0053f3ac */
-            std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_d0,&DAT_0078b600,&DAT_0063d328);
+            std::__ndk1::__decomp_string_plus(&fStack_d0,&DAT_0078b600,&DAT_0063d328);
             uVar26 = DAT_0078b620;
             puVar9 = DAT_0078b628;
             if ((DAT_0078b618 & 1) == 0) {
@@ -2510,9 +2510,9 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0, int 
                   builtin_strncpy(pcVar42,"AllieSongs",10);
                   piStack_238 = (int *)0x0;
                     /* try { // try from 0053e9b4 to 0053e9cb has its CatchHandler @ 0053f2bc */
-                  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_260,&DAT_0078b630,&DAT_0061d431);
+                  std::__ndk1::__decomp_string_plus(&bStack_260,&DAT_0078b630,&DAT_0061d431);
                     /* try { // try from 0053e9cc to 0053e9e3 has its CatchHandler @ 0053f2b4 */
-                  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_650,&DAT_0078b600,"=\'");
+                  std::__ndk1::__decomp_string_plus(auStack_650,&DAT_0078b600,"=\'");
                     /* try { // try from 0053e9e4 to 0053e9f3 has its CatchHandler @ 0053f25c */
                   Walaber::DatabaseIterator::getStringAtIndex(&uStack_668,&fStack_460,0);
                   pvVar4 = (void *)((ulong)&uStack_668 | 1);
@@ -3009,7 +3009,7 @@ void WaterConcept::Screen_NoteChallenges::handleEvent
         plVar18 = (long *)plVar18[(ulong)plVar18[4] < in_x3];
       } while (plVar18 != (long *)0x0);
       if ((plVar19 != plVar17) && ((ulong)plVar19[4] <= in_x3)) {
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&piStack_a8,&DAT_0078a148,&DAT_0063d328);
+        std::__ndk1::__decomp_string_plus(&piStack_a8,&DAT_0078a148,&DAT_0063d328);
         uVar11 = (ulong)(DAT_0078a190 >> 1);
         puVar10 = &DAT_0078a191;
         if ((DAT_0078a190 & 1) != 0) {
@@ -3048,7 +3048,7 @@ void WaterConcept::Screen_NoteChallenges::handleEvent
         abStack_88[8] = 0x61;
         uStack_75 = 0;
                     /* try { // try from 0054003c to 00540053 has its CatchHandler @ 00540958 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&piStack_a8,&DAT_0078a130,"=");
+        std::__ndk1::__decomp_string_plus(&piStack_a8,&DAT_0078a130,"=");
                     /* try { // try from 00540058 to 00540063 has its CatchHandler @ 00540920 */
         Walaber::StringHelper::intToStr(&piStack_d8,(int)plVar19[5]);
         piVar12 = (int *)((ulong)piStack_d8 >> 1 & 0x7f);
@@ -3305,7 +3305,7 @@ void WaterConcept::Screen_NoteChallenges::handleEvent
         uStack_bc = 100;
         uStack_b9 = 0;
                     /* try { // try from 005404a8 to 005404bb has its CatchHandler @ 005408d4 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_140,"SONG_NAME_",abStack_88);
+        std::__ndk1::__decomp_string_plus(abStack_140,"SONG_NAME_",abStack_88);
                     /* try { // try from 005404bc to 005404c7 has its CatchHandler @ 005408bc */
         Walaber::TextManager::getString(&piStack_d8,abStack_140);
                     /* try { // try from 005404c8 to 005404d3 has its CatchHandler @ 005408a4 */
@@ -3335,7 +3335,7 @@ void WaterConcept::Screen_NoteChallenges::handleEvent
         uStack_bc = 0x79;
         uStack_bb = 0;
                     /* try { // try from 0054053c to 0054054f has its CatchHandler @ 00540890 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_158,"SONG_DESCRIPTION_",abStack_88);
+        std::__ndk1::__decomp_string_plus(abStack_158,"SONG_DESCRIPTION_",abStack_88);
                     /* try { // try from 00540550 to 0054055b has its CatchHandler @ 0054087c */
         Walaber::TextManager::getString(&piStack_d8,abStack_158);
                     /* try { // try from 0054055c to 00540567 has its CatchHandler @ 00540864 */

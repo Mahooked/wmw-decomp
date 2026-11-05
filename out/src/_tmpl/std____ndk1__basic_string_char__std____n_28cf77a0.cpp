@@ -11,7 +11,7 @@
    std::__ndk1::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, char const*) */
 
-void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
+void std::__ndk1::__decomp_string_plus(ulong *param_1,byte *param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -67,7 +67,7 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
    std::__ndk1::TEMPNAMEPLACEHOLDERVALUE(char const*, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::operator+(ulong *param_1,undefined8 param_2,byte *param_3)
+void std::__ndk1::__decomp_string_plus(ulong *param_1,undefined8 param_2,byte *param_3)
 
 {
   ulong uVar1;
@@ -127,7 +127,7 @@ void std::__ndk1::operator+(ulong *param_1,undefined8 param_2,byte *param_3)
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void std::__ndk1::operator+(ulong *param_1,byte *param_2,byte *param_3)
+void std::__ndk1::__decomp_string_plus(ulong *param_1,byte *param_2,byte *param_3)
 
 {
   ulong uVar1;

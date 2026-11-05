@@ -241,7 +241,7 @@ static _Datum instance;
                     /* try { // try from 0056a9a4 to 0056a9b3 has its CatchHandler @ 0056ad5c */
   new ((void *)(abStack_d8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_0079dea8);
                     /* try { // try from 0056a9b4 to 0056a9cb has its CatchHandler @ 0056ad54 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_108,&DAT_0079dcb0,"=\'");
+  std::__ndk1::__decomp_string_plus(abStack_108,&DAT_0079dcb0,"=\'");
   uVar6 = DAT_00735df0;
   puVar2 = DAT_00735df8;
   if ((GameSettings::currentLevelPackName & 1) == 0) {
@@ -2056,7 +2056,7 @@ LAB_0056d1cc:
     puVar14 = &uStack_1e8;
   }
   else {
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_c0,&DAT_0079e028,&DAT_0063d328);
+    std::__ndk1::__decomp_string_plus(&uStack_c0,&DAT_0079e028,&DAT_0063d328);
     uVar17 = (ulong)(DAT_0079e040 >> 1);
     puVar16 = &DAT_0079e041;
     if ((DAT_0079e040 & 1) != 0) {
@@ -2075,7 +2075,7 @@ LAB_0056d1cc:
       operator delete(pvStack_b0);
     }
                     /* try { // try from 0056be38 to 0056be4f has its CatchHandler @ 0056d84c */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_e0,&DAT_0079df98,"=");
+    std::__ndk1::__decomp_string_plus(&uStack_e0,&DAT_0079df98,"=");
                     /* try { // try from 0056be54 to 0056be5f has its CatchHandler @ 0056d838 */
     Walaber::StringHelper::intToStr(&bStack_100,GameSettings::currentLevelChallengeID);
     uVar17 = (ulong)(bStack_100 >> 1);
@@ -2124,7 +2124,7 @@ LAB_0056d1cc:
       iVar13 = iVar10 + iVar13;
     }
                     /* try { // try from 0056bf60 to 0056bf77 has its CatchHandler @ 0056d814 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1a0,&DAT_0079e028,"=");
+    std::__ndk1::__decomp_string_plus(&uStack_1a0,&DAT_0079e028,"=");
                     /* try { // try from 0056bf78 to 0056bf87 has its CatchHandler @ 0056d7fc */
     Walaber::StringHelper::intToStr(&uStack_1c0,iVar19);
     uVar15 = uStack_1c0 >> 1 & 0x7f;
@@ -2214,7 +2214,7 @@ LAB_0056d1cc:
     }
     if (0 < iVar13) {
                     /* try { // try from 0056c120 to 0056c137 has its CatchHandler @ 0056d738 */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_140,&DAT_00619cc6,&DAT_0079dfe0);
+      std::__ndk1::__decomp_string_plus(&uStack_140,&DAT_00619cc6,&DAT_0079dfe0);
                     /* try { // try from 0056c138 to 0056c14b has its CatchHandler @ 0056d720 */
       puVar14 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_140,&DAT_0061d431,2);
       pvStack_110 = (void *)puVar14[2];
@@ -13740,7 +13740,7 @@ LAB_00586734:
     }
     else {
                     /* try { // try from 00586ba8 to 00586bbb has its CatchHandler @ 00586c9c */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_140,&fStack_b0,&DAT_0061d431);
+      std::__ndk1::__decomp_string_plus(&fStack_140,&fStack_b0,&DAT_0061d431);
       uStack_154 = 0;
       pvStack_150 = (void *)0x0;
       uStack_157 = 0x6174;

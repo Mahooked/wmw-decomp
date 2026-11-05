@@ -1325,7 +1325,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
             fVar16 = param_3;
           }
                     /* try { // try from 003665c4 to 003665cf has its CatchHandler @ 003667f4 */
-          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_118,lStack_100 + uVar14 * 0x18,auStack_d0);
+          std::__ndk1::__decomp_string_plus(afStack_118,lStack_100 + uVar14 * 0x18,auStack_d0);
           uVar8 = (ulong)(afStack_118[0]._0_1_ >> 1);
           pvVar3 = (void *)((ulong)afStack_118 | 1);
           if (((uint)afStack_118[0] & 1) != 0) {
@@ -1400,7 +1400,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
             Walaber::BitmapFont::measureString(afStack_130,param_2,param_4,afStack_118);
             fVar16 = afStack_130[0];
                     /* try { // try from 00366668 to 00366677 has its CatchHandler @ 003667d8 */
-            std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_130,afStack_118,auStack_d0);
+            std::__ndk1::__decomp_string_plus(afStack_130,afStack_118,auStack_d0);
             pvVar3 = (void *)((ulong)afStack_130 | 1);
             uVar8 = (ulong)(afStack_130[0]._0_1_ >> 1);
             if (((uint)afStack_130[0] & 1) != 0) {
@@ -1862,7 +1862,7 @@ LAB_003672bc:
                   }
                   else {
                     /* try { // try from 00367284 to 0036728f has its CatchHandler @ 00367420 */
-                    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_130,&DAT_00616c51);
+                    std::__ndk1::__decomp_string_plus(&uStack_130,&DAT_00616c51);
                     uVar2 = uStack_130 >> 1 & 0x7f;
                     pvVar7 = (void *)((ulong)&uStack_130 | 1);
                     if ((uStack_130 & 1) != 0) {
@@ -2442,7 +2442,7 @@ void Walaber::BitmapFont::_wrapText
           fVar10 = param_3;
         }
                     /* try { // try from 003680bc to 003680c7 has its CatchHandler @ 003681d4 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_118,CONCAT44(uStack_fc,fStack_100) + lVar8,auStack_d0);
+        std::__ndk1::__decomp_string_plus(afStack_118,CONCAT44(uStack_fc,fStack_100) + lVar8,auStack_d0);
         uVar1 = (ulong)(afStack_118[0]._0_1_ >> 1);
         pvVar3 = (void *)((ulong)afStack_118 | 1);
         if (((uint)afStack_118[0] & 1) != 0) {

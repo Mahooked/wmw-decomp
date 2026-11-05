@@ -179,7 +179,7 @@ LAB_003d3ba4:
     }
   }
                     /* try { // try from 003d3bf0 to 003d3bfb has its CatchHandler @ 003d3dcc */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_a8,this + 0x10,&uStack_80);
+  std::__ndk1::__decomp_string_plus(&uStack_a8,this + 0x10,&uStack_80);
   if (((byte)uStack_80 & 1) != 0) {
     *puStack_70 = 0;
     uStack_78 = 0;
@@ -403,7 +403,7 @@ LAB_003d404c:
     }
   }
                     /* try { // try from 003d4098 to 003d40a3 has its CatchHandler @ 003d4274 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_a8,this + 0x10,&uStack_80);
+  std::__ndk1::__decomp_string_plus(&uStack_a8,this + 0x10,&uStack_80);
   if (((byte)uStack_80 & 1) != 0) {
     *puStack_70 = 0;
     uStack_78 = 0;

@@ -1153,7 +1153,7 @@ void WaterConcept::Screen_MainMenu::enter(long param_1)
                     /* try { // try from 00508080 to 0050808b has its CatchHandler @ 005088e0 */
   Walaber::StringHelper::intToStr(&bStack_e0,0);
                     /* try { // try from 0050808c to 005080a3 has its CatchHandler @ 005088dc */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_120,&DAT_007816f0,&DAT_0061d586);
+  std::__ndk1::__decomp_string_plus(&bStack_120,&DAT_007816f0,&DAT_0061d586);
   uVar11 = (ulong)(bStack_e0 >> 1);
   pvVar3 = (void *)((ulong)&bStack_e0 | 1);
   if ((bStack_e0 & 1) != 0) {
@@ -1224,7 +1224,7 @@ void WaterConcept::Screen_MainMenu::enter(long param_1)
     operator delete((void *)CONCAT62(uStack_10e,CONCAT11(uStack_10f,uStack_110)));
   }
                     /* try { // try from 00508150 to 00508167 has its CatchHandler @ 005088c0 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_138," AND ",&DAT_00781678);
+  std::__ndk1::__decomp_string_plus(&uStack_138," AND ",&DAT_00781678);
                     /* try { // try from 00508168 to 0050817b has its CatchHandler @ 005088ac */
   puVar10 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_138,&DAT_0061d586,3);
   pcStack_70 = (char *)puVar10[2];
@@ -1607,7 +1607,7 @@ void WaterConcept::Screen_MainMenu::_updateDatabase(void *p0)
       ((Walaber::PropertyList *)apvStack_98)->~PropertyList();
       new ((void *)(&ppuStack_a8)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_007819f0);
                     /* try { // try from 00508bfc to 00508c0f has its CatchHandler @ 0050951c */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_100,&DAT_007819d8,"=\'");
+      std::__ndk1::__decomp_string_plus(&bStack_100,&DAT_007819d8,"=\'");
       uVar9 = DAT_00781b30;
       puVar5 = DAT_00781b38;
       if ((DAT_00781b28 & 1) == 0) {
@@ -1671,7 +1671,7 @@ void WaterConcept::Screen_MainMenu::_updateDatabase(void *p0)
         uStack_f8 = 0x61;
         uStack_f5 = 0;
                     /* try { // try from 00508d3c to 00508d53 has its CatchHandler @ 00509394 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_120,&DAT_007819f0,&DAT_0061d431);
+        std::__ndk1::__decomp_string_plus(&uStack_120,&DAT_007819f0,&DAT_0061d431);
                     /* try { // try from 00508d54 to 00508d67 has its CatchHandler @ 0050937c */
         Walaber::DatabaseManager::updateEntry(0,&bStack_100,&uStack_120,&bStack_c0);
         if (((byte)uStack_120 & 1) != 0) {
@@ -1688,7 +1688,7 @@ void WaterConcept::Screen_MainMenu::_updateDatabase(void *p0)
         uStack_f8 = 0x61;
         uStack_f5 = 0;
                     /* try { // try from 00508da8 to 00508dbf has its CatchHandler @ 00509378 */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_80,&DAT_007819f0,"=\'");
+        std::__ndk1::__decomp_string_plus(&bStack_80,&DAT_007819f0,"=\'");
         uVar9 = (ulong)(bStack_e0 >> 1);
         pvVar2 = (void *)((ulong)&bStack_e0 | 1);
         if ((bStack_e0 & 1) != 0) {
@@ -3452,7 +3452,7 @@ void WaterConcept::Screen_MainMenu::_goEnter(long param_1)
   Walaber::WidgetManager::reloadFonts(*(undefined8 *)(param_1 + 0x10));
   new ((void *)(&bStack_138)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_007819f0);
                     /* try { // try from 0050b330 to 0050b343 has its CatchHandler @ 0050edac */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1c0,&DAT_007819d8,"=\'");
+  std::__ndk1::__decomp_string_plus(&bStack_1c0,&DAT_007819d8,"=\'");
   uVar22 = ram0x00781a70;
   puVar21 = DAT_00781a78;
   if ((DAT_00781a68 & 1) == 0) {
@@ -3573,7 +3573,7 @@ void WaterConcept::Screen_MainMenu::_goEnter(long param_1)
   iVar20 = iVar20 / 0x3c;
   if (iVar19 < iVar20) {
                     /* try { // try from 0050b4f4 to 0050b507 has its CatchHandler @ 0050e930 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1a0,&bStack_138,"=");
+    std::__ndk1::__decomp_string_plus(&bStack_1a0,&bStack_138,"=");
                     /* try { // try from 0050b508 to 0050b517 has its CatchHandler @ 0050e928 */
     Walaber::StringHelper::intToStr(&bStack_1c0,iVar20);
     uVar22 = (ulong)(bStack_1c0 >> 1);
@@ -8079,7 +8079,7 @@ void WaterConcept::Screen_MainMenu::_setNumPacksFromDB(long param_1)
                     /* try { // try from 0050f47c to 0050f487 has its CatchHandler @ 0050f748 */
   Walaber::StringHelper::intToStr(abStack_68,0);
                     /* try { // try from 0050f488 to 0050f49f has its CatchHandler @ 0050f730 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_a0,&DAT_007816f0,&DAT_0061d586);
+  std::__ndk1::__decomp_string_plus(&bStack_a0,&DAT_007816f0,&DAT_0061d586);
   uVar1 = (ulong)(abStack_68[0] >> 1);
   pvVar3 = (void *)((ulong)abStack_68 | 1);
   if ((abStack_68[0] & 1) != 0) {
@@ -8098,7 +8098,7 @@ void WaterConcept::Screen_MainMenu::_setNumPacksFromDB(long param_1)
     operator delete(pvStack_90);
   }
                     /* try { // try from 0050f4f0 to 0050f507 has its CatchHandler @ 0050f704 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_d8," AND ",&DAT_00781678);
+  std::__ndk1::__decomp_string_plus(abStack_d8," AND ",&DAT_00781678);
                     /* try { // try from 0050f508 to 0050f51b has its CatchHandler @ 0050f6ec */
   puVar5 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(abStack_d8,&DAT_0061d586,3);
   pvStack_b0 = (void *)puVar5[2];
@@ -11805,7 +11805,7 @@ LAB_00513fa4:
                     /* try { // try from 005143cc to 005143db has its CatchHandler @ 0051538c */
     new ((void *)(&bStack_88)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00781588);
                     /* try { // try from 005143dc to 005143f3 has its CatchHandler @ 00515384 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_1b8,&DAT_00781588,"> 0 AND ");
+    std::__ndk1::__decomp_string_plus(abStack_1b8,&DAT_00781588,"> 0 AND ");
     uVar15 = ram0x00781680;
     puVar16 = DAT_00781688;
     if ((DAT_00781678 & 1) == 0) {
@@ -12097,7 +12097,7 @@ LAB_00513fa4:
                     /* try { // try from 00514864 to 00514873 has its CatchHandler @ 0051520c */
     ((std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *)(&bStack_88))->operator=(&DAT_007817c8);
                     /* try { // try from 00514874 to 0051488b has its CatchHandler @ 00515208 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_140,&DAT_007817b0,"=\'DatabaseVersion\'");
+    std::__ndk1::__decomp_string_plus(&bStack_140,&DAT_007817b0,"=\'DatabaseVersion\'");
     if ((uStack_a0 & 1) != 0) {
       *pcStack_90 = 0;
       uStack_98 = 0;

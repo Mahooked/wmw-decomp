@@ -73,7 +73,7 @@ template<> std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param
   lVar3 = newlocale(0x1fbf,pbVar4,0);
   *param_1 = lVar3;
   if (lVar3 == 0) {
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(appuStack_60,"time_get_byname failed to construct for ",param_2);
+    std::__ndk1::__decomp_string_plus(appuStack_60,"time_get_byname failed to construct for ",param_2);
                     /* try { // try from 005c23f8 to 005c23ff has its CatchHandler @ 005c2404 */
     FUN_005d5db0(appuStack_60);
   }

@@ -806,7 +806,7 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int
   uVar7 = *(undefined1 *)(lVar24 + 0x19a);
   uVar8 = *(undefined1 *)(lVar24 + 0x19b);
                     /* try { // try from 00533b34 to 00533b4b has its CatchHandler @ 00536ca8 */
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0,&DAT_00787058,&DAT_00619cc6);
+  std::__ndk1::__decomp_string_plus(&bStack_1e0,&DAT_00787058,&DAT_00619cc6);
   uVar28 = DAT_00787090;
   puVar13 = DAT_00787098;
   if ((DAT_00787088 & 1) == 0) {
@@ -1217,7 +1217,7 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int
       uVar28 = Walaber::DatabaseIterator::getBoolAtIndex(auStack_1e8,2);
       if ((uVar28 & 1) != 0) {
                     /* try { // try from 00534574 to 00534583 has its CatchHandler @ 0053713c */
-        std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_1c0,"/Textures/",&fStack_310);
+        std::__ndk1::__decomp_string_plus(&uStack_1c0,"/Textures/",&fStack_310);
                     /* try { // try from 00534584 to 00534597 has its CatchHandler @ 00537124 */
         puVar29 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_1c0,".png",4);
         uVar36 = puVar29[2];
@@ -1274,7 +1274,7 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int
                     /* try { // try from 00534660 to 00534663 has its CatchHandler @ 005371e0 */
       uVar36 = Walaber::TextureManager::getManager();
                     /* try { // try from 00534668 to 00534677 has its CatchHandler @ 005371dc */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,"/Textures/",&fStack_310);
+      std::__ndk1::__decomp_string_plus(&bStack_c0,"/Textures/",&fStack_310);
                     /* try { // try from 00534678 to 0053468b has its CatchHandler @ 005371c4 */
       puVar26 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_c0,".png",4);
       pvStack_1b0 = (void *)puVar26[2];
@@ -2967,7 +2967,7 @@ LAB_00535be4:
                     /* try { // try from 00536328 to 0053632b has its CatchHandler @ 00536f60 */
     uVar36 = Walaber::TextureManager::getManager();
                     /* try { // try from 00536330 to 00536343 has its CatchHandler @ 00536f64 */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_e0,"/Textures/",&bStack_c0);
+    std::__ndk1::__decomp_string_plus(&bStack_e0,"/Textures/",&bStack_c0);
                     /* try { // try from 00536344 to 00536357 has its CatchHandler @ 00536f68 */
     puVar29 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_e0,".png",4);
     puStack_1d0 = (undefined1 *)puVar29[2];

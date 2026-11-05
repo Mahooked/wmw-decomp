@@ -420,7 +420,7 @@ void WaterConcept::Screen_Editor::loadPropertyList(Walaber__PropertyList *p0)
   }
   if ((uVar3 & 1) == 0) {
                     /* try { // try from 004bd074 to 004bd08b has its CatchHandler @ 004bd17c */
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_88,&GameSettings::ContentBasePath,"/Levels/test.png");
+    std::__ndk1::__decomp_string_plus(&bStack_88,&GameSettings::ContentBasePath,"/Levels/test.png");
     puVar5 = &p0[9].f_0x8;
     if ((*puVar5 & 1) == 0) {
       *(undefined2 *)puVar5 = 0;
@@ -4054,7 +4054,7 @@ void WaterConcept::Screen_Editor::_pressTrack(long param_1,long param_2)
   fVar15 = fStack_c8;
   fVar18 = (float)uStack_b0;
   fVar19 = uStack_b0._4_4_;
-  std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&fStack_c8,"/Objects/path_",param_1 + 0x168);
+  std::__ndk1::__decomp_string_plus(&fStack_c8,"/Objects/path_",param_1 + 0x168);
                     /* try { // try from 004c2174 to 004c2187 has its CatchHandler @ 004c252c */
   puVar4 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&fStack_c8,"_mid.hs",7);
   pvStack_a0 = (void *)puVar4[2];
@@ -5378,7 +5378,7 @@ void WaterConcept::Screen_Editor::handleEvent
     (**(code **)(*plVar10 + 0x70))(plVar10);
     break;
   case 2:
-    std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0,&GameSettings::UserStoreBasePath,"/metaTemp.xml");
+    std::__ndk1::__decomp_string_plus(&bStack_1e0,&GameSettings::UserStoreBasePath,"/metaTemp.xml");
     uStack_1c0 = uStack_1c0 & 0xffffffffffffff00;
                     /* try { // try from 004c44c8 to 004c44d3 has its CatchHandler @ 004c59f4 */
     new ((void *)(abStack_a0)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_1e0);
@@ -5915,7 +5915,7 @@ LAB_004c4f44:
         uVar11 = 0;
         do {
                     /* try { // try from 004c4c48 to 004c4c53 has its CatchHandler @ 004c590c */
-          std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_188,lVar23 + lVar24,"/");
+          std::__ndk1::__decomp_string_plus(&bStack_188,lVar23 + lVar24,"/");
           uVar21 = (ulong)(bStack_188 >> 1);
           pvVar4 = (void *)((ulong)&bStack_188 | 1);
           if ((bStack_188 & 1) != 0) {
@@ -6269,7 +6269,7 @@ LAB_004c52d8:
           plVar16 = plVar20;
         } while (plVar10 + 0x35 != plVar20);
       }
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_188,"/Objects/path_",plVar22);
+      std::__ndk1::__decomp_string_plus(&bStack_188,"/Objects/path_",plVar22);
                     /* try { // try from 004c5390 to 004c53a3 has its CatchHandler @ 004c5798 */
       puVar12 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_188,"_mid.hs",7);
       pvStack_220 = (void *)puVar12[2];

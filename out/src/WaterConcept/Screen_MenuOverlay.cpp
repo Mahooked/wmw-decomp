@@ -1506,7 +1506,7 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
     else {
       new ((void *)(abStack_40)) std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00784d00);
                     /* try { // try from 00532b44 to 00532b57 has its CatchHandler @ 00532db4 */
-      std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_98,&DAT_00784ce8,"=\'");
+      std::__ndk1::__decomp_string_plus(auStack_98,&DAT_00784ce8,"=\'");
       uVar6 = DAT_00735dd8;
       puVar2 = DAT_00735de0;
       if ((GameSettings::currentLevelName & 1) == 0) {
