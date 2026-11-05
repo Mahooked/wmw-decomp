@@ -93934,14 +93934,14 @@ LAB_003cef5c:
 /* mangled: VP8GetSignedValue */
 /* VP8GetSignedValue */
 
-int VP8GetSignedValue(undefined8 param_1)
+int VP8GetSignedValue(undefined8 param_1,int param_2)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
   
-  iVar2 = VP8GetValue();
+  iVar2 = VP8GetValue(param_1,param_2);
   iVar3 = VP8GetValue(param_1,1);
   iVar1 = -iVar2;
   if (iVar3 == 0) {
